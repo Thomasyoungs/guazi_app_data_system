@@ -1,0 +1,122 @@
+{
+  "task": "READ_ONLY_LOCATE_S07_OPTIONAL_FEATURE_OLD_CLICK_PATH",
+  "final_status": "S07_OPTIONAL_FEATURE_OLD_CLICK_PATH_LOCATED",
+  "target_fingerprint": "零跑|C10|2026款|210悦享版|白|2026.02",
+  "readonly_confirmed": true,
+  "code_modified": false,
+  "real_device_run_started": false,
+  "second_stage_started": false,
+  "pricing_started": false,
+  "result_json_overwritten": false,
+  "evidence": {
+    "result_s01_to_s10_path": "output/result_s01_to_s10.json",
+    "result_path": "output/result.json",
+    "logs_note": "logs directory has no newer persisted stdout log for the 18:12 S07 click; latest persisted result remains the older S05/S06 mismatch state.",
+    "before_click_xml_path": "artifacts/debug/s06_to_s07_round_1_20260511_181210.xml",
+    "before_click_screenshot_path": "artifacts/screenshots/s06_to_s07_round_1_20260511_181210.png",
+    "after_click_xml_path": "artifacts/debug/s07_after_color_select_0_20260511_181215.xml",
+    "after_click_screenshot_path": "artifacts/screenshots/s07_after_color_select_0_20260511_181215.png"
+  },
+  "page_evidence_summary": {
+    "before_click": {
+      "recognized_page": "S07",
+      "current_panel": "车源亮点",
+      "top_chips": [
+        "0年以下",
+        "2026款 210悦享版"
+      ],
+      "visible_forbidden_option": "有选装",
+      "target_color_visible_in_same_screen": "白色",
+      "bottom_view_result_text": "查看4辆"
+    },
+    "after_click": {
+      "recognized_page": "S07",
+      "top_chips": [
+        "有选装",
+        "0年以下",
+        "2026款 210悦享版"
+      ],
+      "forbidden_option_selected": "有选装",
+      "target_color_selected_evidence": false,
+      "bottom_view_result_text": "查看4辆"
+    }
+  },
+  "located_code_path": {
+    "file": "scripts/runtime_s01_to_s10_mainline.py",
+    "trigger_function": "handle_s07",
+    "helper_functions": [
+      "_find_target_color_node",
+      "_target_color_selected"
+    ],
+    "line_ranges": [
+      {
+        "function": "_find_target_color_node",
+        "approx_lines": "4681-4736",
+        "summary": "Finds target color text anywhere in current S07 XML and may return it without verifying active color sub-panel."
+      },
+      {
+        "function": "_target_color_selected",
+        "approx_lines": "4778-4785",
+        "summary": "Falls back to visible_blob text presence, which does not prove selected state."
+      },
+      {
+        "function": "handle_s07",
+        "approx_lines": "7338-7476",
+        "summary": "If target color node is visible in current XML, skips tapping the color tab and directly taps target color."
+      }
+    ],
+    "code_path": [
+      "handle_s07",
+      "S07_COLOR_PANEL_ALREADY_VISIBLE_CHECK",
+      "_find_target_color_node(snapshot, target_color)",
+      "color_already_visible=true when white text is present in current S07 XML",
+      "skip tap_color_filter",
+      "assert_action_allowed('S07', 'tap_target_color')",
+      "client.tap(center(color_node.bounds))",
+      "_target_color_selected visible text fallback may confirm incorrectly"
+    ]
+  },
+  "trigger_conditions": {
+    "from_s06_to_s07": true,
+    "current_default_panel": "车源亮点",
+    "color_filter_done_before_click": false,
+    "age_filter_done_before_click": false,
+    "script_clicked_color_tab_first": false,
+    "current_xml_reused_for_color_check": true,
+    "target_color_text_visible_but_not_scoped_to_color_panel": true,
+    "forbidden_option_gate_present": false
+  },
+  "click_action_source": {
+    "direct_tap_text_you_xuanzhuang": false,
+    "first_checkbox_path_found": false,
+    "generic_color_selection_path": true,
+    "action_id": "tap_target_color",
+    "clicked_text_persisted": false,
+    "inferred_actual_effect": "有选装 became selected after the supposed target-color click."
+  },
+  "why_contract_did_not_block": [
+    "No S07 sub-state gate forced the script to click the Color tab before selecting target color.",
+    "tap_target_color did not validate that the click target belongs to the active Color panel.",
+    "Forbidden options such as 有选装 and 车源亮点 were not guarded.",
+    "_target_color_selected can return true from visible text presence instead of selected-state evidence.",
+    "No post-click forbidden-chip check detected 有选装 selection."
+  ],
+  "responsibility_classification": {
+    "primary": "S07_COLOR_GATE_MISSING",
+    "also_applies": [
+      "S07_DEFAULT_PANEL_OPTION_CLICK_LEAK",
+      "S07_FORBIDDEN_OPTION_GATE_MISSING",
+      "S07_CONTRACT_ACTION_DISPATCHER_BYPASSED"
+    ],
+    "not_supported_as_primary": [
+      "S07_FIRST_CHECKBOX_CLICK_LEAK"
+    ]
+  },
+  "next_fix_recommendations": [
+    "When COLOR_FILTER_DONE=false, S07 must first click the left Color tab and verify the Color panel is active.",
+    "Target color click must be scoped to the Color panel only.",
+    "Add forbidden text/region gates for 有选装, 车源亮点, 辅助驾驶, 电池类型, 续航里程, 里程, 年款车型.",
+    "Do not confirm target color by visible text alone; require selected-state or top chip evidence.",
+    "If forbidden chip appears after a click, stop with a dedicated S07 forbidden option stop_code."
+  ]
+}

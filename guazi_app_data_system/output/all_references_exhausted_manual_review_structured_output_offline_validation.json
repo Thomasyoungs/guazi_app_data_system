@@ -1,0 +1,137 @@
+{
+  "validation_passed": true,
+  "checks": {
+    "manual_review_required": true,
+    "auto_pricing_allowed_false": true,
+    "final_price_null": true,
+    "reference_outcomes_count_is_2": true,
+    "reference_2_once": true,
+    "old_78_absent": true,
+    "reference_1_score_70_trustworthy": true,
+    "reference_2_official_report_excluded_once": true,
+    "target_score_not_inferred": true,
+    "manual_review_payload_present": true,
+    "s17_manual_review_payload_present": true
+  },
+  "augmented_preview": {
+    "manual_review_required": true,
+    "auto_pricing_allowed": false,
+    "final_price": null,
+    "final_price_status": "not_generated",
+    "final_price_block_reason": "all_references_exhausted_manual_review",
+    "manual_review_reasons": [
+      "all_references_exhausted",
+      "no_reference_met_auto_pricing_condition",
+      "official_report_not_available_for_some_references"
+    ],
+    "manual_review_summary": "真实三同参考车已全部处理完；reference #1 完整采集但分数低于目标车，reference #2 无完整报告入口被排除，因此未形成可自动定价结果，需人工审核。",
+    "valid_reference_count": 1,
+    "exhausted_reference_count": 2,
+    "excluded_reference_count": 1,
+    "processed_reference_count": 2,
+    "trusted_scored_reference_count": 1,
+    "auto_pricing_reference_count": 0,
+    "target_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+    "target_score": null,
+    "target_score_available": false,
+    "target_score_source": "missing_runtime_target_score",
+    "target_score_missing_reason": "target_score_not_persisted_in_terminal_result",
+    "reference_outcomes": [
+      {
+        "reference_index": 1,
+        "reference_id": null,
+        "listing_key": "1:日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版:2021年 | 12.5万公里 | 安庆:8.48万",
+        "reference_title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+        "reference_price_yuan": null,
+        "reference_price_text": "8.48万",
+        "outcome": "scored_but_below_target",
+        "included_in_auto_pricing": false,
+        "exclusion_reason": null,
+        "reference_score": 70.0,
+        "reference_score_trustworthy": true,
+        "score_relation_to_target": "below_target",
+        "official_report_available": true,
+        "s14_collect_done": true,
+        "notes": "完整采集但分数低于目标车，未作为自动定价参考"
+      },
+      {
+        "reference_index": 2,
+        "reference_id": null,
+        "listing_key": "2:日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版:2021年 | 13.4万公里 | 唐山:10.59万",
+        "reference_title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+        "reference_price_yuan": null,
+        "reference_price_text": "10.59万",
+        "outcome": "excluded",
+        "included_in_auto_pricing": false,
+        "exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+        "reference_score": null,
+        "reference_score_trustworthy": null,
+        "score_relation_to_target": "unknown",
+        "official_report_available": false,
+        "s14_collect_done": null,
+        "notes": "无查看完整报告入口，当前参考车排除"
+      }
+    ],
+    "manual_review_payload": {
+      "type": "manual_review",
+      "manual_review_required": true,
+      "auto_pricing_allowed": false,
+      "final_price": null,
+      "reason_code": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+      "summary": "真实三同参考车已全部处理完；reference #1 完整采集但分数低于目标车，reference #2 无完整报告入口被排除，因此未形成可自动定价结果，需人工审核。",
+      "target": {
+        "task_id": "",
+        "target_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+        "target_score": null,
+        "target_score_available": false,
+        "target_score_source": "missing_runtime_target_score",
+        "target_score_missing_reason": "target_score_not_persisted_in_terminal_result"
+      },
+      "reference_summary": {
+        "valid_reference_count": 1,
+        "exhausted_reference_count": 2,
+        "excluded_reference_count": 1,
+        "processed_reference_count": 2,
+        "trusted_scored_reference_count": 1,
+        "auto_pricing_reference_count": 0
+      },
+      "reference_outcomes": [
+        {
+          "reference_index": 1,
+          "reference_id": null,
+          "listing_key": "1:日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版:2021年 | 12.5万公里 | 安庆:8.48万",
+          "reference_title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+          "reference_price_yuan": null,
+          "reference_price_text": "8.48万",
+          "outcome": "scored_but_below_target",
+          "included_in_auto_pricing": false,
+          "exclusion_reason": null,
+          "reference_score": 70.0,
+          "reference_score_trustworthy": true,
+          "score_relation_to_target": "below_target",
+          "official_report_available": true,
+          "s14_collect_done": true,
+          "notes": "完整采集但分数低于目标车，未作为自动定价参考"
+        },
+        {
+          "reference_index": 2,
+          "reference_id": null,
+          "listing_key": "2:日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版:2021年 | 13.4万公里 | 唐山:10.59万",
+          "reference_title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+          "reference_price_yuan": null,
+          "reference_price_text": "10.59万",
+          "outcome": "excluded",
+          "included_in_auto_pricing": false,
+          "exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+          "reference_score": null,
+          "reference_score_trustworthy": null,
+          "score_relation_to_target": "unknown",
+          "official_report_available": false,
+          "s14_collect_done": null,
+          "notes": "无查看完整报告入口，当前参考车排除"
+        }
+      ],
+      "operator_action": "请人工审核目标车与参考车差异后定价"
+    }
+  }
+}

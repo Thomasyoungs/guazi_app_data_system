@@ -1,0 +1,43 @@
+{
+  "report_name": "nissan_terra_2020_full_chain_after_s11_exact_text_rule",
+  "generated_at": "2026-05-13T12:23:43",
+  "target_fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "first_stage_status": "S10_READY",
+  "second_stage_status": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+  "final_status": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+  "completed_pricing": false,
+  "result_summary": {
+    "reference_index": 3,
+    "issue_code": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+    "stop_code": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+    "view_full_report_exact_text_seen": false,
+    "merchant_self_check_marker_seen": false,
+    "visual_binding_disabled": true,
+    "ocr_disabled": true,
+    "screenshot_text_recognition_disabled": true,
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260513_122252.xml",
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260513_122252.png"
+  },
+  "reference_history_summary": [
+    {
+      "reference_index": 1,
+      "reference_status": null,
+      "reference_score": 78.0,
+      "reference_exclusion_reason": null
+    },
+    {
+      "reference_index": 2,
+      "reference_status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+      "reference_score": null,
+      "reference_exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE"
+    },
+    {
+      "reference_index": 3,
+      "reference_status": null,
+      "reference_score": null,
+      "reference_exclusion_reason": null
+    }
+  ],
+  "conclusion": "Patch passed. Chain did not complete because exact XML entry and exact merchant marker were both absent after controlled search.",
+  "status": "S11_REPORT_ENTRY_EXACT_TEXT_ONLY_EVIDENCE_INSUFFICIENT"
+}

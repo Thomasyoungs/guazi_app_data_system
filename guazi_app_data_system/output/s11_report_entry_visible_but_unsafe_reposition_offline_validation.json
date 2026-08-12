@@ -1,0 +1,39 @@
+{
+  "status": "PASSED",
+  "cases": [
+    {
+      "case_id": "A",
+      "passed": true,
+      "unsafe_reason": "too_close_to_bottom",
+      "bounds": [
+        80,
+        2194,
+        597,
+        2308
+      ]
+    },
+    {
+      "case_id": "B",
+      "passed": true,
+      "click_ok": true,
+      "unsafe_reason": ""
+    },
+    {
+      "case_id": "C",
+      "passed": true,
+      "expected_stop_code": "S11_REPORT_ENTRY_NOT_FULLY_VISIBLE_SAFE"
+    },
+    {
+      "case_id": "D",
+      "passed": true,
+      "exact_seen": false,
+      "weak_seen": true
+    },
+    {
+      "case_id": "E",
+      "passed": true,
+      "max_reposition_attempts": 3,
+      "expected_bounded": true
+    }
+  ]
+}

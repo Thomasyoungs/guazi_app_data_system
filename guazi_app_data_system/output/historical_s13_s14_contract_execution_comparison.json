@@ -1,0 +1,272 @@
+{
+  "status": "HISTORICAL_S13_S14_CONTRACT_EXECUTION_COMPARISON_DONE",
+  "task": "READ_ONLY_COMPARE_HISTORICAL_S13_S14_CONTRACT_EXECUTION_WITH_NISSAN_TERRA",
+  "created_at": "2026-05-15T10:06:57.721Z",
+  "readonly": true,
+  "code_modified": false,
+  "docx_modified": false,
+  "pricing_modified": false,
+  "config_modified": false,
+  "real_device_run": false,
+  "result_json_overwritten": false,
+  "current_problem_sample": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "comparison_samples": [
+    {
+      "sample_id": "PROBLEM_NISSAN_TERRA_2020_REFERENCE_1",
+      "fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+      "s13_region_repair_counts": {
+        "???": 5,
+        "??": 4
+      },
+      "s13_total_repair_count": 21,
+      "repair_items_count": 1,
+      "clicked_repair_items": [
+        "?????"
+      ],
+      "collected_s14_items": [
+        "?????"
+      ],
+      "s14_collect_done_items": [
+        "?????(1/2)",
+        "?????(2/2)",
+        "???????(1/1)"
+      ],
+      "entered_s15": false,
+      "entered_s16": false,
+      "final_status": "S15_BLOCKED_REPAIR_DETAILS_INCOMPLETE",
+      "checked_collected_items_gte_repair_count": true,
+      "only_current_s14_item_validated": false,
+      "repair_count_gt_collected_items": true,
+      "classification": "CURRENT_SAMPLE_BLOCKED_BY_V1_29_COMPLETENESS_GATE",
+      "evidence_path": "output/nissan_terra_2020_full_chain_after_v1_30_repair_items_gate_real_device.json"
+    },
+    {
+      "sample_id": "BASELINE_HONDA_ACCORD_2023_FULL_CHAIN_PRICED_DONE_202605",
+      "fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+      "s13_region_repair_counts": {
+        "???": 4
+      },
+      "s13_total_repair_count": 4,
+      "repair_items_count": 1,
+      "clicked_repair_items": [
+        "???????????"
+      ],
+      "collected_s14_items": [
+        "1? repair_item?9? S14 image record"
+      ],
+      "s14_collect_done_items": [
+        "?? S14 ????"
+      ],
+      "entered_s15": true,
+      "entered_s16": true,
+      "final_status": "FULL_CHAIN_PRICED_DONE",
+      "checked_collected_items_gte_repair_count": false,
+      "only_current_s14_item_validated": true,
+      "repair_count_gt_collected_items": true,
+      "classification": "HISTORICAL_SAMPLE_REPAIR_COUNT_GREATER_THAN_COLLECTED_ITEMS",
+      "evidence_path": "output/honda_accord_2023_260turbo_zhixiang_v1_25_full_chain_run.json"
+    },
+    {
+      "sample_id": "BASELINE_GEELY_YUANJING_2019_FULL_CHAIN_PRICED_DONE_202605",
+      "fingerprint": "??|??|2019?|??? 1.5L ????? ?VI|?|2019.10",
+      "s13_region_repair_counts": {
+        "???": 0,
+        "??": 0
+      },
+      "s13_total_repair_count": 0,
+      "repair_items_count": 0,
+      "clicked_repair_items": [],
+      "collected_s14_items": [],
+      "s14_collect_done_items": [],
+      "entered_s15": true,
+      "entered_s16": true,
+      "final_status": "FULL_CHAIN_PRICED_DONE",
+      "checked_collected_items_gte_repair_count": "not_applicable_zero_count",
+      "only_current_s14_item_validated": false,
+      "repair_count_gt_collected_items": false,
+      "classification": "HISTORICAL_SAMPLE_NO_REPAIR_COUNT_OR_NO_S14_REQUIRED",
+      "evidence_path": "output/geely_yuanjing_2019_v1_24_full_chain_run.json"
+    },
+    {
+      "sample_id": "BASELINE_LEAPMOTOR_C10_2026_FULL_CHAIN_MANUAL_REVIEW_DONE_202605",
+      "fingerprint": "??|C10|2026?|210???|?|2026.02",
+      "s13_region_repair_counts": {
+        "???": 0,
+        "??": 0
+      },
+      "s13_total_repair_count": 0,
+      "repair_items_count": 0,
+      "clicked_repair_items": [],
+      "collected_s14_items": [],
+      "s14_collect_done_items": [],
+      "entered_s15": true,
+      "entered_s16": true,
+      "final_status": "FULL_CHAIN_MANUAL_REVIEW_DONE",
+      "checked_collected_items_gte_repair_count": "not_applicable_zero_count",
+      "only_current_s14_item_validated": false,
+      "repair_count_gt_collected_items": false,
+      "classification": "HISTORICAL_SAMPLE_NO_REPAIR_COUNT_OR_NO_S14_REQUIRED",
+      "evidence_path": "output/leapmotor_c10_v1_21_full_chain_run.json"
+    },
+    {
+      "sample_id": "TUANG_FULL_CHAIN_ACCEPTANCE_SAMPLE",
+      "fingerprint": "??|??|??????",
+      "s13_region_repair_counts": {
+        "???": 0,
+        "??": 1
+      },
+      "s13_total_repair_count": 1,
+      "repair_items_count": null,
+      "clicked_repair_items": [
+        "????/?? S13_TO_S14 live room wrong click ??"
+      ],
+      "collected_s14_items": [],
+      "s14_collect_done_items": [],
+      "entered_s15": "not_as_effective_final_reference",
+      "entered_s16": "not_confirmed_for_this_reference",
+      "final_status": "acceptance/diagnosis mixed",
+      "checked_collected_items_gte_repair_count": false,
+      "only_current_s14_item_validated": "not_confirmed",
+      "repair_count_gt_collected_items": "unknown",
+      "classification": "HISTORICAL_SAMPLE_EVIDENCE_INSUFFICIENT",
+      "evidence_path": "output/tuang_full_chain_acceptance_report.json; output/tuang_s13_to_s14_live_room_wrong_click_diagnosis.json"
+    },
+    {
+      "sample_id": "BASELINE_SANTANA_2021_FULL_CHAIN_PRICED_DONE_202605",
+      "fingerprint": "??|???|?? baseline",
+      "s13_region_repair_counts": "examples totals: 2 / 6 / 6 / 2 / 2",
+      "s13_total_repair_count": "2,6,6,2,2 examples",
+      "repair_items_count": "mostly 1 each reference",
+      "clicked_repair_items": [
+        "?? repair_item ?????????????"
+      ],
+      "collected_s14_items": [
+        "?? S14 ????"
+      ],
+      "s14_collect_done_items": [
+        "?? S14 ????"
+      ],
+      "entered_s15": true,
+      "entered_s16": true,
+      "final_status": "FULL_CHAIN_PRICED_DONE / baseline_success",
+      "checked_collected_items_gte_repair_count": false,
+      "only_current_s14_item_validated": true,
+      "repair_count_gt_collected_items": true,
+      "classification": "HISTORICAL_SAMPLE_REPAIR_COUNT_GREATER_THAN_COLLECTED_ITEMS",
+      "evidence_path": "output/santana_full_chain_acceptance_report.json; output/santana_baseline_freeze_package.json"
+    },
+    {
+      "sample_id": "BASELINE_TOYOTA_YARIS_2015_FULL_CHAIN_PRICED_DONE_202605",
+      "fingerprint": "??|YARiS L ??|?? baseline",
+      "s13_region_repair_counts": "examples totals: 2 / 2",
+      "s13_total_repair_count": "2,2 examples",
+      "repair_items_count": "1 each reference",
+      "clicked_repair_items": [
+        "?? repair_item ?????????????"
+      ],
+      "collected_s14_items": [
+        "?? S14 ????"
+      ],
+      "s14_collect_done_items": [
+        "?? S14 ????"
+      ],
+      "entered_s15": true,
+      "entered_s16": true,
+      "final_status": "FULL_CHAIN_PRICED_DONE / baseline_success",
+      "checked_collected_items_gte_repair_count": false,
+      "only_current_s14_item_validated": true,
+      "repair_count_gt_collected_items": true,
+      "classification": "HISTORICAL_SAMPLE_REPAIR_COUNT_GREATER_THAN_COLLECTED_ITEMS",
+      "evidence_path": "output/toyota_yaris_full_chain_acceptance_report.json; output/toyota_yaris_baseline_freeze_package.json"
+    },
+    {
+      "sample_id": "BASELINE_FOCUS_2017_FULL_CHAIN_PRICED_DONE_202605",
+      "fingerprint": "??|???|?? baseline",
+      "s13_region_repair_counts": "examples totals: 9 / 12 / 8",
+      "s13_total_repair_count": "9,12,8 examples",
+      "repair_items_count": "1 each reference/panel_repairs_count=1",
+      "clicked_repair_items": [
+        "?? repair_item ?????????????"
+      ],
+      "collected_s14_items": [
+        "?? S14 ????"
+      ],
+      "s14_collect_done_items": [
+        "?? S14 ????"
+      ],
+      "entered_s15": true,
+      "entered_s16": true,
+      "final_status": "FULL_CHAIN_PRICED_DONE / baseline_success",
+      "checked_collected_items_gte_repair_count": false,
+      "only_current_s14_item_validated": true,
+      "repair_count_gt_collected_items": true,
+      "classification": "HISTORICAL_SAMPLE_REPAIR_COUNT_GREATER_THAN_COLLECTED_ITEMS",
+      "evidence_path": "output/full_chain_acceptance_report.json; output/baseline_freeze_package.json"
+    }
+  ],
+  "historical_sample_classification_summary": {
+    "HISTORICAL_SAMPLE_ALL_REPAIR_ITEMS_COLLECTED": 0,
+    "HISTORICAL_SAMPLE_ONLY_CURRENT_S14_ITEM_COLLECTED": 4,
+    "HISTORICAL_SAMPLE_REPAIR_COUNT_GREATER_THAN_COLLECTED_ITEMS": 4,
+    "HISTORICAL_SAMPLE_NO_REPAIR_COUNT_OR_NO_S14_REQUIRED": 2,
+    "HISTORICAL_SAMPLE_EVIDENCE_INSUFFICIENT": 1,
+    "note": "????????? only_current_s14_item ? repair_count_greater_than_collected_items?????????????????"
+  },
+  "contract_version_comparison": {
+    "historical_contract_requirement": "????????????????????? S13 ?? repair_counts?S14 ??????????/??????????? collected_repair_items >= repair_count?",
+    "current_contract_requirement": "V1.29/V1.30 ?????? S15 ????????????????? repair_count ?????? expected_repair_item_count?",
+    "contract_gap": [
+      "???????? repair_items ????",
+      "V1.29 ?????????????????? repair_item ????",
+      "repair_count ??????????????????????? repair_item ???"
+    ],
+    "acceptance_gap": "?? baseline/acceptance ???? repair_count ? collected_repair_items ??????? repair_counts > collected_items ????????"
+  },
+  "code_behavior_comparison": {
+    "handle_s13_click_strategy": "??????????????? pending region??????? repair_item ????????? S14 ??? return \"S14\"?",
+    "repair_item_loop_exists": false,
+    "s14_return_target": "??????? S14 ??????? reliable S10 / S15 gate ???????? S13 ???? repair_item ????",
+    "old_logic_detected": true,
+    "code_evidence": [
+      "scripts/runtime_s10_to_s16_mainline.py:6890 handle_s13",
+      "scripts/runtime_s10_to_s16_mainline.py:7049-7050 if final_state == \"S14\": return \"S14\", next_snapshot",
+      "scripts/runtime_s10_to_s16_mainline.py:3357 expected_count = sum(region_counts.values())",
+      "scripts/runtime_s10_to_s16_mainline.py:3375 all_done = expected_count == 0 or collected_count >= expected_count"
+    ],
+    "behavior_origin": "??????????????????V1.29 ???????????? S15?????????"
+  },
+  "root_cause_selection": {
+    "selected": "E. MIXED_CAUSE",
+    "components": [
+      "A. CONTRACT_SCOPE_CHANGED????????? S14 ???????????????????",
+      "B. ACCEPTANCE_GAP????????? repair_count ? collected_repair_items ????",
+      "C. LEGACY_CODE_ONLY_COLLECTS_FIRST_ITEM???????????????????",
+      "D. REPAIR_COUNT_SEMANTICS_AMBIGUOUS?repair_count ??????????????????????"
+    ],
+    "why_nissan_failed_now": "???? repair_count=21??? 1 ????????V1.29/V1.30 ? S15 ???????????????? S15?????????????",
+    "why_previous_looked_ok": "??????? S14 ??/????????? S15/S16 ?????? repair_count ? collected repair_items ???????"
+  },
+  "recommendation": {
+    "should_continue_require_collected_items_gte_repair_count": false,
+    "reason": "?????? repair_count ???? repair_item ?????????????????????????",
+    "proposed_contract": [
+      "repair_count????????????",
+      "repair_item?S13 ?????????????????????????????",
+      "????????? repair_items?expected_repair_item_count ?? enumerated_repair_item_count?",
+      "?? repair_count > collected_items ? repair_count > enumerated_items??? repair_count_mismatch_warning?",
+      "???????? item ? repair_count ???? collected_items???????????????????? reference_score?",
+      "S14_COLLECT_DONE ????? repair_item ????????? S13 ???????????????????????"
+    ],
+    "next_actions_order": [
+      "???????? repair_count ? repair_item ????",
+      "?????????? S13 repair_item ??/????/?????",
+      "?? S14 ??????? S13 ???? repair_item ????",
+      "????? baseline ????????????????"
+    ]
+  },
+  "report_paths": {
+    "json": "output/historical_s13_s14_contract_execution_comparison.json",
+    "markdown": "output/historical_s13_s14_contract_execution_comparison_latest.md"
+  },
+  "final_status": "HISTORICAL_S13_S14_CONTRACT_EXECUTION_COMPARISON_DONE"
+}

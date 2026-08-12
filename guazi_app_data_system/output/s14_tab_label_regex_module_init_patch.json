@@ -1,0 +1,29 @@
+{
+  "status": "S14_TAB_LABEL_RE_REGEX_PATCHED",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "change_scope": "S14_TAB_LABEL_RE module-level regex syntax only",
+  "old_problem": "module initialization failed with re.error: unterminated character set at position 5",
+  "new_regex": "^(.+?)[(?](\\d+)\\s*/\\s*(\\d+)[)?]$",
+  "semantics": "match S14 tab labels with ASCII or Chinese parentheses, e.g. part(1/2) or part?1/2?",
+  "forbidden_files_touched": [],
+  "py_compile": "passed",
+  "import_validation": "IMPORT_OK",
+  "regex_validation": {
+    "positive": [
+      "?????(1/1)",
+      "?????1/2?",
+      "????(12/18)"
+    ],
+    "negative": [
+      "????",
+      "??????",
+      "????1/2",
+      "(1/2)",
+      "?????x/2?"
+    ],
+    "status": "passed"
+  },
+  "final_status": "S14_TAB_LABEL_RE_REGEX_PATCHED"
+}

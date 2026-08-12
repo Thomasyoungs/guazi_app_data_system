@@ -1,0 +1,467 @@
+{
+  "status": "COMPETITION_COEFFICIENT_V1_2_REPLAY_READY",
+  "mode": "read_only_replay",
+  "rule_doc": "C:/Users/lzc93/Desktop/定价/目标车竞争力系数算法设计_V1.2_OBD未读取备注修正版.docx",
+  "modifications": {
+    "code_modified": false,
+    "pricing_modified": false,
+    "config_modified": false,
+    "page_contract_modified": false,
+    "real_device_run": false,
+    "result_json_overwritten": false,
+    "historical_baseline_overwritten": false
+  },
+  "v1_2_core_rules": {
+    "s16_only": true,
+    "listing_formula": "target_guazi_listing_price_yuan = final_reference_price_yuan * competition_coefficient",
+    "obd_not_read_policy": "note_only_no_adjustment_no_manual_review",
+    "non_trisame_price_policy": "never_use_more_cars_national_recommendation_prices",
+    "ai_model_used": false,
+    "coefficient_clip_range": [0.90, 1.03]
+  },
+  "samples": [
+    {
+      "sample_name": "focus_2017",
+      "target_fingerprint": "福特|福克斯|2017款|两厢 1.6L 自动舒适型智行版|白|2017.07",
+      "base_data": {
+        "final_reference_index": 3,
+        "selected_reference_price_yuan": 26200,
+        "selected_reference_score": 93.5,
+        "target_score": 93.0,
+        "score_gap": 0.5,
+        "trisame_count": 3,
+        "trisame_count_source": "reference_history_replay; full S10 pool count not preserved",
+        "trisame_price_list_yuan": [25200, 25500, 26200],
+        "target_condition_text": "左前叶,后盖局部钣金。",
+        "inspection_note": "",
+        "license_city": "唐山",
+        "selected_reference_city": "唐山",
+        "guazi_series_tags": null,
+        "model_liquidity_profile": null
+      },
+      "adjustments": [
+        {
+          "factor": "sample_reliability_adjustment",
+          "data": {"trisame_count": 3},
+          "condition": "trisame_count=3-4",
+          "adjustment": -0.01,
+          "reason": "样本略少"
+        },
+        {
+          "factor": "price_distribution_adjustment",
+          "data": {"price_spread_rate": 0.0397, "price_list_yuan": [25200, 25500, 26200]},
+          "condition": "<=5%",
+          "adjustment": 0,
+          "reason": "价格稳定"
+        },
+        {
+          "factor": "target_condition_risk_adjustment",
+          "data": {"risk_flags": ["局部钣金"]},
+          "condition": "localized_sheet_metal_not_strong_risk",
+          "adjustment": -0.01,
+          "manual_review_required": false,
+          "reason": "局部钣金影响挂牌竞争力，但不是强风险"
+        },
+        {
+          "factor": "score_gap_adjustment",
+          "data": {"score_gap": 0.5},
+          "condition": "0_to_1",
+          "adjustment": 0,
+          "reason": "目标车与参考车分数接近"
+        },
+        {
+          "factor": "price_band_adjustment",
+          "data": {"price_yuan": 26200},
+          "condition": "<50000",
+          "adjustment": 0,
+          "reason": "低价车价格带不额外扣"
+        },
+        {
+          "factor": "model_liquidity_adjustment",
+          "data": {"profile": null},
+          "condition": "no_config_evidence",
+          "adjustment": 0,
+          "reason": "无车型配置表依据，不猜"
+        },
+        {
+          "factor": "fuel_cost_pressure_adjustment",
+          "data": {"profile": null},
+          "condition": "no_config_evidence",
+          "adjustment": 0,
+          "reason": "无油耗/车型级别依据，不猜"
+        },
+        {
+          "factor": "city_comparability_adjustment",
+          "data": {"reference_city": "唐山", "license_city": "唐山"},
+          "condition": "same_city",
+          "adjustment": 0,
+          "reason": "同城可比"
+        }
+      ],
+      "synthetic_result": {
+        "raw_competition_coefficient": 0.98,
+        "clipped_competition_coefficient": 0.98,
+        "round_strategy": "round_to_100",
+        "target_guazi_listing_price_yuan": 25700,
+        "guazi_service_fee_yuan": 2500,
+        "guazi_net_payout_yuan": 23200,
+        "same_other_deductions_yuan": 4000,
+        "suggested_purchase_price_yuan_if_other_deductions_same": 19200,
+        "manual_review_required": true,
+        "manual_review_reasons": [
+          "TARGET_INSURANCE_COUNT_MISSING_DEFAULT_SCORE_USED",
+          "TARGET_MAX_CLAIM_AMOUNT_MISSING_DEFAULT_SCORE_USED"
+        ],
+        "competition_coefficient_reasons": [
+          "样本略少 -0.01",
+          "局部钣金挂牌竞争力 -0.01"
+        ]
+      }
+    },
+    {
+      "sample_name": "toyota_yaris_2015",
+      "target_fingerprint": "丰田|YARiS L 致炫|2015款|1.5E 自动魅动版|白|2015.07",
+      "base_data": {
+        "final_reference_index": 2,
+        "selected_reference_price_yuan": 27800,
+        "selected_reference_score": 95.0,
+        "target_score": 95.0,
+        "score_gap": 0,
+        "trisame_count": 6,
+        "trisame_count_source": "S07 bottom view result 查看6辆",
+        "trisame_price_list_yuan": null,
+        "target_condition_text": "左前门喷漆。左后门喷漆。左侧下坎钣金。右后翼子板喷漆。右前门喷漆。右前翼子板喷漆。",
+        "inspection_note": "",
+        "license_city": "唐山",
+        "selected_reference_city": "唐山",
+        "guazi_series_tags": null,
+        "model_liquidity_profile": {
+          "vehicle_class": "small_car",
+          "fuel_cost_pressure": "low",
+          "fuel_cost_adjustment": 0,
+          "liquidity_adjustment": 0,
+          "reason": "小型合资车，油耗友好，流通正常"
+        }
+      },
+      "adjustments": [
+        {
+          "factor": "sample_reliability_adjustment",
+          "data": {"trisame_count": 6},
+          "condition": "trisame_count>=5",
+          "adjustment": 0,
+          "reason": "样本相对充分"
+        },
+        {
+          "factor": "price_distribution_adjustment",
+          "data": {"price_spread_rate": null, "price_list_yuan": null},
+          "condition": "full_price_list_not_preserved",
+          "adjustment": 0,
+          "reason": "不使用非三同价格补齐；V1.2 示例按普通稳定样本回放"
+        },
+        {
+          "factor": "target_condition_risk_adjustment",
+          "data": {"risk_flags": ["多处喷漆", "左侧下坎钣金待规则细化"]},
+          "condition": "no_major_risk_in_v1_2_replay",
+          "adjustment": 0,
+          "manual_review_required": false,
+          "reason": "无重大风险；左侧下坎按后续规则议题记录"
+        },
+        {
+          "factor": "score_gap_adjustment",
+          "data": {"score_gap": 0},
+          "condition": "0_to_1",
+          "adjustment": 0,
+          "reason": "同分"
+        },
+        {
+          "factor": "price_band_adjustment",
+          "data": {"price_yuan": 27800},
+          "condition": "<50000",
+          "adjustment": 0,
+          "reason": "低价车价格带不额外扣"
+        },
+        {
+          "factor": "model_liquidity_adjustment",
+          "data": {"profile": "small_car"},
+          "condition": "configured_normal_liquidity",
+          "adjustment": 0,
+          "reason": "小型合资车，流通正常"
+        },
+        {
+          "factor": "fuel_cost_pressure_adjustment",
+          "data": {"profile": "fuel_cost_pressure=low"},
+          "condition": "configured_low_fuel_pressure",
+          "adjustment": 0,
+          "reason": "油耗友好，不额外扣"
+        },
+        {
+          "factor": "city_comparability_adjustment",
+          "data": {"reference_city": "唐山", "license_city": "唐山"},
+          "condition": "same_city",
+          "adjustment": 0,
+          "reason": "同城可比"
+        }
+      ],
+      "synthetic_result": {
+        "raw_competition_coefficient": 1.0,
+        "clipped_competition_coefficient": 1.0,
+        "round_strategy": "round_to_100",
+        "target_guazi_listing_price_yuan": 27800,
+        "guazi_service_fee_yuan": 2500,
+        "guazi_net_payout_yuan": 25300,
+        "same_other_deductions_yuan": 4000,
+        "suggested_purchase_price_yuan_if_other_deductions_same": 21300,
+        "manual_review_required": true,
+        "manual_review_reasons": [
+          "TARGET_INSURANCE_COUNT_MISSING_DEFAULT_SCORE_USED",
+          "TARGET_MAX_CLAIM_AMOUNT_MISSING_DEFAULT_SCORE_USED",
+          "TARGET_CONDITION_LEFT_SILL_SCORING_REVIEW"
+        ],
+        "competition_coefficient_reasons": [
+          "样本正常",
+          "同分",
+          "低价小型车无额外扣减"
+        ]
+      }
+    },
+    {
+      "sample_name": "santana_2021",
+      "target_fingerprint": "大众|桑塔纳|2021款|1.5L 自动风尚版|白|2021.05",
+      "base_data": {
+        "final_reference_index": 5,
+        "selected_reference_price_yuan": 41600,
+        "selected_reference_score": 96.0,
+        "target_score": 91.0,
+        "score_gap": 5.0,
+        "trisame_count": 5,
+        "trisame_count_source": "reference_history continuous loop",
+        "trisame_price_list_yuan": [39000, 40100, 40300, 40300, 41600],
+        "target_condition_text": "原版原漆，右后叶凹陷，前后杠擦伤，左后门5厘米划痕。",
+        "inspection_note": "",
+        "license_city": "唐山",
+        "selected_reference_city": "唐山",
+        "guazi_series_tags": null,
+        "model_liquidity_profile": {
+          "vehicle_class": "compact_sedan",
+          "fuel_cost_pressure": "normal",
+          "fuel_cost_adjustment": 0,
+          "liquidity_adjustment": 0,
+          "reason": "低价家用轿车，流通正常"
+        }
+      },
+      "adjustments": [
+        {
+          "factor": "sample_reliability_adjustment",
+          "data": {"trisame_count": 5},
+          "condition": "trisame_count>=5",
+          "adjustment": 0,
+          "reason": "样本相对充分"
+        },
+        {
+          "factor": "price_distribution_adjustment",
+          "data": {"price_spread_rate": 0.0667, "price_list_yuan": [39000, 40100, 40300, 40300, 41600]},
+          "condition": ">5% and <=10%",
+          "adjustment": -0.005,
+          "reason": "价格轻微离散"
+        },
+        {
+          "factor": "target_condition_risk_adjustment",
+          "data": {"risk_flags": ["凹陷", "擦伤", "划痕"]},
+          "condition": "minor_damage_no_clear_paint_or_sheet_metal_rule",
+          "adjustment": 0,
+          "manual_review_required": false,
+          "reason": "小伤只作备注，不擅自改成喷漆/钣金"
+        },
+        {
+          "factor": "score_gap_adjustment",
+          "data": {"score_gap": 5.0},
+          "condition": ">3 and <=5",
+          "adjustment": -0.02,
+          "reason": "参考车明显优于目标车"
+        },
+        {
+          "factor": "price_band_adjustment",
+          "data": {"price_yuan": 41600},
+          "condition": "<50000",
+          "adjustment": 0,
+          "reason": "低价车价格带不额外扣"
+        },
+        {
+          "factor": "model_liquidity_adjustment",
+          "data": {"profile": "compact_sedan"},
+          "condition": "configured_normal_liquidity",
+          "adjustment": 0,
+          "reason": "低价家用轿车，流通正常"
+        },
+        {
+          "factor": "fuel_cost_pressure_adjustment",
+          "data": {"profile": "fuel_cost_pressure=normal"},
+          "condition": "configured_normal_fuel_pressure",
+          "adjustment": 0,
+          "reason": "普通家用轿车，不额外扣"
+        },
+        {
+          "factor": "city_comparability_adjustment",
+          "data": {"reference_city": "唐山", "license_city": "唐山"},
+          "condition": "same_city",
+          "adjustment": 0,
+          "reason": "同城可比"
+        }
+      ],
+      "synthetic_result": {
+        "raw_competition_coefficient": 0.975,
+        "clipped_competition_coefficient": 0.975,
+        "round_strategy": "round_to_100",
+        "target_guazi_listing_price_yuan": 40600,
+        "guazi_service_fee_yuan": 2500,
+        "guazi_net_payout_yuan": 38100,
+        "same_other_deductions_yuan": 4628,
+        "suggested_purchase_price_yuan_if_other_deductions_same": 33472,
+        "manual_review_required": true,
+        "manual_review_reasons": [
+          "TARGET_INSURANCE_COUNT_MISSING_DEFAULT_SCORE_USED",
+          "TARGET_MAX_CLAIM_AMOUNT_MISSING_DEFAULT_SCORE_USED"
+        ],
+        "competition_coefficient_reasons": [
+          "价格轻微离散 -0.005",
+          "参考车高 5 分 -0.02",
+          "小伤未扩大为喷钣扣减"
+        ]
+      }
+    },
+    {
+      "sample_name": "tuang_2017",
+      "target_fingerprint": "大众|途昂|2017款|330TSI 两驱豪华版|白|2018.07",
+      "base_data": {
+        "final_reference_index": 1,
+        "selected_reference_price_yuan": 108900,
+        "selected_reference_score": 96.0,
+        "target_score": 91.0,
+        "score_gap": 5.0,
+        "trisame_count": 2,
+        "trisame_count_source": "S10 trisame boundary patch",
+        "trisame_price_list_yuan": [108900, 117900],
+        "target_condition_text": "原版原漆。风挡碰伤，右后门划伤，主驾驶地板水痕，管柱锈蚀，副驾驶地毯变色，地板发霉，车博士低风险，可能会出进水痕迹。",
+        "inspection_note": "2026.04.01 店复检，未读OBD，左后正常，瓜子上不了，复检王羽。",
+        "license_city": "唐山",
+        "selected_reference_city": "重庆",
+        "guazi_series_tags": null,
+        "model_liquidity_profile": {
+          "vehicle_class": "large_suv",
+          "fuel_cost_pressure": "high",
+          "fuel_cost_adjustment": -0.02,
+          "liquidity_adjustment": 0,
+          "reason": "中大型SUV，330TSI，持有成本和燃油压力较高"
+        }
+      },
+      "adjustments": [
+        {
+          "factor": "sample_reliability_adjustment",
+          "data": {"trisame_count": 2},
+          "condition": "trisame_count=1-2",
+          "adjustment": -0.02,
+          "reason": "样本不足，建议人工复核"
+        },
+        {
+          "factor": "price_distribution_adjustment",
+          "data": {"price_spread_rate": 0.0826, "price_list_yuan": [108900, 117900]},
+          "condition": ">5% and <=10%",
+          "adjustment": -0.005,
+          "reason": "价格轻微离散；ID.3 等非三同车源未使用"
+        },
+        {
+          "factor": "target_condition_risk_adjustment",
+          "data": {
+            "risk_flags": ["水痕", "管柱锈蚀", "地毯变色", "地板发霉", "疑似进水"],
+            "obd_not_read": true
+          },
+          "condition": "water_ingress_risk_strong; obd_note_only",
+          "adjustment": -0.05,
+          "manual_review_required": true,
+          "reason": "疑似进水/水痕/发霉/锈蚀强风险；OBD 未读取 adjustment=0 仅备注"
+        },
+        {
+          "factor": "score_gap_adjustment",
+          "data": {"score_gap": 5.0},
+          "condition": ">3 and <=5",
+          "adjustment": -0.02,
+          "reason": "参考车明显优于目标车"
+        },
+        {
+          "factor": "price_band_adjustment",
+          "data": {"price_yuan": 108900},
+          "condition": ">=100000 and <150000",
+          "adjustment": -0.01,
+          "reason": "10-15 万价格带流通压力"
+        },
+        {
+          "factor": "model_liquidity_adjustment",
+          "data": {"profile": "large_suv"},
+          "condition": "profile_available",
+          "adjustment": 0,
+          "reason": "本轮将中大型 SUV 压力归入 fuel_cost_pressure，不重复扣"
+        },
+        {
+          "factor": "fuel_cost_pressure_adjustment",
+          "data": {"vehicle_class": "large_suv", "power_keyword": "330TSI"},
+          "condition": "large_suv_330tsi_high",
+          "adjustment": -0.02,
+          "reason": "中大型 SUV + 330TSI，燃油和持有成本压力高"
+        },
+        {
+          "factor": "city_comparability_adjustment",
+          "data": {"reference_city": "重庆", "license_city": "唐山"},
+          "condition": "cross_province",
+          "adjustment": -0.01,
+          "reason": "跨省可比性弱"
+        }
+      ],
+      "synthetic_result": {
+        "raw_competition_coefficient": 0.865,
+        "clipped_competition_coefficient": 0.90,
+        "recommended_coefficient_range": [0.90, 0.92],
+        "round_strategy": "strong_risk_floor_to_100",
+        "target_guazi_listing_price_yuan": 98000,
+        "guazi_service_fee_yuan": 3500,
+        "guazi_net_payout_yuan": 94500,
+        "same_other_deductions_yuan": 10852,
+        "suggested_purchase_price_yuan_if_other_deductions_same": 83648,
+        "manual_review_required": true,
+        "manual_review_reasons": [
+          "TARGET_WATER_INGRESS_RISK_REVIEW",
+          "SAMPLE_SHORTAGE_MANUAL_REVIEW",
+          "TARGET_INSURANCE_COUNT_MISSING_DEFAULT_SCORE_USED",
+          "TARGET_MAX_CLAIM_AMOUNT_MISSING_DEFAULT_SCORE_USED"
+        ],
+        "notes": [
+          "OBD_NOT_READ_NOTE",
+          "OBD 未读取不扣分、不单独触发人工审核",
+          "如果业务选择 coefficient=0.92，挂牌约100100，服务费进入4500档"
+        ],
+        "competition_coefficient_reasons": [
+          "真实三同2辆 -0.02",
+          "真实三同价差约8.26% -0.005",
+          "疑似进水/水痕/发霉/锈蚀 -0.05",
+          "OBD 未读取 0",
+          "参考车高5分 -0.02",
+          "10-15万价格带 -0.01",
+          "中大型SUV + 330TSI 燃油/持有成本 -0.02",
+          "重庆 vs 唐山跨省 -0.01"
+        ]
+      }
+    }
+  ],
+  "non_blocking_data_gaps": [
+    "福克斯完整 S10 三同池数量字段未保留，使用 reference_history 中 3 辆真实参考车回放。",
+    "丰田致炫完整 6 辆价格列表未保留，price_distribution_adjustment 按无完整价表且不使用非三同价格处理为 0。",
+    "福克斯未命中本地车型流通性配置，model_liquidity/fuel_cost adjustment 按无依据为 0。"
+  ],
+  "forbidden_policy_checks": {
+    "obd_not_read_used_as_adjustment": false,
+    "obd_not_read_manual_review_code_output": false,
+    "non_trisame_prices_used": false,
+    "more_cars_or_national_recommendation_used": false,
+    "ai_model_used": false
+  },
+  "final_status": "COMPETITION_COEFFICIENT_V1_2_REPLAY_READY"
+}

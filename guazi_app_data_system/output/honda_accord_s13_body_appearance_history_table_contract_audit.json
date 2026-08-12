@@ -1,0 +1,204 @@
+{
+  "status": "HONDA_ACCORD_S13_BODY_APPEARANCE_HISTORY_TABLE_CONTRACT_AUDIT_DONE",
+  "read_only": true,
+  "code_modified": false,
+  "real_device_run": false,
+  "result_json_overwritten": false,
+  "target_fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "final_stop": "HISTORY_REPAIR_COUNT_UNCERTAIN",
+  "s12_audit": {
+    "s12_page_recognized": true,
+    "s12_claim_count_text": "????0?",
+    "s12_claim_count": 0,
+    "s12_max_amount_text": "????0?",
+    "s12_max_amount": 0.0,
+    "body_appearance_text_seen": true,
+    "body_appearance_bounds": [
+      487,
+      247,
+      796,
+      396
+    ],
+    "body_appearance_click_target": [
+      641,
+      321
+    ],
+    "body_appearance_clicked": true,
+    "click_action_id": "S12_ONLY_ALLOWED_ACTION_CLICK_BODY_APPEARANCE / click_strategy=exact_text_node_bounds_after_controlled_scroll",
+    "before_click_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s12_scroll_body_search_tab_0_20260517_162818.png",
+    "before_click_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s12_scroll_body_search_tab_0_20260517_162818.xml",
+    "after_click_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s12_to_s13_20260517_162823.png",
+    "after_click_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s12_to_s13_20260517_162823.xml",
+    "after_click_page_changed": true,
+    "after_click_page_identity": "S13 / ????????????",
+    "s12_contract_executed": true
+  },
+  "first_frame_after_body_appearance": {
+    "s13_table_first_frame_detected": true,
+    "s13_table_first_frame_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s12_to_s13_20260517_162823.png",
+    "s13_table_first_frame_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s12_to_s13_20260517_162823.xml",
+    "region_tabs_seen": {
+      "???": true,
+      "??": true
+    },
+    "history_table_nodes": [
+      {
+        "text": "????????",
+        "bounds": "[117,1852][500,1930]",
+        "class": "android.widget.TextView",
+        "clickable": "false"
+      },
+      {
+        "text": "????",
+        "bounds": "[533,1852][718,1930]",
+        "class": "android.widget.TextView",
+        "clickable": "false"
+      },
+      {
+        "text": "4",
+        "bounds": "[715,1852][754,1930]",
+        "class": "android.widget.TextView",
+        "clickable": "false"
+      },
+      {
+        "text": "????",
+        "bounds": "[845,1852][1033,1930]",
+        "class": "android.widget.TextView",
+        "clickable": "false"
+      },
+      {
+        "text": "0",
+        "bounds": "[1030,1852][1069,1930]",
+        "class": "android.widget.TextView",
+        "clickable": "false"
+      }
+    ],
+    "region_blocks": {
+      "???": {
+        "history_repair_count": 4,
+        "attention_count": 0
+      }
+    },
+    "history_repair_candidates": [
+      {
+        "region": "???",
+        "count": 4,
+        "binding": "same-row local bounds"
+      }
+    ],
+    "clickable_candidates": [
+      {
+        "text": "????",
+        "node_bounds": "[152,1979][312,2041]",
+        "clickable_container_bounds": "[81,1956][611,2067]",
+        "clickable": "true"
+      },
+      {
+        "text": "??????",
+        "node_bounds": "[679,1979][919,2041]",
+        "clickable_container_bounds": "[611,1956][1140,2067]",
+        "clickable": "true"
+      },
+      {
+        "text": "????",
+        "node_bounds": "[152,2086][312,2148]",
+        "clickable_container_bounds": "[81,2063][611,2171]",
+        "clickable": "true"
+      }
+    ],
+    "contract_interpretation": "?????? S13 ????????????? count=4 > 0????????????????????"
+  },
+  "s13_contract_audit": {
+    "s13_page_recognized": true,
+    "s13_history_table_detected": true,
+    "s13_history_table_detected_frame": "s12_to_s13_20260517_162823",
+    "s13_history_table_stop_scroll_decision": "should_stop_but_did_not_stop",
+    "s13_history_repair_raw_nodes": "??????? / ???? / 4 / ???? / 0 ?????",
+    "s13_region_history_count_bindings": {
+      "???": "not_checked_due_to_failure",
+      "??": "not_checked_due_to_failure"
+    },
+    "s13_driver_side_history_count": 4,
+    "s13_rear_history_count": null,
+    "s13_passenger_side_history_count": null,
+    "s13_front_history_count": null,
+    "s13_any_count_gt_zero": true,
+    "s13_target_region_to_click": "???",
+    "s13_specific_condition_entry_seen": true,
+    "s13_specific_condition_entry_bounds": [
+      81,
+      1956,
+      611,
+      2067
+    ],
+    "s13_specific_condition_entry_clicked": false,
+    "s13_to_s14_transition_result": "not_attempted",
+    "s13_contract_executed": false,
+    "s13_contract_missing_step": "???????/??????????? count>0 ????????????????"
+  },
+  "scroll_audit": [
+    {
+      "scroll_iteration": 0,
+      "before_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s12_to_s13_20260517_162823.png",
+      "before_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s12_to_s13_20260517_162823.xml",
+      "after_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_history_repair_scroll_0_20260517_162829.png",
+      "after_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s13_history_repair_scroll_0_20260517_162829.xml",
+      "scroll_reason": "_scroll_s13_to_history_repair_table did not detect history table tokens",
+      "scroll_action_id": "controlled_scroll_towards_history_repair",
+      "scroll_allowed_by_page_contract": false,
+      "history_table_already_visible": true,
+      "count_bindable_before_scroll": true,
+      "why_no_stop": "_has_s13_history_repair_table ???? token?????????????",
+      "why_no_detail_click": "count ?? parser/dispatcher ?????? tap_repair_item_if_nonzero?"
+    },
+    {
+      "scroll_iteration": 1,
+      "before_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_history_repair_scroll_0_20260517_162829.png",
+      "before_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s13_history_repair_scroll_0_20260517_162829.xml",
+      "after_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_history_repair_scroll_1_20260517_162834.png",
+      "after_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s13_history_repair_scroll_1_20260517_162834.xml",
+      "scroll_reason": "continued search for history table after missing first frame",
+      "scroll_action_id": "controlled_scroll_towards_history_repair",
+      "scroll_allowed_by_page_contract": false,
+      "history_table_already_visible": "already passed",
+      "count_bindable_before_scroll": false,
+      "why_no_stop": "???????????????????????????",
+      "why_no_detail_click": "???? S13 count>0 ???"
+    }
+  ],
+  "code_evidence": [
+    {
+      "file": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py",
+      "line": 7555,
+      "function": "_has_s13_history_repair_table",
+      "finding": "???? token ???????? ??????????? XML ???????????"
+    },
+    {
+      "file": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py",
+      "line": 7560,
+      "function": "_scroll_s13_to_history_repair_table",
+      "finding": "?????????? controlled scroll ?????????????"
+    },
+    {
+      "file": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py",
+      "line": 7911,
+      "function": "handle_s13",
+      "finding": "handle_s13 ? count>0 ???????????????????????? count ????"
+    }
+  ],
+  "final_classifications": [
+    "A. S12_BODY_APPEARANCE_CLICK_EXECUTED",
+    "D. S13_HISTORY_TABLE_REACHED_BUT_SCROLL_CONTINUED",
+    "E. S13_HISTORY_COUNT_NODE_EXISTS_BUT_NOT_PARSED"
+  ],
+  "primary_conclusion": "D. S13_HISTORY_TABLE_REACHED_BUT_SCROLL_CONTINUED",
+  "answers": {
+    "q1": "S12 ?????????????? bounds=[487,247,796,396]????=[641,321]?",
+    "q2": "?????? s12_to_s13_20260517_162823 ??????????????",
+    "q3": "????? S13 ??????????????? / ???? / 4 ?????????????????",
+    "q4": "?????????? S13 history table ???????? token????????????????? scroll_to_find_history_table?",
+    "q5": "?????????????? count ?????dispatcher ??? tap_repair_item_if_nonzero ???????????",
+    "q6": "????????????????????????? count ????",
+    "q7": "????? S13 ??? / parser ?? / action dispatcher ??????? S12 ??????????????"
+  }
+}

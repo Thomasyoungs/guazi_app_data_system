@@ -1,0 +1,147 @@
+{
+  "status": "TARGET_SCORE_PERSISTED_FOR_TERMINAL_OUTPUT",
+  "patch_name": "PATCH_TARGET_SCORE_PERSISTENCE_FOR_TERMINAL_OUTPUT",
+  "generated_at": "2026-05-16T03:27:14.081728+00:00",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "modified_scope": "target_score persistence and terminal output extraction only",
+  "forbidden_scope_touched": false,
+  "collection_flow_changed": false,
+  "s14_logic_changed": false,
+  "pricing_changed": false,
+  "scoring_rule_changed": false,
+  "reference_score_calculation_changed": false,
+  "implementation": {
+    "runtime_persistence_point": "handle_s15 stores score_target(...).to_dict() into context.current_reference.target_score before reference_history persistence",
+    "terminal_extraction_sources_in_order": [
+      "result.target_score",
+      "issue_context.target_score",
+      "current_reference.target_score",
+      "reference_history[].target_score"
+    ],
+    "score_delta_inference_disabled": true,
+    "missing_reason": "target_score_not_available_in_runtime_context"
+  },
+  "offline_validation": {
+    "validation_name": "target_score_persistence_for_terminal_output_offline_validation",
+    "validated_at": "2026-05-16T03:26:47.491285+00:00",
+    "source_sample": "output/result_s10_to_s16.json",
+    "validation_passed": true,
+    "checks": {
+      "with_target_available_true": true,
+      "with_target_score_92": true,
+      "with_target_manual_payload_score_92": true,
+      "with_target_s17_payload_score_92": true,
+      "without_target_available_false": true,
+      "without_target_score_null": true,
+      "without_target_missing_reason": true,
+      "no_score_delta_inference": true,
+      "reference_1_still_70_trustworthy": true,
+      "old_78_absent_with_target": true,
+      "old_78_absent_without_target": true,
+      "final_price_null": true,
+      "auto_pricing_allowed_false": true,
+      "manual_review_required_true": true,
+      "reference_2_deduped_once": true,
+      "reference_2_official_report_not_available": true
+    },
+    "with_target_sample_preview": {
+      "target_score": 92.0,
+      "target_score_available": true,
+      "target_score_source": "reference_history[1].target_score",
+      "manual_review_payload_target": {
+        "task_id": "",
+        "target_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+        "target_score": 92.0,
+        "target_score_available": true,
+        "target_score_source": "reference_history[1].target_score"
+      },
+      "reference_outcomes": [
+        {
+          "reference_index": 1,
+          "reference_id": null,
+          "listing_key": "1:日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版:2021年 | 12.5万公里 | 安庆:8.48万",
+          "reference_title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+          "reference_price_yuan": null,
+          "reference_price_text": "8.48万",
+          "outcome": "scored_but_below_target",
+          "included_in_auto_pricing": false,
+          "exclusion_reason": null,
+          "reference_score": 70.0,
+          "reference_score_trustworthy": true,
+          "score_relation_to_target": "below_target",
+          "official_report_available": true,
+          "s14_collect_done": true,
+          "notes": "完整采集但分数低于目标车，未作为自动定价参考"
+        },
+        {
+          "reference_index": 2,
+          "reference_id": null,
+          "listing_key": "2:日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版:2021年 | 13.4万公里 | 唐山:10.59万",
+          "reference_title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+          "reference_price_yuan": null,
+          "reference_price_text": "10.59万",
+          "outcome": "excluded",
+          "included_in_auto_pricing": false,
+          "exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+          "reference_score": null,
+          "reference_score_trustworthy": null,
+          "score_relation_to_target": "unknown",
+          "official_report_available": false,
+          "s14_collect_done": null,
+          "notes": "无查看完整报告入口，当前参考车排除"
+        }
+      ]
+    },
+    "without_target_sample_preview": {
+      "target_score": null,
+      "target_score_available": false,
+      "target_score_source": "missing_runtime_target_score",
+      "target_score_missing_reason": "target_score_not_available_in_runtime_context",
+      "manual_review_payload_target": {
+        "task_id": "",
+        "target_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+        "target_score": null,
+        "target_score_available": false,
+        "target_score_source": "missing_runtime_target_score",
+        "target_score_missing_reason": "target_score_not_available_in_runtime_context"
+      }
+    },
+    "policy": {
+      "score_delta_inference_disabled": true,
+      "allowed_sources": [
+        "result.target_score",
+        "issue_context.target_score",
+        "current_reference.target_score",
+        "reference_history[].target_score"
+      ]
+    }
+  },
+  "py_compile": {
+    "command": "python -m py_compile scripts/runtime_s10_to_s16_mainline.py (executed with bundled Python executable)",
+    "passed": true
+  },
+  "acceptance": {
+    "constructed_runtime_target_score_available_true": true,
+    "constructed_runtime_target_score_92": true,
+    "manual_review_payload_target_score_written": true,
+    "s17_manual_review_payload_target_score_written": true,
+    "missing_target_score_keeps_null": true,
+    "missing_target_score_reason_written": true,
+    "no_score_delta_inference": true,
+    "reference_1_score_70_trustworthy": true,
+    "old_78_absent": true,
+    "final_price_null": true,
+    "auto_pricing_allowed_false": true,
+    "manual_review_required_true": true,
+    "reference_2_deduped_once": true,
+    "reference_2_official_report_not_available": true,
+    "s16_not_entered": true
+  },
+  "evidence_paths": {
+    "offline_validation": "output/target_score_persistence_for_terminal_output_offline_validation.json",
+    "patch_report_json": "output/target_score_persistence_for_terminal_output_patch.json",
+    "patch_report_md": "output/target_score_persistence_for_terminal_output_patch_latest.md"
+  }
+}

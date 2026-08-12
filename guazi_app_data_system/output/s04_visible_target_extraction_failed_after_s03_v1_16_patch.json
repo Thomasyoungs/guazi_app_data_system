@@ -1,0 +1,99 @@
+{
+  "status": "DIAGNOSE_AND_PATCH_S04_VISIBLE_TARGET_EXTRACTION_FAILED_AFTER_S03_V1_16_LOCK_DONE",
+  "created_at": "2026-05-11T16:45:00+08:00",
+  "mode": "diagnose_and_minimal_patch_no_device_run",
+  "target_fingerprint": "零跑|C10|2026款|210悦享版|白|2026.02",
+  "constraints_observed": {
+    "s03_modified": false,
+    "s03_old_paths_restored": false,
+    "second_stage_modified": false,
+    "second_stage_started": false,
+    "entered_s11": false,
+    "reference_collection_started": false,
+    "pricing_started": false,
+    "brand_zone_continuation_allowed": false
+  },
+  "diagnosis": {
+    "failure_status": "S04_VISIBLE_TARGET_EXTRACTION_FAILED",
+    "evidence_xml": "artifacts/debug/s04_series_down_1_20260511_160350.xml",
+    "evidence_screenshot": "artifacts/screenshots/s04_series_down_1_20260511_160350.png",
+    "page_type": "STANDARD_S04_SERIES_PAGE",
+    "brand_zone_mixed_list": false,
+    "raw_xml_contains_target_series": true,
+    "visible_series_names_after_patch": [
+      "零跑S01",
+      "零跑C11",
+      "零跑C16",
+      "零跑C10",
+      "零跑B10",
+      "零跑A10",
+      "零跑D19"
+    ],
+    "root_cause": "target series in task is C10, while the standard S04 visible row is 零跑C10; the previous exact-name extraction did not treat brand-prefixed row names as the same target series.",
+    "diagnosis_classification": "S04_STANDARD_SERIES_VISIBLE_EXTRACTION_ALIAS_GAP"
+  },
+  "patch": {
+    "modified_file": "scripts/runtime_s01_to_s10_mainline.py",
+    "scope": "S04 target series visible extraction and same-row model-button binding only",
+    "new_or_updated_functions": [
+      "_s04_target_series_aliases(params, target_series)",
+      "_s04_series_matches_target(series_name, target_aliases, target_series)",
+      "_find_s04_series_item(snapshot, target_series, target_aliases)",
+      "_find_series_model_button(snapshot, target_series, target_aliases)"
+    ],
+    "task_param_fields_added": [
+      "series_alias"
+    ],
+    "target_aliases_used_offline": [
+      "C10",
+      "零跑C10",
+      "零跑 C10"
+    ],
+    "allowed_click_after_patch": "standard S04 only: click the target series same-row right-side 车型 button",
+    "forbidden_paths_preserved": [
+      "brand-zone mixed list continuation",
+      "clicking 车型配置 inside brand-zone mixed list",
+      "treating brand-zone mixed list as S04 normal page"
+    ]
+  },
+  "offline_validation": {
+    "py_compile": "passed",
+    "standard_s04_xml_replay": {
+      "target_in_visible_series": true,
+      "matched_series_name": "零跑C10",
+      "matched_series_bounds": [
+        52,
+        1311,
+        1168,
+        1617
+      ],
+      "candidate_model_button_bounds": [
+        [
+          869,
+          1361,
+          1129,
+          1540
+        ]
+      ],
+      "selected_model_button_text": "车型",
+      "selected_model_button_bounds": [
+        869,
+        1361,
+        1129,
+        1540
+      ],
+      "selected_click_target": "same-row right-side 车型",
+      "passed": true
+    },
+    "brand_zone_guard": {
+      "continuation_allowed": false,
+      "patch_does_not_add_brand_zone_branch": true
+    }
+  },
+  "device_validation": {
+    "real_device_run": false,
+    "reason": "This round requested S04 diagnosis and minimal patch only; no second stage or sample continuation was started."
+  },
+  "next_step": "Run first-stage-only validation if the user wants to verify S04 -> S05 on device.",
+  "final_status": "DIAGNOSE_AND_PATCH_S04_VISIBLE_TARGET_EXTRACTION_FAILED_AFTER_S03_V1_16_LOCK_DONE"
+}

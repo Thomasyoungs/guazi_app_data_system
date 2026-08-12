@@ -1,0 +1,1018 @@
+﻿{
+    "actions":  {
+                    "tap_left_bottom_skip":  {
+                                                 "type":  "tap_region",
+                                                 "region":  "left_bottom",
+                                                 "description":  "广告页左下角跳过"
+                                             },
+                    "wait_for_home":  {
+                                          "type":  "wait",
+                                          "seconds":  8
+                                      },
+                    "click_bottom_select_car_tab":  {
+                                                        "type":  "tap_s01_bottom_select_car_tab",
+                                                        "description":  "Only tap the bottom Select Car tab from the verified Home tab state."
+                                                    },
+                    "click_brand_entry":  {
+                                              "type":  "tap_text",
+                                              "text":  "品牌",
+                                              "description":  "Only tap the explicit Brand entry from the verified S02 select car tab state."
+                                          },
+                    "tap_brand_filter":  {
+                                             "type":  "tap_text",
+                                             "text":  "品牌"
+                                         },
+                    "tap_brand_letter":  {
+                                             "type":  "tap_dynamic",
+                                             "source":  "target_brand_initial"
+                                         },
+                    "tap_target_brand":  {
+                                             "type":  "tap_dynamic",
+                                             "source":  "target_brand"
+                                         },
+                    "scroll_brand_list":  {
+                                              "type":  "swipe",
+                                              "direction":  "up"
+                                          },
+                    "scroll_series_list":  {
+                                               "type":  "swipe",
+                                               "direction":  "up"
+                                           },
+                    "tap_target_year":  {
+                                            "type":  "tap_dynamic",
+                                            "source":  "target_model_year",
+                                            "description":  "On S05, click only the exact target model year from the verified task, such as 2020款.",
+                                            "target_region":  "model_year_list",
+                                            "forbidden_targets":  [
+                                                                      "other_model_year",
+                                                                      "target_trim",
+                                                                      "confirm_button",
+                                                                      "vehicle_list"
+                                                                  ]
+                                        },
+                    "tap_exact_trim":  {
+                                           "type":  "tap_dynamic",
+                                           "source":  "target_trim",
+                                           "description":  "On S05_MODEL_YEAR_SELECTED, click only the exact target trim from the verified task. Similar or partial configuration names are forbidden.",
+                                           "target_region":  "configuration_list",
+                                           "exact_match_required":  true,
+                                           "forbidden_targets":  [
+                                                                     "similar_trim",
+                                                                     "partial_trim_match",
+                                                                     "model_year",
+                                                                     "confirm_button",
+                                                                     "vehicle_list"
+                                                                 ]
+                                       },
+                    "tap_green_confirm":  {
+                                              "type":  "tap_text",
+                                              "text":  "确定",
+                                              "precondition":  "S05_TRIM_SELECTED",
+                                              "target_region":  "confirm_button",
+                                              "description":  "On S05_TRIM_SELECTED, click only the explicit 确定 button once, then stop after read-only page recognition.",
+                                              "forbidden_targets":  [
+                                                                        "model_year",
+                                                                        "trim",
+                                                                        "filter",
+                                                                        "color",
+                                                                        "year_filter",
+                                                                        "sort",
+                                                                        "comprehensive_sort",
+                                                                        "price_low_to_high",
+                                                                        "vehicle_card",
+                                                                        "vehicle_detail",
+                                                                        "collect_vehicle_data"
+                                                                    ]
+                                          },
+                    "tap_trim_filter":  {
+                                            "type":  "tap_text",
+                                            "text":  "车型配置"
+                                        },
+                    "tap_color_filter":  {
+                                             "type":  "tap_text",
+                                             "text":  "颜色"
+                                         },
+                    "tap_target_color":  {
+                                             "type":  "tap_dynamic",
+                                             "source":  "target_color"
+                                         },
+                    "tap_age_filter":  {
+                                           "type":  "tap_text",
+                                           "text":  "车龄"
+                                       },
+                    "set_exact_age":  {
+                                          "type":  "slider",
+                                          "source":  "target_age_years"
+                                      },
+                    "apply_narrowest_year_filter":  {
+                                                        "type":  "filter",
+                                                        "mode":  "narrowest_available",
+                                                        "description":  "APP 无法精确年份筛选时，只允许采用最窄筛选，不得扩大为三同车源"
+                                                    },
+                    "tap_view_cars":  {
+                                          "type":  "tap_text_prefix",
+                                          "text":  "查看"
+                                      },
+                    "collect_list_whitelist_fields":  {
+                                                          "type":  "collect",
+                                                          "fields":  [
+                                                                         "list_price_10k",
+                                                                         "list_year",
+                                                                         "list_mileage_10k_km"
+                                                                     ]
+                                                      },
+                    "filter_list_by_exact_year_and_color":  {
+                                                                "type":  "filter",
+                                                                "mode":  "exact_year_and_exact_color",
+                                                                "description":  "列表二次校验，只保留相同年份和严格相同颜色的三同车源"
+                                                            },
+                    "tap_sort_if_present":  {
+                                                "type":  "tap_text",
+                                                "text":  "综合排序",
+                                                "description":  "Use only after same-source count confirms more than one vehicle."
+                                            },
+                    "tap_single_car_if_no_sort":  {
+                                                      "type":  "tap_vehicle_title",
+                                                      "precondition":  "no_sort_and_single_car",
+                                                      "description":  "Use only after same-source count confirms exactly one vehicle; do not sort first."
+                                                  },
+                    "tap_price_low_to_high":  {
+                                                  "type":  "tap_text",
+                                                  "text":  "价格从低到高",
+                                                  "description":  "Use only after tap_sort_if_present in the multi-vehicle same-source result list."
+                                              },
+                    "tap_next_car_by_price_order":  {
+                                                        "type":  "tap_vehicle_title",
+                                                        "order":  "price_low_to_high",
+                                                        "description":  "Enter detail after price low-to-high sort has been verified."
+                                                    },
+                    "detect_same_source_vehicle_count":  {
+                                                             "type":  "read_only_count_vehicle_cards",
+                                                             "precondition":  "S07_VEHICLE_LIST_PAGE",
+                                                             "also_allowed_in_states":  [
+                                                                                            "S07_DISCOVERY_RESULT_MIXED_PAGE"
+                                                                                        ],
+                                                             "description":  "Read-only count detection for the same-source result list. Reliable source gate with strong source evidence is the only gate: if the list was reached from 查看X辆 after S08 color/age confirmation or from a vehicle-detail back navigation, the same-source chain may continue even when discovery/zone anchors are still visible. If source is unreliable or evidence is insufficient, stop with RESULT_LIST_SOURCE_UNRELIABLE before any sort or detail action. If count cannot be stably determined, stop with COUNT_UNCERTAIN before sorting or entering detail.",
+                                                             "requires_reliable_result_list_source":  true,
+                                                             "requires_strong_source_evidence_for_reliable_source":  true,
+                                                             "reliable_sources":  [
+                                                                                      "from_s08_view_result",
+                                                                                      "from_vehicle_detail_back"
+                                                                                  ],
+                                                             "on_unreliable_source":  "RESULT_LIST_SOURCE_UNRELIABLE",
+                                                             "on_uncertain":  "COUNT_UNCERTAIN",
+                                                             "forbidden_targets":  [
+                                                                                       "vehicle_card_click",
+                                                                                       "sort_click",
+                                                                                       "price_low_to_high_click",
+                                                                                       "detail_page",
+                                                                                       "vehicle_field_collection"
+                                                                                   ]
+                                                         },
+                    "diagnose_discovery_result_mixed_page":  {
+                                                                 "type":  "read_only_panel_contract",
+                                                                 "precondition":  "S07_DISCOVERY_RESULT_MIXED_PAGE",
+                                                                 "description":  "Read-only diagnosis for a discovery/result mixed page that combines discovery-zone anchors with vehicle result cards. Discovery anchors do not negate same-source result-list identity. The only gate is reliable source evidence. Direct sort or detail entry still remains forbidden until count branching is completed.",
+                                                                 "on_uncertain":  "RESULT_PAGE_VARIANT_UNCLASSIFIED",
+                                                                 "forbidden_targets":  [
+                                                                                           "vehicle_card_click",
+                                                                                           "sort_click",
+                                                                                           "price_low_to_high_click",
+                                                                                           "model_config_click",
+                                                                                           "detail_page",
+                                                                                           "vehicle_field_collection"
+                                                                                       ]
+                                                             },
+                    "collect_transfer_count":  {
+                                                   "type":  "collect",
+                                                   "fields":  [
+                                                                  "transfer_count"
+                                                              ]
+                                               },
+                    "scroll_to_report":  {
+                                             "type":  "swipe_until_text",
+                                             "text":  "查看完整报告"
+                                         },
+                    "tap_full_report":  {
+                                            "type":  "tap_text",
+                                            "text":  "查看完整报告"
+                                        },
+                    "collect_claim_count":  {
+                                                "type":  "collect",
+                                                "fields":  [
+                                                               "accident_count"
+                                                           ]
+                                            },
+                    "collect_max_amount":  {
+                                               "type":  "collect",
+                                               "fields":  [
+                                                              "max_accident_amount"
+                                                          ]
+                                           },
+                    "scroll_to_body_appearance":  {
+                                                      "type":  "swipe_until_text",
+                                                      "text":  "车身外观"
+                                                  },
+                    "tap_body_appearance":  {
+                                                "type":  "tap_text",
+                                                "text":  "车身外观"
+                                            },
+                    "collect_repair_counts":  {
+                                                  "type":  "collect",
+                                                  "fields":  [
+                                                                 "repair_counts"
+                                                             ]
+                                              },
+                    "tap_repair_item_if_nonzero":  {
+                                                       "type":  "tap_dynamic",
+                                                       "source":  "nonzero_repair_item"
+                                                   },
+                    "return_to_s10_if_all_zero":  {
+                                                      "type":  "controlled_return",
+                                                      "target":  "S10"
+                                                  },
+                    "swipe_next_damage":  {
+                                              "type":  "swipe",
+                                              "direction":  "left"
+                                          },
+                    "score_reference_car":  {
+                                                "type":  "internal"
+                                            },
+                    "select_reference_or_continue":  {
+                                                         "type":  "internal"
+                                                     },
+                    "calculate_prices":  {
+                                             "type":  "internal"
+                                         },
+                    "append_review_reasons":  {
+                                                  "type":  "internal"
+                                              },
+                    "write_pricing_result":  {
+                                                 "type":  "internal"
+                                             },
+                    "write_reference_detail":  {
+                                                   "type":  "internal"
+                                               },
+                    "update_task_status":  {
+                                               "type":  "internal"
+                                           },
+                    "click_series_model_button":  {
+                                                      "type":  "tap_scoped_text",
+                                                      "text":  "车型",
+                                                      "target_role":  "series_model_button",
+                                                      "target_series_context_key":  "series",
+                                                      "description":  "On S04, locate the target series row and click only the right-side 车型 button in that same row or card.",
+                                                      "forbidden_targets":  [
+                                                                                "series_card",
+                                                                                "series_name",
+                                                                                "other_series",
+                                                                                "other_series_model_button"
+                                                                            ]
+                                                  },
+                    "detect_vehicle_model_config_entry":  {
+                                                              "type":  "read_only_detect_text",
+                                                              "text":  "车型配置",
+                                                              "target_region":  "vehicle_list_filter_bar",
+                                                              "description":  "Read-only detection of the explicit 车型配置 entry on S07_VEHICLE_LIST_PAGE. Does not click. Outputs entry text, bounds, and region only. Never substitute 筛选.",
+                                                              "on_not_found":  "VEHICLE_MODEL_CONFIG_ENTRY_NOT_FOUND",
+                                                              "forbidden_targets":  [
+                                                                                        "generic_filter",
+                                                                                        "filter",
+                                                                                        "color_filter",
+                                                                                        "year_filter",
+                                                                                        "sort",
+                                                                                        "comprehensive_sort",
+                                                                                        "price_low_to_high",
+                                                                                        "vehicle_card",
+                                                                                        "vehicle_detail",
+                                                                                        "vehicle_data"
+                                                                                    ]
+                                                          },
+                    "click_vehicle_model_config_entry":  {
+                                                             "type":  "tap_text",
+                                                             "text":  "车型配置",
+                                                             "precondition":  "S07_VEHICLE_LIST_PAGE",
+                                                             "target_region":  "vehicle_list_filter_bar",
+                                                             "description":  "Only click the explicit 车型配置 entry after explicit user authorization. Never substitute 筛选, color, year, sort, or vehicle card controls. Recapture screenshot/XML and stop after recognizing the model-config page or popup.",
+                                                             "requires_explicit_user_authorization":  true,
+                                                             "forbidden_targets":  [
+                                                                                       "generic_filter",
+                                                                                       "filter",
+                                                                                       "color_filter",
+                                                                                       "year_filter",
+                                                                                       "sort",
+                                                                                       "comprehensive_sort",
+                                                                                       "price_low_to_high",
+                                                                                       "vehicle_card",
+                                                                                       "vehicle_detail",
+                                                                                       "vehicle_data"
+                                                                                   ]
+                                                         },
+                    "check_adb_available":  {
+                                                "type":  "device_gate",
+                                                "description":  "Read-only check that an adb executable is available."
+                                            },
+                    "adb_version":  {
+                                        "type":  "device_gate",
+                                        "command":  "adb version",
+                                        "description":  "Read-only adb version check before device state classification."
+                                    },
+                    "adb_kill_server":  {
+                                            "type":  "device_gate_recovery",
+                                            "command":  "adb kill-server",
+                                            "max_auto_retries":  1,
+                                            "description":  "Allowed only for approved transient device-not-found recovery."
+                                        },
+                    "adb_start_server":  {
+                                             "type":  "device_gate_recovery",
+                                             "command":  "adb start-server",
+                                             "max_auto_retries":  1,
+                                             "description":  "Allowed only after adb_kill_server during approved transient recovery."
+                                         },
+                    "adb_devices_l":  {
+                                          "type":  "device_gate",
+                                          "command":  "adb devices -l",
+                                          "description":  "Read device list and classify device / unauthorized / offline / empty."
+                                      },
+                    "classify_device_state":  {
+                                                  "type":  "internal",
+                                                  "description":  "Classify adb devices -l result before any APP launch or page operation."
+                                              },
+                    "read_vehicle_model_config_panel_contract":  {
+                                                                     "type":  "read_only_panel_contract",
+                                                                     "precondition":  "S08_VEHICLE_MODEL_CONFIG_PANEL",
+                                                                     "target_region":  "vehicle_model_config_panel",
+                                                                     "description":  "Read-only recognition of the S08 vehicle model-config panel structure. It may capture screenshot/XML and identify panel-level controls only; it must not click any panel item or read vehicle-source fields.",
+                                                                     "outputs":  [
+                                                                                     "panel_title_or_marker",
+                                                                                     "selected_model_config_markers",
+                                                                                     "color_entry_bounds",
+                                                                                     "year_or_age_entry_bounds",
+                                                                                     "confirm_or_view_result_button_bounds",
+                                                                                     "reset_button_present",
+                                                                                     "close_button_present"
+                                                                                 ],
+                                                                     "forbidden_targets":  [
+                                                                                               "color_filter",
+                                                                                               "year_filter",
+                                                                                               "age_filter",
+                                                                                               "registration_year_filter",
+                                                                                               "confirm_button",
+                                                                                               "view_result_button",
+                                                                                               "reset_button",
+                                                                                               "close_button",
+                                                                                               "generic_filter",
+                                                                                               "sort",
+                                                                                               "comprehensive_sort",
+                                                                                               "price_low_to_high",
+                                                                                               "vehicle_card",
+                                                                                               "vehicle_detail",
+                                                                                               "vehicle_data"
+                                                                                           ]
+                                                                 },
+                    "click_color_entry":  {
+                                              "type":  "tap_text",
+                                              "text":  "颜色",
+                                              "precondition":  "S08_VEHICLE_MODEL_CONFIG_PANEL",
+                                              "target_region":  "vehicle_model_config_panel_color_entry",
+                                              "description":  "Only click the explicit color entry on S08 once after explicit user authorization. Then recapture screenshot/XML and only read the color-selection area. It must not click target color or any other color option.",
+                                              "requires_explicit_user_authorization":  true,
+                                              "forbidden_targets":  [
+                                                                        "target_color_option",
+                                                                        "similar_color_option",
+                                                                        "year_filter",
+                                                                        "age_filter",
+                                                                        "confirm_button",
+                                                                        "view_result_button",
+                                                                        "reset_button",
+                                                                        "close_button",
+                                                                        "sort",
+                                                                        "vehicle_card",
+                                                                        "vehicle_detail",
+                                                                        "vehicle_data"
+                                                                    ]
+                                          },
+                    "read_color_selection_panel_contract":  {
+                                                                "type":  "read_only_panel_contract",
+                                                                "precondition":  "S08_COLOR_SELECTION_PANEL",
+                                                                "target_region":  "vehicle_model_config_panel_color_area",
+                                                                "description":  "Read-only recognition of the color selection area. Locate exact target color text only; do not click any color.",
+                                                                "outputs":  [
+                                                                                "target_color_found",
+                                                                                "target_color_bounds"
+                                                                            ],
+                                                                "forbidden_targets":  [
+                                                                                          "target_color_option",
+                                                                                          "similar_color_option",
+                                                                                          "year_filter",
+                                                                                          "age_filter",
+                                                                                          "confirm_button",
+                                                                                          "view_result_button",
+                                                                                          "reset_button",
+                                                                                          "close_button",
+                                                                                          "sort",
+                                                                                          "vehicle_card",
+                                                                                          "vehicle_detail",
+                                                                                          "vehicle_data"
+                                                                                      ]
+                                                            },
+                    "click_target_color_option":  {
+                                                      "type":  "tap_dynamic",
+                                                      "source":  "target_color",
+                                                      "precondition":  "S08_COLOR_SELECTION_PANEL",
+                                                      "target_region":  "color_selection_area",
+                                                      "exact_match_required":  true,
+                                                      "description":  "Only click the exact target color from the verified task once. Similar colors, color families, fuzzy match, and aliases are forbidden. Then recapture screenshot/XML and verify selected state only.",
+                                                      "requires_explicit_user_authorization":  true,
+                                                      "forbidden_targets":  [
+                                                                                "similar_color_option",
+                                                                                "pearl_white",
+                                                                                "off_white",
+                                                                                "other_color_option",
+                                                                                "year_filter",
+                                                                                "age_filter",
+                                                                                "confirm_button",
+                                                                                "view_result_button",
+                                                                                "reset_button",
+                                                                                "close_button",
+                                                                                "sort",
+                                                                                "vehicle_card",
+                                                                                "vehicle_detail",
+                                                                                "vehicle_data"
+                                                                            ]
+                                                  },
+                    "read_current_selected_color":  {
+                                                        "type":  "read_only_panel_contract",
+                                                        "precondition":  "S08_COLOR_STALE_AFTER_TASK_CHANGE",
+                                                        "target_region":  "vehicle_model_config_panel_color_state",
+                                                        "description":  "Read-only inspect the currently selected color in S08 after task color changes. Output selected_color and bounds only; never click any color or downstream control.",
+                                                        "outputs":  [
+                                                                        "selected_color",
+                                                                        "selected_color_bounds",
+                                                                        "task_color",
+                                                                        "selected_color_matches_task"
+                                                                    ],
+                                                        "forbidden_targets":  [
+                                                                                  "target_color_option",
+                                                                                  "old_color_option",
+                                                                                  "similar_color_option",
+                                                                                  "year_or_age_entry",
+                                                                                  "exact_age_slider",
+                                                                                  "confirm_button",
+                                                                                  "view_result_button",
+                                                                                  "vehicle_card",
+                                                                                  "vehicle_detail",
+                                                                                  "vehicle_data"
+                                                                              ]
+                                                    },
+                    "detect_target_color_entry":  {
+                                                      "type":  "read_only_detect_text",
+                                                      "precondition":  "S08_COLOR_STALE_AFTER_TASK_CHANGE",
+                                                      "source":  "target_color",
+                                                      "target_region":  "color_selection_area_or_color_entry",
+                                                      "description":  "Read-only detect the task target color entry after stale color detection. If the color list is already open, output the target color bounds; otherwise report that color entry must be reopened next round. Do not click.",
+                                                      "outputs":  [
+                                                                      "target_color_found",
+                                                                      "target_color_bounds",
+                                                                      "color_entry_visible"
+                                                                  ],
+                                                      "forbidden_targets":  [
+                                                                                "target_color_option",
+                                                                                "old_color_option",
+                                                                                "similar_color_option",
+                                                                                "year_or_age_entry",
+                                                                                "exact_age_slider",
+                                                                                "confirm_button",
+                                                                                "view_result_button",
+                                                                                "vehicle_card",
+                                                                                "vehicle_detail",
+                                                                                "vehicle_data"
+                                                                            ]
+                                                  },
+                    "click_year_or_age_entry":  {
+                                                    "type":  "tap_scoped_text",
+                                                    "precondition":  "S08_COLOR_SELECTED",
+                                                    "also_allowed_in_states":  [
+                                                                                   "S08_COLOR_SELECTED_SINGLE_TARGET"
+                                                                               ],
+                                                    "target_region":  "vehicle_model_config_panel_year_or_age_entry",
+                                                    "target_role":  "year_or_age_entry",
+                                                    "requires_selected_color_confirmed_in_panel":  true,
+                                                    "required_context_flags":  [
+                                                                                   "selected_color_ui_confirmed",
+                                                                                   "selected_color_confirmed_in_panel",
+                                                                                   "selected_color_visible_in_panel"
+                                                                               ],
+                                                    "accepted_labels":  [
+                                                                            "年款",
+                                                                            "年份",
+                                                                            "车龄",
+                                                                            "上牌年份",
+                                                                            "上牌时间"
+                                                                        ],
+                                                    "description":  "Only click the explicit year/age entry on S08 once after explicit user authorization. After entering S08_YEAR_SELECTION_PANEL, the next contract step is to detect or click only the left-side 车龄 tab. It must not scan option lists, click age options, click unlimited age, drag sliders, click confirm, or click vehicle cards.",
+                                                    "requires_explicit_user_authorization":  true,
+                                                    "forbidden_targets":  [
+                                                                              "unlimited_age",
+                                                                              "age_option",
+                                                                              "age_range_option",
+                                                                              "year_option",
+                                                                              "color_filter",
+                                                                              "confirm_button",
+                                                                              "view_result_button",
+                                                                              "reset_button",
+                                                                              "close_button",
+                                                                              "sort",
+                                                                              "vehicle_card",
+                                                                              "vehicle_detail",
+                                                                              "vehicle_data"
+                                                                          ]
+                                                },
+                    "detect_left_age_tab":  {
+                                                "type":  "read_only_detect_text",
+                                                "text":  "车龄",
+                                                "precondition":  "S08_YEAR_SELECTION_PANEL",
+                                                "target_region":  "vehicle_model_config_panel_left_nav",
+                                                "description":  "Read-only detect the left-side 车龄 tab on S08 year selection. Output text, bounds, and region only. Never substitute 不限车龄 or any age option.",
+                                                "on_not_found":  "LEFT_AGE_TAB_NOT_FOUND",
+                                                "forbidden_targets":  [
+                                                                          "unlimited_age",
+                                                                          "age_option",
+                                                                          "age_range_option",
+                                                                          "confirm_button",
+                                                                          "view_result_button",
+                                                                          "vehicle_card",
+                                                                          "vehicle_detail",
+                                                                          "vehicle_data"
+                                                                      ]
+                                            },
+                    "click_left_age_tab":  {
+                                               "type":  "tap_text",
+                                               "text":  "车龄",
+                                               "precondition":  "S08_YEAR_SELECTION_PANEL",
+                                               "target_region":  "vehicle_model_config_panel_left_nav",
+                                               "target_role":  "left_age_tab",
+                                               "description":  "Only click the explicit left-side 车龄 tab. Never click 不限车龄 or any age option. After clicking, recapture screenshot/XML and verify the right-side exact age slider/track.",
+                                               "requires_explicit_user_authorization":  true,
+                                               "forbidden_targets":  [
+                                                                         "unlimited_age",
+                                                                         "age_option",
+                                                                         "age_range_option",
+                                                                         "confirm_button",
+                                                                         "view_result_button",
+                                                                         "vehicle_card",
+                                                                         "vehicle_detail",
+                                                                         "vehicle_data"
+                                                                     ]
+                                           },
+                    "detect_age_exact_slider":  {
+                                                    "type":  "read_only_panel_contract",
+                                                    "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                    "target_region":  "vehicle_model_config_panel_age_slider",
+                                                    "description":  "Read-only detect the exact dual-handle age slider and track. Output slider bounds, track bounds, current range label, and any visible handle evidence. Do not drag the slider.",
+                                                    "outputs":  [
+                                                                    "slider_bounds",
+                                                                    "track_bounds",
+                                                                    "current_range_label",
+                                                                    "min_age_value",
+                                                                    "max_age_value",
+                                                                    "left_handle_bounds",
+                                                                    "right_handle_bounds"
+                                                                ],
+                                                    "forbidden_targets":  [
+                                                                              "unlimited_age",
+                                                                              "age_option",
+                                                                              "age_range_option",
+                                                                              "confirm_button",
+                                                                              "view_result_button",
+                                                                              "vehicle_card",
+                                                                              "vehicle_detail",
+                                                                              "vehicle_data"
+                                                                          ]
+                                                },
+                    "detect_age_slider_handles":  {
+                                                      "type":  "read_only_panel_contract",
+                                                      "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                      "target_region":  "vehicle_model_config_panel_age_slider",
+                                                      "description":  "Read-only identify the left and right slider handles for the exact dual-handle age slider. Output left_handle_bounds, right_handle_bounds, left_handle_value, and right_handle_value. Stop if the handles cannot be distinguished safely.",
+                                                      "outputs":  [
+                                                                      "left_handle_bounds",
+                                                                      "right_handle_bounds",
+                                                                      "left_handle_actual_bounds",
+                                                                      "right_handle_actual_bounds",
+                                                                      "left_handle_actual_center",
+                                                                      "right_handle_actual_center",
+                                                                      "left_handle_value",
+                                                                      "right_handle_value"
+                                                                  ],
+                                                      "forbidden_targets":  [
+                                                                                "unlimited_age",
+                                                                                "age_option",
+                                                                                "age_range_option",
+                                                                                "confirm_button",
+                                                                                "view_result_button",
+                                                                                "vehicle_card",
+                                                                                "vehicle_detail",
+                                                                                "vehicle_data"
+                                                                            ]
+                                                  },
+                    "detect_right_age_handle_visual_center":  {
+                                                                  "type":  "read_only_panel_contract",
+                                                                  "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                                  "target_region":  "vehicle_model_config_panel_age_slider",
+                                                                  "target_role":  "right_age_handle",
+                                                                  "description":  "Read-only identify the right green slider handle body and center. The candidate must come from the visual handle body, not the unlimited tick, track edge, container edge, text tick, or background vehicle-list node.",
+                                                                  "outputs":  [
+                                                                                  "right_handle_actual_bounds",
+                                                                                  "right_handle_actual_center"
+                                                                              ],
+                                                                  "forbidden_targets":  [
+                                                                                            "unlimited_tick_area",
+                                                                                            "track_edge",
+                                                                                            "container_edge",
+                                                                                            "tick_text_center",
+                                                                                            "background_vehicle_list_node",
+                                                                                            "confirm_button",
+                                                                                            "view_result_button",
+                                                                                            "vehicle_card",
+                                                                                            "vehicle_data"
+                                                                                        ]
+                                                              },
+                    "calculate_age_handle_overlap_target":  {
+                                                                "type":  "internal",
+                                                                "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                                "description":  "Calculate the right-handle target as the left handle physical center / overlap center. Do not use the text-center of tick 6 as the drag endpoint."
+                                                            },
+                    "validate_age_handle_physical_overlap":  {
+                                                                 "type":  "internal",
+                                                                 "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                                 "description":  "Validate that left and right handle physical centers/bounds overlap at the same target tick. Values that look equal without physical overlap do not pass."
+                                                             },
+                    "read_age_slider_current_value":  {
+                                                          "type":  "internal",
+                                                          "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                          "description":  "Read the current exact age value from the verified S08 age slider without moving it."
+                                                      },
+                    "read_left_age_handle_value":  {
+                                                       "type":  "internal",
+                                                       "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                       "description":  "Read the current left slider handle value (minimum age) from the verified dual-handle age slider."
+                                                   },
+                    "read_right_age_handle_value":  {
+                                                        "type":  "internal",
+                                                        "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                        "description":  "Read the current right slider handle value (maximum age) from the verified dual-handle age slider."
+                                                    },
+                    "read_age_slider_bounds":  {
+                                                   "type":  "internal",
+                                                   "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                   "description":  "Read slider, track, and handle bounds from the verified S08 dual-handle age slider without moving it."
+                                               },
+                    "calculate_target_age":  {
+                                                 "type":  "internal",
+                                                 "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                 "description":  "Calculate the exact target age from registration_date_raw, vehicle_year, and current date."
+                                             },
+                    "validate_exact_age_range":  {
+                                                     "type":  "internal",
+                                                     "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                     "description":  "Validate left_handle_value == right_handle_value == target_age, left and right handle physical bounds/centers overlap at the same target tick, target_age calculation is verified, keep requires_vehicle_year_secondary_check=true, and verify the flow has not entered vehicle list or collection."
+                                                 },
+                    "set_left_age_handle_to_target":  {
+                                                          "type":  "slider",
+                                                          "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                          "target_region":  "vehicle_model_config_panel_age_slider",
+                                                          "target_role":  "left_age_handle",
+                                                          "description":  "Only after explicit authorization, move the left slider handle to target_age. Use this only when the left handle is not yet equal to target_age. After the move, verify left_handle_value == target_age. Do not move the right handle here.",
+                                                          "requires_explicit_user_authorization":  true,
+                                                          "forbidden_targets":  [
+                                                                                    "right_age_handle",
+                                                                                    "unlimited_age",
+                                                                                    "age_option",
+                                                                                    "age_range_option",
+                                                                                    "confirm_button",
+                                                                                    "view_result_button",
+                                                                                    "vehicle_card",
+                                                                                    "vehicle_detail",
+                                                                                    "vehicle_data"
+                                                                                ]
+                                                      },
+                    "set_right_age_handle_to_target":  {
+                                                           "type":  "slider",
+                                                           "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                           "target_region":  "vehicle_model_config_panel_age_slider",
+                                                           "target_role":  "right_age_handle",
+                                                           "description":  "Only after explicit authorization, move the right slider handle to target_age. Use this only when the left handle already equals target_age and the right handle does not. After the move, verify right_handle_value == target_age, verify the right handle physically overlaps the left handle at the target tick, and then validate min_age == max_age == target_age.",
+                                                           "requires_explicit_user_authorization":  true,
+                                                           "forbidden_targets":  [
+                                                                                     "left_age_handle",
+                                                                                     "unlimited_age",
+                                                                                     "age_option",
+                                                                                     "age_range_option",
+                                                                                     "confirm_button",
+                                                                                     "view_result_button",
+                                                                                     "vehicle_card",
+                                                                                     "vehicle_detail",
+                                                                                     "vehicle_data"
+                                                                                 ]
+                                                       },
+                    "set_age_slider_exact_value":  {
+                                                       "type":  "slider",
+                                                       "precondition":  "S08_AGE_EXACT_SLIDER_PANEL",
+                                                       "target_region":  "vehicle_model_config_panel_age_slider",
+                                                       "target_role":  "exact_age_slider",
+                                                       "description":  "Compatibility wrapper for exact age slider handling. On dual-handle slider panels, exact success now means left_handle_value == right_handle_value == target_age. Do not treat a single-handle move or any range state as success.",
+                                                       "requires_explicit_user_authorization":  true,
+                                                       "forbidden_targets":  [
+                                                                                 "unlimited_age",
+                                                                                 "age_option",
+                                                                                 "age_range_option",
+                                                                                 "confirm_button",
+                                                                                 "view_result_button",
+                                                                                 "vehicle_card",
+                                                                                 "vehicle_detail",
+                                                                                 "vehicle_data"
+                                                                             ]
+                                                   },
+                    "read_year_selection_panel_contract":  {
+                                                               "type":  "read_only_panel_contract",
+                                                               "precondition":  "S08_YEAR_SELECTION_PANEL",
+                                                               "target_region":  "vehicle_model_config_panel_year_area",
+                                                               "description":  "Compatibility read-only action for S08 year selection. Do not scan ordinary age options. Use detect_left_age_tab and then detect_age_exact_slider instead.",
+                                                               "outputs":  [
+                                                                               "left_age_tab_bounds"
+                                                                           ],
+                                                               "forbidden_targets":  [
+                                                                                         "unlimited_age",
+                                                                                         "age_option",
+                                                                                         "age_range_option",
+                                                                                         "color_filter",
+                                                                                         "confirm_button",
+                                                                                         "view_result_button",
+                                                                                         "reset_button",
+                                                                                         "close_button",
+                                                                                         "sort",
+                                                                                         "vehicle_card",
+                                                                                         "vehicle_detail",
+                                                                                         "vehicle_data"
+                                                                                     ]
+                                                           },
+                    "read_selected_colors":  {
+                                                 "type":  "read_only_panel_contract",
+                                                 "precondition":  "S08_COLOR_MULTI_SELECTED",
+                                                 "target_region":  "vehicle_model_config_panel_color_state",
+                                                 "description":  "Read-only inspect selected color chips/options in S08. Output selected_colors and bounds only; never click colors or downstream controls.",
+                                                 "outputs":  [
+                                                                 "selected_colors",
+                                                                 "selected_color_bounds",
+                                                                 "task_color",
+                                                                 "stale_colors"
+                                                             ],
+                                                 "forbidden_targets":  [
+                                                                           "target_color_option",
+                                                                           "stale_color_option",
+                                                                           "other_color_option",
+                                                                           "year_or_age_entry",
+                                                                           "exact_age_slider",
+                                                                           "confirm_button",
+                                                                           "view_result_button",
+                                                                           "vehicle_card",
+                                                                           "vehicle_detail",
+                                                                           "vehicle_data"
+                                                                       ]
+                                             },
+                    "cancel_stale_selected_color":  {
+                                                        "type":  "tap_dynamic",
+                                                        "source":  "stale_color",
+                                                        "precondition":  "S08_COLOR_MULTI_SELECTED",
+                                                        "target_region":  "color_selection_area",
+                                                        "target_role":  "stale_selected_color_option",
+                                                        "description":  "Cancel exactly one stale selected color while preserving the task target color. The actual click target must equal stale_color, such as ??, and must not be the task target color ??.",
+                                                        "requires_explicit_user_authorization":  true,
+                                                        "forbidden_targets":  [
+                                                                                  "target_color_option",
+                                                                                  "other_color_option",
+                                                                                  "similar_color_option",
+                                                                                  "year_or_age_entry",
+                                                                                  "exact_age_slider",
+                                                                                  "confirm_button",
+                                                                                  "view_result_button",
+                                                                                  "reset_button",
+                                                                                  "close_button",
+                                                                                  "sort",
+                                                                                  "vehicle_card",
+                                                                                  "vehicle_detail",
+                                                                                  "vehicle_data"
+                                                                              ]
+                                                    }
+                },
+    "runtime_recovery_action_whitelist":  {
+                                              "DEVICE":  [
+                                                             "check_adb_device",
+                                                             "check_adb_available",
+                                                             "check_adb_devices",
+                                                             "wake_device",
+                                                             "check_window_focus",
+                                                             "check_keyguard_state",
+                                                             "capture_screenshot",
+                                                             "dump_ui_xml",
+                                                             "recognize_current_page",
+                                                             "adb_kill_server",
+                                                             "adb_start_server",
+                                                             "kill_adb_process",
+                                                             "delete_local_adb_keys",
+                                                             "start_adb_server",
+                                                             "record_issue",
+                                                             "lookup_knowledge_base",
+                                                             "read_dumpsys_package_label",
+                                                             "read_launcher_resolve_info",
+                                                             "parse_apk_label_metadata",
+                                                             "parse_apk_label_if_needed",
+                                                             "exclude_package_com_guazi_android_chesupai"
+                                                         ],
+                                              "THIRD_PARTY_LOGIN_OVERLAY_BLOCKING_APP":  [
+                                                                                             "check_adb_devices",
+                                                                                             "wake_device",
+                                                                                             "check_window_focus",
+                                                                                             "check_keyguard_state",
+                                                                                             "detect_third_party_login_later_button",
+                                                                                             "tap_third_party_login_later_once",
+                                                                                             "recapture_screenshot",
+                                                                                             "redump_ui_xml",
+                                                                                             "recognize_page_after_later_dismiss",
+                                                                                             "capture_screenshot",
+                                                                                             "dump_ui_xml",
+                                                                                             "recognize_current_page",
+                                                                                             "record_issue",
+                                                                                             "lookup_knowledge_base"
+                                                                                         ],
+                                              "HUMAN_UNLOCK_REQUIRED":  [
+                                                                            "check_power_state",
+                                                                            "check_keyguard_state",
+                                                                            "check_window_focus",
+                                                                            "capture_screenshot",
+                                                                            "dump_ui_xml",
+                                                                            "record_issue",
+                                                                            "lookup_knowledge_base"
+                                                                        ],
+                                              "POPUP_MARKETING_OVERLAY":  [
+                                                                              "capture_screenshot",
+                                                                              "dump_ui_xml",
+                                                                              "detect_popup_close_button",
+                                                                              "click_popup_close_x",
+                                                                              "recapture_screenshot",
+                                                                              "redump_ui_xml",
+                                                                              "recognize_page_after_popup_close",
+                                                                              "record_issue",
+                                                                              "lookup_knowledge_base"
+                                                                          ],
+                                              "SERIES_ACTION_TARGET_MISMATCH":  [
+                                                                                    "capture_screenshot",
+                                                                                    "dump_ui_xml",
+                                                                                    "detect_target_series_row",
+                                                                                    "detect_series_model_button",
+                                                                                    "click_series_model_button",
+                                                                                    "recapture_screenshot",
+                                                                                    "redump_ui_xml",
+                                                                                    "recognize_model_year_trim_page",
+                                                                                    "record_issue",
+                                                                                    "lookup_knowledge_base"
+                                                                                ],
+                                              "TRIM_EMISSION_STANDARD_VARIANT":  [
+                                                                                     "normalize_trim_for_match",
+                                                                                     "exact_trim_match_with_emission_normalization",
+                                                                                     "click_exact_original_app_trim",
+                                                                                     "record_audit",
+                                                                                     "record_issue",
+                                                                                     "lookup_knowledge_base"
+                                                                                 ],
+                                              "S07_CONTRACT_DRIFT_TO_GENERIC_FILTER":  [
+                                                                                           "capture_screenshot",
+                                                                                           "dump_ui_xml",
+                                                                                           "recognize_s07_vehicle_list_page",
+                                                                                           "detect_vehicle_model_config_entry",
+                                                                                           "record_issue",
+                                                                                           "lookup_knowledge_base"
+                                                                                       ],
+                                              "CONTRACT_DRIFT_OR_ACTION_PLANNING_MISMATCH":  [
+                                                                                                 "record_issue",
+                                                                                                 "lookup_knowledge_base"
+                                                                                             ],
+                                              "ADB_TRANSIENT_DEVICE_NOT_FOUND":  [
+                                                                                     "check_adb_available",
+                                                                                     "adb_version",
+                                                                                     "adb_kill_server",
+                                                                                     "adb_start_server",
+                                                                                     "adb_devices_l",
+                                                                                     "classify_device_state",
+                                                                                     "record_issue",
+                                                                                     "lookup_knowledge_base"
+                                                                                 ],
+                                              "ADB_TRANSIENT_DEVICE_NOT_FOUND_RECOVERED":  [
+                                                                                               "check_adb_available",
+                                                                                               "adb_version",
+                                                                                               "adb_devices_l",
+                                                                                               "classify_device_state",
+                                                                                               "record_issue",
+                                                                                               "lookup_knowledge_base"
+                                                                                           ],
+                                              "COLOR_MULTI_SELECTED_TARGET_AND_STALE_COLOR":  [
+                                                                                                  "capture_screenshot",
+                                                                                                  "dump_ui_xml",
+                                                                                                  "read_selected_colors",
+                                                                                                  "cancel_stale_selected_color",
+                                                                                                  "recapture_screenshot",
+                                                                                                  "redump_ui_xml",
+                                                                                                  "recognize_color_selected_single_target",
+                                                                                                  "record_issue",
+                                                                                                  "lookup_knowledge_base"
+                                                                                              ],
+                                              "RESULT_PAGE_VARIANT_UNCLASSIFIED":  [
+                                                                                       "capture_screenshot",
+                                                                                       "dump_ui_xml",
+                                                                                       "diagnose_discovery_result_mixed_page",
+                                                                                       "record_issue",
+                                                                                       "lookup_knowledge_base"
+                                                                                   ],
+                                              "PAGE_CONTRACT_MISMATCH":  [
+                                                                             "capture_screenshot",
+                                                                             "dump_ui_xml",
+                                                                             "recognize_current_page",
+                                                                             "record_issue",
+                                                                             "lookup_knowledge_base"
+                                                                         ],
+                                              "ACTION_NOT_ALLOWED_BY_PAGE_CONTRACT":  [
+                                                                                          "capture_screenshot",
+                                                                                          "dump_ui_xml",
+                                                                                          "record_issue",
+                                                                                          "lookup_knowledge_base"
+                                                                                      ],
+                                              "HISTORY_REPAIR_COUNT_UNCERTAIN":  [
+                                                                                     "capture_screenshot",
+                                                                                     "dump_ui_xml",
+                                                                                     "record_issue",
+                                                                                     "lookup_knowledge_base"
+                                                                                 ],
+                                              "HISTORY_REPAIR_CELL_NOT_FOUND":  [
+                                                                                    "capture_screenshot",
+                                                                                    "dump_ui_xml",
+                                                                                    "record_issue",
+                                                                                    "lookup_knowledge_base"
+                                                                                ],
+                                              "S14_PAGE_CONTRACT_MISMATCH":  [
+                                                                                 "capture_screenshot",
+                                                                                 "dump_ui_xml",
+                                                                                 "record_issue",
+                                                                                 "lookup_knowledge_base"
+                                                                             ],
+                                              "S13_HISTORY_REPAIR_CELL_CLICK_FAILED":  [
+                                                                                           "capture_screenshot",
+                                                                                           "dump_ui_xml",
+                                                                                           "record_issue",
+                                                                                           "lookup_knowledge_base",
+                                                                                           "tap_history_repair_text_center_once",
+                                                                                           "tap_history_repair_parent_center_once",
+                                                                                           "tap_history_repair_parent_right_safe_once",
+                                                                                           "confirm_s14_popup_entered"
+                                                                                       ],
+                                              "SYSTEM_UI_OVERLAY_BLOCKING":  [
+                                                                                 "check_window_focus",
+                                                                                 "check_keyguard_state",
+                                                                                 "capture_screenshot",
+                                                                                 "dump_ui_xml",
+                                                                                 "recognize_current_page",
+                                                                                 "record_issue",
+                                                                                 "lookup_knowledge_base"
+                                                                             ],
+                                              "REPORT_PAGE_OPEN_FAILED":  [
+                                                                              "capture_screenshot",
+                                                                              "dump_ui_xml",
+                                                                              "record_issue",
+                                                                              "lookup_knowledge_base"
+                                                                          ],
+                                              "COLOR_STATE_NOT_CONFIRMED":  [
+                                                                                "capture_screenshot",
+                                                                                "dump_ui_xml",
+                                                                                "record_issue",
+                                                                                "lookup_knowledge_base"
+                                                                            ],
+                                              "COLOR_STATE_NOT_CONFIRMED_BEFORE_AGE_SELECTION":  [
+                                                                                                     "capture_screenshot",
+                                                                                                     "dump_ui_xml",
+                                                                                                     "record_issue",
+                                                                                                     "lookup_knowledge_base"
+                                                                                                 ],
+                                              "AGE_VALIDATION_FAILED":  [
+                                                                            "capture_screenshot",
+                                                                            "dump_ui_xml",
+                                                                            "record_issue",
+                                                                            "lookup_knowledge_base"
+                                                                        ],
+                                              "RESULT_LIST_SOURCE_UNRELIABLE":  [
+                                                                                    "capture_screenshot",
+                                                                                    "dump_ui_xml",
+                                                                                    "record_issue",
+                                                                                    "lookup_knowledge_base"
+                                                                                ]
+                                          }
+}

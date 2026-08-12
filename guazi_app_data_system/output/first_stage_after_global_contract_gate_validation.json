@@ -1,0 +1,105 @@
+{
+  "final_status": "RUN_FIRST_STAGE_AFTER_GLOBAL_PAGE_CONTRACT_ACTION_GATE_DONE",
+  "first_stage_status": "S10_READY",
+  "success_status_allowed": true,
+  "target_fingerprint": "零跑|C10|2026款|210悦享版|白|2026.02",
+  "fingerprint_expected": "零跑|C10|2026款|210悦享版|白|2026.02",
+  "fingerprint_ok": true,
+  "result_s01_to_s10_json_valid": true,
+  "result_json_valid": true,
+  "raw_large_fields_found": [],
+  "raw_large_fields_ok": true,
+  "baseline_overwritten": false,
+  "second_stage_started": false,
+  "pricing_output": false,
+  "run_log_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\first_stage_after_global_contract_gate_validation_run.log",
+  "s03": {
+    "contract_version": "V1.16",
+    "target_initial_letter": "L",
+    "clicked_initial_letter": "L",
+    "matched_brand_text": "零跑汽车",
+    "selected_click_region_type": "brand_row_left_icon_safe_point",
+    "after_click_page_type": "S04",
+    "brand_zone_continuation_allowed": false,
+    "contract_ok": true
+  },
+  "s04": {
+    "target_series": "C10",
+    "target_series_alias": "零跑C10",
+    "series_matched": true,
+    "expected_action": "S04_ONLY_ALLOWED_ACTION_CLICK_TARGET_SERIES_ROW_RIGHT_MODELS_BUTTON"
+  },
+  "s05": {
+    "selected_year_model": "2026款",
+    "selected_config_model": "210悦享版",
+    "selected_count_text": "已选1项",
+    "selected_count_actual": 1,
+    "s05_done": true,
+    "single_trim_selected": true,
+    "emission_variant_group_count": 0
+  },
+  "s06": {
+    "recognized_page_after_s05_confirm": "S06",
+    "s06_page_variant": "S06_TARGET_FILTER_LIST_AFTER_S05_CONFIRM",
+    "s06_source_gate_passed": true,
+    "target_filter_evidence_found": true,
+    "s06_reverse_exclusion_passed": true,
+    "s06_allowed_action": "click_model_config_filter",
+    "s06_to_s07_result": "entered_s07"
+  },
+  "s07": {
+    "COLOR_FILTER_DONE": true,
+    "AGE_FILTER_DONE": true,
+    "S07_FILTER_DONE": true,
+    "bottom_view_result_text": "查看2辆",
+    "view_result_count": 2,
+    "clicked_optional_feature": false
+  },
+  "s08_s09_s10": {
+    "recognized_page_after_view_result": "S08",
+    "s08_source_gate_passed": true,
+    "s08_core_elements": [
+      "sort_control",
+      "filter_bar_model_config_entry",
+      "target_filter_or_card_evidence",
+      "vehicle_list_structure",
+      "price_or_vehicle_metadata_fields"
+    ],
+    "s08_reverse_exclusion_passed": true,
+    "s09_price_asc_clicked": true,
+    "SORT_DONE": true,
+    "S10_READY": true,
+    "s10_source_gate_passed": true,
+    "s10_core_elements": [
+      "price_asc_sort_evidence",
+      "complete_target_vehicle_cards",
+      "target_trisame_evidence",
+      "trisame_boundary_before_non_trisame_section"
+    ],
+    "complete_target_vehicle_card_count": 2,
+    "s10_ready_reason": "source_gate_core_elements_target_trisame_boundary_passed",
+    "trisame_count": 2,
+    "same_source_cards": [
+      {
+        "title": "零跑汽车 零跑C10 2026款 210悦享版",
+        "year_mileage_text": "2026年 | 0.17万公里 | 唐山 | LeapPilot",
+        "list_price_10k": 10.64,
+        "list_year": 2026,
+        "list_mileage_10k_km": 0.17
+      },
+      {
+        "title": "零跑汽车 零跑C10 2026款 210悦享版",
+        "year_mileage_text": "2026年 | 0.77万公里 | 唐山 | LeapPilot",
+        "list_price_10k": 10.86,
+        "list_year": 2026,
+        "list_mileage_10k_km": 0.77
+      }
+    ],
+    "excluded_non_trisame_cards_count": 20,
+    "non_trisame_section_detected": true
+  },
+  "startup": {
+    "app_force_restart_called": true,
+    "after_recovery_state": "S01"
+  }
+}

@@ -1,0 +1,119 @@
+﻿{
+    "status":  "HONDA_ACCORD_REFERENCE_STATE_CURRENT_BLOCK_DIAGNOSIS_DONE",
+    "read_only":  true,
+    "code_modified":  false,
+    "real_device_run":  false,
+    "result_json_overwritten":  false,
+    "classification":  "NO_CONFLICT_REF1_CONTINUED_REF2_CURRENTLY_BLOCKED",
+    "secondary_classification":  "REPORT_SUMMARY_MISLEADING_CURRENT_BLOCK_IS_REF2_S11",
+    "target_fingerprint":  "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+    "result_status":  "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+    "result_s10_to_s16_status":  "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+    "current_reference_index":  2,
+    "next_reference_index":  2,
+    "reference_history_count":  2,
+    "reference_timeline":  [
+                               {
+                                   "reference_index":  1,
+                                   "s10_card":  {
+                                                    "title":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                    "list_price_text":  "11.39万",
+                                                    "metadata":  "2024年 | 6.54万公里 | 唐山 | HondaSENS",
+                                                    "city":  "唐山",
+                                                    "bounds":  [
+                                                                   429,
+                                                                   997,
+                                                                   949,
+                                                                   1121
+                                                               ]
+                                                },
+                                   "entered_s11":  true,
+                                   "s11_anchor":  {
+                                                      "price":  "11.39万",
+                                                      "listing_id":  "166717183",
+                                                      "mileage_age_text":  "6.54万公里 / 2年3个月",
+                                                      "insurance_claim_text":  "理赔0次",
+                                                      "transfer_count_text":  "过户1次",
+                                                      "parsed_transfer_count":  1
+                                                  },
+                                   "entered_s12":  true,
+                                   "entered_s13":  true,
+                                   "entered_s14":  true,
+                                   "entered_s15":  true,
+                                   "reference_score":  83,
+                                   "reference_score_trustworthy":  true,
+                                   "target_score":  84,
+                                   "decision":  "CONTINUE_NEXT_REFERENCE: reference_score 83.0 \u003c target_score 84.0",
+                                   "next_reference_index":  2,
+                                   "stop_code":  null
+                               },
+                               {
+                                   "reference_index":  2,
+                                   "s10_card":  {
+                                                    "title":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                    "list_price_text":  "11.67万",
+                                                    "metadata":  "2024年 | 3.05万公里 | 唐山 | HondaSENS",
+                                                    "city":  "唐山",
+                                                    "bounds":  [
+                                                                   429,
+                                                                   1371,
+                                                                   949,
+                                                                   1498
+                                                               ]
+                                                },
+                                   "entered_s11":  true,
+                                   "s11_anchor":  {
+                                                      "price":  "11.67万",
+                                                      "listing_id":  "166834599",
+                                                      "mileage_age_text":  "3.05万公里",
+                                                      "insurance_claim_text":  "理赔2次",
+                                                      "transfer_count_text":  "过户2次",
+                                                      "parsed_transfer_count":  2
+                                                  },
+                                   "entered_s12":  false,
+                                   "entered_s13":  false,
+                                   "entered_s14":  false,
+                                   "entered_s15":  false,
+                                   "reference_score":  null,
+                                   "reference_score_trustworthy":  null,
+                                   "target_score":  84,
+                                   "decision":  "BLOCKED_IN_S11_REPORT_SEARCH",
+                                   "next_reference_index":  2,
+                                   "stop_code":  "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER"
+                               }
+                           ],
+    "latest_screen":  {
+                          "latest_screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260517_174255.png",
+                          "latest_xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260517_174255.xml",
+                          "page_identified_as":  "S11",
+                          "belongs_to_reference_index":  2,
+                          "screenshot_visual_view_full_report_visible":  true,
+                          "current_page_anchors":  {
+                                                       "price":  "11.67万",
+                                                       "listing_id":  "166834599",
+                                                       "mileage_age_text":  "3.05万公里",
+                                                       "insurance_claim_text":  "理赔2次",
+                                                       "transfer_count_text":  "过户2次"
+                                                   },
+                          "exact_report_entry_seen_in_result":  false,
+                          "official_report_entry_seen_in_result":  false,
+                          "click_target_bound":  null,
+                          "stop_code":  "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+                          "note":  "截图肉眼可见查看完整报告入口，但本次 result/issue_context 记录 XML 精确入口未命中，因此脚本未点击。"
+                      },
+    "answers":  {
+                    "reference_1_fully_scored":  true,
+                    "reference_1_why_not_s16":  "reference #1 进入 S15 后可信得分 83.0，低于 target_score 84.0，因此按业务契约继续下一辆，没有进入 S16。",
+                    "current_phone_page_reference":  2,
+                    "current_real_block":  "reference #2 的 S11 查看完整报告入口搜索阶段，最终 stop_code=S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER。",
+                    "apparent_conflict_explanation":  "#1 未进入 S16 和当前停在 #2 S11 可以同时成立：前者是 #1 的业务结果，后者是 #1 处理完后继续到 #2 的最新现场。",
+                    "next_focus":  "应处理 reference #2 的 S11 报告入口 XML/点击判断问题，而不是 reference 状态记录问题。"
+                },
+    "evidence_files":  {
+                           "result_json":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result.json",
+                           "result_s10_to_s16_json":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+                           "latest_runtime_report_json":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\honda_accord_2023_auto_pricing_success_path_after_s13_history_table_patch.json",
+                           "latest_screenshot":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260517_174255.png",
+                           "latest_xml":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260517_174255.xml"
+                       }
+}

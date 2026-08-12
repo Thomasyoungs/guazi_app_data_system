@@ -1,0 +1,135 @@
+{
+  "diagnosis_name": "DIAGNOSE_CONTINUE_NEXT_REFERENCE_DECISION",
+  "final_status": "DIAGNOSE_CONTINUE_NEXT_REFERENCE_DECISION_DONE",
+  "classification": "CONTINUE_NEXT_REFERENCE_DUE_TO_LOW_SCORE",
+  "secondary_classifications": [
+    "CONTINUE_NEXT_REFERENCE_IS_EXPECTED",
+    "CONTINUE_NEXT_REFERENCE_DUE_TO_SAMPLE_SHORTAGE"
+  ],
+  "modified_code": false,
+  "modified_page_contract": false,
+  "modified_config": false,
+  "modified_pricing": false,
+  "ran_device_flow": false,
+  "target_fingerprint": "福特|福克斯|2017款|两厢 1.6L 自动舒适型智行版|白|2017.07",
+  "old_mini_result_used": false,
+  "decision": {
+    "current_status": "CONTINUE_NEXT_REFERENCE",
+    "decision_reason": "当前参考车已完成采集且未被淘汰，但 reference_score=90.5 低于 target_score=93.0；runtime_s10_to_s16_mainline.py 的 S15 分支在 selected_score.score < target_score.score 时返回 S10，并记录 CONTINUE_NEXT_REFERENCE。",
+    "triggered_rule": "S15_SCORE_COMPARE_SELECTED_SCORE_BELOW_TARGET",
+    "evidence_path": [
+      "output/result_s10_to_s16.json",
+      "output/result.json",
+      "logs/issues.jsonl",
+      "scripts/runtime_s10_to_s16_mainline.py:4789",
+      "scripts/runtime_s10_to_s16_mainline.py:5009",
+      "src/guazi_app_data_system/pricing.py:266"
+    ],
+    "is_logic_bug": false
+  },
+  "current_reference_collection": {
+    "reference_index": 1,
+    "list_title": "福特 福克斯 2017款 两厢 1.6L 自动舒适型智行版",
+    "list_price_text": "2.52万",
+    "list_price_10k": 2.52,
+    "list_year": 2017,
+    "list_mileage_10k_km": 7.81,
+    "transfer_count": 2,
+    "claim_count": 3,
+    "max_claim_amount": 2000.0,
+    "repair_counts": {
+      "驾驶侧": 9
+    },
+    "S14_COLLECT_DONE": true,
+    "collected_fields": [
+      "list_title",
+      "list_price_10k",
+      "list_year",
+      "list_mileage_10k_km",
+      "transfer_count",
+      "claim_count",
+      "max_claim_amount",
+      "repair_counts",
+      "repair_items",
+      "s14_collect_done"
+    ],
+    "missing_fields": [],
+    "repair_items": [
+      {
+        "part": "左前门",
+        "damage_type": "钣金",
+        "source_text": "左侧前门—钣金"
+      }
+    ],
+    "special_structure_risk_items": []
+  },
+  "reference_rejection": {
+    "reference_rejected": false,
+    "reject_reason": "",
+    "abc_column_replacement": false,
+    "accident_car": false,
+    "major_structure_risk": false,
+    "field_missing": false,
+    "score_insufficient": true
+  },
+  "scores": {
+    "target_score": 93.0,
+    "target_score_components": {
+      "body_score": 69.0,
+      "mileage_score": 10.0,
+      "transfer_score": 7.0,
+      "accident_score": 4.0,
+      "max_amount_score": 3.0
+    },
+    "reference_score": 90.5,
+    "reference_score_components": {
+      "body_score": 69.0,
+      "mileage_score": 10.0,
+      "transfer_score": 5.5,
+      "accident_score": 2.0,
+      "max_amount_score": 4.0
+    },
+    "score_diff_reference_minus_target": -2.5,
+    "reference_score_gte_target_score": false
+  },
+  "continue_next_reference": {
+    "continue_next_reference_required": true,
+    "rule_basis": "handle_s15 only transitions to S16 when selected_score.score >= target_score.score; otherwise it returns S10 and the main loop writes CONTINUE_NEXT_REFERENCE.",
+    "should_click_next_reference": true,
+    "next_reference_index": 2,
+    "next_reference_title": "福特 福克斯 2017款 两厢 1.6L 自动舒适型智行版",
+    "next_reference_list_price_10k": 2.55,
+    "next_reference_year_mileage_text": "2017年 | 12.01万公里 | 唐山",
+    "returned_s10_snapshot_available": true,
+    "returned_s10_snapshot_xml_path": "artifacts/debug/s14_return_to_s10_attempt_2_20260507_191321.xml",
+    "must_app_force_restart_before_next": false,
+    "live_s10_fresh_verify_required_before_next": true
+  },
+  "sample_count": {
+    "required_reference_count": 3,
+    "collected_reference_count": 1,
+    "valid_reference_count": 1,
+    "qualifying_reference_count_score_gte_target": 0,
+    "remaining_reference_count_to_min_sample": 2,
+    "same_source_card_count_from_first_stage": 10,
+    "sample_shortage_review_reason": "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。"
+  },
+  "manual_review": {
+    "manual_review_required_now": false,
+    "manual_review_reason_if_priced_now": [
+      "目标车缺少出险次数，已采用默认分。",
+      "目标车缺少最大金额，已采用默认分。",
+      "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。",
+      "所有参考车总分均低于目标车，已选择最接近车辆作为临时参考车。"
+    ],
+    "should_enter_pricing": false,
+    "pricing_blocker": "当前 selected_score=90.5 < target_score=93.0，S15 规则阻断进入 S16 定价。"
+  },
+  "result_legality": {
+    "result_s10_to_s16_json_valid": true,
+    "result_json_valid": true,
+    "result_files_current_target": true,
+    "raw_xml_large_blob_in_result": false
+  },
+  "next_step_recommendation": "继续采集下一辆参考车前，先 fresh 校验 live S10；若仍在可靠 S10，则点击第 2 辆同源车，否则先恢复到 S10_READY。"
+}

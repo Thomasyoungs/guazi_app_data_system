@@ -1,0 +1,2082 @@
+{
+  "metadata": {
+    "project": "guazi_app_data_system",
+    "mode": "device_real_mainline_s01_to_s10",
+    "field_scope": "contract_only"
+  },
+  "status": "PAGE_CONTRACT_MISMATCH",
+  "error": "Current fresh page does not match an S01-S10 page contract.",
+  "target_task": {
+    "actual_target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\data\\current_target_task.json",
+    "brand": "MINI",
+    "series": "MINI",
+    "year_model": "2023款",
+    "config_model": "1.5T ONE",
+    "color": "白",
+    "register_date": "2024.05",
+    "register_year": 2024,
+    "current_year": 2026,
+    "target_age_formula": "current_year - register_year",
+    "calculated_target_age": 2
+  },
+  "flow_state": {
+    "S07_FILTER_DONE": false,
+    "COLOR_FILTER_DONE": false,
+    "AGE_FILTER_DONE": false,
+    "SORT_DONE": false,
+    "S10_READY": false
+  },
+  "startup": {
+    "startup_mode": "force_restart",
+    "app_entry_mode": "force_restart",
+    "current_page_first_enabled": false,
+    "app_force_restart_called": true,
+    "force_stop_package": "com.ganji.android.haoche_c",
+    "force_stop_done": true,
+    "home_to_launcher_done": true,
+    "tap_guazi_app_icon_done": true,
+    "app_restart_wait_ms": 1000,
+    "initial_capture_before_recovery": false,
+    "initial_home_to_launcher_before_capture": true,
+    "initial_tap_app_icon_before_capture": true,
+    "initial_fresh_state": null,
+    "initial_screenshot_path": null,
+    "initial_xml_path": null,
+    "recovery_called": true,
+    "recovery_call_reason": "startup",
+    "app_force_restart_reason": "startup",
+    "after_force_restart_state": "S01",
+    "after_force_restart_screenshot_path": "artifacts/screenshots/s01_s10_after_force_restart_20260506_140405.png",
+    "after_force_restart_xml_path": "artifacts/debug/s01_s10_after_force_restart_20260506_140405.xml",
+    "after_force_restart_visible_text_digest": [
+      "唐山",
+      "MINI",
+      "搜索",
+      "5",
+      "二手车",
+      "卖车",
+      "分期购车",
+      "新能源",
+      "低价",
+      "源头低价",
+      "奔驰",
+      "魏牌",
+      "东风风神",
+      "埃安",
+      "新能源狂欢",
+      "大力牛魔王D02",
+      "1.75万",
+      "已补3.00万",
+      "奔驰CLA",
+      "7.81万",
+      "一眼看真车",
+      "领地",
+      "13.80万",
+      "讲解中",
+      "Model 3",
+      "精选车源",
+      "官方自营",
+      "新人练手",
+      "0过户",
+      "大空间"
+    ],
+    "after_recovery_state": "S01",
+    "after_recovery_screenshot_path": "artifacts/screenshots/s01_s10_after_force_restart_20260506_140405.png",
+    "after_recovery_xml_path": "artifacts/debug/s01_s10_after_force_restart_20260506_140405.xml",
+    "wake_screen_done": true,
+    "screen_interactive": null,
+    "keyguard_showing": true,
+    "secure_keyguard": false,
+    "focused_window_before": "NotificationShade",
+    "foreground_package_before": "",
+    "notification_shade_visible": true,
+    "non_secure_swipe_done": true,
+    "non_secure_swipe": {
+      "swipe_success": true,
+      "swipe_stderr": "",
+      "start_x": 610,
+      "start_y": 2223,
+      "end_x": 610,
+      "end_y": 813,
+      "duration_ms": 700
+    },
+    "keyguard_dismissed": true,
+    "keyguard_showing_after_swipe": false,
+    "focused_window_after_swipe": "com.ganji.android.haoche_c/com.guazi.h5.Html5NewContainerActivity",
+    "foreground_package_after_swipe": "com.ganji.android.haoche_c",
+    "notification_shade_collapsed": true,
+    "focused_window_after": "com.ganji.android.haoche_c/com.guazi.h5.Html5NewContainerActivity",
+    "foreground_package_after": "com.ganji.android.haoche_c",
+    "launcher_account_dialog_detected": false,
+    "launcher_account_dialog_text_digest": null,
+    "later_button_found": null,
+    "later_button_clicked": false,
+    "later_click_once_only": true,
+    "focused_window_before_later": null,
+    "focused_window_after_later": null,
+    "launcher_visible_after_later": null,
+    "guazi_icon_visible_before_later": null,
+    "guazi_icon_visible_after_later": null,
+    "screenshot_before_later": null,
+    "xml_before_later": null,
+    "screenshot_after_later": null,
+    "xml_after_later": null,
+    "launcher_visible": true,
+    "guazi_icon_visible": true,
+    "guazi_icon_visible_final": true,
+    "final_screenshot_path": "artifacts/screenshots/device_ready_launcher_before_icon_20260506_140401.png",
+    "final_xml_path": "artifacts/debug/device_ready_launcher_before_icon_20260506_140401.xml"
+  },
+  "context": {
+    "wakefulness": "Awake",
+    "interactive": null,
+    "display_state": "",
+    "keyguard_showing": false,
+    "keyguard_locked": false,
+    "keyguard_secure": false,
+    "foreground_package": "com.ganji.android.haoche_c",
+    "resumed_activity": "",
+    "focused_window": "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity",
+    "xml_package": "com.shuqing.launcher",
+    "fresh_xml": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2712]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2712]\"><node index=\"0\" text=\"\" resource-id=\"android:id/content\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2712]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/launcher\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2712]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/drag_layer\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2712]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/scrim_view\" class=\"android.view.View\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2712]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.shuqing.launcher\" content-desc=\"应用列表\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[571,2177][649,2255]\" /></node><node index=\"1\" text=\"\" resource-id=\"com.shuqing.launcher:id/workspace\" class=\"android.widget.ScrollView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2712]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.ViewGroup\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[26,136][1194,2177]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.ViewGroup\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[44,136][1176,2177]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/my_app_container_workspace\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[44,136][1176,2176]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/my_fragment\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[44,136][1176,2176]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/my_app_fl_container\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[44,136][1176,2176]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/my_app_ll_container\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[44,136][1176,2176]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/my_app_rv_apps\" class=\"androidx.recyclerview.widget.RecyclerView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[44,162][1176,2176]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[44,162][327,470]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[44,167][327,470]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[96,193][275,372]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[117,214][254,351]\" /></node><node index=\"1\" text=\"账号中心\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[107,392][263,444]\" /></node></node><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[327,162][610,470]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[327,167][610,470]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[379,193][558,372]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[400,214][537,351]\" /></node><node index=\"1\" text=\"推荐应用\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[390,392][546,444]\" /></node></node><node index=\"2\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[610,162][893,470]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[610,167][893,470]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[662,193][841,372]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[683,214][820,351]\" /></node><node index=\"1\" text=\"太擎\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[712,392][790,444]\" /></node></node><node index=\"3\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[893,162][1176,470]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[893,167][1176,470]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[945,193][1124,372]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[966,214][1103,351]\" /></node><node index=\"1\" text=\"客户卫士\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[956,392][1112,444]\" /></node></node><node index=\"4\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[44,470][327,778]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[44,475][327,778]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[96,501][275,680]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[117,522][254,659]\" /></node><node index=\"1\" text=\"百宝箱\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[127,700][244,752]\" /></node></node><node index=\"5\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[327,470][610,778]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[327,475][610,778]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[379,501][558,680]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[400,522][537,659]\" /></node><node index=\"1\" text=\"应用分身\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[390,700][546,752]\" /></node></node><node index=\"6\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[610,470][893,778]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[610,475][893,778]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[662,501][841,680]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[683,522][820,659]\" /></node><node index=\"1\" text=\"智能体设备\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[654,700][849,752]\" /></node></node><node index=\"7\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[893,470][1176,778]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[893,475][1176,778]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[945,501][1124,680]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[966,522][1103,659]\" /></node><node index=\"1\" text=\"设置\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[995,700][1073,752]\" /></node></node><node index=\"8\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[44,778][327,1086]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[44,783][327,1086]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[96,809][275,988]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[117,830][254,967]\" /></node><node index=\"1\" text=\"微信\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[146,1008][224,1060]\" /></node></node><node index=\"9\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[327,778][610,1086]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[327,783][610,1086]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[379,809][558,988]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[400,830][537,967]\" /></node><node index=\"1\" text=\"微信\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1008][507,1060]\" /></node></node><node index=\"10\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[610,778][893,1086]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[610,783][893,1086]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[662,809][841,988]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[683,830][820,967]\" /></node><node index=\"1\" text=\"抖音\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[712,1008][790,1060]\" /></node></node><node index=\"11\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[893,778][1176,1086]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[893,783][1176,1086]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[945,809][1124,988]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[966,830][1103,967]\" /></node><node index=\"1\" text=\"快手\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[995,1008][1073,1060]\" /></node></node><node index=\"12\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[44,1086][327,1394]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[44,1091][327,1394]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[96,1117][275,1296]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[117,1138][254,1275]\" /></node><node index=\"1\" text=\"小红书\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[127,1316][244,1368]\" /></node></node><node index=\"13\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[327,1086][610,1394]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[327,1091][610,1394]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[379,1117][558,1296]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[400,1138][537,1275]\" /></node><node index=\"1\" text=\"查博士企业版\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[351,1316][585,1368]\" /></node></node><node index=\"14\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[610,1086][893,1394]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[610,1091][893,1394]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[662,1117][841,1296]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[683,1138][820,1275]\" /></node><node index=\"1\" text=\"58车商通\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[668,1316][834,1368]\" /></node></node><node index=\"15\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[893,1086][1176,1394]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[893,1091][1176,1394]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[945,1117][1124,1296]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[966,1138][1103,1275]\" /></node><node index=\"1\" text=\"车智赢+\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[964,1316][1105,1368]\" /></node></node><node index=\"16\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[44,1394][327,1702]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[44,1399][327,1702]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[96,1425][275,1604]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[117,1446][254,1583]\" /></node><node index=\"1\" text=\"车优多\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[127,1624][244,1676]\" /></node></node><node index=\"17\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[327,1394][610,1702]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/ll_adapter_my_app\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[327,1399][610,1702]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[379,1425][558,1604]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/iv_app_icon\" class=\"android.widget.ImageView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[400,1446][537,1583]\" /><node index=\"1\" text=\"1\" resource-id=\"com.shuqing.launcher:id/tv_badge_count\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[505,1425][558,1477]\" /></node><node index=\"1\" text=\"瓜子二手车\" resource-id=\"com.shuqing.launcher:id/tv_app_name\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[371,1624][566,1676]\" /></node></node></node></node></node></node></node></node></node></node><node index=\"2\" text=\"\" resource-id=\"com.shuqing.launcher:id/page_indicator\" class=\"android.view.View\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,2203][1220,2255]\" /><node index=\"3\" text=\"\" resource-id=\"com.shuqing.launcher:id/hotseat\" class=\"android.widget.FrameLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,2255][1220,2712]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,2255][1220,2712]\"><node index=\"0\" text=\"\" resource-id=\"com.shuqing.launcher:id/layout\" class=\"android.view.ViewGroup\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,2255][1220,2712]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.ViewGroup\" package=\"com.shuqing.launcher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[75,2281][1145,2552]\"><node index=\"0\" text=\"联系人\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"联系人\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[75,2281][289,2552]\" /><node index=\"1\" text=\"短信\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"短信，有 9 个通知\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[289,2281][503,2552]\" /><node index=\"2\" text=\"相机\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"相机\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[717,2281][931,2552]\" /><node index=\"3\" text=\"微信\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.shuqing.launcher\" content-desc=\"微信\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"true\" password=\"false\" selected=\"false\" bounds=\"[931,2281][1145,2552]\" /></node></node></node></node></node></node></node></node></node></hierarchy>",
+    "fresh_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s01_to_s02_20260506_140414.png",
+    "screenshot_is_black": false,
+    "screenshot_missing": false,
+    "screenshot_path": "artifacts/screenshots/s01_to_s02_20260506_140414.png",
+    "screenshot_error": "",
+    "xml_missing": false,
+    "xml_path": "artifacts/debug/s01_to_s02_20260506_140414.xml",
+    "xml_dump_error": "",
+    "adb_rc": 0,
+    "adb_stderr": "",
+    "xml_dump_rc": 0,
+    "xml_dump_stderr": "",
+    "xml_read_rc": 0,
+    "xml_read_stderr": "",
+    "nodes": [
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "应用列表",
+        "labels": [
+          "应用列表"
+        ],
+        "bounds": [
+          571,
+          2177,
+          649,
+          2255
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ScrollView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          26,
+          136,
+          1194,
+          2177
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.view.ViewGroup"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          136,
+          1176,
+          2177
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.view.ViewGroup"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          136,
+          1176,
+          2176
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          136,
+          1176,
+          2176
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          136,
+          1176,
+          2176
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          136,
+          1176,
+          2176
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          162,
+          1176,
+          2176
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "androidx.recyclerview.widget.RecyclerView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          162,
+          327,
+          470
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          167,
+          327,
+          470
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          96,
+          193,
+          275,
+          372
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          117,
+          214,
+          254,
+          351
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "账号中心",
+        "content_desc": "",
+        "labels": [
+          "账号中心"
+        ],
+        "bounds": [
+          107,
+          392,
+          263,
+          444
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          327,
+          162,
+          610,
+          470
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          327,
+          167,
+          610,
+          470
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          379,
+          193,
+          558,
+          372
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          400,
+          214,
+          537,
+          351
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "推荐应用",
+        "content_desc": "",
+        "labels": [
+          "推荐应用"
+        ],
+        "bounds": [
+          390,
+          392,
+          546,
+          444
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          610,
+          162,
+          893,
+          470
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          610,
+          167,
+          893,
+          470
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          662,
+          193,
+          841,
+          372
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          683,
+          214,
+          820,
+          351
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "太擎",
+        "content_desc": "",
+        "labels": [
+          "太擎"
+        ],
+        "bounds": [
+          712,
+          392,
+          790,
+          444
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          893,
+          162,
+          1176,
+          470
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          893,
+          167,
+          1176,
+          470
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          945,
+          193,
+          1124,
+          372
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          966,
+          214,
+          1103,
+          351
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "客户卫士",
+        "content_desc": "",
+        "labels": [
+          "客户卫士"
+        ],
+        "bounds": [
+          956,
+          392,
+          1112,
+          444
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          470,
+          327,
+          778
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          475,
+          327,
+          778
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          96,
+          501,
+          275,
+          680
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          117,
+          522,
+          254,
+          659
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "百宝箱",
+        "content_desc": "",
+        "labels": [
+          "百宝箱"
+        ],
+        "bounds": [
+          127,
+          700,
+          244,
+          752
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          327,
+          470,
+          610,
+          778
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          327,
+          475,
+          610,
+          778
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          379,
+          501,
+          558,
+          680
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          400,
+          522,
+          537,
+          659
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "应用分身",
+        "content_desc": "",
+        "labels": [
+          "应用分身"
+        ],
+        "bounds": [
+          390,
+          700,
+          546,
+          752
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          610,
+          470,
+          893,
+          778
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          610,
+          475,
+          893,
+          778
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          662,
+          501,
+          841,
+          680
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          683,
+          522,
+          820,
+          659
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "智能体设备",
+        "content_desc": "",
+        "labels": [
+          "智能体设备"
+        ],
+        "bounds": [
+          654,
+          700,
+          849,
+          752
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          893,
+          470,
+          1176,
+          778
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          893,
+          475,
+          1176,
+          778
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          945,
+          501,
+          1124,
+          680
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          966,
+          522,
+          1103,
+          659
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "设置",
+        "content_desc": "",
+        "labels": [
+          "设置"
+        ],
+        "bounds": [
+          995,
+          700,
+          1073,
+          752
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          778,
+          327,
+          1086
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          783,
+          327,
+          1086
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          96,
+          809,
+          275,
+          988
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          117,
+          830,
+          254,
+          967
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "微信",
+        "content_desc": "",
+        "labels": [
+          "微信"
+        ],
+        "bounds": [
+          146,
+          1008,
+          224,
+          1060
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          327,
+          778,
+          610,
+          1086
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          327,
+          783,
+          610,
+          1086
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          379,
+          809,
+          558,
+          988
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          400,
+          830,
+          537,
+          967
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "微信",
+        "content_desc": "",
+        "labels": [
+          "微信"
+        ],
+        "bounds": [
+          429,
+          1008,
+          507,
+          1060
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          610,
+          778,
+          893,
+          1086
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          610,
+          783,
+          893,
+          1086
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          662,
+          809,
+          841,
+          988
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          683,
+          830,
+          820,
+          967
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "抖音",
+        "content_desc": "",
+        "labels": [
+          "抖音"
+        ],
+        "bounds": [
+          712,
+          1008,
+          790,
+          1060
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          893,
+          778,
+          1176,
+          1086
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          893,
+          783,
+          1176,
+          1086
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          945,
+          809,
+          1124,
+          988
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          966,
+          830,
+          1103,
+          967
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "快手",
+        "content_desc": "",
+        "labels": [
+          "快手"
+        ],
+        "bounds": [
+          995,
+          1008,
+          1073,
+          1060
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          1086,
+          327,
+          1394
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          1091,
+          327,
+          1394
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          96,
+          1117,
+          275,
+          1296
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          117,
+          1138,
+          254,
+          1275
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "小红书",
+        "content_desc": "",
+        "labels": [
+          "小红书"
+        ],
+        "bounds": [
+          127,
+          1316,
+          244,
+          1368
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          327,
+          1086,
+          610,
+          1394
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          327,
+          1091,
+          610,
+          1394
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          379,
+          1117,
+          558,
+          1296
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          400,
+          1138,
+          537,
+          1275
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "查博士企业版",
+        "content_desc": "",
+        "labels": [
+          "查博士企业版"
+        ],
+        "bounds": [
+          351,
+          1316,
+          585,
+          1368
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          610,
+          1086,
+          893,
+          1394
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          610,
+          1091,
+          893,
+          1394
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          662,
+          1117,
+          841,
+          1296
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          683,
+          1138,
+          820,
+          1275
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "58车商通",
+        "content_desc": "",
+        "labels": [
+          "58车商通"
+        ],
+        "bounds": [
+          668,
+          1316,
+          834,
+          1368
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          893,
+          1086,
+          1176,
+          1394
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          893,
+          1091,
+          1176,
+          1394
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          945,
+          1117,
+          1124,
+          1296
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          966,
+          1138,
+          1103,
+          1275
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "车智赢+",
+        "content_desc": "",
+        "labels": [
+          "车智赢+"
+        ],
+        "bounds": [
+          964,
+          1316,
+          1105,
+          1368
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          1394,
+          327,
+          1702
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          44,
+          1399,
+          327,
+          1702
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          96,
+          1425,
+          275,
+          1604
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          117,
+          1446,
+          254,
+          1583
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "车优多",
+        "content_desc": "",
+        "labels": [
+          "车优多"
+        ],
+        "bounds": [
+          127,
+          1624,
+          244,
+          1676
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          327,
+          1394,
+          610,
+          1702
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          327,
+          1399,
+          610,
+          1702
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          379,
+          1425,
+          558,
+          1604
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          400,
+          1446,
+          537,
+          1583
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "1",
+        "content_desc": "",
+        "labels": [
+          "1"
+        ],
+        "bounds": [
+          505,
+          1425,
+          558,
+          1477
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "瓜子二手车",
+        "content_desc": "",
+        "labels": [
+          "瓜子二手车"
+        ],
+        "bounds": [
+          371,
+          1624,
+          566,
+          1676
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          2203,
+          1220,
+          2255
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          2255,
+          1220,
+          2712
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          2255,
+          1220,
+          2712
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          2255,
+          1220,
+          2712
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.view.ViewGroup"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          75,
+          2281,
+          1145,
+          2552
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.view.ViewGroup"
+      },
+      {
+        "text": "联系人",
+        "content_desc": "联系人",
+        "labels": [
+          "联系人",
+          "联系人"
+        ],
+        "bounds": [
+          75,
+          2281,
+          289,
+          2552
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "短信",
+        "content_desc": "短信，有 9 个通知",
+        "labels": [
+          "短信",
+          "短信，有 9 个通知"
+        ],
+        "bounds": [
+          289,
+          2281,
+          503,
+          2552
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "相机",
+        "content_desc": "相机",
+        "labels": [
+          "相机",
+          "相机"
+        ],
+        "bounds": [
+          717,
+          2281,
+          931,
+          2552
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      },
+      {
+        "text": "微信",
+        "content_desc": "微信",
+        "labels": [
+          "微信",
+          "微信"
+        ],
+        "bounds": [
+          931,
+          2281,
+          1145,
+          2552
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.shuqing.launcher",
+        "class_name": "android.widget.TextView"
+      }
+    ],
+    "visible_texts": [
+      "应用列表",
+      "账号中心",
+      "推荐应用",
+      "太擎",
+      "客户卫士",
+      "百宝箱",
+      "应用分身",
+      "智能体设备",
+      "设置",
+      "微信",
+      "抖音",
+      "快手",
+      "小红书",
+      "查博士企业版",
+      "58车商通",
+      "车智赢+",
+      "车优多",
+      "1",
+      "瓜子二手车",
+      "联系人",
+      "短信",
+      "短信，有 9 个通知",
+      "相机"
+    ],
+    "capture_metrics": {
+      "screenshot_ms": 448,
+      "xml_ms": 3570
+    },
+    "visible_blob": "应用列表账号中心推荐应用太擎客户卫士百宝箱应用分身智能体设备设置微信抖音快手小红书查博士企业版58车商通车智赢+车优多1瓜子二手车联系人短信短信，有 9 个通知相机",
+    "actual_state": null
+  }
+}

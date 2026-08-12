@@ -1,0 +1,18 @@
+{
+  "status": "S11_TRANSFER_COUNT_UNICODE_REGEX_PATCHED",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "forbidden_files_touched": [],
+  "implementation_summary": [
+    "Replaced mojibake transfer-count regex with Unicode patterns.",
+    "Supported compact, spaced, reverse, and ???? formats.",
+    "Added raw XML node text/content-desc evidence scanning.",
+    "Added S11 current_reference fields for transfer_count_text, parsed_transfer_count, listing_id, mileage_age_text, and insurance_claim_text.",
+    "FIELD_MISSING remains only when no transfer count can be parsed from XML/text/content-desc evidence."
+  ],
+  "py_compile": "passed",
+  "import_validation": "IMPORT_OK",
+  "offline_validation_path": "output/s11_transfer_count_unicode_regex_offline_validation.json",
+  "offline_validation_passed": true
+}

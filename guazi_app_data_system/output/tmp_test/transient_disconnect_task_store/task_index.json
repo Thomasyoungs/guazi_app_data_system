@@ -1,0 +1,17 @@
+{
+  "FS20260622_9997": {
+    "task_id": "FS20260622_9997",
+    "status": "CANCELLED",
+    "raw_message_id": null,
+    "business_chat_id": null,
+    "sender_open_id": null,
+    "source_message_id": null,
+    "confirm_card_message_id": null,
+    "supervisor_chat_id": null,
+    "supervisor_review_card_message_id": null,
+    "queued_at": null,
+    "confirmed_at": null,
+    "created_at": null,
+    "updated_at": "2026-07-04T05:17:43+00:00"
+  }
+}

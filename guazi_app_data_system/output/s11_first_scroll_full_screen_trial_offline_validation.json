@@ -1,0 +1,187 @@
+{
+  "status": "S11_FIRST_SCROLL_FULL_SCREEN_TRIAL_OFFLINE_VALIDATION_PASSED",
+  "all_passed": true,
+  "case_count": 9,
+  "cases": [
+    {
+      "case": "A_entry_safe_initial_no_first_scroll_needed",
+      "passed": true,
+      "visibility": {
+        "exact_report_entry_seen": true,
+        "viewport_bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "bounds_source": "xml_visible_bounds",
+        "screen_height": 2712,
+        "safe_top_y": 135,
+        "safe_bottom_y": 2223,
+        "safe_bottom_source": "screen_height_82_percent",
+        "bottom_bar_detected": false,
+        "bottom_bar_bounds": null,
+        "bottom_action_hits": [],
+        "report_entry_bounds": [
+          80,
+          1800,
+          597,
+          1920
+        ],
+        "node_height": 120,
+        "within_screen": true,
+        "node_height_normal": true,
+        "below_safe_bottom": false,
+        "overlapped_bottom_bar": false,
+        "too_close_to_bottom": false,
+        "above_safe_top": false,
+        "exact_report_entry_fully_visible": true,
+        "exact_report_entry_in_safe_click_region": true,
+        "reason": "fully_visible_safe"
+      }
+    },
+    {
+      "case": "B_no_entry_first_scroll_uses_full_screen_trial",
+      "passed": true,
+      "points": {
+        "bounds_source": "xml_visible_bounds",
+        "scroll_region_bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "scroll_mode": "first_full_screen_report_entry_scroll",
+        "swipe_x_start": 610,
+        "swipe_y_start": 2440,
+        "swipe_x_end": 610,
+        "swipe_y_end": 162,
+        "swipe_duration_ms": 1050,
+        "scroll_distance_px": 2278,
+        "scroll_distance_ratio": 0.84,
+        "s11_report_entry_scroll_step_ratio": 0.84,
+        "s11_report_entry_scroll_distance_px": 2278,
+        "s11_report_entry_reposition_scroll": false,
+        "s11_report_search_scroll_mode": "first",
+        "s11_report_scroll_step_px": 2278,
+        "s11_first_scroll_strategy": "full_screen_trial",
+        "s11_first_scroll_screen_ratio": 1.0,
+        "s11_first_scroll_requested_distance_px": 2712
+      }
+    },
+    {
+      "case": "C_after_first_scroll_fresh_pair_available",
+      "passed": true,
+      "pair": {
+        "fresh_pair_id": "e41b84feda31eea8",
+        "action_context": "S11_REPORT_SEARCH",
+        "screenshot_path": "offline.png",
+        "xml_path": "offline.xml",
+        "xml_dump_ok": false,
+        "xml_mtime_valid": false,
+        "page_identity_check": "S11_XML_ACCEPTABLE_FOR_REPORT_SEARCH",
+        "s11_xml_stale": false,
+        "s11_xml_s10_strong_signals": [],
+        "s11_xml_s12_strong_signals": [],
+        "fresh_evidence_pair_ok": false
+      }
+    },
+    {
+      "case": "D_after_first_scroll_internal_region_check_available",
+      "passed": true,
+      "check": {
+        "s11_internal_visible_region_check": true,
+        "s11_internal_visible_region_mismatch": true,
+        "s11_internal_visible_region_mismatch_reason": "s11_report_search_lower_region_without_report_context_markers_in_xml",
+        "s11_internal_lower_area_markers_in_xml": [
+          "车身外观"
+        ],
+        "s11_internal_lower_area_marker_count": 1,
+        "s11_fresh_pair_valid_after_internal_check": false,
+        "s11_report_context_markers_in_xml": [],
+        "s11_report_context_marker_count": 0
+      }
+    },
+    {
+      "case": "E_later_search_uses_fixed_small_scroll",
+      "passed": true,
+      "points": {
+        "bounds_source": "xml_visible_bounds",
+        "scroll_region_bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "scroll_mode": "small_report_entry_scroll",
+        "swipe_x_start": 610,
+        "swipe_y_start": 1952,
+        "swipe_x_end": 610,
+        "swipe_y_end": 1464,
+        "swipe_duration_ms": 850,
+        "scroll_distance_px": 488,
+        "scroll_distance_ratio": 0.1799,
+        "s11_report_entry_scroll_step_ratio": 0.1799,
+        "s11_report_entry_scroll_distance_px": 488,
+        "s11_report_entry_reposition_scroll": false,
+        "s11_report_search_scroll_mode": "small",
+        "s11_report_scroll_step_px": 488,
+        "s11_first_scroll_strategy": "",
+        "s11_first_scroll_screen_ratio": null,
+        "s11_first_scroll_requested_distance_px": null
+      }
+    },
+    {
+      "case": "F_unsafe_entry_routes_to_reposition_gate",
+      "passed": true,
+      "visibility": {
+        "exact_report_entry_seen": true,
+        "viewport_bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "bounds_source": "xml_visible_bounds",
+        "screen_height": 2712,
+        "safe_top_y": 135,
+        "safe_bottom_y": 2223,
+        "safe_bottom_source": "screen_height_82_percent",
+        "bottom_bar_detected": false,
+        "bottom_bar_bounds": null,
+        "bottom_action_hits": [],
+        "report_entry_bounds": [
+          80,
+          2320,
+          597,
+          2450
+        ],
+        "node_height": 130,
+        "within_screen": true,
+        "node_height_normal": true,
+        "below_safe_bottom": true,
+        "overlapped_bottom_bar": false,
+        "too_close_to_bottom": true,
+        "above_safe_top": false,
+        "exact_report_entry_fully_visible": false,
+        "exact_report_entry_in_safe_click_region": false,
+        "reason": "below_safe_bottom,too_close_to_bottom"
+      }
+    },
+    {
+      "case": "G_no_normal_fine_backtrack_mainline_restored",
+      "passed": true,
+      "current_scroll_mode_first_small": true
+    },
+    {
+      "case": "H_no_ocr_or_coordinate_click_added",
+      "passed": true,
+      "note": "Source inspection found no new OCR, visual recognition, screenshot-coordinate click, or micro-scroll refresh path in this first-scroll trial patch."
+    },
+    {
+      "case": "I_s10_s12_s13_s14_metal_deduct_not_regressed_by_patch_scope",
+      "passed": true,
+      "note": "Patch touched only S11 first-scroll constants/fields in runtime_s10_to_s16_mainline.py; S10/S12/S13/S14/metal_deduct logic was not edited by this trial."
+    }
+  ]
+}

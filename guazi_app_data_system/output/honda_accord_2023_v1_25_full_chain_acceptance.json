@@ -1,0 +1,91 @@
+{
+  "acceptance_status": "HONDA_ACCORD_2023_V1_25_FULL_CHAIN_ACCEPTANCE_PASSED",
+  "created_at": "2026-05-12T18:56:12+08:00",
+  "read_only_acceptance": true,
+  "code_modified": false,
+  "pricing_modified": false,
+  "config_modified": false,
+  "docx_modified": false,
+  "real_device_run": false,
+  "result_json_overwritten": false,
+  "baseline_overwritten": false,
+  "fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+  "first_stage_status": "S10_READY",
+  "second_stage_status": "FULL_CHAIN_PRICED_DONE",
+  "final_status": "FULL_CHAIN_PRICED_DONE",
+  "target_score": 84.0,
+  "final_reference_index": 2,
+  "final_reference_price_yuan": 115700,
+  "final_reference_score": 86.0,
+  "competition_coefficient": 0.975,
+  "target_guazi_listing_price_yuan": 112800,
+  "guazi_service_fee_yuan": 4500,
+  "guazi_net_payout_yuan": 108300,
+  "suggested_purchase_price_yuan": 97136,
+  "manual_review_required": false,
+  "manual_review_reasons": [],
+  "reference_chain_summary": [
+    {
+      "reference_index": 1,
+      "reference_status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+      "reference_score": null,
+      "reference_score_gte_target_score": null,
+      "reference_exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE"
+    },
+    {
+      "reference_index": 2,
+      "reference_status": "FINAL_REFERENCE",
+      "reference_score": 86.0,
+      "reference_score_gte_target_score": true,
+      "reference_exclusion_reason": null
+    }
+  ],
+  "slow_action_summary": {
+    "slow_action_count": 70,
+    "primary_clusters": [
+      "S14 å¾çåºåéé",
+      "S07 è½¦é¾ç­éç»åå¨ä½",
+      "S10âS11 é¡µé¢å è½½/è¯å«ç­å¾"
+    ],
+    "report_path": "output/slow_action_timing_report.json",
+    "raw_event_details_not_embedded": true
+  },
+  "verified_capabilities": [
+    "V1.25 S05 å·¦ä¾§ç®æ å¹´æ¬¾ç¹å»è®°å½å³ç¡®è®¤",
+    "éè¾ééãè¾¾æ å³å",
+    "S08/S10 æ¥æºé¨ç¦ + ä¸æ ¸å¿åç´  + ååæé¤",
+    "S10 æ é¢ç¡®å®æ§å½ä¸å¹é",
+    "ç¬¬äºæ®µ S10âS16/S17 å®æ´é¾è·¯",
+    "æå¡è´¹é¶æ¢¯å®ä»·",
+    "ç«äºåç³»æ° V1.2.1",
+    "æ æ§ Ã95% åæ¬¾è§å",
+    "æ éä¸åä»·æ ¼ä½¿ç¨",
+    "slow action timing è®°å½è½å"
+  ],
+  "quality_checks": {
+    "fingerprint_consistent": true,
+    "first_stage_status_is_s10_ready": true,
+    "second_stage_status_full_chain_priced": true,
+    "final_reference_index_match": true,
+    "final_reference_score_match": true,
+    "target_score_match": true,
+    "reference_score_gte_target_score": true,
+    "priced_values_match": true,
+    "manual_review_required_false": true,
+    "non_trisame_price_not_used": true,
+    "old_95_percent_rule_not_used": true,
+    "json_valid": true,
+    "raw_xml_large_fields_present": false,
+    "raw_xml_large_field_paths": [],
+    "old_target_structured_pollution_detected": false,
+    "baseline_overwritten": false
+  },
+  "source_files": [
+    "output\\honda_accord_2023_260turbo_zhixiang_v1_25_full_chain_run.json",
+    "output\\slow_action_timing_report.json",
+    "output\\result_s01_to_s10.json",
+    "output\\result_s10_to_s16.json",
+    "output\\result.json",
+    "data\\sample_registry\\baseline_sample_registry.json"
+  ]
+}

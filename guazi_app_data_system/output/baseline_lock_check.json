@@ -1,0 +1,131 @@
+{
+  "generated_at": "2026-05-09T02:48:11.950Z",
+  "mode": "READ_ONLY_BASELINE_LOCK_AND_NEXT_TARGET_PRECHECK",
+  "baseline_name": "BASELINE_FOCUS_2017_FULL_CHAIN_PRICED_DONE_202605",
+  "final_status": "BASELINE_LOCK_CHECK_PASSED_READY_FOR_NEXT_TARGET",
+  "target_fingerprint": "福特|福克斯|2017款|两厢 1.6L 自动舒适型智行版|白|2017.07",
+  "file_checks": [
+    {
+      "path": "output/result_s01_to_s10.json",
+      "exists": true,
+      "json_valid": true,
+      "error": null
+    },
+    {
+      "path": "output/result_s10_to_s16.json",
+      "exists": true,
+      "json_valid": true,
+      "error": null
+    },
+    {
+      "path": "output/result.json",
+      "exists": true,
+      "json_valid": true,
+      "error": null
+    },
+    {
+      "path": "output/full_chain_acceptance_report_latest.md",
+      "exists": true,
+      "json_valid": null,
+      "error": null
+    },
+    {
+      "path": "output/full_chain_acceptance_report.json",
+      "exists": true,
+      "json_valid": true,
+      "error": null
+    },
+    {
+      "path": "output/baseline_freeze_package_latest.md",
+      "exists": true,
+      "json_valid": null,
+      "error": null
+    },
+    {
+      "path": "output/baseline_freeze_package.json",
+      "exists": true,
+      "json_valid": true,
+      "error": null
+    }
+  ],
+  "status_checks": {
+    "result_s01_to_s10_status": "S10_READY",
+    "result_s10_to_s16_status": "FULL_CHAIN_PRICED_DONE",
+    "result_status": "FULL_CHAIN_PRICED_DONE",
+    "freeze_status": "BASELINE_FREEZE_READY",
+    "acceptance_status": "FULL_CHAIN_ACCEPTANCE_PASSED_BASELINE_READY"
+  },
+  "fingerprint_checks": {
+    "expected": "福特|福克斯|2017款|两厢 1.6L 自动舒适型智行版|白|2017.07",
+    "result": "福特|福克斯|2017款|两厢 1.6L 自动舒适型智行版|白|2017.07",
+    "result_s10_to_s16": "福特|福克斯|2017款|两厢 1.6L 自动舒适型智行版|白|2017.07",
+    "old_mini_pollution": false
+  },
+  "reference_history_check": {
+    "count": 3,
+    "loop_rule": "逐辆采集，当前参考车字段完整、未淘汰且 reference_score >= target_score 时达标即停；不按数量硬采满三辆。",
+    "items": [
+      {
+        "reference_index": 1,
+        "price": "2.52万",
+        "metadata": "2017年 | 7.81万公里 | 唐山",
+        "score": 90.5,
+        "target_score": 93,
+        "score_gte_target": false,
+        "decision": "不达标，继续第 2 辆。"
+      },
+      {
+        "reference_index": 2,
+        "price": "2.55万",
+        "metadata": "2017年 | 12.01万公里 | 唐山",
+        "score": 85,
+        "target_score": 93,
+        "score_gte_target": false,
+        "decision": "不达标，继续第 3 辆。"
+      },
+      {
+        "reference_index": 3,
+        "price": "2.62万",
+        "metadata": "2017年 | 8.18万公里 | 唐山",
+        "score": 93.5,
+        "target_score": 93,
+        "score_gte_target": true,
+        "decision": "达标，进入 S16 定价。"
+      }
+    ]
+  },
+  "code_capabilities": {
+    "reference_index_continuation": true,
+    "nth_s10_card_unique_binding": true,
+    "s11_top_one_third_image_standard": true,
+    "report_entry_full_visible_safe_click": true,
+    "s11_to_s12_wait_stable": true,
+    "s12_priority_over_s14_in_s11_to_s12": true,
+    "s14_source_gate": true,
+    "reference_history_preserved": true,
+    "no_raw_xml_in_result_json": true
+  },
+  "freeze_package_rule_check": {
+    "not_fixed_count_rule": true,
+    "stop_when_current_reference_qualified": true,
+    "sample_shortage_is_warning_not_blocker": true
+  },
+  "checks": {
+    "files_exist_and_json_valid": true,
+    "result_s01_to_s10_status": true,
+    "result_s10_to_s16_status": true,
+    "result_status": true,
+    "freeze_status": true,
+    "acceptance_status": true,
+    "fingerprint_result": true,
+    "fingerprint_second_stage": true,
+    "no_old_mini_pollution": true,
+    "reference_history_len_3": true,
+    "ref1_score_continue": true,
+    "ref2_score_continue": true,
+    "ref3_score_selected": true,
+    "reference_loop_rule": true,
+    "code_capabilities_all_present": true
+  },
+  "failures": []
+}

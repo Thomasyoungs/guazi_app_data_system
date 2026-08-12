@@ -1,0 +1,263 @@
+{
+  "task": "READ_ONLY_TRACE_NISSAN_TERRA_REFERENCE1_PREMATURE_RETURN_TRIGGER_SIGNAL",
+  "generated_at": "2026-05-13T12:21:30.012Z",
+  "target_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+  "read_only_confirmation": {
+    "code_modified": false,
+    "real_device_run": false,
+    "second_stage_started": false,
+    "reference_collected": false,
+    "pricing_rerun": false,
+    "result_json_overwritten": false
+  },
+  "reference_summary": {
+    "reference_index": 1,
+    "reference_title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+    "reference_price_yuan": 84800,
+    "reference_metadata": "2021年 | 12.5万公里 | 安庆",
+    "reference_score": 78,
+    "target_score": 92,
+    "score_gte_target": false,
+    "s12_claim_count": 4,
+    "s12_max_claim_amount": 19000,
+    "s13_region_repair_counts": {
+      "驾驶侧": 10
+    },
+    "clicked_repair_items": [
+      "左前翼子板"
+    ],
+    "collected_repair_items": [
+      "左前翼子板"
+    ]
+  },
+  "timeline": [
+    {
+      "step": 1,
+      "event": "S13 parsed history repair count",
+      "page_id": "S13",
+      "action_id": "read_s13_region_history_repair_count",
+      "state_flags": {
+        "s13_region": "驾驶侧",
+        "s13_history_repair_count": 10
+      },
+      "trigger_condition": "raw XML nodes + bounds local binding associated 历史修复 with count 10",
+      "evidence_path": {
+        "xml_path": "artifacts/debug/s13_region_驾驶侧_20260513_195239.xml",
+        "screenshot_path": "artifacts/screenshots/s13_region_驾驶侧_20260513_195239.png"
+      },
+      "relevant_values": {
+        "s13_total_repair_count": 10,
+        "expected_repair_item_count": 10
+      }
+    },
+    {
+      "step": 2,
+      "event": "S13 clicked one concrete repair item",
+      "page_id": "S13",
+      "action_id": "S13_ONLY_ALLOWED_ACTION_CLICK_REPAIR_ITEM",
+      "state_flags": {
+        "selected_repair_item_text": "左前翼子板"
+      },
+      "trigger_condition": "Only one concrete repair item was selected under 驾驶侧.",
+      "evidence_path": {
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s13_to_s14_驾驶侧_20260513_195243.xml",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_to_s14_驾驶侧_20260513_195243.png"
+      },
+      "relevant_values": {
+        "enumerated_repair_item_count": 1,
+        "collected_repair_item_count_before_s14": 0
+      }
+    },
+    {
+      "step": 3,
+      "event": "S14 current item image sequence completed",
+      "page_id": "S14",
+      "action_id": "collect_image_sequence_until_terminal",
+      "state_flags": {
+        "S14_COLLECT_DONE": true,
+        "s14_images_processed": 3,
+        "s14_images_total": 3
+      },
+      "trigger_condition": "S14 image sequence for 左前翼子板 produced 3 records and terminal snapshot evidence.",
+      "evidence_path": {
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260513_195255.xml",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260513_195255.png"
+      },
+      "relevant_values": {
+        "visited_s14_keys": [
+          "左前翼子板(1/2)|左前翼子板—喷漆|左前翼子板|喷漆",
+          "左前翼子板(2/2)|左前翼子板—喷漆|左前翼子板|喷漆",
+          "左前翼子板漆面(1/1)|左前翼子板—喷漆|左前翼子板|喷漆"
+        ],
+        "collected_s14_images_count": 3,
+        "repair_items_count": 1
+      }
+    },
+    {
+      "step": 4,
+      "event": "S14 returned to reliable S10",
+      "page_id": "S14/S10",
+      "action_id": "fixed_return_to_s10_stop_on_first_s10",
+      "state_flags": {
+        "returned_list_source_verified": true,
+        "returned_s10_snapshot_reused": true
+      },
+      "trigger_condition": "After S14_COLLECT_DONE, fixed return routine captured reliable S10 snapshot.",
+      "evidence_path": {
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_return_to_s10_attempt_2_20260513_195304.xml",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_return_to_s10_attempt_2_20260513_195304.png"
+      },
+      "relevant_values": {
+        "return_to_s10_source": "S14_RETURN_TO_S10_ATTEMPT"
+      }
+    },
+    {
+      "step": 5,
+      "event": "S15 allowed and reference score computed",
+      "page_id": "S15",
+      "action_id": "score_target_and_reference",
+      "state_flags": {
+        "s15_entered": true,
+        "s15_score_compare_done": true
+      },
+      "trigger_condition": "handle_s15 accepted s14_collect_done=true, S14 image metrics complete, repair_items key present, and returned_list_source_verified=true.",
+      "evidence_path": {
+        "result_path": "output/result_s10_to_s16.json"
+      },
+      "relevant_values": {
+        "reference_score_input": {
+          "reference_index": 1,
+          "list_price_10k": 8.48,
+          "list_year": 2021,
+          "list_mileage_10k_km": 12.5,
+          "transfer_count": 1,
+          "accident_count": 4,
+          "max_accident_amount": 19000,
+          "repair_counts": {
+            "驾驶侧": 10
+          },
+          "panel_repairs": [
+            {
+              "part": "左前翼子板",
+              "damage_type": "喷漆"
+            }
+          ],
+          "score": null,
+          "is_final_reference": false
+        },
+        "reference_score_components": {
+          "body_score": 69,
+          "mileage_score": 0,
+          "transfer_score": 7,
+          "accident_score": 0,
+          "max_amount_score": 2
+        }
+      }
+    },
+    {
+      "step": 6,
+      "event": "Score gate continued to next reference",
+      "page_id": "S15/S10",
+      "action_id": "CONTINUE_NEXT_REFERENCE",
+      "state_flags": {
+        "reference_score_gte_target_score": false
+      },
+      "trigger_condition": "reference_score=78.0 < target_score=92.0 after S15 scoring.",
+      "evidence_path": {
+        "result_path": "output/result_s10_to_s16.json"
+      },
+      "relevant_values": {
+        "reference_score": 78,
+        "target_score": 92,
+        "next_reference_index": 2
+      }
+    }
+  ],
+  "early_score_pruning_check": {
+    "classification": "NO_EARLY_SCORE_PRUNING_LOGIC_FOUND",
+    "searched_terms": [
+      "partial_score",
+      "current_score",
+      "interim_score",
+      "early_reject",
+      "early_stop",
+      "early_exit",
+      "score_below_target",
+      "reference_score < target_score",
+      "CONTINUE_NEXT_REFERENCE",
+      "disqualify_reference",
+      "skip_remaining_repairs",
+      "stop_collecting_repairs",
+      "return_to_s10",
+      "repair_details_incomplete",
+      "fields_complete"
+    ],
+    "conclusion": "No executable path was found that computes a partial score during S13/S14 and exits because the score is already below target. The score comparison path appears after handle_s15 has already admitted the reference as collect-done."
+  },
+  "completion_signal_check": {
+    "current_repair_item_collect_done": true,
+    "S14_COLLECT_DONE": true,
+    "reference_repair_details_collect_done_effective": true,
+    "all_repair_items_collect_done": false,
+    "expected_repair_item_count": 10,
+    "enumerated_repair_item_count": 1,
+    "collected_repair_item_count": 1,
+    "s13_total_repair_count": 10,
+    "s13_region_repair_counts": {
+      "驾驶侧": 10
+    },
+    "s15_entry_allowed": true,
+    "s15_entry_reason": "S15 checks S14_COLLECT_DONE, current_reference.s14_collect_done, S14 image/tab metrics, repair_items presence, and returned_list_source_verified; it does not check expected versus collected repair item count."
+  },
+  "code_evidence": [
+    {
+      "file": "scripts/runtime_s10_to_s16_mainline.py",
+      "lines": "3312-3329",
+      "finding": "_s14_completion_evidence() computes all_target_repairs_recorded from current s14_image_records only; it does not compare against S13 total repair count."
+    },
+    {
+      "file": "scripts/runtime_s10_to_s16_mainline.py",
+      "lines": "7847-7857",
+      "finding": "After current S14 image sequence evidence passes, context.s14_collect_done and current_reference.s14_collect_done are set true; repair_items is set from damage_by_part."
+    },
+    {
+      "file": "scripts/runtime_s10_to_s16_mainline.py",
+      "lines": "8143-8181",
+      "finding": "handle_s15 blocks only when s14_collect_done false, S14 image metrics incomplete, or repair_items missing. It does not require collected_repair_item_count >= expected_repair_item_count."
+    },
+    {
+      "file": "scripts/runtime_s10_to_s16_mainline.py",
+      "lines": "8220-8244",
+      "finding": "Reference score is computed after S15 entry using available panel_repairs; reference_score_gte_target_score is set after scoring."
+    },
+    {
+      "file": "scripts/runtime_s10_to_s16_mainline.py",
+      "lines": "8575-8580",
+      "finding": "CONTINUE_NEXT_REFERENCE is recorded only after handle_s15 returns S10 because selected score is below target."
+    }
+  ],
+  "prior_diagnosis_alignment": {
+    "early_collect_done_diagnosis": "?1?????????????????? S15 ????? collect_done ?????? 1/10 ?????????????/???? S15 ??????",
+    "score_78_diagnosis": "S15_ENTRY_ALLOWED_BY_SINGLE_S14_ITEM_DONE_ONLY",
+    "score_78_trustworthy": false
+  },
+  "final_classification": "S14_COLLECT_DONE_AS_REFERENCE_COLLECT_DONE_MISUSED_NO_EARLY_SCORE_PRUNING",
+  "conclusion": {
+    "root_cause": "S14_COLLECT_DONE_SIGNAL_MISUSED_AS_REFERENCE_REPAIR_DETAILS_COMPLETE",
+    "direct_trigger_chain": "S13 repair_count=10 -> only 左前翼子板 clicked -> S14 current item sequence completed -> S14_COLLECT_DONE=true -> returned reliable S10 -> S15 admitted reference because repair_items exists and S14 metrics pass -> score 78 computed -> score below target -> CONTINUE_NEXT_REFERENCE.",
+    "not_root_cause": "No evidence of low-score early pruning during S13/S14 collection.",
+    "trustworthy_score_78": false,
+    "trustworthy_score_78_reason": "repair_details_incomplete_before_s15; 9 of 10 expected repair items were not collected before scoring."
+  },
+  "patch_recommendation": {
+    "recommended_patch": "PATCH_S13_S14_ALL_REPAIR_ITEMS_REQUIRED_BEFORE_S15",
+    "required_rules": [
+      "S13 repair_count > 0 must create expected_repair_item_count per region/reference.",
+      "S14_COLLECT_DONE applies only to the current repair item, not the whole reference.",
+      "reference_repair_details_collect_done requires collected_repair_item_count >= expected_repair_item_count, or a deterministic manual-review/exclusion stop if all items cannot be enumerated.",
+      "S15 must be blocked when repair details are incomplete; reference_score must not be trusted in that state.",
+      "Add reference_collect_done_evidence with expected/enumerated/collected counts and item ids."
+    ]
+  },
+  "output_status": "NISSAN_TERRA_REFERENCE1_PREMATURE_RETURN_TRIGGER_SIGNAL_TRACE_DONE"
+}

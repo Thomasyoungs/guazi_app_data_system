@@ -1,0 +1,476 @@
+{
+  "report_name": "nissan_terra_2020_second_stage_after_s14_completion_fix",
+  "created_at": "2026-05-16T10:47:22",
+  "final_status": "S14_COMPLETION_FIX_RUNTIME_VERIFIED_BUT_DOWNSTREAM_BLOCKED",
+  "execution_scope": "second_stage_only_from_existing_S10_READY",
+  "code_modified_this_round": false,
+  "first_stage_rerun_this_round": false,
+  "app_force_restart_this_round": false,
+  "target_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+  "precheck": {
+    "result_json_status_before_second_stage": "S10_READY",
+    "result_s01_to_s10_status": "S10_READY",
+    "result_s01_to_s10_final_status": "S10_READY",
+    "result_s01_to_s10_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08"
+  },
+  "second_stage_result": {
+    "status": "S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED",
+    "final_status": "S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED",
+    "issue_code": "S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED",
+    "current_reference_index": 1,
+    "s14_collect_done": false,
+    "reference_score_generated": false,
+    "reference_score": null,
+    "reference_score_trustworthy": false,
+    "reference_score_invalid_reason": "s14_full_image_sequence_incomplete_before_s15",
+    "s15_entered": false
+  },
+  "reference_1": {
+    "reference_index": 1,
+    "title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+    "price_text": "8.48万",
+    "metadata": "2021年 | 12.5万公里 | 安庆"
+  },
+  "s14_runtime_validation": {
+    "reached_s14": true,
+    "third_image_false_completion_prevented": false,
+    "image_records_count": 27,
+    "horizontal_swipes_count": 40,
+    "third_image": {
+      "index": 3,
+      "tab_label": "左前翼子板漆面(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": true,
+      "skipped_reason": "",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104039.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104039.xml"
+    },
+    "fourth_image_after_third": {
+      "index": 4,
+      "tab_label": "左侧前门(1/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104044.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104044.xml"
+    },
+    "left_front_door_seen_after_third": false,
+    "s14_collect_done": false,
+    "blocked_reason": "S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED",
+    "downstream_blocked": true,
+    "observed_failure_pattern": "?? tab ???????????? raw_first_line ??????????????????? page_label_first_line_mismatch ????S14 ????????"
+  },
+  "s14_image_sequence_summary": [
+    {
+      "index": 1,
+      "tab_label": "左前翼子板(1/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": true,
+      "skipped_reason": "",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_to_s14_驾驶侧_20260516_104028.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s13_to_s14_驾驶侧_20260516_104028.xml"
+    },
+    {
+      "index": 2,
+      "tab_label": "左前翼子板(2/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": true,
+      "skipped_reason": "",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104034.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104034.xml"
+    },
+    {
+      "index": 3,
+      "tab_label": "左前翼子板漆面(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": true,
+      "skipped_reason": "",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104039.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104039.xml"
+    },
+    {
+      "index": 4,
+      "tab_label": "左侧前门(1/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104044.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104044.xml"
+    },
+    {
+      "index": 5,
+      "tab_label": "左侧前门(2/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104050.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104050.xml"
+    },
+    {
+      "index": 6,
+      "tab_label": "左侧前门漆面(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104056.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104056.xml"
+    },
+    {
+      "index": 7,
+      "tab_label": "左D柱覆盖面(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104101.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104101.xml"
+    },
+    {
+      "index": 8,
+      "tab_label": "左侧后门(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104107.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104107.xml"
+    },
+    {
+      "index": 9,
+      "tab_label": "左D柱外侧漆面(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104112.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104112.xml"
+    },
+    {
+      "index": 10,
+      "tab_label": "左侧后门漆面(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104118.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104118.xml"
+    },
+    {
+      "index": 11,
+      "tab_label": "左后翼子板(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104124.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104124.xml"
+    },
+    {
+      "index": 12,
+      "tab_label": "左后翼子板漆面(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104130.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104130.xml"
+    },
+    {
+      "index": 13,
+      "tab_label": "后保险杠(1/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104136.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104136.xml"
+    },
+    {
+      "index": 14,
+      "tab_label": "后保险杠(2/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104142.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104142.xml"
+    },
+    {
+      "index": 15,
+      "tab_label": "左后尾灯(1/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104148.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104148.xml"
+    },
+    {
+      "index": 16,
+      "tab_label": "左后尾灯(2/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104154.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104154.xml"
+    },
+    {
+      "index": 17,
+      "tab_label": "右侧后门漆面(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104200.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104200.xml"
+    },
+    {
+      "index": 18,
+      "tab_label": "右侧后门(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104206.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104206.xml"
+    },
+    {
+      "index": 19,
+      "tab_label": "右A柱铰链(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104212.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104212.xml"
+    },
+    {
+      "index": 20,
+      "tab_label": "右前翼子板漆面(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104218.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104218.xml"
+    },
+    {
+      "index": 21,
+      "tab_label": "右前翼子板(1/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104224.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104224.xml"
+    },
+    {
+      "index": 22,
+      "tab_label": "右前翼子板(2/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104230.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104230.xml"
+    },
+    {
+      "index": 23,
+      "tab_label": "前保险杠(1/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104236.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104236.xml"
+    },
+    {
+      "index": 24,
+      "tab_label": "前保险杠(2/2)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104242.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104242.xml"
+    },
+    {
+      "index": 25,
+      "tab_label": "左前大灯(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104248.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104248.xml"
+    },
+    {
+      "index": 26,
+      "tab_label": "右前大灯(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104254.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104254.xml"
+    },
+    {
+      "index": 27,
+      "tab_label": "中网(1/1)",
+      "raw_first_line": "左前翼子板—喷漆",
+      "normalized_part": "左前翼子板",
+      "normalized_damage": "喷漆",
+      "saved_to_repair_items": false,
+      "skipped_reason": "page_label_first_line_mismatch",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104300.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104300.xml"
+    }
+  ],
+  "last_swipe_summary": [
+    {
+      "before_page_label": "中网(1/1)",
+      "after_page_label": "中网(1/1)",
+      "before_first_line": "左前翼子板—喷漆",
+      "after_first_line": "左前翼子板—喷漆",
+      "semantic_changed": false,
+      "image_hash_changed": true,
+      "image_hash_changed_without_semantic_change": true,
+      "no_semantic_change_count": 7,
+      "image_sequence_end_confirmed": true
+    },
+    {
+      "before_page_label": "中网(1/1)",
+      "after_page_label": "中网(1/1)",
+      "before_first_line": "左前翼子板—喷漆",
+      "after_first_line": "左前翼子板—喷漆",
+      "semantic_changed": false,
+      "image_hash_changed": true,
+      "image_hash_changed_without_semantic_change": true,
+      "no_semantic_change_count": 8,
+      "image_sequence_end_confirmed": true
+    },
+    {
+      "before_page_label": "中网(1/1)",
+      "after_page_label": "中网(1/1)",
+      "before_first_line": "左前翼子板—喷漆",
+      "after_first_line": "左前翼子板—喷漆",
+      "semantic_changed": false,
+      "image_hash_changed": true,
+      "image_hash_changed_without_semantic_change": true,
+      "no_semantic_change_count": 9,
+      "image_sequence_end_confirmed": true
+    },
+    {
+      "before_page_label": "中网(1/1)",
+      "after_page_label": "中网(1/1)",
+      "before_first_line": "左前翼子板—喷漆",
+      "after_first_line": "左前翼子板—喷漆",
+      "semantic_changed": false,
+      "image_hash_changed": true,
+      "image_hash_changed_without_semantic_change": true,
+      "no_semantic_change_count": 10,
+      "image_sequence_end_confirmed": true
+    },
+    {
+      "before_page_label": "中网(1/1)",
+      "after_page_label": "中网(1/1)",
+      "before_first_line": "左前翼子板—喷漆",
+      "after_first_line": "左前翼子板—喷漆",
+      "semantic_changed": false,
+      "image_hash_changed": true,
+      "image_hash_changed_without_semantic_change": true,
+      "no_semantic_change_count": 11,
+      "image_sequence_end_confirmed": true
+    },
+    {
+      "before_page_label": "中网(1/1)",
+      "after_page_label": "中网(1/1)",
+      "before_first_line": "左前翼子板—喷漆",
+      "after_first_line": "左前翼子板—喷漆",
+      "semantic_changed": false,
+      "image_hash_changed": true,
+      "image_hash_changed_without_semantic_change": true,
+      "no_semantic_change_count": 12,
+      "image_sequence_end_confirmed": true
+    },
+    {
+      "before_page_label": "中网(1/1)",
+      "after_page_label": "中网(1/1)",
+      "before_first_line": "左前翼子板—喷漆",
+      "after_first_line": "左前翼子板—喷漆",
+      "semantic_changed": false,
+      "image_hash_changed": true,
+      "image_hash_changed_without_semantic_change": true,
+      "no_semantic_change_count": 13,
+      "image_sequence_end_confirmed": true
+    },
+    {
+      "before_page_label": "中网(1/1)",
+      "after_page_label": "中网(1/1)",
+      "before_first_line": "左前翼子板—喷漆",
+      "after_first_line": "左前翼子板—喷漆",
+      "semantic_changed": false,
+      "image_hash_changed": true,
+      "image_hash_changed_without_semantic_change": true,
+      "no_semantic_change_count": 14,
+      "image_sequence_end_confirmed": true
+    }
+  ],
+  "evidence_paths": {
+    "result_s01_to_s10_json": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s01_to_s10.json",
+    "result_s10_to_s16_json": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+    "result_json": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result.json",
+    "final_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104424.png",
+    "final_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_104424.xml",
+    "first_s14_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_to_s14_驾驶侧_20260516_104028.png",
+    "third_s14_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104039.png",
+    "fourth_s14_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_104044.png"
+  },
+  "contract_checks": {
+    "did_not_reuse_untrusted_78_score": true,
+    "did_not_enter_s15_when_s14_incomplete": true,
+    "did_not_output_final_pricing_without_s16": true,
+    "no_raw_xml_nodes_visible_blob_page_source_in_report": true
+  },
+  "diagnosis": {
+    "summary": "S14 ?????????? 3 ????????(1/1) ???????????????????????? caption/first_line ? page_label ??????? S14 ?????????? S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED ???",
+    "next_step_suggestion": "???? S14 ?? tab ? raw_first_line ????????????????? page_label_first_line_mismatch ???????????????????????"
+  }
+}

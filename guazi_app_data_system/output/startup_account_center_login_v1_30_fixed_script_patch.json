@@ -1,0 +1,124 @@
+{
+  "task": "IMPLEMENT_V1_30_STARTUP_ACCOUNT_CENTER_LOGIN_CONTRACT_TO_FIXED_SCRIPT_AND_LEARNING_LOOP",
+  "status": "STARTUP_ACCOUNT_CENTER_LOGIN_V1_30_FIXED_SCRIPT_AND_LEARNING_LOOP_PATCHED",
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py",
+    "knowledge_base/solutions.jsonl"
+  ],
+  "not_modified": [
+    "scripts/runtime_s10_to_s16_mainline.py",
+    "pricing",
+    "config",
+    "DOCX",
+    "baseline files",
+    "scoring rules",
+    "service fee rules",
+    "competition coefficient rules"
+  ],
+  "fixed_script_implementation": {
+    "recognized_page": "S_STARTUP_ACCOUNT_CENTER_LOGIN_PAGE",
+    "recognition_function": "recognize_startup_account_center_login_page",
+    "recognition_signals": [
+      "foreground_package=com.shuqing.tqaccountcenter plus 欢迎登录",
+      "欢迎登录 + 请输入手机号/请输入手机号码 + 请输入验证码",
+      "获取验证码 + 账号密码登录 + 用户协议/隐私协议"
+    ],
+    "only_allowed_action": "STARTUP_ACCOUNT_CENTER_ONLY_ALLOWED_ACTION_PRESS_BACK",
+    "max_account_center_back_attempts": 2,
+    "forbidden_actions_blocked": [
+      "点击登录",
+      "点击获取验证码",
+      "点击手机号输入框",
+      "点击验证码输入框",
+      "点击账号密码登录",
+      "点击用户协议",
+      "点击隐私协议",
+      "输入任何文本"
+    ],
+    "startup_flow_order": [
+      "APP_FORCE_RESTART",
+      "fresh",
+      "launcher later-dialog repeat-until-closed contract",
+      "startup account-center login BACK-exit contract",
+      "continue exact Guazi app icon lookup",
+      "tap Guazi app icon",
+      "stop validation after entry page in this run"
+    ]
+  },
+  "learning_loop": {
+    "path": "knowledge_base/solutions.jsonl",
+    "solution_id": "SOL-STARTUP-ACCOUNT-CENTER-LOGIN-BACK-EXIT-V1-30",
+    "issue_code": "STARTUP_ACCOUNT_CENTER_LOGIN_PAGE",
+    "status": "approved",
+    "contract_version": "V1.30",
+    "jsonl_valid": true
+  },
+  "offline_validation": {
+    "py_compile": "PASS",
+    "jsonl_valid": true,
+    "scenarios": [
+      {
+        "id": "A",
+        "name": "foreground_package=com.shuqing.tqaccountcenter and 欢迎登录",
+        "expected": "recognized page and BACK action",
+        "passed": true
+      },
+      {
+        "id": "B",
+        "name": "first BACK stays on login page, second BACK exits",
+        "expected": "account_center_back_attempts=2 and continue app-icon lookup",
+        "passed": true
+      },
+      {
+        "id": "C",
+        "name": "two BACK attempts still on login page",
+        "expected": "STARTUP_ACCOUNT_CENTER_LOGIN_NOT_DISMISSED_AFTER_BACK_ATTEMPTS",
+        "passed": true
+      },
+      {
+        "id": "D",
+        "name": "attempt to click login/get-code/input",
+        "expected": "STARTUP_ACCOUNT_CENTER_FORBIDDEN_ACTION_BLOCKED",
+        "passed": true
+      },
+      {
+        "id": "E",
+        "name": "no account-center login page and Guazi icon visible",
+        "expected": "do not trigger account-center logic; continue original icon lookup",
+        "passed": true
+      }
+    ],
+    "all_passed": true
+  },
+  "residual_check": {
+    "login_page_direct_app_icon_not_found_path": "replaced after later-dialog dismissal by account-center login check",
+    "login_page_business_continue_path": false,
+    "login_page_click_login_path": false,
+    "login_page_click_get_code_path": false,
+    "login_page_click_input_path": false,
+    "login_page_click_agreement_path": false,
+    "login_page_input_text_path": false
+  },
+  "real_device_validation": {
+    "executed": true,
+    "android_serial": "6TGYYHPZCETCSK6L",
+    "status": "ENTERED_GUAZI_APP_NO_ACCOUNT_CENTER_SEEN",
+    "account_center_seen": false,
+    "launcher_later_dialog_seen": true,
+    "later_click_attempts": 1,
+    "entered_guazi_app": true,
+    "recognized_entry_page": "S01",
+    "stop_after_app_entry": true,
+    "log_path": "logs/startup_account_center_v1_30_real_device_20260513_231322.log",
+    "screenshot_path": "artifacts/screenshots/s01_s10_after_force_restart_20260513_231337.png",
+    "xml_path": "artifacts/debug/s01_s10_after_force_restart_20260513_231337.xml"
+  },
+  "result_policy": {
+    "ran_full_business_flow": false,
+    "started_second_stage": false,
+    "collected_reference_vehicle": false,
+    "priced": false,
+    "baseline_overwritten": false,
+    "raw_xml_large_fields_written": false
+  }
+}

@@ -1,0 +1,459 @@
+{
+  "status": "PASS",
+  "validated_at": "2026-05-18",
+  "results": [
+    {
+      "case": "A_mileage_0.5",
+      "ok": true,
+      "actual": 12.0,
+      "expected": 12
+    },
+    {
+      "case": "A_mileage_0.8",
+      "ok": true,
+      "actual": 11.5,
+      "expected": 11.5
+    },
+    {
+      "case": "A_mileage_1.0",
+      "ok": true,
+      "actual": 11.0,
+      "expected": 11
+    },
+    {
+      "case": "A_mileage_1.2",
+      "ok": true,
+      "actual": 10.5,
+      "expected": 10.5
+    },
+    {
+      "case": "A_mileage_1.5",
+      "ok": true,
+      "actual": 10.0,
+      "expected": 10
+    },
+    {
+      "case": "A_mileage_1.8",
+      "ok": true,
+      "actual": 9.0,
+      "expected": 9
+    },
+    {
+      "case": "A_mileage_2.1",
+      "ok": true,
+      "actual": 8.0,
+      "expected": 8
+    },
+    {
+      "case": "A_mileage_2.5",
+      "ok": true,
+      "actual": 6.5,
+      "expected": 6.5
+    },
+    {
+      "case": "A_mileage_3.0",
+      "ok": true,
+      "actual": 5.0,
+      "expected": 5
+    },
+    {
+      "case": "A_mileage_3.5",
+      "ok": true,
+      "actual": 3.0,
+      "expected": 3
+    },
+    {
+      "case": "A_mileage_4.0",
+      "ok": true,
+      "actual": 1.5,
+      "expected": 1.5
+    },
+    {
+      "case": "A_mileage_4.1",
+      "ok": true,
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "case": "B_honda_accord_5w_2y_mileage_score",
+      "ok": true,
+      "actual": 6.5,
+      "expected": 6.5
+    },
+    {
+      "case": "C_amount_zero_claim0",
+      "ok": true,
+      "actual": 5.0,
+      "expected": 5.0
+    },
+    {
+      "case": "D_target_missing_accident",
+      "ok": true,
+      "actual": 4.0,
+      "expected": 4.0
+    },
+    {
+      "case": "D_target_missing_accident_review",
+      "ok": true,
+      "actual": [
+        "目标车缺少出险次数，已采用默认分。"
+      ],
+      "expected": true
+    },
+    {
+      "case": "E_target_missing_amount",
+      "ok": true,
+      "actual": 3.0,
+      "expected": 3.0
+    },
+    {
+      "case": "E_target_missing_amount_review",
+      "ok": true,
+      "actual": [
+        "目标车缺少最大金额，已采用默认分。"
+      ],
+      "expected": true
+    },
+    {
+      "case": "F_ABC_metal_body_score",
+      "ok": true,
+      "actual": 67.0,
+      "expected": 67.0
+    },
+    {
+      "case": "F_ABC_metal_not_hard_reject",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "G_water_tank_paint_score",
+      "ok": true,
+      "actual": 68.0,
+      "expected": 68.0
+    },
+    {
+      "case": "H1_boundary_equal_boundary",
+      "ok": true,
+      "actual": 3,
+      "expected": 3
+    },
+    {
+      "case": "H1_boundary_equal_final",
+      "ok": true,
+      "actual": 3,
+      "expected": 3
+    },
+    {
+      "case": "H1_boundary_equal_manual",
+      "ok": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "case": "H2_boundary_above_boundary",
+      "ok": true,
+      "actual": 3,
+      "expected": 3
+    },
+    {
+      "case": "H2_boundary_above_final",
+      "ok": true,
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "case": "H2_boundary_above_manual",
+      "ok": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "case": "H3_no_boundary_boundary",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "case": "H3_no_boundary_final",
+      "ok": true,
+      "actual": 3,
+      "expected": 3
+    },
+    {
+      "case": "H3_no_boundary_manual",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "H3_no_boundary_reason",
+      "ok": true,
+      "actual": "NO_BOUNDARY_REFERENCE_FOUND",
+      "expected": "NO_BOUNDARY_REFERENCE_FOUND"
+    },
+    {
+      "case": "H4_first_above_boundary",
+      "ok": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "case": "H4_first_above_final",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "case": "H4_first_above_manual",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "H4_first_above_reason",
+      "ok": true,
+      "actual": "FIRST_REFERENCE_SCORE_ABOVE_TARGET",
+      "expected": "FIRST_REFERENCE_SCORE_ABOVE_TARGET"
+    },
+    {
+      "case": "I_fee_49999",
+      "ok": true,
+      "actual": 1000,
+      "expected": 1000
+    },
+    {
+      "case": "I_fee_50000",
+      "ok": true,
+      "actual": 1500,
+      "expected": 1500
+    },
+    {
+      "case": "I_fee_99999",
+      "ok": true,
+      "actual": 1500,
+      "expected": 1500
+    },
+    {
+      "case": "I_fee_100000",
+      "ok": true,
+      "actual": 1800,
+      "expected": 1800
+    },
+    {
+      "case": "I_fee_149999",
+      "ok": true,
+      "actual": 1800,
+      "expected": 1800
+    },
+    {
+      "case": "I_fee_150000",
+      "ok": true,
+      "actual": 2000,
+      "expected": 2000
+    },
+    {
+      "case": "I_fee_199999",
+      "ok": true,
+      "actual": 2000,
+      "expected": 2000
+    },
+    {
+      "case": "I_fee_200000",
+      "ok": true,
+      "actual": 3000,
+      "expected": 3000
+    },
+    {
+      "case": "J_cost_49999",
+      "ok": true,
+      "actual": 600,
+      "expected": 600
+    },
+    {
+      "case": "J_min_profit_49999",
+      "ok": true,
+      "actual": 2500,
+      "expected": 2500
+    },
+    {
+      "case": "J_cost_75000",
+      "ok": true,
+      "actual": 1000,
+      "expected": 1000
+    },
+    {
+      "case": "J_min_profit_75000",
+      "ok": true,
+      "actual": 4500,
+      "expected": 4500
+    },
+    {
+      "case": "J_cost_120000",
+      "ok": true,
+      "actual": 1400,
+      "expected": 1400
+    },
+    {
+      "case": "J_min_profit_120000",
+      "ok": true,
+      "actual": 6500,
+      "expected": 6500
+    },
+    {
+      "case": "J_cost_170000",
+      "ok": true,
+      "actual": 1800,
+      "expected": 1800
+    },
+    {
+      "case": "J_min_profit_170000",
+      "ok": true,
+      "actual": 10000,
+      "expected": 10000
+    },
+    {
+      "case": "J_cost_220000",
+      "ok": true,
+      "actual": 2200,
+      "expected": 2200
+    },
+    {
+      "case": "J_min_profit_220000",
+      "ok": true,
+      "actual": 10000,
+      "expected": 10000
+    },
+    {
+      "case": "K_competition_version",
+      "ok": true,
+      "actual": "V1.2.3",
+      "expected": "V1.2.3"
+    },
+    {
+      "case": "K_reasons_structured",
+      "ok": true,
+      "actual": [
+        {
+          "factor": "price_band_adjustment",
+          "adjustment": -0.01,
+          "reason": "price_band_100000_to_150000",
+          "data_source": {
+            "price_yuan": 113400
+          }
+        }
+      ],
+      "expected": true
+    },
+    {
+      "case": "K_score_gap_adjustment_zero",
+      "ok": true,
+      "actual": [
+        {
+          "factor": "sample_reliability_adjustment",
+          "adjustment": 0.0,
+          "reason": "trisame_count_missing_no_adjustment",
+          "data": {
+            "trisame_count": null
+          }
+        },
+        {
+          "factor": "price_distribution_adjustment",
+          "adjustment": 0.0,
+          "reason": "single_or_missing_trisame_price_list_no_adjustment",
+          "data": {
+            "price_list_yuan": [],
+            "price_spread_rate": null
+          }
+        },
+        {
+          "factor": "target_condition_risk_adjustment",
+          "adjustment": 0.0,
+          "reason": "no_strong_condition_risk_for_coefficient",
+          "data": {
+            "risk_flags": [],
+            "paint_count": 0
+          }
+        },
+        {
+          "factor": "score_gap_adjustment",
+          "adjustment": 0.0,
+          "reason": "final_reference_selected_by_v3_boundary_confirmation_no_score_gap_adjustment",
+          "data": {
+            "score_gap": -1.0,
+            "score_gap_note": "final_reference_score <= target_score under V3 boundary confirmation; score_gap_adjustment=0"
+          }
+        },
+        {
+          "factor": "price_band_adjustment",
+          "adjustment": -0.01,
+          "reason": "price_band_100000_to_150000",
+          "data": {
+            "price_yuan": 113400
+          }
+        },
+        {
+          "factor": "model_liquidity_adjustment",
+          "adjustment": 0.0,
+          "reason": "no_stable_model_profile_no_adjustment",
+          "data": {
+            "profile": null
+          }
+        },
+        {
+          "factor": "fuel_cost_pressure_adjustment",
+          "adjustment": 0.0,
+          "reason": "no_stable_fuel_pressure_profile_no_adjustment",
+          "data": {
+            "profile": null
+          }
+        },
+        {
+          "factor": "city_comparability_adjustment",
+          "adjustment": 0.0,
+          "reason": "city_missing_no_adjustment",
+          "data": {
+            "license_city": "",
+            "reference_city": ""
+          }
+        }
+      ],
+      "expected": true
+    },
+    {
+      "case": "RULE_SOURCE_GUARD_passed",
+      "ok": true,
+      "actual": {
+        "active_scoring_rule_version": "V1.8",
+        "active_scoring_rule_doc": "瓜子自动定价打分规则V1.8_参考车选择V3_边界确认法版.docx",
+        "active_reference_selection_rule": "V3_BOUNDARY_CONFIRMATION",
+        "active_pricing_rule_version": "SERVICE_FEE_TIER_V3_BOUNDARY_CONFIRMATION",
+        "active_pricing_rule_doc": "定价逻辑备份_服务费阶梯修正版_参考车选择V3边界确认法版.docx",
+        "active_competition_coefficient_version": "V1.2.3",
+        "active_competition_coefficient_doc": "目标车竞争力系数算法设计_V1.2.3_参考车选择V3适配版.docx",
+        "active_config_files": [
+          "config/fields.yaml"
+        ],
+        "active_pricing_py_version": "655ee15bb85897fa",
+        "rule_source_guard_passed": true,
+        "rule_source_mismatches": []
+      },
+      "expected": true
+    }
+  ],
+  "rule_source_guard": {
+    "active_scoring_rule_version": "V1.8",
+    "active_scoring_rule_doc": "瓜子自动定价打分规则V1.8_参考车选择V3_边界确认法版.docx",
+    "active_reference_selection_rule": "V3_BOUNDARY_CONFIRMATION",
+    "active_pricing_rule_version": "SERVICE_FEE_TIER_V3_BOUNDARY_CONFIRMATION",
+    "active_pricing_rule_doc": "定价逻辑备份_服务费阶梯修正版_参考车选择V3边界确认法版.docx",
+    "active_competition_coefficient_version": "V1.2.3",
+    "active_competition_coefficient_doc": "目标车竞争力系数算法设计_V1.2.3_参考车选择V3适配版.docx",
+    "active_config_files": [
+      "config/fields.yaml"
+    ],
+    "active_pricing_py_version": "655ee15bb85897fa",
+    "rule_source_guard_passed": true,
+    "rule_source_mismatches": []
+  }
+}

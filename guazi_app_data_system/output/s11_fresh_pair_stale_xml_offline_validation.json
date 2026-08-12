@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "contract_version": "V1.39",
+  "contract": "S11_FRESH_PAIR_AND_STALE_XML_PAGE_CONTRACT_UPDATED",
+  "script": "scripts/runtime_s10_to_s16_mainline.py",
+  "py_compile": "passed",
+  "checks": [
+    {
+      "scenario": "A_fresh_pair_exact_entry_safe_click",
+      "passed": true,
+      "expected": "S11 fresh pair valid + XML exact ?????? safe => click exact-entry path",
+      "evidence": "fresh pair helper, exact safe-entry gate, and exact-entry click timing are present"
+    },
+    {
+      "scenario": "B_fresh_pair_exact_entry_unsafe_reposition",
+      "passed": true,
+      "expected": "S11 fresh pair valid + XML exact ?????? unsafe => small reposition, no direct click",
+      "evidence": "unsafe exact-entry reposition branch remains present"
+    },
+    {
+      "scenario": "C_stale_s10_xml_detected_not_used_as_absence",
+      "passed": true,
+      "expected": "S11 context paired with S10 XML => stale, do not decide exact_report_entry_seen=false",
+      "evidence": "strong S10 stale XML signals are checked before report-node lookup"
+    },
+    {
+      "scenario": "D_stale_xml_redump_once_recovers",
+      "passed": true,
+      "expected": "stale XML first occurrence => exactly one recapture/redump and re-enter fresh-pair check",
+      "evidence": "one redump branch exists on first stale XML detection"
+    },
+    {
+      "scenario": "E_stale_xml_redump_still_stale_stops",
+      "passed": true,
+      "expected": "stale XML after one redump => S11_XML_STALE_OR_MISMATCHED_WITH_SCREENSHOT",
+      "evidence": "stale after redump raises explicit stop code"
+    },
+    {
+      "scenario": "F_xml_dump_failure_no_old_xml_reuse",
+      "passed": true,
+      "expected": "missing/empty/mtime-invalid XML => no reuse, S11_FRESH_EVIDENCE_PAIR_MISMATCH",
+      "evidence": "invalid XML pair stops before entry decision"
+    },
+    {
+      "scenario": "G_v1_38_mainline_disabled",
+      "passed": true,
+      "expected": "normal/fine/backtrack weak switching and V1.38 XML stabilization do not enter mainline",
+      "evidence": "fine/backtrack and XML stabilization failure mainline calls are absent; disabled fields remain false"
+    },
+    {
+      "scenario": "H_unrelated_paths_static_guard",
+      "passed": true,
+      "expected": "S10 selected card autoscroll and local title binding are not removed",
+      "evidence": "S10 selected-card/autoscroll/local-title identifiers remain present; pricing/config files were not modified in this patch"
+    }
+  ],
+  "final_status": "S11_FRESH_PAIR_STALE_XML_PATCHED"
+}

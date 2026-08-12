@@ -1,0 +1,162 @@
+{
+  "generated_by": "V149_RULE_SOURCE_ALIGNMENT_AND_REFERENCE_PHYSICAL_UI_TRANSITION_PROOF_PATCH",
+  "generated_at": "2026-07-01",
+  "desktop_rule_source_dir": "C:\\Users\\lzc93\\Desktop\\定价",
+  "pricing_rule": {
+    "source_file": "定价逻辑备份_服务费阶梯修正版_参考车选择V3边界确认法版_V3.3边界前车回采确认版 (1).docx",
+    "source_version": "V3.3_BOUNDARY_PREVIOUS_REFERENCE_RECOLLECT",
+    "file_sha256": "efac1ffd5dfb9422d8cb048ec1894e06274f436fac7b6a3db8711a69207ea10a",
+    "authority_scope": "S16_SERVICE_FEE_COST_PROFIT_AND_V33_BOUNDARY_PREVIOUS_RECOLLECT",
+    "guazi_service_fee_tiers": [
+      {
+        "min_price_yuan": 200000,
+        "service_fee_yuan": 5000
+      },
+      {
+        "min_price_yuan": 150000,
+        "service_fee_yuan": 4000
+      },
+      {
+        "min_price_yuan": 100000,
+        "service_fee_yuan": 3500
+      },
+      {
+        "min_price_yuan": 50000,
+        "service_fee_yuan": 3000
+      },
+      {
+        "min_price_yuan": 0,
+        "service_fee_yuan": 2500
+      }
+    ],
+    "net_payout_formula": "guazi_listing_price - guazi_service_fee",
+    "profit_rate": 0.08,
+    "cost_tiers": [
+      {
+        "lte_price_yuan": 50000,
+        "cost_yuan": 600
+      },
+      {
+        "lte_price_yuan": 100000,
+        "cost_yuan": 1000
+      }
+    ],
+    "cost_increment_per_50000_yuan": 400,
+    "min_profit_tiers": [
+      {
+        "min_price_yuan": 150000,
+        "min_profit_yuan": 10000
+      },
+      {
+        "min_price_yuan": 100000,
+        "min_profit_yuan": 6500
+      },
+      {
+        "min_price_yuan": 50000,
+        "min_profit_yuan": 4500
+      },
+      {
+        "min_price_yuan": 0,
+        "min_profit_yuan": 2500
+      }
+    ],
+    "expected_test_vectors": [
+      {
+        "price_yuan": 49999,
+        "service_fee_yuan": 2500
+      },
+      {
+        "price_yuan": 50000,
+        "service_fee_yuan": 3000
+      },
+      {
+        "price_yuan": 83400,
+        "service_fee_yuan": 3000
+      },
+      {
+        "price_yuan": 99999,
+        "service_fee_yuan": 3000
+      },
+      {
+        "price_yuan": 100000,
+        "service_fee_yuan": 3500
+      },
+      {
+        "price_yuan": 149999,
+        "service_fee_yuan": 3500
+      },
+      {
+        "price_yuan": 150000,
+        "service_fee_yuan": 4000
+      },
+      {
+        "price_yuan": 199999,
+        "service_fee_yuan": 4000
+      },
+      {
+        "price_yuan": 200000,
+        "service_fee_yuan": 5000
+      }
+    ],
+    "expected_83400_chain": {
+      "target_guazi_listing_price_yuan": 83400,
+      "guazi_service_fee_yuan": 3000,
+      "guazi_net_payout_yuan": 80400,
+      "profit_rate": 0.08,
+      "profit_yuan": 6432,
+      "cost_yuan": 1000,
+      "suggested_purchase_price_yuan": 72968
+    },
+    "v33_boundary_previous_reference_recollect_required": true,
+    "boundary_reference_is_evidence_only": true,
+    "boundary_reference_cannot_be_final_reference": true,
+    "no_boundary_auto_pricing_allowed": false
+  },
+  "page_contract_rule": {
+    "source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+    "source_version": "V1.50",
+    "file_sha256": "49109b15686ab524697f999cc1ccfbbc1d4c0c596ebab78baab6ae2d1e5e3ac5",
+    "s07_exact_age_slider_rules": "contract plan only; real handle binding, exact visible tick target, bounded fallback",
+    "s11_report_entry_rules": "XML/accessibility exact text bounds only for click; screenshot detector debug-only",
+    "s14_in_flight_early_exit_rule_presence": true,
+    "s14_completion_early_exit_boundaries": "after each deterministic S14 item, skip current reference when reference_score_upper_bound < target_score and return reliable S10",
+    "s14_low_score_skip_status": "LOW_SCORE_SKIPPED_INCOMPLETE",
+    "boundary_previous_reference_recollect_required": true,
+    "s07_post_action_proof_rule_presence": true,
+    "s11_contract_execution_ack_rule_presence": true,
+    "s07_age_zero_and_one_fresh_verify_required": true,
+    "s11_handler_ack_required_after_s10_click": true,
+    "s13_reference_physical_ui_transition_rules": "S13 all-zero exit must physically return to reliable S10; reference_history and all-references-exhausted require physical UI transition proof."
+  },
+  "scoring_rule": {
+    "source_file": "瓜子自动定价打分规则V1.11_边界前车回采确认法版.docx",
+    "source_version": "V1.11",
+    "file_sha256": "4dd80b706734569d2df78eddadda399fd0b0bfdf286e5a7ef2d29e1ac265e2f6",
+    "max_possible_score_early_exit_rule": "V33_S14_LOW_SCORE_UPPER_BOUND_SKIP_AND_RECOLLECT_CONTRACT",
+    "v3_participation_exclusion_rules": "LOW_SCORE_SKIPPED_INCOMPLETE cannot be final/boundary/pre-boundary and must be recollected if it becomes boundary-previous candidate"
+  },
+  "reference_selection_rule": {
+    "source_version": "V3_3_BOUNDARY_PREVIOUS_REFERENCE_RECOLLECT",
+    "early_exit_reference_cannot_be_final_boundary_pre_boundary_or_closest_low": true,
+    "order": "reference_index_low_to_high",
+    "boundary_rule": "first_complete_trustworthy_reference_score_gte_target_is_boundary_evidence_only",
+    "final_reference_candidate_rule": "boundary_reference_index_minus_1",
+    "boundary_reference_cannot_be_final_reference": true,
+    "exact_score_boundary_still_uses_previous_reference": true,
+    "previous_incomplete_or_low_score_skipped_requires_recollect": true,
+    "no_boundary_auto_pricing_allowed": false,
+    "no_boundary_manual_review_reason": "NO_BOUNDARY_REFERENCE_FOUND_NEEDS_MANUAL_PRICING",
+    "first_boundary_no_previous_manual_review_reason": "FIRST_BOUNDARY_HAS_NO_PREVIOUS_REFERENCE",
+    "low_score_skipped_status": "LOW_SCORE_SKIPPED_INCOMPLETE"
+  },
+  "competition_coefficient_rule": {
+    "source_file": "目标车竞争力系数算法设计_V1.2.6_边界前车回采确认适配版.docx",
+    "source_version": "V1.2.6",
+    "file_sha256": "f11be2a8afc7df994e86921cd0426895b2eb58b5253cbee38cb387af0dc5ce04"
+  },
+  "source_priority": {
+    "s16_pricing_authority": "pricing_rule.source_file",
+    "page_contract_cannot_override_s16_pricing": true,
+    "non_pricing_doc_service_fee_conflict_policy": "report_warning_not_runtime_authority"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "status": "SECOND_STAGE_DID_NOT_REACH_S16",
+  "underlying_status": "FIELD_MISSING",
+  "underlying_issue_code": "FIELD_MISSING",
+  "target_fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "code_modified_this_round": true,
+  "patch_status": "S14_TAB_LABEL_RE_REGEX_PATCHED",
+  "first_stage": {
+    "status": "S10_READY",
+    "fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+    "result_path": "output/result_s01_to_s10.json"
+  },
+  "second_stage": {
+    "module_init_regex_error_reproduced": false,
+    "module_init_ok": true,
+    "entered_s11": true,
+    "entered_s12": false,
+    "entered_s13": false,
+    "entered_s14": false,
+    "entered_s15": false,
+    "entered_s16": false,
+    "stop_status": "FIELD_MISSING",
+    "stop_issue_code": "FIELD_MISSING",
+    "stop_page": "S11",
+    "stop_reason": "S11 transfer_count field was not read from the entry snapshot; handle_s11 records FIELD_MISSING before report-entry search.",
+    "stop_code_location": "scripts/runtime_s10_to_s16_mainline.py:6244-6248",
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260517_160126.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260517_160126_compressed.xml"
+  },
+  "v139_observations": {
+    "fresh_pair_checked": false,
+    "stale_xml_checked": false,
+    "reason": "The run stopped at S11 transfer_count extraction before S11_REPORT_SEARCH, so V1.39 report-entry fresh-pair logic was not exercised."
+  },
+  "regression_checks": {
+    "s10_selected_card_autoscroll_regression_observed": false,
+    "s10_local_title_binding_regression_observed": false,
+    "metal_deduct_regression_observed": false,
+    "s14_regression_observed": false
+  },
+  "pricing": {
+    "entered_s16": false,
+    "final_price_generated": false,
+    "pricing_payload_generated": false,
+    "manual_review_required": null,
+    "auto_pricing_allowed": null
+  },
+  "final_status": "SECOND_STAGE_DID_NOT_REACH_S16"
+}

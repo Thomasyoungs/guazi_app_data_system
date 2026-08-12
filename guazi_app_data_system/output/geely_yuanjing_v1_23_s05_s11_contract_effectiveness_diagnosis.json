@@ -1,0 +1,267 @@
+{
+  "task": "READ_ONLY_DIAGNOSE_GEELY_YUANJING_S05_CONTRACT_AND_S11_REPORT_MISSING_CONTRACT_EFFECTIVENESS",
+  "generated_at": "2026-05-12T16:12:43+08:00",
+  "target_fingerprint": "吉利|远景|2019款|升级版 1.5L 手动豪华型 国VI|白|2019.10",
+  "read_only_confirmation": {
+    "code_modified": false,
+    "runtime_s01_to_s10_modified": false,
+    "runtime_s10_to_s16_modified": false,
+    "pricing_modified": false,
+    "config_modified": false,
+    "docx_modified": false,
+    "real_device_run": false,
+    "app_force_restart": false,
+    "second_stage_started": false,
+    "reference_collected": false,
+    "repriced": false,
+    "result_json_overwritten": false,
+    "baseline_overwritten": false
+  },
+  "source_files_read": [
+    "output/result_s01_to_s10.json",
+    "output/result_s10_to_s16.json",
+    "output/result.json",
+    "output/geely_yuanjing_2019_v1_22_full_chain_run.json",
+    "output/geely_yuanjing_2019_v1_22_full_chain_run_latest.md",
+    "output/geely_yuanjing_v1_23_s05_s10_s11_readonly_diagnosis.json",
+    "output/geely_yuanjing_v1_23_s05_s10_s11_readonly_diagnosis_latest.md",
+    "scripts/runtime_s01_to_s10_mainline.py",
+    "scripts/runtime_s10_to_s16_mainline.py",
+    "artifacts/debug/s04_to_s05_20260512_151852.xml",
+    "artifacts/screenshots/s04_to_s05_20260512_151852.png",
+    "artifacts/debug/s05_after_trim_variant_2_20260512_151908.xml",
+    "artifacts/screenshots/s05_after_trim_variant_2_20260512_151908.png",
+    "artifacts/debug/s10_to_s11_20260512_152327_compressed.xml",
+    "artifacts/debug/s11_report_entry_search_1_20260512_152332.xml",
+    "artifacts/debug/s11_report_entry_search_8_20260512_152440.xml",
+    "artifacts/screenshots/s11_report_entry_search_8_20260512_152440.png",
+    "output/page_contract_timing_report.jsonl",
+    "artifacts/debug/s10_to_s11_20260512_152040_compressed.xml",
+    "artifacts/screenshots/s10_to_s11_pre_dump_2_20260512_152039.png"
+  ],
+  "missing_source_files": [
+    "artifacts/screenshots/s10_to_s11_pre_dump_2_20260512_152327.png"
+  ],
+  "s05_contract_effectiveness": {
+    "contract_requires_left_year_click": true,
+    "contract_source": "V1.23",
+    "contract_text_summary": "S05 必须先确认并点击左侧目标年款（本车为 2019款），再在右侧选择目标配置；不得未确认年款就直接在右侧配置区查找/滚动/选择。",
+    "script_contract_action_table_present": true,
+    "implemented_functions_or_sections": [
+      "scripts/runtime_s01_to_s10_mainline.py: SCRIPT_PAGE_CONTRACT_ACTIONS['S05'] contains tap_target_year / S05_ONLY_ALLOWED_ACTION_SELECT_TARGET_YEAR",
+      "scripts/runtime_s01_to_s10_mainline.py: _s05_find_left_year_click_target(snapshot, target_year)",
+      "scripts/runtime_s01_to_s10_mainline.py: handle_s05() uses contract_execute_click(page_id='S05', action_id='tap_target_year') before trim selection",
+      "scripts/runtime_s01_to_s10_mainline.py: _s05_year_switch_evidence(snapshot, target_year, before_snapshot=...)"
+    ],
+    "s05_year_gate_implemented": false,
+    "missing_code_gate": [
+      "未发现 stop_code: S05_TARGET_YEAR_LEFT_TAB_NOT_CLICKED / S05_TARGET_YEAR_SELECTION_NOT_CONFIRMED / S05_RIGHT_CONFIG_SEARCH_WITHOUT_YEAR_CLICK。",
+      "_s05_year_switch_evidence 将 right_trim_year_switched 纳入 left_year_selected 推断，可能用右侧列表证据替代左侧年款选中证据。",
+      "右侧列表存在 2019 款配置或跨年款分组时，流程仍可继续，未硬性要求 left_year_selected_text == 2019款。",
+      "result_s01_to_s10.json 未持久化 s05_year_clicked、year_click_bounds、year_click_region、left_year_selected_text，无法证明左侧 2019 款被点击并选中。"
+    ],
+    "execution_evidence": {
+      "s05_year_clicked": "unknown",
+      "year_click_text": null,
+      "year_click_bounds": null,
+      "year_click_region": "unknown",
+      "selected_year_after_click": "2019款",
+      "left_year_selected_text": null,
+      "year_click_xml_path": null,
+      "year_click_screenshot_path": null,
+      "clicked_2020_year": "unknown_false_no_explicit_click_record_but_2020_appears_active_in_screenshot",
+      "clicked_2020_evidence": "未找到明确 clicked_2020_year 记录；但 S05 选择后截图中左侧 2020款仍呈绿色激活态，2019款未见明确左侧选中证据。",
+      "clicked_2020_bounds": null,
+      "clicked_2020_xml_path": "artifacts/debug/s05_after_trim_variant_2_20260512_151908.xml",
+      "clicked_2020_screenshot_path": "artifacts/screenshots/s05_after_trim_variant_2_20260512_151908.png",
+      "direct_right_config_search_without_year_click": true,
+      "evidence_summary": "进入 S05 时左侧目标年款 2019款 可见；选择完成后截图显示右侧 2019 款国V/国VI已选中，但左侧 2020款仍为绿色激活态，且结果文件缺少左侧 2019款点击/选中证据。",
+      "right_config_scroll_seen": true,
+      "selected_config_texts": [
+        "2019款 升级版 1.5L 手动豪华型 国V",
+        "2019款 升级版 1.5L 手动豪华型 国VI"
+      ],
+      "selected_config_bounds": null,
+      "selected_count_text": "已选2项",
+      "right_config_list_after_year": "mixed_year_sections_or_unknown",
+      "visible_configs_after_year": "证据显示右侧存在 2020 款与 2019 款分组/配置，非单纯 2019 款配置列表证据。",
+      "target_config_seen_after_year": true
+    },
+    "emission_variant_check": {
+      "emission_variant_group": [
+        "2019款 升级版 1.5L 手动豪华型 国V",
+        "2019款 升级版 1.5L 手动豪华型 国VI"
+      ],
+      "selected_emission_variants": [
+        "2019款 升级版 1.5L 手动豪华型 国V",
+        "2019款 升级版 1.5L 手动豪华型 国VI"
+      ],
+      "selected_count_expected": 2,
+      "selected_count_actual": 2,
+      "s05_emission_variant_all_selected": true,
+      "diagnosis": "排放版本组选中本身看起来正确；问题集中在左侧目标年款点击/选中证据门禁不足。"
+    },
+    "final_attribution": "S05_CONTRACT_IMPLEMENTATION_MISSING",
+    "attribution_reason": "V1.23 契约已明确，但脚本缺少强制左侧目标年款选中证据门禁与持久化字段；本轮证据更像直接依赖右侧配置列表完成选择。"
+  },
+  "s11_contract_effectiveness": {
+    "contract_requires_exclude_reference_when_view_full_report_missing": true,
+    "contract_source": "V1.23 + user correction in current thread",
+    "contract_text_summary": "S11 只查找“查看完整报告”入口；受控下滑到底/页面不再变化/达到确认上限仍未找到时，当前参考车应被排除，返回 reliable S10，继续下一 reference_index。",
+    "script_implementation_check": {
+      "s11_report_missing_exclude_implemented": false,
+      "implemented_functions_or_sections": [
+        "scripts/runtime_s10_to_s16_mainline.py: S11_REPORT_ENTRY_TEXT = '查看完整报告'",
+        "scripts/runtime_s10_to_s16_mainline.py: _s11_find_report_entry_node / _s11_report_entry_visibility / _execute_s11_report_scroll",
+        "scripts/runtime_s10_to_s16_mainline.py: handle_s11() bounded controlled scroll search"
+      ],
+      "missing_code_gate": [
+        "未发现 S11_OFFICIAL_REPORT_ENTRY_MISSING_EXCLUDE_REFERENCE / S11_VIEW_FULL_REPORT_ENTRY_MISSING_EXCLUDE_REFERENCE 之类排除分支。",
+        "未发现 OFFICIAL_REPORT_NOT_AVAILABLE / VIEW_FULL_REPORT_NOT_AVAILABLE excluded_reference_reason。",
+        "未发现 current_reference_excluded / excluded_reference_history 字段路径。",
+        "未发现 return_to_reliable_s10_after_exclusion 后 next_reference_index 继续逻辑。",
+        "查看完整报告不可见后仍走 S11_REPORT_ENTRY_FULL_VISIBILITY_NOT_ACHIEVED 并 raise GuaziFlowError。"
+      ],
+      "old_stop_path_still_active": true,
+      "old_stop_path_summary": "handle_s11() 在 report_scroll_count 达到 max_search_scrolls 且未找到 '查看完整报告' 时记录 S11_REPORT_ENTRY_FULL_VISIBILITY_NOT_ACHIEVED 并抛错，未排除当前参考车继续下一辆。"
+    },
+    "reference_2_trigger_condition": {
+      "reference_index": 2,
+      "s11_page_confirmed": true,
+      "merchant_self_check_seen": false,
+      "view_full_report_seen": false,
+      "official_report_entry_seen": null,
+      "official_report_entry_seen_note": "按用户修正口径，本轮只以“查看完整报告”为入口；该字段不作为触发条件。",
+      "full_report_entry_seen": null,
+      "full_report_entry_seen_note": "按用户修正口径，本轮只以“查看完整报告”为入口；该字段不作为触发条件。",
+      "view_full_report_full_visible": false,
+      "scroll_attempts": 8,
+      "reached_bottom": "unknown_but_likely_by_scroll_limit_and_tail_content",
+      "page_no_longer_changes": "unknown_but_likely_tail_content_stable",
+      "stop_code": "S11_REPORT_ENTRY_FULL_VISIBILITY_NOT_ACHIEVED",
+      "s11_xml_paths": [
+        "artifacts/debug/s10_to_s11_20260512_152327_compressed.xml",
+        "artifacts/debug/s11_report_entry_search_1_20260512_152332.xml",
+        "artifacts/debug/s11_report_entry_search_8_20260512_152440.xml"
+      ],
+      "s11_screenshot_paths": [
+        "artifacts/screenshots/s10_to_s11_pre_dump_2_20260512_152327.png",
+        "artifacts/screenshots/s11_report_entry_search_8_20260512_152440.png"
+      ],
+      "trigger_condition_diagnosis": "S11_REPORT_MISSING_EXCLUDE_CONDITION_MET_WITH_BOTTOM_CONFIRMATION_GAP",
+      "trigger_condition_reason": "第2辆参考车 S11 已成立，受控下滑 8 次未见“查看完整报告”；尾部内容进入卖家/联系/相关推荐区域，足以支持排除方向。但当前结果未显式记录 reached_bottom/page_no_longer_changes，底部确认字段需要补强。"
+    },
+    "why_not_effective": {
+      "final_attribution": "S11_CONTRACT_IMPLEMENTATION_MISSING",
+      "reason": "V1.23/当前用户口径已明确排除并继续，但第二段代码仍把入口不可见作为流程失败 stop；旧 stop 路径抢先执行，未进入排除当前参考车与返回 reliable S10 的流程。",
+      "alternative_attributions_rejected": {
+        "S11_CONTRACT_CONTENT_INCOMPLETE": "不成立；用户已明确当前契约口径。",
+        "S11_CONTRACT_TRIGGER_CONDITION_NOT_MET": "不作为主因；虽然 bottom/no-change 未显式持久化，但已有 8 次受控下滑未见入口的证据。",
+        "S11_CONTRACT_EXECUTION_BYPASSED": "不如 implementation_missing 准确；未发现代码已实现排除分支。",
+        "S11_RETURN_TO_RELIABLE_S10_BLOCKED": "未见已尝试返回 reliable S10 的证据。",
+        "S11_EVIDENCE_INSUFFICIENT": "不作为主因；入口缺失和旧 stop 有明确证据。"
+      }
+    }
+  },
+  "s10_to_s11_timing": {
+    "classification": "S11_SCROLL_LIMIT_REACHED_BUT_BOTTOM_NOT_CONFIRMED",
+    "summary": "耗时主要集中在 S11 查找“查看完整报告”的受控下滑、fresh、XML dump，而不是 S10 点击到 S11 加载阶段。慢本身不是排除逻辑未生效的根因，真正问题是未实现报告入口缺失排除分支。",
+    "timing_breakdown_observed": {
+      "S10_TO_S11_CLICK_AND_STABLE_APPROX_MS": "约 11-12s（含稳定等待）",
+      "S11_REPORT_SCROLL_FRESH_SUM_MS": "约 65s / 8次",
+      "S11_REPORT_SCROLL_SUM_MS": "约 9.7s / 8次",
+      "main_cost_center": "S11_REPORT_ENTRY_SEARCH_SCROLL_AND_FRESH_XML_DUMP"
+    },
+    "answers": {
+      "slow_caused_not_reaching_bottom": "无法证明；现有日志达到 8 次上限，但未显式记录 reached_bottom。",
+      "slow_caused_early_stop": false,
+      "scroll_limit_without_bottom_field": true,
+      "need_bind_scroll_limit_to_bottom_or_no_change": true
+    }
+  },
+  "reference_1_validity": {
+    "classification": "REFERENCE_1_COLLECTED_SCORE_BELOW_TARGET_CONTINUE_VALID_WITH_EVIDENCE_PAIRING_RISK",
+    "reference_index": 1,
+    "reference_score": 94.0,
+    "target_score": 96.0,
+    "rule_result": "reference_score < target_score，继续下一辆方向合理。",
+    "final_reference_pollution": false,
+    "note": "第1辆继续方向有效；但其 S10→S11 证据配对存在旧目标碎片风险，应补 evidence pairing gate。"
+  },
+  "evidence_pairing": {
+    "evidence_pairing_ok": false,
+    "foreign_target_terms_detected": [
+      {
+        "path": "artifacts/debug/s10_to_s11_20260512_152040_compressed.xml",
+        "terms": [
+          "零跑",
+          "C10"
+        ],
+        "paired_screenshot": "artifacts/screenshots/s10_to_s11_pre_dump_2_20260512_152039.png",
+        "risk": "XML 出现旧目标碎片，但同时间截图为吉利远景，疑似 dump/配对污染。"
+      }
+    ],
+    "evidence_used_for_decision": {
+      "s05": [
+        "artifacts/debug/s04_to_s05_20260512_151852.xml",
+        "artifacts/screenshots/s04_to_s05_20260512_151852.png",
+        "artifacts/debug/s05_after_trim_variant_2_20260512_151908.xml",
+        "artifacts/screenshots/s05_after_trim_variant_2_20260512_151908.png"
+      ],
+      "s11_reference_2": [
+        "artifacts/debug/s10_to_s11_20260512_152327_compressed.xml",
+        "artifacts/debug/s11_report_entry_search_1_20260512_152332.xml",
+        "artifacts/debug/s11_report_entry_search_8_20260512_152440.xml",
+        "artifacts/screenshots/s11_report_entry_search_8_20260512_152440.png"
+      ],
+      "note": "本轮 S05 与第2辆 S11 结论未依赖旧目标碎片 XML；旧目标碎片主要影响第1辆证据可信度。"
+    },
+    "foreign_target_terms_in_result_json": false,
+    "evidence_pairing_risk_level": "HIGH_FOR_REFERENCE_1_ARTIFACTS_MEDIUM_FOR_SYSTEM"
+  },
+  "conclusion_table": [
+    {
+      "problem": "S05 左侧年款点击证据门禁",
+      "contract_explicit": true,
+      "code_implemented": false,
+      "trigger_condition_met": true,
+      "executed_by_contract": false,
+      "root_cause": "S05_CONTRACT_IMPLEMENTATION_MISSING",
+      "next_step": "PATCH_S05_LEFT_YEAR_SELECTION_EVIDENCE_GATE"
+    },
+    {
+      "problem": "S11 查看完整报告缺失排除当前参考车",
+      "contract_explicit": true,
+      "code_implemented": false,
+      "trigger_condition_met": "mostly_true_but_bottom_confirmation_fields_missing",
+      "executed_by_contract": false,
+      "root_cause": "S11_CONTRACT_IMPLEMENTATION_MISSING",
+      "next_step": "PATCH_S11_VIEW_FULL_REPORT_MISSING_EXCLUDE_REFERENCE_AND_CONTINUE"
+    },
+    {
+      "problem": "S10→S11 慢 / 报告入口查找耗时",
+      "contract_explicit": true,
+      "code_implemented": "partial",
+      "trigger_condition_met": "scroll_limit_reached",
+      "executed_by_contract": "partial",
+      "root_cause": "S11_SCROLL_LIMIT_REACHED_BUT_BOTTOM_NOT_CONFIRMED",
+      "next_step": "PATCH_S11_REPORT_SEARCH_BOTTOM_CONFIRMATION_AND_TIMING_FIELDS"
+    },
+    {
+      "problem": "evidence pairing 证据配对",
+      "contract_explicit": "not_currently_enough",
+      "code_implemented": false,
+      "trigger_condition_met": true,
+      "executed_by_contract": false,
+      "root_cause": "EVIDENCE_PAIRING_RISK_DETECTED",
+      "next_step": "PATCH_EVIDENCE_PAIRING_CURRENT_FINGERPRINT_GATE"
+    }
+  ],
+  "next_recommendations": [
+    "PATCH_S05_LEFT_YEAR_SELECTION_EVIDENCE_GATE",
+    "PATCH_S11_VIEW_FULL_REPORT_MISSING_EXCLUDE_REFERENCE_AND_CONTINUE（按当前纠正口径：只找“查看完整报告”）",
+    "PATCH_S11_REPORT_SEARCH_BOTTOM_CONFIRMATION_AND_TIMING_FIELDS",
+    "PATCH_EVIDENCE_PAIRING_CURRENT_FINGERPRINT_GATE"
+  ],
+  "final_status": "GEELY_YUANJING_V1_23_S05_S11_CONTRACT_EFFECTIVENESS_DIAGNOSIS_DONE"
+}

@@ -1,0 +1,344 @@
+{
+  "generated_at": "2026-05-11T07:03:31.211030+00:00",
+  "final_status": "S05_EMISSION_VARIANT_RESULT_FIELD_PERSISTENCE_PATCHED",
+  "modified_files": [
+    "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s01_to_s10_mainline.py"
+  ],
+  "fields_added_or_persisted": [
+    "s05_emission_variant_contract_enabled",
+    "target_year_model",
+    "target_config_model",
+    "normalized_target_config",
+    "emission_variant_group",
+    "emission_variant_group_count",
+    "selected_emission_variants",
+    "selected_count_text",
+    "selected_count_expected",
+    "s05_emission_variant_all_selected",
+    "selected_count_actual",
+    "s05_single_trim_selected",
+    "candidate_trim_names",
+    "normalized_candidate_groups",
+    "missing_emission_variants",
+    "reason"
+  ],
+  "offline_tests": [
+    {
+      "id": "test_1_target_without_emission",
+      "description": "target without emission selects ?V + ?VI same-trim group",
+      "target_config_model": "180TURBO CVT尚悦版",
+      "visible_trim_names": [
+        "2019款 180TURBO CVT尚悦版 国V",
+        "2019款 180TURBO CVT尚悦版 国VI"
+      ],
+      "expected_emission_variant_group": [
+        "2019款 180TURBO CVT尚悦版 国V",
+        "2019款 180TURBO CVT尚悦版 国VI"
+      ],
+      "field_persistence": {
+        "s05_emission_variant_contract_enabled": true,
+        "target_year_model": "2019款",
+        "target_config_model": "180TURBO CVT尚悦版",
+        "normalized_target_config": "2019款180turbocvt尚悦版",
+        "emission_variant_group": [
+          "2019款 180TURBO CVT尚悦版 国V",
+          "2019款 180TURBO CVT尚悦版 国VI"
+        ],
+        "emission_variant_group_count": 2,
+        "selected_emission_variants": [
+          "2019款 180TURBO CVT尚悦版 国V",
+          "2019款 180TURBO CVT尚悦版 国VI"
+        ],
+        "selected_count_text": "已选2项",
+        "selected_count_expected": 2,
+        "selected_count_actual": 2,
+        "s05_emission_variant_all_selected": true,
+        "s05_single_trim_selected": false
+      },
+      "public_group_evidence": {
+        "s05_emission_variant_contract_enabled": true,
+        "target_year_model": "2019款",
+        "target_config_model": "180TURBO CVT尚悦版",
+        "normalized_target_config": "2019款180turbocvt尚悦版",
+        "visible_trim_names": [
+          "2019款 180TURBO CVT尚悦版 国V",
+          "2019款 180TURBO CVT尚悦版 国VI"
+        ],
+        "emission_variant_group": [
+          {
+            "label": "2019款 180TURBO CVT尚悦版 国V",
+            "bounds": [
+              360,
+              120,
+              1080,
+              170
+            ],
+            "emission_markers": [
+              "国V"
+            ],
+            "normalized_trim": "2019款180turbocvt尚悦版"
+          },
+          {
+            "label": "2019款 180TURBO CVT尚悦版 国VI",
+            "bounds": [
+              360,
+              190,
+              1080,
+              240
+            ],
+            "emission_markers": [
+              "国VI"
+            ],
+            "normalized_trim": "2019款180turbocvt尚悦版"
+          }
+        ],
+        "emission_variant_group_count": 2,
+        "emission_variant_group_confirmed": true,
+        "emission_variant_group_ambiguous": false,
+        "excluded_similar_configs": [],
+        "selection_mode": "same_trim_multi_emission_variant"
+      },
+      "wrong_selected": [],
+      "missing_required_fields": [],
+      "pass": true
+    },
+    {
+      "id": "test_2_target_with_emission",
+      "description": "target with ?VI still selects the whole same-trim emission group",
+      "target_config_model": "2019款 180TURBO CVT尚悦版 国VI",
+      "visible_trim_names": [
+        "2019款 180TURBO CVT尚悦版 国V",
+        "2019款 180TURBO CVT尚悦版 国VI"
+      ],
+      "expected_emission_variant_group": [
+        "2019款 180TURBO CVT尚悦版 国V",
+        "2019款 180TURBO CVT尚悦版 国VI"
+      ],
+      "field_persistence": {
+        "s05_emission_variant_contract_enabled": true,
+        "target_year_model": "2019款",
+        "target_config_model": "2019款 180TURBO CVT尚悦版 国VI",
+        "normalized_target_config": "2019款180turbocvt尚悦版",
+        "emission_variant_group": [
+          "2019款 180TURBO CVT尚悦版 国V",
+          "2019款 180TURBO CVT尚悦版 国VI"
+        ],
+        "emission_variant_group_count": 2,
+        "selected_emission_variants": [
+          "2019款 180TURBO CVT尚悦版 国V",
+          "2019款 180TURBO CVT尚悦版 国VI"
+        ],
+        "selected_count_text": "已选2项",
+        "selected_count_expected": 2,
+        "selected_count_actual": 2,
+        "s05_emission_variant_all_selected": true,
+        "s05_single_trim_selected": false
+      },
+      "public_group_evidence": {
+        "s05_emission_variant_contract_enabled": true,
+        "target_year_model": "2019款",
+        "target_config_model": "2019款 180TURBO CVT尚悦版 国VI",
+        "normalized_target_config": "2019款180turbocvt尚悦版",
+        "visible_trim_names": [
+          "2019款 180TURBO CVT尚悦版 国V",
+          "2019款 180TURBO CVT尚悦版 国VI"
+        ],
+        "emission_variant_group": [
+          {
+            "label": "2019款 180TURBO CVT尚悦版 国V",
+            "bounds": [
+              360,
+              120,
+              1080,
+              170
+            ],
+            "emission_markers": [
+              "国V"
+            ],
+            "normalized_trim": "2019款180turbocvt尚悦版"
+          },
+          {
+            "label": "2019款 180TURBO CVT尚悦版 国VI",
+            "bounds": [
+              360,
+              190,
+              1080,
+              240
+            ],
+            "emission_markers": [
+              "国VI"
+            ],
+            "normalized_trim": "2019款180turbocvt尚悦版"
+          }
+        ],
+        "emission_variant_group_count": 2,
+        "emission_variant_group_confirmed": true,
+        "emission_variant_group_ambiguous": false,
+        "excluded_similar_configs": [],
+        "selection_mode": "same_trim_multi_emission_variant"
+      },
+      "wrong_selected": [],
+      "missing_required_fields": [],
+      "pass": true
+    },
+    {
+      "id": "test_3_similar_configs_excluded",
+      "description": "all-models and similar configs are excluded; only ?? group remains",
+      "target_config_model": "180TURBO CVT尚悦版",
+      "visible_trim_names": [
+        "2019款全部车型",
+        "2019款 180TURBO CVT尚动版 国V",
+        "2019款 180TURBO CVT尚动版 国VI",
+        "2019款 180TURBO CVT尚悦版 国V",
+        "2019款 180TURBO CVT尚悦版 国VI",
+        "2019款 180TURBO CVT尚擎版 国V",
+        "2019款 180TURBO CVT尚擎版 国VI",
+        "2019款 220TURBO CVT劲动版 国V"
+      ],
+      "expected_emission_variant_group": [
+        "2019款 180TURBO CVT尚悦版 国V",
+        "2019款 180TURBO CVT尚悦版 国VI"
+      ],
+      "field_persistence": {
+        "s05_emission_variant_contract_enabled": true,
+        "target_year_model": "2019款",
+        "target_config_model": "180TURBO CVT尚悦版",
+        "normalized_target_config": "2019款180turbocvt尚悦版",
+        "emission_variant_group": [
+          "2019款 180TURBO CVT尚悦版 国V",
+          "2019款 180TURBO CVT尚悦版 国VI"
+        ],
+        "emission_variant_group_count": 2,
+        "selected_emission_variants": [
+          "2019款 180TURBO CVT尚悦版 国V",
+          "2019款 180TURBO CVT尚悦版 国VI"
+        ],
+        "selected_count_text": "已选2项",
+        "selected_count_expected": 2,
+        "selected_count_actual": 2,
+        "s05_emission_variant_all_selected": true,
+        "s05_single_trim_selected": false
+      },
+      "public_group_evidence": {
+        "s05_emission_variant_contract_enabled": true,
+        "target_year_model": "2019款",
+        "target_config_model": "180TURBO CVT尚悦版",
+        "normalized_target_config": "2019款180turbocvt尚悦版",
+        "visible_trim_names": [
+          "2019款全部车型",
+          "2019款 180TURBO CVT尚动版 国V",
+          "2019款 180TURBO CVT尚动版 国VI",
+          "2019款 180TURBO CVT尚悦版 国V",
+          "2019款 180TURBO CVT尚悦版 国VI",
+          "2019款 180TURBO CVT尚擎版 国V",
+          "2019款 180TURBO CVT尚擎版 国VI",
+          "2019款 220TURBO CVT劲动版 国V"
+        ],
+        "emission_variant_group": [
+          {
+            "label": "2019款 180TURBO CVT尚悦版 国V",
+            "bounds": [
+              360,
+              330,
+              1080,
+              380
+            ],
+            "emission_markers": [
+              "国V"
+            ],
+            "normalized_trim": "2019款180turbocvt尚悦版"
+          },
+          {
+            "label": "2019款 180TURBO CVT尚悦版 国VI",
+            "bounds": [
+              360,
+              400,
+              1080,
+              450
+            ],
+            "emission_markers": [
+              "国VI"
+            ],
+            "normalized_trim": "2019款180turbocvt尚悦版"
+          }
+        ],
+        "emission_variant_group_count": 2,
+        "emission_variant_group_confirmed": true,
+        "emission_variant_group_ambiguous": false,
+        "excluded_similar_configs": [
+          "2019款全部车型",
+          "2019款 180TURBO CVT尚动版 国V",
+          "2019款 180TURBO CVT尚动版 国VI",
+          "2019款 180TURBO CVT尚擎版 国V",
+          "2019款 180TURBO CVT尚擎版 国VI",
+          "2019款 220TURBO CVT劲动版 国V"
+        ],
+        "selection_mode": "same_trim_multi_emission_variant"
+      },
+      "wrong_selected": [],
+      "missing_required_fields": [],
+      "pass": true
+    },
+    {
+      "id": "test_4_single_config_unchanged",
+      "description": "single exact trim has explicit non-multi status and remains single-select",
+      "target_config_model": "180TURBO CVT尚悦版",
+      "visible_trim_names": [
+        "2019款 180TURBO CVT尚悦版"
+      ],
+      "expected_emission_variant_group": [],
+      "field_persistence": {
+        "s05_emission_variant_contract_enabled": true,
+        "target_year_model": "2019款",
+        "target_config_model": "180TURBO CVT尚悦版",
+        "normalized_target_config": "2019款180turbocvt尚悦版",
+        "emission_variant_group": [],
+        "emission_variant_group_count": 0,
+        "selected_emission_variants": [],
+        "selected_count_text": "已选1项",
+        "selected_count_expected": 1,
+        "selected_count_actual": 1,
+        "s05_emission_variant_all_selected": null,
+        "s05_single_trim_selected": true
+      },
+      "public_group_evidence": {
+        "s05_emission_variant_contract_enabled": true,
+        "target_year_model": "2019款",
+        "target_config_model": "180TURBO CVT尚悦版",
+        "normalized_target_config": "2019款180turbocvt尚悦版",
+        "visible_trim_names": [
+          "2019款 180TURBO CVT尚悦版"
+        ],
+        "emission_variant_group": [
+          {
+            "label": "2019款 180TURBO CVT尚悦版",
+            "bounds": [
+              360,
+              120,
+              1080,
+              170
+            ],
+            "emission_markers": [],
+            "normalized_trim": "2019款180turbocvt尚悦版"
+          }
+        ],
+        "emission_variant_group_count": 1,
+        "emission_variant_group_confirmed": true,
+        "emission_variant_group_ambiguous": false,
+        "excluded_similar_configs": [],
+        "selection_mode": "single_exact_trim"
+      },
+      "wrong_selected": [],
+      "missing_required_fields": [],
+      "pass": true
+    }
+  ],
+  "offline_all_pass": true,
+  "business_selection_logic_changed": false,
+  "real_device_run": false,
+  "second_stage_started": false,
+  "reference_collection_started": false,
+  "pricing_run": false,
+  "raw_xml_large_fields_written": false,
+  "historical_baseline_overwritten": false
+}

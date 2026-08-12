@@ -1,0 +1,164 @@
+{
+  "status": "DIAGNOSE_TUANG_S10_TRISAME_SOURCE_BOUNDARY_ONLY_DONE",
+  "changed_code": false,
+  "changed_page_contract": false,
+  "changed_config": false,
+  "changed_pricing": false,
+  "ran_new_device_session": false,
+  "continued_collection": false,
+  "entered_s15_or_s16": false,
+  "target_fingerprint": "大众|途昂|2017款|330TSI 两驱豪华版|白|2018.07",
+  "evidence_paths": {
+    "result_s01_to_s10": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s01_to_s10.json",
+    "result_s10_to_s16": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+    "result": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result.json",
+    "second_stage_log": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\tuang_s13_guard_second_20260509_161742.log",
+    "s10_xml": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260509_161743.xml",
+    "s10_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_s16_start_20260509_161743.png"
+  },
+  "first_stage_s10_ready": {
+    "status": "S10_READY",
+    "trisame_count_from_first_stage": 2,
+    "trisame_count_source": "inferred_by_strict_target_title_filter",
+    "s10_ready_card_count_current_parser": 22,
+    "first_stage_clean_trisame_count_field_present": false,
+    "target_title": "大众 途昂 2017款 330TSI 两驱豪华版",
+    "strict_trisame_cards": [
+      {
+        "index": 1,
+        "title": "大众 途昂 2017款 330TSI 两驱豪华版",
+        "price": "10.89万",
+        "metadata": "2018年 | 5.65万公里 | 重庆"
+      },
+      {
+        "index": 2,
+        "title": "大众 途昂 2017款 330TSI 两驱豪华版",
+        "price": "11.79万",
+        "metadata": "2018年 | 12.22万公里 | 齐齐哈尔"
+      }
+    ],
+    "polluted_same_source_examples": [
+      {
+        "title": "大众ID.3 2024款 出众版",
+        "price": "8.78万",
+        "metadata": "2024年 | 2.86万公里 | 唐山 | IQ.Drive"
+      },
+      {
+        "title": "大众 桑塔纳 2021款 1.5L 手动风尚版",
+        "price": "3.56万",
+        "metadata": "2021年 | 2.41万公里 | 唐山"
+      },
+      {
+        "title": "大众 捷达 2017款 1.5L 自动时尚型",
+        "price": "3.22万",
+        "metadata": "2018年 | 9.05万公里 | 唐山"
+      }
+    ],
+    "conclusion": "The current same_source_cards field is polluted by non-trisame more-cars entries and cannot be used as a clean trisame pool."
+  },
+  "id3_area": {
+    "id3_seen": true,
+    "id3_title": "大众ID.3 2024款 出众版",
+    "id3_price": "8.78万",
+    "id3_metadata": "2024年 | 2.86万公里 | 唐山 | IQ.Drive",
+    "id3_bounds": [562, 2177, 1082, 2242],
+    "nearby_texts": [
+      {
+        "text": "找不到想要的车？",
+        "bounds": [26, 1800, 864, 1852]
+      },
+      {
+        "text": "全国淘车",
+        "bounds": [955, 1833, 1144, 1898]
+      },
+      {
+        "text": "更多车源",
+        "bounds": [52, 2054, 1220, 2138]
+      }
+    ],
+    "section_title": "更多车源",
+    "non_trisame_section_detected": true,
+    "conclusion": "ID.3 is below the trisame pool boundary and belongs to more/recommended/national sourcing content, not the target trisame source list."
+  },
+  "canonical_reference_order": {
+    "id3_in_canonical_order": true,
+    "id3_reference_index": 1,
+    "selected_target_reference_index": 1,
+    "binding_stop_code": "REFERENCE_CARD_TITLE_MISMATCH",
+    "expected_title": "大众 途昂 2017款 330TSI 两驱豪华版",
+    "actual_title": "大众ID.3 2024款 出众版",
+    "selected_card": {
+      "reference_index": 1,
+      "canonical_reference_index": 1,
+      "live_display_order": 3,
+      "list_title": "大众ID.3 2024款 出众版",
+      "list_price_text": "8.78万",
+      "raw_metadata": "2024年 | 2.86万公里 | 唐山 | IQ.Drive"
+    },
+    "why_id3_included": [
+      "S10 parser uses target brand plus vehicle-title shape and does not stop at more-cars boundary.",
+      "Canonical order is built from all complete cards before strict target title filtering.",
+      "ID.3 price 8.78万 is lower than Tuang 10.89万 and 11.79万, so it becomes canonical reference_index=1."
+    ]
+  },
+  "reliable_s10_gate": {
+    "reliable_s10_current_rule": {
+      "has_price_low_to_high": true,
+      "has_vehicle_cards": true,
+      "has_no_detail_report_page_signals": true
+    },
+    "reliable_s10_too_broad": true,
+    "missing_gates": [
+      "target_vehicle_title_hard_match_before_reference_order",
+      "trisame_source_boundary_detection",
+      "more_cars_region_exclusion",
+      "trisame_pool_count_upper_bound"
+    ],
+    "conclusion": "The current reliable S10 gate excludes report/detail pages, but does not prove that parsed cards are still inside the target trisame pool."
+  },
+  "reason_chain": [
+    "The first Tuang reference was not completed as an effective S14/S15 result, so retrying reference_index=1 is reasonable.",
+    "The live S10 XML contains two real Tuang trisame cars and the downstream more-cars section in the same viewport.",
+    "The reliable S10 gate passes because the page has price low-to-high and parseable cards with no report-page signals.",
+    "The S10 parser includes ID.3 from the more-cars section as a complete card.",
+    "Canonical ordering sorts ID.3 before the two Tuang cars due to its lower price.",
+    "The post-selection title hard gate blocks with REFERENCE_CARD_TITLE_MISMATCH, preventing ID.3 from being collected."
+  ],
+  "reference_state": {
+    "whether_reference_1_valid": false,
+    "whether_next_reference_index_should_be_1_or_2": 1,
+    "whether_system_should_continue_beyond_trisame_count": false,
+    "expected_terminal_after_two_unsuitable_tuang_references": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW"
+  },
+  "classification": {
+    "primary": "S10_TRISAME_SOURCE_BOUNDARY_LEAK_CONFIRMED",
+    "supporting": [
+      "S10_NON_TRISAME_MORE_CARS_LEAKED_INTO_REFERENCE_ORDER",
+      "S10_TARGET_TITLE_HARD_GATE_MISSING_CONFIRMED",
+      "S10_TRISAME_POOL_COUNT_NOT_ENFORCED_CONFIRMED",
+      "S10_SCROLL_POSITION_IN_MORE_SECTION_CONFIRMED"
+    ],
+    "not_supported": [
+      "ID3_NOT_IN_REFERENCE_ORDER_BUT_TITLE_MISMATCH_CAUSED_BY_OTHER_REASON",
+      "EVIDENCE_INSUFFICIENT_NEED_MORE_LOGS"
+    ]
+  },
+  "patch_recommendations_no_code_changed": [
+    {
+      "name": "target_title_pre_filter",
+      "description": "Build canonical_reference_order only from cards whose title strictly matches brand + series + year_model + config_model."
+    },
+    {
+      "name": "stop_at_non_trisame_section_boundary",
+      "description": "Stop S10 trisame card parsing when encountering 找不到想要的车 / 更多车源 / 推荐车源 / 全国淘车 / 猜你喜欢."
+    },
+    {
+      "name": "persist_clean_trisame_count",
+      "description": "First stage should persist clean trisame_count and trisame_cards; second stage should output ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW when next_reference_index exceeds that count."
+    },
+    {
+      "name": "excluded_cards_audit",
+      "description": "Non-target cards such as ID.3 should be recorded in excluded_cards with exclude_reason=title_mismatch_or_non_trisame_section."
+    }
+  ]
+}

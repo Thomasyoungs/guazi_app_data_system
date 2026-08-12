@@ -1,0 +1,52 @@
+{
+  "status": "SECOND_STAGE_DID_NOT_REACH_S16",
+  "success_status": null,
+  "target_fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "run_type": "real_device_regression_after_v139_fresh_pair_patch",
+  "code_modified_this_round": false,
+  "first_stage": {
+    "executed": true,
+    "status": "S10_READY",
+    "fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+    "reliable_s10": true,
+    "price_asc_sort_evidence": true,
+    "result_path": "output/result_s01_to_s10.json"
+  },
+  "second_stage": {
+    "executed": false,
+    "attempted": true,
+    "reached_s11": false,
+    "reached_s12": false,
+    "reached_s13": false,
+    "reached_s14": false,
+    "reached_s15": false,
+    "reached_s16": false,
+    "failure_stage": "module_initialization",
+    "failure_code": "SECOND_STAGE_DID_NOT_REACH_S16",
+    "exception_type": "re.error",
+    "exception_message": "unterminated character set at position 5",
+    "file": "scripts/runtime_s10_to_s16_mainline.py",
+    "line": 8028,
+    "code_excerpt": "S14_TAB_LABEL_RE = re.compile(r\"(.+?)[(??(\\d+)\\s*/\\s*(\\d+)[)??\")",
+    "note": "The second-stage script failed before runtime flow entry, so V1.39 S11 fresh-pair behavior was not exercised in this run."
+  },
+  "v139_validation_runtime": {
+    "fresh_evidence_pair_checked": false,
+    "stale_xml_detected": false,
+    "xml_stabilization_mainline_disabled_runtime_observed": false,
+    "reason_not_observed": "second_stage_failed_during_module_initialization_before_S11"
+  },
+  "output_files": {
+    "result_json": "output/result.json",
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "result_s10_to_s16": "output/result_s10_to_s16.json"
+  },
+  "forbidden_actions": {
+    "manual_click": false,
+    "code_modified": false,
+    "pricing_modified": false,
+    "config_modified": false,
+    "baseline_modified": false
+  },
+  "final_status": "SECOND_STAGE_DID_NOT_REACH_S16"
+}

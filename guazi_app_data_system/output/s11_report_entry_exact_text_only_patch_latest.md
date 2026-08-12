@@ -1,0 +1,30 @@
+# S11 Report Entry Exact Text Only Patch
+
+- Generated: 2026-05-13T12:23:43
+- Target: ??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08
+- Modified file: `scripts/runtime_s10_to_s16_mainline.py`
+- Patch status: `S11_REPORT_ENTRY_EXACT_TEXT_ONLY_PATCHED`
+
+## Rule
+
+S11 only treats exact XML/text-node `??????` as the report entry. `????????` and `??????` are no longer S11 entry texts. Visual binding, OCR, screenshot text recognition, and screenshot-button coordinate binding are disabled.
+
+If exact `??????` is absent and exact `??????` appears, the current reference is excluded with `OFFICIAL_REPORT_NOT_AVAILABLE` and the script returns to reliable S10. If both are absent after controlled search exhaustion, the stop code is `S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER`.
+
+## Offline Validation
+
+| Scenario | Result |
+|---|---|
+| A_xml_exact_view_full_report | {"scenario": "A_xml_exact_view_full_report", "view_full_report_exact_text_seen": true, "next_action": "S11_ONLY_ALLOWED_ACTION_CLICK_VIEW_FULL_REPORT", "excluded": false} |
+| B_marker_without_view_full_report | {"scenario": "B_marker_without_view_full_report", "view_full_report_exact_text_seen": false, "merchant_self_check_marker_seen": true, "current_reference_excluded_expected": true, "excluded_reference_reason": "OFFICIAL_REPORT_NOT_AVAILABLE", "do_not_click_marker": true} |
+| C_only_merchant_self_check_not_marker | {"scenario": "C_only_merchant_self_check_not_marker", "merchant_self_check_marker_seen": false, "direct_exclusion_allowed": false, "next": "continue_scroll_or_evidence_insufficient"} |
+| D_scroll_limit_no_view_no_marker | {"scenario": "D_scroll_limit_no_view_no_marker", "view_full_report_exact_text_seen": false, "merchant_self_check_marker_seen": false, "expected_stop_code": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER", "ocr_or_visual_used": false} |
+| E_real_screenshot_visible_but_xml_missing | {"scenario": "E_real_screenshot_visible_but_xml_missing", "xml_path": "artifacts\\debug\\s11_report_entry_search_2_20260513_112919.xml", "screenshot_path": "artifacts\\screenshots\\s11_report_entry_search_2_20260513_112919.png", "view_full_report_exact_text_seen": false, "merchant_self_check_marker_seen": false, "visual_binding_disabled": true, "ocr_disabled": true, "expected": "exclude_if_marker_else_exhausted_without_visual"} |
+
+## Compile
+
+`py_compile scripts/runtime_s10_to_s16_mainline.py`: passed.
+
+## Residual Check
+
+No executable visual-binding action path remains (`S11_ONLY_ALLOWED_ACTION_CLICK_VIEW_FULL_REPORT_BY_VISUAL_BINDING`, `VISUAL_BINDING_XML_TEXT_MISSING`, `_s11_visual_report_entry_candidate` not found).

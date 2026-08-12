@@ -1,0 +1,132 @@
+{
+  "status": "NISSAN_TERRA_TERMINAL_MANUAL_REVIEW_RUNTIME_VERIFIED",
+  "generated_at": "2026-05-16T03:54:11.957875+00:00",
+  "task": "runtime validation for terminal manual review output after target score persistence",
+  "code_modified_this_round": false,
+  "first_stage": {
+    "status": "S10_READY",
+    "s10_ready": true,
+    "fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+    "trisame_count": 2
+  },
+  "second_stage": {
+    "status": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+    "final_status": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+    "issue_code": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+    "fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08"
+  },
+  "s14_validation": {
+    "runtime_verified": true,
+    "reference_1_s14_collect_done": true,
+    "s14_completion_reason": "NO_NEW_SEMANTIC_AFTER_TWO_SWIPES_NO_UNCOLLECTED_SIGNAL",
+    "s14_image_records_count": 27,
+    "s14_horizontal_swipes_count": 28,
+    "stale_first_line_warning_seen": true,
+    "single_image_false_completion_regression": false
+  },
+  "reference_1": {
+    "reference_index": 1,
+    "reference_score": 70.0,
+    "reference_score_trustworthy": true,
+    "score_relation_to_target": "below_target",
+    "target_score": 92.0,
+    "target_score_source": "score_target_runtime_s15"
+  },
+  "reference_2": {
+    "reference_outcomes_count": 1,
+    "outcome": {
+      "reference_index": 2,
+      "reference_id": null,
+      "listing_key": "2:日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版:2021年 | 13.4万公里 | 唐山:10.59万",
+      "reference_title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+      "reference_price_yuan": null,
+      "reference_price_text": "10.59万",
+      "outcome": "excluded",
+      "included_in_auto_pricing": false,
+      "exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+      "reference_score": null,
+      "reference_score_trustworthy": null,
+      "score_relation_to_target": "unknown",
+      "official_report_available": false,
+      "s14_collect_done": null,
+      "notes": "无查看完整报告入口，当前参考车排除"
+    }
+  },
+  "terminal_manual_review_output": {
+    "manual_review_required": true,
+    "auto_pricing_allowed": false,
+    "final_price": null,
+    "final_price_status": "not_generated",
+    "manual_review_payload_present": true,
+    "s17_manual_review_payload_present": true,
+    "reference_outcomes_count": 2
+  },
+  "target_score_validation": {
+    "top_level_target_score": 92.0,
+    "manual_review_payload_target_score": 92.0,
+    "s17_manual_review_payload_target_score": 92.0,
+    "issue_context_target_score": null,
+    "current_reference_target_score": null,
+    "reference_history_target_scores": [
+      {
+        "reference_index": 1,
+        "target_score": {
+          "score": 92.0,
+          "components": {
+            "body_score": 70.0,
+            "mileage_score": 8.0,
+            "transfer_score": 7.0,
+            "accident_score": 4.0,
+            "max_amount_score": 3.0
+          },
+          "review_reasons": [
+            "目标车缺少出险次数，已采用默认分。",
+            "目标车缺少最大金额，已采用默认分。"
+          ],
+          "hard_reject": false
+        },
+        "target_score_source": "score_target_runtime_s15"
+      }
+    ],
+    "target_score_available": true,
+    "top_level_target_score_source": "reference_history[1].target_score",
+    "runtime_origin_source": "score_target_runtime_s15",
+    "note": "top_level target_score_source records extraction location; reference_history[1].target_score_source records original runtime computation source."
+  },
+  "checks": {
+    "first_stage_s10_ready": true,
+    "fingerprint_nissan_terra": true,
+    "terminal_status_all_references_exhausted": true,
+    "manual_review_required_true": true,
+    "auto_pricing_allowed_false": true,
+    "final_price_null": true,
+    "final_price_status_not_generated": true,
+    "no_s16_pricing_output": true,
+    "reference_1_score_trustworthy": true,
+    "reference_1_score_is_70": true,
+    "reference_1_s14_collect_done": true,
+    "reference_1_s14_full_sequence_images_27": true,
+    "reference_1_s14_swipes_28": true,
+    "old_78_absent": true,
+    "reference_2_deduped_once_in_outcomes": true,
+    "reference_2_official_report_not_available": true,
+    "target_score_top_level_92": true,
+    "target_score_manual_payload_92": true,
+    "target_score_s17_payload_92": true,
+    "target_score_available_true": true,
+    "target_score_origin_score_target_runtime_s15": true
+  },
+  "validation_passed": true,
+  "forbidden_regression_checks": {
+    "old_78_present": false,
+    "entered_s16": false,
+    "final_price_generated": false
+  },
+  "evidence_paths": {
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "result_s10_to_s16": "output/result_s10_to_s16.json",
+    "result": "output/result.json",
+    "report_json": "output/nissan_terra_terminal_manual_review_runtime_validation.json",
+    "report_md": "output/nissan_terra_terminal_manual_review_runtime_validation_latest.md"
+  }
+}

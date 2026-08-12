@@ -1,0 +1,145 @@
+{
+  "status": "S_LOGIN_SYSTEM_NAV_BACK_VISIBLE_BUT_XML_NOT_EXPOSED",
+  "secondary_findings": [
+    "S_LOGIN_BOTTOM_BACK_DETECTION_TOO_XML_DEPENDENT",
+    "S_LOGIN_SYSTEM_BACK_HANDLER_NOT_CALLED"
+  ],
+  "readonly": true,
+  "code_modified": false,
+  "real_device_ran": false,
+  "result_json_overwritten": false,
+  "evidence": {
+    "result_json": "output/result.json",
+    "result_s01_to_s10_json": "output/result_s01_to_s10.json",
+    "screenshot_path": "artifacts/screenshots/s01_s10_after_force_restart_20260519_105113.png",
+    "xml_path": "artifacts/debug/s01_s10_after_force_restart_20260519_105113.xml",
+    "xml_size_bytes": 9755,
+    "xml_mtime_iso": "2026-05-19T10:51:18.046095"
+  },
+  "page": {
+    "recognized_page": "S_LOGIN",
+    "stop_code": "HUMAN_LOGIN_REQUIRED",
+    "error": "S_LOGIN has no 稍后 and no bottom < / ＜ exit control.",
+    "foreground_package": "com.shuqing.tqaccountcenter",
+    "focused_window": "com.shuqing.tqaccountcenter/com.shuqing.kdgphone.account.login.LoginHomeActivity",
+    "login_page_detected_by": [
+      "foreground_package=com.shuqing.tqaccountcenter",
+      "focused_window contains account.login.LoginHomeActivity",
+      "visible login markers"
+    ],
+    "later_button_seen": false,
+    "bottom_back_seen": false,
+    "system_back_available": "visually_available_in_screenshot_but_not_exposed_as_xml_node",
+    "why_human_login_required": "Initial S_LOGIN recovery calls _tap_s_login_bottom_back_once; that branch requires an XML node whose label is < or ? near the bottom. The system navigation back icon is rendered in the screenshot but not exposed as such in the XML, so _s_login_bottom_back_node returned None and HUMAN_LOGIN_REQUIRED was raised."
+  },
+  "screenshot_audit": {
+    "screenshot_has_system_nav_back": true,
+    "screenshot_system_nav_back_bounds_estimated": [
+      835,
+      2595,
+      925,
+      2685
+    ],
+    "screenshot_system_nav_back_region": "bottom navigation bar, right-side back icon",
+    "screenshot_back_is_android_system_navigation": true,
+    "screenshot_has_later_button": false,
+    "screenshot_confirms_s_login": true,
+    "screenshot_login_markers": [
+      "????",
+      "???????",
+      "??????",
+      "?????",
+      "??",
+      "????",
+      "????"
+    ]
+  },
+  "xml_audit": {
+    "xml_dump_ok": true,
+    "xml_has_later_button": false,
+    "xml_has_back_text_node": true,
+    "xml_has_back_content_desc": false,
+    "xml_has_system_nav_back_node": false,
+    "xml_contains_s_login_markers": false,
+    "xml_term_counts": {
+      "??": 0,
+      "<": 41,
+      "?": 2,
+      "back": 0,
+      "????": 0,
+      "?????": 0
+    },
+    "matched_nodes": [
+      {
+        "text": "",
+        "content-desc": "",
+        "resource-id": "android:id/navigationBarBackground",
+        "class": "android.view.View",
+        "bounds": "[0,2559][1220,2712]",
+        "clickable": "false",
+        "enabled": "true",
+        "package": "com.shuqing.tqaccountcenter"
+      }
+    ],
+    "bottom_nodes": [
+      {
+        "text": "",
+        "content-desc": "",
+        "resource-id": "android:id/navigationBarBackground",
+        "class": "android.view.View",
+        "bounds": "[0,2559][1220,2712]",
+        "clickable": "false",
+        "enabled": "true",
+        "package": "com.shuqing.tqaccountcenter"
+      }
+    ],
+    "important_note": "The raw XML contains many literal < characters as XML syntax, but no node text/content-desc/resource-id representing <, ?, ??, or back. The only bottom navigation node is android:id/navigationBarBackground and it is not clickable."
+  },
+  "code_path": [
+    {
+      "function": "_is_s_login_prompt",
+      "file": "scripts/runtime_s01_to_s10_mainline.py",
+      "line": 552,
+      "role": "recognizes generic S_LOGIN by visible_blob/package/activity"
+    },
+    {
+      "function": "_s_login_bottom_back_node",
+      "file": "scripts/runtime_s01_to_s10_mainline.py",
+      "line": 582,
+      "role": "bottom return detector; scans snapshot nodes below 80% screen height and requires labels intersect {<, ?}",
+      "runtime_result": "None for this evidence because system nav back icon is not exposed as a labelled node"
+    },
+    {
+      "function": "_tap_s_login_bottom_back_once",
+      "file": "scripts/runtime_s01_to_s10_mainline.py",
+      "line": 596,
+      "role": "initial S_LOGIN no-later path; raises HUMAN_LOGIN_REQUIRED if _s_login_bottom_back_node returns None"
+    },
+    {
+      "function": "_dismiss_initial_s_login",
+      "file": "scripts/runtime_s01_to_s10_mainline.py",
+      "line": 3460,
+      "role": "APP_FORCE_RESTART initial S_LOGIN recovery; if no later button, directly calls _tap_s_login_bottom_back_once rather than client.back"
+    },
+    {
+      "function": "_recover_s_login_interrupt / branch around S_LOGIN interrupt recovery",
+      "file": "scripts/runtime_s01_to_s10_mainline.py",
+      "line": 1772,
+      "role": "mid-flow interrupt path can call client.back when recognize_startup_account_center_login_page is true; this capability is not used by _dismiss_initial_s_login"
+    },
+    {
+      "function": "_handle_startup_account_center_login_until_launcher",
+      "file": "scripts/runtime_s01_to_s10_mainline.py",
+      "line": 2589,
+      "role": "startup account-center handler uses Android BACK up to 2 times, but it is in launcher/app-icon startup path, not the initial S_LOGIN branch that failed here"
+    }
+  ],
+  "answers": {
+    "is_bottom_angle_bracket_system_nav_back": "yes, the screenshot shows the Android system navigation back key in the bottom navigation bar",
+    "does_xml_expose_back_key": "no; XML exposes only android:id/navigationBarBackground and no labelled/clickable back node",
+    "why_script_said_no_bottom_back": "because the failing initial S_LOGIN branch only accepts a bottom XML node labelled < or ?; screenshot-level system nav visibility and adb BACK availability are not considered there",
+    "contract_or_script_problem": "fixed-script recognition/recovery problem; the page contract already allows bottom/system navigation back, but this branch is too XML-dependent and does not call the existing system BACK handler",
+    "next_fix_area": "S_LOGIN initial no-later branch should use system BACK / screenshot navigation-bar detection path rather than relying only on XML < / ? nodes"
+  },
+  "classification": "S_LOGIN_SYSTEM_NAV_BACK_VISIBLE_BUT_XML_NOT_EXPOSED"
+}

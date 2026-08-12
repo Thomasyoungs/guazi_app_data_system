@@ -1,0 +1,248 @@
+{
+  "xml_path": "artifacts\\debug\\s13_repair_item_reposition_车头_1_20260518_111841.xml",
+  "targets": {},
+  "clickable_containers_relevant": [
+    {
+      "text": "",
+      "content_desc": "",
+      "class": "android.widget.LinearLayout",
+      "resource_id": "com.ganji.android.haoche_c:id/ll_root",
+      "bounds": [
+        0,
+        0,
+        1220,
+        2559
+      ],
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "true",
+      "scrollable": "false",
+      "index": "0",
+      "area": 3121980,
+      "depth": 6,
+      "desc_texts": [
+        "瓜子官方检测报告",
+        "瓜子官方检测报告",
+        "车图",
+        "本田 雅阁 2023款 260TURBO 智享版",
+        "2024-01",
+        "｜",
+        "5万公里",
+        "qnbdp1066x74b5e6f507e34dc3843166ff0757a1101731933575",
+        "作为B级车标杆，搭载1.5T地球梦发动机与L2级智驾，动力与科技兼备。",
+        "车龄2年多行驶5万公里，0过户0出险",
+        "，使用强度适中。左前大灯经改装升级，左侧门槛梁仅局部轻微变形，主体完好，均为可接受的外观瑕疵。其核心结构件完好率远超大部分二手车，机械状态优异，",
+        "现价仅为新车5折，比平台均价低2600元",
+        "，立省约10万元，是追求品质与性价比的务实之选。",
+        "[AI生成]",
+        "车身外观优秀",
+        "0项改装",
+        "内饰/配置优秀",
+        "1项改装",
+        "车身骨架优秀",
+        "0项改装",
+        "机舱工况极品",
+        "0项改装",
+        "保险理赔记录",
+        "瓜子付费为您查询的第三方数据·更客观",
+        "",
+        "理赔次数0次",
+        "核心部件0处",
+        "最大金额0元",
+        "车源编号:167201649 | VIN码:LHG****6084 | 检测日期:2026-05-17",
+        "重大问题排查"
+      ]
+    },
+    {
+      "text": "",
+      "content_desc": "",
+      "class": "android.view.View",
+      "resource_id": "",
+      "bounds": [
+        81,
+        1608,
+        611,
+        1716
+      ],
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "false",
+      "scrollable": "false",
+      "index": "5",
+      "area": 57240,
+      "depth": 21,
+      "desc_texts": [
+        "左前大灯",
+        "KFIAAAABnRSTlMA1BVpeQ4rV2ayAAAALUlEQVQI12MAASMGKGBOVICymMSEYIKKJAgGwAUdECyELFwHwhQCQghXIVwKAIGGB0VQRf3tAAAAAElFTkSuQmCC"
+      ]
+    },
+    {
+      "text": "",
+      "content_desc": "",
+      "class": "android.view.View",
+      "resource_id": "",
+      "bounds": [
+        611,
+        1608,
+        1140,
+        1716
+      ],
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "false",
+      "scrollable": "false",
+      "index": "6",
+      "area": 57132,
+      "depth": 21,
+      "desc_texts": [
+        "右前大灯",
+        "KFIAAAABnRSTlMA1BVpeQ4rV2ayAAAALUlEQVQI12MAASMGKGBOVICymMSEYIKKJAgGwAUdECyELFwHwhQCQghXIVwKAIGGB0VQRf3tAAAAAElFTkSuQmCC"
+      ]
+    },
+    {
+      "text": "",
+      "content_desc": "",
+      "class": "android.view.View",
+      "resource_id": "",
+      "bounds": [
+        81,
+        1712,
+        1140,
+        1833
+      ],
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "false",
+      "scrollable": "false",
+      "index": "7",
+      "area": 128139,
+      "depth": 21,
+      "desc_texts": [
+        "AI解读车头异常有什么影响",
+        ""
+      ]
+    },
+    {
+      "text": "",
+      "content_desc": "",
+      "class": "android.view.View",
+      "resource_id": "",
+      "bounds": [
+        26,
+        1885,
+        1196,
+        2513
+      ],
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "false",
+      "scrollable": "false",
+      "index": "9",
+      "area": 734760,
+      "depth": 20,
+      "desc_texts": [
+        "车头：检测通过10",
+        "日间行车灯",
+        "机舱盖铰链（左）",
+        "前保险杠",
+        "发动机舱盖漆面",
+        "发动机舱盖",
+        "机舱盖铰链（右）",
+        "机舱盖锁",
+        "前雾灯",
+        "中网",
+        "前风挡玻璃"
+      ]
+    },
+    {
+      "text": "",
+      "content_desc": "",
+      "class": "android.view.View",
+      "resource_id": "",
+      "bounds": [
+        52,
+        2340,
+        211,
+        2486
+      ],
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "false",
+      "scrollable": "false",
+      "index": "0",
+      "area": 23214,
+      "depth": 16,
+      "desc_texts": [
+        "微信咨询",
+        "微信咨询"
+      ]
+    },
+    {
+      "text": "",
+      "content_desc": "",
+      "class": "android.view.View",
+      "resource_id": "",
+      "bounds": [
+        234,
+        2340,
+        393,
+        2486
+      ],
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "false",
+      "scrollable": "false",
+      "index": "1",
+      "area": 23214,
+      "depth": 16,
+      "desc_texts": [
+        "实车讲解",
+        "实车讲解"
+      ]
+    },
+    {
+      "text": "联系卖家电话沟通",
+      "content_desc": "",
+      "class": "android.widget.TextView",
+      "resource_id": "",
+      "bounds": [
+        422,
+        2330,
+        783,
+        2492
+      ],
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "false",
+      "scrollable": "false",
+      "index": "2",
+      "area": 58482,
+      "depth": 16,
+      "desc_texts": [
+        "联系卖家电话沟通"
+      ]
+    },
+    {
+      "text": "讲价",
+      "content_desc": "",
+      "class": "android.widget.TextView",
+      "resource_id": "",
+      "bounds": [
+        809,
+        2330,
+        1170,
+        2492
+      ],
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "false",
+      "scrollable": "false",
+      "index": "3",
+      "area": 58482,
+      "depth": 16,
+      "desc_texts": [
+        "讲价"
+      ]
+    }
+  ]
+}

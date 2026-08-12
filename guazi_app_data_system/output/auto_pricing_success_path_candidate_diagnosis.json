@@ -1,0 +1,168 @@
+{
+  "status": "AUTO_PRICING_SUCCESS_PATH_CANDIDATE_DIAGNOSIS_DONE",
+  "generated_at": "2026-05-16T04:02:40.167144+00:00",
+  "task": "auto_pricing_success_path_candidate_diagnosis",
+  "code_modified": false,
+  "device_run": false,
+  "result_json_overwritten": false,
+  "current_target": {
+    "fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+    "task": {
+      "brand": "日产",
+      "series": "途达",
+      "year_model": "2020款",
+      "config_model": "2.5L XL Upper 4WD 自动四驱豪华版",
+      "color": "白",
+      "register_date": "2021.08",
+      "registration_date": "2021.08",
+      "mileage_10k_km": 5.1,
+      "display_mileage_wan_km": 5.1,
+      "transfer_count": 1,
+      "guide_price_10k": 22.83,
+      "sunroof": "有",
+      "emission_standard": "国6",
+      "insurance_expiry": "2026.08",
+      "insurance_expire": "2026.08",
+      "license_city": "唐山",
+      "plate_location": "唐山",
+      "condition_text": "原版原漆"
+    }
+  },
+  "current_results": {
+    "result_status": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+    "result_final_status": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+    "result_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+    "first_stage_status": "S10_READY",
+    "second_stage_status": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+    "manual_review_required": true,
+    "auto_pricing_allowed": false,
+    "final_price": null,
+    "nissan_closure_handoff_exists": true,
+    "nissan_closure_status": "NISSAN_TERRA_S14_MANUAL_REVIEW_CLOSURE_HANDOFF_DONE"
+  },
+  "candidate_decision": {
+    "current_target_suitable_for_auto_pricing_success_path": false,
+    "decision": "do_not_run_real_device_this_round",
+    "block_reasons": [
+      "current_result_is_all_references_exhausted_manual_review_not_auto_pricing_success",
+      "running_now_would_overwrite_nissan_terra_closure_evidence",
+      "current_terminal_payload_requires_manual_review"
+    ],
+    "reason_summary": "???????????????????? result.json ???? ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW ?????????????????????????????"
+  },
+  "recommended_positive_samples": [
+    {
+      "sample_id": "BASELINE_FOCUS_2017_FULL_CHAIN_PRICED_DONE_202605",
+      "sample_name": "福特福克斯 2017款 两厢 1.6L 自动舒适型智行版",
+      "fingerprint": "福特|福克斯|2017款|两厢 1.6L 自动舒适型智行版|白|2017.07",
+      "target_score": 93,
+      "final_reference_index": 3,
+      "final_reference_score": 93.5,
+      "target_guazi_listing_price_yuan": 26200,
+      "manual_review_required": false,
+      "evidence_paths": [
+        "output/baseline_freeze_package_latest.md",
+        "output/full_chain_acceptance_report_latest.md"
+      ]
+    },
+    {
+      "sample_id": "BASELINE_TOYOTA_YARIS_2015_FULL_CHAIN_PRICED_DONE_202605",
+      "sample_name": "丰田 YARiS L 致炫 2015款 1.5E 自动魅动版",
+      "fingerprint": "丰田|YARiS L 致炫|2015款|1.5E 自动魅动版|白|2015.07",
+      "target_score": 95,
+      "final_reference_index": 2,
+      "final_reference_score": 95,
+      "target_guazi_listing_price_yuan": 27800,
+      "manual_review_required": false,
+      "evidence_paths": [
+        "output/toyota_yaris_baseline_freeze_package_latest.md",
+        "output/toyota_yaris_full_chain_acceptance_report_latest.md"
+      ]
+    },
+    {
+      "sample_id": "BASELINE_SANTANA_2021_FULL_CHAIN_PRICED_DONE_202605",
+      "sample_name": "大众桑塔纳 2021款 1.5L 自动风尚版",
+      "fingerprint": "大众|桑塔纳|2021款|1.5L 自动风尚版|白|2021.05",
+      "target_score": 91,
+      "final_reference_index": 5,
+      "final_reference_score": 96,
+      "target_guazi_listing_price_yuan": 41600,
+      "manual_review_required": false,
+      "evidence_paths": [
+        "output/santana_baseline_freeze_package_latest.md",
+        "output/santana_full_chain_acceptance_report_latest.md"
+      ]
+    },
+    {
+      "sample_id": "BASELINE_GEELY_YUANJING_2019_FULL_CHAIN_PRICED_DONE_202605",
+      "sample_name": "吉利远景 2019款 升级版 1.5L 手动豪华型 国VI",
+      "fingerprint": "吉利|远景|2019款|升级版 1.5L 手动豪华型 国VI|白|2019.10",
+      "target_score": 96.0,
+      "final_reference_index": 4,
+      "final_reference_score": 97.0,
+      "target_guazi_listing_price_yuan": 22800,
+      "manual_review_required": false,
+      "evidence_paths": [
+        "output/geely_yuanjing_2019_v1_24_full_chain_acceptance.json",
+        "output/geely_yuanjing_2019_baseline_freeze_package.json",
+        "output/geely_yuanjing_2019_v1_24_full_chain_run.json",
+        "output/result_s01_to_s10.json",
+        "output/result_s10_to_s16.json",
+        "output/result.json"
+      ]
+    },
+    {
+      "sample_id": "BASELINE_HONDA_ACCORD_2023_FULL_CHAIN_PRICED_DONE_202605",
+      "sample_name": "本田雅阁 2023款 260TURBO 智享版",
+      "fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+      "target_score": 84.0,
+      "final_reference_index": 2,
+      "final_reference_score": 86.0,
+      "target_guazi_listing_price_yuan": 112800,
+      "manual_review_required": false,
+      "evidence_paths": [
+        "output/honda_accord_2023_v1_25_full_chain_acceptance.json",
+        "output/honda_accord_2023_baseline_freeze_package.json",
+        "output/honda_accord_2023_260turbo_zhixiang_v1_25_full_chain_run.json",
+        "output/slow_action_timing_report.json"
+      ]
+    }
+  ],
+  "recommended_next_sample": {
+    "sample_id": "BASELINE_HONDA_ACCORD_2023_FULL_CHAIN_PRICED_DONE_202605",
+    "sample_name": "本田雅阁 2023款 260TURBO 智享版",
+    "fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+    "target_score": 84.0,
+    "final_reference_index": 2,
+    "final_reference_score": 86.0,
+    "target_guazi_listing_price_yuan": 112800,
+    "manual_review_required": false,
+    "evidence_paths": [
+      "output/honda_accord_2023_v1_25_full_chain_acceptance.json",
+      "output/honda_accord_2023_baseline_freeze_package.json",
+      "output/honda_accord_2023_260turbo_zhixiang_v1_25_full_chain_run.json",
+      "output/slow_action_timing_report.json"
+    ]
+  },
+  "recommended_next_action": {
+    "action": "prepare_new_target_task_then_run_full_chain",
+    "note": "?????????????? current_target_task.json?????????????????????????????",
+    "preferred_sample_reason": "???????? FULL_CHAIN_PRICED_DONE ? manual_review_required=false???? AUTO_PRICING_SUCCESS_PATH ???"
+  },
+  "success_path_validation_requirements": [
+    "first_stage_status=S10_READY",
+    "second_stage reaches S16",
+    "reference_score_trustworthy=true",
+    "reference_score >= target_score",
+    "final_status=FULL_CHAIN_PRICED_DONE",
+    "manual_review_required=false",
+    "auto_pricing_allowed=true or pricing payload indicates priced path",
+    "pricing/s17 payload present and consumable",
+    "no non-trisame price usage"
+  ],
+  "protected_nissan_terra_evidence_paths": {
+    "closure_handoff": "output/nissan_terra_s14_manual_review_closure_handoff.json",
+    "runtime_validation": "output/nissan_terra_terminal_manual_review_runtime_validation.json",
+    "current_result": "output/result.json"
+  }
+}

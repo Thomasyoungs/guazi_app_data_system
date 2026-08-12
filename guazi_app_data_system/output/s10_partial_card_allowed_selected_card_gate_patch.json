@@ -1,0 +1,49 @@
+{
+  "status": "S10_PARTIAL_CARD_ALLOWED_SELECTED_CARD_GATE_PATCHED",
+  "generated_at": "2026-05-16T04:40:53.906923+00:00",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "scope": "S10 fast handoff / selected reference card gate only",
+  "forbidden_changes_confirmed": {
+    "first_stage_script_modified": false,
+    "s14_logic_modified": false,
+    "pricing_modified": false,
+    "config_modified": false,
+    "baseline_modified": false,
+    "scoring_modified": false,
+    "nissan_terra_closure_package_modified": false
+  },
+  "contract_changes": [
+    "Bottom partial/incomplete S10 cards are informational normal scroll-list state and no longer hard-block S10 handoff.",
+    "target_partial_card_only is no longer emitted as a strong error signal.",
+    "Handoff now gates only the selected_reference_card: fully visible, fields complete, clickable, and safe click area.",
+    "If selected_reference_card itself is partial, block with SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE.",
+    "If selected_reference_card is fully visible but missing required fields, block with REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL.",
+    "Partial bottom cards remain excluded from canonical_reference_order and cannot become selected cards."
+  ],
+  "py_compile": {
+    "command": "python -m py_compile scripts/runtime_s10_to_s16_mainline.py",
+    "passed": true
+  },
+  "offline_validation_path": "output/s10_partial_card_allowed_selected_card_gate_offline_validation.json",
+  "offline_validation_passed": true,
+  "validations_summary": [
+    {
+      "scenario": "A_complete_cards_plus_bottom_partial_selected_complete",
+      "passed": true
+    },
+    {
+      "scenario": "B_selected_reference_card_itself_partial",
+      "passed": true
+    },
+    {
+      "scenario": "C_selected_reference_card_fields_missing",
+      "passed": true
+    },
+    {
+      "scenario": "D_bottom_partial_card_not_in_reference_history_or_next_index",
+      "passed": true
+    }
+  ]
+}

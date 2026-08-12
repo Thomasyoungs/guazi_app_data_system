@@ -1,0 +1,17 @@
+{
+  "status": "REFERENCE_SELECTION_RULE_V2_PATCHED",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py",
+    "src/guazi_app_data_system/pricing.py"
+  ],
+  "rule": "V2_score_not_above_target_closest",
+  "summary": [
+    "S15 no longer selects reference_score > target_score for auto pricing.",
+    "Eligible candidates require trustworthy complete non-hard-eliminated score <= target_score.",
+    "Closest target_score-reference_score wins; lower price then canonical order break ties.",
+    "Exact score match can enter S16 immediately.",
+    "Pricing select_reference now uses V2 rule.",
+    "score_gap_adjustment returns 0 when selected_reference_score <= target_score under V2."
+  ],
+  "validation_file": "output/reference_selection_rule_v2_offline_validation.json"
+}

@@ -1,0 +1,298 @@
+{
+  "freeze_name": "BASELINE_TOYOTA_YARIS_2015_FULL_CHAIN_PRICED_DONE_202605",
+  "freeze_status": "TOYOTA_YARIS_BASELINE_FREEZE_READY",
+  "generated_at_local": "2026-05-09",
+  "read_only_package": true,
+  "modifications": {
+    "code": false,
+    "contract_doc": false,
+    "config": false,
+    "pricing": false,
+    "result_json_overwritten": false,
+    "device_run": false
+  },
+  "target": {
+    "fingerprint": "丰田|YARiS L 致炫|2015款|1.5E 自动魅动版|白|2015.07",
+    "brand": "丰田",
+    "series": "YARiS L 致炫",
+    "year_model": "2015款",
+    "config_model": "1.5E 自动魅动版",
+    "color": "白",
+    "register_date": "2015.07"
+  },
+  "final_result": {
+    "first_stage_status": "S10_READY",
+    "second_stage_status": "FULL_CHAIN_PRICED_DONE",
+    "final_status": "FULL_CHAIN_PRICED_DONE",
+    "final_reference_index": 2,
+    "selected_reference_price": "2.78万",
+    "selected_reference_score": 95,
+    "target_score": 95,
+    "suggested_listing_price": 27800,
+    "suggested_purchase_price": 22410
+  },
+  "freeze_scope": {
+    "files": [
+      {
+        "path": "scripts/runtime_s01_to_s10_mainline.py",
+        "exists": true,
+        "size_bytes": 304400,
+        "sha256": "1edd01e568f734366851f83c315c135920a2a6874a4964d6712c2d786b85c9a4"
+      },
+      {
+        "path": "scripts/runtime_s10_to_s16_mainline.py",
+        "exists": true,
+        "size_bytes": 269921,
+        "sha256": "b6c003bf16a700d82c1f2c535c5802f722acd944cfef3e236244b8ad265d6250"
+      },
+      {
+        "path": "output/result_s01_to_s10.json",
+        "exists": true,
+        "size_bytes": 6629,
+        "sha256": "bb58cc442f2c49769db7d2855caf26d553d98a109bf6f9d5e623f0afc07394a3"
+      },
+      {
+        "path": "output/result_s10_to_s16.json",
+        "exists": true,
+        "size_bytes": 687489,
+        "sha256": "7af6680e565edd39d9c65cc0c3d37c062156dad7fecfacdfd9e6ec9309667ff1"
+      },
+      {
+        "path": "output/result.json",
+        "exists": true,
+        "size_bytes": 687489,
+        "sha256": "7af6680e565edd39d9c65cc0c3d37c062156dad7fecfacdfd9e6ec9309667ff1"
+      },
+      {
+        "path": "output/toyota_yaris_full_chain_acceptance_report_latest.md",
+        "exists": true,
+        "size_bytes": 4222,
+        "sha256": "8688e34ae5526d9bb07ff66a405dbdcea804846a102a7d566f526cc59f9febeb"
+      },
+      {
+        "path": "output/toyota_yaris_full_chain_acceptance_report.json",
+        "exists": true,
+        "size_bytes": 28495,
+        "sha256": "154247c9f8698f21d361838c4cd1d699ffe159048123e8e0e55ced90e5911081"
+      }
+    ],
+    "key_artifacts": [
+      {
+        "path": "artifacts/screenshots/s07_age_long_press_drag_left_2_20260509_112521.png",
+        "exists": true,
+        "size_bytes": 769647,
+        "sha256": "44017624469a8c6d6e582206d4c3436dc64cf87b5b8472d577749001bede929b"
+      },
+      {
+        "path": "artifacts/debug/s07_age_long_press_drag_left_2_20260509_112521.xml",
+        "exists": true,
+        "size_bytes": 213981,
+        "sha256": "2993a3bcbc497be5031be1b79a7e572df23835cabae078abb96192c26b3eafe5"
+      },
+      {
+        "path": "artifacts/screenshots/s09_to_s10_20260509_112536.png",
+        "exists": true,
+        "size_bytes": 1430413,
+        "sha256": "5efcac5e6fdbad33ce4ef87db690d06394e2ab87624c45c71f7fe56775c1d32c"
+      },
+      {
+        "path": "artifacts/debug/s09_to_s10_20260509_112536.xml",
+        "exists": true,
+        "size_bytes": 68252,
+        "sha256": "9d8c218cef97e6066848a81686e597160e35d48d2ea2361621194c9c861dfe55"
+      },
+      {
+        "path": "artifacts/screenshots/s10_to_s11_pre_dump_2_20260509_113050.png",
+        "exists": true,
+        "size_bytes": 1024394,
+        "sha256": "37a302cc6714729c534053ea6f9c1732b61b2e37730a40f37198051aefdfbdb0"
+      },
+      {
+        "path": "artifacts/debug/s10_to_s11_20260509_113051_compressed.xml",
+        "exists": true,
+        "size_bytes": 33827,
+        "sha256": "878398bfa179588cee3d7d1ee50ffc5f9270152251236f9a37dc91c2311c5848"
+      },
+      {
+        "path": "artifacts/screenshots/s13_to_s14_驾驶侧_20260509_113136.png",
+        "exists": true,
+        "size_bytes": 841939,
+        "sha256": "0267da178ea3d722f598b75fe2ada422c9408828e6083b96a0fa2d598a33a9f7"
+      },
+      {
+        "path": "artifacts/debug/s13_to_s14_驾驶侧_20260509_113136.xml",
+        "exists": true,
+        "size_bytes": 168201,
+        "sha256": "d899fcf4335ea40dfc1376a52a8d4ee48c70838c31e0c5c51c4664fe115b3296"
+      },
+      {
+        "path": "artifacts/screenshots/s14_return_to_s10_attempt_2_20260509_113302.png",
+        "exists": true,
+        "size_bytes": 1429939,
+        "sha256": "6c2eb029c5433b1f96fdeda86294af41cbcfdeb24354073fb767c750d0926ca6"
+      },
+      {
+        "path": "artifacts/debug/s14_return_to_s10_attempt_2_20260509_113302.xml",
+        "exists": true,
+        "size_bytes": 68251,
+        "sha256": "6d486ef257a8c07f4c2038f2c0a8cd0bf246831ede85c2630d3be63690a5fdb8"
+      }
+    ]
+  },
+  "capabilities_verified": [
+    "APP_FORCE_RESTART",
+    "第一段 S01-S10",
+    "S07 白色筛选",
+    "S07 车龄隐藏刻度 11 年",
+    "S07 查看6辆",
+    "S09 价格从低到高排序",
+    "S10_READY 门禁",
+    "reference_index 逐辆采集",
+    "达标即停，不固定采 2 辆或 3 辆",
+    "S10 第 N 辆车卡唯一绑定",
+    "S11 顶部车辆图片区识别",
+    "查看完整报告完整可见 + 安全区点击",
+    "S11_TO_S12 稳定等待",
+    "S11_TO_S12 context 下 S12 优先于 S14",
+    "S12 理赔次数 / 最大金额采集",
+    "S13 历史修复判断",
+    "S14 具体修复项采集",
+    "S15 单车评分判断",
+    "S16 定价",
+    "S17 payload 模拟输出",
+    "reference_history 保留",
+    "旧目标污染防护",
+    "raw XML 不写入 result JSON"
+  ],
+  "s07_hidden_age_tick_rule": {
+    "visible_ticks": [
+      "0",
+      "2",
+      "4",
+      "6",
+      "8",
+      "10",
+      "不限"
+    ],
+    "hidden_exact_ticks": {
+      "age_11": "10 右侧第 1 个隐藏节点",
+      "age_12": "10 右侧第 2 个隐藏节点"
+    },
+    "evidence": {
+      "target_age": 11,
+      "x8": 821,
+      "x10": 937,
+      "one_year_step": 58,
+      "target_age_x": 995,
+      "verify_text": "11-11年",
+      "bottom_view_result_text": "查看6辆",
+      "AGE_FILTER_DONE": true
+    },
+    "gate": "必须通过 11-11年 / 12-12年 验证后，才允许置 AGE_FILTER_DONE=true。",
+    "unsupported": "target_age>12 不自动映射为“不限”。"
+  },
+  "reference_loop_acceptance": [
+    {
+      "reference_index": 1,
+      "price": "2.53万",
+      "metadata": "2015年 | 11.49万公里 | 唐山",
+      "transfer_count": 0,
+      "claim_count": 2,
+      "max_claim_amount": 3000,
+      "history_repair": "驾驶侧 2",
+      "s14_repair_items": [
+        "左前翼子板喷漆"
+      ],
+      "reference_score": 91.5,
+      "target_score": 95,
+      "rejected": false,
+      "qualified": false,
+      "decision": "未淘汰，但不达标，继续第 2 辆。"
+    },
+    {
+      "reference_index": 2,
+      "price": "2.78万",
+      "metadata": "2015年 | 7.72万公里 | 唐山",
+      "transfer_count": 1,
+      "claim_count": 1,
+      "max_claim_amount": 3000,
+      "history_repair": "驾驶侧 2",
+      "s14_repair_items": [
+        "左后门喷漆"
+      ],
+      "reference_score": 95,
+      "target_score": 95,
+      "rejected": false,
+      "qualified": true,
+      "decision": "未淘汰，达标，立即停止继续采集，进入 S16 定价。"
+    }
+  ],
+  "pricing": {
+    "final_reference_index": 2,
+    "selected_reference_price": "2.78万",
+    "selected_reference_score": 95,
+    "target_score": 95,
+    "suggested_listing_price": 27800,
+    "suggested_purchase_price": 22410,
+    "s17_payload_summary": {
+      "target_fingerprint": "丰田|YARiS L 致炫|2015款|1.5E 自动魅动版|白|2015.07",
+      "suggested_listing_price": 27800,
+      "suggested_purchase_price": 22410,
+      "manual_review_reasons": [
+        "目标车缺少出险次数，已采用默认分。",
+        "目标车缺少最大金额，已采用默认分。",
+        "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。"
+      ]
+    }
+  },
+  "risks_and_followups": [
+    "目标车缺少出险次数，已采用默认分。",
+    "目标车缺少最大金额，已采用默认分。",
+    "样本不足提示已进入 payload。",
+    "左侧下坎钣金当前未单独写成人工审核原因，后续单独开规则议题：TARGET_CONDITION_LEFT_SILL_SCORING_REVIEW。"
+  ],
+  "slow_actions_record_only": [
+    {
+      "action": "S14_COLLECT",
+      "duration": "约 77s",
+      "impact": "不影响正确性",
+      "recommendation": "先保留，后续单独做性能优化"
+    },
+    {
+      "action": "S14_HORIZONTAL_SWIPE",
+      "duration": "单次约 5-6s",
+      "impact": "不影响正确性",
+      "recommendation": "先保留，后续单独做性能优化"
+    },
+    {
+      "action": "S10_TO_S11 首次 XML fresh",
+      "duration": "约 9-10s",
+      "impact": "不影响正确性",
+      "recommendation": "先保留，后续单独做性能优化"
+    },
+    {
+      "action": "S14_RETURN_TO_S10",
+      "duration": "约 8.2s",
+      "impact": "不影响正确性",
+      "recommendation": "先保留，后续单独做性能优化"
+    }
+  ],
+  "reference_collection_rule": "逐辆采集，达标即停；不是固定采 2 辆或 3 辆。",
+  "consistency_checks": {
+    "result_s01_to_s10_status_ok": true,
+    "result_s10_to_s16_status_ok": true,
+    "result_status_ok": true,
+    "acceptance_status_ok": true,
+    "fingerprint_ok": true,
+    "reference_history_count_ok": true,
+    "raw_xml_not_in_result_json": true,
+    "no_old_focus_pollution": true,
+    "no_old_mini_pollution": true,
+    "no_old_honda_pollution": true
+  },
+  "old_target_pollution_check": {
+    "old_focus_present": false,
+    "old_mini_present": false,
+    "old_honda_present": false
+  }
+}

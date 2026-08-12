@@ -1,0 +1,50 @@
+{
+  "report_name": "s14_raw_first_line_stale_handling_patch",
+  "created_at": "2026-05-16T10:57:07",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "forbidden_files_modified": false,
+  "patch_status": "S14_RAW_FIRST_LINE_STALE_HANDLING_PATCHED",
+  "patch_summary": [
+    "raw_first_line ???? S14 ??????????",
+    "active tab/page_label ??????? raw_first_line ???????? stale_first_line_warning?",
+    "?? active tab ??? + raw_first_line ? damage ???????????",
+    "S14 ??????????????????????????????????? S15?",
+    "??? SINGLE_IMAGE_WITH_CAPTION ??????"
+  ],
+  "diagnosis_report_paths": {
+    "json": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\s14_raw_first_line_stale_diagnosis.json",
+    "md": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\s14_raw_first_line_stale_diagnosis_latest.md"
+  },
+  "offline_validation": {
+    "scenario": "????(1/2) active tab + stale raw_first_line=????????",
+    "expected": "saved_to_repair_items=true, stale_first_line_warning=true, skipped_reason empty",
+    "actual": {
+      "tab_label": "????(1/2)",
+      "raw_first_line": "????????",
+      "normalized_part": "???",
+      "normalized_damage": "??",
+      "saved_to_repair_items": true,
+      "stale_first_line_warning": true,
+      "skipped_reason": ""
+    },
+    "passed": true
+  },
+  "py_compile": {
+    "script": "scripts/runtime_s10_to_s16_mainline.py",
+    "passed": true
+  },
+  "runtime_validation": {
+    "attempted_second_stage_only": true,
+    "app_force_restart": false,
+    "first_stage_rerun": false,
+    "status": "SECOND_STAGE_BLOCKED_NOT_AT_S10_READY",
+    "issue_code": "PAGE_CONTRACT_EXECUTOR_MISSING_FOR_FULL_MAINLINE",
+    "reached_s14_after_patch": false,
+    "reason": "?????????? reliable S10????????? SECOND_STAGE_BLOCKED_NOT_AT_S10_READY??????????? S14 ????",
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_s16_start_20260516_105621.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260516_105621.xml"
+  },
+  "final_status": "SECOND_STAGE_DID_NOT_REACH_S14"
+}

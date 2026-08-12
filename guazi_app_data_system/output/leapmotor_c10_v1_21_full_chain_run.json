@@ -1,0 +1,963 @@
+{
+  "report_name": "leapmotor_c10_v1_21_full_chain_run",
+  "created_at": "2026-05-12T05:50:31.808824+00:00",
+  "final_state": "RUN_FULL_CHAIN_LEAPMOTOR_C10_AFTER_V1_21_TITLE_NORMALIZED_CONTRACT_DONE",
+  "target_fingerprint": "零跑|C10|2026款|210悦享版|白|2026.02",
+  "terminal_status": "FULL_CHAIN_MANUAL_REVIEW_DONE",
+  "manual_review_required": true,
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "patch_summary": {
+    "implemented": "V1.21 deterministic normalized title alias matching for S10 reference card binding",
+    "functions_added_or_updated": [
+      "normalize_vehicle_title_for_match",
+      "build_target_title_alias_profile",
+      "match_reference_title_by_normalized_alias"
+    ],
+    "stop_code_on_normalized_mismatch": "REFERENCE_CARD_TITLE_NORMALIZED_MISMATCH",
+    "all_other_s10_gates_preserved": true
+  },
+  "offline_title_match_tests": [
+    {
+      "case": "positive_expected_vs_live",
+      "expected_match": true,
+      "passed": true,
+      "live": "???? ??C10 2026? 210???"
+    },
+    {
+      "case": "negative_series_C11",
+      "expected_match": false,
+      "passed": true,
+      "live": "???? ??C11 2026? 210???"
+    },
+    {
+      "case": "negative_year_2025",
+      "expected_match": false,
+      "passed": true,
+      "live": "???? ??C10 2025? 210???"
+    },
+    {
+      "case": "negative_config_530",
+      "expected_match": false,
+      "passed": true,
+      "live": "???? ??C10 2026? 530???"
+    },
+    {
+      "case": "negative_conflict_range_extender",
+      "expected_match": false,
+      "passed": true,
+      "live": "???? ??C10 2026? 210??? ??"
+    }
+  ],
+  "py_compile_passed": true,
+  "first_stage": {
+    "status": "S10_READY",
+    "S10_READY": true,
+    "COLOR_FILTER_DONE": true,
+    "AGE_FILTER_DONE": true,
+    "S07_FILTER_DONE": true,
+    "SORT_DONE": true,
+    "bottom_view_result_text": "查看2辆",
+    "trisame_count": 2,
+    "same_source_cards": [
+      {
+        "title": "零跑汽车 零跑C10 2026款 210悦享版",
+        "year_mileage_text": "2026年 | 0.17万公里 | 唐山 | LeapPilot",
+        "list_price_10k": 10.64,
+        "list_year": 2026,
+        "list_mileage_10k_km": 0.17
+      },
+      {
+        "title": "零跑汽车 零跑C10 2026款 210悦享版",
+        "year_mileage_text": "2026年 | 0.77万公里 | 唐山 | LeapPilot",
+        "list_price_10k": 10.86,
+        "list_year": 2026,
+        "list_mileage_10k_km": 0.77
+      }
+    ],
+    "excluded_non_trisame_cards_count": 20,
+    "s10_ready_reason": "source_gate_core_elements_target_trisame_boundary_passed"
+  },
+  "second_stage": {
+    "status": "FULL_CHAIN_MANUAL_REVIEW_DONE",
+    "s16_status": "S16_READY",
+    "reference_history_count": 1,
+    "final_reference_index": 1,
+    "final_reference_price_yuan": 106400,
+    "final_reference_score": 99.0,
+    "title_match_audit": {
+      "title_match_strategy": "normalized_alias_match",
+      "expected_title_raw": "零跑 C10 2026款 210悦享版",
+      "live_title_raw": "零跑汽车 零跑C10 2026款 210悦享版",
+      "normalized_expected_title": "零跑c102026款210悦享版",
+      "normalized_live_title": "零跑汽车零跑c102026款210悦享版",
+      "brand_aliases": [
+        "零跑",
+        "零跑汽车",
+        "LEAPMOTOR"
+      ],
+      "series_aliases": [
+        "C10",
+        "零跑C10",
+        "零跑汽车C10"
+      ],
+      "brand_alias_match": true,
+      "matched_brand_alias": "零跑",
+      "series_alias_match": true,
+      "matched_series_alias": "零跑C10",
+      "year_model_match": true,
+      "config_model_match": true,
+      "title_normalized_match": true,
+      "conflict_terms": [],
+      "mismatch_reason": [],
+      "title_match_decision": "allow"
+    },
+    "entered_s11": true,
+    "entered_s16": true,
+    "s17_payload_output": true
+  },
+  "target_score": {
+    "score": 96.0,
+    "components": {
+      "body_score": 70.0,
+      "mileage_score": 12.0,
+      "transfer_score": 7.0,
+      "accident_score": 4.0,
+      "max_amount_score": 3.0
+    },
+    "review_reasons": [
+      "目标车缺少出险次数，已采用默认分。",
+      "目标车缺少最大金额，已采用默认分。"
+    ],
+    "hard_reject": false
+  },
+  "reference_history": [
+    {
+      "reference_index": 1,
+      "selected_reference_index": 1,
+      "reference_key": "1:零跑汽车 零跑C10 2026款 210悦享版:2026年 | 0.17万公里 | 唐山 | LeapPilot:10.64万",
+      "list_title": "零跑汽车 零跑C10 2026款 210悦享版",
+      "list_price_text": "10.64万",
+      "list_price_10k": 10.64,
+      "list_year": 2026,
+      "list_mileage_10k_km": 0.17,
+      "selected_card_title": "零跑汽车 零跑C10 2026款 210悦享版",
+      "selected_card_price": "10.64万",
+      "selected_card_metadata": "2026年 | 0.17万公里 | 唐山 | LeapPilot",
+      "selected_card_rank": "第1名",
+      "selected_click_bounds": [
+        429,
+        997,
+        1124,
+        1121
+      ],
+      "selected_card_live_display_order": 1,
+      "selected_by": "canonical_reference_order",
+      "select_strategy": "reference_index_bound_card",
+      "card_complete": true,
+      "has_title": true,
+      "has_price": true,
+      "has_metadata": true,
+      "has_year": true,
+      "has_mileage": true,
+      "has_city": true,
+      "card_fully_visible": true,
+      "incomplete_reason": [],
+      "s10_card_completion_scroll_used": false,
+      "s10_card_completion_scroll_attempts": [],
+      "continuation_mode": false,
+      "previous_reference_index": null,
+      "next_reference_index": 1,
+      "s10_order_rule": "price_asc_mileage_desc_for_same_price",
+      "canonical_reference_order": [
+        {
+          "reference_index": 1,
+          "canonical_reference_index": 1,
+          "live_display_order": 1,
+          "list_title": "零跑汽车 零跑C10 2026款 210悦享版",
+          "list_price_text": "10.64万",
+          "list_year": 2026,
+          "list_mileage_10k_km": 0.17,
+          "raw_metadata": "2026年 | 0.17万公里 | 唐山 | LeapPilot",
+          "card_complete": true,
+          "incomplete_reason": []
+        },
+        {
+          "reference_index": 2,
+          "canonical_reference_index": 2,
+          "live_display_order": 2,
+          "list_title": "零跑汽车 零跑C10 2026款 210悦享版",
+          "list_price_text": "10.86万",
+          "list_year": 2026,
+          "list_mileage_10k_km": 0.77,
+          "raw_metadata": "2026年 | 0.77万公里 | 唐山 | LeapPilot",
+          "card_complete": true,
+          "incomplete_reason": []
+        }
+      ],
+      "same_price_group_detected": false,
+      "same_price_group_price": "",
+      "same_price_group_order": [],
+      "reference_already_collected_skips": [],
+      "clicked_card_bounds": [
+        429,
+        997,
+        1124,
+        1121
+      ],
+      "clicked_card_text_digest": [
+        "ignore-error,i_1",
+        "零跑汽车 零跑C10 2026款 210悦享版",
+        "2026年 | 0.17万公里 | 唐山 | LeapPilot",
+        "第2名",
+        "电池健康度99%",
+        "整车在保",
+        "三电在保",
+        "0次过户",
+        "原版原漆",
+        "qnbdp1066x4044847e03f444c996257e1f3f62b4351729221436",
+        "10.64",
+        "万",
+        "首付1.06万"
+      ],
+      "s10_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_s16_start_20260512_134806.png",
+      "s10_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260512_134806.xml",
+      "title_match_strategy": "normalized_alias_match",
+      "title_match_audit": {
+        "title_match_strategy": "normalized_alias_match",
+        "expected_title_raw": "零跑 C10 2026款 210悦享版",
+        "live_title_raw": "零跑汽车 零跑C10 2026款 210悦享版",
+        "normalized_expected_title": "零跑c102026款210悦享版",
+        "normalized_live_title": "零跑汽车零跑c102026款210悦享版",
+        "brand_aliases": [
+          "零跑",
+          "零跑汽车",
+          "LEAPMOTOR"
+        ],
+        "series_aliases": [
+          "C10",
+          "零跑C10",
+          "零跑汽车C10"
+        ],
+        "brand_alias_match": true,
+        "matched_brand_alias": "零跑",
+        "series_alias_match": true,
+        "matched_series_alias": "零跑C10",
+        "year_model_match": true,
+        "config_model_match": true,
+        "title_normalized_match": true,
+        "conflict_terms": [],
+        "mismatch_reason": [],
+        "title_match_decision": "allow"
+      },
+      "title_normalized_match": true,
+      "click_strategy": "text_node_bounds",
+      "clicked_text": "零跑汽车 零跑C10 2026款 210悦享版",
+      "clicked_node_bounds": [
+        429,
+        997,
+        1124,
+        1121
+      ],
+      "clicked_point": [
+        776,
+        1059
+      ],
+      "title_candidate_count": 2,
+      "matched_candidate_count": 1,
+      "s10_to_s11_wait": {
+        "entered_s11": true,
+        "wait_rounds": [
+          {
+            "wait_round_index": 1,
+            "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260512_134813.png",
+            "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260512_134814_compressed.xml",
+            "screenshot_ms": 411,
+            "xml_dump_ms": 8198,
+            "s10_to_s11_xml_dump_mode": "compressed",
+            "compressed_xml_dump_ms": 8198,
+            "full_xml_dump_ms": 0,
+            "compressed_xml_dump_command": "uiautomator dump --compressed",
+            "full_xml_dump_command": null,
+            "compressed_xml_dump_rc": 0,
+            "full_xml_dump_rc": null,
+            "compressed_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260512_134814_compressed.xml",
+            "full_xml_path": "",
+            "compressed_xml_size": 36623,
+            "full_xml_size": 0,
+            "compressed_node_count": 106,
+            "full_node_count": 0,
+            "compressed_recognized_page": "S11",
+            "full_recognized_page": null,
+            "compressed_recognized_by": "S11_TOP_ONE_THIRD_IMAGE_ONLY_STANDARD",
+            "full_recognized_by": null,
+            "compressed_page_changed_after_click": true,
+            "full_page_changed_after_click": null,
+            "compressed_s11_contract_hit": true,
+            "full_s11_contract_hit": false,
+            "fallback_reason": "",
+            "pre_dump_strategy": "visual_stabilize_before_dump",
+            "pre_dump_stabilize_enabled": true,
+            "pre_dump_stabilize_rounds": 2,
+            "pre_dump_stabilize_total_ms": 2019,
+            "pre_dump_stabilize_ms": 2019,
+            "pre_dump_visual_stable": false,
+            "dump_started_after_visual_stable": false,
+            "dump_started_after_max_wait": true,
+            "pre_dump_stabilize_max_wait_ms": 2000,
+            "pre_dump_stabilize_interval_ms": 400,
+            "pre_dump_stable_rounds_required": 2,
+            "pre_dump_stabilize_round_details": [
+              {
+                "round_index": 1,
+                "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_1_20260512_134812.png",
+                "screenshot_ms": 346,
+                "dumpsys_ms": 124,
+                "focused_window": "com.ganji.android.haoche_c/com.cars.beetle.mp.brl.rn.biz.ReactNativeFragmentActivity",
+                "foreground_package": "com.ganji.android.haoche_c",
+                "resumed_activity": "",
+                "screenshot_changed_from_s10": true,
+                "same_as_previous_round": false,
+                "stable_observation_count": 1,
+                "visual_stable": false
+              },
+              {
+                "round_index": 2,
+                "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260512_134813.png",
+                "screenshot_ms": 411,
+                "dumpsys_ms": 152,
+                "focused_window": "com.ganji.android.haoche_c/com.cars.beetle.mp.brl.rn.biz.ReactNativeFragmentActivity",
+                "foreground_package": "com.ganji.android.haoche_c",
+                "resumed_activity": "",
+                "screenshot_changed_from_s10": true,
+                "same_as_previous_round": false,
+                "stable_observation_count": 1,
+                "visual_stable": false
+              }
+            ],
+            "s10_to_s11_total_fresh_ms": 10217,
+            "screenshot_reused_from_pre_dump": true,
+            "dump_started_after_visual_change": true,
+            "page_load_visual_state": "changed_from_s10",
+            "xml_rc": 0,
+            "xml_stderr": "",
+            "dumpsys_ms": 152,
+            "capture_total_ms": 8221,
+            "recognize_ms": 0,
+            "before_xml_sha256": "e16bf936200bd0364a0df18c78438c46985434ae5e0aaf3a3f1119d0f0330fd2",
+            "current_xml_sha256": "b589a8d63506dd97cd0d45a67ab0c82212d5f4685f2f6f82e0fcb0e88c78d1a7",
+            "xml_stale": false,
+            "screenshot_changed": true,
+            "recognized_page": "S11",
+            "recognized_by": "S11_TOP_ONE_THIRD_IMAGE_ONLY_STANDARD",
+            "s11_top_image_only_evidence": {
+              "recognized_by": "S11_TOP_ONE_THIRD_IMAGE_ONLY_STANDARD",
+              "transition_context": "S10_TO_S11",
+              "transition_context_matched": true,
+              "page_changed_after_click": true,
+              "passive_debug_signals": [
+                "车源号",
+                "过户",
+                "万公里",
+                "收藏",
+                "咨询",
+                "讲价"
+              ],
+              "passive_debug_signals_used_for_judgement": false,
+              "recognition_formula": "transition_context == S10_TO_S11 AND page_changed_after_click == true AND top_one_third_vehicle_image_area == true",
+              "recognized": true,
+              "top_one_third_vehicle_image_area": true,
+              "top_vehicle_image_band": true,
+              "top_image_candidate_bounds": [
+                0,
+                0,
+                1220,
+                813
+              ],
+              "top_vehicle_image_band_bounds": [
+                0,
+                0,
+                1220,
+                813
+              ],
+              "top_image_candidate_count": 1,
+              "top_image_reason": "large upper image/carousel-like container",
+              "top_image_missing_reason": ""
+            },
+            "page_changed_after_click": true,
+            "visible_text_digest": [
+              "图片",
+              "检测",
+              "1 / 20",
+              "99新·S",
+              "10.64万",
+              "低价车",
+              "10.61万",
+              "11.24万",
+              "10.64",
+              "万",
+              "新车指导价12.28万",
+              "价格PK",
+              "300元",
+              "1成首付1.06万起，年化利率8.7%起",
+              "更多方案",
+              "零",
+              "跑",
+              "汽",
+              "车",
+              "C",
+              "1",
+              "0",
+              "2",
+              "6",
+              "款",
+              "悦",
+              "享",
+              "版",
+              "唐山",
+              "已检测",
+              "原版原漆",
+              "准新车",
+              "电池健康度99%",
+              "车源号:166755746",
+              "定级标准",
+              "成色",
+              "99",
+              "0.17万公里",
+              "/",
+              "1年内"
+            ],
+            "foreground_package": "com.ganji.android.haoche_c",
+            "focused_window": "com.ganji.android.haoche_c/com.cars.beetle.mp.brl.rn.biz.ReactNativeFragmentActivity",
+            "activity": ""
+          }
+        ],
+        "wait_round_count": 1,
+        "before_xml_sha256": "e16bf936200bd0364a0df18c78438c46985434ae5e0aaf3a3f1119d0f0330fd2",
+        "xml_stale_during_detail_load": false,
+        "short_poll_interval_s": 0.5,
+        "total_wait_timeout_s": 15.0
+      },
+      "s11_entry_snapshot_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260512_134814_compressed.xml",
+      "s11_entry_snapshot_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260512_134813.png",
+      "s11_entry_snapshot_source": "S10_TO_S11_XML_DUMP",
+      "s11_entry_snapshot_wait_round_index": 1,
+      "s10_to_s11_xml_dump_mode": "compressed",
+      "compressed_xml_dump_ms": 8198,
+      "full_xml_dump_ms": 0,
+      "compressed_xml_size": 36623,
+      "full_xml_size": 0,
+      "compressed_recognized_page": "S11",
+      "full_recognized_page": null,
+      "fallback_reason": "",
+      "pre_dump_strategy": "visual_stabilize_before_dump",
+      "pre_dump_stabilize_enabled": true,
+      "pre_dump_stabilize_rounds": 2,
+      "pre_dump_stabilize_total_ms": 2019,
+      "pre_dump_visual_stable": false,
+      "dump_started_after_visual_stable": false,
+      "dump_started_after_max_wait": true,
+      "s10_to_s11_total_fresh_ms": 10217,
+      "s11_top_image_only_evidence": {
+        "recognized_by": "S11_TOP_ONE_THIRD_IMAGE_ONLY_STANDARD",
+        "transition_context": "S10_TO_S11",
+        "transition_context_matched": true,
+        "page_changed_after_click": true,
+        "passive_debug_signals": [
+          "车源号",
+          "过户",
+          "万公里",
+          "收藏",
+          "咨询",
+          "讲价"
+        ],
+        "passive_debug_signals_used_for_judgement": false,
+        "recognition_formula": "transition_context == S10_TO_S11 AND page_changed_after_click == true AND top_one_third_vehicle_image_area == true",
+        "recognized": true,
+        "top_one_third_vehicle_image_area": true,
+        "top_vehicle_image_band": true,
+        "top_image_candidate_bounds": [
+          0,
+          0,
+          1220,
+          813
+        ],
+        "top_vehicle_image_band_bounds": [
+          0,
+          0,
+          1220,
+          813
+        ],
+        "top_image_candidate_count": 1,
+        "top_image_reason": "large upper image/carousel-like container",
+        "top_image_missing_reason": ""
+      },
+      "recognized_by": "S11_TOP_ONE_THIRD_IMAGE_ONLY_STANDARD",
+      "s11_entry_snapshot_reused": true,
+      "s11_handler_initial_dump_skipped_due_to_reuse": true,
+      "transfer_count": 0,
+      "accident_count": 0,
+      "max_accident_amount": 0.0,
+      "claim_count": 0,
+      "max_claim_amount": 0.0,
+      "s12_body_appearance_click": {
+        "clicked_text": "车身外观",
+        "clicked_node_bounds": [
+          815,
+          247,
+          1127,
+          399
+        ],
+        "clicked_point": [
+          971,
+          323
+        ],
+        "click_strategy": "exact_text_node_bounds_after_controlled_scroll",
+        "tab_region_confirmed": true,
+        "visibility_check": {
+          "visible": true,
+          "reason": "top_tab_visible",
+          "bounds": [
+            815,
+            247,
+            1127,
+            399
+          ],
+          "viewport_bounds": [
+            0,
+            0,
+            1220,
+            2712
+          ],
+          "bounds_source": "xml_visible_bounds",
+          "center_y": 323,
+          "top_guard": 216,
+          "top_tab_max_y": 1898,
+          "bottom_guard": 2387,
+          "in_visible_y": true,
+          "in_top_tab_band": true,
+          "away_from_bottom": true
+        },
+        "s12_visibility_node_reused_for_click": true,
+        "s12_body_tab_node_search_count": 2,
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s12_scroll_body_search_tab_1_20260512_134852.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s12_scroll_body_search_tab_1_20260512_134852.xml"
+      },
+      "repair_counts": {
+        "驾驶侧": 0,
+        "车尾": 0,
+        "副驾驶": 0,
+        "车头": 0
+      },
+      "repair_count_parse_debug": {
+        "驾驶侧": {
+          "raw_nodes_used": true,
+          "visible_texts_dedup_used": false,
+          "duplicate_zero_preserved": true,
+          "region_name": "驾驶侧",
+          "history_repair_label_bounds": [
+            533,
+            1842,
+            718,
+            1920
+          ],
+          "bound_count_text": "0",
+          "bound_count_bounds": [
+            715,
+            1842,
+            754,
+            1920
+          ],
+          "excluded_numbers": [
+            {
+              "text": "驾驶侧：检测通过36",
+              "numbers": [
+                "36"
+              ],
+              "bounds": [
+                78,
+                2190,
+                1144,
+                2333
+              ],
+              "reason": "detection_pass_summary_not_history_repair_count"
+            }
+          ],
+          "bind_reason": "same_row_pure_digit_node_next_to_history_repair",
+          "region_header_text": "驾驶侧深度检测：",
+          "region_header_bounds": [
+            117,
+            1842,
+            500,
+            1920
+          ]
+        },
+        "车尾": {
+          "raw_nodes_used": true,
+          "visible_texts_dedup_used": false,
+          "duplicate_zero_preserved": true,
+          "region_name": "车尾",
+          "history_repair_label_bounds": [
+            487,
+            1842,
+            676,
+            1920
+          ],
+          "bound_count_text": "0",
+          "bound_count_bounds": [
+            669,
+            1842,
+            708,
+            1920
+          ],
+          "excluded_numbers": [
+            {
+              "text": "车尾：检测通过10",
+              "numbers": [
+                "10"
+              ],
+              "bounds": [
+                78,
+                2190,
+                1144,
+                2333
+              ],
+              "reason": "detection_pass_summary_not_history_repair_count"
+            }
+          ],
+          "bind_reason": "same_row_pure_digit_node_next_to_history_repair",
+          "region_header_text": "车尾深度检测：",
+          "region_header_bounds": [
+            117,
+            1842,
+            455,
+            1920
+          ]
+        },
+        "副驾驶": {
+          "raw_nodes_used": true,
+          "visible_texts_dedup_used": false,
+          "duplicate_zero_preserved": true,
+          "region_name": "副驾驶",
+          "history_repair_label_bounds": [
+            533,
+            1842,
+            718,
+            1920
+          ],
+          "bound_count_text": "0",
+          "bound_count_bounds": [
+            715,
+            1842,
+            754,
+            1920
+          ],
+          "excluded_numbers": [
+            {
+              "text": "副驾驶：检测通过37",
+              "numbers": [
+                "37"
+              ],
+              "bounds": [
+                78,
+                2190,
+                1144,
+                2333
+              ],
+              "reason": "detection_pass_summary_not_history_repair_count"
+            }
+          ],
+          "bind_reason": "same_row_pure_digit_node_next_to_history_repair",
+          "region_header_text": "副驾驶深度检测：",
+          "region_header_bounds": [
+            117,
+            1842,
+            500,
+            1920
+          ]
+        },
+        "车头": {
+          "raw_nodes_used": true,
+          "visible_texts_dedup_used": false,
+          "duplicate_zero_preserved": true,
+          "region_name": "车头",
+          "history_repair_label_bounds": [
+            487,
+            1842,
+            676,
+            1920
+          ],
+          "bound_count_text": "0",
+          "bound_count_bounds": [
+            669,
+            1842,
+            708,
+            1920
+          ],
+          "excluded_numbers": [
+            {
+              "text": "车头：检测通过12",
+              "numbers": [
+                "12"
+              ],
+              "bounds": [
+                78,
+                2190,
+                1144,
+                2333
+              ],
+              "reason": "detection_pass_summary_not_history_repair_count"
+            }
+          ],
+          "bind_reason": "same_row_pure_digit_node_next_to_history_repair",
+          "region_header_text": "车头深度检测：",
+          "region_header_bounds": [
+            117,
+            1842,
+            455,
+            1920
+          ]
+        }
+      },
+      "reference_disqualified": false,
+      "disqualify_reason": "",
+      "manual_review_required": false,
+      "manual_review_reasons": [],
+      "reference_score_input": {
+        "reference_index": 1,
+        "list_price_10k": 10.64,
+        "list_year": 2026,
+        "list_mileage_10k_km": 0.17,
+        "transfer_count": 0,
+        "accident_count": 0,
+        "max_accident_amount": 0.0,
+        "repair_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 0,
+          "车头": 0
+        },
+        "panel_repairs": [],
+        "score": null,
+        "is_final_reference": false
+      },
+      "reference_score": 99.0,
+      "reference_score_components": {
+        "body_score": 70.0,
+        "mileage_score": 12.0,
+        "transfer_score": 7.0,
+        "accident_score": 6.0,
+        "max_amount_score": 4.0
+      },
+      "reference_score_gte_target_score": true,
+      "score_diff_reference_minus_target": 3.0
+    }
+  ],
+  "selected_reference": {
+    "reference_index": 1,
+    "list_price_10k": 10.64,
+    "list_year": 2026,
+    "list_mileage_10k_km": 0.17,
+    "transfer_count": 0,
+    "accident_count": 0,
+    "max_accident_amount": 0.0,
+    "repair_counts": {
+      "驾驶侧": 0,
+      "车尾": 0,
+      "副驾驶": 0,
+      "车头": 0
+    },
+    "panel_repairs": [],
+    "score": 99.0,
+    "is_final_reference": true
+  },
+  "selected_reference_score": {
+    "score": 99.0,
+    "components": {
+      "body_score": 70.0,
+      "mileage_score": 12.0,
+      "transfer_score": 7.0,
+      "accident_score": 6.0,
+      "max_amount_score": 4.0
+    },
+    "review_reasons": [],
+    "hard_reject": false
+  },
+  "pricing": {
+    "status": "priced",
+    "base_reference_price_yuan": 106400,
+    "guazi_reference_price_yuan": 106400,
+    "target_guazi_listing_price_yuan": 102100,
+    "guazi_price_yuan": 102100,
+    "guazi_service_fee_yuan": 4500,
+    "guazi_net_payout_yuan": 97600,
+    "guazi_return_price_yuan": 97600,
+    "cost_yuan": 2500,
+    "profit_yuan": 7808,
+    "other_deductions_yuan": 10308,
+    "same_other_deductions_yuan_used": false,
+    "suggested_acquisition_price_yuan": 87292,
+    "suggested_purchase_price_yuan": 87292,
+    "competition_coefficient": 0.96,
+    "raw_competition_coefficient": 0.96,
+    "clipped_competition_coefficient": 0.96,
+    "competition_coefficient_reasons": [
+      "sample_reliability_adjustment -0.020: sample_shortage_manual_review",
+      "score_gap_adjustment -0.010: score_gap_gt_1_to_3",
+      "price_band_adjustment -0.010: price_band_100000_to_150000"
+    ],
+    "competition_adjustments": [
+      {
+        "factor": "sample_reliability_adjustment",
+        "adjustment": -0.02,
+        "reason": "sample_shortage_manual_review",
+        "data": {
+          "trisame_count": 2
+        }
+      },
+      {
+        "factor": "price_distribution_adjustment",
+        "adjustment": 0.0,
+        "reason": "sample_shortage_price_distribution_record_only_no_duplicate_deduction",
+        "data": {
+          "price_list_yuan": [
+            106400,
+            108600
+          ],
+          "price_spread_rate": 0.0207
+        }
+      },
+      {
+        "factor": "target_condition_risk_adjustment",
+        "adjustment": 0.0,
+        "reason": "no_strong_condition_risk_for_coefficient",
+        "data": {
+          "risk_flags": [],
+          "paint_count": 0
+        }
+      },
+      {
+        "factor": "score_gap_adjustment",
+        "adjustment": -0.01,
+        "reason": "score_gap_gt_1_to_3",
+        "data": {
+          "score_gap": 3.0
+        }
+      },
+      {
+        "factor": "price_band_adjustment",
+        "adjustment": -0.01,
+        "reason": "price_band_100000_to_150000",
+        "data": {
+          "price_yuan": 106400
+        }
+      },
+      {
+        "factor": "model_liquidity_adjustment",
+        "adjustment": 0.0,
+        "reason": "no_stable_model_profile_no_adjustment",
+        "data": {
+          "profile": null
+        }
+      },
+      {
+        "factor": "fuel_cost_pressure_adjustment",
+        "adjustment": 0.0,
+        "reason": "no_stable_fuel_pressure_profile_no_adjustment",
+        "data": {
+          "profile": null
+        }
+      },
+      {
+        "factor": "city_comparability_adjustment",
+        "adjustment": 0.0,
+        "reason": "cross_province_record_only_v1_2_1",
+        "data": {
+          "license_city": "唐山",
+          "reference_city": "LeapPilot"
+        }
+      }
+    ],
+    "manual_review_required": true,
+    "manual_review_reasons": [
+      "SAMPLE_SHORTAGE_MANUAL_REVIEW"
+    ],
+    "notes": [],
+    "round_strategy": "round_to_100",
+    "trisame_count": 2,
+    "trisame_price_list_yuan": [
+      106400,
+      108600
+    ],
+    "non_trisame_prices_used": false,
+    "ai_model_used": false
+  },
+  "s17_payload": {
+    "mode": "simulated_feishu_writeback",
+    "task_status": "manual_review",
+    "suggested_acquisition_price_yuan": 87292,
+    "suggested_listing_price_yuan": 102100,
+    "price_range_yuan": [
+      87292,
+      102100
+    ],
+    "final_reference_index": 1,
+    "reference_price_10k": 10.64,
+    "reference_score": 99.0,
+    "target_score": 96.0,
+    "manual_review_required": true,
+    "manual_review_reasons": [
+      "目标车缺少出险次数，已采用默认分。",
+      "目标车缺少最大金额，已采用默认分。",
+      "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。",
+      "SAMPLE_SHORTAGE_MANUAL_REVIEW"
+    ],
+    "notes": [],
+    "competition_coefficient": 0.96,
+    "competition_coefficient_reasons": [
+      "sample_reliability_adjustment -0.020: sample_shortage_manual_review",
+      "score_gap_adjustment -0.010: score_gap_gt_1_to_3",
+      "price_band_adjustment -0.010: price_band_100000_to_150000"
+    ],
+    "base_reference_price_yuan": 106400,
+    "target_guazi_listing_price_yuan": 102100,
+    "guazi_price_yuan": 102100,
+    "guazi_service_fee_yuan": 4500,
+    "guazi_net_payout_yuan": 97600,
+    "guazi_return_price_yuan": 97600,
+    "evidence": {
+      "s10_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_s16_start_20260512_134806.png",
+      "s10_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260512_134806.xml"
+    }
+  },
+  "manual_review_reasons": [
+    "目标车缺少出险次数，已采用默认分。",
+    "目标车缺少最大金额，已采用默认分。",
+    "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。",
+    "SAMPLE_SHORTAGE_MANUAL_REVIEW"
+  ],
+  "sample_shortage_note": "?????? 3 ???? SAMPLE_SHORTAGE_MANUAL_REVIEW",
+  "result_files": {
+    "result_s01_to_s10": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s01_to_s10.json",
+    "result_s10_to_s16": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+    "result": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result.json"
+  },
+  "logs": {
+    "first_stage_initial": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\leapmotor_c10_v1_21_first_stage_run.log",
+    "second_stage_initial": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\leapmotor_c10_v1_21_second_stage_run.log",
+    "first_stage_rerun": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\leapmotor_c10_v1_21_first_stage_rerun.log",
+    "second_stage_rerun": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\leapmotor_c10_v1_21_second_stage_rerun.log"
+  },
+  "json_validity": {
+    "result_s01_to_s10": true,
+    "result_s10_to_s16": true,
+    "result": true
+  },
+  "raw_large_fields_present": false,
+  "raw_large_field_hits": [],
+  "baseline_overwritten": false,
+  "old_95_percent_rule_used": false,
+  "non_trisame_prices_used": false,
+  "ai_model_used": false
+}

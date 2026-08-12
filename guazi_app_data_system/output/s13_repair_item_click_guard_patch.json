@@ -1,0 +1,52 @@
+{
+  "final_status": "PATCH_ONLY_S13_REPAIR_ITEM_CLICK_GUARD_AND_CLICK_AUDIT_DONE",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "modified_first_stage": false,
+  "modified_pricing": false,
+  "modified_config": false,
+  "modified_page_contract_docs": false,
+  "py_compile": {
+    "command": "python -m py_compile scripts/runtime_s10_to_s16_mainline.py",
+    "passed": true
+  },
+  "offline_validation": {
+    "before_xml": "artifacts/debug/s13_region_车尾_20260509_155339.xml",
+    "after_xml": "artifacts/debug/s13_to_s14_车尾_20260509_155344.xml",
+    "current_region": "车尾",
+    "history_repair_count": 1,
+    "selected_repair_item_text": "后备箱盖铰链",
+    "selected_click_bounds": [81, 1956, 611, 2063],
+    "click_strategy": "nearest_clickable_repair_item_parent_bounds",
+    "safe_click_region": true,
+    "forbidden_nearby_texts": [],
+    "forbidden_areas_detected": ["微信咨询", "实车讲解", "联系卖家/电话", "讲价"],
+    "live_room_signals_detected_after_click_xml": true,
+    "recognized_as_s14_allowed_for_after_xml": false
+  },
+  "real_device_verification": {
+    "first_stage_status": "S10_READY",
+    "first_stage_log": "output/tuang_s13_guard_first_20260509_161420.log",
+    "second_stage_status": "REFERENCE_CARD_TITLE_MISMATCH",
+    "second_stage_log": "output/tuang_s13_guard_second_20260509_161742.log",
+    "target_fingerprint": "大众|途昂|2017款|330TSI 两驱豪华版|白|2018.07",
+    "expected_title": "大众 途昂 2017款 330TSI 两驱豪华版",
+    "actual_title": "大众ID.3 2024款 出众版",
+    "screenshot_path": "artifacts/screenshots/s10_s16_start_20260509_161743.png",
+    "xml_path": "artifacts/debug/s10_s16_start_20260509_161743.xml",
+    "s13_path_exercised": false,
+    "blocker_before_s13": "REFERENCE_CARD_TITLE_MISMATCH"
+  },
+  "new_stop_codes": [
+    "S13_REPAIR_ITEM_CLICK_TARGET_NOT_CONFIRMED",
+    "S13_REPAIR_ITEM_CLICK_TARGET_OVERLAPS_FORBIDDEN_AREA",
+    "S13_TO_S14_LIVE_ROOM_ENTERED_AFTER_CLICK",
+    "S13_TO_S14_INTERMEDIATE_PAGE_UNCONFIRMED"
+  ],
+  "notes": [
+    "The S13 guard now rejects forbidden live-room and bottom-action containers before clicking.",
+    "The after-click XML containing live-room signals is not allowed to be treated as S14.",
+    "The real-device rerun stopped before S13 because the live S10 card selected by canonical order was not the target Tuang title."
+  ]
+}

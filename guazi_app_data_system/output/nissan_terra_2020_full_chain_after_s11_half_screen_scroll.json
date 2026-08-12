@@ -1,0 +1,13 @@
+{
+  "report_name": "nissan_terra_2020_full_chain_after_s11_half_screen_scroll",
+  "generated_at": "2026-05-13T17:32:04",
+  "target_fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "chain_continued": false,
+  "blocked_by": "CURRENT_TARGET_TASK_JSON_INVALID",
+  "current_target_task_json_valid": true,
+  "current_target_task_json_error": "",
+  "first_stage_status": "not_rerun_this_turn",
+  "second_stage_status": "not_rerun_this_turn",
+  "final_status": "RUN_FAILED_WITH_ISSUE",
+  "note": "Patch and offline validation completed. Real-device continuation was not started because target task JSON is invalid and this turn did not permit modifying it."
+}

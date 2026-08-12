@@ -1,0 +1,81 @@
+{
+  "task": "READ_ONLY_DIAGNOSE_S05_CONFIRM_TO_S06_AFTER_LEAPMOTOR_C10",
+  "final_status": "DIAGNOSE_S05_CONFIRM_TO_S06_AFTER_LEAPMOTOR_C10_DONE",
+  "readonly": true,
+  "code_modified": false,
+  "real_device_run": false,
+  "second_stage_started": false,
+  "pricing_output": false,
+  "target_fingerprint": "零跑|C10|2026款|210悦享版|白|2026.02",
+  "evidence_files": {
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "result": "output/result.json",
+    "log": "logs/first_stage_after_s03_s04_contract_20260511_164430.log",
+    "s05_before_confirm_xml": "artifacts/debug/s05_after_trim_variant_1_20260511_164513.xml",
+    "s05_before_confirm_screenshot": "artifacts/screenshots/s05_after_trim_variant_1_20260511_164513.png",
+    "after_confirm_xml": "artifacts/debug/s05_to_s06_20260511_164550.xml",
+    "after_confirm_screenshot": "artifacts/screenshots/s05_to_s06_20260511_164550.png"
+  },
+  "s05_selection": {
+    "s05_selected_year_model": "2026款",
+    "s05_selected_config_model": "210悦享版",
+    "selected_count_text": "已选1项",
+    "selected_count_actual": 1,
+    "s05_done": true,
+    "confirm_button_seen": true,
+    "confirm_button_bounds": "[52,2411][207,2473]",
+    "confirm_clicked": true,
+    "clicked_confirm_bounds": "[52,2411][207,2473]",
+    "clicked_confirm_bounds_source": "inferred_from_pre_confirm_confirm_button_bounds; exact clicked_bounds audit was not persisted",
+    "page_changed_after_confirm": true
+  },
+  "after_confirm_page": {
+    "script_recognized_state": "S04",
+    "diagnosed_page_classification": "VALID_S06_TARGET_FILTER_LIST",
+    "classification_options": [
+      "VALID_S06_TARGET_FILTER_LIST",
+      "BRAND_ZONE_MIXED_LIST_NOT_TARGET_FILTERED",
+      "S05_CONFIRM_RETURNED_TO_BRAND_ZONE_WITH_TARGET_FILTER_UNKNOWN",
+      "WRONG_PAGE_AFTER_S05_CONFIRM",
+      "EVIDENCE_INSUFFICIENT"
+    ],
+    "is_s05_modal": false,
+    "brand_zone_shell_signals": [
+      "品牌专区",
+      "综合排序",
+      "价格",
+      "成色/车况",
+      "车型配置",
+      "车源卡片"
+    ],
+    "target_filter_effective_evidence": [
+      "零跑C10 chip visible and selected",
+      "visible target title: 零跑汽车 零跑C10 2026款 210悦享版",
+      "first visible vehicle cards are target C10 2026 210悦享版 cards",
+      "visible target model/config constraints exist after S05 confirm"
+    ],
+    "target_card_titles_seen": [
+      "零跑汽车 零跑C10 2026款 210悦享版"
+    ],
+    "non_target_more_section_seen": true,
+    "non_target_more_section_note": "后部 visible_texts 中存在 找不到想要的车 / 全国淘车 / 更多车源 及非目标 T03/C11/C16 等推荐车；这不影响本轮 S05->S06 分类，但后续 S10 仍必须使用三同边界过滤。"
+  },
+  "contract_assessment": {
+    "current_page_contract_mismatch_correct_to_stop": true,
+    "reason": "Current script expected S06 but recognized the post-confirm target-filtered brand-zone-shell list as S04. Stopping was safe; continuing without a context-aware S06 recognizer would violate the current contract.",
+    "root_cause": "S06 recognizer/page contract gap after S05 confirm, not S05 selection failure.",
+    "not_s05_confirm_not_clicked": true,
+    "not_confirm_target_invalid": true,
+    "not_brand_zone_unfiltered": true
+  },
+  "next_step_recommendation": {
+    "recommended_patch": "S06_RECOGNIZER_NEEDS_S05_CONFIRM_CONTEXT_PATCH",
+    "scope": "Only in transition_context=S05_CONFIRM_TO_S06 with S05_DONE=true, recognize brand-zone shell as VALID_S06 when target series/config evidence is visible.",
+    "do_not_recommend": [
+      "continue S07/S10 without patch",
+      "brand-zone rescue",
+      "click 车型配置 again",
+      "start second stage"
+    ]
+  }
+}

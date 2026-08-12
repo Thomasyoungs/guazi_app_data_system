@@ -1,0 +1,196 @@
+{
+  "freeze_name": "BASELINE_GUAZI_SERVICE_FEE_TIER_PRICING_202605",
+  "freeze_status": "GUAZI_SERVICE_FEE_PRICING_RULE_FREEZE_READY",
+  "generated_at_local": "2026-05-09",
+  "read_only": true,
+  "modified_code": false,
+  "modified_config": false,
+  "modified_pricing": false,
+  "modified_contract_doc": false,
+  "device_run": false,
+  "result_json_overwritten": false,
+  "baseline_files_overwritten": false,
+  "freeze_scope": [
+    {
+      "path": "src/guazi_app_data_system/pricing.py",
+      "exists": true,
+      "size_bytes": 14120,
+      "sha256": "1b62d2646ebcd21d6ccf0019e6fdb1834bea3a9bbbae1bd8cd7b38ca8d7a280e",
+      "last_write_time": "2026-05-09T04:21:14.555Z"
+    },
+    {
+      "path": "config/fields.yaml",
+      "exists": true,
+      "size_bytes": 4870,
+      "sha256": "7f3e5add526162295dfb53c94fca601b607a985322043c7b9ff8619f74111661",
+      "last_write_time": "2026-05-09T04:21:19.920Z"
+    },
+    {
+      "path": "output/guazi_service_fee_pricing_patch_report_latest.md",
+      "exists": true,
+      "size_bytes": 2704,
+      "sha256": "3bf317c82a66792f7c94075757da05647b9d4fc0646551a332df708644ee7f48",
+      "last_write_time": "2026-05-09T04:22:55.956Z"
+    },
+    {
+      "path": "output/guazi_service_fee_pricing_patch_report.json",
+      "exists": true,
+      "size_bytes": 4390,
+      "sha256": "405fd7bc327f854202c08a867c4319fa7aa97752681b71fc8192c874185d51eb",
+      "last_write_time": "2026-05-09T04:22:55.956Z"
+    },
+    {
+      "path": "output/guazi_service_fee_pricing_regression_check_latest.md",
+      "exists": true,
+      "size_bytes": 2348,
+      "sha256": "619257b10174333ca2a8b41f4f4a3806bf95c549f50c8793fe1fd399e16e6b8a",
+      "last_write_time": "2026-05-09T04:25:03.547Z"
+    },
+    {
+      "path": "output/guazi_service_fee_pricing_regression_check.json",
+      "exists": true,
+      "size_bytes": 5166,
+      "sha256": "77f875922f392fb1062148242354cd6eb453da2df511914a161c0cd2ddeb2e15",
+      "last_write_time": "2026-05-09T04:25:03.546Z"
+    },
+    {
+      "path": "C:\\Users\\lzc93\\Desktop\\定价\\定价逻辑备份_服务费阶梯修正版.docx",
+      "exists": true,
+      "size_bytes": 10734,
+      "sha256": "2503644a4bb667ac8d2c9b11fab89d98740263733c1b618fafcb3b2964c99c1d",
+      "last_write_time": "2026-05-09T04:16:17.939Z"
+    }
+  ],
+  "rule_summary": {
+    "deprecated_old_rule": "瓜子回款价 = 瓜子定价 × 95%，已废弃。",
+    "enabled_new_rule": "瓜子回款价 = 瓜子定价 - 瓜子服务费。",
+    "matching_order": "档位从高到低匹配。",
+    "boundary_semantics": "5万、10万、15万、20万均按 >= 进入更高档位。",
+    "compatibility_field": "guazi_return_price_yuan 为兼容字段，值等于 guazi_net_payout_yuan。",
+    "no_more_95_percent": true
+  },
+  "service_fee_tiers": [
+    {
+      "condition": "guazi_price_yuan >= 200000",
+      "service_fee_yuan": 8000
+    },
+    {
+      "condition": "guazi_price_yuan >= 150000 and guazi_price_yuan < 200000",
+      "service_fee_yuan": 6000
+    },
+    {
+      "condition": "guazi_price_yuan >= 100000 and guazi_price_yuan < 150000",
+      "service_fee_yuan": 4500
+    },
+    {
+      "condition": "guazi_price_yuan >= 50000 and guazi_price_yuan < 100000",
+      "service_fee_yuan": 3500
+    },
+    {
+      "condition": "guazi_price_yuan < 50000",
+      "service_fee_yuan": 2500
+    }
+  ],
+  "offline_samples_confirmed": [
+    {
+      "guazi_price_yuan": 26200,
+      "service_fee_yuan": 2500,
+      "guazi_net_payout_yuan": 23700
+    },
+    {
+      "guazi_price_yuan": 27800,
+      "service_fee_yuan": 2500,
+      "guazi_net_payout_yuan": 25300
+    },
+    {
+      "guazi_price_yuan": 49999,
+      "service_fee_yuan": 2500,
+      "guazi_net_payout_yuan": 47499
+    },
+    {
+      "guazi_price_yuan": 50000,
+      "service_fee_yuan": 3500,
+      "guazi_net_payout_yuan": 46500
+    },
+    {
+      "guazi_price_yuan": 99999,
+      "service_fee_yuan": 3500,
+      "guazi_net_payout_yuan": 96499
+    },
+    {
+      "guazi_price_yuan": 100000,
+      "service_fee_yuan": 4500,
+      "guazi_net_payout_yuan": 95500
+    },
+    {
+      "guazi_price_yuan": 149999,
+      "service_fee_yuan": 4500,
+      "guazi_net_payout_yuan": 145499
+    },
+    {
+      "guazi_price_yuan": 150000,
+      "service_fee_yuan": 6000,
+      "guazi_net_payout_yuan": 144000
+    },
+    {
+      "guazi_price_yuan": 199999,
+      "service_fee_yuan": 6000,
+      "guazi_net_payout_yuan": 193999
+    },
+    {
+      "guazi_price_yuan": 200000,
+      "service_fee_yuan": 8000,
+      "guazi_net_payout_yuan": 192000
+    }
+  ],
+  "historical_baseline_impact_read_only": [
+    {
+      "baseline": "福克斯",
+      "old_suggested_purchase_price_yuan": 20890,
+      "recalculated_if_other_deductions_unchanged_yuan": 19700,
+      "delta_yuan": -1190,
+      "old_result_overwritten": false
+    },
+    {
+      "baseline": "丰田致炫",
+      "old_suggested_purchase_price_yuan": 22410,
+      "recalculated_if_other_deductions_unchanged_yuan": 21300,
+      "delta_yuan": -1110,
+      "old_result_overwritten": false
+    }
+  ],
+  "future_execution_policy": [
+    "以后所有新目标车进入 S16 定价时，统一使用服务费阶梯规则。",
+    "不再使用 ×95%。",
+    "历史 baseline 原始结果不覆盖。",
+    "如需更新历史 baseline 价格，只能单独做离线重算报告，不能覆盖原验收报告。"
+  ],
+  "evidence": {
+    "patch_report_status": "GUAZI_SERVICE_FEE_TIER_PRICING_PATCHED",
+    "regression_report_status": "GUAZI_SERVICE_FEE_PRICING_REGRESSION_PASSED",
+    "residual_check_conclusion": "活动定价代码中未发现 0.95 回款价逻辑；issue_classifier.py 的 0.95 是置信度，不算残留。",
+    "non_pricing_0_95_occurrences": [
+      {
+        "path": "src/guazi_app_data_system/issue_classifier.py",
+        "lines": [
+          708,
+          916,
+          955,
+          1001,
+          1300
+        ],
+        "reason": "confidence score, not pricing payout logic"
+      }
+    ]
+  },
+  "consistency_checks": {
+    "patch_status_ok": true,
+    "regression_status_ok": true,
+    "pricing_py_exists": true,
+    "fields_yaml_exists": true,
+    "patch_reports_exist": true,
+    "regression_reports_exist": true,
+    "service_fee_docx_exists": true,
+    "no_old_rate_remaining_in_activity_pricing": true
+  }
+}

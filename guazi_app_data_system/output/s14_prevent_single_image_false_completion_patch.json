@@ -1,0 +1,113 @@
+{
+  "status": "S14_PREVENT_SINGLE_IMAGE_FALSE_COMPLETION_PATCHED",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "scope_confirmation": {
+    "first_stage_modified": false,
+    "pricing_modified": false,
+    "config_modified": false,
+    "docx_modified": false,
+    "baseline_modified": false
+  },
+  "patch_summary": [
+    "Removed executable completion from local 1/1 + caption; it now only records current image readability.",
+    "Added XML/text based uncollected-next-condition-signal detection from unvisited S14 tab labels and damage lines.",
+    "S14 completion now requires no_new_semantic_after_swipe_count >= 2, no uncollected next condition signal, and at least one collected S14 image.",
+    "S14 failure marks reference_score_trustworthy=false and reference_score_invalid_reason=s14_full_image_sequence_incomplete_before_s15."
+  ],
+  "offline_validation": {
+    "passed": true,
+    "results": [
+      {
+        "scenario": "A_NISSAN_TERRA_FALSE_SINGLE_IMAGE_COMPLETION",
+        "expected": "S14_COLLECT_DONE=false",
+        "passed": true,
+        "evidence": {
+          "unvisited_tab_labels": [
+            "左侧前门(1/2)",
+            "左侧前门漆面(1/1)",
+            "左D柱覆盖面(1/1)",
+            "左侧后门(1/1)",
+            "左D柱外侧漆面(1/1)",
+            "左侧后门漆面(1/1)",
+            "左后翼子板(1/1)",
+            "左后翼子板漆面(1/1)"
+          ],
+          "unvisited_damage_lines": [
+            {
+              "raw_first_line": "左侧前门—钣金",
+              "normalized_part": "左前门",
+              "normalized_damage": "钣金"
+            }
+          ],
+          "image_records": 3
+        }
+      },
+      {
+        "scenario": "B_TRUE_SINGLE_IMAGE_TERMINAL",
+        "expected": "S14_COLLECT_DONE=true after two no-new-semantic swipes",
+        "passed": true,
+        "evidence": {
+          "s14_has_uncollected_next_condition_signal": false,
+          "unvisited_tab_labels": [],
+          "unvisited_damage_lines": [],
+          "visited_s14_keys_count": 1,
+          "visited_labels_count": 1,
+          "visited_parts_count": 1
+        }
+      },
+      {
+        "scenario": "C_MULTI_IMAGE_TERMINAL",
+        "expected": "S14_COLLECT_DONE=true after two no-new-semantic swipes",
+        "passed": true,
+        "evidence": {
+          "s14_has_uncollected_next_condition_signal": false,
+          "unvisited_tab_labels": [],
+          "unvisited_damage_lines": [],
+          "visited_s14_keys_count": 2,
+          "visited_labels_count": 2,
+          "visited_parts_count": 1
+        }
+      },
+      {
+        "scenario": "D_NO_EFFECTIVE_SWIPE_WITH_UNCOLLECTED_SIGNAL",
+        "expected": "S14_COLLECT_DONE=false",
+        "passed": true,
+        "evidence": {
+          "s14_has_uncollected_next_condition_signal": true,
+          "unvisited_tab_labels": [
+            "B(1/1)"
+          ],
+          "unvisited_damage_lines": [],
+          "visited_s14_keys_count": 1,
+          "visited_labels_count": 1,
+          "visited_parts_count": 1
+        }
+      },
+      {
+        "scenario": "E_S15_BLOCKS_WHEN_S14_INCOMPLETE",
+        "expected": "s15_entry_allowed=false and reference_score_trustworthy=false",
+        "passed": true,
+        "evidence": {
+          "s15_entry_allowed": false,
+          "reference_score_trustworthy": false,
+          "reference_score_invalid_reason": "s14_full_image_sequence_incomplete_before_s15"
+        }
+      }
+    ]
+  },
+  "py_compile": {
+    "command": "python -m py_compile scripts/runtime_s10_to_s16_mainline.py",
+    "passed": true
+  },
+  "result_field_notes": [
+    "s14_has_uncollected_next_condition_signal",
+    "s14_uncollected_next_condition_signals",
+    "s14_no_new_semantic_after_swipe_count",
+    "reference_score_trustworthy",
+    "reference_score_invalid_reason"
+  ],
+  "forbidden_large_fields_written": false,
+  "generated_at": "2026-05-16T10:26:27"
+}

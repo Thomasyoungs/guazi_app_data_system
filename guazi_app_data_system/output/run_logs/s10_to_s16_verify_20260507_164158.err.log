@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "C:\Users\lzc93\Desktop\定价\guazi_app_data_system\scripts\runtime_s10_to_s16_mainline.py", line 4293, in <module>
+    print(json.dumps(run_s10_to_s16_mainline(runtime), ensure_ascii=False, indent=2))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lzc93\Desktop\定价\guazi_app_data_system\scripts\runtime_s10_to_s16_mainline.py", line 4186, in run_s10_to_s16_mainline
+    state, snapshot = handle_s10(context, snapshot)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lzc93\Desktop\定价\guazi_app_data_system\scripts\runtime_s10_to_s16_mainline.py", line 1940, in handle_s10
+    next_snapshot, wait_ms, wait_evidence = _wait_for_s11_stable_after_title_click(
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lzc93\Desktop\定价\guazi_app_data_system\scripts\runtime_s10_to_s16_mainline.py", line 1522, in _wait_for_s11_stable_after_title_click
+    fast_capture = _capture_s10_to_s11_fast_xml(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lzc93\Desktop\定价\guazi_app_data_system\scripts\runtime_s10_to_s16_mainline.py", line 611, in _capture_s10_to_s11_fast_xml
+    screenshot_success=bool(screenshot_result and screenshot_result.success),
+                            ^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'screenshot_result' where it is not associated with a value

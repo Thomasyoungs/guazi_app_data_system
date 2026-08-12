@@ -1,0 +1,119 @@
+{
+  "task_name": "OPPO R15 Android 10 真机调试可用性测试",
+  "test_time": "2026-06-16T15:10:14.6014251+08:00",
+  "workdir": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system",
+  "scope": {
+    "business_code_modified": false,
+    "pricing_rules_modified": false,
+    "formal_pricing_flow_run": false,
+    "business_pages_clicked": false
+  },
+  "device": {
+    "manufacturer": "OPPO",
+    "model": "PACM00",
+    "expected_model_name": "OPPO R15",
+    "android_version": "10",
+    "sdk_version": "29",
+    "screen_size": "Physical size: 1080x2280",
+    "screen_density": "Physical density: 480"
+  },
+  "battery": {
+    "usb_powered": true,
+    "level": 7,
+    "scale": 100,
+    "status": 2,
+    "health": 2,
+    "voltage": 3919,
+    "temperature": 326,
+    "technology": "Li-ion",
+    "summary": "USB 供电中，电量 7%，电量较低，后续调试建议先充电。"
+  },
+  "memory_summary": {
+    "MemTotal_kB": 5802500,
+    "MemFree_kB": 477620,
+    "MemAvailable_kB": 3143584,
+    "SwapTotal_kB": 2359292,
+    "SwapFree_kB": 1522684
+  },
+  "adb_devices": {
+    "raw_output": "List of devices attached\nVSM7BMSW9LTOQOHQ\tdevice",
+    "serial": "VSM7BMSW9LTOQOHQ",
+    "state": "device",
+    "passed": true
+  },
+  "adb_stability": {
+    "passed": true,
+    "iterations": [
+      {
+        "index": 1,
+        "time": "2026-06-16T15:09:40.5200603+08:00",
+        "output": "adb_alive"
+      },
+      {
+        "index": 2,
+        "time": "2026-06-16T15:09:42.5753469+08:00",
+        "output": "adb_alive"
+      },
+      {
+        "index": 3,
+        "time": "2026-06-16T15:09:44.6276585+08:00",
+        "output": "adb_alive"
+      },
+      {
+        "index": 4,
+        "time": "2026-06-16T15:09:46.6800964+08:00",
+        "output": "adb_alive"
+      },
+      {
+        "index": 5,
+        "time": "2026-06-16T15:09:48.7205286+08:00",
+        "output": "adb_alive"
+      }
+    ],
+    "risk": null
+  },
+  "foreground_before_launch": {
+    "raw_output": "mCurrentFocus=Window{c0b8756 u0 com.oppo.launcher/com.oppo.launcher.Launcher}",
+    "package": "com.oppo.launcher",
+    "activity": "com.oppo.launcher.Launcher"
+  },
+  "package_search": {
+    "commands": [
+      "adb shell pm list packages | findstr ganji",
+      "adb shell pm list packages | findstr guazi",
+      "adb shell pm list packages | findstr haoche"
+    ],
+    "ganji_output": "",
+    "guazi_output": "",
+    "haoche_output": "",
+    "target_package": "com.ganji.android.haoche_c",
+    "target_package_found": false,
+    "reason": "瓜子二手车 APP 未安装或包名变化"
+  },
+  "app_launch": {
+    "attempted": false,
+    "passed": false,
+    "reason": "目标包名 com.ganji.android.haoche_c 未找到，按规则停止"
+  },
+  "screenshot": {
+    "attempted": false,
+    "passed": false,
+    "local_path": null,
+    "reason": "目标包名未找到，APP 启动测试未执行，按规则未继续截图"
+  },
+  "ui_xml_dump": {
+    "attempted": false,
+    "passed": false,
+    "local_path": null,
+    "reason": "目标包名未找到，APP 启动测试未执行，按规则未继续导出 UI XML"
+  },
+  "recommendation": {
+    "allowed_values": [
+      "A. 可用",
+      "B. 勉强可用",
+      "C. 不建议使用"
+    ],
+    "final_conclusion": "C. 不建议使用",
+    "reason": "ADB 已识别且稳定，但未找到目标瓜子二手车 APP 包名，无法验证 APP 启动、截图和 UI XML 能力。"
+  }
+}

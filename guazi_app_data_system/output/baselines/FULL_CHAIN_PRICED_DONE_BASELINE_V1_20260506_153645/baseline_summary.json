@@ -1,0 +1,354 @@
+﻿{
+    "baseline_name":  "FULL_CHAIN_PRICED_DONE_BASELINE_V1",
+    "baseline_time":  "2026-05-06T15:36:45+0800",
+    "baseline_dir":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645",
+    "missing_files":  [
+
+                      ],
+    "archived_files":  [
+                           {
+                               "source":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s01_to_s10_mainline.py",
+                               "archive_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\code\\scripts\\runtime_s01_to_s10_mainline.py",
+                               "archive_relative_path":  "code/scripts/runtime_s01_to_s10_mainline.py",
+                               "size":  201746,
+                               "source_mtime":  "2026-05-05T23:37:46.362273+08:00",
+                               "sha256":  "0aa318c5c0e249319b48985f2c1b5adc0bb0c0f1fb8c2ea4184cf7651f4b1d6c"
+                           },
+                           {
+                               "source":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py",
+                               "archive_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\code\\scripts\\runtime_s10_to_s16_mainline.py",
+                               "archive_relative_path":  "code/scripts/runtime_s10_to_s16_mainline.py",
+                               "size":  156858,
+                               "source_mtime":  "2026-05-06T15:16:56.581548+08:00",
+                               "sha256":  "7db325c8b218fe7aee31b8b810bde8e5c19069c40ddd682ed6488efaf3fdc74d"
+                           },
+                           {
+                               "source":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\src\\guazi_app_data_system\\pricing.py",
+                               "archive_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\code\\src\\guazi_app_data_system\\pricing.py",
+                               "archive_relative_path":  "code/src/guazi_app_data_system/pricing.py",
+                               "size":  13132,
+                               "source_mtime":  "2026-05-04T17:44:21.909973+08:00",
+                               "sha256":  "83fb7cb6a4e436112aa6af88c92bf978ffd6caf2799d59c04dbdf481c06398f0"
+                           },
+                           {
+                               "source":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\config\\pages.yaml",
+                               "archive_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\config\\pages.yaml",
+                               "archive_relative_path":  "config/pages.yaml",
+                               "size":  113290,
+                               "source_mtime":  "2026-04-26T11:24:29.837328+08:00",
+                               "sha256":  "4f776a2b47eb58ce1ed153115793d7f721021ffc98cb5ef5dc04b73850bc3aaf"
+                           },
+                           {
+                               "source":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\config\\actions.yaml",
+                               "archive_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\config\\actions.yaml",
+                               "archive_relative_path":  "config/actions.yaml",
+                               "size":  95300,
+                               "source_mtime":  "2026-04-26T16:32:54.070965+08:00",
+                               "sha256":  "9e8eae582e8c4d00c71931fbfa5b768116c747b798051f9c05ebca2e76869758"
+                           },
+                           {
+                               "source":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s01_to_s10.json",
+                               "archive_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\output\\result_s01_to_s10.json",
+                               "archive_relative_path":  "output/result_s01_to_s10.json",
+                               "size":  6519,
+                               "source_mtime":  "2026-05-06T15:22:30.247226+08:00",
+                               "sha256":  "c7c12f40eb1a3c0ef653fc7aff72a56c8a3187a65684497bceffaef7a80ddd7b"
+                           },
+                           {
+                               "source":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+                               "archive_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\output\\result_s10_to_s16.json",
+                               "archive_relative_path":  "output/result_s10_to_s16.json",
+                               "size":  226473,
+                               "source_mtime":  "2026-05-06T15:25:02.058123+08:00",
+                               "sha256":  "9291d1c53cd22d3ebf0944099103a64eee7573a1a6d09cb18e5e89dbb4aee25b"
+                           },
+                           {
+                               "source":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result.json",
+                               "archive_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\output\\result.json",
+                               "archive_relative_path":  "output/result.json",
+                               "size":  226473,
+                               "source_mtime":  "2026-05-06T15:25:02.061122+08:00",
+                               "sha256":  "9291d1c53cd22d3ebf0944099103a64eee7573a1a6d09cb18e5e89dbb4aee25b"
+                           },
+                           {
+                               "source":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\page_contract_timing_report.jsonl",
+                               "archive_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\output\\page_contract_timing_report.jsonl",
+                               "archive_relative_path":  "output/page_contract_timing_report.jsonl",
+                               "size":  55521,
+                               "source_mtime":  "2026-05-06T15:25:02.054125+08:00",
+                               "sha256":  "57bf981295a8e3cb6c7ea4e9e82213178828e14323cbcb652123918bc2c2a012"
+                           },
+                           {
+                               "source":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\page_contract_timing_report.md",
+                               "archive_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\output\\page_contract_timing_report.md",
+                               "archive_relative_path":  "output/page_contract_timing_report.md",
+                               "size":  16476,
+                               "source_mtime":  "2026-05-06T15:25:02.053122+08:00",
+                               "sha256":  "2c0436ff3a4350853d25398f446fdddeb0236f6355b19ad84f0ea69d13528e08"
+                           },
+                           {
+                               "source":  "C:\\Users\\lzc93\\Desktop\\定价\\瓜子数据获取流程文档_快稳图标版_S04目标门禁_S06-S10门禁_SLOGIN最小返回_APP强制重启版_契约收口修正版_节点驱动点击版.docx",
+                               "archive_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\contracts\\瓜子数据获取流程文档_快稳图标版_S04目标门禁_S06-S10门禁_SLOGIN最小返回_APP强制重启版_契约收口修正版_节点驱动点击版.docx",
+                               "archive_relative_path":  ".\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\contracts\\瓜子数据获取流程文档_快稳图标版_S04目标门禁_S06-S10门禁_SLOGIN最小返回_APP强制重启版_契约收口修正版_节点驱动点击版.docx",
+                               "size":  102970,
+                               "source_mtime":  "2026-05-06T14:48:27.4007481+08:00",
+                               "sha256":  "c53abd8ffafbfec227b303de61436f339c7fb48cf65d621586b0998b3a7bf622"
+                           },
+                           {
+                               "source":  "C:\\Users\\lzc93\\Desktop\\定价\\瓜子自动定价打分规则V1.5_特殊结构风险件版.docx",
+                               "archive_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\contracts\\瓜子自动定价打分规则V1.5_特殊结构风险件版.docx",
+                               "archive_relative_path":  ".\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V1_20260506_153645\\contracts\\瓜子自动定价打分规则V1.5_特殊结构风险件版.docx",
+                               "size":  43585,
+                               "source_mtime":  "2026-05-04T17:24:21.6223750+08:00",
+                               "sha256":  "acd29d7f4a735e71dad6dc0aa77dd9d68677b5895de75912638160314e2b3e89"
+                           }
+                       ],
+    "success_summary":  {
+                            "segment1_status":  "S10_READY",
+                            "segment1_s10_ready":  true,
+                            "segment1_gates":  {
+                                                   "S07_FILTER_DONE":  true,
+                                                   "COLOR_FILTER_DONE":  true,
+                                                   "AGE_FILTER_DONE":  true,
+                                                   "SORT_DONE":  true,
+                                                   "S10_READY":  true
+                                               },
+                            "segment2_status":  "FULL_CHAIN_PRICED_DONE",
+                            "entered_s11_s12_s13_s14_s15_s16":  true,
+                            "s17_simulated_payload":  true,
+                            "s14_collect_done":  true,
+                            "s14_image_horizontal_swipe":  true,
+                            "s14_no_tab_or_photo_click_evidence":  true,
+                            "s14_terminal_confirmed":  true,
+                            "result_json_valid":  true,
+                            "manual_review_reasons":  [
+                                                          "目标车缺少出险次数，已采用默认分。",
+                                                          "目标车缺少最大金额，已采用默认分。",
+                                                          "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。"
+                                                      ]
+                        },
+    "pricing_summary":  {
+                            "reference_price_10k":  12.87,
+                            "reference_score":  91.5,
+                            "target_score":  88.0,
+                            "suggested_listing_price_yuan":  128700,
+                            "suggested_acquisition_price_yuan":  109984,
+                            "manual_review_reasons":  [
+                                                          "目标车缺少出险次数，已采用默认分。",
+                                                          "目标车缺少最大金额，已采用默认分。",
+                                                          "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。"
+                                                      ]
+                        },
+    "performance_baseline_summary":  [
+                                         {
+                                             "step_name":  "S10_TO_S11_XML_DUMP",
+                                             "action_name":  "dump_xml_during_s11_wait",
+                                             "duration_ms":  8718,
+                                             "reason_category":  "S10_TO_S11_XML_DUMP_SLOW",
+                                             "reason_detail":  "separate XML dump timing for S10 to S11 short-poll wait round",
+                                             "solution":  "do not use stale S10 XML for S11 collection; keep bounded fresh polling",
+                                             "screenshot_path":  "",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260506_152246.xml",
+                                             "recognized_page":  "S10"
+                                         },
+                                         {
+                                             "step_name":  "S10_TO_S11_WAIT_ROUND",
+                                             "action_name":  "fresh_recognize_wait_round",
+                                             "duration_ms":  9557,
+                                             "reason_category":  "S10_TO_S11_WEBVIEW_TEXT_DELAY",
+                                             "reason_detail":  "short-poll fresh round waits for S11 contract instead of using a long sleep",
+                                             "solution":  "continue polling until S11 appears or the bounded timeout expires",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_20260506_152246.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260506_152246.xml",
+                                             "recognized_page":  "S11"
+                                         },
+                                         {
+                                             "step_name":  "S12_TO_S13_BODY_APPEARANCE",
+                                             "action_name":  "S12_CLICK_BODY_APPEARANCE_TAB",
+                                             "duration_ms":  14939,
+                                             "reason_category":  "S12_BODY_APPEARANCE_TAB_CLICK",
+                                             "reason_detail":  "exact body-appearance tab text is clicked before any controlled scroll fallback",
+                                             "solution":  "use the contract-allowed direct tab action whenever the tab node is present",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s12_to_s13_20260506_152313.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s12_to_s13_20260506_152313.xml",
+                                             "recognized_page":  "S12"
+                                         },
+                                         {
+                                             "step_name":  "S13_HISTORY_REPAIR_COUNT_CONFIRM",
+                                             "action_name":  "collect_repair_counts",
+                                             "duration_ms":  5163,
+                                             "reason_category":  null,
+                                             "reason_detail":  null,
+                                             "solution":  null,
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_region_驾驶侧_20260506_152318.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s13_region_驾驶侧_20260506_152318.xml",
+                                             "recognized_page":  "S13"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  5372,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152329.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152329.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  6053,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152334.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152334.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  5557,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152340.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152340.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  5351,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152346.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152346.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  5796,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152351.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152351.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  5598,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152357.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152357.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  5811,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152403.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152403.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  5873,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152408.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152408.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  5432,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152414.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152414.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  5597,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152420.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152420.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  6077,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152425.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152425.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  11507,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152436.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152436.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_HORIZONTAL_SWIPE",
+                                             "action_name":  "s14_image_horizontal_swipe",
+                                             "duration_ms":  10754,
+                                             "reason_category":  "S14_IMAGE_HORIZONTAL_SWIPE",
+                                             "reason_detail":  "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+                                             "solution":  "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152448.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152448.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_COLLECT",
+                                             "action_name":  "collect_image_sequence_until_terminal",
+                                             "duration_ms":  84860,
+                                             "reason_category":  "S14_END_CONFIRM_TOO_CONSERVATIVE",
+                                             "reason_detail":  "S14 terminal is confirmed by two consecutive image swipes with no page label, first line, normalized damage, or S14 key change",
+                                             "solution":  "keep finite terminal confirmation and stop waiting after the configured no-change evidence is met",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260506_152448.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260506_152448.xml",
+                                             "recognized_page":  "S14"
+                                         },
+                                         {
+                                             "step_name":  "S14_RETURN_TO_S10",
+                                             "action_name":  "fixed_return_to_s10_stop_on_first_s10",
+                                             "duration_ms":  8981,
+                                             "reason_category":  "S14_RETURN_PATH_OK_NEEDS_NO_FIX",
+                                             "reason_detail":  "S14 return stopped as soon as a reliable S10 list was recognized",
+                                             "solution":  "dispatch to POST_S14_TO_S15 instead of returning again or re-entering S10 handler",
+                                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_return_to_s10_attempt_2_20260506_152457.png",
+                                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_return_to_s10_attempt_2_20260506_152457.xml",
+                                             "recognized_page":  "S14"
+                                         }
+                                     ],
+    "next_recommended_branch":  "PATCH_ONLY_PERFORMANCE_OVER_2S"
+}

@@ -1,0 +1,126 @@
+﻿{
+  "status": "HONDA_ACCORD_V2_REPRICED_DONE",
+  "task_id": "本地测试未提供",
+  "target_vehicle": "本田 雅阁 2023款 260TURBO 智享版 黑 2024.01",
+  "trisame_count": 10,
+  "processed_reference_count": 3,
+  "reference_selection_rule": "V2：选择 reference_score <= target_score 且最接近目标分的三同车源。",
+  "target_score": 84.0,
+  "references": [
+    {
+      "reference_index": 1,
+      "price_yuan": 113400,
+      "list_price_text": "11.34万",
+      "reference_score": 83.0,
+      "reference_score_trustworthy": true,
+      "field_complete": true,
+      "hard_eliminated": false,
+      "s14_collect_done": true,
+      "v2_eligible_candidate": true,
+      "target_score_minus_reference_score": 1.0,
+      "v2_exclusion_reason": null
+    },
+    {
+      "reference_index": 2,
+      "price_yuan": 116700,
+      "list_price_text": "11.67万",
+      "reference_score": 77.5,
+      "reference_score_trustworthy": true,
+      "field_complete": true,
+      "hard_eliminated": false,
+      "s14_collect_done": true,
+      "v2_eligible_candidate": true,
+      "target_score_minus_reference_score": 6.5,
+      "v2_exclusion_reason": null
+    },
+    {
+      "reference_index": 3,
+      "price_yuan": 120800,
+      "list_price_text": "12.08万",
+      "reference_score": 87.0,
+      "reference_score_trustworthy": true,
+      "field_complete": true,
+      "hard_eliminated": false,
+      "s14_collect_done": false,
+      "v2_eligible_candidate": false,
+      "target_score_minus_reference_score": -3.0,
+      "v2_exclusion_reason": "reference_score_above_target_under_v2_rule"
+    }
+  ],
+  "candidate_reference_pool": [
+    {
+      "reference_index": 1,
+      "price_yuan": 113400,
+      "reference_score": 83.0,
+      "target_score_minus_reference_score": 1.0
+    },
+    {
+      "reference_index": 2,
+      "price_yuan": 116700,
+      "reference_score": 77.5,
+      "target_score_minus_reference_score": 6.5
+    }
+  ],
+  "selected_reference": {
+    "reference_index": 1,
+    "price_yuan": 113400,
+    "list_price_text": "11.34万",
+    "reference_score": 83.0,
+    "target_score_minus_reference_score": 1.0,
+    "selection_reason": "closest_score_not_above_target_then_lower_price_then_canonical_order"
+  },
+  "old_result": {
+    "old_final_reference_index": 3,
+    "old_final_reference_score": 87.0,
+    "old_final_reference_price": 120800,
+    "old_suggested_listing_price": 117800,
+    "old_suggested_acquisition_price": 101736
+  },
+  "pricing": {
+    "status": "priced",
+    "base_reference_price_yuan": 113400,
+    "guazi_reference_price_yuan": 113400,
+    "target_guazi_listing_price_yuan": 111700,
+    "guazi_price_yuan": 111700,
+    "guazi_service_fee_yuan": 4500,
+    "guazi_net_payout_yuan": 107200,
+    "guazi_return_price_yuan": 107200,
+    "cost_yuan": 2500,
+    "profit_yuan": 8576,
+    "other_deductions_yuan": 11076,
+    "suggested_acquisition_price_yuan": 96124,
+    "suggested_purchase_price_yuan": 96124,
+    "competition_coefficient": 0.985,
+    "competition_coefficient_reasons": [
+      "price_distribution_adjustment -0.005: price_distribution_slightly_discrete",
+      "price_band_adjustment -0.010: price_band_100000_to_150000"
+    ],
+    "score_gap_note": "selected_reference_score <= target_score; score_gap_adjustment=0 under V2 reference rule",
+    "manual_review_required": false,
+    "manual_review_reasons": []
+  },
+  "template": {
+    "pricing_status": "HONDA_ACCORD_V2_REPRICED_DONE",
+    "task_id": "本地测试未提供",
+    "target_vehicle": "本田 雅阁 2023款 260TURBO 智享版 黑 2024.01",
+    "trisame_count": 10,
+    "processed_reference_count": 3,
+    "reference_selection_rule": "V2：选择 reference_score <= target_score 且最接近目标分的三同车源。",
+    "final_reference_index": 1,
+    "final_reference_display": "第 1 辆",
+    "final_reference_listing_price_yuan": 113400,
+    "target_score": 84.0,
+    "final_reference_score": 83.0,
+    "target_reference_score_gap": 1.0,
+    "suggested_listing_price_yuan": 111700,
+    "platform_service_fee_yuan": 4500,
+    "estimated_net_payout_yuan": 107200,
+    "suggested_acquisition_price_yuan": 96124,
+    "estimated_total_cost_yuan": 98624,
+    "estimated_profit_yuan": 8576,
+    "auto_pricing_allowed": true,
+    "manual_review_required": false,
+    "manual_review_reason": "无",
+    "remarks": "旧规则选择第 3 辆 87 分，是因为旧规则允许 reference_score >= target_score。V2 规则不允许选择高于目标车分数的参考车，因此排除第 3 辆 87 分，改选第 1 辆 83 分，分差 1。selected_reference_score <= target_score 时，score_gap_adjustment=0，不自动加价。"
+  }
+}

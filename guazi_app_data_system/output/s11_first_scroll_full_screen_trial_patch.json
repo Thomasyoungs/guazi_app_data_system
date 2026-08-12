@@ -1,0 +1,75 @@
+{
+  "status": "S11_FIRST_SCROLL_FULL_SCREEN_TRIAL_PATCHED",
+  "task": "PATCH_ONLY_S11_FIRST_SCROLL_FULL_SCREEN_TRIAL",
+  "contract_document_updated": false,
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "forbidden_scope_touched": false,
+  "summary": "Changed only the first S11_REPORT_SEARCH scroll trial from the previous one-third screen strategy to a full-screen trial request. Existing entry-first check remains: if exact 查看完整报告 is already fully visible and safe in the current S11 XML, no first scroll is performed.",
+  "implementation": {
+    "strategy": "full_screen_trial",
+    "s11_first_scroll_screen_ratio": 1.0,
+    "changed_branch": "_s11_report_scroll_points(search_scroll_mode='first')",
+    "first_scroll": {
+      "requested_distance": "screen_height * 1.0",
+      "gesture_start_y_ratio": 0.9,
+      "gesture_end_y_min_ratio": 0.06,
+      "duration_ms": 1050,
+      "scroll_mode": "first_full_screen_report_entry_scroll"
+    },
+    "later_scrolls": {
+      "unchanged": true,
+      "mode": "small",
+      "approx_ratio": 0.18
+    },
+    "added_or_confirmed_fields": [
+      "s11_first_scroll_strategy",
+      "s11_first_scroll_screen_ratio",
+      "s11_first_scroll_requested_distance_px",
+      "s11_first_scroll_step_px",
+      "s11_first_scroll_done",
+      "s11_report_search_iterations"
+    ]
+  },
+  "preserved_rules": [
+    "Current-screen exact 查看完整报告 safe click is checked before scrolling",
+    "Fresh screenshot/XML is captured after every scroll",
+    "Fresh evidence pair check remains active",
+    "S10 stale XML detection remains active",
+    "S11 internal screenshot/XML visible-region mismatch check remains active",
+    "Unsafe report-entry reposition remains active",
+    "No normal/fine/backtrack weak-signal mainline is restored",
+    "No OCR",
+    "No visual recognition fallback",
+    "No screenshot-coordinate click",
+    "No weak-signal click"
+  ],
+  "validation": {
+    "py_compile": {
+      "status": "passed",
+      "command": "python -m py_compile scripts/runtime_s10_to_s16_mainline.py"
+    },
+    "module_import": {
+      "status": "passed",
+      "output": "IMPORT_OK"
+    },
+    "offline_validation": {
+      "status": "passed",
+      "all_passed": true,
+      "path": "output/s11_first_scroll_full_screen_trial_offline_validation.json",
+      "cases": [
+        "A: entry already visible and safe -> no first scroll needed, direct safe-click gate",
+        "B: no entry -> first scroll uses full_screen_trial with requested ratio 1.0",
+        "C: after first scroll fresh pair evidence is still produced",
+        "D: after first scroll S11 internal visible-region mismatch check remains available",
+        "E: later search remains fixed small scroll",
+        "F: unsafe entry still routes to unsafe reposition gate",
+        "G: normal/fine/backtrack weak-signal mainline is not restored",
+        "H: no OCR / visual / screenshot-coordinate click path added",
+        "I: S10/S12/S13/S14/metal_deduct not changed by this trial patch"
+      ]
+    }
+  },
+  "real_device_run_after_patch": "pending"
+}

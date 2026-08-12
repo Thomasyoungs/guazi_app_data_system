@@ -1,0 +1,201 @@
+{
+  "status": "S11_INTERNAL_XML_SCREENSHOT_REGION_MISMATCH_OFFLINE_VALIDATION_PASSED",
+  "cases": [
+    {
+      "case": "A_internal_mismatch_no_report_context",
+      "passed": true,
+      "pair": {
+        "fresh_pair_id": "7283e93e12b12a91",
+        "action_context": "S11_REPORT_SEARCH",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\_s11_internal_mismatch_validation_tmp\\case_a_internal_mismatch.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\_s11_internal_mismatch_validation_tmp\\case_a_internal_mismatch.xml",
+        "xml_dump_ok": true,
+        "xml_mtime_valid": true,
+        "page_identity_check": "S11_XML_ACCEPTABLE_FOR_REPORT_SEARCH",
+        "s11_xml_stale": false,
+        "s11_xml_s10_strong_signals": [],
+        "s11_xml_s12_strong_signals": [
+          "车身外观"
+        ],
+        "fresh_evidence_pair_ok": true
+      },
+      "check": {
+        "s11_internal_visible_region_check": true,
+        "s11_internal_visible_region_mismatch": true,
+        "s11_internal_visible_region_mismatch_reason": "s11_report_search_lower_region_without_report_context_markers_in_xml",
+        "s11_internal_lower_area_markers_in_xml": [
+          "检测说明",
+          "车身外观",
+          "车身骨架",
+          "重大事故"
+        ],
+        "s11_internal_lower_area_marker_count": 4,
+        "s11_fresh_pair_valid_after_internal_check": false,
+        "s11_report_context_markers_in_xml": [],
+        "s11_report_context_marker_count": 0
+      }
+    },
+    {
+      "case": "B_redump_entry_safe_clickable",
+      "passed": true,
+      "visibility": {
+        "exact_report_entry_seen": true,
+        "viewport_bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "bounds_source": "xml_visible_bounds",
+        "screen_height": 2712,
+        "safe_top_y": 135,
+        "safe_bottom_y": 2223,
+        "safe_bottom_source": "screen_height_82_percent",
+        "bottom_bar_detected": false,
+        "bottom_bar_bounds": null,
+        "bottom_action_hits": [],
+        "report_entry_bounds": [
+          80,
+          2000,
+          597,
+          2120
+        ],
+        "node_height": 120,
+        "within_screen": true,
+        "node_height_normal": true,
+        "below_safe_bottom": false,
+        "overlapped_bottom_bar": false,
+        "too_close_to_bottom": false,
+        "above_safe_top": false,
+        "exact_report_entry_fully_visible": true,
+        "exact_report_entry_in_safe_click_region": true,
+        "reason": "fully_visible_safe"
+      }
+    },
+    {
+      "case": "C_redump_still_mismatch_stop",
+      "passed": true,
+      "expected_stop": "S11_INTERNAL_XML_SCREENSHOT_VISIBLE_REGION_MISMATCH"
+    },
+    {
+      "case": "D_entry_unsafe_reposition",
+      "passed": true,
+      "visibility": {
+        "exact_report_entry_seen": true,
+        "viewport_bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "bounds_source": "xml_visible_bounds",
+        "screen_height": 2712,
+        "safe_top_y": 135,
+        "safe_bottom_y": 2223,
+        "safe_bottom_source": "screen_height_82_percent",
+        "bottom_bar_detected": false,
+        "bottom_bar_bounds": null,
+        "bottom_action_hits": [],
+        "report_entry_bounds": [
+          80,
+          2320,
+          597,
+          2450
+        ],
+        "node_height": 130,
+        "within_screen": true,
+        "node_height_normal": true,
+        "below_safe_bottom": true,
+        "overlapped_bottom_bar": false,
+        "too_close_to_bottom": true,
+        "above_safe_top": false,
+        "exact_report_entry_fully_visible": false,
+        "exact_report_entry_in_safe_click_region": false,
+        "reason": "below_safe_bottom,too_close_to_bottom"
+      }
+    },
+    {
+      "case": "E_entry_safe_direct_click_gate",
+      "passed": true,
+      "visibility": {
+        "exact_report_entry_seen": true,
+        "viewport_bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "bounds_source": "xml_visible_bounds",
+        "screen_height": 2712,
+        "safe_top_y": 135,
+        "safe_bottom_y": 2223,
+        "safe_bottom_source": "screen_height_82_percent",
+        "bottom_bar_detected": false,
+        "bottom_bar_bounds": null,
+        "bottom_action_hits": [],
+        "report_entry_bounds": [
+          80,
+          2000,
+          597,
+          2120
+        ],
+        "node_height": 120,
+        "within_screen": true,
+        "node_height_normal": true,
+        "below_safe_bottom": false,
+        "overlapped_bottom_bar": false,
+        "too_close_to_bottom": false,
+        "above_safe_top": false,
+        "exact_report_entry_fully_visible": true,
+        "exact_report_entry_in_safe_click_region": true,
+        "reason": "fully_visible_safe"
+      }
+    },
+    {
+      "case": "F_s10_stale_detection_no_regression",
+      "passed": true,
+      "pair": {
+        "fresh_pair_id": "d9d8215b445405fd",
+        "action_context": "S11_REPORT_SEARCH",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\_s11_internal_mismatch_validation_tmp\\case_f_s10_stale.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\_s11_internal_mismatch_validation_tmp\\case_f_s10_stale.xml",
+        "xml_dump_ok": true,
+        "xml_mtime_valid": true,
+        "page_identity_check": "STALE_S10_XML_IN_S11_REPORT_SEARCH",
+        "s11_xml_stale": true,
+        "s11_xml_s10_strong_signals": [
+          "价格从低到高",
+          "品牌专区"
+        ],
+        "s11_xml_s12_strong_signals": [],
+        "fresh_evidence_pair_ok": false
+      }
+    },
+    {
+      "case": "G_no_ocr_no_coords_weak_signal_not_entry",
+      "passed": true,
+      "node_found": false
+    },
+    {
+      "case": "H_actual_ref2_artifact_detects_internal_mismatch",
+      "passed": true,
+      "check": {
+        "s11_internal_visible_region_check": true,
+        "s11_internal_visible_region_mismatch": true,
+        "s11_internal_visible_region_mismatch_reason": "s11_report_search_lower_region_without_report_context_markers_in_xml",
+        "s11_internal_lower_area_markers_in_xml": [
+          "外观、内饰检测视频",
+          "检测说明",
+          "车身外观",
+          "车身骨架",
+          "重大事故"
+        ],
+        "s11_internal_lower_area_marker_count": 5,
+        "s11_fresh_pair_valid_after_internal_check": false,
+        "s11_report_context_markers_in_xml": [],
+        "s11_report_context_marker_count": 0
+      }
+    }
+  ],
+  "all_passed": true
+}

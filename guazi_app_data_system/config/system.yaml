@@ -1,0 +1,59 @@
+{
+    "project_name":  "guazi_app_data_system",
+    "app_display_name":  "瓜子二手车",
+    "target_app":  {
+                       "required_display_name":  "瓜子二手车",
+                       "require_exact_label_match":  true,
+                       "require_single_verified_match":  true,
+                       "allow_keyword_guess":  false,
+                       "allow_manual_foreground_reverse_lookup":  false,
+                       "auto_wake_device_before_launch":  true,
+                       "excluded_packages":  [
+                                                 "com.guazi.android.chesupai"
+                                             ]
+                   },
+    "timeouts":  {
+                     "launch_wait_seconds":  8,
+                     "page_wait_seconds":  5,
+                     "ad_wait_seconds":  8
+                 },
+    "paths":  {
+                  "audit_log":  "logs/audit.jsonl",
+                  "issue_log":  "logs/issues.jsonl",
+                  "result_json":  "output/result.json",
+                  "feedback_report":  "output/execution_feedback_report.md",
+                  "screenshots":  "artifacts/screenshots"
+              },
+    "runtime":  {
+                    "default_mode":  "simulate",
+                    "ocr_enabled":  false,
+                    "uiautomator_enabled":  false,
+                    "allow_contacts_or_seller_actions":  false,
+                    "official_input_source":  "feishu_api",
+                    "temporary_real_task_source":  "feishu_export",
+                    "mock_input_source":  "mock",
+                    "current_task_path":  "input/current_target_task.json",
+                    "local_json_usage":  "simulation_and_offline_regression_only",
+                    "mock_allows_real_device_operation":  false,
+                    "feishu_export_allows_real_device_operation":  true
+                },
+    "screenshot_policy":  {
+                              "allow_required_flow_screenshots":  true,
+                              "allow_exception_screenshots":  true,
+                              "allow_unrelated_page_screenshots":  false,
+                              "usage":  [
+                                            "page_recognition",
+                                            "exception_review",
+                                            "knowledge_base_learning"
+                                        ]
+                          },
+    "current_device_gate":  {
+                                "adb_unauthorized_blocks_app_flow":  true,
+                                "next_steps_only":  [
+                                                        "wait_for_phone_usb_debug_rsa_authorization",
+                                                        "rerun_check_phone_ps1",
+                                                        "rerun_start_app_ps1_after_device_status_is_device",
+                                                        "then_confirm_package_and_calibrate_start_page"
+                                                    ]
+                            }
+}

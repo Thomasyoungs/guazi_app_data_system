@@ -1,0 +1,471 @@
+{
+  "status": "S11_REPORT_ENTRY_OVERSHOT_AFTER_FULL_SCREEN_SCROLL",
+  "script_final_status": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+  "script_issue_code": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+  "auto_pricing_success_path_verified": false,
+  "first_stage": {
+    "status": "S10_READY",
+    "fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+    "reliable_s10": true,
+    "price_asc": true
+  },
+  "second_stage": {
+    "started": true,
+    "reached_s16": false,
+    "entered_reference_index": 1,
+    "reference_price": "11.39万",
+    "transfer_count_text": "过户1次",
+    "parsed_transfer_count": 1,
+    "stop_code": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+    "latest_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_5_20260517_182621.png",
+    "latest_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_5_20260517_182621.xml"
+  },
+  "s11_first_scroll_trial": {
+    "patched": true,
+    "strategy": "full_screen_trial",
+    "requested_screen_ratio": 1.0,
+    "first_scroll_observed": {
+      "sequence": 17,
+      "action_id": "first_full_screen_trial_scroll_to_report_entry",
+      "scroll_mode": "first_full_screen_report_entry_scroll",
+      "search_mode": "first",
+      "distance_px": 2278,
+      "distance_ratio": 0.84,
+      "requested_distance_px": 2712,
+      "first_scroll_strategy": "full_screen_trial",
+      "first_scroll_screen_ratio": 1.0,
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260517_182540.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260517_182541_compressed.xml"
+    },
+    "total_scrolls": 5,
+    "report_entry_found_iteration": null,
+    "report_entry_clicked_iteration": null,
+    "s11_report_search_elapsed_ms": 41099,
+    "stale_xml_triggered": false,
+    "internal_mismatch_triggered": false,
+    "fresh_pair_failed": false,
+    "overshoot_evidence": [
+      {
+        "sequence": 20,
+        "step": "S11_INTERNAL_VISIBLE_REGION_PAIR_CHECK",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_1_20260517_182554.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_1_20260517_182554.xml",
+        "fresh_evidence_pair_ok": true,
+        "s11_xml_stale": false,
+        "s11_internal_visible_region_mismatch": false,
+        "recognized_page": "S10",
+        "exact_report_entry_seen": null,
+        "s11_report_context_markers_in_xml": [
+          "报告",
+          "检测报告"
+        ],
+        "s11_internal_lower_area_markers_in_xml": []
+      },
+      {
+        "sequence": 21,
+        "step": "S11_REPORT_ENTRY_VISIBILITY_CHECK",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_1_20260517_182554.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_1_20260517_182554.xml",
+        "fresh_evidence_pair_ok": true,
+        "s11_xml_stale": false,
+        "s11_internal_visible_region_mismatch": null,
+        "recognized_page": "S10",
+        "exact_report_entry_seen": false,
+        "s11_report_context_markers_in_xml": null,
+        "s11_internal_lower_area_markers_in_xml": null
+      },
+      {
+        "sequence": 27,
+        "step": "S11_INTERNAL_VISIBLE_REGION_PAIR_CHECK",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260517_182600.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260517_182600.xml",
+        "fresh_evidence_pair_ok": true,
+        "s11_xml_stale": false,
+        "s11_internal_visible_region_mismatch": false,
+        "recognized_page": "S14",
+        "exact_report_entry_seen": null,
+        "s11_report_context_markers_in_xml": [
+          "报告",
+          "检测报告"
+        ],
+        "s11_internal_lower_area_markers_in_xml": []
+      },
+      {
+        "sequence": 28,
+        "step": "S11_REPORT_ENTRY_VISIBILITY_CHECK",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260517_182600.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260517_182600.xml",
+        "fresh_evidence_pair_ok": true,
+        "s11_xml_stale": false,
+        "s11_internal_visible_region_mismatch": null,
+        "recognized_page": "S14",
+        "exact_report_entry_seen": false,
+        "s11_report_context_markers_in_xml": null,
+        "s11_internal_lower_area_markers_in_xml": null
+      },
+      {
+        "sequence": 34,
+        "step": "S11_INTERNAL_VISIBLE_REGION_PAIR_CHECK",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260517_182607.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260517_182607.xml",
+        "fresh_evidence_pair_ok": true,
+        "s11_xml_stale": false,
+        "s11_internal_visible_region_mismatch": false,
+        "recognized_page": "S14",
+        "exact_report_entry_seen": null,
+        "s11_report_context_markers_in_xml": [
+          "报告",
+          "检测报告"
+        ],
+        "s11_internal_lower_area_markers_in_xml": [
+          "外观、内饰检测视频",
+          "车身外观"
+        ]
+      },
+      {
+        "sequence": 35,
+        "step": "S11_REPORT_ENTRY_VISIBILITY_CHECK",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260517_182607.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260517_182607.xml",
+        "fresh_evidence_pair_ok": true,
+        "s11_xml_stale": false,
+        "s11_internal_visible_region_mismatch": null,
+        "recognized_page": "S14",
+        "exact_report_entry_seen": false,
+        "s11_report_context_markers_in_xml": null,
+        "s11_internal_lower_area_markers_in_xml": null
+      },
+      {
+        "sequence": 41,
+        "step": "S11_INTERNAL_VISIBLE_REGION_PAIR_CHECK",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_4_20260517_182615.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_4_20260517_182615.xml",
+        "fresh_evidence_pair_ok": true,
+        "s11_xml_stale": false,
+        "s11_internal_visible_region_mismatch": false,
+        "recognized_page": "S14",
+        "exact_report_entry_seen": null,
+        "s11_report_context_markers_in_xml": [],
+        "s11_internal_lower_area_markers_in_xml": [
+          "外观、内饰检测视频",
+          "检测说明",
+          "车身外观",
+          "车身骨架",
+          "重大事故"
+        ]
+      },
+      {
+        "sequence": 42,
+        "step": "S11_REPORT_ENTRY_VISIBILITY_CHECK",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_4_20260517_182615.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_4_20260517_182615.xml",
+        "fresh_evidence_pair_ok": true,
+        "s11_xml_stale": false,
+        "s11_internal_visible_region_mismatch": null,
+        "recognized_page": "S14",
+        "exact_report_entry_seen": false,
+        "s11_report_context_markers_in_xml": null,
+        "s11_internal_lower_area_markers_in_xml": null
+      }
+    ]
+  },
+  "s11_scrolls": [
+    {
+      "sequence": 17,
+      "action_id": "first_full_screen_trial_scroll_to_report_entry",
+      "scroll_mode": "first_full_screen_report_entry_scroll",
+      "search_mode": "first",
+      "distance_px": 2278,
+      "distance_ratio": 0.84,
+      "requested_distance_px": 2712,
+      "first_scroll_strategy": "full_screen_trial",
+      "first_scroll_screen_ratio": 1.0,
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260517_182540.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260517_182541_compressed.xml"
+    },
+    {
+      "sequence": 24,
+      "action_id": "small_scroll_to_report_entry",
+      "scroll_mode": "small_report_entry_scroll",
+      "search_mode": "small",
+      "distance_px": 488,
+      "distance_ratio": 0.1799,
+      "requested_distance_px": null,
+      "first_scroll_strategy": "",
+      "first_scroll_screen_ratio": null,
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_1_20260517_182554.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_1_20260517_182554.xml"
+    },
+    {
+      "sequence": 31,
+      "action_id": "small_scroll_to_report_entry",
+      "scroll_mode": "small_report_entry_scroll",
+      "search_mode": "small",
+      "distance_px": 488,
+      "distance_ratio": 0.1799,
+      "requested_distance_px": null,
+      "first_scroll_strategy": "",
+      "first_scroll_screen_ratio": null,
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260517_182600.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260517_182600.xml"
+    },
+    {
+      "sequence": 38,
+      "action_id": "small_scroll_to_report_entry",
+      "scroll_mode": "small_report_entry_scroll",
+      "search_mode": "small",
+      "distance_px": 488,
+      "distance_ratio": 0.1799,
+      "requested_distance_px": null,
+      "first_scroll_strategy": "",
+      "first_scroll_screen_ratio": null,
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260517_182607.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260517_182607.xml"
+    },
+    {
+      "sequence": 45,
+      "action_id": "small_scroll_to_report_entry",
+      "scroll_mode": "small_report_entry_scroll",
+      "search_mode": "small",
+      "distance_px": 488,
+      "distance_ratio": 0.1799,
+      "requested_distance_px": null,
+      "first_scroll_strategy": "",
+      "first_scroll_screen_ratio": null,
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_4_20260517_182615.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_4_20260517_182615.xml"
+    }
+  ],
+  "s11_fresh_pair_and_visibility_checks": [
+    {
+      "sequence": 12,
+      "step": "S11_FRESH_EVIDENCE_PAIR_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260517_182540.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260517_182541_compressed.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": null,
+      "recognized_page": null,
+      "exact_report_entry_seen": null,
+      "s11_report_context_markers_in_xml": null,
+      "s11_internal_lower_area_markers_in_xml": null
+    },
+    {
+      "sequence": 13,
+      "step": "S11_INTERNAL_VISIBLE_REGION_PAIR_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260517_182540.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260517_182541_compressed.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": false,
+      "recognized_page": "S11",
+      "exact_report_entry_seen": null,
+      "s11_report_context_markers_in_xml": [
+        "报告",
+        "检测报告"
+      ],
+      "s11_internal_lower_area_markers_in_xml": []
+    },
+    {
+      "sequence": 14,
+      "step": "S11_REPORT_ENTRY_VISIBILITY_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260517_182540.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260517_182541_compressed.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": null,
+      "recognized_page": "S11",
+      "exact_report_entry_seen": false,
+      "s11_report_context_markers_in_xml": null,
+      "s11_internal_lower_area_markers_in_xml": null
+    },
+    {
+      "sequence": 19,
+      "step": "S11_FRESH_EVIDENCE_PAIR_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_1_20260517_182554.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_1_20260517_182554.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": null,
+      "recognized_page": null,
+      "exact_report_entry_seen": null,
+      "s11_report_context_markers_in_xml": null,
+      "s11_internal_lower_area_markers_in_xml": null
+    },
+    {
+      "sequence": 20,
+      "step": "S11_INTERNAL_VISIBLE_REGION_PAIR_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_1_20260517_182554.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_1_20260517_182554.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": false,
+      "recognized_page": "S10",
+      "exact_report_entry_seen": null,
+      "s11_report_context_markers_in_xml": [
+        "报告",
+        "检测报告"
+      ],
+      "s11_internal_lower_area_markers_in_xml": []
+    },
+    {
+      "sequence": 21,
+      "step": "S11_REPORT_ENTRY_VISIBILITY_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_1_20260517_182554.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_1_20260517_182554.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": null,
+      "recognized_page": "S10",
+      "exact_report_entry_seen": false,
+      "s11_report_context_markers_in_xml": null,
+      "s11_internal_lower_area_markers_in_xml": null
+    },
+    {
+      "sequence": 26,
+      "step": "S11_FRESH_EVIDENCE_PAIR_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260517_182600.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260517_182600.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": null,
+      "recognized_page": null,
+      "exact_report_entry_seen": null,
+      "s11_report_context_markers_in_xml": null,
+      "s11_internal_lower_area_markers_in_xml": null
+    },
+    {
+      "sequence": 27,
+      "step": "S11_INTERNAL_VISIBLE_REGION_PAIR_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260517_182600.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260517_182600.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": false,
+      "recognized_page": "S14",
+      "exact_report_entry_seen": null,
+      "s11_report_context_markers_in_xml": [
+        "报告",
+        "检测报告"
+      ],
+      "s11_internal_lower_area_markers_in_xml": []
+    },
+    {
+      "sequence": 28,
+      "step": "S11_REPORT_ENTRY_VISIBILITY_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260517_182600.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260517_182600.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": null,
+      "recognized_page": "S14",
+      "exact_report_entry_seen": false,
+      "s11_report_context_markers_in_xml": null,
+      "s11_internal_lower_area_markers_in_xml": null
+    },
+    {
+      "sequence": 33,
+      "step": "S11_FRESH_EVIDENCE_PAIR_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260517_182607.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260517_182607.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": null,
+      "recognized_page": null,
+      "exact_report_entry_seen": null,
+      "s11_report_context_markers_in_xml": null,
+      "s11_internal_lower_area_markers_in_xml": null
+    },
+    {
+      "sequence": 34,
+      "step": "S11_INTERNAL_VISIBLE_REGION_PAIR_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260517_182607.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260517_182607.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": false,
+      "recognized_page": "S14",
+      "exact_report_entry_seen": null,
+      "s11_report_context_markers_in_xml": [
+        "报告",
+        "检测报告"
+      ],
+      "s11_internal_lower_area_markers_in_xml": [
+        "外观、内饰检测视频",
+        "车身外观"
+      ]
+    },
+    {
+      "sequence": 35,
+      "step": "S11_REPORT_ENTRY_VISIBILITY_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260517_182607.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260517_182607.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": null,
+      "recognized_page": "S14",
+      "exact_report_entry_seen": false,
+      "s11_report_context_markers_in_xml": null,
+      "s11_internal_lower_area_markers_in_xml": null
+    },
+    {
+      "sequence": 40,
+      "step": "S11_FRESH_EVIDENCE_PAIR_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_4_20260517_182615.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_4_20260517_182615.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": null,
+      "recognized_page": null,
+      "exact_report_entry_seen": null,
+      "s11_report_context_markers_in_xml": null,
+      "s11_internal_lower_area_markers_in_xml": null
+    },
+    {
+      "sequence": 41,
+      "step": "S11_INTERNAL_VISIBLE_REGION_PAIR_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_4_20260517_182615.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_4_20260517_182615.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": false,
+      "recognized_page": "S14",
+      "exact_report_entry_seen": null,
+      "s11_report_context_markers_in_xml": [],
+      "s11_internal_lower_area_markers_in_xml": [
+        "外观、内饰检测视频",
+        "检测说明",
+        "车身外观",
+        "车身骨架",
+        "重大事故"
+      ]
+    },
+    {
+      "sequence": 42,
+      "step": "S11_REPORT_ENTRY_VISIBILITY_CHECK",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_4_20260517_182615.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_4_20260517_182615.xml",
+      "fresh_evidence_pair_ok": true,
+      "s11_xml_stale": false,
+      "s11_internal_visible_region_mismatch": null,
+      "recognized_page": "S14",
+      "exact_report_entry_seen": false,
+      "s11_report_context_markers_in_xml": null,
+      "s11_internal_lower_area_markers_in_xml": null
+    }
+  ],
+  "conclusion": {
+    "runtime_result": "failed_before_S16",
+    "failure_classification": "S11_REPORT_ENTRY_OVERSHOT_AFTER_FULL_SCREEN_SCROLL",
+    "reason": "The first full-screen trial scroll executed, but the flow did not find exact XML ??????. Later checks show the search reached lower condition/report sections and at least one internal check recognized the page as S14, indicating the full-screen trial did not improve stability for this run and likely overshot the intended report-entry zone.",
+    "recommendation": "Do not promote the full-screen first-scroll trial to the page contract based on this run. Consider reverting the trial or auditing the S11 entry location with a narrower first-scroll strategy before further real-device runs."
+  },
+  "artifacts": {
+    "patch_report_md": "output/s11_first_scroll_full_screen_trial_patch_latest.md",
+    "patch_report_json": "output/s11_first_scroll_full_screen_trial_patch.json",
+    "offline_validation_json": "output/s11_first_scroll_full_screen_trial_offline_validation.json"
+  },
+  "code_modified_after_runtime": false,
+  "real_device_run": true,
+  "created_at": "2026-05-17T18:29:40.062189"
+}

@@ -1,0 +1,32 @@
+{
+  "report_name": "nissan_terra_reference1_exit_contract_diagnosis",
+  "generated_at": "2026-05-13T17:32:04",
+  "target_fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "reference_index": 1,
+  "reference_title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+  "reference_price_yuan": 84800,
+  "reference_metadata": "2021年 | 12.5万公里 | 安庆",
+  "reference_score": 78.0,
+  "target_score": 92.0,
+  "fields_complete": true,
+  "s11_page_confirmed": true,
+  "s12_entered": true,
+  "s13_collected": true,
+  "s14_collected": true,
+  "s15_entered": true,
+  "disqualified_by_accident_or_structure_risk": false,
+  "return_to_reliable_s10_after_reference1": true,
+  "next_reference_index_after_reference1": 2,
+  "classification": "REFERENCE_1_SCORE_BELOW_TARGET_CONTINUE_VALID",
+  "applied_contract": "S15_REFERENCE_SCORE_GATE_CONTINUE_NEXT",
+  "contract_decision": "CONTINUE_NEXT_REFERENCE",
+  "reference_1_state_reset_valid": true,
+  "state_reset_checks": {
+    "report_search_state_cleared_for_next_reference": true,
+    "s14_state_cleared_for_next_reference": true,
+    "visited_s14_keys_not_leaked_to_excluded_refs": true,
+    "page_signature_history_not_used_as_decision_for_ref2_ref3": true
+  },
+  "conclusion": "Reference #1 was fully collected and exited by S15 score gate because reference_score is below target_score; continuing to reference #2 is contract-valid.",
+  "final_status": "NISSAN_TERRA_REFERENCE1_EXIT_CONTRACT_DIAGNOSIS_DONE"
+}

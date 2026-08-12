@@ -1,0 +1,99 @@
+{
+  "status": "PATCH_ONLY_S10_TRISAME_SOURCE_BOUNDARY_AND_TITLE_FILTER_DONE",
+  "changed_files": [
+    "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s01_to_s10_mainline.py",
+    "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py"
+  ],
+  "changed_pricing": false,
+  "changed_service_fee_rule": false,
+  "changed_s11_s12_s13_s14_logic": false,
+  "changed_page_contract_doc": false,
+  "changed_config": false,
+  "py_compile": {
+    "status": "passed",
+    "command": "python -m py_compile scripts/runtime_s01_to_s10_mainline.py scripts/runtime_s10_to_s16_mainline.py"
+  },
+  "patch": {
+    "target_title_pre_filter": true,
+    "non_trisame_section_boundary_detection": true,
+    "first_stage_clean_trisame_count": true,
+    "second_stage_trisame_pool_cap": true,
+    "canonical_order_sequence": [
+      "parse_live_reliable_s10_candidate_cards",
+      "detect_non_trisame_section_boundary",
+      "exclude_cards_after_boundary",
+      "target_title_hard_filter",
+      "card_completeness_gate",
+      "build_canonical_reference_order",
+      "sort_price_asc_same_price_mileage_desc_live_order_asc"
+    ]
+  },
+  "offline_validation": {
+    "tuang_xml": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260509_161743.xml",
+    "tuang_raw_visible_cards_count": 22,
+    "tuang_trisame_cards_count": 2,
+    "tuang_excluded_non_trisame_cards_count": 20,
+    "tuang_non_trisame_section_title": "找不到想要的车",
+    "id3_excluded": true,
+    "id3_in_canonical_reference_order": false,
+    "canonical_reference_order_titles": [
+      "大众 途昂 2017款 330TSI 两驱豪华版",
+      "大众 途昂 2017款 330TSI 两驱豪华版"
+    ],
+    "historical_regression": {
+      "focus_target_cards_preserved": true,
+      "toyota_yaris_target_cards_preserved": true,
+      "santana_target_cards_preserved": true
+    }
+  },
+  "real_device_validation": {
+    "first_stage": {
+      "status": "S10_READY",
+      "fingerprint": "大众|途昂|2017款|330TSI 两驱豪华版|白|2018.07",
+      "raw_visible_cards_count": 22,
+      "trisame_count": 2,
+      "trisame_cards_count": 2,
+      "excluded_non_trisame_cards_count": 20,
+      "non_trisame_section_title": "找不到想要的车",
+      "same_source_cards": [
+        {
+          "title": "大众 途昂 2017款 330TSI 两驱豪华版",
+          "price": "10.89万",
+          "metadata": "2018年 | 5.65万公里 | 重庆"
+        },
+        {
+          "title": "大众 途昂 2017款 330TSI 两驱豪华版",
+          "price": "11.79万",
+          "metadata": "2018年 | 12.22万公里 | 齐齐哈尔"
+        }
+      ]
+    },
+    "second_stage": {
+      "status": "FULL_CHAIN_PRICED_DONE",
+      "fingerprint": "大众|途昂|2017款|330TSI 两驱豪华版|白|2018.07",
+      "selected_reference_index": 1,
+      "selected_card_title": "大众 途昂 2017款 330TSI 两驱豪华版",
+      "selected_card_price": "10.89万",
+      "selected_card_metadata": "2018年 | 5.65万公里 | 重庆",
+      "reference_score": 96.0,
+      "target_score": 91.0,
+      "reference_score_gte_target_score": true,
+      "id3_clicked": false,
+      "id3_in_reference_history": false
+    },
+    "pricing": {
+      "guazi_price_yuan": 108900,
+      "guazi_service_fee_yuan": 4500,
+      "guazi_net_payout_yuan": 104400,
+      "suggested_acquisition_price_yuan": 93548,
+      "old_95_percent_rule_used": false
+    }
+  },
+  "result_files": {
+    "result_s01_to_s10": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s01_to_s10.json",
+    "result_s10_to_s16": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+    "result": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result.json"
+  },
+  "raw_xml_large_fields_in_result_json": false,
+  "baseline_files_overwritten": false
+}

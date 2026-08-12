@@ -1,0 +1,39 @@
+{
+  "status": "V1_26_S06_S10_S14_CONTRACT_PATCHED",
+  "created_at": "2026-05-13T03:23:45.158016+00:00",
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py",
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "target_fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "s06_fast_gate": {
+    "enabled": true,
+    "rule": "S05_CONFIRM_TO_S06 + S05_DONE + model config bounds + no strong error signals",
+    "allowed_action": "S06_ONLY_ALLOWED_ACTION_CLICK_MODEL_CONFIG",
+    "offline_positive_passed": true,
+    "offline_negative_s05_not_done_passed": true
+  },
+  "s10_handoff_fast_gate": {
+    "enabled": true,
+    "first_stage_ready": true,
+    "rule": "first stage S10_READY handoff + live reliable S10 + three core elements + strong error exclusion",
+    "offline_first_stage_evidence_passed": true
+  },
+  "s14_image_sequence_completion": {
+    "single_image_rule": "page_label n/n where n=1 plus non-empty caption => S14_COLLECT_DONE",
+    "raw_key_fallback": "RAW_KEY::raw_page_label::raw_first_line",
+    "semantic_signature_priority": true,
+    "image_hash_auxiliary_only": true,
+    "caption_missing_stop_code": "S14_CAPTION_EXTRACTION_MISSING",
+    "forbidden_region_stop_code": "S14_FORBIDDEN_REGION_HIT",
+    "offline_nissan_failure_replay_passed": true,
+    "offline_multi_image_passed": true,
+    "offline_caption_missing_passed": true
+  },
+  "py_compile": {
+    "runtime_s01_to_s10_mainline.py": "passed",
+    "runtime_s10_to_s16_mainline.py": "passed"
+  },
+  "large_fields_written": false,
+  "next_step": "continue Nissan Terra full chain"
+}

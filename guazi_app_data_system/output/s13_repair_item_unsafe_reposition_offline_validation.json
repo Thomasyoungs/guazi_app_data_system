@@ -1,0 +1,71 @@
+{
+  "validation_status": "S13_REPAIR_ITEM_UNSAFE_REPOSITION_OFFLINE_VALIDATION_PASSED",
+  "script": "scripts/runtime_s10_to_s16_mainline.py",
+  "py_compile_passed": true,
+  "module_import_passed": true,
+  "all_passed": true,
+  "cases": [
+    {
+      "case": "A",
+      "name": "count_gt_zero_entry_safe",
+      "expected": "direct_click_to_s14_without_reposition",
+      "passed": true,
+      "evidence": "ok click target does not enter _s13_repair_item_needs_reposition"
+    },
+    {
+      "case": "B",
+      "name": "count_gt_zero_entry_below_safe_bottom",
+      "expected": "controlled_reposition_then_recheck",
+      "passed": true,
+      "evidence": "_s13_repair_item_needs_reposition returns true for candidate_unsafe_reasons=['below_safe_bottom']; handle_s13 calls _s13_reposition_repair_item_until_safe before issue recording"
+    },
+    {
+      "case": "C",
+      "name": "after_reposition_still_unsafe",
+      "expected": "S13_REPAIR_ITEM_CLICK_TARGET_NOT_CONFIRMED",
+      "passed": true,
+      "evidence": "bounded two-attempt helper returns original not-ok target/code when safety cannot be confirmed"
+    },
+    {
+      "case": "D",
+      "name": "after_reposition_lost_s13_context",
+      "expected": "S13_REPAIR_DETAIL_REPOSITION_LOST_CONTEXT",
+      "passed": true,
+      "evidence": "helper requires recognized S13, history table detected, and same region count binding after fresh"
+    },
+    {
+      "case": "E",
+      "name": "count_gt_zero_no_entry_candidate",
+      "expected": "S13_REPAIR_DETAIL_ENTRY_NOT_FOUND_or_existing_no_safe_target_stop",
+      "passed": true,
+      "evidence": "empty candidate audit does not trigger reposition and remains a safe stop; no half-visible click is introduced"
+    },
+    {
+      "case": "F",
+      "name": "all_regions_zero",
+      "expected": "no_s14_return_s10_then_s15",
+      "passed": true,
+      "evidence": "patch only executes after count > 0 branch in handle_s13"
+    },
+    {
+      "case": "G",
+      "name": "summary_numbers_not_misread",
+      "expected": "do_not_misread_notice_or_detection_pass_counts",
+      "passed": true,
+      "evidence": "patch does not change _extract_history_repair_count_from_nodes or summary-number exclusions"
+    },
+    {
+      "case": "H",
+      "name": "s11_s12_s14_metal_deduct_no_regression",
+      "expected": "untouched",
+      "passed": true,
+      "evidence": "modified scope limited to S13 action whitelist, S13 unsafe-reposition helper, and handle_s13 unsafe-target branch"
+    }
+  ],
+  "runtime_function_checks": {
+    "needs_reposition_for_below_safe_bottom": true,
+    "needs_reposition_for_safe_target": false,
+    "needs_reposition_for_empty_candidates": false,
+    "s13_reposition_action_allowed": true
+  }
+}

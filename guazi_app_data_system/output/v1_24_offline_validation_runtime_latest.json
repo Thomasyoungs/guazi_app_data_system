@@ -1,0 +1,39 @@
+{
+  "created_at": "2026-05-12T17:24:28",
+  "all_passed": true,
+  "results": [
+    {
+      "case": "s05_config_without_year_negative",
+      "passed": true,
+      "stop_code": "S05_RIGHT_CONFIG_SEARCH_WITHOUT_YEAR_CLICK"
+    },
+    {
+      "case": "s05_right_config_year_belongs_positive",
+      "passed": true
+    },
+    {
+      "case": "s10_nonreliable_negative",
+      "passed": true,
+      "stop_code": "S10_RELIABLE_SOURCE_GATE_NOT_PASSED"
+    },
+    {
+      "case": "s11_missing_report_exclude_positive",
+      "passed": true
+    },
+    {
+      "case": "s11_official_present_negative",
+      "passed": true,
+      "stop_code": "S11_REPORT_MISSING_EXCLUDE_PRECONDITION_NOT_PASSED"
+    },
+    {
+      "case": "evidence_pairing_foreign_terms_warning",
+      "passed": true,
+      "status": "warning_foreign_target_terms_detected",
+      "terms": [
+        "C10",
+        "悦享版",
+        "零跑"
+      ]
+    }
+  ]
+}

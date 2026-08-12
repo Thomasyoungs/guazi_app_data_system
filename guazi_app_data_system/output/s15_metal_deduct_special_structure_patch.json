@@ -1,0 +1,200 @@
+﻿{
+    "report_name":  "s15_metal_deduct_special_structure_patch",
+    "generated_at":  "2026-05-16T15:56:47",
+    "status":  "S15_METAL_DEDUCT_SPECIAL_STRUCTURE_PATCHED",
+    "modified_files":  [
+                           "config/fields.yaml",
+                           "src/guazi_app_data_system/pricing.py"
+                       ],
+    "forbidden_files_untouched":  [
+                                      "scripts/runtime_s01_to_s10_mainline.py",
+                                      "scripts/runtime_s10_to_s16_mainline.py",
+                                      "pricing formula",
+                                      "baseline",
+                                      "config other than fields.yaml scoring.metal_deduct",
+                                      "scoring numeric rules"
+                                  ],
+    "patch_summary":  [
+                          "Added scoring.metal_deduct with the same structure and values as paint_deduct to satisfy the existing ABC柱钣金 branch.",
+                          "Changed the special-structure metal branch from bare scoring[\"metal_deduct\"] to explicit _required_deduct_map validation.",
+                          "No S10/S11/S14 flow logic, pricing formula, competitiveness coefficient, service fee, or baseline files were changed."
+                      ],
+    "rule_value_confirmation":  {
+                                    "abc_metal_rule":  "ABC柱/A柱/B柱/C柱 钣金按机盖钣金同等扣分",
+                                    "existing_code_default_for_front_cover_branch":  3,
+                                    "metal_deduct":  {
+                                                         "default":  1.0,
+                                                         "前盖":  3.0,
+                                                         "后盖":  2.0,
+                                                         "大顶":  5.0
+                                                     },
+                                    "no_new_deduct_strength":  true
+                                },
+    "py_compile":  {
+                       "pricing_py":  true,
+                       "runtime_s10_to_s16":  true
+                   },
+    "offline_validation":  {
+                               "status":  "passed",
+                               "metal_deduct_present":  true,
+                               "metal_deduct":  {
+                                                    "default":  1.0,
+                                                    "前盖":  3.0,
+                                                    "后盖":  2.0,
+                                                    "大顶":  5.0
+                                                },
+                               "cases":  [
+                                             {
+                                                 "reference_index":  2,
+                                                 "expected_previous_score":  83.0,
+                                                 "score_after_patch":  83.0,
+                                                 "score_unchanged":  true,
+                                                 "scored_without_exception":  true,
+                                                 "exception":  null,
+                                                 "components":  {
+                                                                    "body_score":  66.0,
+                                                                    "mileage_score":  0.0,
+                                                                    "transfer_score":  7.0,
+                                                                    "accident_score":  6.0,
+                                                                    "max_amount_score":  4.0
+                                                                },
+                                                 "review_reasons":  [
+
+                                                                    ],
+                                                 "panel_repairs":  [
+                                                                       {
+                                                                           "part":  "左前门",
+                                                                           "damage_type":  "钣金"
+                                                                       },
+                                                                       {
+                                                                           "part":  "左后门",
+                                                                           "damage_type":  "钣金"
+                                                                       },
+                                                                       {
+                                                                           "part":  "后保险杠",
+                                                                           "damage_type":  "钣金"
+                                                                       },
+                                                                       {
+                                                                           "part":  "前保险杠",
+                                                                           "damage_type":  "钣金"
+                                                                       }
+                                                                   ]
+                                             },
+                                             {
+                                                 "reference_index":  3,
+                                                 "expected_previous_score":  76.0,
+                                                 "score_after_patch":  76.0,
+                                                 "score_unchanged":  true,
+                                                 "scored_without_exception":  true,
+                                                 "exception":  null,
+                                                 "components":  {
+                                                                    "body_score":  64.0,
+                                                                    "mileage_score":  0.0,
+                                                                    "transfer_score":  5.5,
+                                                                    "accident_score":  3.5,
+                                                                    "max_amount_score":  3.0
+                                                                },
+                                                 "review_reasons":  [
+
+                                                                    ],
+                                                 "panel_repairs":  [
+                                                                       {
+                                                                           "part":  "左后翼子板",
+                                                                           "damage_type":  "喷漆"
+                                                                       },
+                                                                       {
+                                                                           "part":  "后保险杠",
+                                                                           "damage_type":  "喷漆"
+                                                                       },
+                                                                       {
+                                                                           "part":  "右后翼子板",
+                                                                           "damage_type":  "喷漆"
+                                                                       },
+                                                                       {
+                                                                           "part":  "右后门",
+                                                                           "damage_type":  "喷漆"
+                                                                       },
+                                                                       {
+                                                                           "part":  "ABC柱",
+                                                                           "damage_type":  "喷漆"
+                                                                       },
+                                                                       {
+                                                                           "part":  "前保险杠",
+                                                                           "damage_type":  "喷漆"
+                                                                       }
+                                                                   ]
+                                             },
+                                             {
+                                                 "reference_index":  5,
+                                                 "expected_previous_score":  null,
+                                                 "score_after_patch":  74.5,
+                                                 "score_unchanged":  true,
+                                                 "scored_without_exception":  true,
+                                                 "exception":  null,
+                                                 "components":  {
+                                                                    "body_score":  60.0,
+                                                                    "mileage_score":  0.0,
+                                                                    "transfer_score":  7.0,
+                                                                    "accident_score":  3.5,
+                                                                    "max_amount_score":  4.0
+                                                                },
+                                                 "review_reasons":  [
+
+                                                                    ],
+                                                 "panel_repairs":  [
+                                                                       {
+                                                                           "part":  "左前翼子板",
+                                                                           "damage_type":  "钣金"
+                                                                       },
+                                                                       {
+                                                                           "part":  "左前门",
+                                                                           "damage_type":  "钣金"
+                                                                       },
+                                                                       {
+                                                                           "part":  "ABC柱",
+                                                                           "damage_type":  "钣金"
+                                                                       },
+                                                                       {
+                                                                           "part":  "左后门",
+                                                                           "damage_type":  "钣金"
+                                                                       },
+                                                                       {
+                                                                           "part":  "左后翼子板",
+                                                                           "damage_type":  "钣金"
+                                                                       },
+                                                                       {
+                                                                           "part":  "后保险杠",
+                                                                           "damage_type":  "钣金"
+                                                                       },
+                                                                       {
+                                                                           "part":  "右后翼子板",
+                                                                           "damage_type":  "钣金"
+                                                                       },
+                                                                       {
+                                                                           "part":  "右后门",
+                                                                           "damage_type":  "钣金"
+                                                                       },
+                                                                       {
+                                                                           "part":  "右前翼子板",
+                                                                           "damage_type":  "钣金"
+                                                                       },
+                                                                       {
+                                                                           "part":  "前保险杠",
+                                                                           "damage_type":  "钣金"
+                                                                       }
+                                                                   ]
+                                             }
+                                         ],
+                               "missing_metal_deduct_schema_case":  {
+                                                                        "raised_clear_error":  true,
+                                                                        "exception":  "ValueError: scoring.metal_deduct is required for special-structure damage scoring"
+                                                                    },
+                               "assertions":  {
+                                                  "reference_2_score_preserved_83":  true,
+                                                  "reference_3_score_preserved_76":  true,
+                                                  "reference_5_no_keyerror":  true,
+                                                  "reference_5_components_generated":  true,
+                                                  "missing_config_no_bare_keyerror":  true
+                                              }
+                           }
+}

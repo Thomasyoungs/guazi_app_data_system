@@ -1,0 +1,333 @@
+{
+  "freeze_name": "BASELINE_SANTANA_2021_FULL_CHAIN_PRICED_DONE_202605",
+  "freeze_status": "SANTANA_BASELINE_FREEZE_READY",
+  "final_status": "READ_ONLY_SANTANA_BASELINE_FREEZE_PACKAGE_DONE",
+  "generated_at": "2026-05-09T07:23:00.746Z",
+  "read_only": true,
+  "target_fingerprint": "大众|桑塔纳|2021款|1.5L 自动风尚版|白|2021.05",
+  "baseline_result": {
+    "first_stage_status": "S10_READY",
+    "second_stage_status": "FULL_CHAIN_PRICED_DONE",
+    "result_status": "FULL_CHAIN_PRICED_DONE",
+    "acceptance_status": "SANTANA_FULL_CHAIN_ACCEPTANCE_PASSED",
+    "target_score": 91,
+    "final_reference_index": 5,
+    "selected_reference_score": 96,
+    "guazi_price_yuan": 41600,
+    "guazi_service_fee_yuan": 2500,
+    "guazi_net_payout_yuan": 39100,
+    "guazi_return_price_yuan": 39100,
+    "suggested_purchase_price_yuan": 34472
+  },
+  "freeze_scope": {
+    "required_files": {
+      "scripts/runtime_s01_to_s10_mainline.py": true,
+      "scripts/runtime_s10_to_s16_mainline.py": true,
+      "src/guazi_app_data_system/pricing.py": true,
+      "config/fields.yaml": true,
+      "output/result_s01_to_s10.json": true,
+      "output/result_s10_to_s16.json": true,
+      "output/result.json": true,
+      "output/santana_full_chain_acceptance_report_latest.md": true,
+      "output/santana_full_chain_acceptance_report.json": true,
+      "output/s10_reference_card_completeness_gate_patch_latest.md": true,
+      "output/s13_history_repair_duplicate_zero_parser_patch_report_latest.md": true
+    },
+    "key_artifacts": {
+      "s10_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_reference_card_complete_scroll_1_20260509_145223.png",
+      "s10_xml": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_reference_card_complete_scroll_1_20260509_145223.xml",
+      "selected_reference_s11_xml": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260509_145229_compressed.xml",
+      "selected_reference_s11_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260509_145228.png"
+    },
+    "key_debug_and_screenshot_policy": "Keep logs/artifacts/screenshots; this package does not delete or overwrite baseline artifacts."
+  },
+  "successful_capabilities": {
+    "APP_FORCE_RESTART": true,
+    "first_stage_S01_to_S10": true,
+    "S07_color_age_filter": true,
+    "S09_price_low_to_high": true,
+    "S10_READY_gate": true,
+    "reliable_S10_gate": true,
+    "reference_index_loop": true,
+    "canonical_reference_order": true,
+    "same_price_mileage_desc": true,
+    "complete_card_gate": true,
+    "partial_card_not_clicked": true,
+    "unique_Nth_card_binding": true,
+    "S11_top_image_recognition": true,
+    "report_entry_full_visible_safe_click": true,
+    "S11_TO_S12_stable_wait": true,
+    "S12_priority_over_S14": true,
+    "S13_raw_nodes_bounds_parser": true,
+    "S14_specific_repair_collection": true,
+    "S15_single_reference_score": true,
+    "stop_when_qualified_enter_S16": true,
+    "S16_service_fee_tier_pricing": true,
+    "S17_payload_output": true,
+    "reference_history_preserved": true,
+    "old_target_pollution_protection": true,
+    "raw_xml_not_in_result_json": true
+  },
+  "reference_loop_acceptance": {
+    "rule": "逐辆采集，达标即停；不是固定采 3 辆，也不是固定采 5 辆。",
+    "target_score": 91,
+    "references": [
+      {
+        "reference_index": 1,
+        "price": "3.90万",
+        "metadata": "2021年 | 11.63万公里 | 唐山",
+        "transfer_count": 1,
+        "claim_count": 1,
+        "max_amount": 2000,
+        "repair_counts": {
+          "驾驶侧": 2
+        },
+        "repair_items": [
+          {
+            "part": "左前门",
+            "damage_type": "钣金",
+            "raw_text": "左侧前门—钣金"
+          }
+        ],
+        "reference_score": 85,
+        "target_score": 91,
+        "rejected": false,
+        "reject_reason": "",
+        "qualified": false,
+        "decision": "score_below_target_continue"
+      },
+      {
+        "reference_index": 2,
+        "price": "4.01万",
+        "metadata": "2021年 | 13.71万公里 | 唐山",
+        "transfer_count": 0,
+        "claim_count": 3,
+        "max_amount": 3000,
+        "repair_counts": {
+          "驾驶侧": 6
+        },
+        "repair_items": [
+          {
+            "part": "左前翼子板",
+            "damage_type": "钣金",
+            "raw_text": "左前翼子板—钣金"
+          }
+        ],
+        "reference_score": 82,
+        "target_score": 91,
+        "rejected": false,
+        "reject_reason": "",
+        "qualified": false,
+        "decision": "score_below_target_continue"
+      },
+      {
+        "reference_index": 3,
+        "price": "4.03万",
+        "metadata": "2021年 | 11.74万公里 | 唐山",
+        "transfer_count": 2,
+        "claim_count": 1,
+        "max_amount": 1000,
+        "repair_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 6
+        },
+        "repair_items": [
+          {
+            "part": "右后翼子板",
+            "damage_type": "喷漆",
+            "raw_text": "右后翼子板—喷漆"
+          }
+        ],
+        "reference_score": 83.5,
+        "target_score": 91,
+        "rejected": false,
+        "reject_reason": "",
+        "qualified": false,
+        "decision": "score_below_target_continue"
+      },
+      {
+        "reference_index": 4,
+        "price": "4.03万",
+        "metadata": "2021年 | 9.9万公里 | 唐山",
+        "transfer_count": 0,
+        "claim_count": 1,
+        "max_amount": 1000,
+        "repair_counts": {
+          "驾驶侧": 2
+        },
+        "repair_items": [
+          {
+            "part": "左前翼子板",
+            "damage_type": "钣金",
+            "raw_text": "左前翼子板—钣金"
+          }
+        ],
+        "reference_score": 85,
+        "target_score": 91,
+        "rejected": false,
+        "reject_reason": "",
+        "qualified": false,
+        "decision": "score_below_target_continue"
+      },
+      {
+        "reference_index": 5,
+        "price": "4.16万",
+        "metadata": "2021年 | 4.62万公里 | 唐山",
+        "transfer_count": 1,
+        "claim_count": 0,
+        "max_amount": 0,
+        "repair_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 2
+        },
+        "repair_items": [
+          {
+            "part": "右后翼子板",
+            "damage_type": "钣金",
+            "raw_text": "右后翼子板—钣金"
+          }
+        ],
+        "reference_score": 96,
+        "target_score": 91,
+        "rejected": false,
+        "reject_reason": "",
+        "qualified": true,
+        "decision": "qualified_stop_and_price"
+      }
+    ],
+    "conclusion": "第 1-4 辆均低于 target_score=91.0，按规则继续；第 5 辆 reference_score=96.0 达标，立即停止继续采集并进入 S16。"
+  },
+  "s10_same_price_order_rule": {
+    "rule_name": "S10_REFERENCE_ORDER_RULE",
+    "order": [
+      "price_yuan ascending",
+      "same price: mileage_10k_km descending",
+      "same price and same mileage: live_display_order ascending"
+    ],
+    "must_reparse_live_reliable_s10": true,
+    "santana_evidence": "4.03万同价组中，11.74万公里排在 9.9万公里前；后续 4.16万同价组中，5.63万公里排在 4.62万公里前。",
+    "no_old_snapshot_indexing": true
+  },
+  "s10_complete_card_gate": {
+    "required_fields": [
+      "title",
+      "price",
+      "metadata",
+      "year",
+      "mileage",
+      "city"
+    ],
+    "forbidden_click_conditions": [
+      "price empty",
+      "metadata empty",
+      "bottom title fragment only",
+      "card outside safe viewport"
+    ],
+    "partial_card_policy": "partial card is recorded but not counted as valid reference_history; scroll slightly to complete, fresh, reparse; stop if still incomplete.",
+    "patch_evidence": {
+      "xml_path": "artifacts/debug/s10_s16_start_20260509_143020.xml",
+      "target_fingerprint": "大众|桑塔纳|2021款|1.5L 自动风尚版|白|2021.05",
+      "invalid_partial_reference_detected": true,
+      "invalid_partial_reference_index": 5,
+      "continuation_recovered_next_reference_index": 5,
+      "valid_reference_history_count": 4,
+      "complete_card_count": 4,
+      "partial_card_count": 1,
+      "partial_card": {
+        "live_display_order": 5,
+        "title": "大众 桑塔纳 2021款 1.5L 自动风尚版",
+        "missing_price": true,
+        "missing_metadata": true,
+        "bounds": [
+          429,
+          2492,
+          1196,
+          2513
+        ],
+        "incomplete_reason": [
+          "missing_price",
+          "missing_metadata",
+          "missing_year",
+          "missing_mileage",
+          "missing_city",
+          "bottom_partial_card_or_outside_safe_viewport"
+        ]
+      },
+      "selection_stop_code": "S10_REFERENCE_CARD_PARTIAL_VISIBLE",
+      "click_allowed": false
+    }
+  },
+  "s13_history_repair_parser_rule": {
+    "visible_texts_dedup_used": false,
+    "raw_xml_nodes_bounds_used": true,
+    "duplicate_zero_preserved": true,
+    "detection_pass_summary_excluded": [
+      "检测通过36",
+      "检测通过10"
+    ],
+    "uncertain_count_policy": "stop; do not default to 0 and do not misread summary numbers",
+    "patch_status": "PATCH_ONLY_S13_HISTORY_REPAIR_DUPLICATE_ZERO_PARSER_DONE"
+  },
+  "final_pricing": {
+    "target_score": 91,
+    "final_reference_index": 5,
+    "selected_reference_score": 96,
+    "guazi_price_yuan": 41600,
+    "guazi_service_fee_yuan": 2500,
+    "guazi_net_payout_yuan": 39100,
+    "suggested_purchase_price_yuan": 34472,
+    "s17_payload_summary": {
+      "task_status": "priced",
+      "suggested_listing_price_yuan": 41600,
+      "suggested_acquisition_price_yuan": 34472,
+      "final_reference_index": 5,
+      "reference_score": 96,
+      "target_score": 91,
+      "manual_review_reasons": [
+        "目标车缺少出险次数，已采用默认分。",
+        "目标车缺少最大金额，已采用默认分。",
+        "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。"
+      ]
+    }
+  },
+  "risks_and_followups": {
+    "sample_shortage_warning": true,
+    "target_minor_damage_scoring_review": "目标车况包含右后叶凹陷、前后杠擦伤、左后门划痕；如当前 scoring 未细分小伤，应后续规则议题化。",
+    "performance_items": [
+      "S14_COLLECT",
+      "S14_HORIZONTAL_SWIPE",
+      "S10_TO_S11 XML fresh",
+      "S11_REPORT_SEARCH",
+      "S11_TO_S12",
+      "S14_RETURN_TO_S10"
+    ],
+    "docx_followup": "建议将桑塔纳补丁沉淀到页面契约/流程说明：同价 mileage desc、完整车卡门禁、S13 raw nodes 历史修复解析。"
+  },
+  "consistency_checks": {
+    "inconsistencies": [],
+    "file_status": {
+      "scripts/runtime_s01_to_s10_mainline.py": true,
+      "scripts/runtime_s10_to_s16_mainline.py": true,
+      "src/guazi_app_data_system/pricing.py": true,
+      "config/fields.yaml": true,
+      "output/result_s01_to_s10.json": true,
+      "output/result_s10_to_s16.json": true,
+      "output/result.json": true,
+      "output/santana_full_chain_acceptance_report_latest.md": true,
+      "output/santana_full_chain_acceptance_report.json": true,
+      "output/s10_reference_card_completeness_gate_patch_latest.md": true,
+      "output/s13_history_repair_duplicate_zero_parser_patch_report_latest.md": true
+    },
+    "pollution_scan": {
+      "focus": false,
+      "toyota_yaris": false,
+      "mini": false
+    },
+    "raw_xml_scan": {
+      "raw_xml_large_field_present": false,
+      "note": "raw_text fields for repair items are allowed; raw XML blob fields are not present by this scan."
+    }
+  }
+}

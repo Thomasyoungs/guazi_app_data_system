@@ -1,0 +1,562 @@
+{
+  "final_status": "FIXED_SCRIPTS_LEGACY_CODE_CLEANUP_VERIFIED_CLEAN",
+  "generated_at": "2026-05-11T18:41:20+08:00",
+  "scope": [
+    "scripts/runtime_s01_to_s10_mainline.py",
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py"
+  ],
+  "unmodified_files_after_review": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "not_modified": [
+    "pricing",
+    "config",
+    "DOCX",
+    "page contract documents",
+    "result.json",
+    "baseline files"
+  ],
+  "core_principle": "Page contract is the only execution standard; uncontracted pages/actions stop instead of fallback/repair/guess continuation.",
+  "overall_conclusion": {
+    "executable_legacy_paths_cleared": true,
+    "still_executable_legacy_count": 0,
+    "needs_user_confirmation_count": 0,
+    "next_step_allowed": "first-stage real-device validation only, if user requests it"
+  },
+  "legacy_cleanup_items": [
+    {
+      "script": "scripts/runtime_s01_to_s10_mainline.py",
+      "function_name": "handle_s07 -> previous _find_target_color_node direct branch",
+      "code_location": "around lines 7360-7450 after cleanup",
+      "page_state": "S07",
+      "before": "COLOR_FILTER_DONE=false could reuse current S07 XML and tap a target-color label without first opening the left Color tab.",
+      "classification_before": "LEGACY_EXECUTABLE_REMOVE",
+      "action_taken": "converted_to_contract_path",
+      "after": "Always click the left Color tab first, then bind target color inside the Color panel. Default-panel visible labels cannot be clicked as color.",
+      "evidence": "output/s07_optional_feature_old_click_path_diagnosis.json"
+    },
+    {
+      "script": "scripts/runtime_s01_to_s10_mainline.py",
+      "function_name": "_target_color_selected",
+      "code_location": "around lines 4726-4795 after cleanup",
+      "page_state": "S07",
+      "before": "Visible text blob alone could confirm color selected.",
+      "classification_before": "LEGACY_EXECUTABLE_REMOVE",
+      "action_taken": "converted_to_strict_evidence",
+      "after": "Color selected only by selected=true node or top selected filter chip evidence; raw visible text membership is no longer enough.",
+      "evidence": "scripts/runtime_s01_to_s10_mainline.py"
+    },
+    {
+      "script": "scripts/runtime_s01_to_s10_mainline.py",
+      "function_name": "S07 forbidden filter guard",
+      "code_location": "around lines 4661-4725, 7360-7520",
+      "page_state": "S07",
+      "before": "No explicit stop if ???/???? became selected during color stage.",
+      "classification_before": "LEGACY_EXECUTABLE_REMOVE",
+      "action_taken": "converted_to_stop",
+      "after": "Selected forbidden filter chips stop with S07_FORBIDDEN_FILTER_SELECTED_BEFORE_COLOR or S07_FORBIDDEN_FILTER_SELECTED_BY_COLOR_CLICK.",
+      "evidence": "artifacts/debug/s07_after_color_select_0_20260511_181215.xml"
+    },
+    {
+      "script": "scripts/runtime_s01_to_s10_mainline.py",
+      "function_name": "S05 target-year retry block",
+      "code_location": "around line 6609",
+      "page_state": "S05",
+      "before": "If right trim list did not switch after target year click, the script could retry-click the target year row.",
+      "classification_before": "LEGACY_EXECUTABLE_REMOVE",
+      "action_taken": "converted_to_report_only_disabled_flag",
+      "after": "No second click is executed; evidence records legacy_retry_year_click_disabled=true and existing S05 year evidence gate decides continue/stop.",
+      "evidence": "scripts/runtime_s01_to_s10_mainline.py"
+    },
+    {
+      "script": "scripts/runtime_s10_to_s16_mainline.py",
+      "function_name": "all reviewed direct tap sites",
+      "code_location": "S10/S11/S12/S13/S14 direct tap sites",
+      "page_state": "S10-S14",
+      "before": "Reviewed for non-contract business clicks.",
+      "classification_before": "CONTRACT_VALID_ACTIVE / CONTRACT_STOP_DEFENSIVE",
+      "action_taken": "kept",
+      "after": "No executable legacy branch found requiring code change in this pass; remaining fallback strings are evidence acquisition/screen bounds, not business continuation.",
+      "evidence": "residual keyword scan and existing S10/S13/S14 patch reports"
+    }
+  ],
+  "function_inventory": [
+    {
+      "script": "runtime_s01_to_s10_mainline.py",
+      "function_or_group": "S00/S_LOGIN startup and login close helpers",
+      "classification": "CONTRACT_VALID_ACTIVE",
+      "action_taken": "kept",
+      "reason": "Only contract-defined app entry / skip / close actions; fresh after action."
+    },
+    {
+      "script": "runtime_s01_to_s10_mainline.py",
+      "function_or_group": "handle_s01 / handle_s02",
+      "classification": "CONTRACT_VALID_ACTIVE",
+      "action_taken": "kept",
+      "reason": "Only bottom ?? then ?? entry with page checks."
+    },
+    {
+      "script": "runtime_s01_to_s10_mainline.py",
+      "function_or_group": "S03 V1.16 helpers and handle_s03",
+      "classification": "CONTRACT_VALID_ACTIVE + CONTRACT_STOP_DEFENSIVE",
+      "action_taken": "kept",
+      "reason": "Target invisible -> target initial only; target visible -> left icon safe point only; brand zone stops."
+    },
+    {
+      "script": "runtime_s01_to_s10_mainline.py",
+      "function_or_group": "S04 standard series binding",
+      "classification": "CONTRACT_VALID_ACTIVE + CONTRACT_STOP_DEFENSIVE",
+      "action_taken": "kept",
+      "reason": "Standard S04 only; brand-zone mixed list stops; visible target series clicks same-row right ??."
+    },
+    {
+      "script": "runtime_s01_to_s10_mainline.py",
+      "function_or_group": "S05 year/trim/emission variant selection",
+      "classification": "CONTRACT_VALID_ACTIVE",
+      "action_taken": "kept_with_retry_disabled",
+      "reason": "Exact year, exact trim, emission variant group all-selected; old target-year retry click disabled."
+    },
+    {
+      "script": "runtime_s01_to_s10_mainline.py",
+      "function_or_group": "S06_TARGET_FILTER_LIST_AFTER_S05_CONFIRM recognizer and action",
+      "classification": "CONTRACT_VALID_ACTIVE + CONTRACT_STOP_DEFENSIVE",
+      "action_taken": "kept",
+      "reason": "Requires S05_CONFIRM_TO_S06 source gate, S05_DONE, target evidence, core elements, reverse exclusion; only action is ????."
+    },
+    {
+      "script": "runtime_s01_to_s10_mainline.py",
+      "function_or_group": "handle_s07 color/age/view result",
+      "classification": "CONTRACT_VALID_ACTIVE + CONTRACT_STOP_DEFENSIVE",
+      "action_taken": "cleaned",
+      "reason": "Color now requires left Color tab first; forbidden S07 filters stop; exact age and view result gates retained."
+    },
+    {
+      "script": "runtime_s01_to_s10_mainline.py",
+      "function_or_group": "handle_s08 / handle_s09 / handle_s10",
+      "classification": "CONTRACT_VALID_ACTIVE",
+      "action_taken": "kept",
+      "reason": "Requires S07 filters done, sort contract, S10_READY evidence and real trisame cards."
+    },
+    {
+      "script": "runtime_s10_to_s16_mainline.py",
+      "function_or_group": "S10 reliable gate and canonical_reference_order",
+      "classification": "CONTRACT_VALID_ACTIVE + CONTRACT_STOP_DEFENSIVE",
+      "action_taken": "kept",
+      "reason": "Live reliable S10, trisame boundary, target title filter, complete card gate, partial card stop."
+    },
+    {
+      "script": "runtime_s10_to_s16_mainline.py",
+      "function_or_group": "S11 and S11->S12",
+      "classification": "CONTRACT_VALID_ACTIVE",
+      "action_taken": "kept",
+      "reason": "S10_TO_S11 context, top image evidence, safe full-report click, stable wait, S12 priority."
+    },
+    {
+      "script": "runtime_s10_to_s16_mainline.py",
+      "function_or_group": "S12/S13 history repair parsing",
+      "classification": "CONTRACT_VALID_ACTIVE + CONTRACT_STOP_DEFENSIVE",
+      "action_taken": "kept",
+      "reason": "Raw XML nodes + bounds; duplicate 0 preserved; summary numbers excluded; uncertain count stops."
+    },
+    {
+      "script": "runtime_s10_to_s16_mainline.py",
+      "function_or_group": "S13->S14 repair item click guard",
+      "classification": "CONTRACT_VALID_ACTIVE + CONTRACT_STOP_DEFENSIVE",
+      "action_taken": "kept",
+      "reason": "Specific repair row only; live room/contact/bargain forbidden; post-click page verifies S14 or stops."
+    },
+    {
+      "script": "runtime_s10_to_s16_mainline.py",
+      "function_or_group": "S14 collect / return / S15 / S16",
+      "classification": "CONTRACT_VALID_ACTIVE",
+      "action_taken": "kept",
+      "reason": "Image-region swipe, S14 complete before return, reliable S10 return gate, score gate before S16."
+    }
+  ],
+  "keyword_residual_check": [
+    {
+      "keyword": "fallback",
+      "exists": true,
+      "occurrences": "runtime_s10 evidence capture/full XML or screen-bounds fallback strings",
+      "classification": "report_only / contract_valid",
+      "action_taken": "kept",
+      "reason": "No business click or wrong-page continuation; full XML fallback is one evidence-acquisition mode under S11 contract."
+    },
+    {
+      "keyword": "??",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "none"
+    },
+    {
+      "keyword": "??",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "none"
+    },
+    {
+      "keyword": "retry",
+      "exists": true,
+      "occurrences": "S05 disabled flag; S07 age slider attempt counters",
+      "classification": "report_only / contract_valid",
+      "action_taken": "S05 executable retry removed",
+      "reason": "S05 retry no longer taps; S07 slider repeated movement is part of exact-age contract action evidence."
+    },
+    {
+      "keyword": "guess / ???? / old snapshot / current page continue",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "none"
+    },
+    {
+      "keyword": "tap_text",
+      "exists": true,
+      "occurrences": "S_LOGIN later/skip only",
+      "classification": "contract_valid",
+      "action_taken": "kept"
+    },
+    {
+      "keyword": "tap_bounds/tap_center/click_bounds/direct tap",
+      "exists": true,
+      "occurrences": "contract-gated page actions only",
+      "classification": "contract_valid",
+      "action_taken": "kept",
+      "reason": "Reviewed direct client.tap sites; business actions are preceded by page/action gates or safe target validators."
+    },
+    {
+      "keyword": "click_checkbox / first checkbox / first_unchecked",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "none"
+    },
+    {
+      "keyword": "visible option / select_option",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "none"
+    },
+    {
+      "keyword": "????? / new_energy / ???",
+      "exists": true,
+      "occurrences": "S03 skip/audit text and non-S03 labels",
+      "classification": "report_only / stop_defensive",
+      "action_taken": "kept",
+      "reason": "No executable S03 new-energy click path remains."
+    },
+    {
+      "keyword": "letter_G / click G",
+      "exists": true,
+      "occurrences": "S03 audit flag only when target initial would be G",
+      "classification": "report_only",
+      "action_taken": "kept",
+      "reason": "Actual S03 letter action is target initial only; no non-target G path."
+    },
+    {
+      "keyword": "scroll_brand / scroll_brand_list",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "none"
+    },
+    {
+      "keyword": "BRAND_ZONE_MIXED_LIST / ????",
+      "exists": true,
+      "occurrences": "S03/S04/S06 defensive stop detection",
+      "classification": "stop_defensive",
+      "action_taken": "kept",
+      "reason": "Brand-zone continuation is blocked and cannot enter S05/S07/S10."
+    },
+    {
+      "keyword": "target_series_verified in brand zone / C10 in brand zone / ????????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "none"
+    },
+    {
+      "keyword": "??? / ???? / ???? / ???? / ???? / ????",
+      "exists": true,
+      "occurrences": "S07 forbidden text constants and diagnosis/report evidence",
+      "classification": "stop_defensive",
+      "action_taken": "kept",
+      "reason": "Forbidden filters now stop if selected; they are not selectable business actions."
+    },
+    {
+      "keyword": "tap_target_color / _find_target_color_node",
+      "exists": true,
+      "occurrences": "S07 after-left-color-tab binding only",
+      "classification": "contract_valid",
+      "action_taken": "kept_after_cleanup"
+    },
+    {
+      "keyword": "default panel",
+      "exists": true,
+      "occurrences": "S07 timing solution text only",
+      "classification": "report_only",
+      "action_taken": "kept"
+    },
+    {
+      "keyword": "non_trisame / ???? / ???? / more source",
+      "exists": true,
+      "occurrences": "S10 boundary filter and exclusion evidence",
+      "classification": "contract_valid / stop_defensive",
+      "action_taken": "kept"
+    },
+    {
+      "keyword": "partial card",
+      "exists": true,
+      "occurrences": "S10 complete-card gate evidence",
+      "classification": "stop_defensive",
+      "action_taken": "kept"
+    },
+    {
+      "keyword": "visible_texts dedup",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "none"
+    },
+    {
+      "keyword": "live room / ???? / ???? / ?? / ????",
+      "exists": true,
+      "occurrences": "S13/S14 forbidden area constants and S11 bottom forbidden checks",
+      "classification": "stop_defensive",
+      "action_taken": "kept"
+    },
+    {
+      "keyword": "tab click",
+      "exists": true,
+      "occurrences": "S14 report text says avoid tab clicks",
+      "classification": "report_only / stop_defensive",
+      "action_taken": "kept"
+    }
+  ],
+  "offline_replay": {
+    "s03": {
+      "scenario_a_initial_not_visible_letter_l_visible": {
+        "xml_path": "artifacts/debug/s02_to_s03_20260511_160338.xml",
+        "target_brand_visible": false,
+        "target_initial_letter": "L",
+        "next_action": "S03_ONLY_ALLOWED_ACTION_CLICK_TARGET_INITIAL_LETTER_L",
+        "attempted_letter_L": true,
+        "attempted_letter_G": false,
+        "attempted_new_energy_tab": false,
+        "attempted_scroll": false,
+        "passed": true
+      },
+      "scenario_b_after_l_target_visible": {
+        "xml_path": "artifacts/debug/s03_after_contract_initial_L_20260511_160342.xml",
+        "target_brand_visible": true,
+        "next_action": "S03_ONLY_ALLOWED_ACTION_CLICK_BRAND_ROW_LEFT_ICON_SAFE_POINT",
+        "selected_click_region_type": "brand_row_left_icon_safe_point",
+        "attempted_brand_name_click": false,
+        "attempted_row_center_click": false,
+        "attempted_row_right_click": false,
+        "attempted_brand_zone_click": false,
+        "passed": true
+      },
+      "scenario_c_after_l_still_not_visible": {
+        "next_action": "STOP",
+        "stop_code": "S03_TARGET_BRAND_NOT_VISIBLE_AFTER_INITIAL_LETTER",
+        "passed": true
+      },
+      "scenario_d_brand_zone": {
+        "xml_path": "artifacts/debug/s04_brand_zone_series_selected_20260510_145414.xml",
+        "brand_zone_page_detected": true,
+        "continuation_allowed": false,
+        "attempted_find_C10": false,
+        "attempted_click_model_config": false,
+        "attempted_enter_S05": false,
+        "attempted_enter_S07": false,
+        "attempted_enter_S10": false,
+        "passed": true
+      }
+    },
+    "s04": {
+      "target_in_visible_series": true,
+      "matched_series_name": "零跑C10",
+      "matched_series_bounds": [
+        52,
+        1311,
+        1168,
+        1617
+      ],
+      "candidate_model_button_bounds": [
+        [
+          869,
+          1361,
+          1129,
+          1540
+        ]
+      ],
+      "selected_model_button_text": "车型",
+      "selected_model_button_bounds": [
+        869,
+        1361,
+        1129,
+        1540
+      ],
+      "selected_click_target": "same-row right-side 车型",
+      "passed": true
+    },
+    "s05": {
+      "offline_all_pass": true,
+      "tests": [
+        "test_1_target_without_emission",
+        "test_2_target_with_emission",
+        "test_3_similar_configs_excluded",
+        "test_4_single_config_unchanged"
+      ]
+    },
+    "s06": {
+      "positive_xml": "artifacts/debug/s05_to_s06_20260511_164550.xml",
+      "positive_result": {
+        "s06_page_variant": "S06_TARGET_FILTER_LIST_AFTER_S05_CONFIRM",
+        "s06_source_gate_passed": true,
+        "target_filter_evidence_found": true,
+        "s06_allowed_action": "click_model_config_filter"
+      },
+      "negative_brand_zone_no_source_gate": {
+        "s06_page_variant": null,
+        "s06_source_gate_passed": false,
+        "s06_allowed_action": null
+      }
+    },
+    "s07": {
+      "default_s07_xml": "artifacts/debug/s06_to_s07_round_1_20260511_181210.xml",
+      "default_panel_expected_next_action": "tap_left_color_tab",
+      "legacy_direct_color_click_allowed": false,
+      "bad_after_click_xml": "artifacts/debug/s07_after_color_select_0_20260511_181215.xml",
+      "bad_after_click_forbidden_detected": true,
+      "bad_after_click_forbidden_text": "???",
+      "bad_after_click_expected_next_action": "STOP"
+    },
+    "s10_trisame_boundary": {
+      "tuang_xml": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260509_161743.xml",
+      "tuang_raw_visible_cards_count": 22,
+      "tuang_trisame_cards_count": 2,
+      "tuang_excluded_non_trisame_cards_count": 20,
+      "tuang_non_trisame_section_title": "找不到想要的车",
+      "id3_excluded": true,
+      "id3_in_canonical_reference_order": false,
+      "canonical_reference_order_titles": [
+        "大众 途昂 2017款 330TSI 两驱豪华版",
+        "大众 途昂 2017款 330TSI 两驱豪华版"
+      ],
+      "historical_regression": {
+        "focus_target_cards_preserved": true,
+        "toyota_yaris_target_cards_preserved": true,
+        "santana_target_cards_preserved": true
+      }
+    },
+    "s10_partial_card": {
+      "xml_path": "artifacts/debug/s10_s16_start_20260509_143020.xml",
+      "target_fingerprint": "大众|桑塔纳|2021款|1.5L 自动风尚版|白|2021.05",
+      "invalid_partial_reference_detected": true,
+      "invalid_partial_reference_index": 5,
+      "continuation_recovered_next_reference_index": 5,
+      "valid_reference_history_count": 4,
+      "complete_card_count": 4,
+      "partial_card_count": 1,
+      "partial_card": {
+        "live_display_order": 5,
+        "title": "大众 桑塔纳 2021款 1.5L 自动风尚版",
+        "missing_price": true,
+        "missing_metadata": true,
+        "bounds": [
+          429,
+          2492,
+          1196,
+          2513
+        ],
+        "incomplete_reason": [
+          "missing_price",
+          "missing_metadata",
+          "missing_year",
+          "missing_mileage",
+          "missing_city",
+          "bottom_partial_card_or_outside_safe_viewport"
+        ]
+      },
+      "selection_stop_code": "S10_REFERENCE_CARD_PARTIAL_VISIBLE",
+      "click_allowed": false
+    },
+    "s13_duplicate_zero": {
+      "xml_path": "artifacts/debug/s13_region_驾驶侧_20260509_133419.xml",
+      "raw_nodes_used": true,
+      "visible_texts_dedup_used": false,
+      "duplicate_zero_preserved": true,
+      "region": "驾驶侧",
+      "history_repair_label_bounds": [
+        533,
+        1852,
+        718,
+        1930
+      ],
+      "bound_count_text": "0",
+      "bound_count_bounds": [
+        715,
+        1852,
+        754,
+        1930
+      ],
+      "excluded_numbers": [
+        36
+      ],
+      "excluded_reason": "检测通过36_not_history_repair_count",
+      "result": "OFFLINE_REPLAY_OK"
+    },
+    "s13_to_s14_live_room_guard": {
+      "before_xml": "artifacts/debug/s13_region_车尾_20260509_155339.xml",
+      "after_xml": "artifacts/debug/s13_to_s14_车尾_20260509_155344.xml",
+      "current_region": "车尾",
+      "history_repair_count": 1,
+      "selected_repair_item_text": "后备箱盖铰链",
+      "selected_click_bounds": [
+        81,
+        1956,
+        611,
+        2063
+      ],
+      "click_strategy": "nearest_clickable_repair_item_parent_bounds",
+      "safe_click_region": true,
+      "forbidden_nearby_texts": [],
+      "forbidden_areas_detected": [
+        "微信咨询",
+        "实车讲解",
+        "联系卖家/电话",
+        "讲价"
+      ],
+      "live_room_signals_detected_after_click_xml": true,
+      "recognized_as_s14_allowed_for_after_xml": false
+    }
+  },
+  "validation": {
+    "py_compile": {
+      "scripts/runtime_s01_to_s10_mainline.py": "passed",
+      "scripts/runtime_s10_to_s16_mainline.py": "passed"
+    },
+    "unit_tests_optional": {
+      "command": "PYTHONPATH=src python -m unittest tests.test_state_machine tests.test_trim_normalizer tests.test_output_format tests.test_s08_age_slider_runtime",
+      "status": "not_gating_failed_existing_config_mismatch",
+      "detail": "36 tests ran; one existing test expects S01_HOME in page config and failed with Unknown state S01_HOME. This task did not modify config."
+    },
+    "real_device_run": false,
+    "second_stage_started": false,
+    "pricing_run": false,
+    "result_json_overwritten": false,
+    "baseline_overwritten": false,
+    "raw_xml_large_fields_written": false
+  },
+  "risk_items": [],
+  "needs_user_confirmation": [],
+  "next_step_recommendation": "Run first-stage-only validation; do not start second stage until first-stage contract path reaches S10_READY or a valid stop code."
+}

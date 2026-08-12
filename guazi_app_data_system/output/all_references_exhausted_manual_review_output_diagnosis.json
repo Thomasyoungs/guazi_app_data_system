@@ -1,0 +1,197 @@
+{
+  "report_name": "all_references_exhausted_manual_review_output_diagnosis",
+  "created_at": "2026-05-16T11:15:05",
+  "diagnosis_status": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW_OUTPUT_CONTRACT_INCOMPLETE",
+  "target": {
+    "task_id": null,
+    "fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+    "brand": "日产",
+    "series": "途达",
+    "year_model": "2020款",
+    "config_model": "2.5L XL Upper 4WD 自动四驱豪华版",
+    "color": "白",
+    "register_date": "2021.08"
+  },
+  "terminal_status": {
+    "status": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+    "final_status": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+    "issue_code": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+    "business_meaning": "???????????????????? final_reference?????? S16????????"
+  },
+  "target_score": {
+    "top_level_target_score": null,
+    "inferred_target_score_from_reference1": 92.0,
+    "diagnosis": "?? target_score ? null?????????????????? reference #1 ? score_diff ???"
+  },
+  "counts": {
+    "reference_history_count_raw": 3,
+    "reference_history_duplicate_count": 1,
+    "distinct_reference_count": 2,
+    "completed_scored_reference_count": 1,
+    "qualified_reference_count": 0,
+    "excluded_reference_count": 1,
+    "exhausted_reference_count": 2
+  },
+  "reference_outcomes": [
+    {
+      "reference_index": 1,
+      "title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+      "price_text": "8.48万",
+      "metadata": "2021年 | 12.5万公里 | 安庆",
+      "reference_score": 70.0,
+      "reference_score_trustworthy": true,
+      "reference_score_gte_target_score": false,
+      "score_diff_reference_minus_target": -22.0,
+      "reference_status": null,
+      "reference_exclusion_reason": null,
+      "decision": "SCORED_BELOW_TARGET_CONTINUE",
+      "s14_collect_done": true,
+      "s11_report_rule": "V1_27_exact_text_half_screen_bottom_reposition"
+    },
+    {
+      "reference_index": 2,
+      "title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+      "price_text": "10.59万",
+      "metadata": "2021年 | 13.4万公里 | 唐山",
+      "reference_score": null,
+      "reference_score_trustworthy": null,
+      "reference_score_gte_target_score": null,
+      "score_diff_reference_minus_target": null,
+      "reference_status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+      "reference_exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+      "decision": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+      "s14_collect_done": null,
+      "s11_report_rule": "V1_27_exact_text_half_screen_bottom_reposition"
+    }
+  ],
+  "output_contract_field_matrix": {
+    "task_id": {
+      "present": false,
+      "value": null
+    },
+    "target_fingerprint": {
+      "present": true,
+      "value": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08"
+    },
+    "target_score": {
+      "present": true,
+      "value": null
+    },
+    "valid_reference_count": {
+      "present": false,
+      "value": null
+    },
+    "exhausted_reference_count": {
+      "present": false,
+      "value": null
+    },
+    "excluded_reference_count": {
+      "present": false,
+      "value": null
+    },
+    "manual_review_required": {
+      "present": false,
+      "value": null
+    },
+    "manual_review_reasons": {
+      "present": false,
+      "value": null
+    },
+    "manual_review_summary": {
+      "present": false,
+      "value": null
+    },
+    "auto_pricing_blocked_reason": {
+      "present": false,
+      "value": null
+    },
+    "s17_payload": {
+      "present": false,
+      "value": null
+    }
+  },
+  "pricing_safety": {
+    "entered_s16": false,
+    "wrong_price_fields_present": {},
+    "wrong_price_output_detected": false,
+    "old_78_used": false,
+    "reference1_score_70_trustworthy": true
+  },
+  "feishu_readiness": {
+    "can_return_clear_reason_now": false,
+    "reason": "???? manual_review_required/manual_review_reasons/manual_review_summary/S17 payload????????????????????????????????????",
+    "minimum_payload_needed": {
+      "task_status": "manual_review",
+      "manual_review_reason_code": "ALL_REFERENCES_EXHAUSTED_NO_QUALIFIED_REFERENCE",
+      "target_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+      "target_score": 92.0,
+      "reference_outcomes": [
+        {
+          "reference_index": 1,
+          "title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+          "price_text": "8.48万",
+          "metadata": "2021年 | 12.5万公里 | 安庆",
+          "reference_score": 70.0,
+          "reference_score_trustworthy": true,
+          "reference_score_gte_target_score": false,
+          "score_diff_reference_minus_target": -22.0,
+          "reference_status": null,
+          "reference_exclusion_reason": null,
+          "decision": "SCORED_BELOW_TARGET_CONTINUE",
+          "s14_collect_done": true,
+          "s11_report_rule": "V1_27_exact_text_half_screen_bottom_reposition"
+        },
+        {
+          "reference_index": 2,
+          "title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+          "price_text": "10.59万",
+          "metadata": "2021年 | 13.4万公里 | 唐山",
+          "reference_score": null,
+          "reference_score_trustworthy": null,
+          "reference_score_gte_target_score": null,
+          "score_diff_reference_minus_target": null,
+          "reference_status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+          "reference_exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+          "decision": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+          "s14_collect_done": null,
+          "s11_report_rule": "V1_27_exact_text_half_screen_bottom_reposition"
+        }
+      ],
+      "auto_pricing_blocked_reason": "no_qualified_reference_after_all_trisame_processed",
+      "pricing_output": null
+    }
+  },
+  "patch_only_recommendation": {
+    "patch_name": "PATCH_ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW_STRUCTURED_OUTPUT",
+    "scope": "output/result shaping only; no pricing/scoring/collection logic changes",
+    "required_additions": [
+      "manual_review_required=true",
+      "manual_review_reason_code=ALL_REFERENCES_EXHAUSTED_NO_QUALIFIED_REFERENCE",
+      "target_score numeric persisted at top level",
+      "valid_reference_count / exhausted_reference_count / excluded_reference_count",
+      "distinct reference_outcomes array with one entry per reference_index",
+      "auto_pricing_blocked_reason and no_final_pricing=true",
+      "s17/manual_review payload for Feishu with reason summary and evidence paths",
+      "deduplicate duplicate excluded reference entries in public output or mark duplicate_history_entry=true"
+    ],
+    "do_not_change": [
+      "S14 logic",
+      "pricing",
+      "scoring",
+      "baseline",
+      "collection flow"
+    ]
+  },
+  "read_only_confirmations": {
+    "code_modified": false,
+    "device_run": false,
+    "result_overwritten": false,
+    "pricing_changed": false,
+    "baseline_changed": false
+  },
+  "evidence_paths": {
+    "result_s10_to_s16": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+    "result": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result.json",
+    "s14_runtime_report": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\nissan_terra_2020_full_chain_after_s14_stale_first_line_fix.json"
+  }
+}

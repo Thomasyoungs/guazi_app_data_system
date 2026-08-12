@@ -1,0 +1,72 @@
+{
+  "status": "SECOND_STAGE_DID_NOT_REACH_S16",
+  "underlying_status": "HISTORY_REPAIR_COUNT_UNCERTAIN",
+  "underlying_issue_code": "HISTORY_REPAIR_COUNT_UNCERTAIN",
+  "target_fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "code_modified_this_round": false,
+  "first_stage": {
+    "executed": true,
+    "status": "S10_READY",
+    "fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+    "reliable_s10": true,
+    "price_asc_sort_evidence": true,
+    "result_path": "output/result_s01_to_s10.json"
+  },
+  "second_stage": {
+    "executed": true,
+    "entered_s11": true,
+    "entered_s12": true,
+    "entered_s13": true,
+    "entered_s14": false,
+    "entered_s15": false,
+    "entered_s16": false,
+    "stop_status": "HISTORY_REPAIR_COUNT_UNCERTAIN",
+    "stop_issue_code": "HISTORY_REPAIR_COUNT_UNCERTAIN",
+    "stop_page": "S13",
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_history_repair_scroll_3_20260517_162845.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s13_history_repair_scroll_3_20260517_162845.xml"
+  },
+  "transfer_count_runtime_validation": {
+    "field_missing_recurred": false,
+    "transfer_count_text": "过户1次",
+    "parsed_transfer_count": 1,
+    "listing_id": "166717183",
+    "mileage_age_text": "6.54万公里",
+    "insurance_claim_text": "理赔0次",
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260517_162707.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260517_162708_compressed.xml",
+    "transfer_count_candidates": [
+      {
+        "text": "过户1次",
+        "content_desc": "",
+        "bounds": [
+          1000,
+          1812,
+          1143,
+          1868
+        ],
+        "class": "android.widget.TextView",
+        "resource_id": "",
+        "clickable": false,
+        "enabled": true
+      }
+    ]
+  },
+  "regression_checks": {
+    "s11_fresh_pair_stale_xml_regression_observed": false,
+    "s11_unsafe_reposition_regression_observed": false,
+    "s10_selected_card_autoscroll_regression_observed": false,
+    "s10_local_title_binding_regression_observed": false,
+    "s14_regression_observed": false,
+    "metal_deduct_regression_observed": false
+  },
+  "pricing": {
+    "entered_s16": false,
+    "final_price_generated": false,
+    "pricing_payload_generated": false,
+    "manual_review_required": null,
+    "auto_pricing_allowed": null
+  },
+  "failure_mapping": "S11 transfer-count patch runtime verified; downstream block is S13 HISTORY_REPAIR_COUNT_UNCERTAIN.",
+  "final_status": "SECOND_STAGE_DID_NOT_REACH_S16"
+}

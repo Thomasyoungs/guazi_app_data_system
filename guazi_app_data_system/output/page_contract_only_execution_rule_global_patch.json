@@ -1,0 +1,531 @@
+{
+  "final_status": "PAGE_CONTRACT_ONLY_EXECUTION_RULE_GLOBAL_PATCHED_VERIFIED_CLEAN",
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py",
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "real_device_run": false,
+  "second_stage_device_run": false,
+  "pricing_run": false,
+  "baseline_overwritten": false,
+  "result_json_overwritten": false,
+  "raw_xml_large_fields_written": false,
+  "contract_gateway": {
+    "page_contract_is_only_execution_standard": true,
+    "first_stage_functions": [
+      "contract_validate_action",
+      "contract_stop",
+      "contract_execute_click",
+      "contract_execute_swipe",
+      "contract_execute_device_action"
+    ],
+    "second_stage_functions": [
+      "contract_validate_action",
+      "contract_stop",
+      "contract_execute_click",
+      "contract_execute_swipe"
+    ],
+    "business_action_rule": "business click/swipe must pass page_id + action_id membership in SCRIPT_PAGE_CONTRACT_ACTIONS before execution",
+    "after_click_rule": "handlers fresh-capture and verify expected page/state after contract action; mismatch raises stop_code"
+  },
+  "first_stage_action_table": {
+    "S03": [
+      "S03_ONLY_ALLOWED_ACTION_CLICK_TARGET_INITIAL_LETTER",
+      "S03_ONLY_ALLOWED_ACTION_CLICK_BRAND_ROW_LEFT_ICON_SAFE_POINT",
+      "STOP"
+    ],
+    "S04": [
+      "S04_ONLY_ALLOWED_ACTION_CLICK_TARGET_SERIES_ROW_RIGHT_MODELS_BUTTON",
+      "STOP"
+    ],
+    "S05": [
+      "S05_ONLY_ALLOWED_ACTION_SELECT_TARGET_YEAR",
+      "S05_ONLY_ALLOWED_ACTION_SELECT_TARGET_CONFIG_OR_EMISSION_VARIANT_GROUP",
+      "S05_ONLY_ALLOWED_ACTION_CLICK_CONFIRM"
+    ],
+    "S06": [
+      "S06_ONLY_ALLOWED_ACTION_CLICK_MODEL_CONFIG"
+    ],
+    "S07": [
+      "S07_ONLY_ALLOWED_ACTION_OPEN_COLOR_FILTER",
+      "S07_ONLY_ALLOWED_ACTION_CLICK_TARGET_COLOR",
+      "S07_ONLY_ALLOWED_ACTION_OPEN_AGE_FILTER",
+      "S07_ONLY_ALLOWED_ACTION_SET_TARGET_AGE",
+      "S07_ONLY_ALLOWED_ACTION_CLICK_VIEW_RESULT"
+    ],
+    "S08": [
+      "S08_ONLY_ALLOWED_ACTION_CLICK_SORT_DROPDOWN"
+    ],
+    "S09": [
+      "S09_ONLY_ALLOWED_ACTION_CLICK_PRICE_ASC"
+    ],
+    "S10": [
+      "STOP_AT_S10_READY"
+    ]
+  },
+  "second_stage_action_table": {
+    "S10": [
+      "S10_ONLY_ALLOWED_ACTION_CLICK_REFERENCE_CARD_TITLE",
+      "scroll_to_complete_reference_card"
+    ],
+    "S11": [
+      "S11_ONLY_ALLOWED_ACTION_SCROLL_TO_REPORT",
+      "S11_ONLY_ALLOWED_ACTION_CLICK_FULL_REPORT"
+    ],
+    "S12": [
+      "collect_claim_count_and_max_amount",
+      "scroll_to_body_appearance",
+      "S12_ONLY_ALLOWED_ACTION_CLICK_BODY_APPEARANCE"
+    ],
+    "S13": [
+      "collect_repair_counts",
+      "scroll_history_repair_table",
+      "tap_region_tab",
+      "S13_ONLY_ALLOWED_ACTION_CLICK_REPAIR_ITEM"
+    ],
+    "S14": [
+      "S14_ONLY_ALLOWED_ACTION_IMAGE_HORIZONTAL_SWIPE"
+    ]
+  },
+  "legacy_paths_converted_or_blocked": [
+    {
+      "script": "scripts/runtime_s01_to_s10_mainline.py",
+      "path": "S03???/??????",
+      "action_taken": "????? contract_stop?????????????????????????"
+    },
+    {
+      "script": "scripts/runtime_s01_to_s10_mainline.py",
+      "path": "S04??????????",
+      "action_taken": "???????/???????? S05/S07/S10"
+    },
+    {
+      "script": "scripts/runtime_s01_to_s10_mainline.py",
+      "path": "S05????/????/?? retry",
+      "action_taken": "?????? S05 action_id????????????"
+    },
+    {
+      "script": "scripts/runtime_s01_to_s10_mainline.py",
+      "path": "S07????/??????/?????",
+      "action_taken": "???????->????->??????? clicked ? checked/selected ??"
+    },
+    {
+      "script": "scripts/runtime_s01_to_s10_mainline.py",
+      "path": "S08/S10 ??????? S06 / ??? S10_READY",
+      "action_taken": "S07_VIEW_RESULT_TO_LIST ? S09_PRICE_ASC_TO_LIST ?????? S08/S10"
+    },
+    {
+      "script": "scripts/runtime_s10_to_s16_mainline.py",
+      "path": "S10/S11/S12/S13/S14 ??????/??",
+      "action_taken": "???? contract_execute_click / contract_execute_swipe?????????????????"
+    }
+  ],
+  "direct_action_residual_check": [
+    {
+      "script": "scripts\\runtime_s01_to_s10_mainline.py",
+      "line": 1086,
+      "text": "result = client.run([\"shell\", \"input\", \"swipe\", str(sx), str(sy), str(ex), str(ey), str(duration_ms)], timeout=20)",
+      "classification": "contract_valid",
+      "action_taken": "inside contract_execute_swipe only"
+    },
+    {
+      "script": "scripts\\runtime_s01_to_s10_mainline.py",
+      "line": 1088,
+      "text": "result = client.swipe(direction)",
+      "classification": "contract_valid",
+      "action_taken": "inside contract_execute_swipe only"
+    },
+    {
+      "script": "scripts\\runtime_s01_to_s10_mainline.py",
+      "line": 1300,
+      "text": "client.tap(click_x, click_y)",
+      "classification": "stop_defensive"
+    },
+    {
+      "script": "scripts\\runtime_s01_to_s10_mainline.py",
+      "line": 1572,
+      "text": "client.tap(click_x, click_y)",
+      "classification": "stop_defensive"
+    },
+    {
+      "script": "scripts\\runtime_s01_to_s10_mainline.py",
+      "line": 2115,
+      "text": "client.tap(*_center(later_node[\"bounds\"]))",
+      "classification": "stop_defensive"
+    },
+    {
+      "script": "scripts\\runtime_s01_to_s10_mainline.py",
+      "line": 2530,
+      "text": "icon_result = client.tap_guazi_app_icon_exact_text(launcher_xml)",
+      "classification": "stop_defensive"
+    },
+    {
+      "script": "scripts\\runtime_s01_to_s10_mainline.py",
+      "line": 2657,
+      "text": "client.tap_text(S_LOGIN_LATER_TEXT)",
+      "classification": "stop_defensive"
+    },
+    {
+      "script": "scripts\\runtime_s01_to_s10_mainline.py",
+      "line": 2755,
+      "text": "icon_result = client.tap_guazi_app_icon_exact_text(launcher_xml)",
+      "classification": "stop_defensive"
+    },
+    {
+      "script": "scripts\\runtime_s01_to_s10_mainline.py",
+      "line": 2896,
+      "text": "client.tap_text(S_LOGIN_LATER_TEXT)",
+      "classification": "stop_defensive"
+    },
+    {
+      "script": "scripts\\runtime_s01_to_s10_mainline.py",
+      "line": 6485,
+      "text": "lambda: client.tap_s01_bottom_select_car_tab(str(snapshot.get(\"fresh_xml\") or \"\")),",
+      "classification": "contract_valid"
+    },
+    {
+      "script": "scripts\\runtime_s10_to_s16_mainline.py",
+      "line": 1217,
+      "text": "client.tap_guazi_app_icon_exact_text(str(home_snapshot.get(\"fresh_xml\") or \"\"))",
+      "classification": "stop_defensive"
+    },
+    {
+      "script": "scripts\\runtime_s10_to_s16_mainline.py",
+      "line": 1221,
+      "text": "client.tap_text(\"稍后\")",
+      "classification": "stop_defensive"
+    }
+  ],
+  "keyword_residual_check": [
+    {
+      "keyword": "fallback",
+      "exists": true,
+      "occurrences": 24,
+      "classification": "report_only",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "fallback_click",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "fallback_to",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "??",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "??",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "retry",
+      "exists": true,
+      "occurrences": 8,
+      "classification": "report_only",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "guess",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "old snapshot",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "current page continue",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "continue on wrong page",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "?????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "new_energy",
+      "exists": true,
+      "occurrences": 1,
+      "classification": "report_only",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "???",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "letter_G",
+      "exists": true,
+      "occurrences": 2,
+      "classification": "report_only",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "scroll_brand",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "BRAND_ZONE_MIXED_LIST continue",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "???",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "??",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "non_trisame",
+      "exists": true,
+      "occurrences": 40,
+      "classification": "stop_defensive",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "partial card",
+      "exists": true,
+      "occurrences": 1,
+      "classification": "report_only",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "live room",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "??",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "????",
+      "exists": false,
+      "occurrences": 0,
+      "classification": "none",
+      "action_taken": "no executable legacy path"
+    },
+    {
+      "keyword": "tab click",
+      "exists": true,
+      "occurrences": 4,
+      "classification": "report_only",
+      "action_taken": "no executable legacy path"
+    }
+  ],
+  "offline_replay_results": {
+    "S03": {
+      "target_initial_letter": "L",
+      "before_letter_target_visible": false,
+      "before_letter_L_visible": true,
+      "before_letter_next_action": "S03_ONLY_ALLOWED_ACTION_CLICK_TARGET_INITIAL_LETTER_L",
+      "after_letter_target_visible": true,
+      "after_letter_next_action": "S03_ONLY_ALLOWED_ACTION_CLICK_BRAND_ROW_LEFT_ICON_SAFE_POINT",
+      "after_letter_click_region_type": "brand_row_left_icon_safe_point"
+    },
+    "S04": {
+      "target_series_found": true,
+      "models_button_bound": true,
+      "brand_zone_detected": false,
+      "next_action": "S04_ONLY_ALLOWED_ACTION_CLICK_TARGET_SERIES_ROW_RIGHT_MODELS_BUTTON"
+    },
+    "S05": {
+      "emission_group_count": 2,
+      "emission_group_labels": [
+        "2019款 180TURBO CVT尚悦版 国V",
+        "2019款 180TURBO CVT尚悦版 国VI"
+      ],
+      "excluded_similar_count": 5,
+      "contains_all_models": false,
+      "single_trim_group_count": 1,
+      "single_selection_mode": "single_exact_trim"
+    },
+    "S06": {
+      "positive_recognized": "S06",
+      "positive_core_elements": [
+        "model_config_entry",
+        "target_filter_evidence",
+        "vehicle_list_structure",
+        "filter_or_sort_structure"
+      ],
+      "negative_recognized": null
+    },
+    "S07_FORBIDDEN": {
+      "visible_not_checked": "allow_continue",
+      "clicked_forbidden": "S07_CLICKED_FORBIDDEN_FILTER_OPTION",
+      "checked_forbidden": "S07_FORBIDDEN_FILTER_SELECTED_CONFIRMED",
+      "version": "simple_checked_only"
+    },
+    "S08_S10_SYNTHETIC": {
+      "s08_recognized": "S08",
+      "s08_allowed_action": "click_sort_dropdown",
+      "s10_source_gate": true,
+      "s10_core_elements": [
+        "price_asc_sort_evidence",
+        "complete_target_vehicle_cards",
+        "target_trisame_evidence",
+        "trisame_boundary_before_non_trisame_section"
+      ],
+      "s10_ready_reason": "source_gate_core_elements_target_trisame_boundary_passed",
+      "s10_sort_done_false_ready_reason": null
+    },
+    "S10_SECOND": {
+      "id3_in_order": false,
+      "excluded_non_trisame_cards_count": 1,
+      "canonical_count": 2
+    },
+    "S13_COUNTS": {
+      "raw_nodes_used": true,
+      "visible_texts_dedup_used": false,
+      "duplicate_zero_preserved": true,
+      "counts": {
+        "驾驶侧": 0,
+        "车尾": null,
+        "副驾驶": null,
+        "车头": null
+      }
+    },
+    "S13_TO_S14_LIVE": {
+      "live_signals_detected": true,
+      "signals": [
+        "商家讲解车况",
+        "演示清单",
+        "马上为您实车讲解",
+        "保证商家100%讲解",
+        "瓜子认证商家",
+        "等待看车",
+        "带看车辆"
+      ]
+    }
+  },
+  "validation": {
+    "py_compile_s01_to_s10": "passed",
+    "py_compile_s10_to_s16": "passed",
+    "offline_replay": "passed",
+    "still_executable_legacy": false,
+    "ungated_business_actions": false
+  },
+  "allow_next_step_real_device_validation": true
+}

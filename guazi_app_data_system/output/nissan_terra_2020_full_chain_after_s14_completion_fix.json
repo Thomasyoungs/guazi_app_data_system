@@ -1,0 +1,28 @@
+{
+  "status": "RUN_FAILED_WITH_ISSUE",
+  "final_status": "S14_PREVENT_SINGLE_IMAGE_FALSE_COMPLETION_PATCHED",
+  "target_fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "patch_status": "S14_PREVENT_SINGLE_IMAGE_FALSE_COMPLETION_PATCHED",
+  "patch_offline_validation_passed": true,
+  "py_compile_passed": true,
+  "real_device_continuation_attempted": true,
+  "real_device_reached_s14_patch_path": false,
+  "first_stage_status": "PAGE_CONTRACT_MISMATCH",
+  "first_stage_error": "S04 action blocked because current fresh page contract is S_LOGIN.",
+  "second_stage_started": false,
+  "blocked_reason": "FIRST_STAGE_NOT_S10_READY_PAGE_CONTRACT_MISMATCH_S_LOGIN_AT_S04",
+  "evidence": {
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "after_force_restart_screenshot": "artifacts/screenshots/s01_s10_after_force_restart_20260516_102803.png",
+    "failure_screenshot": "artifacts/screenshots/s04_series_down_2_20260516_102834.png",
+    "failure_xml": "artifacts/debug/s04_series_down_2_20260516_102834.xml",
+    "actual_state": "S_LOGIN",
+    "foreground_package": "com.shuqing.tqaccountcenter",
+    "focused_window": "com.shuqing.tqaccountcenter/com.shuqing.kdgphone.account.login.LoginHomeActivity"
+  },
+  "contract_note": "First stage stopped correctly because S04 expected page/action context was interrupted by S_LOGIN account center page. Per contract, second stage was not started.",
+  "large_field_policy": {
+    "new_report_contains_raw_xml_nodes_visible_blob_page_source": false
+  },
+  "generated_at": "2026-05-16T10:29:18"
+}

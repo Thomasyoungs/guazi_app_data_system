@@ -1,0 +1,194 @@
+{
+  "status": "HONDA_ACCORD_S11_S12_S13_CONTRACT_EXECUTION_DIAGNOSIS_DONE",
+  "read_only": true,
+  "code_modified": false,
+  "real_device_run": false,
+  "result_json_overwritten": false,
+  "target_fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "result_status": "HISTORY_REPAIR_COUNT_UNCERTAIN",
+  "current_reference": {
+    "reference_index": 1,
+    "price": "11.39?",
+    "listing_id": "166717183",
+    "transfer_count_text": "??1?",
+    "parsed_transfer_count": 1
+  },
+  "s11_audit": {
+    "conclusion": "S11_ENTRY_DELAYED_CLICK_CORRECT_BY_CONTRACT",
+    "scroll_stops": [
+      {
+        "iteration": "search_1",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_1_20260517_162721.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_1_20260517_162721.xml",
+        "scroll_mode": "first_scroll/search",
+        "scroll_distance_px": null,
+        "screenshot_view_full_report_visible": false,
+        "xml_exact_nodes": [],
+        "why_not_clicked": "???????XML ????????????"
+      },
+      {
+        "iteration": "search_2",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260517_162727.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260517_162727.xml",
+        "scroll_mode": "small_scroll/search",
+        "scroll_distance_px": null,
+        "screenshot_view_full_report_visible": false,
+        "xml_exact_nodes": [],
+        "why_not_clicked": "????????XML ?????????"
+      },
+      {
+        "iteration": "search_3",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260517_162739.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260517_162739.xml",
+        "scroll_mode": "small_scroll/search",
+        "scroll_distance_px": null,
+        "screenshot_view_full_report_visible": true,
+        "xml_exact_nodes": [],
+        "exact_report_entry_seen": true,
+        "exact_report_entry_fully_visible": false,
+        "exact_report_entry_in_safe_click_region": false,
+        "bottom_bar_blocked": true,
+        "click_target_bound": "[80,2179][597,2293]",
+        "why_not_clicked": "??????? bounds ????????????????????????? unsafe reposition?"
+      },
+      {
+        "iteration": "reposition_1",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_1_20260517_162745.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_1_20260517_162745.xml",
+        "scroll_mode": "reposition",
+        "scroll_distance_px": null,
+        "screenshot_view_full_report_visible": true,
+        "xml_exact_nodes": [],
+        "exact_report_entry_seen": true,
+        "exact_report_entry_fully_visible": false,
+        "exact_report_entry_in_safe_click_region": false,
+        "bottom_bar_blocked": true,
+        "click_target_bound": "[80,2179][597,2293]",
+        "why_not_clicked": "??????????? bounds??????????????"
+      },
+      {
+        "iteration": "reposition_2_click",
+        "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260517_162759.png",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260517_162759.xml",
+        "scroll_mode": "reposition",
+        "scroll_distance_px": null,
+        "screenshot_view_full_report_visible": true,
+        "xml_exact_nodes": [],
+        "exact_report_entry_seen": true,
+        "exact_report_entry_fully_visible": true,
+        "exact_report_entry_in_safe_click_region": true,
+        "bottom_bar_blocked": false,
+        "click_target_bound": "[80,1801][597,1915]",
+        "why_clicked": "??????????????????????????? S12?"
+      }
+    ],
+    "answer": "? 2 ?????????????? 3 ?????/XML ????????????? bounds=[80,2179][597,2293]???????????????????????? reposition_2 bounds=[80,1801][597,1915] ???????????? S12?"
+  },
+  "s12_audit": {
+    "s12_page_recognized": true,
+    "s12_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s12_scroll_body_search_tab_0_20260517_162818.png",
+    "s12_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s12_scroll_body_search_tab_0_20260517_162818.xml",
+    "s12_page_identity_evidence": [
+      "??????????????????? tab ???"
+    ],
+    "s12_claim_count_text": "????0?",
+    "s12_claim_count": 0,
+    "s12_max_amount_text": "????0?",
+    "s12_max_amount": 0.0,
+    "s12_body_appearance_entry_seen": true,
+    "s12_body_appearance_entry_bounds": [
+      487,
+      247,
+      796,
+      396
+    ],
+    "s12_body_appearance_click_target": [
+      641,
+      321
+    ],
+    "s12_body_appearance_clicked": true,
+    "s12_to_s13_transition_result": "S13/body appearance section visible after click",
+    "s12_to_s13_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s12_to_s13_20260517_162823.png",
+    "s12_to_s13_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s12_to_s13_20260517_162823.xml",
+    "s12_contract_executed": true,
+    "s12_contract_missing_steps": []
+  },
+  "s13_audit": {
+    "s13_page_recognized": true,
+    "s13_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s12_to_s13_20260517_162823.png",
+    "s13_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s12_to_s13_20260517_162823.xml",
+    "s13_body_appearance_section_seen": true,
+    "s13_region_tabs_seen": {
+      "???": true,
+      "??": true
+    },
+    "s13_history_repair_text_seen": true,
+    "s13_history_repair_raw_nodes": [],
+    "s13_history_repair_count_candidates": [
+      {
+        "region": "???",
+        "label": "????????",
+        "history_label_bounds": "[533,1852][718,1930]",
+        "count_text": "4",
+        "count_bounds": "[715,1852][754,1930]",
+        "attention_text": "0",
+        "attention_bounds": "[1030,1852][1069,1930]"
+      }
+    ],
+    "s13_history_repair_bound_pairs": "???????/????/4 ????? y=1852-1930???????",
+    "s13_region_to_history_count_binding": {
+      "???": null,
+      "??": null
+    },
+    "s13_detect_pass_summary_numbers": "?? scroll ????????/??????????????????????",
+    "s13_excluded_summary_numbers": true,
+    "s13_history_repair_count_confirmed": false,
+    "s13_uncertain_reason": "??????????4? S12?S13 fresh ??????????/?????????????????????????????????????????????????????????",
+    "s13_contract_executed": false,
+    "s13_contract_missing_steps": [
+      "????????????????",
+      "???????????????",
+      "?? parser ???/????????????????"
+    ],
+    "scroll_evidence": [
+      {
+        "path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_history_repair_scroll_0_20260517_162829.png",
+        "summary": "????????????????????????????",
+        "xml_nodes": []
+      },
+      {
+        "path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_history_repair_scroll_1_20260517_162834.png",
+        "summary": "??????????????????????0 / ????3?",
+        "xml_nodes": []
+      }
+    ],
+    "code_evidence": [
+      {
+        "file": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py",
+        "line": 7555,
+        "detail": "_has_s13_history_repair_table ???? token \"??????\" ????????????? XML ?????????"
+      },
+      {
+        "file": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py",
+        "line": 1642,
+        "detail": "_history_arrival_reason ?? _has_s13_history_repair_table?????????? history_repair_table_tokens ???"
+      },
+      {
+        "file": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py",
+        "line": 7560,
+        "detail": "_scroll_s13_to_history_repair_table ???????????????? controlled scroll?"
+      },
+      {
+        "file": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py",
+        "line": 7423,
+        "detail": "_extract_history_repair_count_from_nodes ?????????????? region header/history label/count???????????"
+      }
+    ]
+  },
+  "final_classification": [
+    "S12_CONTRACT_EXECUTED_THEN_S13_REPAIR_COUNT_UNCERTAIN",
+    "S13_HISTORY_REPAIR_COUNT_XML_NODE_EXISTS_BUT_PARSER_MISSED"
+  ],
+  "direct_cause": "S13 ???????????? s12_to_s13_20260517_162823.xml ??????????? / ???? / 4 ?????????? S13 history table ???????? token????????????????????/??????????? HISTORY_REPAIR_COUNT_UNCERTAIN?",
+  "next_fix_area": "?? S13 ? history repair table ?????fresh ????? raw node/bounds ??????? S11 ? S12 ????"
+}

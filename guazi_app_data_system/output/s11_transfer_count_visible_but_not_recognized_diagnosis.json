@@ -1,0 +1,67 @@
+{
+  "status": "S11_TRANSFER_COUNT_VISIBLE_BUT_NOT_RECOGNIZED_DIAGNOSIS_DONE",
+  "classification": "S11_TRANSFER_COUNT_XML_NODE_EXISTS_BUT_REGEX_MISSED",
+  "target_fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "reference_index": 1,
+  "user_observation": "?????????0????????/XML???????1????????????0??",
+  "evidence_pair": {
+    "screenshot_path": "artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260517_160126.png",
+    "xml_path": "artifacts\\debug\\s10_to_s11_20260517_160126_compressed.xml",
+    "screenshot_exists": true,
+    "xml_exists": true,
+    "screenshot_size": 168884,
+    "xml_size": 35602,
+    "screenshot_mtime": "2026-05-17 16:01:26",
+    "xml_mtime": "2026-05-17 16:01:32",
+    "same_fresh_pair": "yes_same_s10_to_s11_wait_round_dump_after_screenshot",
+    "recognized_page": "S11",
+    "recognized_by": "S11_TOP_ONE_THIRD_IMAGE_ONLY_STANDARD",
+    "stale_xml_signals": "not_detected_for_this_failure; XML contains S11 detail fields, not S10 list page"
+  },
+  "screenshot_check": {
+    "transfer_text_visible": true,
+    "visible_text": "??1?",
+    "nearby_text": "?? A / ?????? / ??0? / ??1?",
+    "region": "middle vehicle condition card, right side of ?? row",
+    "obscured": false
+  },
+  "xml_keyword_counts": {
+    "??0?": 0,
+    "?? 0 ?": 0,
+    "0???": 0,
+    "??1?": 0,
+    "?? 1 ?": 0,
+    "1???": 0,
+    "??": 0
+  },
+  "candidate_nodes": [],
+  "parser": {
+    "function_name": "_extract_transfer_count",
+    "code_location": "scripts/runtime_s10_to_s16_mainline.py:6170-6172",
+    "input_source": "snapshot.visible_blob",
+    "uses_text_or_content_desc": "uses visible_blob generated from XML visible texts; does not inspect raw nodes separately here",
+    "regex_in_file_unicode_escape": "\\u6769\\u56e8\\u57db(?:\\u5a06\\u2103\\u669f)?\\s*(\\d+)",
+    "regex_display": "match = re.search(r\"???(?:???)?\\s*(\\d+)\", text)",
+    "expected_unicode_equivalent_should_have_been": "??(?:??)?\\s*(\\d+)",
+    "current_regex_matches_xml_candidate": false,
+    "if_regex_were_correct_unicode_it_would_match_compact_format": true,
+    "compact_format_supported_by_shape_but_broken_by_mojibake": true
+  },
+  "direct_field_missing_source": {
+    "handle_s11_code_location": "scripts/runtime_s10_to_s16_mainline.py:6244-6248",
+    "condition": "transfer_count is None after _extract_transfer_count(snapshot.visible_blob)",
+    "issue_code": "FIELD_MISSING",
+    "page": "S11"
+  },
+  "why_not_other_categories": {
+    "not_region_filter_too_narrow": "No region filter is applied in _extract_transfer_count; it searches visible_blob.",
+    "not_content_desc_missed": "The transfer value is in XML text, not only content-desc.",
+    "not_xml_screenshot_mismatch": "XML and screenshot are from the same S10_TO_S11 wait round and both show S11 detail context.",
+    "not_true_xml_missing": "XML contains exact text node ??1?.",
+    "not_fresh_too_early": "XML already contains the transfer field."
+  },
+  "final_conclusion": "XML ????????????????????????? transfer_count parser ?????????????? ???... ??? ??...?",
+  "code_modified": false,
+  "real_device_run": false,
+  "result_json_overwritten": false
+}

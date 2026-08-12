@@ -1,0 +1,64 @@
+{
+  "status": "S10_SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE",
+  "terminal_status": "SECOND_STAGE_DID_NOT_REACH_S16",
+  "auto_pricing_success_path_runtime_verified": false,
+  "created_at": "2026-05-16T14:15:55",
+  "target_fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "first_stage": {
+    "status": "S10_READY",
+    "s10_ready": true,
+    "trisame_count": 10,
+    "sort_done": true,
+    "result_path": "output/result_s01_to_s10.json"
+  },
+  "second_stage": {
+    "status": "SECOND_STAGE_FAST_HANDOFF_S10_GATE_FAILED",
+    "issue_code": "SECOND_STAGE_FAST_HANDOFF_S10_GATE_FAILED",
+    "recognized_state": "S10",
+    "result_path": "output/result_s10_to_s16.json",
+    "entered_s16": false,
+    "final_price_generated": false,
+    "manual_review_required": null
+  },
+  "s10_partial_card_gate_runtime": {
+    "partial_card_allowed_page_contract": "S10_PARTIAL_CARD_ALLOWED_PAGE_CONTRACT_UPDATED",
+    "bottom_partial_card_present": true,
+    "partial_card_allowed_by_contract": true,
+    "selected_reference_card_stop_code": "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE",
+    "selected_reference_card_fully_visible": false,
+    "selected_reference_card_fields_complete": false,
+    "selected_reference_card_safe_click_area": false,
+    "selected_reference_card_gate_passed": false,
+    "target_reference_index": 5,
+    "explanation": "???????????????????? selected_reference_card=?5?????????????????????"
+  },
+  "s11_fine_scroll_runtime": {
+    "patch_status_before_run": "S11_REPORT_ENTRY_FINE_SCROLL_PATCHED",
+    "runtime_reached_s11_s12_s13_s14_s15_for_some_references": true,
+    "previous_runtime_observation": "????????? reference #2/#3/#4???? S11 ??????????? S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER?",
+    "final_failure_related_to_s11": false
+  },
+  "auto_pricing_path": {
+    "expected_baseline_target_score": 84.0,
+    "expected_baseline_final_reference_index": 2,
+    "expected_baseline_final_reference_score": 86.0,
+    "actual_reached_s16": false,
+    "actual_pricing_payload_present": false,
+    "failure_reason": "selected_reference_card_not_fully_visible_before_reference_5_click"
+  },
+  "evidence_paths": {
+    "first_stage_result": "output/result_s01_to_s10.json",
+    "second_stage_result": "output/result_s10_to_s16.json",
+    "result": "output/result.json",
+    "failure_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_s16_start_20260516_141423.png",
+    "failure_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260516_141423.xml"
+  },
+  "constraints_confirmed": {
+    "code_modified_this_round": false,
+    "pricing_modified": false,
+    "config_modified": false,
+    "baseline_modified": false,
+    "manual_click_used": false,
+    "baseline_result_faked": false
+  }
+}

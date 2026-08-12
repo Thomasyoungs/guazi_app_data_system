@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "generated_at": "2026-05-16T23:16:18",
+  "script": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py",
+  "checks": {
+    "constant_v1_38_present": true,
+    "stabilization_helper_present": true,
+    "micro_scroll_helper_present": true,
+    "wait_redump_present": true,
+    "micro_scroll_present": true,
+    "stabilization_failure_stop_present": true,
+    "top_tab_weak_marker_not_early_stop": true,
+    "safe_click_gate_reused": true,
+    "unsafe_reposition_branch_still_present": true,
+    "current_reference_fields_present": true,
+    "weak_markers_not_entry_texts": true,
+    "ocr_visual_fallback_not_added": true
+  },
+  "scenarios": [
+    {
+      "scenario": "A_xml_missing_then_redump_has_exact_entry",
+      "expected": "??? + ?? dump ????????????????",
+      "passed": true
+    },
+    {
+      "scenario": "B_xml_missing_then_micro_scroll_has_exact_entry",
+      "expected": "redump ?????? 30-80px ?????????????????",
+      "passed": true
+    },
+    {
+      "scenario": "C_exact_entry_after_stabilization_but_unsafe",
+      "expected": "XML ??????????? unsafe reposition??????",
+      "passed": true
+    },
+    {
+      "scenario": "D_stabilization_exhausted_xml_still_missing",
+      "expected": "?????? XML ??????? S11_REPORT_ENTRY_XML_STABILIZATION_FAILED??????????",
+      "passed": true
+    },
+    {
+      "scenario": "E_only_weak_markers_not_clickable",
+      "expected": "???????????????????????? stabilization",
+      "passed": true
+    },
+    {
+      "scenario": "F_no_ocr_no_screenshot_coordinate_click",
+      "expected": "??? OCR????????????",
+      "passed": true
+    },
+    {
+      "scenario": "G_existing_s10_s14_metal_paths_not_changed_by_patch_scope",
+      "expected": "?????? S11_REPORT_SEARCH XML stabilization??? S10/S14/metal_deduct",
+      "passed": true
+    }
+  ],
+  "py_compile": "passed",
+  "ocr_enabled": false,
+  "visual_fallback_enabled": false,
+  "screenshot_coordinate_click_enabled": false
+}

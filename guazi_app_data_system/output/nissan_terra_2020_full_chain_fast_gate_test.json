@@ -1,0 +1,174 @@
+{
+  "task": "RUN_FULL_CHAIN_NISSAN_TERRA_2020_WITH_S06_FAST_GATE_AND_S10_HANDOFF_FAST_GATE_TEST",
+  "generated_at": "2026-05-13T10:58:03",
+  "target_fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "final_state": "RUN_FULL_CHAIN_NISSAN_TERRA_2020_WITH_S06_FAST_GATE_AND_S10_HANDOFF_FAST_GATE_TEST_DONE",
+  "overall_status": "RUN_FAILED_WITH_ISSUE",
+  "stop_code": "S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED",
+  "stop_stage": "S14",
+  "stop_reason": "Second-stage continuation stopped because S14 image sequence was not fully processed; this is outside the allowed S06/S10 fast-gate modification scope.",
+  "target_task": {
+    "brand": "??",
+    "series": "??",
+    "year_model": "2020?",
+    "config_model": "2.5L XL Upper 4WD ???????",
+    "color": "?",
+    "register_date": "2021.08",
+    "mileage_10k_km": 5.1,
+    "transfer_count": 1,
+    "guide_price_10k": 22.83,
+    "sunroof": "?",
+    "emission_standard": "?6",
+    "insurance_expiry": "2026.08",
+    "license_city": "??",
+    "condition_text": "????"
+  },
+  "code_changes": {
+    "runtime_s01_to_s10_mainline.py": [
+      "Added deterministic Nissan brand initial mapping ??/????/NISSAN/Nissan -> R.",
+      "Changed S06 recognizer to requested fast gate: S05_CONFIRM_TO_S06 + S05_DONE + clickable ???? bounds.",
+      "Recorded S06 fast-gate timing fields in runtime context."
+    ],
+    "runtime_s10_to_s16_mainline.py": [
+      "Added first-stage handoff readiness requiring S10_READY/filter/sort/trisame/canonical order evidence.",
+      "Added second-stage S10 fast handoff gate: first-stage handoff + three S10 core elements + strong-error exclusion.",
+      "Recorded fast handoff audit/timing on the current reference."
+    ]
+  },
+  "validations": {
+    "py_compile_runtime_s01_to_s10_mainline": true,
+    "py_compile_runtime_s10_to_s16_mainline": true,
+    "offline_brand_initial_mapping": {
+      "??": "R",
+      "????": null,
+      "NISSAN": "R",
+      "Nissan": "R"
+    },
+    "offline_s06_fast_gate_positive": true,
+    "offline_s06_fast_gate_no_model_config_stop": "S06_MODEL_CONFIG_ENTRY_NOT_BOUND_BY_FAST_GATE"
+  },
+  "first_stage": {
+    "status": "S10_READY",
+    "final_status": "S10_READY",
+    "fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+    "flow_state": {
+      "S05_DONE": true,
+      "S07_FILTER_DONE": true,
+      "COLOR_FILTER_DONE": true,
+      "AGE_FILTER_DONE": true,
+      "SORT_DONE": true,
+      "S10_READY": true
+    },
+    "trisame_count": 3,
+    "complete_target_vehicle_card_count": 3,
+    "s10_ready_reason": "source_gate_core_elements_target_trisame_boundary_passed",
+    "s06_page_variant": "S06_TARGET_FILTER_LIST_AFTER_S05_CONFIRM",
+    "s06_recognized_by": "fast_gate_source_s05_done_model_config_bounds",
+    "s06_to_s07_result": "entered_s07",
+    "log_path": "logs/nissan_terra_2020_first_stage_20260513_104316.log"
+  },
+  "second_stage": {
+    "status": "S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED",
+    "final_status": "S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED",
+    "issue_code": "S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED",
+    "fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+    "current_reference_index": 3,
+    "reference_history_count": 3,
+    "logs": [
+      "logs/nissan_terra_2020_second_stage_20260513_104545.log",
+      "logs/nissan_terra_2020_second_stage_continue_2_20260513_105004.log"
+    ]
+  },
+  "reference_history": [
+    {
+      "reference_index": 1,
+      "title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+      "price_yuan": 84800,
+      "mileage_10k_km": 12.5,
+      "reference_score": 78.0,
+      "reference_score_gte_target_score": false,
+      "reference_status": null,
+      "reference_exclusion_reason": null,
+      "title_normalized_match": true,
+      "official_report_entry_seen": true,
+      "s14_collect_done": true
+    },
+    {
+      "reference_index": 2,
+      "title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+      "price_yuan": 105900,
+      "mileage_10k_km": 13.4,
+      "reference_score": null,
+      "reference_score_gte_target_score": null,
+      "reference_status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+      "reference_exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+      "title_normalized_match": true,
+      "official_report_entry_seen": false,
+      "s14_collect_done": null
+    },
+    {
+      "reference_index": 3,
+      "title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+      "price_yuan": 109000,
+      "mileage_10k_km": 8.66,
+      "reference_score": null,
+      "reference_score_gte_target_score": null,
+      "reference_status": null,
+      "reference_exclusion_reason": null,
+      "title_normalized_match": true,
+      "official_report_entry_seen": true,
+      "s14_collect_done": false
+    }
+  ],
+  "fast_gate_timing": {
+    "s06_fast_gate_duration_ms": null,
+    "s06_click_model_config_duration_ms": null,
+    "second_stage_start_to_s10_fast_gate_ms": 2,
+    "s10_fast_gate_duration_ms": 2,
+    "second_stage_start_to_reference_click_ms": 3,
+    "second_stage_fast_handoff_passed": true,
+    "s10_fast_handoff_core_elements": [
+      "price_low_to_high_sort_signal",
+      "complete_target_vehicle_card",
+      "target_trisame_evidence"
+    ],
+    "s10_fast_handoff_strong_error_signals": [],
+    "s10_vehicle_card_count": 3
+  },
+  "pricing": {
+    "entered_s16": false,
+    "final_pricing_output": null,
+    "reason": "No final pricing emitted because S14 stopped before S16."
+  },
+  "quality_checks": {
+    "result_s01_to_s10.json": {
+      "json_valid": true,
+      "bad_large_field_count": 0,
+      "bad_large_fields": [],
+      "old_target_pollution_count": 0,
+      "old_target_pollution": []
+    },
+    "result_s10_to_s16.json": {
+      "json_valid": true,
+      "bad_large_field_count": 0,
+      "bad_large_fields": [],
+      "old_target_pollution_count": 0,
+      "old_target_pollution": []
+    },
+    "result.json": {
+      "json_valid": true,
+      "bad_large_field_count": 0,
+      "bad_large_fields": [],
+      "old_target_pollution_count": 0,
+      "old_target_pollution": []
+    }
+  },
+  "used_non_trisame_price": false,
+  "used_old_95_percent_rule": false,
+  "baseline_overwritten": false,
+  "result_paths": {
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "result_s10_to_s16": "output/result_s10_to_s16.json",
+    "result": "output/result.json"
+  }
+}

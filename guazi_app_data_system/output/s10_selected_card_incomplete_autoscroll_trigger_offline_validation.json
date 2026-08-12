@@ -1,0 +1,300 @@
+{
+  "status": "S10_SELECTED_CARD_INCOMPLETE_AUTOSCROLL_TRIGGER_OFFLINE_VALIDATED",
+  "validations": [
+    {
+      "scenario": "A",
+      "passed": true,
+      "detail": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL executes controlled autoscroll instead of direct return"
+    },
+    {
+      "scenario": "B",
+      "passed": true,
+      "detail": "price appears after autoscroll and selected card becomes clickable"
+    },
+    {
+      "scenario": "C",
+      "passed": true,
+      "detail": "still missing price blocks with REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL"
+    },
+    {
+      "scenario": "D",
+      "passed": true,
+      "detail": "still partial/unsafe blocks with SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE"
+    },
+    {
+      "scenario": "E",
+      "passed": true,
+      "detail": "binding not unique after autoscroll blocks without click"
+    },
+    {
+      "scenario": "F",
+      "passed": true,
+      "detail": "bottom partial card remains excluded from valid reference history/index advancement"
+    },
+    {
+      "scenario": "G",
+      "passed": true,
+      "detail": "price-missing or half-visible card is blocked and not clicked"
+    }
+  ],
+  "case_traces": [
+    {
+      "name": "A_reference_incomplete_triggers_autoscroll",
+      "selected": {
+        "reference_index": 7,
+        "selected_reference_index": 7,
+        "selected_card_title": "?? ?? 2023? 260TURBO ???",
+        "selected_card_price": "12.43?",
+        "selected_card_metadata": "2024? | 3.32??? | ?? | HondaSENS",
+        "list_title": "?? ?? 2023? 260TURBO ???",
+        "list_price_text": "12.43?",
+        "raw_metadata": "2024? | 3.32??? | ?? | HondaSENS",
+        "selected_click_bounds": [
+          429,
+          1200,
+          949,
+          1320
+        ],
+        "s10_card_completion_scroll_attempts": [
+          {
+            "scroll_attempt_index": 1,
+            "scroll_x": 610,
+            "scroll_y_start": 2300,
+            "scroll_y_end": 1700,
+            "scroll_distance_px": 600,
+            "action_ms": 123,
+            "fresh_ms": 0,
+            "recognized_page": "S10",
+            "reliable_s10": true,
+            "complete_card_count": 1,
+            "partial_card_count": 0,
+            "target_card_visible": true,
+            "target_partial_card_visible": false,
+            "s10_selected_card_incomplete_reason": [
+              "missing_price"
+            ],
+            "s10_selected_card_price_missing_before_autoscroll": true,
+            "s10_selected_card_metadata_missing_before_autoscroll": false,
+            "screenshot_path": "artifacts/screenshots/s10_reference_card_complete_scroll_1_20260516_211834.png",
+            "xml_path": "artifacts/debug/s10_reference_card_complete_scroll_1_20260516_211834.xml"
+          }
+        ],
+        "s10_card_completion_scroll_used": true,
+        "partial_completion_bound_by_expected_card": true
+      },
+      "point": [
+        689,
+        1260
+      ],
+      "calls": {
+        "select": 1,
+        "expected": 1,
+        "swipe": 1
+      },
+      "timing_events": 2
+    },
+    {
+      "name": "B_autoscroll_then_price_complete_allows_click",
+      "selected": {
+        "reference_index": 7,
+        "selected_reference_index": 7,
+        "selected_card_title": "?? ?? 2023? 260TURBO ???",
+        "selected_card_price": "12.43?",
+        "selected_card_metadata": "2024? | 3.32??? | ?? | HondaSENS",
+        "list_title": "?? ?? 2023? 260TURBO ???",
+        "list_price_text": "12.43?",
+        "raw_metadata": "2024? | 3.32??? | ?? | HondaSENS",
+        "selected_click_bounds": [
+          429,
+          1200,
+          949,
+          1320
+        ],
+        "s10_card_completion_scroll_attempts": [
+          {
+            "scroll_attempt_index": 1,
+            "scroll_x": 610,
+            "scroll_y_start": 2300,
+            "scroll_y_end": 1700,
+            "scroll_distance_px": 600,
+            "action_ms": 123,
+            "fresh_ms": 0,
+            "recognized_page": "S10",
+            "reliable_s10": true,
+            "complete_card_count": 1,
+            "partial_card_count": 0,
+            "target_card_visible": true,
+            "target_partial_card_visible": false,
+            "s10_selected_card_incomplete_reason": [
+              "missing_price"
+            ],
+            "s10_selected_card_price_missing_before_autoscroll": true,
+            "s10_selected_card_metadata_missing_before_autoscroll": false,
+            "screenshot_path": "artifacts/screenshots/s10_reference_card_complete_scroll_1_20260516_211835.png",
+            "xml_path": "artifacts/debug/s10_reference_card_complete_scroll_1_20260516_211835.xml"
+          }
+        ],
+        "s10_card_completion_scroll_used": true,
+        "partial_completion_bound_by_expected_card": true
+      },
+      "point": [
+        689,
+        1260
+      ],
+      "calls": {
+        "select": 1,
+        "expected": 1,
+        "swipe": 1
+      },
+      "timing_events": 2
+    },
+    {
+      "name": "C_autoscroll_still_missing_price_blocks",
+      "selected": {
+        "ok": false,
+        "stop_code": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL",
+        "reason": "Target reference card remained incomplete after controlled S10 list completion scrolls.",
+        "target_reference_index": 7,
+        "last_binding_result": {
+          "ok": false,
+          "stop_code": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL",
+          "reason": "still missing price",
+          "partial_card": {
+            "missing_price": true,
+            "incomplete_reason": [
+              "missing_price"
+            ]
+          }
+        },
+        "scroll_attempts": [
+          {
+            "scroll_attempt_index": 1,
+            "scroll_x": 610,
+            "scroll_y_start": 2300,
+            "scroll_y_end": 1700,
+            "scroll_distance_px": 600,
+            "action_ms": 123,
+            "fresh_ms": 0,
+            "recognized_page": "S10",
+            "reliable_s10": true,
+            "complete_card_count": 1,
+            "partial_card_count": 0,
+            "target_card_visible": true,
+            "target_partial_card_visible": false,
+            "s10_selected_card_incomplete_reason": [
+              "missing_price"
+            ],
+            "s10_selected_card_price_missing_before_autoscroll": true,
+            "s10_selected_card_metadata_missing_before_autoscroll": false,
+            "screenshot_path": "artifacts/screenshots/s10_reference_card_complete_scroll_1_20260516_211835.png",
+            "xml_path": "artifacts/debug/s10_reference_card_complete_scroll_1_20260516_211835.xml"
+          }
+        ]
+      },
+      "point": [
+        0,
+        0
+      ],
+      "calls": {
+        "select": 2,
+        "expected": 1,
+        "swipe": 1
+      },
+      "timing_events": 2
+    },
+    {
+      "name": "D_autoscroll_still_partial_blocks_selected_not_visible",
+      "selected": {
+        "ok": false,
+        "stop_code": "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE",
+        "reason": "Target reference card remained partially visible or unsafe after controlled S10 list completion scrolls.",
+        "target_reference_index": 7,
+        "last_binding_result": {
+          "ok": false,
+          "stop_code": "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE",
+          "reason": "still partial",
+          "partial_card": {
+            "missing_price": false,
+            "incomplete_reason": [
+              "bottom_partial_card"
+            ]
+          }
+        },
+        "scroll_attempts": [
+          {
+            "scroll_attempt_index": 1,
+            "scroll_x": 610,
+            "scroll_y_start": 2300,
+            "scroll_y_end": 1700,
+            "scroll_distance_px": 600,
+            "action_ms": 123,
+            "fresh_ms": 0,
+            "recognized_page": "S10",
+            "reliable_s10": true,
+            "complete_card_count": 1,
+            "partial_card_count": 0,
+            "target_card_visible": true,
+            "target_partial_card_visible": false,
+            "s10_selected_card_incomplete_reason": [],
+            "s10_selected_card_price_missing_before_autoscroll": false,
+            "s10_selected_card_metadata_missing_before_autoscroll": false,
+            "screenshot_path": "artifacts/screenshots/s10_reference_card_complete_scroll_1_20260516_211836.png",
+            "xml_path": "artifacts/debug/s10_reference_card_complete_scroll_1_20260516_211836.xml"
+          }
+        ]
+      },
+      "point": [
+        0,
+        0
+      ],
+      "calls": {
+        "select": 2,
+        "expected": 1,
+        "swipe": 1
+      },
+      "timing_events": 2
+    },
+    {
+      "name": "E_autoscroll_binding_not_unique_blocks",
+      "selected": {
+        "ok": false,
+        "stop_code": "REFERENCE_CARD_BINDING_NOT_UNIQUE",
+        "reason": "not unique",
+        "s10_card_completion_scroll_attempts": [
+          {
+            "scroll_attempt_index": 1,
+            "scroll_x": 610,
+            "scroll_y_start": 2300,
+            "scroll_y_end": 1700,
+            "scroll_distance_px": 600,
+            "action_ms": 123,
+            "fresh_ms": 0,
+            "recognized_page": "S10",
+            "reliable_s10": true,
+            "complete_card_count": 1,
+            "partial_card_count": 0,
+            "target_card_visible": true,
+            "target_partial_card_visible": false,
+            "s10_selected_card_incomplete_reason": [
+              "missing_price"
+            ],
+            "s10_selected_card_price_missing_before_autoscroll": true,
+            "s10_selected_card_metadata_missing_before_autoscroll": false,
+            "screenshot_path": "artifacts/screenshots/s10_reference_card_complete_scroll_1_20260516_211837.png",
+            "xml_path": "artifacts/debug/s10_reference_card_complete_scroll_1_20260516_211837.xml"
+          }
+        ]
+      },
+      "point": [
+        0,
+        0
+      ],
+      "calls": {
+        "select": 2,
+        "expected": 1,
+        "swipe": 1
+      },
+      "timing_events": 2
+    }
+  ]
+}

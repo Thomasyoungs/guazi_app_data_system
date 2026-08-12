@@ -1,0 +1,50 @@
+{
+  "status": "S13_REPAIR_ITEM_UNSAFE_REPOSITION_PATCHED",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "forbidden_scopes_touched": false,
+  "contract_version": "V1.40",
+  "implemented": {
+    "new_s13_action_id": "reposition_repair_item_entry",
+    "trigger": "count > 0 and repair item candidates exist but no safe click target is confirmed because bounds/click area are unsafe",
+    "max_reposition_attempts": 2,
+    "reposition_style": "controlled small upward swipe inside current S13 context",
+    "fresh_after_each_reposition": true,
+    "context_recheck_after_each_reposition": [
+      "recognized_page == S13",
+      "history repair table still detected",
+      "same region history repair count remains bound",
+      "repair item candidate still belongs to the same positive region",
+      "safe click target confirmed before click"
+    ],
+    "failure_codes": [
+      "S13_REPAIR_ITEM_CLICK_TARGET_NOT_CONFIRMED",
+      "S13_REPAIR_DETAIL_REPOSITION_LOST_CONTEXT"
+    ]
+  },
+  "not_changed": [
+    "scripts/runtime_s01_to_s10_mainline.py",
+    "S10 selected card autoscroll",
+    "S10 local title binding",
+    "S11 fresh pair / stale XML",
+    "S11 internal visible-region mismatch",
+    "S11 unsafe reposition",
+    "S12 main flow",
+    "S13 history table detection and count parsing",
+    "S14 collection rules",
+    "pricing",
+    "config",
+    "metal_deduct",
+    "baseline",
+    "scoring rules",
+    "pricing rules"
+  ],
+  "validation": {
+    "py_compile": "passed",
+    "module_import": "passed",
+    "offline_validation": "passed",
+    "offline_validation_path": "output/s13_repair_item_unsafe_reposition_offline_validation.json"
+  },
+  "real_device_run_after_patch": "pending"
+}

@@ -1,0 +1,51 @@
+{
+  "status": "SECOND_STAGE_BLOCKED_NOT_AT_RELIABLE_S10",
+  "script_status": "SECOND_STAGE_BLOCKED_NOT_AT_S10_READY",
+  "recognized_state": "RUNTIME",
+  "issue_code": "PAGE_CONTRACT_EXECUTOR_MISSING_FOR_FULL_MAINLINE",
+  "target_fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "precheck": {
+    "result_json_status": "S10_READY",
+    "first_stage_ready": true,
+    "first_stage_status": "S10_READY",
+    "first_stage_target_fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+    "current_phone_page_reliable_s10": false,
+    "current_phone_recognized_state": "RUNTIME",
+    "price_asc_from_first_stage": true
+  },
+  "rule_source_validation": {
+    "not_reached_s15_s16": true,
+    "rule_source_guard_runtime_checked": false,
+    "reason": "second stage blocked before business flow because current phone page was not reliable S10"
+  },
+  "page_chain": {
+    "s10_handoff_passed": false,
+    "s11_reached": false,
+    "s12_reached": false,
+    "s13_reached": false,
+    "s14_reached": false,
+    "s15_reached": false,
+    "s16_reached": false
+  },
+  "pricing": {
+    "final_price_generated": false,
+    "pricing_payload_generated": false,
+    "auto_pricing_allowed": null,
+    "manual_review_required": null
+  },
+  "evidence": {
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_s16_start_20260519_155214.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260519_155214.xml",
+    "visible_text_digest": [],
+    "first_stage_evidence_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s01_to_s10.json"
+  },
+  "actions_taken": [
+    "checked result.json S10_READY",
+    "started second stage once",
+    "stopped at second-stage reliable S10 handoff gate"
+  ],
+  "code_modified": false,
+  "config_modified": false,
+  "first_stage_rerun": false,
+  "second_stage_started": true
+}

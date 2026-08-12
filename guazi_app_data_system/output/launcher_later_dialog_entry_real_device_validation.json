@@ -1,0 +1,113 @@
+{
+  "task": "RUN_LAUNCHER_LATER_DIALOG_ENTRY_REAL_DEVICE_VALIDATION_ONLY",
+  "android_serial": "6TGYYHPZCETCSK6L",
+  "created_at": "2026-05-12T19:54:01",
+  "launcher_later_dialog_contract_enabled": true,
+  "max_later_click_attempts": 5,
+  "stop_after_app_entry": true,
+  "code_modified": false,
+  "full_business_flow_run": false,
+  "second_stage_started": false,
+  "reference_collected": false,
+  "pricing_output": false,
+  "device_online": true,
+  "adb_devices_stdout": "List of devices attached\n6TGYYHPZCETCSK6L\tdevice\nemulator-5554\toffline\n\n",
+  "later_dialog_seen": true,
+  "later_button_seen": true,
+  "later_click_attempts": 1,
+  "clicked_texts": [
+    "稍后"
+  ],
+  "clicked_bounds_list": [
+    [
+      133,
+      1366,
+      569,
+      1509
+    ]
+  ],
+  "later_dialog_dismissed": true,
+  "app_icon_visible_after_later_dialog": true,
+  "launcher_later_dialog_stop_code": null,
+  "launcher_later_click_history": [
+    {
+      "attempt": 1,
+      "clicked_text": "稍后",
+      "clicked_bounds": [
+        133,
+        1366,
+        569,
+        1509
+      ],
+      "before_screenshot_path": "artifacts/screenshots/launcher_validation_before_icon_20260512_195406.png",
+      "before_xml_path": "artifacts/debug/launcher_validation_before_icon_20260512_195406.xml",
+      "after_screenshot_path": "artifacts/screenshots/device_ready_after_launcher_later_attempt_1_20260512_195410.png",
+      "after_xml_path": "artifacts/debug/device_ready_after_launcher_later_attempt_1_20260512_195410.xml",
+      "later_dialog_seen_after_click": false,
+      "app_icon_visible_after_click": true
+    }
+  ],
+  "launcher_later_dialog_evidence_paths": [
+    {
+      "attempt": 0,
+      "phase": "initial_detected",
+      "screenshot_path": "artifacts/screenshots/launcher_validation_before_icon_20260512_195406.png",
+      "xml_path": "artifacts/debug/launcher_validation_before_icon_20260512_195406.xml"
+    },
+    {
+      "attempt": 1,
+      "phase": "after_later_click",
+      "screenshot_path": "artifacts/screenshots/device_ready_after_launcher_later_attempt_1_20260512_195410.png",
+      "xml_path": "artifacts/debug/device_ready_after_launcher_later_attempt_1_20260512_195410.xml"
+    }
+  ],
+  "final_status": "RUN_LAUNCHER_LATER_DIALOG_ENTRY_REAL_DEVICE_VALIDATION_ONLY_DONE",
+  "stop_code": null,
+  "app_icon_clicked": true,
+  "icon_tap_error": "",
+  "entered_guazi_app": true,
+  "recognized_entry_page": "S01",
+  "foreground_package": "com.ganji.android.haoche_c",
+  "focused_window": "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity",
+  "xml_package": "com.ganji.android.haoche_c",
+  "resumed_activity": "",
+  "screenshot_path": "artifacts/screenshots/launcher_validation_after_icon_20260512_195414.png",
+  "xml_path": "artifacts/debug/launcher_validation_after_icon_20260512_195414.xml",
+  "visible_text_digest": [
+    "唐山",
+    "吉利汽车远景",
+    "搜索",
+    "9",
+    "二手车",
+    "卖车",
+    "分期购车",
+    "新能源",
+    "低价",
+    "源头低价",
+    "哈弗",
+    "MINI",
+    "奔驰",
+    "丰田",
+    "大众",
+    "大力牛魔王D02",
+    "1.75万",
+    "已补3.00万",
+    "奔驰C级",
+    "18.22万",
+    "一眼看真车",
+    "揽胜极光",
+    "5.68万",
+    "讲解中",
+    "帝豪",
+    "精选车源",
+    "官方自营",
+    "新人练手",
+    "0过户",
+    "大空间"
+  ],
+  "capture_metrics": {
+    "screenshot_ms": 485,
+    "xml_ms": 6627
+  },
+  "validation_status": "LAUNCHER_LATER_DIALOG_REPEAT_UNTIL_CLOSED_REAL_DEVICE_PASSED"
+}

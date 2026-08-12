@@ -1,0 +1,159 @@
+{
+  "status": "S13_REPAIR_ITEM_CLICKABLE_CONTAINER_BINDING_DIAGNOSIS_DONE",
+  "final_classification": [
+    "S13_REPAIR_ITEM_CLICKABLE_CONTAINER_EXISTS_BUT_BINDER_MISSED",
+    "S13_REPAIR_ITEM_CONTAINER_IS_SIBLING_OR_REGION_BLOCK"
+  ],
+  "readonly": true,
+  "code_modified": false,
+  "real_device_run": false,
+  "result_json_overwritten": false,
+  "target_fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+  "evidence": {
+    "screenshot_path": "artifacts/screenshots/s13_repair_item_reposition_车头_1_20260518_111841.png",
+    "xml_path": "artifacts/debug/s13_repair_item_reposition_车头_1_20260518_111841.xml",
+    "raw_extract_path": "output/s13_repair_item_clickable_container_binding_bounds_extract.json",
+    "clickable_extract_path": "output/s13_repair_item_clickable_container_binding_diagnosis_raw_extract.json"
+  },
+  "s13_context": {
+    "region": "车头",
+    "history_repair_count": 2,
+    "history_table_detected": true,
+    "history_count_binding": {
+      "车头": 2
+    },
+    "reposition_context_lost": false
+  },
+  "script_selected_candidate_after_reposition": {
+    "candidate_text": "前保险杠",
+    "candidate_bounds": [
+      152,
+      2154,
+      312,
+      2216
+    ],
+    "class": "android.widget.TextView",
+    "clickable": false,
+    "enabled": true,
+    "parent_level_1": {
+      "class": "android.view.View",
+      "bounds": [
+        78,
+        2024,
+        1144,
+        2513
+      ],
+      "clickable": false,
+      "enabled": true
+    },
+    "parent_level_2": {
+      "class": "android.view.View",
+      "bounds": [
+        26,
+        1885,
+        1196,
+        2513
+      ],
+      "clickable": true,
+      "enabled": true,
+      "descendant_texts": [
+        "车头：检测通过10",
+        "日间行车灯",
+        "机舱盖铰链（左）",
+        "前保险杠",
+        "发动机舱盖漆面",
+        "发动机舱盖",
+        "机舱盖铰链（右）",
+        "机舱盖锁",
+        "前雾灯",
+        "中网",
+        "前风挡玻璃"
+      ],
+      "diagnosis": "This clickable container belongs to the lower detection-pass list, not the history-repair entry area. It is large and extends to the page bottom."
+    },
+    "siblings": [
+      "日间行车灯",
+      "机舱盖铰链（左）",
+      "前保险杠",
+      "发动机舱盖漆面",
+      "发动机舱盖",
+      "机舱盖铰链（右）",
+      "机舱盖锁",
+      "前雾灯",
+      "中网",
+      "前风挡玻璃"
+    ]
+  },
+  "actual_history_repair_clickable_entries": [
+    {
+      "bounds": [
+        81,
+        1608,
+        611,
+        1716
+      ],
+      "class": "android.view.View",
+      "clickable": true,
+      "enabled": true,
+      "descendant_texts": [
+        "左前大灯"
+      ],
+      "parent_bounds": [
+        26,
+        1475,
+        1196,
+        1888
+      ],
+      "same_region_block": "车头深度检测 / 历史修复 2"
+    },
+    {
+      "bounds": [
+        611,
+        1608,
+        1140,
+        1716
+      ],
+      "class": "android.view.View",
+      "clickable": true,
+      "enabled": true,
+      "descendant_texts": [
+        "右前大灯"
+      ],
+      "parent_bounds": [
+        26,
+        1475,
+        1196,
+        1888
+      ],
+      "same_region_block": "车头深度检测 / 历史修复 2"
+    }
+  ],
+  "why_binding_failed": {
+    "entry_text_node_itself_clickable": false,
+    "nearest_parent_for_script_selected_candidate_clickable": true,
+    "nearest_parent_for_script_selected_candidate_belongs_to_lower_detection_pass_list": true,
+    "correct_clickable_container_exists": true,
+    "correct_container_relation": "clickable container with descendant text, not a parent of the script-selected lower-list candidate",
+    "current_code_path": [
+      "_s13_repair_item_candidates scans text labels after region header",
+      "_s13_repair_item_label_matches depends on S14_ALLOWED_PARTS",
+      "S14_ALLOWED_PARTS does not include 大灯 labels",
+      "therefore 左前大灯/右前大灯 history-repair clickable entries are skipped",
+      "script later selects lower detection-pass items like 前保险杠"
+    ],
+    "code_locations": {
+      "allowed_parts": "scripts/runtime_s10_to_s16_mainline.py:55-75",
+      "candidate_scan": "scripts/runtime_s10_to_s16_mainline.py:7917-7942",
+      "click_target_binding": "scripts/runtime_s10_to_s16_mainline.py:7945-8076"
+    }
+  },
+  "answers": {
+    "repositioned_entry_xml_node": "The script-selected node is text='前保险杠', class=android.widget.TextView, bounds=[152,2154,312,2216], clickable=false, enabled=true.",
+    "is_node_clickable": false,
+    "nearest_clickable_container_exists": true,
+    "why_script_did_not_bind": "For the selected lower-list candidate, the clickable parent is too large/lower-list scoped. More importantly, the actual history-repair entries are clickable sibling/region-block containers with descendant texts 左前大灯/右前大灯; current candidate generation missed them.",
+    "sibling_or_region_block_container_exists": true,
+    "correct_safety_or_binding": "The final refusal to click the selected candidate is safe, but the upstream candidate binding is too narrow/wrong because it ignores the actual clickable history-repair containers.",
+    "next_fix_direction": "Patch S13 repair-item binding to enumerate clickable containers inside the count>0 region block and inspect descendant text, including non-S14_ALLOWED_PARTS labels such as 大灯, instead of selecting lower detection-pass list items."
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "xml_path": "artifacts/debug/s02_to_s03_20260512_150349.xml",
+  "visible_geely": false,
+  "letters": [
+    "A",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "W",
+    "X",
+    "Y",
+    "Z"
+  ],
+  "tests": [
+    {
+      "name": "brand_initial_geely",
+      "target_brand": "吉利",
+      "aliases": [
+        "吉利",
+        "吉利汽车",
+        "GEELY",
+        "Geely"
+      ],
+      "expected": "J",
+      "actual": "J",
+      "pass": true
+    },
+    {
+      "name": "s03_geely_not_visible_j_visible",
+      "target_brand_visible": false,
+      "target_initial_letter": "J",
+      "j_visible": true,
+      "next_action": "S03_ONLY_ALLOWED_ACTION_CLICK_TARGET_INITIAL_LETTER_J",
+      "attempted_letter_J": true,
+      "attempted_letter_G": false,
+      "attempted_new_energy_tab": false,
+      "attempted_scroll": false,
+      "pass": true
+    },
+    {
+      "name": "after_j_geely_visible_simulated",
+      "target_brand_visible": true,
+      "next_action": "S03_ONLY_ALLOWED_ACTION_CLICK_BRAND_ROW_LEFT_ICON_SAFE_POINT",
+      "pass": true
+    },
+    {
+      "name": "after_j_geely_still_not_visible_simulated",
+      "target_brand_visible": false,
+      "next_action": "STOP",
+      "stop_code": "S03_TARGET_BRAND_NOT_VISIBLE_AFTER_INITIAL_LETTER",
+      "pass": true
+    },
+    {
+      "name": "unknown_brand_initial_missing",
+      "target_brand": "未知品牌XYZ",
+      "target_initial_letter": null,
+      "next_action": "STOP",
+      "stop_code": "S03_TARGET_INITIAL_LETTER_NOT_FOUND",
+      "attempted_alphabet": false,
+      "attempted_scroll": false,
+      "attempted_new_energy_tab": false,
+      "pass": true
+    }
+  ],
+  "all_pass": true
+}

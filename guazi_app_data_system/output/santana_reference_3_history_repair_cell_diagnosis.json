@@ -1,0 +1,83 @@
+{
+  "final_status": "DIAGNOSE_SANTANA_REFERENCE_3_HISTORY_REPAIR_CELL_NOT_FOUND_DONE",
+  "modified_code": false,
+  "ran_runtime": false,
+  "target_fingerprint": "大众|桑塔纳|2021款|1.5L 自动风尚版|白|2021.05",
+  "selected_reference_index": 3,
+  "selected_card_price": "4.03万",
+  "selected_card_metadata": "2021年 | 11.74万公里 | 唐山",
+  "selected_by": "canonical_reference_order",
+  "blocking_status": "HISTORY_REPAIR_CELL_NOT_FOUND",
+  "diagnosis_category": "S13_HISTORY_REPAIR_CELL_PARSER_BUG",
+  "secondary_categories": [
+    "S13_HISTORY_REPAIR_COUNT_NODE_SPLIT",
+    "S13_HISTORY_REPAIR_ZERO_OR_EMPTY_STYLE_CHANGED"
+  ],
+  "entered_s13": true,
+  "recognized_page": "S13",
+  "visible_text_digest": "e35678e03f302f95",
+  "s13_xml_path": "C:/Users/lzc93/Desktop/定价/guazi_app_data_system/artifacts/debug/s13_region_驾驶侧_20260509_133419.xml",
+  "s13_screenshot_path": "C:/Users/lzc93/Desktop/定价/guazi_app_data_system/artifacts/screenshots/s13_region_驾驶侧_20260509_133419.png",
+  "has_body_appearance": true,
+  "has_history_repair": true,
+  "has_region_tabs": true,
+  "region_tabs": [
+    "驾驶侧",
+    "车尾",
+    "副驾驶",
+    "车头"
+  ],
+  "clicked_body_appearance": true,
+  "clicked_text": "车身外观",
+  "clicked_bounds": [
+    487,
+    247,
+    796,
+    396
+  ],
+  "click_strategy": "exact_text_node_bounds_after_controlled_scroll",
+  "page_changed_after_click": true,
+  "before_click_xml_path": "C:/Users/lzc93/Desktop/定价/guazi_app_data_system/artifacts/debug/s12_scroll_body_search_tab_0_20260509_133409.xml",
+  "after_click_xml_path": "C:/Users/lzc93/Desktop/定价/guazi_app_data_system/artifacts/debug/s12_to_s13_20260509_133414.xml",
+  "missing_region": "驾驶侧",
+  "expected_regions": [
+    "驾驶侧",
+    "车尾",
+    "副驾驶",
+    "车头"
+  ],
+  "detected_regions": [
+    "驾驶侧",
+    "车尾",
+    "副驾驶",
+    "车头"
+  ],
+  "detected_counts_current_parser": {
+    "驾驶侧": 36,
+    "车尾": null,
+    "副驾驶": null,
+    "车头": null
+  },
+  "actual_history_repair_count_for_driver_side": 0,
+  "raw_text_near_history_repair": [
+    "驾驶侧深度检测：",
+    "历史修复",
+    "0",
+    "注意事项",
+    "0",
+    "检测通过",
+    "驾驶侧：检测通过36"
+  ],
+  "table_like_structure_seen": true,
+  "history_table_visible": true,
+  "needs_small_scroll": false,
+  "xml_preloaded_but_not_visible": false,
+  "screenshot_visible_but_xml_split": true,
+  "current_parser_expected_pattern": "region_name + 深度检测 -> 历史修复 -> next text digit",
+  "actual_pattern": "驾驶侧深度检测： / 历史修复 / 0 / 注意事项 / 0 / 检测通过 / 驾驶侧：检测通过36",
+  "pattern_mismatch_reason": "visible_texts de-duplicates repeated text values; the history repair 0 is removed because another 0 appeared earlier, so parser reads 36 from 检测通过36.",
+  "is_s10_sorting_issue": false,
+  "is_reference_index_issue": false,
+  "is_pricing_issue": false,
+  "recommended_next_patch_scope": "S13 history repair count parser should preserve ordered duplicate text nodes or parse from node sequence/bounds instead of de-duplicated visible_texts."
+}

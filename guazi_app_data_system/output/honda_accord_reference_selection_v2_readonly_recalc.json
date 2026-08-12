@@ -1,0 +1,101 @@
+{
+  "status": "HONDA_ACCORD_REFERENCE_SELECTION_V2_READONLY_RECALCULATED",
+  "target_score": 84.0,
+  "old_final_reference_index": 3,
+  "old_final_reference_score": 87.0,
+  "old_final_reference_price": 120800,
+  "references": [
+    {
+      "reference_index": 1,
+      "price_yuan": 113400,
+      "list_price_text": "11.34万",
+      "reference_score": 83.0,
+      "reference_score_trustworthy": true,
+      "field_complete": true,
+      "hard_eliminated": false,
+      "s14_collect_done": true,
+      "decision": null,
+      "exclusion_reason": null,
+      "v2_eligible_candidate": true,
+      "target_score_minus_reference_score": 1.0,
+      "v2_exclusion_reason": null
+    },
+    {
+      "reference_index": 2,
+      "price_yuan": 116700,
+      "list_price_text": "11.67万",
+      "reference_score": 77.5,
+      "reference_score_trustworthy": true,
+      "field_complete": true,
+      "hard_eliminated": false,
+      "s14_collect_done": true,
+      "decision": null,
+      "exclusion_reason": null,
+      "v2_eligible_candidate": true,
+      "target_score_minus_reference_score": 6.5,
+      "v2_exclusion_reason": null
+    },
+    {
+      "reference_index": 3,
+      "price_yuan": 120800,
+      "list_price_text": "12.08万",
+      "reference_score": 87.0,
+      "reference_score_trustworthy": true,
+      "field_complete": true,
+      "hard_eliminated": false,
+      "s14_collect_done": false,
+      "decision": null,
+      "exclusion_reason": null,
+      "v2_eligible_candidate": false,
+      "target_score_minus_reference_score": -3.0,
+      "v2_exclusion_reason": "reference_score_above_target_under_v2_rule"
+    }
+  ],
+  "v2_selected_reference": {
+    "reference_index": 1,
+    "price_yuan": 113400,
+    "list_price_text": "11.34万",
+    "reference_score": 83.0,
+    "reference_score_trustworthy": true,
+    "field_complete": true,
+    "hard_eliminated": false,
+    "s14_collect_done": true,
+    "decision": null,
+    "exclusion_reason": null,
+    "v2_eligible_candidate": true,
+    "target_score_minus_reference_score": 1.0,
+    "v2_exclusion_reason": null
+  },
+  "v2_candidate_pool": [
+    {
+      "reference_index": 1,
+      "price_yuan": 113400,
+      "list_price_text": "11.34万",
+      "reference_score": 83.0,
+      "reference_score_trustworthy": true,
+      "field_complete": true,
+      "hard_eliminated": false,
+      "s14_collect_done": true,
+      "decision": null,
+      "exclusion_reason": null,
+      "v2_eligible_candidate": true,
+      "target_score_minus_reference_score": 1.0,
+      "v2_exclusion_reason": null
+    },
+    {
+      "reference_index": 2,
+      "price_yuan": 116700,
+      "list_price_text": "11.67万",
+      "reference_score": 77.5,
+      "reference_score_trustworthy": true,
+      "field_complete": true,
+      "hard_eliminated": false,
+      "s14_collect_done": true,
+      "decision": null,
+      "exclusion_reason": null,
+      "v2_eligible_candidate": true,
+      "target_score_minus_reference_score": 6.5,
+      "v2_exclusion_reason": null
+    }
+  ]
+}

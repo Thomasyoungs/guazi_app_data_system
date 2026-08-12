@@ -1,0 +1,823 @@
+{
+  "metadata": {
+    "project": "guazi_app_data_system",
+    "mode": "device_real_mainline_s01_to_s10",
+    "field_scope": "contract_only"
+  },
+  "status": "S10_READY",
+  "target_task": {
+    "actual_target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\data\\current_target_task.json",
+    "brand": "蔚来",
+    "series": "ES6",
+    "series_alias": "",
+    "year_model": "2024款",
+    "config_model": "75kWh",
+    "color": "灰",
+    "register_date": "2025.02",
+    "register_year": 2025,
+    "current_year": 2026,
+    "target_age_formula": "current_year - register_year",
+    "calculated_target_age": 1
+  },
+  "flow_state": {
+    "S07_FILTER_DONE": true,
+    "COLOR_FILTER_DONE": true,
+    "AGE_FILTER_DONE": true,
+    "SORT_DONE": true,
+    "S10_READY": true,
+    "s05_year_click_required": true,
+    "s05_year_clicked": true,
+    "s05_year_click_text": "2024款",
+    "s05_year_click_bounds": [
+      0,
+      721,
+      248,
+      831
+    ],
+    "s05_year_click_region": "left_year_list",
+    "selected_year_after_click": "2024款",
+    "left_year_selected_text": "2024款",
+    "s05_target_year_selected_confirmed": true,
+    "s05_year_confirmed_by": "left_year_click_record",
+    "s05_year_click_record_valid": true,
+    "right_config_list_after_year": [
+      "蔚来ES6车型",
+      "2024款全部车型",
+      "2024款 100kWh",
+      "2024款 150kWh",
+      "2024款 75kWh",
+      "2023款全部车型",
+      "2023款 100kWh",
+      "2023款 150kWh",
+      "2023款 75kWh",
+      "2022款全部车型",
+      "2022款 100kWh 性能版",
+      "2022款 100kWh 签名版",
+      "2022款 100kWh 运动版",
+      "2022款 75kWh 性能版",
+      "2022款 75kWh 签名版",
+      "2022款 75kWh 运动版",
+      "确定"
+    ],
+    "target_config_seen_after_year": true,
+    "direct_right_config_search_without_year_click": false,
+    "transition_context": "S09_PRICE_ASC_TO_LIST",
+    "S05_DONE": true,
+    "target_series": "ES6",
+    "target_series_alias": "",
+    "target_year_model": "2024款",
+    "target_config_model": "75kWh",
+    "s05_selected_year_model": "2024款",
+    "s05_selected_config_model": "75kWh",
+    "selected_config_texts": [
+      "2024款 75kWh"
+    ],
+    "selected_count_text": "已选1项",
+    "selected_count_actual": 1,
+    "target_color": "灰"
+  },
+  "startup": {
+    "startup_mode": "force_restart",
+    "app_entry_mode": "guazi_home_foreground_accepted",
+    "current_page_first_enabled": false,
+    "app_force_restart_called": false,
+    "force_stop_package": "com.ganji.android.haoche_c",
+    "force_stop_done": false,
+    "home_to_launcher_done": false,
+    "tap_guazi_app_icon_done": false,
+    "app_restart_wait_ms": 0,
+    "initial_capture_before_recovery": false,
+    "initial_home_to_launcher_before_capture": true,
+    "initial_tap_app_icon_before_capture": true,
+    "initial_fresh_state": null,
+    "initial_screenshot_path": null,
+    "initial_xml_path": null,
+    "recovery_called": true,
+    "recovery_call_reason": "startup",
+    "app_force_restart_reason": "startup",
+    "after_force_restart_state": "S01",
+    "after_force_restart_screenshot_path": "artifacts/screenshots/device_ready_after_non_secure_swipe_20260812_202853.png",
+    "after_force_restart_xml_path": "artifacts/debug/device_ready_after_non_secure_swipe_20260812_202853.xml",
+    "after_force_restart_visible_text_digest": [
+      "精选",
+      "官方自营",
+      "个人直卖",
+      "车视界",
+      "卖车版",
+      "唐山",
+      "别克君越",
+      "搜索",
+      "唐山瓜子二手车直卖场\n河北省唐山市路北区果园镇规划一路南侧竹安路东侧唐山康峰汽车检测有限公司办公楼北起一层一号",
+      "更多门店",
+      "二手车",
+      "卖车",
+      "9成通过\n分期购车",
+      "新能源",
+      "源头低价",
+      "吉利汽车",
+      "哈弗",
+      "五菱汽车",
+      "长安",
+      "欧拉",
+      "一眼看真车",
+      "已减8700元\n雪佛兰科沃兹\n1.83万",
+      "已补2500元\n五菱汽车宏光MINIEV\n1.80万",
+      "绅宝X25\n1.29万",
+      "官方讲解",
+      "买车避坑指南",
+      "精选车源\n第 1 个标签，共 7 个",
+      "官方自营\n第 2 个标签，共 7 个",
+      "新能源\n第 3 个标签，共 7 个",
+      "新人练手\n第 4 个标签，共 7 个"
+    ],
+    "after_recovery_state": "S01",
+    "after_recovery_screenshot_path": "artifacts/screenshots/device_ready_after_non_secure_swipe_20260812_202853.png",
+    "after_recovery_xml_path": "artifacts/debug/device_ready_after_non_secure_swipe_20260812_202853.xml",
+    "startup_timeline": [
+      {
+        "step_name": "adb_target_device_gate",
+        "duration_ms": 44,
+        "reused_capture": false,
+        "at": "2026-08-12T12:28:48.969145+00:00",
+        "target_device_state": "device",
+        "passed": true
+      },
+      {
+        "step_name": "wake_unlock_gate",
+        "duration_ms": 9051,
+        "reused_capture": false,
+        "at": "2026-08-12T12:28:58.020218+00:00",
+        "keyguard_showing": true,
+        "focused_window": "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity",
+        "foreground_package": "com.ganji.android.haoche_c"
+      },
+      {
+        "step_name": "guazi_home_foreground_fastpath",
+        "duration_ms": 9051,
+        "reused_capture": false,
+        "at": "2026-08-12T12:28:58.020218+00:00",
+        "accepted_state": "S01",
+        "force_reopen_suppressed_reason": "GUAZI_HOME_ALREADY_READY",
+        "guazi_frontend_ready_attempt": 1
+      }
+    ],
+    "adb_gate_duration_ms": 44,
+    "wake_unlock_duration_ms": 9051,
+    "miui_recovery_duration_ms": 0,
+    "launcher_icon_lookup_duration_ms": 0,
+    "app_reopen_duration_ms": 9051,
+    "app_foreground_confirm_duration_ms": 0,
+    "s01_detect_duration_ms": 0,
+    "capture_count": 1,
+    "screenshot_count": 1,
+    "xml_dump_count": 1,
+    "reused_capture_count": 0,
+    "fastpath_used": false,
+    "fastpath_reason": "",
+    "target_device_gate_checked": true,
+    "target_device_gate_passed": true,
+    "target_device_state": "device",
+    "wake_screen_done": true,
+    "screen_interactive": null,
+    "keyguard_showing": true,
+    "secure_keyguard": false,
+    "focused_window_before": "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity",
+    "foreground_package_before": "com.ganji.android.haoche_c",
+    "notification_shade_visible": false,
+    "non_secure_swipe_done": true,
+    "non_secure_swipe": {
+      "swipe_success": true,
+      "swipe_stderr": "",
+      "start_x": 540,
+      "start_y": 1967,
+      "end_x": 540,
+      "end_y": 720,
+      "duration_ms": 700
+    },
+    "keyguard_dismissed": true,
+    "keyguard_showing_after_swipe": true,
+    "focused_window_after_swipe": "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity",
+    "foreground_package_after_swipe": "com.ganji.android.haoche_c",
+    "guazi_foreground_visible_despite_keyguard": true,
+    "stale_keyguard_ignored_for_reopen": true,
+    "old_guazi_page_detected": true,
+    "old_guazi_page_type": "S01_OR_S02",
+    "device_ready_pass_reason": "GUAZI_HOME_FOREGROUND_ALREADY_READY",
+    "guazi_home_foreground_accepted": true,
+    "guazi_frontend_ready_attempt": 1,
+    "must_reopen_guazi_app": false,
+    "force_reopen_required": false,
+    "force_reopen_suppressed_reason": "GUAZI_HOME_ALREADY_READY",
+    "notification_shade_collapsed": true,
+    "focused_window_after": "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity",
+    "foreground_package_after": "com.ganji.android.haoche_c",
+    "force_reopen_executed": false
+  },
+  "task_params": {
+    "target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\data\\current_target_task.json",
+    "brand": "蔚来",
+    "series": "ES6",
+    "series_alias": "",
+    "model_year": "2024款",
+    "trim": "75kWh",
+    "color": "灰",
+    "registration_date": "2025.02",
+    "vehicle_year": 2024,
+    "register_year": 2025,
+    "current_year": 2026,
+    "target_age_formula": "current_year - register_year",
+    "target_age_years": 1,
+    "brand_initial": "W"
+  },
+  "same_source_cards": [
+    {
+      "title": "蔚来ES6 2024款 75kWh",
+      "year_mileage_text": "2025年 | 3.05万公里 | 电池租赁 | 上海 | NIOPilot",
+      "list_price_10k": 15.05,
+      "list_year": 2025,
+      "list_mileage_10k_km": 3.05
+    },
+    {
+      "title": "蔚来ES6 2024款 75kWh",
+      "year_mileage_text": "2025年 | 3.73万公里 | 电池租赁 | 成都 | NIOPilot",
+      "list_price_10k": 15.37,
+      "list_year": 2025,
+      "list_mileage_10k_km": 3.73
+    },
+    {
+      "title": "蔚来ES6 2024款 75kWh",
+      "year_mileage_text": "2025年 | 0.88万公里 | 电池租赁 | 上海 | NIOPilot",
+      "list_price_10k": 16.12,
+      "list_year": 2025,
+      "list_mileage_10k_km": 0.88
+    },
+    {
+      "title": "蔚来ES6 2024款 75kWh",
+      "year_mileage_text": "2025年 | 2.52万公里 | 电池租赁 | 西安 | NIOPilot",
+      "list_price_10k": 16.3,
+      "list_year": 2025,
+      "list_mileage_10k_km": 2.52
+    },
+    {
+      "title": "蔚来ES6 2024款 75kWh",
+      "year_mileage_text": "2025年 | 3.28万公里 | 电池租赁 | 东莞 | NIOPilot",
+      "list_price_10k": 16.48,
+      "list_year": 2025,
+      "list_mileage_10k_km": 3.28
+    },
+    {
+      "title": "蔚来ES6 2024款 75kWh",
+      "year_mileage_text": "2025年 | 2.58万公里 | 电池租赁 | 湖州 | NIOPilot",
+      "list_price_10k": 16.81,
+      "list_year": 2025,
+      "list_mileage_10k_km": 2.58
+    }
+  ],
+  "raw_visible_cards_count": 6,
+  "trisame_cards_count": 6,
+  "trisame_count": 6,
+  "trisame_count_confirmed": true,
+  "excluded_non_trisame_cards_count": 0,
+  "excluded_non_trisame_cards": [],
+  "non_trisame_section_detected": true,
+  "non_trisame_section_title": "找不到想要的车",
+  "boundary_text": "找不到想要的车？",
+  "boundary_text_index": 109,
+  "cards_after_boundary_excluded_count": 0,
+  "s10_source_gate_passed": true,
+  "s10_core_elements": [
+    "price_asc_sort_evidence",
+    "complete_target_vehicle_cards",
+    "target_trisame_evidence",
+    "trisame_boundary_before_non_trisame_section"
+  ],
+  "s10_target_trisame_evidence": [
+    {
+      "title": "蔚来ES6 2024款 75kWh",
+      "year_mileage_text": "2025年 | 3.05万公里 | 电池租赁 | 上海 | NIOPilot",
+      "list_price_10k": 15.05,
+      "list_year": 2025,
+      "list_mileage_10k_km": 3.05
+    },
+    {
+      "title": "蔚来ES6 2024款 75kWh",
+      "year_mileage_text": "2025年 | 3.73万公里 | 电池租赁 | 成都 | NIOPilot",
+      "list_price_10k": 15.37,
+      "list_year": 2025,
+      "list_mileage_10k_km": 3.73
+    },
+    {
+      "title": "蔚来ES6 2024款 75kWh",
+      "year_mileage_text": "2025年 | 0.88万公里 | 电池租赁 | 上海 | NIOPilot",
+      "list_price_10k": 16.12,
+      "list_year": 2025,
+      "list_mileage_10k_km": 0.88
+    },
+    {
+      "title": "蔚来ES6 2024款 75kWh",
+      "year_mileage_text": "2025年 | 2.52万公里 | 电池租赁 | 西安 | NIOPilot",
+      "list_price_10k": 16.3,
+      "list_year": 2025,
+      "list_mileage_10k_km": 2.52
+    },
+    {
+      "title": "蔚来ES6 2024款 75kWh",
+      "year_mileage_text": "2025年 | 3.28万公里 | 电池租赁 | 东莞 | NIOPilot",
+      "list_price_10k": 16.48,
+      "list_year": 2025,
+      "list_mileage_10k_km": 3.28
+    }
+  ],
+  "s10_reverse_exclusion_passed": true,
+  "s10_reverse_exclusion_failures": [],
+  "complete_target_vehicle_card_count": 6,
+  "non_trisame_boundary_detected": true,
+  "s10_ready_reason": "source_gate_core_elements_target_trisame_boundary_passed",
+  "s10_color_filter_evidence": {
+    "s07_color_filter_evidence_source": "s10_ready_source_gate",
+    "target_color": "灰",
+    "target_color_normalized": "灰",
+    "selected_color": "灰色",
+    "selected_color_normalized": "灰",
+    "selected_color_labels": [
+      "灰色"
+    ],
+    "visible_color_hits": [
+      {
+        "text": "灰色",
+        "normalized": "灰",
+        "bounds": [
+          231,
+          750,
+          415,
+          830
+        ],
+        "is_selected_chip": true,
+        "is_grid_candidate": false
+      }
+    ],
+    "visible_color_normalized_hits": [
+      "灰"
+    ],
+    "target_color_confirmed": true,
+    "color_filter_mismatch": false,
+    "color_filter_mismatch_reason": null,
+    "color_filter_stop_code": null
+  },
+  "s10_color_filter_mismatch": false,
+  "s10_color_filter_stop_code": null,
+  "contract_action_plan": {
+    "step_id": "S10_FILTER_SUMMARY",
+    "contract_source_file": "config/pages.yaml",
+    "contract_source_version": "PAGE_CONTRACT_DRIVEN_EXECUTION_CORE_PATCH",
+    "rule_clause_id": "S10_FILTER_SUMMARY_MATCH_TARGET",
+    "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+    "rule_source_version": "V1.50",
+    "rule_clause_text_summary": "S10 summary must still match target filters before binding reference cards.",
+    "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+    "allowed_fallbacks": [],
+    "performance_budget_ms": 3000,
+    "requires_runtime_trace": true,
+    "expected": {
+      "expected_filter_summary": {
+        "brand": "蔚来",
+        "series": "ES6",
+        "color": "灰",
+        "age_filter": "1-1",
+        "model_config_core": "75kWh"
+      }
+    },
+    "allowed_actions": [
+      "collect_list_whitelist_fields",
+      "verify_filter_summary",
+      "verify_target_trisame_cards"
+    ],
+    "forbidden_actions": [
+      "continue_after_filter_summary_mismatch",
+      "COLOR_FILTER_DONE_without_summary_match"
+    ],
+    "action_algorithm": {
+      "name": "filter_summary_contract_match",
+      "required_matches": [
+        "brand",
+        "series",
+        "color",
+        "age_filter"
+      ],
+      "optional_matches": [
+        "model_config_core"
+      ],
+      "rule": [
+        "read_expected_filter_summary",
+        "read_actual_filter_summary",
+        "stop_on_mismatch_before_s11"
+      ]
+    },
+    "action_inputs": {
+      "expected_filter_summary": {
+        "brand": "蔚来",
+        "series": "ES6",
+        "color": "灰",
+        "age_filter": "1-1",
+        "model_config_core": "75kWh"
+      }
+    },
+    "action_outputs": {},
+    "success_condition": "actual_filter_summary matches expected_filter_summary",
+    "failure_stop_code": "S10_FILTER_SUMMARY_CONTRACT_MISMATCH",
+    "contract_action_plan_id": "978eb35e9593365d"
+  },
+  "contract_expected": {
+    "expected_filter_summary": {
+      "brand": "蔚来",
+      "series": "ES6",
+      "color": "灰",
+      "age_filter": "1-1",
+      "model_config_core": "75kWh"
+    }
+  },
+  "contract_action_plan_id": "978eb35e9593365d",
+  "contract_action_plan_used": true,
+  "action_plan_step_id": "S10_FILTER_SUMMARY",
+  "rule_clause_id": "S10_FILTER_SUMMARY_MATCH_TARGET",
+  "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+  "rule_source_version": "V1.50",
+  "rule_clause_text_summary": "S10 summary must still match target filters before binding reference cards.",
+  "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+  "action_algorithm_used": "filter_summary_contract_match",
+  "action_inputs_source": "contract_action_plan",
+  "action_outputs_source": "contract_action_plan",
+  "fallback_used": false,
+  "fallback_name": "",
+  "fallback_allowed_by_clause": true,
+  "allowed_fallbacks": [],
+  "forbidden_action_used": false,
+  "runtime_bypassed_action_plan": false,
+  "performance_budget_ms": 3000,
+  "actual_duration_ms": null,
+  "performance_budget_exceeded": false,
+  "requires_runtime_trace": true,
+  "action_plan_binding_check_passed": true,
+  "s03_contract": {
+    "s03_contract_version": "V1.16",
+    "target_brand_aliases": [
+      "蔚来",
+      "NIO"
+    ],
+    "target_initial_letter": "W",
+    "target_brand_visible_before_letter": false,
+    "clicked_initial_letter": "W",
+    "target_brand_visible_after_letter": true,
+    "matched_brand_text": "蔚来",
+    "matched_alias": "蔚来",
+    "brand_row_bounds": [
+      0,
+      581,
+      1025,
+      713
+    ],
+    "selected_click_region_type": "brand_row_left_icon_safe_point",
+    "selected_click_point": [
+      99,
+      647
+    ],
+    "after_click_page_type": "S04",
+    "brand_zone_continuation_allowed": false
+  },
+  "s03_contract_version": "V1.16",
+  "s05_emission_variant_contract_enabled": true,
+  "target_year_model": "2024款",
+  "target_config_model": "75kWh",
+  "normalized_target_config": "75kwh",
+  "emission_variant_group": [],
+  "emission_variant_group_count": 0,
+  "selected_emission_variants": [],
+  "selected_count_text": "已选1项",
+  "selected_count_expected": 1,
+  "selected_count_actual": 1,
+  "s05_emission_variant_all_selected": null,
+  "s05_single_trim_selected": true,
+  "transition_context": "S07_VIEW_RESULT_TO_LIST",
+  "s05_done": true,
+  "s05_selected_year_model": "2024款",
+  "s05_selected_config_model": "75kWh",
+  "recognized_page_after_s05_confirm": "S06",
+  "s06_page_variant": "S06_TARGET_FILTER_LIST_AFTER_S05_CONFIRM",
+  "s06_source_gate_passed": true,
+  "s06_target_filter_evidence": [],
+  "target_filter_evidence_found": null,
+  "s06_core_elements": [
+    "model_config_entry"
+  ],
+  "s06_reverse_exclusion_passed": null,
+  "s06_recognized_by": "fast_gate_source_s05_done_model_config_bounds",
+  "s06_allowed_action": "click_model_config_filter",
+  "s06_to_s07_result": "entered_s07",
+  "target_color": "灰",
+  "target_color_normalized": "灰",
+  "selected_color": "灰色",
+  "selected_color_normalized": "灰",
+  "selected_color_labels": [
+    "灰色"
+  ],
+  "target_color_confirmed": true,
+  "color_filter_mismatch": false,
+  "color_filter_mismatch_reason": null,
+  "color_filter_stop_code": null,
+  "COLOR_FILTER_DONE": true,
+  "AGE_FILTER_DONE": true,
+  "S07_FILTER_DONE": true,
+  "bottom_view_result_text": "查看6辆",
+  "view_result_count": 6,
+  "recognized_page_after_view_result": "S08",
+  "s08_source_gate_passed": true,
+  "s08_page_variant": "S08_TARGET_LIST_AFTER_FILTER",
+  "s08_target_filter_evidence": [
+    {
+      "type": "target_series_or_alias_visible",
+      "value": "ES6"
+    },
+    {
+      "type": "target_year_visible",
+      "value": "2024款"
+    },
+    {
+      "type": "target_config_visible",
+      "value": "75kWh"
+    },
+    {
+      "type": "target_color_filter_visible",
+      "value": "灰"
+    },
+    {
+      "type": "target_vehicle_card_title_visible",
+      "value": [
+        "蔚来ES6 2024款 75kWh",
+        "蔚来ES6 2024款 75kWh",
+        "蔚来ES6 2024款 75kWh",
+        "蔚来ES6 2024款 75kWh",
+        "蔚来ES6 2024款 75kWh"
+      ]
+    }
+  ],
+  "s08_core_elements": [
+    "sort_control",
+    "filter_bar_model_config_entry",
+    "target_filter_or_card_evidence",
+    "vehicle_list_structure",
+    "price_or_vehicle_metadata_fields"
+  ],
+  "s08_reverse_exclusion_passed": true,
+  "s08_recognized_by": "S07_source_gate_core_target_reverse_exclusion",
+  "s08_allowed_action": "click_sort_dropdown",
+  "s08_color_filter_evidence": {
+    "s07_color_filter_evidence_source": "s08_target_list_after_s07_view_result",
+    "target_color": "灰",
+    "target_color_normalized": "灰",
+    "selected_color": "灰色",
+    "selected_color_normalized": "灰",
+    "selected_color_labels": [
+      "灰色"
+    ],
+    "visible_color_hits": [
+      {
+        "text": "灰色",
+        "normalized": "灰",
+        "bounds": [
+          231,
+          750,
+          415,
+          830
+        ],
+        "is_selected_chip": true,
+        "is_grid_candidate": false
+      }
+    ],
+    "visible_color_normalized_hits": [
+      "灰"
+    ],
+    "target_color_confirmed": true,
+    "color_filter_mismatch": false,
+    "color_filter_mismatch_reason": null,
+    "color_filter_stop_code": null
+  },
+  "s08_stop_code": null,
+  "sort_option_clicked": true,
+  "s09_price_asc_clicked": true,
+  "sort_option_text": "价格从低到高",
+  "sort_selected_confirmed": true,
+  "s07_color_click_action_trace": [
+    {
+      "trace_version": "S07_COLOR_CLICK_ACTION_TRACE_V1",
+      "contract_action_plan": {
+        "step_id": "S07_COLOR",
+        "contract_source_file": "config/pages.yaml",
+        "contract_source_version": "PAGE_CONTRACT_DRIVEN_EXECUTION_CORE_PATCH",
+        "rule_clause_id": "S07_COLOR_EXACT_SELECTED_CONFIRM",
+        "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+        "rule_source_version": "V1.50",
+        "rule_clause_text_summary": "S07 color must bind the target color node and confirm selected color with S08/S10 summaries.",
+        "coverage_status": "FULLY_CONTRACT_DRIVEN",
+        "allowed_fallbacks": [
+          "color_grid_text_node_bounds"
+        ],
+        "performance_budget_ms": 5000,
+        "requires_runtime_trace": true,
+        "expected": {
+          "expected_color": "灰",
+          "selected_after_click": "灰",
+          "s08_summary_color": "灰",
+          "s10_summary_color": "灰"
+        },
+        "allowed_actions": [
+          "select_color_and_confirm",
+          "tap_color_filter",
+          "tap_target_color",
+          "exact_target_color_binding",
+          "xml_or_accessibility_target_color_bounds",
+          "target_color_node_bounds",
+          "direct_clickable_color_text_node",
+          "color_grid_text_node_bounds",
+          "clickable_color_ancestor_bounds",
+          "confirm_selected_color",
+          "verify_s08_s10_summary"
+        ],
+        "forbidden_actions": [
+          "COLOR_FILTER_DONE_without_selected_confirm",
+          "candidate_visible_as_selected",
+          "default_color_click",
+          "fixed_coordinate",
+          "ratio_coordinate",
+          "continue_after_non_target_selected"
+        ],
+        "action_algorithm": {
+          "name": "exact_target_color_binding",
+          "candidate_match": "exact_target_color_only",
+          "click_source": "xml_or_accessibility_target_color_bounds",
+          "if_text_node_clickable_false": "use_grid_text_bounds",
+          "click_point_must_inside_candidate_bounds": true,
+          "selected_after_click_must_equal_expected": true,
+          "s08_s10_summary_must_equal_expected": true,
+          "rule": [
+            "bind_current_target_color_node",
+            "reject_non_target_candidate",
+            "reject_fixed_or_ratio_coordinate",
+            "fresh_selected_confirm_required"
+          ]
+        },
+        "action_inputs": {
+          "target_color": "灰"
+        },
+        "action_outputs": {},
+        "success_condition": "selected_color == expected_color and s08_s10_summary_color == expected_color",
+        "failure_stop_code": "S07_COLOR_CONTRACT_MISMATCH",
+        "contract_action_plan_id": "81af4a46d2fc3f16"
+      },
+      "contract_expected": {
+        "expected_color": "灰",
+        "selected_after_click": "灰",
+        "s08_summary_color": "灰",
+        "s10_summary_color": "灰"
+      },
+      "contract_action_algorithm": {
+        "name": "exact_target_color_binding",
+        "candidate_match": "exact_target_color_only",
+        "click_source": "xml_or_accessibility_target_color_bounds",
+        "if_text_node_clickable_false": "use_grid_text_bounds",
+        "click_point_must_inside_candidate_bounds": true,
+        "selected_after_click_must_equal_expected": true,
+        "s08_s10_summary_must_equal_expected": true,
+        "rule": [
+          "bind_current_target_color_node",
+          "reject_non_target_candidate",
+          "reject_fixed_or_ratio_coordinate",
+          "fresh_selected_confirm_required"
+        ]
+      },
+      "contract_forbidden_actions": [
+        "COLOR_FILTER_DONE_without_selected_confirm",
+        "candidate_visible_as_selected",
+        "default_color_click",
+        "fixed_coordinate",
+        "ratio_coordinate",
+        "continue_after_non_target_selected"
+      ],
+      "contract_action_plan_id": "81af4a46d2fc3f16",
+      "contract_action_plan_used": true,
+      "action_plan_step_id": "S07_COLOR",
+      "rule_clause_id": "S07_COLOR_EXACT_SELECTED_CONFIRM",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S07 color must bind the target color node and confirm selected color with S08/S10 summaries.",
+      "coverage_status": "FULLY_CONTRACT_DRIVEN",
+      "action_algorithm_used": "exact_target_color_binding",
+      "action_inputs_source": "contract_action_plan",
+      "action_outputs_source": "contract_action_plan",
+      "fallback_used": false,
+      "fallback_name": "",
+      "fallback_allowed_by_clause": true,
+      "allowed_fallbacks": [
+        "color_grid_text_node_bounds"
+      ],
+      "forbidden_action_used": false,
+      "runtime_bypassed_action_plan": false,
+      "performance_budget_ms": 5000,
+      "actual_duration_ms": null,
+      "performance_budget_exceeded": false,
+      "requires_runtime_trace": true,
+      "action_plan_binding_check_passed": true,
+      "attempt_index": 1,
+      "target_color": "灰",
+      "matched_candidate_color": "灰色",
+      "normalized_target_color": "灰",
+      "normalized_candidate_color": "灰",
+      "candidate_matches_target": true,
+      "candidate_bounds": [
+        792,
+        1122,
+        1039,
+        1237
+      ],
+      "candidate_text_bounds": [
+        792,
+        1122,
+        1039,
+        1237
+      ],
+      "candidate_clickable": false,
+      "candidate_node_clickable": false,
+      "candidate_enabled": true,
+      "candidate_strategy": "color_grid_text_node_bounds",
+      "candidate_bounds_role": "color_grid_candidate",
+      "candidate_grid_bounds_safe": true,
+      "click_source": "color_grid_text_node_bounds",
+      "click_source_allowed_by_action_plan": true,
+      "action_plan_click_source_allowed": true,
+      "click_point": [
+        915,
+        1179
+      ],
+      "computed_click_point": [
+        915,
+        1179
+      ],
+      "final_tap_point": [
+        915,
+        1179
+      ],
+      "click_point_inside_candidate_bounds": true,
+      "bounds_ambiguity": {
+        "ambiguous": false,
+        "contained_color_labels": [
+          "灰色"
+        ]
+      },
+      "parent_bounds": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "parent_bounds_ambiguous": true,
+      "parent_contained_color_labels": [
+        "黑色",
+        "白色",
+        "银色",
+        "红色",
+        "蓝色",
+        "灰色",
+        "绿色",
+        "棕色",
+        "紫色",
+        "香槟色",
+        "黄色"
+      ],
+      "allowed_click": true,
+      "tap_result": {
+        "page_id": "S07",
+        "action_id": "tap_target_color",
+        "click_point": [
+          915,
+          1179
+        ],
+        "tap_result_success": true,
+        "tap_result_stdout": "",
+        "tap_result_stderr": "",
+        "tap_result_returncode": 0
+      },
+      "tap_action_ms": 134
+    }
+  ],
+  "target_fingerprint": "蔚来|ES6|2024款|75kWh|灰|2025.02",
+  "target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\data\\current_target_task.json",
+  "brand": "蔚来",
+  "series": "ES6",
+  "year_model": "2024款",
+  "config_model": "75kWh",
+  "color": "灰",
+  "register_date": "2025.02",
+  "current_state": "S10_READY",
+  "final_status": "S10_READY",
+  "created_at": "2026-08-12T12:30:28.546486+00:00",
+  "result_segment": "s01_to_s10"
+}

@@ -1,0 +1,160 @@
+{
+  "report_name": "s10_selected_card_autoscroll_incomplete_after_scroll_diagnosis",
+  "generated_at": "2026-05-16T21:11:38",
+  "target_fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+  "final_status": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL",
+  "issue_code": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL",
+  "current_reference_index": 7,
+  "next_reference_index": 7,
+  "diagnosis_status": "S10_SELECTED_CARD_AUTOSCROLL_INCOMPLETE_AFTER_SCROLL_DIAGNOSIS_DONE",
+  "conclusion": "S10_SELECTED_CARD_AUTOSCROLL_ATTEMPTS_OR_DISTANCE_INSUFFICIENT",
+  "conclusion_detail": "???????????? reference #7 ?? REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL ??????????????autoscroll_attempts=0????????????????/????????????????",
+  "selected_reference_card_before_autoscroll": {
+    "reference_index": 7,
+    "clicked_bounds": [
+      429,
+      2242,
+      949,
+      2366
+    ],
+    "card_bounds": [
+      429,
+      2242,
+      1082,
+      2424
+    ],
+    "missing_price": true,
+    "missing_metadata": false,
+    "incomplete_reason": [
+      "missing_price"
+    ],
+    "reason": "bottom_partial_card",
+    "screen_size": [
+      1220,
+      2712
+    ]
+  },
+  "autoscroll_execution": {
+    "attempt_count": 0,
+    "attempts": [],
+    "directions": [],
+    "start_end_points": [],
+    "distances_px": [],
+    "page_changed_after_each_attempt": [],
+    "selected_card_bounds_after_each_attempt": []
+  },
+  "post_autoscroll_state": {
+    "selected_reference_card_bounds_after_autoscroll": [
+      429,
+      2242,
+      949,
+      2366
+    ],
+    "selected_reference_card_moved_up": false,
+    "price_evidence_after_autoscroll": false,
+    "metadata_evidence_after_autoscroll": true,
+    "still_partial": true,
+    "bottom_or_system_bar_obstruction_possible": "possible_but_not_proven_from XML alone; price_bounds is null and card was recorded as bottom_partial_card"
+  },
+  "identity_and_boundary": {
+    "canonical_reference_order_exists": true,
+    "target_reference_index": 7,
+    "visible_complete_card_count": 6,
+    "visible_partial_card_count": 1,
+    "complete_visible_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "partial_candidate_summaries": [
+      {
+        "live_display_order": 7,
+        "reference_index": null,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "",
+        "raw_metadata": "2024年 | 3.32万公里 | 佛山 | HondaSENS",
+        "card_bounds": [
+          429,
+          2242,
+          1082,
+          2424
+        ],
+        "clicked_card_bounds": [
+          429,
+          2242,
+          949,
+          2366
+        ],
+        "price_bounds": null,
+        "metadata_bounds": [
+          429,
+          2372,
+          1082,
+          2424
+        ],
+        "incomplete_reason": [
+          "missing_price"
+        ]
+      }
+    ],
+    "non_trisame_boundary_risk": "not indicated in binding_result; visible cards remain target trisame, no more-source boundary evidence in issue_context"
+  },
+  "code_path_evidence": {
+    "outer_handoff_function": "_s10_handoff_autoscroll_selected_card_if_needed",
+    "outer_allows_stop_codes": [
+      "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE",
+      "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL"
+    ],
+    "inner_scroll_function": "_select_s10_reference_card_with_completion_scroll",
+    "inner_scrollable_stop_codes": [
+      "S10_REFERENCE_CARD_PARTIAL_VISIBLE",
+      "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE"
+    ],
+    "actual_stop_code": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL",
+    "effect": "actual_stop_code is not in inner_scrollable_stop_codes, so selected_card is returned before any swipe; scroll_attempts stays empty",
+    "relevant_lines": {
+      "partial_candidate_return": "scripts/runtime_s10_to_s16_mainline.py:2633-2667",
+      "inner_non_scrollable_return_condition": "scripts/runtime_s10_to_s16_mainline.py:2919-2921",
+      "outer_autoscroll_invocation": "scripts/runtime_s10_to_s16_mainline.py:4053-4084"
+    }
+  },
+  "answers": {
+    "1_before_bounds": [
+      429,
+      2242,
+      949,
+      2366
+    ],
+    "2_autoscroll_count": 0,
+    "3_direction_points_distance": "N/A: no autoscroll attempt executed",
+    "4_page_changed_after_autoscroll": "N/A: no autoscroll attempt executed",
+    "5_bounds_moved_up": false,
+    "6_why_price_missing": "The selected #7 candidate is a bottom partial card; XML parser saw title/metadata but price_bounds is null and list_price_text is empty. Because no completion scroll executed, there was no chance to expose/parse the price row.",
+    "7_bottom_bar_or_nav_overlap": "Likely bottom-list partial visibility; evidence says reason=bottom_partial_card. Direct fixed-bar overlap is not proven, but clicking was correctly blocked.",
+    "8_distance_or_attempts_insufficient": "Attempts insufficient: count=0 due stop-code routing mismatch, not due measured distance.",
+    "9_upgrade_to_2_3_attempts_needed": true,
+    "10_scroll_to_middle_safe_area_needed": true,
+    "11_identity_preserved": "Not tested after scroll because no scroll ran. Current partial candidate has live_display_order=7 and matching title/metadata, but no price; identity would need re-confirmation after future scroll.",
+    "12_boundary_risk": "No boundary risk observed in current evidence; future patch should still re-check reliable S10 and non-trisame boundaries after every scroll.",
+    "13_correct_block_or_strategy_gap": "Both: the no-click block is correct; the autoscroll completion strategy is insufficient because it did not attempt recovery for REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL."
+  },
+  "evidence_paths": {
+    "result_json": "output/result.json",
+    "result_s10_to_s16_json": "output/result_s10_to_s16.json",
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_missing_return_s10_1_20260516_171604.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_missing_return_s10_1_20260516_171604.xml"
+  },
+  "recommendation": {
+    "patch_needed": true,
+    "suggested_direction": "Treat REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL caused by bottom_partial_card/missing_price as recoverable for selected-card completion scroll, with max 2-3 controlled upward scrolls, fresh after each, rebind same reference by title/price/metadata when exposed, and stop if reliable S10/boundary/identity checks fail.",
+    "do_not_relax": "Do not click half-visible cards; do not count bottom partial cards in reference_history; do not advance next_reference_index from a partial card."
+  },
+  "readonly_confirmation": {
+    "code_modified": false,
+    "real_device_run": false,
+    "result_json_overwritten": false
+  }
+}

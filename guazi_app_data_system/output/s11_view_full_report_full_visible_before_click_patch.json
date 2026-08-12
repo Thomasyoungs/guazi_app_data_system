@@ -1,0 +1,43 @@
+{
+  "report_name": "s11_view_full_report_full_visible_before_click_patch",
+  "generated_at": "2026-05-13T17:43:44",
+  "modified_file": "scripts/runtime_s10_to_s16_mainline.py",
+  "target_fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "rule": "exact XML ?????? is a candidate only; click requires full visibility and safe non-overlapping bounds",
+  "forbidden": [
+    "click partially visible ??????",
+    "click exposed upper half",
+    "OCR",
+    "visual recognition",
+    "screenshot text recognition",
+    "local structure binding",
+    "click ??????",
+    "click ??/??/?? buttons"
+  ],
+  "offline_validation": {
+    "A_exact_text_but_bottom_bar_overlap": {
+      "decision": "continue_scroll",
+      "clicked": false,
+      "view_full_report_candidate_seen_but_not_full_visible": true,
+      "scroll_continue_reason": "PARTIAL_VISIBLE_OR_BOTTOM_BAR_OVERLAP"
+    },
+    "B_exact_text_partially_outside_screen": {
+      "decision": "continue_scroll",
+      "clicked": false,
+      "view_full_report_candidate_seen_but_not_full_visible": true,
+      "scroll_continue_reason": "PARTIAL_VISIBLE_OR_BOTTOM_BAR_OVERLAP"
+    },
+    "C_exact_text_fully_visible_safe": {
+      "decision": "click",
+      "stop_scroll_reason": "VIEW_FULL_REPORT_FULLY_VISIBLE",
+      "clicked": true
+    },
+    "D_limit_no_full_visible_with_merchant_marker": {
+      "decision": "exclude",
+      "excluded_reference_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+      "clicked": false
+    }
+  },
+  "py_compile": "passed",
+  "final_status": "S11_VIEW_FULL_REPORT_FULL_VISIBLE_BEFORE_CLICK_PATCHED"
+}

@@ -1,0 +1,392 @@
+{
+  "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260513_122252.xml",
+  "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260513_122252.png",
+  "xml_mtime": "2026-05-13T12:23:05",
+  "screenshot_mtime": "2026-05-13T12:22:53",
+  "screenshot_dimensions": [
+    1220,
+    2712
+  ],
+  "exact_text_count": 0,
+  "content_desc_count": 0,
+  "split_text_candidate_count": 0,
+  "empty_text_clickable_candidate_count": 1,
+  "approximate_button_region": [
+    70,
+    650,
+    610,
+    805
+  ],
+  "empty_clickable_candidates": [
+    {
+      "text": "",
+      "desc": "",
+      "class": "android.widget.LinearLayout",
+      "resource_id": "com.ganji.android.haoche_c:id/ll_root",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        0,
+        0,
+        1220,
+        2559
+      ]
+    }
+  ],
+  "clickable_candidates_in_region": [
+    {
+      "text": "",
+      "desc": "",
+      "class": "android.widget.LinearLayout",
+      "resource_id": "com.ganji.android.haoche_c:id/ll_root",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        0,
+        0,
+        1220,
+        2559
+      ]
+    },
+    {
+      "text": "蓝鸟 省油耐造",
+      "desc": "",
+      "class": "android.view.View",
+      "resource_id": "me-tabs-1-6",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        0,
+        503,
+        146,
+        734
+      ]
+    },
+    {
+      "text": "楼兰 商务接待",
+      "desc": "",
+      "class": "android.view.View",
+      "resource_id": "me-tabs-1-7",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        169,
+        503,
+        429,
+        734
+      ]
+    },
+    {
+      "text": "N7",
+      "desc": "",
+      "class": "android.view.View",
+      "resource_id": "me-tabs-1-8",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        448,
+        503,
+        705,
+        734
+      ]
+    },
+    {
+      "text": "价格从低到高",
+      "desc": "",
+      "class": "android.widget.TextView",
+      "resource_id": "",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        39,
+        793,
+        347,
+        841
+      ]
+    },
+    {
+      "text": "价格",
+      "desc": "",
+      "class": "android.widget.TextView",
+      "resource_id": "",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        432,
+        793,
+        559,
+        841
+      ]
+    }
+  ],
+  "text_nodes_in_region": [
+    {
+      "text": "品牌专区",
+      "desc": "",
+      "class": "android.webkit.WebView",
+      "resource_id": "",
+      "clickable": "false",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        0,
+        0,
+        1220,
+        2513
+      ]
+    },
+    {
+      "text": "蓝鸟 省油耐造",
+      "desc": "",
+      "class": "android.view.View",
+      "resource_id": "me-tabs-1-6",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        0,
+        503,
+        146,
+        734
+      ]
+    },
+    {
+      "text": "楼兰 商务接待",
+      "desc": "",
+      "class": "android.view.View",
+      "resource_id": "me-tabs-1-7",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        169,
+        503,
+        429,
+        734
+      ]
+    },
+    {
+      "text": "N7",
+      "desc": "",
+      "class": "android.view.View",
+      "resource_id": "me-tabs-1-8",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        448,
+        503,
+        705,
+        734
+      ]
+    },
+    {
+      "text": "价格从低到高",
+      "desc": "",
+      "class": "android.widget.TextView",
+      "resource_id": "",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        39,
+        793,
+        347,
+        841
+      ]
+    },
+    {
+      "text": "价格",
+      "desc": "",
+      "class": "android.widget.TextView",
+      "resource_id": "",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        432,
+        793,
+        559,
+        841
+      ]
+    }
+  ],
+  "context_nodes": [
+    {
+      "text": "",
+      "desc": "",
+      "class": "android.widget.LinearLayout",
+      "resource_id": "com.ganji.android.haoche_c:id/ll_root",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        0,
+        0,
+        1220,
+        2559
+      ]
+    },
+    {
+      "text": "品牌专区",
+      "desc": "",
+      "class": "android.webkit.WebView",
+      "resource_id": "",
+      "clickable": "false",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        0,
+        0,
+        1220,
+        2513
+      ]
+    },
+    {
+      "text": "蓝鸟 省油耐造",
+      "desc": "",
+      "class": "android.view.View",
+      "resource_id": "me-tabs-1-6",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        0,
+        503,
+        146,
+        734
+      ]
+    },
+    {
+      "text": "楼兰 商务接待",
+      "desc": "",
+      "class": "android.view.View",
+      "resource_id": "me-tabs-1-7",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        169,
+        503,
+        429,
+        734
+      ]
+    },
+    {
+      "text": "N7",
+      "desc": "",
+      "class": "android.view.View",
+      "resource_id": "me-tabs-1-8",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        448,
+        503,
+        705,
+        734
+      ]
+    },
+    {
+      "text": "途达 硬派越野",
+      "desc": "",
+      "class": "android.view.View",
+      "resource_id": "me-tabs-1-9",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        728,
+        503,
+        991,
+        734
+      ]
+    },
+    {
+      "text": "查看 更多",
+      "desc": "",
+      "class": "android.view.View",
+      "resource_id": "me-tabs-1-10",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        1014,
+        503,
+        1220,
+        734
+      ]
+    },
+    {
+      "text": "价格从低到高",
+      "desc": "",
+      "class": "android.widget.TextView",
+      "resource_id": "",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        39,
+        793,
+        347,
+        841
+      ]
+    },
+    {
+      "text": "价格",
+      "desc": "",
+      "class": "android.widget.TextView",
+      "resource_id": "",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        432,
+        793,
+        559,
+        841
+      ]
+    },
+    {
+      "text": "成色/车况",
+      "desc": "",
+      "class": "android.widget.TextView",
+      "resource_id": "",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        643,
+        793,
+        880,
+        841
+      ]
+    },
+    {
+      "text": "车型配置",
+      "desc": "",
+      "class": "android.widget.TextView",
+      "resource_id": "",
+      "clickable": "true",
+      "enabled": "true",
+      "visible": "",
+      "bounds": [
+        965,
+        793,
+        1183,
+        841
+      ]
+    }
+  ],
+  "contains_view_full_report_substring": false,
+  "contains_view": false,
+  "contains_full_report": false,
+  "contains_merchant_marker": false
+}

@@ -1,0 +1,84 @@
+{
+  "final_status": "PATCH_ONLY_S10_REFERENCE_CARD_COMPLETENESS_GATE_AND_SCROLL_TO_COMPLETE_DONE",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "unchanged": {
+    "first_stage_script": true,
+    "pricing": true,
+    "config": true,
+    "page_contract_docs": true,
+    "s11_s12_s13_s14_logic": true
+  },
+  "py_compile": {
+    "command": "python -m py_compile scripts/runtime_s10_to_s16_mainline.py",
+    "result": "passed",
+    "python_executable": "C:\\Users\\lzc93\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe"
+  },
+  "offline_validation": {
+    "xml_path": "artifacts/debug/s10_s16_start_20260509_143020.xml",
+    "target_fingerprint": "大众|桑塔纳|2021款|1.5L 自动风尚版|白|2021.05",
+    "invalid_partial_reference_detected": true,
+    "invalid_partial_reference_index": 5,
+    "continuation_recovered_next_reference_index": 5,
+    "valid_reference_history_count": 4,
+    "complete_card_count": 4,
+    "partial_card_count": 1,
+    "partial_card": {
+      "live_display_order": 5,
+      "title": "大众 桑塔纳 2021款 1.5L 自动风尚版",
+      "missing_price": true,
+      "missing_metadata": true,
+      "bounds": [429, 2492, 1196, 2513],
+      "incomplete_reason": [
+        "missing_price",
+        "missing_metadata",
+        "missing_year",
+        "missing_mileage",
+        "missing_city",
+        "bottom_partial_card_or_outside_safe_viewport"
+      ]
+    },
+    "selection_stop_code": "S10_REFERENCE_CARD_PARTIAL_VISIBLE",
+    "click_allowed": false
+  },
+  "post_runtime_scroll_refinement": {
+    "scroll_distance_px_on_failed_xml": 650,
+    "expected_card_after_partial_scroll_offline_selection": {
+      "selected_reference_index": 5,
+      "selected_card_price": "4.05万",
+      "selected_card_metadata": "2021年 | 7.61万公里 | 唐山",
+      "selected_by": "expected_card_after_partial_scroll",
+      "card_complete": true
+    }
+  },
+  "device_validation": {
+    "first_stage_status": "S10_READY",
+    "second_stage_status": "FULL_CHAIN_PRICED_DONE",
+    "target_fingerprint": "大众|桑塔纳|2021款|1.5L 自动风尚版|白|2021.05",
+    "invalid_partial_reference_detected": true,
+    "invalid_partial_reference_index": 5,
+    "continuation_recovered_next_reference_index": 5,
+    "selected_reference_index": 5,
+    "selected_card_price": "4.16万",
+    "selected_card_metadata": "2021年 | 4.62万公里 | 唐山",
+    "selected_card_complete": true,
+    "s10_card_completion_scroll_used": true,
+    "reference_score": 96.0,
+    "target_score": 91.0,
+    "pricing": {
+      "guazi_price_yuan": 41600,
+      "guazi_service_fee_yuan": 2500,
+      "guazi_net_payout_yuan": 39100,
+      "suggested_acquisition_price_yuan": 34472
+    }
+  },
+  "guards": {
+    "empty_price_card_click_blocked": true,
+    "empty_metadata_card_click_blocked": true,
+    "partial_title_fragment_not_effective_history": true,
+    "invalid_partial_not_counted_in_reference_history": true,
+    "reliable_s10_required_before_click": true,
+    "raw_xml_written_to_result_json": false
+  }
+}

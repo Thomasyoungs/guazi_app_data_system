@@ -1,0 +1,8 @@
+# Strict ADB target device configuration.
+# Before enabling APP automation, an administrator must fill active_adb_serial
+# with the Redmi Note 12 5G serial shown by Android platform tools.
+# When multiple phones are connected, only this serial may be controlled.
+active_adb_serial: "6TGYHPZCETCSK6L"
+device_alias: "Redmi Note 12 5G"
+strict_device_selection: true
+allow_default_when_single_device: false

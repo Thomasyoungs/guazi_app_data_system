@@ -1,0 +1,56 @@
+{
+  "report_name": "honda_accord_2023_auto_pricing_success_path_after_s10_autoscroll_s11_first_scroll",
+  "status": "S11_FIRST_SCROLL_RUNTIME_FAILED",
+  "actual_stop_code": "S11_REPORT_ENTRY_NOT_FULLY_VISIBLE_SAFE",
+  "target_fingerprint": "\u672c\u7530|\u96c5\u9601|2023\u6b3e|260TURBO \u667a\u4eab\u7248|\u9ed1|2024.01",
+  "first_stage_status": "S10_READY",
+  "second_stage_status": "S11_REPORT_ENTRY_NOT_FULLY_VISIBLE_SAFE",
+  "entered_s16": false,
+  "auto_pricing_verified": false,
+  "manual_review_required": null,
+  "final_price": null,
+  "pricing_payload_present": false,
+  "patch_verification": {
+    "s10_selected_card_autoscroll_patch": "applied",
+    "s11_first_scroll_patch": "applied",
+    "py_compile_passed": true,
+    "offline_validation_status": "PASSED"
+  },
+  "runtime_checks": {
+    "first_stage_reached_s10_ready": true,
+    "reliable_s10_before_second_stage": true,
+    "s10_handoff_passed": true,
+    "s10_partial_card_allowed": true,
+    "s10_selected_reference_card_gate_passed": true,
+    "s10_partial_card_gate_regression": false,
+    "s11_first_scroll_done": true,
+    "s11_first_scroll_step_px": 894,
+    "s11_report_search_scroll_mode": "fine",
+    "s11_report_search_iterations": 4,
+    "view_full_report_exact_text_seen": true,
+    "view_full_report_candidate_bounds": [80, 2194, 597, 2308],
+    "view_full_report_candidate_full_visible": true,
+    "view_full_report_bottom_bar_overlap": false,
+    "view_full_report_candidate_safe_clickable": true,
+    "stop_scroll_reason": "VIEW_FULL_REPORT_FULLY_VISIBLE",
+    "blocked_after_candidate_found": true,
+    "block_reason": "exact report entry is present but blocked by the bottom action bar"
+  },
+  "current_reference": {
+    "reference_index": 2,
+    "title": "\u672c\u7530 \u96c5\u9601 2023\u6b3e 260TURBO \u667a\u4eab\u7248",
+    "price": "11.39\u4e07"
+  },
+  "evidence_paths": {
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\\u5b9a\u4ef7\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260516_144639.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\\u5b9a\u4ef7\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260516_144639.xml",
+    "result_s10_to_s16": "C:\\Users\\lzc93\\Desktop\\\u5b9a\u4ef7\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+    "result": "C:\\Users\\lzc93\\Desktop\\\u5b9a\u4ef7\\guazi_app_data_system\\output\\result.json"
+  },
+  "terminal_failure_bucket": "SECOND_STAGE_DID_NOT_REACH_S16",
+  "notes": [
+    "S10 handoff and partial-card handling passed in runtime.",
+    "S11 first-scroll behavior was recorded.",
+    "The run stopped before S12 because click-target safety validation rejected the exact report entry candidate."
+  ]
+}

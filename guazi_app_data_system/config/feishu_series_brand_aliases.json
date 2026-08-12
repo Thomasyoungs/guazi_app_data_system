@@ -1,0 +1,19 @@
+{
+  "series_brand_aliases": {
+    "科鲁泽": {
+      "brand": "雪佛兰",
+      "series": "科鲁泽",
+      "aliases": ["科鲁泽"]
+    },
+    "雅阁": {
+      "brand": "本田",
+      "series": "雅阁",
+      "aliases": ["雅阁"]
+    },
+    "星锐": {
+      "brand": "斯柯达",
+      "series": "星锐",
+      "aliases": ["星锐"]
+    }
+  }
+}

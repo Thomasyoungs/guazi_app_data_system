@@ -1,0 +1,16 @@
+{
+  "source": "feishu_export",
+  "simulation_only": false,
+  "task_id": "这里填飞书任务编号",
+  "brand": "大众",
+  "series": "帕萨特",
+  "model_year": "2020款",
+  "trim": "330TSI DSG 尊贵版",
+  "color": "白色",
+  "registration_date": "2020.4",
+  "mileage_10k_km": 7.2,
+  "transfer_count": 1,
+  "condition_text": "右后门钣金喷漆",
+  "accident_count": null,
+  "max_accident_amount": null
+}

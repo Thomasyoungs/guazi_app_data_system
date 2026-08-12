@@ -1,0 +1,122 @@
+{
+  "status": "S13_REPAIR_ITEM_CLICK_TARGET_NOT_CONFIRMED",
+  "target_fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+  "patch_status": "S13_REPAIR_ITEM_UNSAFE_REPOSITION_PATCHED",
+  "auto_pricing_success_path_verified": false,
+  "first_stage": {
+    "script": "scripts/runtime_s01_to_s10_mainline.py",
+    "status": "S10_READY",
+    "fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+    "reliable_s10": true,
+    "price_ascending": true,
+    "trisame_count": 10
+  },
+  "second_stage": {
+    "script": "scripts/runtime_s10_to_s16_mainline.py",
+    "status": "S13_REPAIR_ITEM_CLICK_TARGET_NOT_CONFIRMED",
+    "issue_code": "S13_REPAIR_ITEM_CLICK_TARGET_NOT_CONFIRMED",
+    "entered_s16": false,
+    "final_price_generated": false,
+    "pricing_payload_generated": false,
+    "manual_review_required": null,
+    "auto_pricing_allowed": null
+  },
+  "s11_regression": {
+    "first_scroll_strategy": "two_thirds_screen_trial",
+    "first_scroll_screen_ratio": 0.66,
+    "first_scroll_step_px": 1789,
+    "report_entry_found_after_scroll_attempt": 1,
+    "report_search_iterations": 2,
+    "report_search_elapsed_ms": 5528,
+    "fresh_pair_regression": false,
+    "internal_mismatch_regression": false,
+    "clicked_view_full_report": true,
+    "s12_page_confirmed_after_click": true
+  },
+  "s12_regression": {
+    "claim_count": 0,
+    "max_claim_amount": 0.0,
+    "body_appearance_clicked": true
+  },
+  "s13_runtime": {
+    "history_table_detected": true,
+    "history_table_detection_token_source": "raw_xml_nodes_unicode_bounds",
+    "scroll_suppressed_after_table_detected": true,
+    "repair_counts": {
+      "驾驶侧": 0,
+      "车尾": 0,
+      "副驾驶": 0,
+      "车头": 2
+    },
+    "first_positive_region": "车头",
+    "first_positive_region_repair_count": 2,
+    "repair_item_visible_but_unsafe": true,
+    "repair_item_reposition_attempted": true,
+    "repair_item_reposition_count": 1,
+    "repair_item_before_bounds": [
+      152,
+      2502,
+      312,
+      2513
+    ],
+    "repair_item_after_bounds": [
+      152,
+      2154,
+      312,
+      2216
+    ],
+    "repair_item_reposition_lost_context": false,
+    "repair_item_candidates_after_reposition": [
+      {
+        "text": "前保险杠",
+        "bounds": [
+          152,
+          2154,
+          312,
+          2216
+        ],
+        "candidate_safe_click_region": true,
+        "candidate_clickable": false
+      },
+      {
+        "text": "发动机舱盖漆面",
+        "bounds": [
+          679,
+          2154,
+          958,
+          2216
+        ],
+        "candidate_safe_click_region": true,
+        "candidate_clickable": false
+      },
+      {
+        "text": "发动机舱盖",
+        "bounds": [
+          152,
+          2262,
+          351,
+          2323
+        ],
+        "candidate_safe_click_region": true,
+        "candidate_clickable": false
+      }
+    ],
+    "click_target_confirmed_after_reposition": false,
+    "blocked_reason": "重定位后候选入口已进入安全区，但未能绑定入口本身或最近 clickable/enabled 父容器，因此没有点击。",
+    "latest_screenshot": "artifacts/screenshots/s13_repair_item_reposition_车头_1_20260518_111841.png",
+    "latest_xml": "artifacts/debug/s13_repair_item_reposition_车头_1_20260518_111841.xml"
+  },
+  "s14_s15_s16": {
+    "entered_s14": false,
+    "s14_collect_done": false,
+    "entered_s15": false,
+    "entered_s16": false,
+    "metal_deduct_reached": false
+  },
+  "conclusion": {
+    "s13_reposition_runtime_verified": true,
+    "s13_reposition_effect": "入口从底部不安全区上移到安全区，且 S13 历史表上下文未丢失。",
+    "remaining_block": "重定位后缺少可确认点击目标，脚本按契约拒绝点击。",
+    "final_status": "S13_REPAIR_ITEM_CLICK_TARGET_NOT_CONFIRMED"
+  }
+}

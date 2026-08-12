@@ -1,0 +1,1076 @@
+{
+  "metadata": {
+    "project": "guazi_app_data_system",
+    "mode": "device_real_mainline_s01_to_s10",
+    "field_scope": "contract_only"
+  },
+  "status": "TARGET_SERIES_NOT_FOUND_IN_S04",
+  "error": "Target series never appeared in S04 raw XML or visible series names before list stopped changing.",
+  "target_task": {
+    "actual_target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\data\\current_target_task.json",
+    "brand": "大众",
+    "series": "桑塔纳",
+    "year_model": "2021款",
+    "config_model": "1.5L 自动风尚版",
+    "color": "白",
+    "register_date": "2021.05",
+    "register_year": 2021,
+    "current_year": 2026,
+    "target_age_formula": "current_year - register_year",
+    "calculated_target_age": 5
+  },
+  "flow_state": {
+    "S07_FILTER_DONE": false,
+    "COLOR_FILTER_DONE": false,
+    "AGE_FILTER_DONE": false,
+    "SORT_DONE": false,
+    "S10_READY": false
+  },
+  "startup": {
+    "startup_mode": "force_restart",
+    "app_entry_mode": "force_restart",
+    "current_page_first_enabled": false,
+    "app_force_restart_called": true,
+    "force_stop_package": "com.ganji.android.haoche_c",
+    "force_stop_done": true,
+    "home_to_launcher_done": true,
+    "tap_guazi_app_icon_done": true,
+    "app_restart_wait_ms": 1000,
+    "initial_capture_before_recovery": false,
+    "initial_home_to_launcher_before_capture": true,
+    "initial_tap_app_icon_before_capture": true,
+    "initial_fresh_state": null,
+    "initial_screenshot_path": null,
+    "initial_xml_path": null,
+    "recovery_called": true,
+    "recovery_call_reason": "startup",
+    "app_force_restart_reason": "startup",
+    "after_force_restart_state": "S01",
+    "after_force_restart_screenshot_path": "artifacts/screenshots/s01_s10_after_force_restart_20260509_125206.png",
+    "after_force_restart_xml_path": "artifacts/debug/s01_s10_after_force_restart_20260509_125206.xml",
+    "after_force_restart_visible_text_digest": [
+      "唐山",
+      "丰田YARiS L 致炫",
+      "搜索",
+      "5",
+      "二手车",
+      "卖车",
+      "分期购车",
+      "新能源",
+      "低价\n源头低价",
+      "广汽传祺",
+      "大众",
+      "奔驰",
+      "MINI",
+      "魏牌",
+      "一眼看真车",
+      "大众帕萨特\n11.50万",
+      "春惠五一",
+      "已补3.00万\n奔驰CLA\n7.81万",
+      "揽胜行政（平行进口）\n82.63万",
+      "讲解中\n微蓝6",
+      "精选车源\n第 1 个标签，共 6 个",
+      "官方自营\n第 2 个标签，共 6 个",
+      "新能源\n第 3 个标签，共 6 个",
+      "新人练手\n第 4 个标签，共 6 个",
+      "0过户\n第 5 个标签，共 6 个",
+      "大空间\n第 6 个标签，共 6 个",
+      "上新\n7.18万",
+      "MINI 2019款 1.5T ONE PLUS",
+      "金融分期\n线上审批 \n超高通过率\n9成超高通过率，年授信超百万人\n首付1成起\n最高50万\n年利率8.7%起\n查看额度",
+      "14.33万"
+    ],
+    "after_recovery_state": "S01",
+    "after_recovery_screenshot_path": "artifacts/screenshots/s01_s10_after_force_restart_20260509_125206.png",
+    "after_recovery_xml_path": "artifacts/debug/s01_s10_after_force_restart_20260509_125206.xml",
+    "wake_screen_done": true,
+    "screen_interactive": null,
+    "keyguard_showing": true,
+    "secure_keyguard": false,
+    "focused_window_before": "NotificationShade",
+    "foreground_package_before": "",
+    "notification_shade_visible": true,
+    "non_secure_swipe_done": true,
+    "non_secure_swipe": {
+      "swipe_success": true,
+      "swipe_stderr": "",
+      "start_x": 610,
+      "start_y": 2223,
+      "end_x": 610,
+      "end_y": 813,
+      "duration_ms": 700
+    },
+    "keyguard_dismissed": true,
+    "keyguard_showing_after_swipe": false,
+    "focused_window_after_swipe": "com.ganji.android.haoche_c/com.guazi.h5.Html5NewContainerActivity",
+    "foreground_package_after_swipe": "com.ganji.android.haoche_c",
+    "notification_shade_collapsed": true,
+    "focused_window_after": "com.ganji.android.haoche_c/com.guazi.h5.Html5NewContainerActivity",
+    "foreground_package_after": "com.ganji.android.haoche_c",
+    "launcher_account_dialog_detected": false,
+    "launcher_account_dialog_text_digest": null,
+    "later_button_found": null,
+    "later_button_clicked": false,
+    "later_click_once_only": true,
+    "focused_window_before_later": null,
+    "focused_window_after_later": null,
+    "launcher_visible_after_later": null,
+    "guazi_icon_visible_before_later": null,
+    "guazi_icon_visible_after_later": null,
+    "screenshot_before_later": null,
+    "xml_before_later": null,
+    "screenshot_after_later": null,
+    "xml_after_later": null,
+    "launcher_visible": true,
+    "guazi_icon_visible": true,
+    "guazi_icon_visible_final": true,
+    "final_screenshot_path": "artifacts/screenshots/device_ready_launcher_before_icon_20260509_125202.png",
+    "final_xml_path": "artifacts/debug/device_ready_launcher_before_icon_20260509_125202.xml"
+  },
+  "context": {
+    "wakefulness": "Awake",
+    "interactive": null,
+    "display_state": "",
+    "keyguard_showing": false,
+    "keyguard_locked": false,
+    "keyguard_secure": false,
+    "foreground_package": "com.ganji.android.haoche_c",
+    "resumed_activity": "",
+    "focused_window": "com.ganji.android.haoche_c/com.cars.beetle.mp.brl.flutter.NewFlutterActivity",
+    "xml_package": "com.ganji.android.haoche_c",
+    "fresh_xml": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2712]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"com.ganji.android.haoche_c:id/action_bar_root\" class=\"android.widget.LinearLayout\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"android:id/content\" class=\"android.widget.FrameLayout\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"android:id/primary\" class=\"android.widget.FrameLayout\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"com.ganji.android.haoche_c:id/sub_container\" class=\"android.widget.FrameLayout\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\" /><node index=\"1\" text=\"\" resource-id=\"com.ganji.android.haoche_c:id/main_container\" class=\"android.widget.FrameLayout\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2559]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,292]\"><node NAF=\"true\" index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[13,123][169,279]\" /><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"大众车系\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[506,169][714,234]\" /><node index=\"2\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"不限车系\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[970,169][1155,234]\" /></node><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[26,292][1168,435]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[26,292][1168,435]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"全部\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[26,292][210,435]\" /><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"轿车\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[210,292][393,435]\" /><node index=\"2\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"SUV\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[393,292][577,435]\" /><node index=\"3\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"MPV\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[577,292][767,435]\" /><node index=\"4\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"跑车\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[767,292][950,435]\" /><node index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"新能源\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[950,292][1168,435]\" /></node></node><node index=\"2\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[52,435][1168,2507]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.ScrollView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[52,435][1168,2507]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"轿车\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[52,435][1168,552]\" /><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"朗逸&#10;本地1211辆在售&#10;1.92-11.06万\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[52,552][1168,858]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[91,602][358,781]\" /><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"车型\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[869,602][1129,781]\" /></node><node index=\"2\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"帕萨特&#10;本地1040辆在售&#10;2.67-18.74万\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[52,858][1168,1163]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[91,908][358,1087]\" /><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"车型\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[869,908][1129,1087]\" /></node><node index=\"3\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"迈腾&#10;本地1016辆在售&#10;3.04-19.68万\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[52,1163][1168,1469]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[91,1213][358,1392]\" /><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"车型\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[869,1213][1129,1392]\" /></node><node index=\"4\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"速腾&#10;本地930辆在售&#10;1.83-12.30万\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[52,1469][1168,1774]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[91,1519][358,1698]\" /><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"车型\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[869,1519][1129,1698]\" /></node><node index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"高尔夫&#10;本地883辆在售&#10;2.83-14.62万\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[52,1774][1168,2080]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[91,1824][358,2003]\" /><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"车型\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[869,1824][1129,2003]\" /></node><node index=\"6\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"Polo&#10;本地670辆在售&#10;1.62-9.02万\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[52,2080][1168,2385]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[91,2130][358,2309]\" /><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"车型\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[869,2130][1129,2309]\" /></node><node index=\"7\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"宝来&#10;本地588辆在售&#10;1.57-10.42万\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[52,2385][1168,2507]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[91,2435][358,2507]\" /><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.ganji.android.haoche_c\" content-desc=\"车型\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[869,2435][1129,2507]\" /></node></node></node></node></node></node></node></node></node></node></node></node></node></node></node></node></node><node index=\"1\" text=\"\" resource-id=\"android:id/navigationBarBackground\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,2559][1220,2712]\" /></node></hierarchy>",
+    "fresh_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s04_series_down_2_20260509_125235.png",
+    "screenshot_is_black": false,
+    "screenshot_missing": false,
+    "screenshot_path": "artifacts/screenshots/s04_series_down_2_20260509_125235.png",
+    "screenshot_error": "",
+    "xml_missing": false,
+    "xml_path": "artifacts/debug/s04_series_down_2_20260509_125235.xml",
+    "xml_dump_error": "",
+    "adb_rc": 0,
+    "adb_stderr": "",
+    "xml_dump_rc": 137,
+    "xml_dump_stderr": "",
+    "xml_read_rc": 0,
+    "xml_read_stderr": "",
+    "nodes": [
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2712
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.LinearLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.FrameLayout"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          2559
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          0,
+          1220,
+          292
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          13,
+          123,
+          169,
+          279
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "大众车系",
+        "labels": [
+          "大众车系"
+        ],
+        "bounds": [
+          506,
+          169,
+          714,
+          234
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "不限车系",
+        "labels": [
+          "不限车系"
+        ],
+        "bounds": [
+          970,
+          169,
+          1155,
+          234
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          26,
+          292,
+          1168,
+          435
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          26,
+          292,
+          1168,
+          435
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "全部",
+        "labels": [
+          "全部"
+        ],
+        "bounds": [
+          26,
+          292,
+          210,
+          435
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "轿车",
+        "labels": [
+          "轿车"
+        ],
+        "bounds": [
+          210,
+          292,
+          393,
+          435
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "SUV",
+        "labels": [
+          "SUV"
+        ],
+        "bounds": [
+          393,
+          292,
+          577,
+          435
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "MPV",
+        "labels": [
+          "MPV"
+        ],
+        "bounds": [
+          577,
+          292,
+          767,
+          435
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "跑车",
+        "labels": [
+          "跑车"
+        ],
+        "bounds": [
+          767,
+          292,
+          950,
+          435
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "新能源",
+        "labels": [
+          "新能源"
+        ],
+        "bounds": [
+          950,
+          292,
+          1168,
+          435
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          52,
+          435,
+          1168,
+          2507
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          52,
+          435,
+          1168,
+          2507
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ScrollView"
+      },
+      {
+        "text": "",
+        "content_desc": "轿车",
+        "labels": [
+          "轿车"
+        ],
+        "bounds": [
+          52,
+          435,
+          1168,
+          552
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "朗逸\n本地1211辆在售\n1.92-11.06万",
+        "labels": [
+          "朗逸\n本地1211辆在售\n1.92-11.06万"
+        ],
+        "bounds": [
+          52,
+          552,
+          1168,
+          858
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          91,
+          602,
+          358,
+          781
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "车型",
+        "labels": [
+          "车型"
+        ],
+        "bounds": [
+          869,
+          602,
+          1129,
+          781
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "帕萨特\n本地1040辆在售\n2.67-18.74万",
+        "labels": [
+          "帕萨特\n本地1040辆在售\n2.67-18.74万"
+        ],
+        "bounds": [
+          52,
+          858,
+          1168,
+          1163
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          91,
+          908,
+          358,
+          1087
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "车型",
+        "labels": [
+          "车型"
+        ],
+        "bounds": [
+          869,
+          908,
+          1129,
+          1087
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "迈腾\n本地1016辆在售\n3.04-19.68万",
+        "labels": [
+          "迈腾\n本地1016辆在售\n3.04-19.68万"
+        ],
+        "bounds": [
+          52,
+          1163,
+          1168,
+          1469
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          91,
+          1213,
+          358,
+          1392
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "车型",
+        "labels": [
+          "车型"
+        ],
+        "bounds": [
+          869,
+          1213,
+          1129,
+          1392
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "速腾\n本地930辆在售\n1.83-12.30万",
+        "labels": [
+          "速腾\n本地930辆在售\n1.83-12.30万"
+        ],
+        "bounds": [
+          52,
+          1469,
+          1168,
+          1774
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          91,
+          1519,
+          358,
+          1698
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "车型",
+        "labels": [
+          "车型"
+        ],
+        "bounds": [
+          869,
+          1519,
+          1129,
+          1698
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "高尔夫\n本地883辆在售\n2.83-14.62万",
+        "labels": [
+          "高尔夫\n本地883辆在售\n2.83-14.62万"
+        ],
+        "bounds": [
+          52,
+          1774,
+          1168,
+          2080
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          91,
+          1824,
+          358,
+          2003
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "车型",
+        "labels": [
+          "车型"
+        ],
+        "bounds": [
+          869,
+          1824,
+          1129,
+          2003
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "Polo\n本地670辆在售\n1.62-9.02万",
+        "labels": [
+          "Polo\n本地670辆在售\n1.62-9.02万"
+        ],
+        "bounds": [
+          52,
+          2080,
+          1168,
+          2385
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          91,
+          2130,
+          358,
+          2309
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "车型",
+        "labels": [
+          "车型"
+        ],
+        "bounds": [
+          869,
+          2130,
+          1129,
+          2309
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "宝来\n本地588辆在售\n1.57-10.42万",
+        "labels": [
+          "宝来\n本地588辆在售\n1.57-10.42万"
+        ],
+        "bounds": [
+          52,
+          2385,
+          1168,
+          2507
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          91,
+          2435,
+          358,
+          2507
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "车型",
+        "labels": [
+          "车型"
+        ],
+        "bounds": [
+          869,
+          2435,
+          1129,
+          2507
+        ],
+        "clickable": true,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.widget.ImageView"
+      },
+      {
+        "text": "",
+        "content_desc": "",
+        "labels": [],
+        "bounds": [
+          0,
+          2559,
+          1220,
+          2712
+        ],
+        "clickable": false,
+        "enabled": true,
+        "selected": false,
+        "package": "com.ganji.android.haoche_c",
+        "class_name": "android.view.View"
+      }
+    ],
+    "visible_texts": [
+      "大众车系",
+      "不限车系",
+      "全部",
+      "轿车",
+      "SUV",
+      "MPV",
+      "跑车",
+      "新能源",
+      "朗逸\n本地1211辆在售\n1.92-11.06万",
+      "车型",
+      "帕萨特\n本地1040辆在售\n2.67-18.74万",
+      "迈腾\n本地1016辆在售\n3.04-19.68万",
+      "速腾\n本地930辆在售\n1.83-12.30万",
+      "高尔夫\n本地883辆在售\n2.83-14.62万",
+      "Polo\n本地670辆在售\n1.62-9.02万",
+      "宝来\n本地588辆在售\n1.57-10.42万"
+    ],
+    "capture_metrics": {
+      "screenshot_ms": 414,
+      "xml_ms": 418
+    },
+    "visible_blob": "大众车系不限车系全部轿车SUVMPV跑车新能源朗逸\n本地1211辆在售\n1.92-11.06万车型帕萨特\n本地1040辆在售\n2.67-18.74万迈腾\n本地1016辆在售\n3.04-19.68万速腾\n本地930辆在售\n1.83-12.30万高尔夫\n本地883辆在售\n2.83-14.62万Polo\n本地670辆在售\n1.62-9.02万宝来\n本地588辆在售\n1.57-10.42万"
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "generated_at": "2026-05-11T07:19:50.492905+00:00",
+  "final_status": "S03_VISIBLE_ONLY_CONTRACT_REWRITE_VERIFIED_CLEAN",
+  "modified_files": [
+    "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s01_to_s10_mainline.py"
+  ],
+  "removed_or_disabled_old_branches": [
+    "Removed unused S03_BRAND_SCROLL_LIMIT constant; S03 not-visible path stops without search; brand-zone continuation is blocked by stop codes."
+  ],
+  "final_s03_code_structure": "fresh S03 snapshot -> detect visible target brand alias -> if visible click brand row right safe point and return -> if not visible stop with S03_TARGET_BRAND_NOT_VISIBLE_CONTRACT_UNDEFINED -> brand-zone page stops.",
+  "offline_replay": {
+    "scenario_a_visible_target": {
+      "target_brand_visible": true,
+      "matched_alias": "零跑汽车",
+      "matched_brand_bounds": [
+        0,
+        300,
+        1080,
+        380
+      ],
+      "matched_brand_text": "零跑汽车",
+      "brand_row_bounds": [
+        0,
+        220,
+        1080,
+        460
+      ],
+      "selected_click_point": [
+        1056,
+        340
+      ],
+      "selected_click_region_type": "brand_row_right_safe_point",
+      "next_action": "S03_ONLY_ALLOWED_ACTION_CLICK_BRAND_ROW_RIGHT_SAFE_POINT",
+      "forbidden_text_seen": false,
+      "forbidden_bounds": [],
+      "brand_zone_text_seen": false,
+      "brand_zone_bounds": [],
+      "selected_click_point_in_row": true,
+      "selected_click_overlaps_forbidden": false,
+      "selected_click_overlaps_brand_zone": false,
+      "contract_click_valid": true,
+      "attempted_new_energy_tab": false,
+      "attempted_letter_L": false,
+      "attempted_letter_G": false,
+      "attempted_alphabet": false,
+      "attempted_scroll": false,
+      "attempted_brand_name_click": false,
+      "attempted_brand_icon_click": false,
+      "attempted_row_center_click": false,
+      "pass": true
+    },
+    "scenario_b_target_not_visible": {
+      "target_brand_visible": false,
+      "next_action": "STOP",
+      "stop_code": "S03_TARGET_BRAND_NOT_VISIBLE_CONTRACT_UNDEFINED",
+      "attempted_new_energy_tab": false,
+      "attempted_letter_L": false,
+      "attempted_letter_G": false,
+      "attempted_alphabet": false,
+      "attempted_scroll": false,
+      "pass": true
+    },
+    "brand_zone_page": {
+      "brand_zone_page_detected": true,
+      "continuation_allowed": false,
+      "stop_code": "S04_BRAND_ZONE_PAGE_BLOCKED_BY_CONTRACT",
+      "attempted_find_C10": false,
+      "attempted_click_model_config": false,
+      "attempted_enter_S05": false,
+      "attempted_enter_S07": false,
+      "attempted_enter_S10": false,
+      "pass": true
+    }
+  },
+  "residual_keyword_check": [
+    {
+      "keyword": "只看新能源",
+      "category": "B",
+      "still_present": true,
+      "executable_contract_violation_path": false,
+      "reason": "present only as false audit flags or non-S03 helper code; no S03 search/click action is reachable",
+      "matches": [
+        {
+          "line": 3590,
+          "text": "skip = {\"选择品牌\", \"只看新能源\", \"热门品牌\", \"全部\", \"热门\", \"新能源\"}"
+        }
+      ]
+    },
+    {
+      "keyword": "new_energy",
+      "category": "B",
+      "still_present": true,
+      "executable_contract_violation_path": false,
+      "reason": "present only as false audit flags or non-S03 helper code; no S03 search/click action is reachable",
+      "matches": [
+        {
+          "line": 3622,
+          "text": "\"attempted_new_energy_tab\": False,"
+        }
+      ]
+    },
+    {
+      "keyword": "新能源",
+      "category": "B",
+      "still_present": true,
+      "executable_contract_violation_path": false,
+      "reason": "present only as false audit flags or non-S03 helper code; no S03 search/click action is reachable",
+      "matches": [
+        {
+          "line": 3590,
+          "text": "skip = {\"选择品牌\", \"只看新能源\", \"热门品牌\", \"全部\", \"热门\", \"新能源\"}"
+        },
+        {
+          "line": 3728,
+          "text": "\"新能源\","
+        },
+        {
+          "line": 3919,
+          "text": "return {\"首页\", \"选车\", \"卖车\", \"新能源\", \"我的\"}.issubset(labels)"
+        }
+      ]
+    },
+    {
+      "keyword": "attempted_tabs",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "attempted_letters",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "letter_L",
+      "category": "B",
+      "still_present": true,
+      "executable_contract_violation_path": false,
+      "reason": "present only as false audit flags or non-S03 helper code; no S03 search/click action is reachable",
+      "matches": [
+        {
+          "line": 3623,
+          "text": "\"attempted_letter_L\": False,"
+        }
+      ]
+    },
+    {
+      "keyword": "letter_G",
+      "category": "B",
+      "still_present": true,
+      "executable_contract_violation_path": false,
+      "reason": "present only as false audit flags or non-S03 helper code; no S03 search/click action is reachable",
+      "matches": [
+        {
+          "line": 3624,
+          "text": "\"attempted_letter_G\": False,"
+        }
+      ]
+    },
+    {
+      "keyword": "alphabet",
+      "category": "B",
+      "still_present": true,
+      "executable_contract_violation_path": false,
+      "reason": "present only as false audit flags or non-S03 helper code; no S03 search/click action is reachable",
+      "matches": [
+        {
+          "line": 3625,
+          "text": "\"attempted_alphabet\": False,"
+        }
+      ]
+    },
+    {
+      "keyword": "scroll_brand",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "search_target_brand_when_not_visible",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "execute_s03_contract_defined_not_visible_action",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "scroll_brand_list",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "click_new_energy_tab",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "品牌专区",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "BRAND_ZONE",
+      "category": "B",
+      "still_present": true,
+      "executable_contract_violation_path": false,
+      "reason": "present as brand-zone detection/stop or non-S03 page logic; brand-zone continuation remains blocked",
+      "matches": [
+        {
+          "line": 5666,
+          "text": "\"S03_BRAND_ROW_RIGHT_SAFE_POINT_OVERLAPS_BRAND_ZONE\","
+        },
+        {
+          "line": 5743,
+          "text": "context[\"s04_landing_type\"] = \"BRAND_ZONE_MIXED_LIST\""
+        },
+        {
+          "line": 5746,
+          "text": "\"S03_CLICKED_BRAND_ZONE_INSTEAD_OF_BRAND\","
+        },
+        {
+          "line": 5774,
+          "text": "context[\"s04_landing_type\"] = \"BRAND_ZONE_MIXED_LIST\""
+        },
+        {
+          "line": 5777,
+          "text": "\"S04_BRAND_ZONE_PAGE_BLOCKED_BY_CONTRACT\","
+        },
+        {
+          "line": 6703,
+          "text": "context[\"s04_landing_type\"] = \"BRAND_ZONE_MIXED_LIST\""
+        },
+        {
+          "line": 6706,
+          "text": "\"S04_BRAND_ZONE_PAGE_BLOCKED_BY_CONTRACT\","
+        }
+      ]
+    },
+    {
+      "keyword": "BRAND_ZONE_MIXED_LIST",
+      "category": "B",
+      "still_present": true,
+      "executable_contract_violation_path": false,
+      "reason": "present as brand-zone detection/stop or non-S03 page logic; brand-zone continuation remains blocked",
+      "matches": [
+        {
+          "line": 5743,
+          "text": "context[\"s04_landing_type\"] = \"BRAND_ZONE_MIXED_LIST\""
+        },
+        {
+          "line": 5774,
+          "text": "context[\"s04_landing_type\"] = \"BRAND_ZONE_MIXED_LIST\""
+        },
+        {
+          "line": 6703,
+          "text": "context[\"s04_landing_type\"] = \"BRAND_ZONE_MIXED_LIST\""
+        }
+      ]
+    },
+    {
+      "keyword": "target_series_verified",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "C10",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "零跑C10",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "车型配置",
+      "category": "B",
+      "still_present": true,
+      "executable_contract_violation_path": false,
+      "reason": "present as brand-zone detection/stop or non-S03 page logic; brand-zone continuation remains blocked",
+      "matches": [
+        {
+          "line": 4064,
+          "text": "excluded_markers = (\"全部车型\", \"热门车型\", \"车型配置\", \"价格从低到高\", \"综合排序\", \"查看\", \"更多\")"
+        },
+        {
+          "line": 6718,
+          "text": "node = _find_exact(snapshot, \"车型配置\")"
+        },
+        {
+          "line": 6720,
+          "text": "issue = _record_issue(issues, \"ACTION_NOT_ALLOWED_BY_PAGE_CONTRACT\", \"S06\", \"车型配置 entry not found.\", snapshot)"
+        },
+        {
+          "line": 6725,
+          "text": "clicked_text = next((str(label).strip() for label in node.get(\"labels\", []) if str(label).strip()), \"车型配置\")"
+        },
+        {
+          "line": 6739,
+          "text": "\"reason_detail\": \"车型配置 is clicked from the exact XML text/content-desc node bounds.\","
+        },
+        {
+          "line": 6824,
+          "text": "\"reason_detail\": \"Short polling replaces the old fixed 0.8s sleep after tapping 车型配置.\","
+        },
+        {
+          "line": 6836,
+          "text": "\"S06 车型配置 click did not open the S07 model-config filter window within bounded short polling.\","
+        }
+      ]
+    },
+    {
+      "keyword": "fallback",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "fallback_click",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "fallback_to",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "兜底",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "补救",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "retry",
+      "category": "B",
+      "still_present": true,
+      "executable_contract_violation_path": false,
+      "reason": "present only in S05 year-click retry, outside S03 brand-selection contract cleanup scope",
+      "matches": [
+        {
+          "line": 5209,
+          "text": "\"right_slider_max_retry\": 2,"
+        },
+        {
+          "line": 5456,
+          "text": "evidence[\"right_slider_retry_count\"] = right_attempts"
+        },
+        {
+          "line": 6133,
+          "text": "retry_year_click_used = False"
+        },
+        {
+          "line": 6134,
+          "text": "retry_click_strategy = None"
+        },
+        {
+          "line": 6136,
+          "text": "retry_node = _s05_find_left_year_click_target(snapshot, target_year, prefer_parent=True)"
+        },
+        {
+          "line": 6137,
+          "text": "if retry_node and retry_node.get(\"bounds\") and _s05_node_in_left_year_region(snapshot, retry_node.get(\"bounds\")):"
+        },
+        {
+          "line": 6138,
+          "text": "retry_year_click_used = True"
+        },
+        {
+          "line": 6139,
+          "text": "retry_click_strategy = retry_node.get(\"year_click_strategy\") or \"clickable_year_parent_or_row_bounds\""
+        }
+      ]
+    },
+    {
+      "keyword": "guess",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    },
+    {
+      "keyword": "old snapshot",
+      "category": "A",
+      "still_present": false,
+      "executable_contract_violation_path": false,
+      "reason": "not present",
+      "matches": []
+    }
+  ],
+  "executable_violation_paths_remaining": [],
+  "allow_next_real_device_validation": true,
+  "real_device_run": false,
+  "second_stage_started": false,
+  "reference_collection_started": false,
+  "pricing_run": false,
+  "raw_xml_large_fields_written": false
+}

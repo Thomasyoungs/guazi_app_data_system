@@ -1,0 +1,212 @@
+{
+  "status": "AUDIT_GENERIC_RULE_GAPS_PATCHED",
+  "mode": "patch_only_offline_validation",
+  "scope": {
+    "lumin_s04_s07_excluded": true,
+    "prado_s10_single_card_excluded": true,
+    "page_collection_flow_modified": false,
+    "real_device_run": false,
+    "result_json_overwritten": false,
+    "baseline_files_overwritten": false,
+    "page_contract_docx_modified": false,
+    "ai_model_used": false,
+    "non_trisame_prices_used": false
+  },
+  "modified_files": [
+    "src/guazi_app_data_system/pricing.py",
+    "config/fields.yaml",
+    "scripts/parse_target_vehicle_task.py",
+    "src/guazi_app_data_system/data_collection.py"
+  ],
+  "code_locations": {
+    "target_condition_standardization": "src/guazi_app_data_system/pricing.py:149",
+    "target_score_condition_parse_integration": "src/guazi_app_data_system/pricing.py:207",
+    "water_risk_grouping": "src/guazi_app_data_system/pricing.py:697",
+    "competition_coefficient": "src/guazi_app_data_system/pricing.py:937",
+    "liquidity_pressure_cap": "src/guazi_app_data_system/pricing.py:920",
+    "field_mapping": "config/fields.yaml:59",
+    "task_parser_repaint_regex": "scripts/parse_target_vehicle_task.py:46",
+    "data_collection_condition_parser": "src/guazi_app_data_system/data_collection.py:42"
+  },
+  "repaint_standardization": {
+    "rule": {
+      "补漆": "喷漆",
+      "漆面修复": "喷漆",
+      "no_auto_upgrade_to": [
+        "钣金",
+        "更换",
+        "事故",
+        "结构风险"
+      ]
+    },
+    "part_aliases": {
+      "左后叶": "左后翼子板",
+      "右后叶": "右后翼子板",
+      "左前叶": "左前翼子板",
+      "右前叶": "右前翼子板"
+    },
+    "offline_tests": [
+      {
+        "input": "左后门补漆",
+        "expected": [
+          {
+            "part": "左后门",
+            "damage_type": "喷漆"
+          }
+        ],
+        "passed": true
+      },
+      {
+        "input": "左后叶补漆",
+        "expected": [
+          {
+            "part": "左后翼子板",
+            "damage_type": "喷漆"
+          }
+        ],
+        "passed": true
+      },
+      {
+        "input": "右后叶车身拉花下面有几口拳头大小补漆",
+        "expected": [
+          {
+            "part": "右后翼子板",
+            "damage_type": "喷漆"
+          }
+        ],
+        "passed": true
+      },
+      {
+        "input": "左后门，左后叶，右后叶车身拉花下面有几口拳头大小补漆",
+        "expected": [
+          {
+            "part": "左后门",
+            "damage_type": "喷漆"
+          },
+          {
+            "part": "左后翼子板",
+            "damage_type": "喷漆"
+          },
+          {
+            "part": "右后翼子板",
+            "damage_type": "喷漆"
+          }
+        ],
+        "passed": true
+      },
+      {
+        "input": "原版原漆",
+        "expected": [],
+        "passed": true
+      },
+      {
+        "input": "左后门补漆，右后门钣金",
+        "expected": [
+          {
+            "part": "左后门",
+            "damage_type": "喷漆"
+          },
+          {
+            "part": "右后门",
+            "damage_type": "钣金"
+          }
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "competition_coefficient_v1_2_1": {
+    "synced": true,
+    "rules": {
+      "sample_shortage_price_distribution_dedup": true,
+      "water_risk_grouped_by_level": true,
+      "strong_risk_score_gap_cap_minus_0_01": true,
+      "liquidity_pressure_combined_cap_minus_0_02": true,
+      "city_comparability_record_only": true,
+      "obd_not_read_note_only": true,
+      "no_ai_model": true,
+      "non_trisame_price_excluded": true
+    },
+    "tuang_direct_validation": {
+      "reference_price_yuan": 108900,
+      "target_score": 91.0,
+      "selected_reference_score": 96.0,
+      "trisame_count": 2,
+      "competition_coefficient": 0.91,
+      "target_guazi_listing_price_yuan": 99000,
+      "guazi_service_fee_yuan": 3500,
+      "guazi_net_payout_yuan": 95500,
+      "suggested_purchase_price_yuan": 84648,
+      "obd_not_read_policy": "OBD_NOT_READ_NOTE only",
+      "target_obd_not_read_review_present": false,
+      "passed": true
+    }
+  },
+  "historical_replay": [
+    {
+      "sample": "focus_2017",
+      "competition_coefficient": 0.98,
+      "target_guazi_listing_price_yuan": 25700,
+      "guazi_service_fee_yuan": 2500,
+      "guazi_net_payout_yuan": 23200,
+      "suggested_purchase_price_yuan_if_same_deductions": 19200
+    },
+    {
+      "sample": "toyota_yaris_2015",
+      "competition_coefficient": 1.0,
+      "target_guazi_listing_price_yuan": 27800,
+      "guazi_service_fee_yuan": 2500,
+      "guazi_net_payout_yuan": 25300,
+      "suggested_purchase_price_yuan_if_same_deductions": 21300
+    },
+    {
+      "sample": "santana_2021",
+      "competition_coefficient": 0.975,
+      "target_guazi_listing_price_yuan": 40600,
+      "guazi_service_fee_yuan": 2500,
+      "guazi_net_payout_yuan": 38100,
+      "suggested_purchase_price_yuan_if_same_deductions": 33472
+    },
+    {
+      "sample": "tuang_2017",
+      "competition_coefficient": 0.91,
+      "target_guazi_listing_price_yuan": 99000,
+      "guazi_service_fee_yuan": 3500,
+      "guazi_net_payout_yuan": 95500,
+      "suggested_purchase_price_yuan_if_same_deductions": 84648,
+      "business_review_band": "0.91-0.92",
+      "not_compressed_to_0_90": true
+    }
+  ],
+  "validation": {
+    "py_compile": {
+      "command": "python -m py_compile src/guazi_app_data_system/pricing.py src/guazi_app_data_system/data_collection.py scripts/parse_target_vehicle_task.py",
+      "passed": true
+    },
+    "unittest": {
+      "command": "python -m unittest tests.test_fields_contract tests.test_target_vehicle_task_parser",
+      "passed": true,
+      "tests_run": 18
+    },
+    "pytest": {
+      "available": false,
+      "note": "pytest is not installed in the bundled Python environment; standard unittest suite was used."
+    },
+    "condition_standardization_tests": "PASS",
+    "pricing_offline_tests": "PASS",
+    "real_device_run": false
+  },
+  "old_formula_residual_check": {
+    "active_pricing_0_95_residual": false,
+    "remaining_0_95_locations": [
+      {
+        "file": "src/guazi_app_data_system/issue_classifier.py",
+        "meaning": "confidence values, not pricing"
+      }
+    ],
+    "archived_baseline_old_formula_present": true,
+    "archived_baseline_old_formula_modified": false
+  },
+  "docx_sync_needed_later": true,
+  "final_status": "AUDIT_GENERIC_RULE_GAPS_PATCHED"
+}

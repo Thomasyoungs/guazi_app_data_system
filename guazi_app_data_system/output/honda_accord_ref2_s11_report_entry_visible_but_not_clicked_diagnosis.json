@@ -1,0 +1,157 @@
+﻿{
+    "status":  "HONDA_ACCORD_REF2_S11_REPORT_ENTRY_VISIBLE_BUT_NOT_CLICKED_DIAGNOSIS_DONE",
+    "read_only":  true,
+    "code_modified":  false,
+    "real_device_run":  false,
+    "result_json_overwritten":  false,
+    "classification":  "S11_REF2_XML_STALE_OR_MISMATCHED_WITH_SCREENSHOT",
+    "secondary_observation":  "S11_REF2_SCREENSHOT_VISIBLE_XML_TRUE_MISSING_WITHIN_ACCEPTED_S11_XML",
+    "target_fingerprint":  "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+    "reference_index":  2,
+    "stop_code":  "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+    "screenshot_audit":  {
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260517_174255.png",
+                             "screenshot_last_write":  "2026-05-17 17:42:56.624",
+                             "view_full_report_visible":  true,
+                             "view_full_report_complete_visible":  true,
+                             "approximate_button_bounds":  "[78,2075][598,2195] by visual inspection",
+                             "bottom_bar_bounds_from_result":  "[0,2423][1220,2513]",
+                             "appears_in_safe_click_region":  true,
+                             "appears_bottom_bar_blocked":  false,
+                             "appears_clickable":  true,
+                             "visual_note":  "截图下方左侧按钮“查看完整报告”完整露出，位于底部固定操作栏上方。"
+                         },
+    "xml_audit":  {
+                      "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260517_174255.xml",
+                      "xml_last_write":  "2026-05-17 17:43:08.604",
+                      "xml_file_length_bytes":  64700,
+                      "xml_text_length":  63929,
+                      "xml_dump_ok":  true,
+                      "xml_mtime_valid":  true,
+                      "searched_terms":  {
+                                             "查看完整报告":  0,
+                                             "完整报告":  0,
+                                             "检测报告":  0,
+                                             "官方检测":  0,
+                                             "车况报告":  0,
+                                             "报告":  0,
+                                             "商家自检车况":  0,
+                                             "现在看":  1,
+                                             "车况":  2,
+                                             "重大事故":  1,
+                                             "车身骨架":  1,
+                                             "44项检测通过":  1,
+                                             "收藏":  1,
+                                             "讲价":  1
+                                         },
+                      "exact_view_full_report_node_exists":  false,
+                      "exact_view_full_report_node":  null,
+                      "report_related_context_nodes":  [
+                                                           {
+                                                               "text":  "车身外观",
+                                                               "bounds":  "[341,1854][597,1906]",
+                                                               "class":  "android.widget.TextView",
+                                                               "clickable":  false,
+                                                               "enabled":  true
+                                                           },
+                                                           {
+                                                               "text":  "漆面存在损伤及其他注意项",
+                                                               "bounds":  "[341,1919][597,2017]",
+                                                               "class":  "android.widget.TextView",
+                                                               "clickable":  false,
+                                                               "enabled":  true
+                                                           },
+                                                           {
+                                                               "text":  "0 检测说明：优秀左侧后门、左侧前门、右后尾灯、后备箱盖、前保险杠、发动机舱盖有少量使用痕迹，",
+                                                               "bounds":  "[78,2055][1142,2172]",
+                                                               "class":  "android.widget.TextView",
+                                                               "clickable":  false,
+                                                               "enabled":  true
+                                                           },
+                                                           {
+                                                               "text":  "重大事故丨火烧丨泡水排查",
+                                                               "bounds":  "[78,2276][630,2338]",
+                                                               "class":  "android.widget.TextView",
+                                                               "clickable":  false,
+                                                               "enabled":  true
+                                                           },
+                                                           {
+                                                               "text":  "车身骨架",
+                                                               "bounds":  "[78,2384][262,2446]",
+                                                               "class":  "android.widget.TextView",
+                                                               "clickable":  false,
+                                                               "enabled":  true
+                                                           },
+                                                           {
+                                                               "text":  "44项检测通过",
+                                                               "bounds":  "[855,2394][1090,2437]",
+                                                               "class":  "android.widget.TextView",
+                                                               "clickable":  false,
+                                                               "enabled":  true
+                                                           },
+                                                           {
+                                                               "text":  "现在看",
+                                                               "bounds":  "[989,649][1190,711]",
+                                                               "class":  "android.widget.TextView",
+                                                               "clickable":  false,
+                                                               "enabled":  true
+                                                           },
+                                                           {
+                                                               "text":  "收藏",
+                                                               "bounds":  "[177,2468][265,2513]",
+                                                               "class":  "android.widget.TextView",
+                                                               "clickable":  false,
+                                                               "enabled":  true
+                                                           },
+                                                           {
+                                                               "text":  "讲价",
+                                                               "bounds":  "[652,2423][900,2479]",
+                                                               "class":  "android.widget.TextView",
+                                                               "clickable":  false,
+                                                               "enabled":  true
+                                                           }
+                                                       ],
+                      "xml_page_identity_observation":  "XML 属于瓜子详情/S11相关页面，不是 S10 列表；但 XML 当前可见节点与截图按钮区域不一致。"
+                  },
+    "reconstructed_fresh_pair":  {
+                                     "fresh_pair_id":  "not_persisted_in_final_issue_context",
+                                     "action_context":  "S11_REPORT_SEARCH",
+                                     "xml_dump_ok":  true,
+                                     "xml_mtime_valid":  true,
+                                     "page_identity_check":  "S11_XML_ACCEPTABLE_FOR_REPORT_SEARCH",
+                                     "s11_xml_stale":  false,
+                                     "s11_xml_s10_strong_signals":  [
+
+                                                                    ],
+                                     "s11_xml_s12_strong_signals":  [
+                                                                        "车身外观"
+                                                                    ],
+                                     "fresh_evidence_pair_ok":  true,
+                                     "note":  "最终 issue_context 未保留 fresh_pair_id/xml_dump_ok/xml_mtime_valid 等字段；按代码 V1.39 逻辑和文件 mtime 重建后，该 pair 会被视为 fresh_evidence_pair_ok。"
+                                 },
+    "direct_false_source":  {
+                                "function":  "_find_s11_official_report_entry_node -\u003e _find_exact_label_node",
+                                "code_lines":  "runtime_s10_to_s16_mainline.py:4381-4386 and 1435-1444",
+                                "lookup_fields":  "raw XML parsed nodes labels: text and content-desc",
+                                "target_text":  "查看完整报告",
+                                "actual_result":  "No parsed node label exactly equals 查看完整报告 because XML contains 0 occurrences in text/content-desc/raw XML.",
+                                "safe_gate_reached":  false,
+                                "safe_gate_reason":  "report_node is None, so _s11_report_entry_visibility returned reason=not_seen and did not evaluate real button bounds."
+                            },
+    "v139_assessment":  {
+                            "fresh_pair_logic_executed_by_code_path":  true,
+                            "stale_s10_detection_would_pass":  true,
+                            "stale_s10_detected":  false,
+                            "mismatch_detected_by_v139":  false,
+                            "reason":  "V1.39 stale detection only checks strong S10 list signals. This XML is not S10 stale; it is an S11 intra-page screenshot/XML viewport-content mismatch, so it was allowed to drive exact_report_entry_seen=false."
+                        },
+    "why_not_clicked":  "截图可见按钮，但对应 XML 原文没有“查看完整报告/完整报告/报告”等入口节点；代码只允许 XML 精确节点驱动点击，因此 report_node=None、exact_report_entry_seen=false，未进入 safe gate 或 click branch。",
+    "what_to_fix_next":  "fresh evidence pair / XML-screenshot intra-S11 consistency detection. 不是 parser 漏节点，也不是 safe gate 阻断；在这组证据里 XML 原文确实没有入口节点。",
+    "prohibited_confirmed":  {
+                                 "ocr_used":  false,
+                                 "visual_click_used":  false,
+                                 "screenshot_coordinate_click_used":  false,
+                                 "code_modified":  false,
+                                 "real_device_run":  false
+                             }
+}

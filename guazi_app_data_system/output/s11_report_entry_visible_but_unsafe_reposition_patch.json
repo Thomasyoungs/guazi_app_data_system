@@ -1,0 +1,25 @@
+{
+  "patch_status": "S11_REPORT_ENTRY_VISIBLE_BUT_UNSAFE_REPOSITION_PATCHED",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "forbidden_scope_touched": false,
+  "py_compile": {
+    "command": "python -m py_compile scripts/runtime_s10_to_s16_mainline.py",
+    "passed": true
+  },
+  "implemented_contract": {
+    "contract_version": "V1.36",
+    "contract_name": "S11_REPORT_ENTRY_VISIBLE_BUT_UNSAFE_REPOSITION_PAGE_CONTRACT_UPDATED",
+    "exact_text_required": "\u67e5\u770b\u5b8c\u6574\u62a5\u544a",
+    "unsafe_reposition_enabled": true,
+    "fresh_after_each_reposition": true,
+    "max_reposition_attempts": 3,
+    "weak_marker_click_allowed": false,
+    "final_stop_code_when_still_unsafe": "S11_REPORT_ENTRY_NOT_FULLY_VISIBLE_SAFE"
+  },
+  "offline_validation": {
+    "path": "output/s11_report_entry_visible_but_unsafe_reposition_offline_validation.json",
+    "status": "PASSED"
+  }
+}

@@ -1,0 +1,113 @@
+﻿{
+    "generated_at":  "2026-05-11T06:47:20.1572006Z",
+    "final_status":  "S05_SAME_TRIM_MULTI_EMISSION_VARIANT_CONTRACT_PATCHED",
+    "modified_files":  [
+                           "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s01_to_s10_mainline.py"
+                       ],
+    "real_device_run":  false,
+    "second_stage_started":  false,
+    "pricing_run":  false,
+    "py_compile":  {
+                       "passed":  true,
+                       "command":  "python -m py_compile scripts/runtime_s01_to_s10_mainline.py"
+                   },
+    "new_contract":  "S05_SAME_TRIM_MULTI_EMISSION_VARIANT_SELECT",
+    "new_functions":  [
+                          "_s05_strip_emission_standard",
+                          "_s05_compact_trim_identity",
+                          "_s05_target_trim_identity",
+                          "_s05_emission_markers",
+                          "_s05_same_trim_emission_variant_group",
+                          "_s05_selected_count_text",
+                          "_s05_selected_count",
+                          "_s05_selected_count_matches"
+                      ],
+    "emission_suffix_rules":  [
+                                  "国V",
+                                  "国VI",
+                                  "国5",
+                                  "国6",
+                                  "国Ⅴ",
+                                  "国Ⅵ"
+                              ],
+    "implementation_summary":  [
+                                   "目标年款选中后，对右侧配置和 target config 同步去除排放标记并生成 normalized trim identity。",
+                                   "只有 normalized_trim 与 normalized_target_config 完全一致，且多行差异均为排放标记时，才形成 emission_variant_group。",
+                                   "同配置多排放组会逐项点击，并以已选N项=N 验证后才允许确定。",
+                                   "配置组不确认、未全选、已选数量不一致分别停止。",
+                                   "单一精确配置保持单选行为。"
+                               ],
+    "stop_codes":  [
+                       "S05_EMISSION_VARIANT_GROUP_NOT_CONFIRMED",
+                       "S05_EMISSION_VARIANT_NOT_ALL_SELECTED",
+                       "S05_SELECTED_COUNT_MISMATCH",
+                       "CONFIG_MODEL_NOT_FOUND"
+                   ],
+    "offline_tests":  [
+                          {
+                              "name":  "test_1_target_without_emission",
+                              "target_year_model":  "2019款",
+                              "target_config_model":  "180TURBO CVT尚悦版",
+                              "visible_trim_names":  [
+                                                         "2019款全部车型",
+                                                         "2019款 180TURBO CVT尚动版 国V",
+                                                         "2019款 180TURBO CVT尚动版 国VI",
+                                                         "2019款 180TURBO CVT尚悦版 国V",
+                                                         "2019款 180TURBO CVT尚悦版 国VI",
+                                                         "2019款 180TURBO CVT尚擎版 国V",
+                                                         "2019款 180TURBO CVT尚擎版 国VI",
+                                                         "2019款 220TURBO CVT劲动版 国V"
+                                                     ],
+                              "selected":  [
+                                               "2019款 180TURBO CVT尚悦版 国V",
+                                               "2019款 180TURBO CVT尚悦版 国VI"
+                                           ],
+                              "excluded":  [
+                                               "2019款全部车型",
+                                               "2019款 180TURBO CVT尚动版 国V",
+                                               "2019款 180TURBO CVT尚动版 国VI",
+                                               "2019款 180TURBO CVT尚擎版 国V",
+                                               "2019款 180TURBO CVT尚擎版 国VI",
+                                               "2019款 220TURBO CVT劲动版 国V"
+                                           ],
+                              "selected_count_text":  "已选2项",
+                              "selected_count_expected":  2,
+                              "pass":  true
+                          },
+                          {
+                              "name":  "test_2_target_with_emission",
+                              "target_year_model":  "2019款",
+                              "target_config_model":  "2019款 180TURBO CVT尚悦版 国VI",
+                              "visible_trim_names":  [
+                                                         "2019款 180TURBO CVT尚悦版 国V",
+                                                         "2019款 180TURBO CVT尚悦版 国VI"
+                                                     ],
+                              "selected":  [
+                                               "2019款 180TURBO CVT尚悦版 国V",
+                                               "2019款 180TURBO CVT尚悦版 国VI"
+                                           ],
+                              "selected_count_text":  "已选2项",
+                              "selected_count_expected":  2,
+                              "pass":  true
+                          },
+                          {
+                              "name":  "normalization_tests",
+                              "remove_emission_suffix":  true,
+                              "target_with_emission_maps_to_same_identity":  true,
+                              "all_models_not_selected":  true,
+                              "similar_configs_not_selected":  true,
+                              "different_power_not_selected":  true,
+                              "pass":  true
+                          }
+                      ],
+    "misselection_checks":  {
+                                "selects_all_models":  false,
+                                "selects_similar_config":  false,
+                                "selects_different_power":  false,
+                                "selects_different_displacement":  false,
+                                "selects_different_transmission":  false,
+                                "selects_different_version":  false
+                            },
+    "needs_real_device_validation":  true,
+    "historical_baseline_overwritten":  false
+}

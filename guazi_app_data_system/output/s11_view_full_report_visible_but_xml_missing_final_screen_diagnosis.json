@@ -1,0 +1,112 @@
+{
+  "report_name": "s11_view_full_report_visible_but_xml_missing_final_screen_diagnosis",
+  "generated_at": "2026-05-13T12:30:20",
+  "target_fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "readonly": true,
+  "code_modified": false,
+  "device_run": false,
+  "result_overwritten": false,
+  "final_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260513_122252.png",
+  "final_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260513_122252.xml",
+  "screenshot_timestamp": "2026-05-13T12:22:53",
+  "xml_timestamp": "2026-05-13T12:23:05",
+  "same_filename_stem": true,
+  "same_fresh_pair": "false",
+  "same_fresh_reason": "The final screenshot is S11 car-condition page with visible ??????, but the paired XML text profile contains S10/list signals such as ???? and ??????, not S11 ????/??????.",
+  "page_id_screenshot": "S11",
+  "page_id_xml_profile": "S10_or_brand_zone_list_snapshot",
+  "issue_context_recognized_page": "S11",
+  "current_reference_index": 3,
+  "current_reference_price": "10.90万",
+  "current_reference_title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+  "xml_checks": {
+    "exact_text_count": 0,
+    "content_desc_count": 0,
+    "split_text_candidate_count": 0,
+    "empty_text_clickable_candidate_count": 1,
+    "candidate_nodes_bounds": [
+      [
+        0,
+        0,
+        1220,
+        2559
+      ]
+    ],
+    "candidate_nodes_class": [
+      "android.widget.LinearLayout"
+    ],
+    "candidate_nodes_clickable": [
+      "true"
+    ],
+    "candidate_nodes_enabled": [
+      "true"
+    ],
+    "contains_view_full_report_substring": false,
+    "contains_view": false,
+    "contains_full_report": false,
+    "contains_merchant_marker": false
+  },
+  "screenshot_diagnosis": {
+    "screenshot_view_full_report_visible": true,
+    "approximate_button_region": [
+      70,
+      650,
+      610,
+      805
+    ],
+    "button_position": "left_under_engine_condition",
+    "whether_button_obscured": false,
+    "whether_overlay_blocks_button": false,
+    "note": "Manual visual inspection only; this diagnosis does not use OCR or screenshot recognition for any patch/click decision."
+  },
+  "classification_primary": "S11_VIEW_FULL_REPORT_XML_SCREENSHOT_PAIR_MISMATCH",
+  "classification_secondary": [
+    "S11_VIEW_FULL_REPORT_VISIBLE_IN_SCREENSHOT_BUT_XML_TEXT_MISSING likely for same-page captures, supported by earlier 112919 evidence",
+    "S11_EXACT_TEXT_RULE_TOO_STRICT_FOR_THIS_APP_RENDERING if XML remains textless on a correctly paired S11 fresh"
+  ],
+  "why_script_did_not_click": "Under the current exact XML/text-node-only rule, the script only clicks when XML exposes exact ??????. The final paired XML does not expose that text, and because visual/OCR/structure binding is disabled, no click was allowed. In addition, final screenshot/XML evidence is not same-page paired, so the stop evidence is not strong enough to prove absence of the visible button.",
+  "rule_self_consistency": {
+    "code_behavior_matches_exact_text_rule": true,
+    "actual_screenshot_entry_exists": true,
+    "exact_text_rule_can_miss_real_visible_entry": true,
+    "if_no_ocr_or_visual_then_options": "accept miss and stop/manual review, or introduce non-visual structure binding / evidence pairing fix."
+  },
+  "optional_solutions": [
+    {
+      "option": 1,
+      "name": "Keep XML exact text only",
+      "result": "Do not click if XML lacks ??????, even when screenshot appears to show it. This is deterministic but misses this page."
+    },
+    {
+      "option": 2,
+      "name": "Allow OCR / screenshot text recognition",
+      "result": "Can detect visible text but user currently rejects this path because of speed and scope."
+    },
+    {
+      "option": 3,
+      "name": "Allow S11 local structure binding",
+      "result": "No OCR. Bind left-side empty/clickable region under ???? with strict S11 context and right-side forbidden/advisor exclusion. Needs new contract."
+    },
+    {
+      "option": 4,
+      "name": "Manual review stop",
+      "result": "When XML lacks exact text and no structure binding is allowed, stop S11_VIEW_FULL_REPORT_XML_TEXT_MISSING_MANUAL_REVIEW."
+    }
+  ],
+  "supporting_evidence_previous_same_page": {
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260513_112919.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260513_112919.xml",
+    "xml_profile": {
+      "view_full_report_exact_text_count": 0,
+      "content_desc_count": 0,
+      "split_text_candidate_count": 0,
+      "s11_terms_present": [
+        "??",
+        "????",
+        "??????"
+      ]
+    },
+    "meaning": "Earlier same S11-page evidence also shows the entry is not exposed as exact XML text/content-desc."
+  },
+  "final_status": "S11_VIEW_FULL_REPORT_VISIBLE_BUT_XML_MISSING_FINAL_SCREEN_DIAGNOSIS_DONE"
+}

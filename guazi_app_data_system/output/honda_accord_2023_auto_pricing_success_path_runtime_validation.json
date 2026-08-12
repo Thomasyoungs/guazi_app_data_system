@@ -1,0 +1,138 @@
+{
+  "status": "SECOND_STAGE_DID_NOT_REACH_S16",
+  "generated_at": "2026-05-16T04:12:58.823193+00:00",
+  "task": "Honda Accord AUTO_PRICING_SUCCESS_PATH runtime validation",
+  "code_modified": false,
+  "device_run": true,
+  "nissan_terra_archive_created_before_run": true,
+  "nissan_terra_archive_path": "output/archive/nissan_terra_manual_review_closure_20260516/",
+  "target_fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+  "first_stage": {
+    "status": "S10_READY",
+    "s10_ready": true,
+    "trisame_count": 10,
+    "same_source_cards_preview": [
+      {
+        "title": "本田 雅阁 2023款 260TURBO 智享版",
+        "year_mileage_text": "2024年 | 5万公里 | 唐山 | HondaSENS",
+        "list_price_10k": 11.15,
+        "list_year": 2024,
+        "list_mileage_10k_km": 5.0
+      },
+      {
+        "title": "本田 雅阁 2023款 260TURBO 智享版",
+        "year_mileage_text": "2024年 | 6.54万公里 | 唐山 | HondaSENS",
+        "list_price_10k": 11.39,
+        "list_year": 2024,
+        "list_mileage_10k_km": 6.54
+      },
+      {
+        "title": "本田 雅阁 2023款 260TURBO 智享版",
+        "year_mileage_text": "2024年 | 3.05万公里 | 唐山 | HondaSENS",
+        "list_price_10k": 11.67,
+        "list_year": 2024,
+        "list_mileage_10k_km": 3.05
+      },
+      {
+        "title": "本田 雅阁 2023款 260TURBO 智享版",
+        "year_mileage_text": "2024年 | 3.06万公里 | 唐山 | HondaSENS",
+        "list_price_10k": 12.26,
+        "list_year": 2024,
+        "list_mileage_10k_km": 3.06
+      },
+      {
+        "title": "本田 雅阁 2023款 260TURBO 智享版",
+        "year_mileage_text": "2024年 | 3.51万公里 | 河源 | HondaSENS",
+        "list_price_10k": 12.27,
+        "list_year": 2024,
+        "list_mileage_10k_km": 3.51
+      }
+    ]
+  },
+  "second_stage": {
+    "status": "SECOND_STAGE_FAST_HANDOFF_S10_GATE_FAILED",
+    "issue_code": "SECOND_STAGE_FAST_HANDOFF_S10_GATE_FAILED",
+    "recognized_state": "S10",
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_s16_start_20260516_121222.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260516_121222.xml",
+    "did_reach_s16": false,
+    "final_price_generated": false
+  },
+  "handoff_failure_diagnosis": {
+    "second_stage_fast_handoff_passed": false,
+    "strong_error_signals": [
+      "target_partial_card_only"
+    ],
+    "core_elements": [
+      "price_low_to_high_sort_signal",
+      "complete_target_vehicle_card",
+      "target_trisame_evidence"
+    ],
+    "s10_reliable": true,
+    "visible_cards_count": 4,
+    "partial_card_count": 1,
+    "partial_card_candidates": [
+      {
+        "live_display_order": 5,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "",
+        "raw_metadata": "",
+        "clicked_card_bounds": [
+          429,
+          2492,
+          949,
+          2513
+        ],
+        "card_bounds": [
+          429,
+          2492,
+          949,
+          2513
+        ],
+        "missing_price": true,
+        "missing_metadata": true,
+        "incomplete_reason": [
+          "missing_price",
+          "missing_metadata",
+          "missing_year",
+          "missing_mileage",
+          "missing_city",
+          "bottom_partial_card_or_outside_safe_viewport"
+        ]
+      }
+    ],
+    "target_card_visible": true,
+    "target_partial_card_visible": true,
+    "target_card_matches_expected": true,
+    "diagnosis": "?????? S10 ?????? 4 ???????????????? 5 ?????? target_partial_card_only ??????fast handoff gate ??????"
+  },
+  "auto_pricing_success_path_checks": {
+    "first_stage_to_s10_ready": true,
+    "second_stage_entered_s11": false,
+    "second_stage_entered_s16": false,
+    "reference_score_trustworthy": null,
+    "reference_score_gte_target_score": null,
+    "pricing_payload_present": false,
+    "manual_review_required_false": null,
+    "auto_pricing_allowed_true": null
+  },
+  "forbidden_changes_confirmed": {
+    "first_stage_script_modified": false,
+    "second_stage_script_modified": false,
+    "s14_logic_modified": false,
+    "pricing_modified": false,
+    "config_modified": false,
+    "baseline_modified": false,
+    "manual_click_used": false,
+    "baseline_result_faked": false
+  },
+  "next_step_recommendation": "???? SECOND_STAGE_FAST_HANDOFF_S10_GATE_FAILED ? target_partial_card_only ?????????????????????????????",
+  "evidence_paths": {
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "result_s10_to_s16": "output/result_s10_to_s16.json",
+    "result": "output/result.json",
+    "nissan_archive": "output/archive/nissan_terra_manual_review_closure_20260516/",
+    "report_json": "output/honda_accord_2023_auto_pricing_success_path_runtime_validation.json",
+    "report_md": "output/honda_accord_2023_auto_pricing_success_path_runtime_validation_latest.md"
+  }
+}

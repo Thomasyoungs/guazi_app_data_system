@@ -1,0 +1,110 @@
+{
+  "baseline_name": "FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED",
+  "baseline_time": "20260506_201653",
+  "baseline_dir": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653",
+  "created_at": "2026-05-06T20:17:36",
+  "replaces_v1": false,
+  "performance_best": false,
+  "source_workspace": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system",
+  "archived_files": [
+    {
+      "role": "runtime_first_stage",
+      "source": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s01_to_s10_mainline.py",
+      "archived_relative": "scripts/runtime_s01_to_s10_mainline.py",
+      "archived_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653\\scripts\\runtime_s01_to_s10_mainline.py",
+      "size_bytes": 246266,
+      "sha256": "de7ef8c8d7b1b2ac4a490835f4f2441b97eda9f21f737dec18467c84f01e08c6"
+    },
+    {
+      "role": "runtime_second_stage",
+      "source": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py",
+      "archived_relative": "scripts/runtime_s10_to_s16_mainline.py",
+      "archived_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653\\scripts\\runtime_s10_to_s16_mainline.py",
+      "size_bytes": 159544,
+      "sha256": "2f3aeba227ce6b2a3c4f406bdb32f2e0ad8eb9bc8144e923fe51265b4d5557f6"
+    },
+    {
+      "role": "pricing",
+      "source": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\src\\guazi_app_data_system\\pricing.py",
+      "archived_relative": "src/guazi_app_data_system/pricing.py",
+      "archived_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653\\src\\guazi_app_data_system\\pricing.py",
+      "size_bytes": 13132,
+      "sha256": "83fb7cb6a4e436112aa6af88c92bf978ffd6caf2799d59c04dbdf481c06398f0"
+    },
+    {
+      "role": "pages_config",
+      "source": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\config\\pages.yaml",
+      "archived_relative": "config/pages.yaml",
+      "archived_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653\\config\\pages.yaml",
+      "size_bytes": 113290,
+      "sha256": "4f776a2b47eb58ce1ed153115793d7f721021ffc98cb5ef5dc04b73850bc3aaf"
+    },
+    {
+      "role": "actions_config",
+      "source": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\config\\actions.yaml",
+      "archived_relative": "config/actions.yaml",
+      "archived_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653\\config\\actions.yaml",
+      "size_bytes": 95300,
+      "sha256": "9e8eae582e8c4d00c71931fbfa5b768116c747b798051f9c05ebca2e76869758"
+    },
+    {
+      "role": "first_stage_result",
+      "source": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s01_to_s10.json",
+      "archived_relative": "output/result_s01_to_s10.json",
+      "archived_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653\\output\\result_s01_to_s10.json",
+      "size_bytes": 6496,
+      "sha256": "3796eee74f5ea8fbbf654bba08de157cbb62aa96886b2bc23a0bd59084409a8c"
+    },
+    {
+      "role": "second_stage_result",
+      "source": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+      "archived_relative": "output/result_s10_to_s16.json",
+      "archived_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653\\output\\result_s10_to_s16.json",
+      "size_bytes": 321066,
+      "sha256": "3f8a9f4f16020716340356dba2b040d4d7e878d882377a401fb3564e360b50f8"
+    },
+    {
+      "role": "final_result_mirror",
+      "source": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result.json",
+      "archived_relative": "output/result.json",
+      "archived_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653\\output\\result.json",
+      "size_bytes": 321066,
+      "sha256": "3f8a9f4f16020716340356dba2b040d4d7e878d882377a401fb3564e360b50f8"
+    },
+    {
+      "role": "timing_jsonl",
+      "source": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\page_contract_timing_report.jsonl",
+      "archived_relative": "output/page_contract_timing_report.jsonl",
+      "archived_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653\\output\\page_contract_timing_report.jsonl",
+      "size_bytes": 59131,
+      "sha256": "df679af6df0aed5a9fdef4dcb7131b0f0a3dda6258f49dfdc348cd3a573868c1"
+    },
+    {
+      "role": "timing_markdown",
+      "source": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\page_contract_timing_report.md",
+      "archived_relative": "output/page_contract_timing_report.md",
+      "archived_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653\\output\\page_contract_timing_report.md",
+      "size_bytes": 16473,
+      "sha256": "4f5f75eb80c39843ec713464e06144058545d99416b0a4ac6f840c34f16fc3b2"
+    },
+    {
+      "role": "page_contract_docx",
+      "source": "C:\\Users\\lzc93\\Desktop\\定价\\瓜子数据获取流程文档_快稳图标版_S04目标门禁_S06-S10门禁_SLOGIN最小返回_APP强制重启版_契约收口修正版_节点驱动点击版.docx",
+      "archived_relative": "documents/page_contract_current.docx",
+      "archived_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653\\documents\\page_contract_current.docx",
+      "size_bytes": 102977,
+      "sha256": "ec50a85cf0ac7d762f520a76c83c1e57c7970ace04fb9a8ada5f1c5dbabd5f48"
+    },
+    {
+      "role": "scoring_rule_docx",
+      "source": "C:\\Users\\lzc93\\Desktop\\定价\\瓜子自动定价打分规则V1.5_特殊结构风险件版.docx",
+      "archived_relative": "documents/scoring_rule_current.docx",
+      "archived_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653\\documents\\scoring_rule_current.docx",
+      "size_bytes": 43585,
+      "sha256": "acd29d7f4a735e71dad6dc0aa77dd9d68677b5895de75912638160314e2b3e89"
+    }
+  ],
+  "missing_files": [],
+  "docx_selection_note": "DOCX files selected from parent directory by size: largest=page contract, second largest=scoring rule.",
+  "updated_at": "2026-05-06T20:18:05"
+}

@@ -1,0 +1,204 @@
+{
+  "status": "NISSAN_TERRA_REFERENCE1_S14_THIRD_IMAGE_SCORE78_DIAGNOSIS_DONE",
+  "read_only_confirmation": {
+    "code_modified": false,
+    "real_device_run": false,
+    "second_stage_started": false,
+    "result_json_overwritten": false
+  },
+  "target_fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "reference_index": 1,
+  "reference_title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+  "reference_price_yuan": 84800,
+  "s14_diagnosis": {
+    "s14_entry_item_text": "左前翼子板",
+    "s14_page_label_sequence": [
+      "左前翼子板(1/2)",
+      "左前翼子板(2/2)",
+      "左前翼子板漆面(1/1)"
+    ],
+    "s14_caption_sequence": [
+      "左前翼子板—喷漆",
+      "左前翼子板—喷漆",
+      "左前翼子板—喷漆"
+    ],
+    "s14_semantic_signature_sequence": [
+      "左前翼子板(1/2)|左前翼子板—喷漆|左前翼子板|喷漆",
+      "左前翼子板(2/2)|左前翼子板—喷漆|左前翼子板|喷漆",
+      "左前翼子板漆面(1/1)|左前翼子板—喷漆|左前翼子板|喷漆"
+    ],
+    "s14_screenshot_sequence": [
+      "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_to_s14_驾驶侧_20260515_200545.png",
+      "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260515_200551.png",
+      "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260515_200556.png"
+    ],
+    "s14_xml_sequence": [
+      "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s13_to_s14_驾驶侧_20260515_200545.xml",
+      "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260515_200551.xml",
+      "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260515_200556.xml"
+    ],
+    "s14_swipe_attempts": 2,
+    "s14_collected_image_count": 3,
+    "s14_last_seen_page_label": "左前翼子板漆面(1/1)",
+    "s14_last_seen_caption": "左前翼子板—喷漆",
+    "s14_collect_done": true,
+    "s14_completion_reason": "SINGLE_IMAGE_WITH_CAPTION",
+    "s14_single_image_sequence": true,
+    "return_to_s10_after_s14": true,
+    "third_image_after_has_left_front_door_evidence": false,
+    "third_image_xml_term_counts": {
+      "????": 0,
+      "??????": 0,
+      "?????": 0
+    },
+    "post_third_swipe_attempted": false,
+    "terminal_snapshot": {
+      "terminal_no_change_swipes": null,
+      "end_confirm_attempts": null,
+      "image_sequence_end_confirmed": null,
+      "visited_s14_keys_count": null,
+      "last_effective_screenshot_path": null,
+      "last_effective_xml_path": null
+    },
+    "classification": "S14_COLLECT_DONE_PREMATURE_BEFORE_LEFT_FRONT_DOOR",
+    "mechanism": "S14_PARTIAL_SEQUENCE_MISREAD_AS_FULL_SEQUENCE_BY_SINGLE_IMAGE_WITH_CAPTION"
+  },
+  "v1_32_contract_check": {
+    "v1_32_contract_followed": false,
+    "violated_contract_clause": "S14 must collect the entire horizontal vehicle-condition image sequence before returning to reliable S10 / entering S15.",
+    "violation_reason": "The third S14 XML still contained ???? / ?????? terms, but no further horizontal swipe was attempted; S14_COLLECT_DONE was set by SINGLE_IMAGE_WITH_CAPTION after page_label became ???????(1/1).",
+    "whether_s14_collect_done_should_be_false": true,
+    "whether_return_to_s10_was_premature": true,
+    "whether_s15_entry_was_premature": true
+  },
+  "score_78": {
+    "score_calculation_stage": "S15_FORMAL_REFERENCE_SCORE_AFTER_S14_COLLECT_DONE",
+    "s15_entered": true,
+    "early_rejection_triggered": false,
+    "early_rejection_reason": null,
+    "partial_confirmed_score": null,
+    "remaining_max_possible_score": null,
+    "score_upper_bound": null,
+    "reference_score": 78.0,
+    "target_score": 92.0,
+    "score_breakdown": [
+      {
+        "field": "body_score",
+        "raw_value": {
+          "panel_repairs": [
+            {
+              "part": "左前翼子板",
+              "damage_type": "喷漆"
+            }
+          ],
+          "s14_sequence_collected": [
+            "左前翼子板—喷漆",
+            "左前翼子板—喷漆",
+            "左前翼子板—喷漆"
+          ]
+        },
+        "scoring_rule": "base_score=70???? paint_deduct default=1 ??????????????????",
+        "score": 69.0,
+        "deduction_reason": "?? panel_repairs=[?????/??] ???70-1=69????????????????????????",
+        "evidence_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260515_200556.xml"
+      },
+      {
+        "field": "mileage_score",
+        "raw_value": {
+          "list_year": 2021,
+          "list_mileage_10k_km": 12.5,
+          "current_year": 2026,
+          "annual_mileage_10k_km": 2.5
+        },
+        "scoring_rule": "??? 5 ?????? 12.5/5=2.5 ????gt 1.5 ?? 0",
+        "score": 0.0,
+        "deduction_reason": "???????????",
+        "evidence_path": "output/result_s10_to_s16.json"
+      },
+      {
+        "field": "transfer_score",
+        "raw_value": {
+          "transfer_count": 1
+        },
+        "scoring_rule": "???? 1 ? => 7 ?",
+        "score": 7.0,
+        "deduction_reason": "1 ????? 7 ??",
+        "evidence_path": "output/result_s10_to_s16.json"
+      },
+      {
+        "field": "accident_score",
+        "raw_value": {
+          "accident_count": 4
+        },
+        "scoring_rule": "??/???? >=4 => 0 ?",
+        "score": 0.0,
+        "deduction_reason": "????=4??? min4 ??",
+        "evidence_path": "output/result_s10_to_s16.json"
+      },
+      {
+        "field": "max_amount_score",
+        "raw_value": {
+          "max_accident_amount": 19000.0
+        },
+        "scoring_rule": "???? <=20000 ? >10000 => 2 ?",
+        "score": 2.0,
+        "deduction_reason": "?????? 19000??? <=20000 ??",
+        "evidence_path": "output/result_s10_to_s16.json"
+      }
+    ],
+    "total_score_sum_check": 78.0,
+    "score_78_trustworthy": false,
+    "reason": "s14_full_image_sequence_incomplete_before_s15"
+  },
+  "code_trigger_points": {
+    "s14_collect_done_trigger": {
+      "file": "scripts/runtime_s10_to_s16_mainline.py",
+      "locations": [
+        "around line 7951: if total_pages == 1 and raw_first_line",
+        "around line 7953: s14_completion_reason = SINGLE_IMAGE_WITH_CAPTION",
+        "around line 8008: context[\"s14_collect_done\"] = True",
+        "around line 8011: current_reference[\"s14_collect_done\"] = True"
+      ],
+      "trigger_condition": "page_label parsed as 1/1 and raw_first_line non-empty",
+      "variable_values": {
+        "page_label": "左前翼子板漆面(1/1)",
+        "raw_first_line": "左前翼子板—喷漆"
+      }
+    },
+    "s15_entry_gate": {
+      "file": "scripts/runtime_s10_to_s16_mainline.py",
+      "locations": [
+        "around line 8302: S15 gate checks s14_collect_done",
+        "around line 8412: select_reference(...) computes score"
+      ],
+      "trigger_condition": "s14_collect_done=true and S11/S12/S13 fields complete"
+    },
+    "pricing_score": {
+      "file": "src/guazi_app_data_system/pricing.py",
+      "locations": [
+        "around line 268: score = base + mileage + transfer + accident + amount",
+        "around lines 285-358: component scoring helpers"
+      ]
+    },
+    "old_logic_detected": true
+  },
+  "final_conclusion": {
+    "selected": "REFERENCE1_EXIT_BY_PREMATURE_S14_COLLECT_DONE",
+    "why_reference1_stopped": "S14 was marked complete after the third recorded image and the script returned to reliable S10 / entered S15.",
+    "whether_low_score_early_rejection": false,
+    "whether_s14_collect_done_misjudged": true,
+    "whether_score_78_trustworthy": false,
+    "whether_v1_32_followed": false,
+    "next_patch_suggestion": "PATCH_S14_FULL_SEQUENCE_END_CONFIRMATION_DO_NOT_TREAT_LOCAL_1_1_AS_GLOBAL_END"
+  },
+  "evidence_paths": {
+    "result_s01_to_s10": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s01_to_s10.json",
+    "result_s10_to_s16": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+    "result": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result.json",
+    "full_chain_v1_32": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\nissan_terra_2020_full_chain_after_v1_32.json",
+    "full_chain_v1_32_md": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\nissan_terra_2020_full_chain_after_v1_32_latest.md",
+    "patch_v1_32": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\v1_32_s13_entry_s14_full_sequence_contract_patch.json",
+    "patch_v1_32_md": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\v1_32_s13_entry_s14_full_sequence_contract_patch_latest.md"
+  },
+  "generated_at": "2026-05-15T20:30:15"
+}

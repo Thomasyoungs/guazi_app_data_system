@@ -1,0 +1,79 @@
+{
+  "task_id": "FS20260622_9999",
+  "status": "CANCELLED",
+  "started": false,
+  "updated_at": "2026-07-04T05:17:43+00:00",
+  "technical_status": "NOT_STARTED",
+  "business_status": "CANCELLED",
+  "recommended_next_action": "resend-target-info",
+  "cancel_reason": "SYSTEM_PRECHECK_FAILED_NOT_STARTED",
+  "canonical_error_code": "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+  "canonical_error_codes": [
+    "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+    "QUEUED"
+  ],
+  "user_facing_error_code": "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+  "canonical_blocking_error_code": "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+  "canonical_blocking_error_codes": [
+    "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+    "QUEUED"
+  ],
+  "admin_intervention_error_code": "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+  "admin_intervention_error_codes": [
+    "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+    "QUEUED"
+  ],
+  "last_blocking_error_code": "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+  "last_blocking_error_codes": [
+    "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+    "QUEUED"
+  ],
+  "runner_started": false,
+  "phone_flow_started": false,
+  "blocks_queue": false,
+  "recoverable_by_health_check": false,
+  "auto_cancelled": true,
+  "auto_cancelled_at": "2026-07-04T05:17:43+00:00",
+  "auto_cancelled_reason": "SYSTEM_PRECHECK_FAILED_NOT_STARTED",
+  "auto_cancelled_from_status": "QUEUED",
+  "errors": [
+    "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+    "QUEUED"
+  ],
+  "human_reason": "未配置执行手机",
+  "user_facing_reason": "未配置执行手机",
+  "reached_s10_before_failure": false,
+  "app_foreground_confirmed_before_failure": false,
+  "entered_s11_before_failure": false,
+  "root_cause_code": "",
+  "primary_error_code": "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+  "post_start_failure": false,
+  "post_start_failure_stage": "",
+  "second_stage_entered": false,
+  "post_start_not_started_template_blocked": false,
+  "post_start_failure_business_template": "",
+  "post_start_failure_classification_reason": "",
+  "feedback_primary_issue_source": "current_terminal",
+  "feedback_low_score_evidence_present": false,
+  "feedback_low_score_evidence_ignored_due_to_terminal_issue": false,
+  "feedback_selected_template": "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+  "feedback_selected_reason_code": "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+  "feedback_terminal_issue_code": "TARGET_ADB_SERIAL_NOT_CONFIGURED",
+  "feedback_latest_failed_stage": "",
+  "retry_instruction": "请管理员配置指定执行手机后，重新发送目标车源并回复“确认”重新开始。",
+  "final_feedback_generated": true,
+  "final_feedback_delivery_dry_run": true,
+  "final_feedback_send_attempted": false,
+  "final_feedback_sent": false,
+  "final_feedback_sent_at": "",
+  "final_feedback_message_id": "",
+  "final_feedback_sent_flag_valid": false,
+  "final_feedback_type": "confirm_failure_cancelled",
+  "final_feedback_generated_at": "2026-07-04T05:17:43+00:00",
+  "final_feedback_sent_flag_invalid_reason": "",
+  "final_feedback_guard_codes": [
+    "FINAL_FEEDBACK_DRY_RUN_NOT_MARKED_SENT"
+  ],
+  "final_feedback_business_chat_id": "",
+  "final_feedback_admin_chat_id": ""
+}

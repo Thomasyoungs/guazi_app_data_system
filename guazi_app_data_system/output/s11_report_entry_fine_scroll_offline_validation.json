@@ -1,0 +1,79 @@
+{
+  "status": "PASSED",
+  "validated_contract": "S11_REPORT_ENTRY_FINE_SCROLL_PAGE_CONTRACT_UPDATED",
+  "script": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py",
+  "offline_validation_time": "2026-05-16T13:49:47",
+  "cases": [
+    {
+      "case_id": "A",
+      "name": "?????????backtrack ?????",
+      "passed": true,
+      "weak_marker_before": {
+        "s11_report_weak_marker_seen": true,
+        "s11_report_weak_marker_hits": [
+          "官方检测",
+          "报告"
+        ]
+      },
+      "weak_marker_after_overshoot": {
+        "s11_report_weak_marker_seen": false,
+        "s11_report_weak_marker_hits": []
+      },
+      "backtrack_scroll_mode": "fine_backtrack_report_entry_scroll",
+      "backtrack_step_ratio": 0.12,
+      "backtrack_direction": "downward_reverse",
+      "recaptured_exact_entry_safe": true
+    },
+    {
+      "case_id": "B",
+      "name": "?????????????",
+      "passed": true,
+      "safe_candidate": {
+        "seen": true,
+        "fully_visible": true,
+        "safe_clickable": true,
+        "reason": "fully_visible_safe"
+      },
+      "unsafe_candidate": {
+        "seen": true,
+        "fully_visible": false,
+        "safe_clickable": false,
+        "reason": "below_safe_bottom,too_close_to_bottom"
+      }
+    },
+    {
+      "case_id": "C",
+      "name": "?????????????? fine scroll",
+      "passed": true,
+      "weak_marker_evidence": {
+        "s11_report_weak_marker_seen": true,
+        "s11_report_weak_marker_hits": [
+          "报告",
+          "检测报告",
+          "车况",
+          "车况报告"
+        ]
+      },
+      "exact_entry_node_found": false,
+      "fine_scroll_mode": "fine_report_entry_scroll",
+      "fine_step_ratio": 0.18
+    },
+    {
+      "case_id": "D",
+      "name": "????????????",
+      "passed": true,
+      "weak_marker_evidence": {
+        "s11_report_weak_marker_seen": false,
+        "s11_report_weak_marker_hits": []
+      },
+      "exact_entry_node_found": false,
+      "normal_scroll_mode": "medium_report_entry_scroll",
+      "normal_step_ratio": 0.35,
+      "stop_evidence": {
+        "scroll_limit_reached": true,
+        "view_full_report_exact_text_seen": false,
+        "report_entry_detection_strategy": "EXACT_XML_TEXT_HALF_SCREEN_SCROLL_NO_DECISIVE_MARKER"
+      }
+    }
+  ]
+}

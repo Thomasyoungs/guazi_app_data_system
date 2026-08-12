@@ -1,0 +1,63 @@
+{
+  "status": "PAGE_CONTRACT_ONLY_EXECUTION_RULE_PATCHED",
+  "page_contract_is_only_execution_standard": true,
+  "s03_replay": {
+    "xml_path": "artifacts\\debug\\s03_after_letter_L_20260510_145401.xml",
+    "target_brand_visible": true,
+    "matched_brand_text": "零跑汽车",
+    "matched_brand_bounds": [
+      0,
+      529,
+      1155,
+      685
+    ],
+    "brand_row_bounds": [
+      0,
+      373,
+      1220,
+      841
+    ],
+    "next_action": "S03_ONLY_ALLOWED_ACTION_CLICK_BRAND_ROW_RIGHT_SAFE_POINT",
+    "disallowed_actions_when_target_visible": [
+      "tap_new_energy",
+      "tap_letter_L",
+      "tap_letter_G",
+      "scroll_brand_list",
+      "tap_brand_text_center",
+      "tap_brand_icon",
+      "tap_row_center",
+      "tap_brand_zone"
+    ],
+    "selected_click_region_type": "brand_row_right_safe_point",
+    "selected_click_point": [
+      1196,
+      607
+    ],
+    "brand_zone_text_seen": false,
+    "brand_zone_bounds": [],
+    "selected_click_overlaps_brand_zone": false
+  },
+  "brand_zone_replay": {
+    "xml_path": "artifacts\\debug\\s03_to_s04_20260510_145409.xml",
+    "brand_zone_page_detected": true,
+    "continuation_allowed": false,
+    "stop_code": "S03_CLICKED_BRAND_ZONE_INSTEAD_OF_BRAND",
+    "old_brand_zone_continuation_branch_removed": true
+  },
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py"
+  ],
+  "py_compile_passed": true,
+  "offline_replay_passed": true,
+  "live_verification": {
+    "attempted": true,
+    "android_serial": "6TGYYHPZCETCSK6L",
+    "result": "TIMEOUT_STOPPED_NO_NEW_RESULT_WRITTEN",
+    "timeout_seconds": 904,
+    "leftover_runtime_process_stopped": true,
+    "result_files_last_write_time_remained_old": true
+  },
+  "second_stage_started": false,
+  "pricing_started": false,
+  "updated_at": "2026-05-11T02:29:27.255810+00:00"
+}

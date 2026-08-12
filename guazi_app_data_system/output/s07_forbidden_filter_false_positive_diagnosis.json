@@ -1,0 +1,164 @@
+{
+  "task": "READ_ONLY_DIAGNOSE_S07_FORBIDDEN_FILTER_FALSE_POSITIVE_AFTER_COLOR_CLICK",
+  "final_status": "S07_FORBIDDEN_FILTER_FALSE_POSITIVE_CONFIRMED",
+  "readonly": true,
+  "code_modified": false,
+  "real_device_run": false,
+  "second_stage_run": false,
+  "pricing_output": false,
+  "result_json_overwritten": false,
+  "target_fingerprint": "零跑|C10|2026款|210悦享版|白|2026.02",
+  "current_stop_code": "S07_FORBIDDEN_FILTER_SELECTED_BY_COLOR_CLICK",
+  "evidence_files": {
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "result": "output/result.json",
+    "validation_report": "output/first_stage_after_full_legacy_cleanup_validation.json",
+    "log": "output/first_stage_after_full_legacy_cleanup_validation_20260512_095340.log",
+    "s07_entered_xml": "artifacts/debug/s06_to_s07_round_1_20260512_095440.xml",
+    "s07_entered_screenshot": "artifacts/screenshots/s06_to_s07_round_1_20260512_095440.png",
+    "after_color_tab_click_xml": "artifacts/debug/s07_after_color_tab_click_20260512_095446.xml",
+    "after_color_tab_click_screenshot": "artifacts/screenshots/s07_after_color_tab_click_20260512_095446.png",
+    "after_color_select_xml": "artifacts/debug/s07_after_color_select_0_20260512_095452.xml",
+    "after_color_select_screenshot": "artifacts/screenshots/s07_after_color_select_0_20260512_095452.png"
+  },
+  "actual_click": {
+    "clicked_text": "??",
+    "clicked_bounds": [
+      604,
+      1157,
+      877,
+      1290
+    ],
+    "clicked_node_text": "??",
+    "clicked_parent_text": "???? / ??????",
+    "clicked_nearby_texts": [
+      "??",
+      "??",
+      "??",
+      "??",
+      "??",
+      "??",
+      "??"
+    ],
+    "click_strategy": "inferred_from_artifact_sequence_not_persisted_in_result",
+    "click_action_id": "inferred:S07_CLICK_TARGET_COLOR_OPTION",
+    "click_page_state": "S07_COLOR_PANEL",
+    "click_audit_persisted": false,
+    "inference_basis": [
+      "s07_after_color_tab_click screenshot shows color panel with ?? option visible and no top ?? chip",
+      "s07_after_color_select screenshot shows top ?? chip and right-side ?? option highlighted green",
+      "result context target_color=? and stop occurred after color select artifact, not after optional-feature click"
+    ],
+    "clicked_you_xuanzhuang": false,
+    "clicked_cheyuan_liangdian": false,
+    "clicked_color_tab": "previous_step_confirmed_by s07_after_color_tab_click artifact",
+    "clicked_white": true,
+    "target_unclear": false
+  },
+  "forbidden_state": {
+    "forbidden_text": "????",
+    "forbidden_state": "forbidden_visible_only",
+    "forbidden_bounds": [
+      0,
+      871,
+      260,
+      1017
+    ],
+    "has_checkbox_selected_evidence": false,
+    "is_left_tab": true,
+    "is_right_option": false,
+    "is_clicked_target": false,
+    "result_selected_value": false,
+    "result_evidence": "selected_state_or_top_filter_chip",
+    "xml_nodes_after_color_select": [],
+    "optional_feature_nodes_after_color_select": [],
+    "explanation": "The reported forbidden item is the left-side/section label ????. XML reports selected=false and checked=false; screenshots show active section is ?? after color click, while ?? was selected. No evidence shows ??? or ???? was clicked or checked."
+  },
+  "color_flow": {
+    "COLOR_FILTER_DONE_before": false,
+    "clicked_left_color_tab_first": true,
+    "color_tab_click_evidence_xml": "artifacts/debug/s07_after_color_tab_click_20260512_095446.xml",
+    "color_tab_click_evidence_screenshot": "artifacts/screenshots/s07_after_color_tab_click_20260512_095446.png",
+    "fresh_after_color_tab": true,
+    "color_panel_confirmed": true,
+    "target_color_node_seen_in_color_panel": true,
+    "target_color_node_bounds_before_select": [
+      604,
+      1157,
+      877,
+      1290
+    ],
+    "clicked_target_color_white": true,
+    "target_color_selected": true,
+    "color_filter_done": false,
+    "why_color_filter_done_false": "The forbidden gate stopped immediately after white selection before setting COLOR_FILTER_DONE=true.",
+    "after_color_select_xml": "artifacts/debug/s07_after_color_select_0_20260512_095452.xml",
+    "after_color_select_screenshot": "artifacts/screenshots/s07_after_color_select_0_20260512_095452.png"
+  },
+  "raw_result_forbidden_context": {
+    "forbidden_filter_selected": true,
+    "forbidden_texts": [
+      "车源亮点"
+    ],
+    "forbidden_bounds": [
+      [
+        0,
+        871,
+        260,
+        1017
+      ]
+    ],
+    "selected_forbidden_filters": [
+      {
+        "text": "车源亮点",
+        "bounds": [
+          0,
+          871,
+          260,
+          1017
+        ],
+        "selected": false,
+        "evidence": "selected_state_or_top_filter_chip"
+      }
+    ],
+    "target_color": "白"
+  },
+  "flow_state": {
+    "COLOR_FILTER_DONE": false,
+    "AGE_FILTER_DONE": false,
+    "S07_FILTER_DONE": false,
+    "SORT_DONE": false,
+    "S10_READY": false
+  },
+  "node_summary": {
+    "s07_entered": [],
+    "after_color_tab_click": [],
+    "after_color_select": []
+  },
+  "diagnosis": {
+    "is_clicked_you_xuanzhuang": false,
+    "is_clicked_cheyuan_liangdian": false,
+    "is_clicked_color_tab": true,
+    "is_clicked_white": true,
+    "is_stop_correct": false,
+    "root_cause": "S07 forbidden gate treats visible/left-tab text as selected forbidden filter. It lacks four-state distinction: visible, active_tab, selected, clicked.",
+    "classification": "S07_FORBIDDEN_FILTER_FALSE_POSITIVE_CONFIRMED"
+  },
+  "why_previous_cleanup_missed": {
+    "previous_cleanup_scope": "Removed legacy executable click paths and added forbidden gate.",
+    "current_issue_type": "New forbidden gate false positive, not old click-path leakage.",
+    "missing_distinction": [
+      "forbidden_visible_only",
+      "forbidden_left_tab_active",
+      "forbidden_checkbox_selected",
+      "clicked_forbidden"
+    ],
+    "missing_offline_negative_case": "Forbidden text visible as left tab or section title while target color is selected should not stop."
+  },
+  "next_patch_direction": [
+    "S07 forbidden gate must distinguish visible, active_tab, selected, clicked.",
+    "Only clicked_forbidden=true or forbidden_checkbox_selected=true may stop.",
+    "forbidden_visible_only and forbidden_left_tab_active must not stop by themselves.",
+    "Add offline negative replay: ??? / ???? visible but not clicked/checked must not stop."
+  ]
+}

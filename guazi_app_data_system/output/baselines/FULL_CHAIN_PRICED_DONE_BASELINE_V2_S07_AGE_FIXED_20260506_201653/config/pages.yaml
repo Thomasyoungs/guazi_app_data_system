@@ -1,0 +1,1726 @@
+﻿{
+    "pages":  [
+                  {
+                      "id":  "S00",
+                      "name":  "APP 启动广告页",
+                      "recognition":  {
+                                          "contains_any":  [
+                                                               "跳过",
+                                                               "广告",
+                                                               "倒计时"
+                                                           ],
+                                          "position_hint":  "left_bottom_skip_preferred"
+                                      },
+                      "allowed_actions":  [
+                                              "wait_for_home",
+                                              "tap_left_bottom_skip"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_ad_body",
+                                                "tap_open_ad",
+                                                "tap_download",
+                                                "tap_claim"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "home_detected",
+                                       "to":  "S01"
+                                   }
+                               ],
+                      "return_to":  null,
+                      "exception":  "PAGE_NOT_RECOGNIZED"
+                  },
+                  {
+                      "id":  "S01",
+                      "name":  "首页",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "首页",
+                                                               "选车",
+                                                               "卖车",
+                                                               "我的"
+                                                           ],
+                                          "optional_features":  [
+                                                                    "新能源"
+                                                                ]
+                                      },
+                      "allowed_actions":  [
+                                              "click_bottom_select_car_tab"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_search",
+                                                "tap_recommend_car",
+                                                "tap_ad",
+                                                "tap_sell_car",
+                                                "tap_new_energy",
+                                                "tap_my",
+                                                "tap_loan"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "buy_car_tab_green",
+                                       "to":  "S02"
+                                   }
+                               ],
+                      "return_to":  null,
+                      "exception":  "PAGE_NOT_RECOGNIZED"
+                  },
+                  {
+                      "id":  "S02",
+                      "name":  "选车页",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "首页",
+                                                               "选车",
+                                                               "卖车",
+                                                               "我的",
+                                                               "品牌"
+                                                           ],
+                                          "contains_any":  [
+                                                               "选车"
+                                                           ]
+                                      },
+                      "allowed_actions":  [
+                                              "tap_brand_filter",
+                                              "click_brand_entry"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_search",
+                                                "tap_recommend_brand",
+                                                "tap_recommend_car",
+                                                "tap_vehicle_card",
+                                                "tap_ad"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "brand_page_detected",
+                                       "to":  "S03"
+                                   }
+                               ],
+                      "return_to":  "S01",
+                      "exception":  "PAGE_NOT_RECOGNIZED"
+                  },
+                  {
+                      "id":  "S02_SELECT_CAR_TAB",
+                      "name":  "S02 选车页",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "首页",
+                                                               "选车",
+                                                               "卖车",
+                                                               "我的",
+                                                               "品牌"
+                                                           ],
+                                          "optional_features":  [
+                                                                    "新能源"
+                                                                ],
+                                          "context_equals":  {
+                                                                 "current_tab":  "选车"
+                                                             },
+                                          "forbidden_contains":  [
+                                                                     "选择品牌"
+                                                                 ]
+                                      },
+                      "allowed_actions":  [
+                                              "click_brand_entry"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_brand_letter",
+                                                "tap_target_brand",
+                                                "click_series_model_button",
+                                                "tap_search",
+                                                "tap_price_filter",
+                                                "tap_budget",
+                                                "tap_recommend_car",
+                                                "tap_ad",
+                                                "tap_sell_car",
+                                                "tap_new_energy",
+                                                "tap_my",
+                                                "tap_vehicle_card",
+                                                "collect_list_whitelist_fields",
+                                                "calculate_prices"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "brand_select_page_verified",
+                                       "to":  "S03"
+                                   }
+                               ],
+                      "return_to":  "S01",
+                      "exception":  "PAGE_CONTRACT_MISMATCH"
+                  },
+                  {
+                      "id":  "S03",
+                      "name":  "选择品牌页",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "选择品牌"
+                                                           ],
+                                          "contains_any":  [
+                                                               "A",
+                                                               "B",
+                                                               "C",
+                                                               "D",
+                                                               "Z",
+                                                               "热门品牌"
+                                                           ],
+                                          "strong_contains":  [
+                                                                  "选择品牌"
+                                                              ]
+                                      },
+                      "allowed_actions":  [
+                                              "tap_brand_letter",
+                                              "tap_target_brand",
+                                              "scroll_brand_list"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_brand_zone",
+                                                "tap_non_target_brand",
+                                                "tap_search",
+                                                "tap_ad"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "series_page_detected",
+                                       "to":  "S04"
+                                   }
+                               ],
+                      "return_to":  "S02",
+                      "exception":  "PAGE_NOT_RECOGNIZED"
+                  },
+                  {
+                      "id":  "S04",
+                      "name":  "车系列表页",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "车系"
+                                                           ],
+                                          "contains_any":  [
+                                                               "轿车",
+                                                               "车型",
+                                                               "SUV",
+                                                               "大众"
+                                                           ]
+                                      },
+                      "allowed_actions":  [
+                                              "click_series_model_button"
+                                          ],
+                      "forbidden_actions":  [
+                                                "click_series_card",
+                                                "click_series_name",
+                                                "click_other_series",
+                                                "click_other_series_model_button",
+                                                "click_model_year",
+                                                "click_trim",
+                                                "click_confirm",
+                                                "enter_vehicle_list",
+                                                "collect_vehicle_data",
+                                                "tap_ad"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "trim_page_detected",
+                                       "to":  "S05"
+                                   }
+                               ],
+                      "return_to":  "S03",
+                      "exception":  "SERIES_ACTION_TARGET_MISMATCH"
+                  },
+                  {
+                      "id":  "S05",
+                      "name":  "具体车型选择页",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "车型",
+                                                               "确定"
+                                                           ],
+                                          "contains_any":  [
+                                                               "款",
+                                                               "配置"
+                                                           ]
+                                      },
+                      "allowed_actions":  [
+                                              "tap_target_year",
+                                              "tap_exact_trim",
+                                              "tap_green_confirm"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_similar_year",
+                                                "tap_similar_trim",
+                                                "tap_unlimited",
+                                                "tap_confirm_without_check",
+                                                "tap_other_model_year",
+                                                "tap_target_trim_before_year_selected",
+                                                "enter_vehicle_list",
+                                                "tap_confirm_before_trim_selected",
+                                                "collect_vehicle_data"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "target_model_year_selected",
+                                       "to":  "S05_MODEL_YEAR_SELECTED"
+                                   }
+                               ],
+                      "return_to":  "S04",
+                      "exception":  "MODEL_YEAR_CLICK_NO_SELECTION"
+                  },
+                  {
+                      "id":  "S05_MODEL_YEAR_SELECTED",
+                      "name":  "S05 年款已选择状态",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "车型",
+                                                               "确定"
+                                                           ],
+                                          "contains_any":  [
+                                                               "2020款",
+                                                               "330TSI 尊贵版 国VI",
+                                                               "配置"
+                                                           ],
+                                          "forbidden_contains_any":  [
+                                                                         "综合排序",
+                                                                         "上牌",
+                                                                         "表显",
+                                                                         "联系卖家"
+                                                                     ]
+                                      },
+                      "allowed_actions":  [
+                                              "tap_exact_trim"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_other_model_year",
+                                                "tap_green_confirm",
+                                                "enter_vehicle_list",
+                                                "collect_vehicle_data",
+                                                "tap_ad",
+                                                "tap_similar_trim",
+                                                "tap_partial_trim_match",
+                                                "tap_model_year_after_selected"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "target_trim_selected",
+                                       "to":  "S05_TRIM_SELECTED"
+                                   }
+                               ],
+                      "return_to":  "S04",
+                      "exception":  "TRIM_CLICK_NO_SELECTION"
+                  },
+                  {
+                      "id":  "S05_TRIM_SELECTED",
+                      "name":  "S05 配置已选择状态",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "车型",
+                                                               "确定"
+                                                           ],
+                                          "contains_any":  [
+                                                               "已选",
+                                                               "330TSI 尊贵版 国VI",
+                                                               "配置"
+                                                           ],
+                                          "forbidden_contains_any":  [
+                                                                         "综合排序",
+                                                                         "上牌",
+                                                                         "表显",
+                                                                         "联系卖家"
+                                                                     ]
+                                      },
+                      "allowed_actions":  [
+                                              "tap_green_confirm"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_exact_trim",
+                                                "tap_other_trim",
+                                                "tap_model_year_after_trim_selected",
+                                                "enter_vehicle_list",
+                                                "collect_vehicle_data",
+                                                "tap_ad"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "filter_list_detected",
+                                       "to":  "S06"
+                                   }
+                               ],
+                      "return_to":  "S04",
+                      "exception":  "PAGE_CONTRACT_MISMATCH"
+                  },
+                  {
+                      "id":  "S06",
+                      "name":  "车源筛选列表页",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "车型配置"
+                                                           ]
+                                      },
+                      "allowed_actions":  [
+                                              "tap_trim_filter"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_vehicle_card",
+                                                "tap_sort",
+                                                "tap_price_filter",
+                                                "tap_city_filter",
+                                                "tap_ad",
+                                                "tap_loan"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "trim_filter_window_detected",
+                                       "to":  "S07"
+                                   }
+                               ],
+                      "return_to":  null,
+                      "exception":  "PAGE_NOT_RECOGNIZED"
+                  },
+                  {
+                      "id":  "S07_DISCOVERY_RESULT_MIXED_PAGE",
+                      "name":  "S07 发现页与结果列表混合态",
+                      "meaning":  [
+                                      "当前页面同时包含发现页/专区入口和车辆结果列表结构",
+                                      "已可见综合排序、价格、车龄/里程、筛选等列表控件",
+                                      "但页面顶部仍保留品牌选车、AI选车、专区、在售数量等发现页特征",
+                                      "只要当前列表来源通过可靠来源门禁，就仍可视为三同车源列表",
+                                      "发现/专区锚点本身不再否定其三同列表身份",
+                                      "其他来源仍不得计数、排序或进入详情"
+                                  ],
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "contains_all":  [
+                                                               "品牌选车",
+                                                               "AI选车",
+                                                               "综合排序",
+                                                               "清空"
+                                                           ],
+                                          "contains_any":  [
+                                                               "进入专区",
+                                                               "车龄/里程",
+                                                               "辆在售",
+                                                               "全国淘车"
+                                                           ],
+                                          "requires_vehicle_list_structure":  true,
+                                          "mixed_discovery_and_result_signals":  true,
+                                          "same_source_result_source_gate_is_only_gate":  true
+                                      },
+                      "allowed_actions":  [
+                                              "diagnose_discovery_result_mixed_page",
+                                              "detect_same_source_vehicle_count"
+                                          ],
+                      "action_authorization":  {
+                                                   "diagnose_discovery_result_mixed_page":  "current_round_read_only_allowed",
+                                                   "detect_same_source_vehicle_count":  "current_round_read_only_allowed"
+                                               },
+                      "forbidden_actions":  [
+                                                "detect_vehicle_model_config_entry",
+                                                "click_vehicle_model_config_entry",
+                                                "click_generic_filter",
+                                                "click_filter",
+                                                "click_color_filter",
+                                                "click_year_filter",
+                                                "click_sort",
+                                                "click_comprehensive_sort",
+                                                "click_price_low_to_high",
+                                                "click_vehicle_card",
+                                                "enter_detail_page",
+                                                "collect_vehicle_data",
+                                                "collect_list_whitelist_fields",
+                                                "tap_sort_if_present",
+                                                "tap_price_low_to_high",
+                                                "tap_next_car_by_price_order",
+                                                "tap_single_car_if_no_sort",
+                                                "read_vehicle_price",
+                                                "read_vehicle_year",
+                                                "read_vehicle_mileage",
+                                                "read_vehicle_city",
+                                                "read_seller_info",
+                                                "read_finance_tags"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "same_source_vehicle_count_eq_1",
+                                       "to":  "S07_SINGLE_RESULT_DETAIL_PENDING"
+                                   },
+                                   {
+                                       "condition":  "same_source_vehicle_count_gt_1",
+                                       "to":  "S07_MULTI_RESULT_SORT_PENDING"
+                                   }
+                               ],
+                      "same_source_result_source_gate":  {
+                                                             "source_gate_is_only_gate":  true,
+                                                             "reliable_sources":  [
+                                                                                      "from_s08_view_result",
+                                                                                      "from_vehicle_detail_back"
+                                                                                  ],
+                                                             "requires_strong_source_evidence":  true,
+                                                             "rule":  "Current page is a same-source result list only when reliable source evidence proves it came from 查看X辆 after S08 color/age confirmation or from a vehicle-detail back navigation. Discovery/zone anchors do not negate same-source identity once source is proven, and page purity is not an independent veto gate.",
+                                                             "reliable_source_evidence_requirements":  {
+                                                                                                           "from_s08_view_result":  [
+                                                                                                                                        "stable_s08_vehicle_model_config_panel_before_list_entry",
+                                                                                                                                        "selected_color_confirmed_in_panel",
+                                                                                                                                        "age_gate_passed",
+                                                                                                                                        "view_result_clicked_once",
+                                                                                                                                        "entered_list_after_view_result"
+                                                                                                                                    ],
+                                                                                                           "from_vehicle_detail_back":  [
+                                                                                                                                            "stable_vehicle_detail_page_before_back",
+                                                                                                                                            "back_action_executed",
+                                                                                                                                            "entered_list_after_back"
+                                                                                                                                        ]
+                                                                                                       },
+                                                             "unreliable_source_exception":  "RESULT_LIST_SOURCE_UNRELIABLE",
+                                                             "forbid_branching_when_source_unverified":  true
+                                                         },
+                      "result_list_branching":  {
+                                                    "scope":  "same_source_vehicle_result_list_mode_only",
+                                                    "requires_reliable_source_gate":  true,
+                                                    "read_only_gate_action":  "detect_same_source_vehicle_count",
+                                                    "count_uncertain_exception":  "COUNT_UNCERTAIN",
+                                                    "single_vehicle_branch":  {
+                                                                                  "trigger_condition":  "same_source_vehicle_count_eq_1",
+                                                                                  "detail_state":  "S07_SINGLE_RESULT_DETAIL_PENDING",
+                                                                                  "rule":  "Exactly one same-source vehicle: do not sort; go directly to detail."
+                                                                              },
+                                                    "multi_vehicle_branch":  {
+                                                                                 "trigger_condition":  "same_source_vehicle_count_gt_1",
+                                                                                 "sort_state":  "S07_MULTI_RESULT_SORT_PENDING",
+                                                                                 "rule":  "More than one same-source vehicle: sort by 综合排序 -\u003e 价格从低到高 before entering detail."
+                                                                             }
+                                                },
+                      "same_source_result_identity":  {
+                                                          "source_gate_is_only_gate":  true,
+                                                          "discovery_anchors_do_not_negate_same_source_identity_when_source_reliable":  true,
+                                                          "rule":  "Reliable source is the only gate. Discovery/zone anchors may coexist with the same-source result list, and page purity is not an independent rejection condition."
+                                                      },
+                      "return_to":  null,
+                      "exception":  "RESULT_PAGE_VARIANT_UNCLASSIFIED"
+                  },
+                  {
+                      "id":  "S07_VEHICLE_LIST_PAGE",
+                      "name":  "S07 车源列表页（车型配置入口确认前）",
+                      "meaning":  [
+                                      "已完成品牌、车系、年款、配置选择",
+                                      "已进入车源列表页",
+                                      "尚未进入车型配置入口确认",
+                                      "尚未排序",
+                                      "尚未采集"
+                                  ],
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "forbidden_contains":  [
+                                                                     "品牌选车",
+                                                                     "AI选车",
+                                                                     "进入专区"
+                                                                 ],
+                                          "forbidden_contains_any":  [
+                                                                         "选择\n配置",
+                                                                         "选择品牌",
+                                                                         "检测报告",
+                                                                         "联系卖家"
+                                                                     ],
+                                          "contains_any":  [
+                                                               "车型配置",
+                                                               "综合排序",
+                                                               "价格",
+                                                               "成色/车况",
+                                                               "车源"
+                                                           ],
+                                          "requires_vehicle_list_structure":  true,
+                                          "requires_vehicle_model_config_entry_or_region":  true,
+                                          "allow_vehicle_cards_as_structure_only":  true,
+                                          "forbid_read_vehicle_fields":  true
+                                      },
+                      "allowed_actions":  [
+                                              "detect_vehicle_model_config_entry",
+                                              "click_vehicle_model_config_entry",
+                                              "detect_same_source_vehicle_count"
+                                          ],
+                      "action_authorization":  {
+                                                   "detect_vehicle_model_config_entry":  "current_round_read_only_allowed",
+                                                   "click_vehicle_model_config_entry":  "requires_next_round_explicit_authorization",
+                                                   "detect_same_source_vehicle_count":  "current_round_read_only_allowed"
+                                               },
+                      "forbidden_actions":  [
+                                                "click_generic_filter",
+                                                "click_filter",
+                                                "click_color_filter",
+                                                "click_year_filter",
+                                                "click_sort",
+                                                "click_comprehensive_sort",
+                                                "click_price_low_to_high",
+                                                "click_vehicle_card",
+                                                "enter_detail_page",
+                                                "collect_vehicle_data",
+                                                "collect_list_whitelist_fields",
+                                                "tap_sort_if_present",
+                                                "tap_price_low_to_high",
+                                                "tap_next_car_by_price_order",
+                                                "read_vehicle_price",
+                                                "read_vehicle_year",
+                                                "read_vehicle_mileage",
+                                                "read_vehicle_city",
+                                                "read_seller_info",
+                                                "read_finance_tags"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "vehicle_model_config_entry_verified_and_user_authorized_next_round",
+                                       "to":  "S07_MODEL_CONFIG_ENTRY_PENDING"
+                                   },
+                                   {
+                                       "condition":  "same_source_vehicle_count_eq_1",
+                                       "to":  "S07_SINGLE_RESULT_DETAIL_PENDING"
+                                   },
+                                   {
+                                       "condition":  "same_source_vehicle_count_gt_1",
+                                       "to":  "S07_MULTI_RESULT_SORT_PENDING"
+                                   }
+                               ],
+                      "same_source_result_source_gate":  {
+                                                             "source_gate_is_only_gate":  true,
+                                                             "reliable_sources":  [
+                                                                                      "from_s08_view_result",
+                                                                                      "from_vehicle_detail_back"
+                                                                                  ],
+                                                             "requires_strong_source_evidence":  true,
+                                                             "rule":  "Current page is a same-source result list only when reliable source evidence proves it came from 查看X辆 after S08 color/age confirmation or from a vehicle-detail back navigation.",
+                                                             "reliable_source_evidence_requirements":  {
+                                                                                                           "from_s08_view_result":  [
+                                                                                                                                        "stable_s08_vehicle_model_config_panel_before_list_entry",
+                                                                                                                                        "selected_color_confirmed_in_panel",
+                                                                                                                                        "age_gate_passed",
+                                                                                                                                        "view_result_clicked_once",
+                                                                                                                                        "entered_list_after_view_result"
+                                                                                                                                    ],
+                                                                                                           "from_vehicle_detail_back":  [
+                                                                                                                                            "stable_vehicle_detail_page_before_back",
+                                                                                                                                            "back_action_executed",
+                                                                                                                                            "entered_list_after_back"
+                                                                                                                                        ]
+                                                                                                       },
+                                                             "unreliable_source_exception":  "RESULT_LIST_SOURCE_UNRELIABLE",
+                                                             "forbid_branching_when_source_unverified":  true
+                                                         },
+                      "result_list_branching":  {
+                                                    "scope":  "same_source_vehicle_result_list_mode_only",
+                                                    "requires_reliable_source_gate":  true,
+                                                    "read_only_gate_action":  "detect_same_source_vehicle_count",
+                                                    "count_uncertain_exception":  "COUNT_UNCERTAIN",
+                                                    "single_vehicle_branch":  {
+                                                                                  "trigger_condition":  "same_source_vehicle_count_eq_1",
+                                                                                  "detail_state":  "S07_SINGLE_RESULT_DETAIL_PENDING",
+                                                                                  "rule":  "Exactly one same-source vehicle: do not sort; go directly to detail."
+                                                                              },
+                                                    "multi_vehicle_branch":  {
+                                                                                 "trigger_condition":  "same_source_vehicle_count_gt_1",
+                                                                                 "sort_state":  "S07_MULTI_RESULT_SORT_PENDING",
+                                                                                 "rule":  "More than one same-source vehicle: sort by 综合排序 -\u003e 价格从低到高 before entering detail."
+                                                                             }
+                                                },
+                      "return_to":  null,
+                      "exception":  "S07_CONTRACT_DRIFT_TO_GENERIC_FILTER"
+                  },
+                  {
+                      "id":  "S07_SINGLE_RESULT_DETAIL_PENDING",
+                      "name":  "S07 单车结果待进详情",
+                      "recognition":  {
+                                          "internal":  true
+                                      },
+                      "allowed_actions":  [
+                                              "tap_single_car_if_no_sort"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_sort_if_present",
+                                                "tap_price_low_to_high",
+                                                "tap_next_car_by_price_order",
+                                                "collect_list_whitelist_fields",
+                                                "collect_vehicle_data"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "vehicle_detail_page_detected",
+                                       "to":  "S11"
+                                   }
+                               ],
+                      "return_to":  "S07_VEHICLE_LIST_PAGE",
+                      "exception":  "PAGE_CONTRACT_MISMATCH"
+                  },
+                  {
+                      "id":  "S07_MULTI_RESULT_SORT_PENDING",
+                      "name":  "S07 多车结果待排序",
+                      "recognition":  {
+                                          "internal":  true
+                                      },
+                      "allowed_actions":  [
+                                              "tap_sort_if_present"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_single_car_if_no_sort",
+                                                "tap_price_low_to_high",
+                                                "tap_next_car_by_price_order",
+                                                "collect_list_whitelist_fields",
+                                                "collect_vehicle_data"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "sort_present",
+                                       "to":  "S09"
+                                   }
+                               ],
+                      "return_to":  "S07_VEHICLE_LIST_PAGE",
+                      "exception":  "PAGE_CONTRACT_MISMATCH"
+                  },
+                  {
+                      "id":  "S07",
+                      "name":  "车型配置筛选窗口",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "颜色",
+                                                               "车龄"
+                                                           ],
+                                          "contains_any":  [
+                                                               "重置",
+                                                               "查看"
+                                                           ]
+                                      },
+                      "allowed_actions":  [
+                                              "tap_color_filter",
+                                              "tap_target_color",
+                                              "tap_age_filter",
+                                              "set_exact_age",
+                                              "apply_narrowest_year_filter",
+                                              "tap_view_cars"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_reset",
+                                                "tap_mileage_filter",
+                                                "tap_year_trim_filter",
+                                                "tap_non_target_color",
+                                                "set_wide_age_range",
+                                                "expand_year_range_as_same_source",
+                                                "auto_merge_color_family"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "same_source_page_detected",
+                                       "to":  "S08"
+                                   }
+                               ],
+                      "return_to":  "S06",
+                      "exception":  "PAGE_NOT_RECOGNIZED"
+                  },
+                  {
+                      "id":  "S08",
+                      "name":  "三同车源页面",
+                      "recognition":  {
+                                          "contains_any":  [
+                                                               "综合排序",
+                                                               "公里",
+                                                               "万公里"
+                                                           ]
+                                      },
+                      "allowed_actions":  [
+                                              "collect_list_whitelist_fields",
+                                              "filter_list_by_exact_year_and_color",
+                                              "tap_sort_if_present",
+                                              "tap_single_car_if_no_sort"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_detail_before_sort",
+                                                "collect_city",
+                                                "collect_tags",
+                                                "collect_down_payment",
+                                                "collect_monthly_payment",
+                                                "collect_seller_info",
+                                                "include_non_exact_year_vehicle",
+                                                "include_non_exact_color_vehicle"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "sort_present",
+                                       "to":  "S09"
+                                   },
+                                   {
+                                       "condition":  "single_car_no_sort",
+                                       "to":  "S11"
+                                   },
+                                   {
+                                       "condition":  "no_cars",
+                                       "to":  "S16"
+                                   }
+                               ],
+                      "return_to":  null,
+                      "exception":  "PAGE_NOT_RECOGNIZED"
+                  },
+                  {
+                      "id":  "S09",
+                      "name":  "排序方式列表",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "价格从低到高"
+                                                           ]
+                                      },
+                      "allowed_actions":  [
+                                              "tap_price_low_to_high"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_price_high_to_low",
+                                                "tap_latest",
+                                                "tap_distance",
+                                                "tap_other_sort"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "sorted_same_source_page_detected",
+                                       "to":  "S10"
+                                   }
+                               ],
+                      "return_to":  "S08",
+                      "exception":  "PAGE_NOT_RECOGNIZED"
+                  },
+                  {
+                      "id":  "S10",
+                      "name":  "排序后三同车源页面",
+                      "recognition":  {
+                                          "contains_any":  [
+                                                               "公里",
+                                                               "万公里"
+                                                           ],
+                                          "sorted_by":  "price_low_to_high"
+                                      },
+                      "allowed_actions":  [
+                                              "tap_next_car_by_price_order",
+                                              "collect_list_whitelist_fields",
+                                              "filter_list_by_exact_year_and_color"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_out_of_order",
+                                                "tap_down_payment",
+                                                "tap_monthly_payment",
+                                                "tap_loan",
+                                                "tap_contact_seller",
+                                                "tap_recommend_car",
+                                                "include_non_same_source_vehicle"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "detail_page_detected",
+                                       "to":  "S11"
+                                   },
+                                   {
+                                       "condition":  "all_cars_collected",
+                                       "to":  "S16"
+                                   }
+                               ],
+                      "return_to":  null,
+                      "exception":  "PAGE_NOT_RECOGNIZED"
+                  },
+                  {
+                      "id":  "S11",
+                      "name":  "车源详情页",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "微信咨询",
+                                                               "收藏",
+                                                               "联系卖家"
+                                                           ],
+                                          "contains_any":  [
+                                                               "讲价",
+                                                               "立即订购"
+                                                           ]
+                                      },
+                      "allowed_actions":  [
+                                              "collect_transfer_count",
+                                              "scroll_to_report",
+                                              "tap_full_report"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_wechat",
+                                                "tap_favorite",
+                                                "tap_contact_seller",
+                                                "tap_bargain",
+                                                "tap_order",
+                                                "collect_other_detail_fields"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "report_page_detected",
+                                       "to":  "S12"
+                                   }
+                               ],
+                      "return_to":  "S10",
+                      "exception":  "PAGE_NOT_RECOGNIZED"
+                  },
+                  {
+                      "id":  "S12",
+                      "name":  "瓜子官方检测报告页",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "瓜子官方检测报告"
+                                                           ],
+                                          "contains_any":  [
+                                                               "理赔次数",
+                                                               "最大金额",
+                                                               "车身外观"
+                                                           ]
+                                      },
+                      "allowed_actions":  [
+                                              "collect_claim_count",
+                                              "collect_max_amount",
+                                              "scroll_to_body_appearance",
+                                              "tap_body_appearance"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_major_issue",
+                                                "tap_interior",
+                                                "tap_ai_explain",
+                                                "tap_consult",
+                                                "tap_ad",
+                                                "collect_other_report_fields"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "body_appearance_detected",
+                                       "to":  "S13"
+                                   }
+                               ],
+                      "return_to":  "S11",
+                      "exception":  "FIELD_MISSING"
+                  },
+                  {
+                      "id":  "S13",
+                      "name":  "车身外观展示区",
+                      "recognition":  {
+                                          "contains_all":  [
+                                                               "瓜子官方检测报告",
+                                                               "车身外观"
+                                                           ],
+                                          "contains_any":  [
+                                                               "驾驶室",
+                                                               "车尾",
+                                                               "副驾驶",
+                                                               "车头",
+                                                               "历史修复"
+                                                           ]
+                                      },
+                      "allowed_actions":  [
+                                              "collect_repair_counts",
+                                              "tap_repair_item_if_nonzero",
+                                              "return_to_s10_if_all_zero"
+                                          ],
+                      "forbidden_actions":  [
+                                                "collect_body_images",
+                                                "collect_image_count",
+                                                "collect_non_history_repair",
+                                                "tap_ai_explain",
+                                                "tap_other_report_tab"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "repair_found",
+                                       "to":  "S14"
+                                   },
+                                   {
+                                       "condition":  "all_repair_zero",
+                                       "to":  "S15"
+                                   }
+                               ],
+                      "return_to":  "S11",
+                      "exception":  "FIELD_MISSING"
+                  },
+                  {
+                      "id":  "S14",
+                      "name":  "具体车况展示窗口",
+                      "recognition":  {
+                                          "contains_any":  [
+                                                               "更换",
+                                                               "钣金",
+                                                               "喷漆",
+                                                               "漆面",
+                                                               "换件"
+                                                           ]
+                                      },
+                      "allowed_actions":  [
+                                              "swipe_next_damage"
+                                          ],
+                      "forbidden_actions":  [
+                                                "tap_ai_detail",
+                                                "collect_image_description",
+                                                "collect_unrelated_text"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "damage_collected",
+                                       "to":  "S15"
+                                   }
+                               ],
+                      "return_to":  "S13",
+                      "exception":  "FIELD_MISSING"
+                  },
+                  {
+                      "id":  "S15",
+                      "name":  "单车打分判断状态",
+                      "recognition":  {
+                                          "internal":  true
+                                      },
+                      "allowed_actions":  [
+                                              "score_reference_car",
+                                              "select_reference_or_continue"
+                                          ],
+                      "forbidden_actions":  [
+                                                "collect_extra_fields"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "reference_score_ge_target",
+                                       "to":  "S16"
+                                   },
+                                   {
+                                       "condition":  "continue_next_car",
+                                       "to":  "S10"
+                                   }
+                               ],
+                      "return_to":  null,
+                      "exception":  "PAGE_NOT_RECOGNIZED"
+                  },
+                  {
+                      "id":  "S16",
+                      "name":  "定价计算状态",
+                      "recognition":  {
+                                          "internal":  true
+                                      },
+                      "allowed_actions":  [
+                                              "calculate_prices",
+                                              "append_review_reasons"
+                                          ],
+                      "forbidden_actions":  [
+                                                "change_price_without_log",
+                                                "skip_review_reason"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "pricing_done",
+                                       "to":  "S17"
+                                   }
+                               ],
+                      "return_to":  null,
+                      "exception":  "FIELD_MISSING"
+                  },
+                  {
+                      "id":  "S17",
+                      "name":  "结果写回状态",
+                      "recognition":  {
+                                          "internal":  true
+                                      },
+                      "allowed_actions":  [
+                                              "write_pricing_result",
+                                              "write_reference_detail",
+                                              "update_task_status"
+                                          ],
+                      "forbidden_actions":  [
+                                                "overwrite_target_fields",
+                                                "manual_task_id",
+                                                "manual_reference_index"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "done",
+                                       "to":  "END"
+                                   }
+                               ],
+                      "return_to":  null,
+                      "exception":  "FIELD_MISSING"
+                  },
+                  {
+                      "id":  "S08_VEHICLE_MODEL_CONFIG_PAGE",
+                      "name":  "S08 ??????",
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "contains_all":  [
+                                                               "????"
+                                                           ],
+                                          "contains_any":  [
+                                                               "??",
+                                                               "??",
+                                                               "??",
+                                                               "??",
+                                                               "??",
+                                                               "??",
+                                                               "???",
+                                                               "2020?",
+                                                               "330TSI ??? ?VI"
+                                                           ],
+                                          "forbidden_contains_any":  [
+                                                                         "????",
+                                                                         "????",
+                                                                         "??????"
+                                                                     ],
+                                          "forbid_read_vehicle_fields":  true
+                                      },
+                      "allowed_actions":  [
+                                              "read_vehicle_model_config_panel_contract",
+                                              "click_color_entry"
+                                          ],
+                      "forbidden_actions":  [
+                                                "auto_merge_color_family",
+                                                "click_age_filter",
+                                                "click_any_color_option",
+                                                "click_any_filter_item",
+                                                "click_close",
+                                                "click_color_filter",
+                                                "click_comprehensive_sort",
+                                                "click_confirm",
+                                                "click_filter",
+                                                "click_generic_filter",
+                                                "click_price_low_to_high",
+                                                "click_registration_year_filter",
+                                                "click_reset",
+                                                "click_similar_color",
+                                                "click_sort",
+                                                "click_target_color",
+                                                "click_vehicle_card",
+                                                "click_view_result",
+                                                "click_year_filter",
+                                                "collect_list_whitelist_fields",
+                                                "collect_vehicle_data",
+                                                "enter_detail_page",
+                                                "fuzzy_match_color",
+                                                "read_finance_tags",
+                                                "read_recommend_tags",
+                                                "read_seller_info",
+                                                "read_vehicle_city",
+                                                "read_vehicle_mileage",
+                                                "read_vehicle_price",
+                                                "read_vehicle_year"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "color_selection_panel_detected",
+                                       "to":  "S08_COLOR_SELECTION_PANEL"
+                                   }
+                               ],
+                      "return_to":  "S07_VEHICLE_LIST_PAGE",
+                      "exception":  "VEHICLE_MODEL_CONFIG_PANEL_NOT_RECOGNIZED",
+                      "action_authorization":  {
+                                                   "read_vehicle_model_config_panel_contract":  "current_round_read_only_allowed",
+                                                   "click_color_entry":  "requires_explicit_user_authorization_for_color_entry_only"
+                                               },
+                      "meaning":  [
+                                      "???????????????????????",
+                                      "??????????????????",
+                                      "?????????/??/????",
+                                      "??????/????",
+                                      "?????????????"
+                                  ]
+                  },
+                  {
+                      "id":  "S08_VEHICLE_MODEL_CONFIG_PANEL",
+                      "name":  "S08 ??????",
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "contains_all":  [
+                                                               "????"
+                                                           ],
+                                          "contains_any":  [
+                                                               "??",
+                                                               "??",
+                                                               "??",
+                                                               "??",
+                                                               "??",
+                                                               "??",
+                                                               "??",
+                                                               "??",
+                                                               "???",
+                                                               "2020?"
+                                                           ],
+                                          "forbidden_contains_any":  [
+                                                                         "????",
+                                                                         "????",
+                                                                         "??????"
+                                                                     ],
+                                          "forbid_read_vehicle_fields":  true
+                                      },
+                      "allowed_actions":  [
+                                              "read_vehicle_model_config_panel_contract",
+                                              "click_color_entry"
+                                          ],
+                      "forbidden_actions":  [
+                                                "auto_merge_color_family",
+                                                "click_age_filter",
+                                                "click_any_color_option",
+                                                "click_any_filter_item",
+                                                "click_close",
+                                                "click_color_filter",
+                                                "click_comprehensive_sort",
+                                                "click_confirm",
+                                                "click_filter",
+                                                "click_generic_filter",
+                                                "click_price_low_to_high",
+                                                "click_registration_year_filter",
+                                                "click_reset",
+                                                "click_similar_color",
+                                                "click_sort",
+                                                "click_target_color",
+                                                "click_vehicle_card",
+                                                "click_view_result",
+                                                "click_year_filter",
+                                                "collect_list_whitelist_fields",
+                                                "collect_vehicle_data",
+                                                "enter_detail_page",
+                                                "fuzzy_match_color",
+                                                "read_finance_tags",
+                                                "read_recommend_tags",
+                                                "read_seller_info",
+                                                "read_vehicle_city",
+                                                "read_vehicle_mileage",
+                                                "read_vehicle_price",
+                                                "read_vehicle_year"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "color_selection_panel_detected",
+                                       "to":  "S08_COLOR_SELECTION_PANEL"
+                                   }
+                               ],
+                      "return_to":  "S07_VEHICLE_LIST_PAGE",
+                      "exception":  "VEHICLE_MODEL_CONFIG_PANEL_NOT_RECOGNIZED",
+                      "action_authorization":  {
+                                                   "read_vehicle_model_config_panel_contract":  "current_round_read_only_allowed",
+                                                   "click_color_entry":  "requires_explicit_user_authorization_for_color_entry_only"
+                                               },
+                      "meaning":  [
+                                      "???????????????????????",
+                                      "??????????????????",
+                                      "?????????/??/????",
+                                      "??????/????",
+                                      "?????????????"
+                                  ]
+                  },
+                  {
+                      "id":  "S08_COLOR_SELECTION_PANEL",
+                      "name":  "S08 颜色选择区域/弹层",
+                      "meaning":  [
+                                      "已点击车型配置面板中的颜色入口",
+                                      "当前只允许只读识别颜色选项",
+                                      "目标颜色只能按当前任务精确匹配，不允许点击相似颜色",
+                                      "尚未选择颜色，尚未点击确定/查看结果，尚未采集车源字段"
+                                  ],
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "contains_all":  [
+                                                               "颜色"
+                                                           ],
+                                          "contains_any":  [
+                                                               "白色",
+                                                               "黑色",
+                                                               "银色",
+                                                               "灰色",
+                                                               "红色",
+                                                               "蓝色"
+                                                           ],
+                                          "forbid_read_vehicle_fields":  true
+                                      },
+                      "allowed_actions":  [
+                                              "read_color_selection_panel_contract",
+                                              "click_target_color_option"
+                                          ],
+                      "action_authorization":  {
+                                                   "read_color_selection_panel_contract":  "current_round_read_only_allowed",
+                                                   "click_target_color_option":  "requires_explicit_user_authorization_for_exact_target_color_only"
+                                               },
+                      "forbidden_actions":  [
+                                                "auto_alias_color",
+                                                "auto_merge_color_family",
+                                                "click_age_filter",
+                                                "click_any_color_option",
+                                                "click_close",
+                                                "click_confirm",
+                                                "click_non_target_color",
+                                                "click_off_white",
+                                                "click_other_color_option",
+                                                "click_pearl_white",
+                                                "click_reset",
+                                                "click_similar_color",
+                                                "click_sort",
+                                                "click_vehicle_card",
+                                                "click_view_result",
+                                                "click_year_filter",
+                                                "collect_vehicle_data",
+                                                "enter_detail_page",
+                                                "fuzzy_match_color",
+                                                "read_finance_tags",
+                                                "read_seller_info",
+                                                "read_vehicle_city",
+                                                "read_vehicle_mileage",
+                                                "read_vehicle_price",
+                                                "read_vehicle_year"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "target_color_selected_and_confirmed_in_model_config_panel",
+                                       "to":  "S08_COLOR_SELECTED"
+                                   }
+                               ],
+                      "return_to":  "S08_VEHICLE_MODEL_CONFIG_PANEL",
+                      "exception":  "TARGET_COLOR_NOT_FOUND"
+                  },
+                  {
+                      "id":  "S08_COLOR_SELECTED",
+                      "name":  "S08 颜色已选中状态",
+                      "meaning":  [
+                                      "车型配置面板中的目标颜色已选中",
+                                      "已选颜色必须与当前任务颜色完全一致",
+                                      "若任务颜色变更，旧颜色选择立即失效，禁止继续车龄/查看结果/采集",
+                                      "只有重新验证当前任务颜色选中后，才允许进入年款/车龄入口"
+                                  ],
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "requires_selected_color_confirmed_in_panel_before_entry":  true,
+                                          "contains_any":  [
+                                                               "颜色",
+                                                               "车型配置"
+                                                           ],
+                                          "forbid_read_vehicle_fields":  true,
+                                          "color_must_match_task_target":  true,
+                                          "selected_color_confirmed_in_panel":  true
+                                      },
+                      "allowed_actions":  [
+                                              "click_year_or_age_entry"
+                                          ],
+                      "action_authorization":  {
+                                                   "click_year_or_age_entry":  "requires_explicit_user_authorization_for_year_or_age_entry_only"
+                                               },
+                      "forbidden_actions":  [
+                                                "click_color_option_again",
+                                                "continue_with_old_color",
+                                                "click_target_year_option",
+                                                "click_nearby_year_option",
+                                                "click_year_filter",
+                                                "click_age_filter",
+                                                "click_confirm",
+                                                "click_view_result",
+                                                "click_reset",
+                                                "click_close",
+                                                "click_sort",
+                                                "click_vehicle_card",
+                                                "enter_detail_page",
+                                                "collect_vehicle_data",
+                                                "read_vehicle_price",
+                                                "read_vehicle_year",
+                                                "read_vehicle_mileage",
+                                                "read_vehicle_city",
+                                                "read_seller_info",
+                                                "read_finance_tags",
+                                                "continue_with_multiple_colors",
+                                                "click_target_color_again"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "year_selection_panel_detected_after_selected_color_confirmed",
+                                       "to":  "S08_YEAR_SELECTION_PANEL"
+                                   }
+                               ],
+                      "return_to":  "S08_COLOR_SELECTION_PANEL",
+                      "exception":  "COLOR_CLICK_NO_SELECTION"
+                  },
+                  {
+                      "id":  "S08_COLOR_STALE_AFTER_TASK_CHANGE",
+                      "name":  "S08 任务颜色变更后的旧颜色失效状态",
+                      "meaning":  [
+                                      "当前手机侧 S08 颜色状态与当前任务颜色不一致",
+                                      "例如手机已选白色，但任务 color 已变更为黑色",
+                                      "当前颜色选择作废，必须重新选择任务目标颜色",
+                                      "黑色未重新验证前，禁止继续车龄、确定、进入列表或采集"
+                                  ],
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "current_state_family":  "S08",
+                                          "requires_selected_color":  true,
+                                          "selected_color_must_not_equal_task_color":  true,
+                                          "forbid_read_vehicle_fields":  true
+                                      },
+                      "allowed_actions":  [
+                                              "read_current_selected_color",
+                                              "detect_target_color_entry",
+                                              "record_issue",
+                                              "lookup_knowledge_base"
+                                          ],
+                      "action_authorization":  {
+                                                   "read_current_selected_color":  "current_round_read_only_allowed",
+                                                   "detect_target_color_entry":  "current_round_read_only_allowed",
+                                                   "record_issue":  "runtime_exception_handler_allowed",
+                                                   "lookup_knowledge_base":  "runtime_exception_handler_allowed"
+                                               },
+                      "forbidden_actions":  [
+                                                "continue_to_age_slider",
+                                                "click_year_or_age_entry",
+                                                "drag_slider",
+                                                "click_confirm",
+                                                "click_view_result",
+                                                "enter_vehicle_list",
+                                                "click_vehicle_card",
+                                                "collect_vehicle_data",
+                                                "continue_with_old_color",
+                                                "skip_color_revalidation",
+                                                "read_vehicle_price",
+                                                "read_vehicle_year",
+                                                "read_vehicle_mileage",
+                                                "read_vehicle_city",
+                                                "read_seller_info",
+                                                "read_finance_tags"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "task_target_color_reselected_and_verified",
+                                       "to":  "S08_COLOR_SELECTED"
+                                   }
+                               ],
+                      "return_to":  "S08_COLOR_SELECTION_PANEL",
+                      "exception":  "TASK_COLOR_CHANGED_INVALIDATES_SELECTED_COLOR"
+                  },
+                  {
+                      "id":  "S08_COLOR_MULTI_SELECTED",
+                      "name":  "S08 ????????????",
+                      "meaning":  [
+                                      "???????????????",
+                                      "??????????????????????",
+                                      "??????????????????",
+                                      "???????????????????????????????"
+                                  ],
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "current_state_family":  "S08",
+                                          "requires_selected_colors":  true,
+                                          "selected_colors_must_include_task_color":  true,
+                                          "selected_colors_must_include_stale_color":  true,
+                                          "selected_colors_count_greater_than_one":  true,
+                                          "forbid_read_vehicle_fields":  true
+                                      },
+                      "allowed_actions":  [
+                                              "read_selected_colors",
+                                              "cancel_stale_selected_color"
+                                          ],
+                      "action_authorization":  {
+                                                   "read_selected_colors":  "current_round_read_only_allowed",
+                                                   "cancel_stale_selected_color":  "requires_explicit_user_authorization_for_stale_color_cancel_only"
+                                               },
+                      "forbidden_actions":  [
+                                                "continue_to_age_slider",
+                                                "click_year_or_age_entry",
+                                                "drag_slider",
+                                                "click_confirm",
+                                                "click_view_result",
+                                                "enter_vehicle_list",
+                                                "click_vehicle_card",
+                                                "collect_vehicle_data",
+                                                "continue_with_multiple_colors",
+                                                "continue_with_old_color",
+                                                "click_non_target_color",
+                                                "click_target_color_again",
+                                                "click_other_color_option",
+                                                "skip_color_revalidation",
+                                                "read_vehicle_price",
+                                                "read_vehicle_year",
+                                                "read_vehicle_mileage",
+                                                "read_vehicle_city",
+                                                "read_seller_info",
+                                                "read_finance_tags"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "only_task_target_color_selected",
+                                       "to":  "S08_COLOR_SELECTED_SINGLE_TARGET"
+                                   }
+                               ],
+                      "return_to":  "S08_COLOR_SELECTION_PANEL",
+                      "exception":  "COLOR_MULTI_SELECTED_TARGET_AND_STALE_COLOR"
+                  },
+                  {
+                      "id":  "S08_COLOR_SELECTED_SINGLE_TARGET",
+                      "name":  "S08 ???????????",
+                      "meaning":  [
+                                      "?????????????",
+                                      "selected_colors ??? app_operation_params.color",
+                                      "?????????",
+                                      "????????????????????????"
+                                  ],
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "current_state_family":  "S08",
+                                          "selected_colors_must_equal_task_color_only":  true,
+                                          "selected_color_confirmed_in_panel":  true,
+                                          "forbid_read_vehicle_fields":  true
+                                      },
+                      "allowed_actions":  [
+                                              "click_year_or_age_entry"
+                                          ],
+                      "action_authorization":  {
+                                                   "click_year_or_age_entry":  "requires_explicit_user_authorization_for_year_or_age_entry_only"
+                                               },
+                      "forbidden_actions":  [
+                                                "click_color_option_again",
+                                                "continue_with_old_color",
+                                                "continue_with_multiple_colors",
+                                                "click_target_year_option",
+                                                "click_nearby_year_option",
+                                                "click_year_filter",
+                                                "click_age_filter",
+                                                "drag_slider",
+                                                "click_confirm",
+                                                "click_view_result",
+                                                "click_reset",
+                                                "click_close",
+                                                "click_sort",
+                                                "click_vehicle_card",
+                                                "enter_vehicle_list",
+                                                "enter_detail_page",
+                                                "collect_vehicle_data",
+                                                "read_vehicle_price",
+                                                "read_vehicle_year",
+                                                "read_vehicle_mileage",
+                                                "read_vehicle_city",
+                                                "read_seller_info",
+                                                "read_finance_tags"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "year_selection_panel_detected_after_selected_color_confirmed",
+                                       "to":  "S08_YEAR_SELECTION_PANEL"
+                                   }
+                               ],
+                      "return_to":  "S08_COLOR_SELECTION_PANEL",
+                      "exception":  "COLOR_CLICK_NO_SELECTION"
+                  },
+                  {
+                      "id":  "S08_YEAR_SELECTION_PANEL",
+                      "name":  "S08 年款/车龄选择面板",
+                      "meaning":  [
+                                      "已从车型配置面板点击年款/车龄入口",
+                                      "当前处于年款/车龄选择面板",
+                                      "左侧存在车龄入口",
+                                      "在确认右侧精确双端点车龄滑块前，不允许设置车龄"
+                                  ],
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "requires_selected_color_confirmed_in_panel_before_entry":  true,
+                                          "contains_any":  [
+                                                               "车龄",
+                                                               "不限车龄",
+                                                               "查看",
+                                                               "重置"
+                                                           ],
+                                          "requires_left_age_tab":  true,
+                                          "forbid_read_vehicle_fields":  true
+                                      },
+                      "allowed_actions":  [
+                                              "detect_left_age_tab",
+                                              "click_left_age_tab"
+                                          ],
+                      "action_authorization":  {
+                                                   "detect_left_age_tab":  "current_round_read_only_allowed",
+                                                   "click_left_age_tab":  "requires_next_round_explicit_authorization"
+                                               },
+                      "forbidden_actions":  [
+                                                "click_unlimited_age",
+                                                "click_age_option",
+                                                "drag_slider",
+                                                "set_age_range",
+                                                "expand_age_range",
+                                                "click_color_filter",
+                                                "click_confirm",
+                                                "click_view_result",
+                                                "click_reset",
+                                                "click_close",
+                                                "click_sort",
+                                                "click_vehicle_card",
+                                                "enter_detail_page",
+                                                "collect_vehicle_data",
+                                                "read_vehicle_price",
+                                                "read_vehicle_year",
+                                                "read_vehicle_mileage",
+                                                "read_vehicle_city",
+                                                "read_seller_info",
+                                                "read_finance_tags"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "left_age_tab_clicked_and_exact_slider_detected",
+                                       "to":  "S08_AGE_EXACT_SLIDER_PANEL"
+                                   }
+                               ],
+                      "return_to":  "S08_COLOR_SELECTED",
+                      "exception":  "LEFT_AGE_TAB_NOT_FOUND"
+                  },
+                  {
+                      "id":  "S08_AGE_EXACT_SLIDER_PANEL",
+                      "name":  "S08 精确车龄滑块面板",
+                      "meaning":  [
+                                      "已点击左侧车龄入口",
+                                      "右侧出现精确车龄双端点滑块和滑轨",
+                                      "左侧端点表示最小车龄，右侧端点表示最大车龄",
+                                      "精确车龄 target_age=6 时必须满足 min_age=6 且 max_age=6",
+                                      "只设置单侧端点或保留 6-10 / 6-不限 / 4-6 等范围都不算成功",
+                                      "设置后仍必须保留 vehicle_year 列表二次校验"
+                                  ],
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "contains_any":  [
+                                                               "车龄",
+                                                               "查看",
+                                                               "重置"
+                                                           ],
+                                          "requires_left_age_tab_selected":  true,
+                                          "requires_age_slider":  true,
+                                          "requires_dual_age_handles":  true,
+                                          "requires_right_handle_visual_body":  true,
+                                          "forbid_background_list_node_as_handle":  true,
+                                          "forbid_read_vehicle_fields":  true
+                                      },
+                      "allowed_actions":  [
+                                              "detect_age_exact_slider",
+                                              "detect_age_slider_handles",
+                                              "detect_right_age_handle_visual_center",
+                                              "read_left_age_handle_value",
+                                              "read_right_age_handle_value",
+                                              "read_age_slider_bounds",
+                                              "calculate_target_age",
+                                              "calculate_age_handle_overlap_target",
+                                              "validate_age_handle_physical_overlap",
+                                              "validate_exact_age_range",
+                                              "set_age_slider_exact_value",
+                                              "set_left_age_handle_to_target",
+                                              "set_right_age_handle_to_target"
+                                          ],
+                      "action_authorization":  {
+                                                   "detect_age_exact_slider":  "current_round_read_only_allowed",
+                                                   "detect_age_slider_handles":  "current_round_read_only_allowed",
+                                                   "detect_right_age_handle_visual_center":  "current_round_read_only_allowed",
+                                                   "read_left_age_handle_value":  "current_round_read_only_allowed",
+                                                   "read_right_age_handle_value":  "current_round_read_only_allowed",
+                                                   "read_age_slider_bounds":  "current_round_read_only_allowed",
+                                                   "calculate_target_age":  "current_round_read_only_allowed",
+                                                   "calculate_age_handle_overlap_target":  "current_round_read_only_allowed",
+                                                   "validate_age_handle_physical_overlap":  "current_round_read_only_allowed",
+                                                   "validate_exact_age_range":  "current_round_read_only_allowed",
+                                                   "set_age_slider_exact_value":  "requires_next_round_explicit_authorization",
+                                                   "set_left_age_handle_to_target":  "requires_next_round_explicit_authorization",
+                                                   "set_right_age_handle_to_target":  "requires_next_round_explicit_authorization"
+                                               },
+                      "forbidden_actions":  [
+                                                "click_unlimited_age",
+                                                "click_age_option",
+                                                "set_age_range",
+                                                "expand_age_range",
+                                                "click_confirm",
+                                                "click_view_result",
+                                                "enter_vehicle_list",
+                                                "collect_vehicle_data",
+                                                "skip_right_handle_verification",
+                                                "treat_range_as_exact",
+                                                "treat_value_only_as_exact_without_physical_overlap",
+                                                "read_vehicle_price",
+                                                "read_vehicle_year",
+                                                "read_vehicle_mileage",
+                                                "read_vehicle_city",
+                                                "read_seller_info",
+                                                "read_finance_tags"
+                                            ],
+                      "next":  [
+
+                               ],
+                      "return_to":  "S08_YEAR_SELECTION_PANEL",
+                      "exception":  "AGE_EXACT_SLIDER_NOT_FOUND"
+                  },
+                  {
+                      "id":  "S08_AGE_LEFT_HANDLE_SET_ONLY",
+                      "name":  "S08 左侧车龄端点已设定但右侧未完成",
+                      "meaning":  [
+                                      "左侧滑块已设置为目标车龄",
+                                      "右侧滑块尚未设置为目标车龄",
+                                      "当前仍是范围筛选，不是最终有效状态",
+                                      "禁止点击确定/查看结果/进入列表/采集"
+                                  ],
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "current_state_family":  "S08",
+                                          "requires_dual_age_handles":  true,
+                                          "left_handle_equals_target_age":  true,
+                                          "right_handle_not_equal_target_age":  true,
+                                          "forbid_read_vehicle_fields":  true
+                                      },
+                      "allowed_actions":  [
+                                              "detect_age_slider_handles",
+                                              "read_left_age_handle_value",
+                                              "read_right_age_handle_value",
+                                              "set_right_age_handle_to_target",
+                                              "validate_exact_age_range"
+                                          ],
+                      "action_authorization":  {
+                                                   "detect_age_slider_handles":  "current_round_read_only_allowed",
+                                                   "read_left_age_handle_value":  "current_round_read_only_allowed",
+                                                   "read_right_age_handle_value":  "current_round_read_only_allowed",
+                                                   "set_right_age_handle_to_target":  "requires_explicit_user_authorization_for_right_handle_only",
+                                                   "validate_exact_age_range":  "current_round_read_only_allowed"
+                                               },
+                      "forbidden_actions":  [
+                                                "set_left_age_handle_to_target",
+                                                "click_confirm",
+                                                "click_view_result",
+                                                "enter_vehicle_list",
+                                                "collect_vehicle_data",
+                                                "skip_right_handle_verification",
+                                                "treat_range_as_exact"
+                                            ],
+                      "next":  [
+                                   {
+                                       "condition":  "left_and_right_age_handles_equal_target_age",
+                                       "to":  "S08_AGE_EXACT_VALUE_SELECTED"
+                                   }
+                               ],
+                      "return_to":  "S08_AGE_EXACT_SLIDER_PANEL",
+                      "exception":  "AGE_SLIDER_ONLY_LEFT_HANDLE_SET"
+                  },
+                  {
+                      "id":  "S08_AGE_EXACT_VALUE_SELECTED",
+                      "name":  "S08 精确车龄值已完成",
+                      "meaning":  [
+                                      "左侧和右侧两个滑块端点都已设置为目标车龄",
+                                      "min_age == max_age == target_age",
+                                      "当前才可视为精确 6 年单值筛选成功",
+                                      "但仍必须保留 vehicle_year 列表二次校验"
+                                  ],
+                      "recognition":  {
+                                          "foreground_package":  "com.ganji.android.haoche_c",
+                                          "requires_dual_age_handles":  true,
+                                          "left_handle_equals_target_age":  true,
+                                          "right_handle_equals_target_age":  true,
+                                          "left_and_right_handle_physical_overlap_at_target_tick":  true,
+                                          "target_age_calculation_verified":  true,
+                                          "requires_vehicle_year_secondary_check":  true,
+                                          "forbid_range_state":  true,
+                                          "forbid_value_only_without_physical_overlap":  true,
+                                          "forbid_read_vehicle_fields":  true
+                                      },
+                      "allowed_actions":  [
+                                              "validate_exact_age_range"
+                                          ],
+                      "action_authorization":  {
+                                                   "validate_exact_age_range":  "current_round_read_only_allowed"
+                                               },
+                      "forbidden_actions":  [
+                                                "click_confirm",
+                                                "click_view_result",
+                                                "enter_vehicle_list",
+                                                "collect_vehicle_data",
+                                                "skip_vehicle_year_secondary_check",
+                                                "treat_range_as_exact",
+                                                "treat_value_only_as_exact_without_physical_overlap"
+                                            ],
+                      "next":  [
+
+                               ],
+                      "return_to":  "S08_AGE_EXACT_SLIDER_PANEL",
+                      "exception":  "AGE_SLIDER_SET_NO_VERIFICATION"
+                  }
+              ]
+}

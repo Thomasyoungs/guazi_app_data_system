@@ -1,0 +1,92 @@
+{
+  "status": "S11_INTERNAL_XML_SCREENSHOT_REGION_MISMATCH_PATCHED",
+  "task": "PATCH_ONLY_S11_REPORT_SEARCH_INTERNAL_VISIBLE_REGION_CONSISTENCY",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "forbidden_scope_touched": false,
+  "summary": "Added an S11 internal screenshot/XML visible-region consistency check inside S11_REPORT_SEARCH. When the S11 report-search viewport is already in the report/lower-condition area but the paired XML contains no report-context markers at all, the XML is treated as mismatched evidence and is not allowed to prove that the exact report entry is absent.",
+  "implementation": {
+    "added_constants": [
+      "S11_REPORT_CONTEXT_STRONG_MARKERS",
+      "S11_REPORT_ENTRY_LOWER_AREA_MARKERS"
+    ],
+    "added_helpers": [
+      "_s11_report_context_marker_evidence",
+      "_s11_internal_visible_region_check"
+    ],
+    "runtime_hook": {
+      "step_name": "S11_INTERNAL_VISIBLE_REGION_PAIR_CHECK",
+      "location": "before _find_s11_official_report_entry_node in S11_REPORT_SEARCH",
+      "action_name": "validate_s11_screenshot_xml_visible_region_consistency"
+    },
+    "mismatch_behavior": {
+      "first_detection": "redump once with fresh screenshot/XML",
+      "second_detection": "stop with S11_INTERNAL_XML_SCREENSHOT_VISIBLE_REGION_MISMATCH",
+      "not_allowed_to_infer": [
+        "exact_report_entry_seen=false",
+        "view_full_report_exact_text_seen=false",
+        "official_report_entry_seen=false",
+        "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER"
+      ]
+    },
+    "preserved_contracts": [
+      "S10 stale XML detection remains active",
+      "XML dump failure does not reuse old XML",
+      "exact XML text is still required before clicking 查看完整报告",
+      "S11 safety gate and unsafe reposition remain unchanged",
+      "no OCR",
+      "no screenshot-coordinate click",
+      "no micro-scroll XML refresh",
+      "no weak-signal click"
+    ],
+    "new_fields": [
+      "s11_internal_visible_region_check",
+      "s11_internal_visible_region_mismatch",
+      "s11_internal_visible_region_mismatch_reason",
+      "s11_report_context_markers_in_xml",
+      "s11_report_context_marker_count",
+      "s11_internal_mismatch_redump_attempted",
+      "s11_internal_mismatch_redump_result",
+      "s11_fresh_pair_valid_after_internal_check"
+    ],
+    "stop_code": "S11_INTERNAL_XML_SCREENSHOT_VISIBLE_REGION_MISMATCH"
+  },
+  "validation": {
+    "py_compile": {
+      "command": "python -m py_compile scripts/runtime_s10_to_s16_mainline.py",
+      "status": "passed"
+    },
+    "module_import": {
+      "command": "importlib.util.spec_from_file_location(...).loader.exec_module(...)",
+      "status": "passed",
+      "output": "IMPORT_OK"
+    },
+    "offline_validation": {
+      "path": "output/s11_internal_xml_screenshot_region_mismatch_offline_validation.json",
+      "status": "passed",
+      "all_passed": true,
+      "cases": [
+        "A: S11 report-search context with no report markers is classified as internal mismatch",
+        "B: one redump can recover exact 查看完整报告 and pass safe click gate",
+        "C: redump still mismatched stops with S11_INTERNAL_XML_SCREENSHOT_VISIBLE_REGION_MISMATCH",
+        "D: exact 查看完整报告 present but unsafe still routes to unsafe reposition",
+        "E: exact 查看完整报告 present and safe remains directly clickable",
+        "F: existing S10 stale XML detection does not regress",
+        "G: weak signals are not treated as report-entry click targets and no OCR/coordinate path is introduced",
+        "H: actual ref #2 artifact is detected as internal mismatch"
+      ]
+    }
+  },
+  "non_regression_scope": {
+    "scripts/runtime_s01_to_s10_mainline.py": "not modified",
+    "s10_selected_card_autoscroll": "not modified",
+    "s10_local_title_binding": "not modified",
+    "s11_click_safety_gate": "not relaxed",
+    "s11_unsafe_reposition": "not modified",
+    "s12_s13_s14": "not modified",
+    "pricing_config_metal_deduct": "not modified",
+    "baseline_scoring_pricing_rules": "not modified"
+  },
+  "real_device_run": false
+}

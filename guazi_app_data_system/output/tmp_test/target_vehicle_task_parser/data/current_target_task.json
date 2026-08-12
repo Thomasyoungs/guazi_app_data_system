@@ -1,0 +1,31 @@
+{
+  "brand": "本田",
+  "series": "缤智",
+  "year_model": "2018款",
+  "config_model": "1.5L CVT两驱科技精英",
+  "sunroof": "无",
+  "guide_price_wan": 14.58,
+  "emission_standard": "国五",
+  "registration_date": "2017.10",
+  "display_mileage_wan_km": 8.54,
+  "color": "白",
+  "transfer_count": 0,
+  "insurance_expire": "2026.10",
+  "plate_location": "唐山",
+  "target_condition": [
+    {
+      "part": "左后门",
+      "abnormalities": [
+        "钣金",
+        "喷漆"
+      ]
+    },
+    {
+      "part": "右前门",
+      "abnormalities": [
+        "钣金",
+        "喷漆"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "final_status": "READ_ONLY_SANTANA_FULL_CHAIN_ACCEPTANCE_REPORT_DONE",
+  "acceptance_status": "SANTANA_FULL_CHAIN_ACCEPTANCE_PASSED",
+  "inconsistencies": [],
+  "generated_at": "2026-05-09T07:03:39.546480+00:00",
+  "target_fingerprint": "大众|桑塔纳|2021款|1.5L 自动风尚版|白|2021.05",
+  "read_only": true,
+  "files_checked": [
+    "output/result_s01_to_s10.json",
+    "output/result_s10_to_s16.json",
+    "output/result.json",
+    "output/s10_reference_card_completeness_gate_patch_latest.md",
+    "output/s10_reference_card_completeness_gate_patch.json",
+    "output/page_contract_timing_report.jsonl"
+  ],
+  "chain_acceptance": {
+    "first_stage_s10_ready": true,
+    "second_stage_started": true,
+    "s11_s12_s13_s14_s15_completed": true,
+    "s16_pricing_completed": true,
+    "s17_payload_output": true,
+    "final_status": "FULL_CHAIN_PRICED_DONE"
+  },
+  "flow_state": {
+    "S07_FILTER_DONE": true,
+    "COLOR_FILTER_DONE": true,
+    "AGE_FILTER_DONE": true,
+    "SORT_DONE": true,
+    "S10_READY": true
+  },
+  "reference_loop_rule": "Collect references sequentially by S10 reference_index; stop immediately when a complete, non-rejected reference has reference_score >= target_score. Not a fixed-count rule.",
+  "reference_history": [
+    {
+      "reference_index": 1,
+      "price": "3.90万",
+      "year_mileage_city": "2021年 | 11.63万公里 | 唐山",
+      "transfer_count": 1,
+      "claim_count": 1,
+      "max_claim_amount": 2000.0,
+      "repair_counts": {
+        "驾驶侧": 2
+      },
+      "repair_items": [
+        {
+          "part": "左前门",
+          "damage_type": "钣金",
+          "raw_text": "左侧前门—钣金"
+        }
+      ],
+      "reference_score": 85.0,
+      "target_score": 91.0,
+      "reference_rejected": false,
+      "reject_reason": "",
+      "qualified": false,
+      "decision_reason": "below target_score, continue to next reference_index"
+    },
+    {
+      "reference_index": 2,
+      "price": "4.01万",
+      "year_mileage_city": "2021年 | 13.71万公里 | 唐山",
+      "transfer_count": 0,
+      "claim_count": 3,
+      "max_claim_amount": 3000.0,
+      "repair_counts": {
+        "驾驶侧": 6
+      },
+      "repair_items": [
+        {
+          "part": "左前翼子板",
+          "damage_type": "钣金",
+          "raw_text": "左前翼子板—钣金"
+        }
+      ],
+      "reference_score": 82.0,
+      "target_score": 91.0,
+      "reference_rejected": false,
+      "reject_reason": "",
+      "qualified": false,
+      "decision_reason": "below target_score, continue to next reference_index"
+    },
+    {
+      "reference_index": 3,
+      "price": "4.03万",
+      "year_mileage_city": "2021年 | 11.74万公里 | 唐山",
+      "transfer_count": 2,
+      "claim_count": 1,
+      "max_claim_amount": 1000.0,
+      "repair_counts": {
+        "驾驶侧": 0,
+        "车尾": 0,
+        "副驾驶": 6
+      },
+      "repair_items": [
+        {
+          "part": "右后翼子板",
+          "damage_type": "喷漆",
+          "raw_text": "右后翼子板—喷漆"
+        }
+      ],
+      "reference_score": 83.5,
+      "target_score": 91.0,
+      "reference_rejected": false,
+      "reject_reason": "",
+      "qualified": false,
+      "decision_reason": "below target_score, continue to next reference_index"
+    },
+    {
+      "reference_index": 4,
+      "price": "4.03万",
+      "year_mileage_city": "2021年 | 9.9万公里 | 唐山",
+      "transfer_count": 0,
+      "claim_count": 1,
+      "max_claim_amount": 1000.0,
+      "repair_counts": {
+        "驾驶侧": 2
+      },
+      "repair_items": [
+        {
+          "part": "左前翼子板",
+          "damage_type": "钣金",
+          "raw_text": "左前翼子板—钣金"
+        }
+      ],
+      "reference_score": 85.0,
+      "target_score": 91.0,
+      "reference_rejected": false,
+      "reject_reason": "",
+      "qualified": false,
+      "decision_reason": "below target_score, continue to next reference_index"
+    },
+    {
+      "reference_index": 5,
+      "price": "4.16万",
+      "year_mileage_city": "2021年 | 4.62万公里 | 唐山",
+      "transfer_count": 1,
+      "claim_count": 0,
+      "max_claim_amount": 0.0,
+      "repair_counts": {
+        "驾驶侧": 0,
+        "车尾": 0,
+        "副驾驶": 2
+      },
+      "repair_items": [
+        {
+          "part": "右后翼子板",
+          "damage_type": "钣金",
+          "raw_text": "右后翼子板—钣金"
+        }
+      ],
+      "reference_score": 96.0,
+      "target_score": 91.0,
+      "reference_rejected": false,
+      "reject_reason": "",
+      "qualified": true,
+      "decision_reason": "qualified: score >= target_score, stop reference loop and enter pricing"
+    }
+  ],
+  "s10_patch_acceptance": {
+    "reliable_s10_gate": true,
+    "canonical_reference_order": true,
+    "same_price_mileage_desc": true,
+    "partial_card_click_blocked": true,
+    "card_complete_required": true,
+    "title_price_metadata_required": true,
+    "empty_price_or_metadata_blocked": true,
+    "invalid_partial_not_effective_history": true,
+    "completion_scroll_used": true,
+    "selected_by": "canonical_reference_order",
+    "patch_report_status": "PATCH_ONLY_S10_REFERENCE_CARD_COMPLETENESS_GATE_AND_SCROLL_TO_COMPLETE_DONE"
+  },
+  "s13_parser_acceptance": {
+    "raw_nodes_bounds_local_binding": true,
+    "dedup_visible_texts_not_used": true,
+    "duplicate_zero_preserved": true,
+    "detection_pass_numbers_excluded": true,
+    "evidence_by_region": {
+      "驾驶侧": {
+        "raw_nodes_used": true,
+        "visible_texts_dedup_used": false,
+        "duplicate_zero_preserved": true,
+        "bound_count_text": "0",
+        "excluded_numbers": [
+          {
+            "text": "驾驶侧：检测通过34",
+            "numbers": [
+              "34"
+            ],
+            "bounds": [
+              78,
+              2232,
+              1144,
+              2375
+            ],
+            "reason": "detection_pass_summary_not_history_repair_count"
+          }
+        ]
+      },
+      "车尾": {
+        "raw_nodes_used": true,
+        "visible_texts_dedup_used": false,
+        "duplicate_zero_preserved": true,
+        "bound_count_text": "0",
+        "excluded_numbers": [
+          {
+            "text": "车尾：检测通过10",
+            "numbers": [
+              "10"
+            ],
+            "bounds": [
+              78,
+              2200,
+              1144,
+              2343
+            ],
+            "reason": "detection_pass_summary_not_history_repair_count"
+          }
+        ]
+      },
+      "副驾驶": {
+        "raw_nodes_used": true,
+        "visible_texts_dedup_used": false,
+        "duplicate_zero_preserved": true,
+        "bound_count_text": "2",
+        "excluded_numbers": [
+          {
+            "text": "副驾驶：检测通过33",
+            "numbers": [
+              "33"
+            ],
+            "bounds": [
+              78,
+              2340,
+              1144,
+              2483
+            ],
+            "reason": "detection_pass_summary_not_history_repair_count"
+          }
+        ]
+      }
+    }
+  },
+  "pricing": {
+    "target_score": 91.0,
+    "final_reference_index": 5,
+    "selected_reference_score": 96.0,
+    "selected_reference_price": "4.16万",
+    "suggested_listing_price": 41600,
+    "guazi_service_fee_yuan": 2500,
+    "guazi_net_payout_yuan": 39100,
+    "guazi_return_price_yuan": 39100,
+    "suggested_purchase_price_yuan": 34472,
+    "old_95_percent_rule_used": false,
+    "s17_payload_summary": {
+      "task_status": "priced",
+      "suggested_listing_price_yuan": 41600,
+      "suggested_acquisition_price_yuan": 34472,
+      "final_reference_index": 5,
+      "reference_score": 96.0,
+      "target_score": 91.0
+    }
+  },
+  "manual_review_and_risks": {
+    "manual_review_reasons": [
+      "目标车缺少出险次数，已采用默认分。",
+      "目标车缺少最大金额，已采用默认分。",
+      "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。"
+    ],
+    "sample_shortage_warning_present": true,
+    "target_condition_minor_damage_scoring_review_present": false,
+    "reference_shortage_or_all_low_score_risk": false,
+    "other_notes": [
+      "Manual review reasons are carried in S17 payload; full chain still priced successfully."
+    ]
+  },
+  "slow_actions": [
+    {
+      "action": "S14_COLLECT",
+      "duration_ms": 21238,
+      "detail": "max timing row for this step",
+      "affects_correctness": false,
+      "optimize_immediately": false,
+      "recommendation": "Keep as baseline evidence; optimize later in a separate performance task."
+    },
+    {
+      "action": "S14_HORIZONTAL_SWIPE",
+      "duration_ms": 5427,
+      "detail": "4 timing rows; max duration used.",
+      "affects_correctness": false,
+      "optimize_immediately": false,
+      "recommendation": "Keep as baseline evidence; optimize later in a separate performance task."
+    },
+    {
+      "action": "S10_TO_S11 XML fresh",
+      "duration_ms": 10073,
+      "detail": "max timing row for this step",
+      "affects_correctness": false,
+      "optimize_immediately": false,
+      "recommendation": "Keep as baseline evidence; optimize later in a separate performance task."
+    },
+    {
+      "action": "S11_REPORT_SEARCH",
+      "duration_ms": 9821,
+      "detail": "max timing row for this step",
+      "affects_correctness": false,
+      "optimize_immediately": false,
+      "recommendation": "Keep as baseline evidence; optimize later in a separate performance task."
+    },
+    {
+      "action": "S11_TO_S12",
+      "duration_ms": 11544,
+      "detail": "max timing row for this step",
+      "affects_correctness": false,
+      "optimize_immediately": false,
+      "recommendation": "Keep as baseline evidence; optimize later in a separate performance task."
+    },
+    {
+      "action": "S14_RETURN_TO_S10",
+      "duration_ms": 8319,
+      "detail": "max timing row for this step",
+      "affects_correctness": false,
+      "optimize_immediately": false,
+      "recommendation": "Keep as baseline evidence; optimize later in a separate performance task."
+    }
+  ],
+  "capability_reuse_acceptance": {
+    "APP_FORCE_RESTART": true,
+    "S01_to_S10_first_stage": true,
+    "S07_color_age_filter": true,
+    "S09_price_low_to_high": true,
+    "S10_READY_gate": true,
+    "reference_index_sequential_loop": true,
+    "canonical_reference_order": true,
+    "same_price_mileage_desc": true,
+    "complete_card_gate": true,
+    "S11_top_image_recognition": true,
+    "report_entry_full_visible_safe_click": true,
+    "S11_TO_S12_stable_wait": true,
+    "S12_priority_over_S14": true,
+    "S13_raw_nodes_history_repair_parser": true,
+    "S14_repair_item_collect": true,
+    "S15_single_reference_scoring": true,
+    "S16_service_fee_tier_pricing": true,
+    "S17_payload_output": true,
+    "reference_history_retained": true,
+    "old_target_pollution_protection": true,
+    "raw_xml_not_written_to_result_json": true
+  },
+  "old_target_pollution_scan": {
+    "focus": false,
+    "toyota": false,
+    "mini": false,
+    "one_15t": false,
+    "yaris": false
+  },
+  "raw_xml_large_field_present": false
+}

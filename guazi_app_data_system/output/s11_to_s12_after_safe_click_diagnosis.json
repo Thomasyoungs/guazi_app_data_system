@@ -1,0 +1,150 @@
+{
+  "diagnosis_time": "2026-05-08T15:43:37",
+  "target_fingerprint": "福特|福克斯|2017款|两厢 1.6L 自动舒适型智行版|白|2017.07",
+  "selected_reference_index": 2,
+  "selected_card_price": "2.55万",
+  "selected_card_metadata": "2017年 | 12.01万公里 | 唐山",
+  "input_status": "S11_TO_S12_AFTER_FULL_VISIBLE_REPORT_CLICK_CONTRACT_MISMATCH",
+  "phase_1_readonly_diagnosis": {
+    "safe_report_click_performed": true,
+    "exact_report_entry_seen": true,
+    "exact_report_entry_fully_visible": true,
+    "exact_report_entry_in_safe_click_region": true,
+    "clicked_text": "查看完整报告",
+    "clicked_bounds": [
+      80,
+      931,
+      597,
+      1045
+    ],
+    "clicked_point": [
+      338,
+      988
+    ],
+    "click_strategy": "same_row_report_text_safe_region",
+    "clicked_target_type": "safe_exact_text_bounds_without_clickable_parent",
+    "report_visibility": {
+      "exact_report_entry_seen": true,
+      "viewport_bounds": [
+        0,
+        0,
+        1220,
+        2712
+      ],
+      "bounds_source": "xml_visible_bounds",
+      "screen_height": 2712,
+      "safe_top_y": 135,
+      "safe_bottom_y": 2342,
+      "safe_bottom_source": "bottom_bar_top_minus_margin",
+      "bottom_bar_detected": true,
+      "bottom_bar_bounds": [
+        0,
+        2423,
+        1220,
+        2513
+      ],
+      "bottom_action_hits": [
+        {
+          "text": "电话",
+          "bounds": [
+            44,
+            2468,
+            132,
+            2513
+          ]
+        },
+        {
+          "text": "收藏",
+          "bounds": [
+            177,
+            2468,
+            265,
+            2513
+          ]
+        },
+        {
+          "text": "咨询车况",
+          "bounds": [
+            353,
+            2423,
+            623,
+            2479
+          ]
+        },
+        {
+          "text": "讲价",
+          "bounds": [
+            652,
+            2423,
+            900,
+            2479
+          ]
+        },
+        {
+          "text": "查看报价",
+          "bounds": [
+            906,
+            2423,
+            1176,
+            2479
+          ]
+        }
+      ],
+      "report_entry_bounds": [
+        80,
+        931,
+        597,
+        1045
+      ],
+      "node_height": 114,
+      "within_screen": true,
+      "node_height_normal": true,
+      "below_safe_bottom": false,
+      "overlapped_bottom_bar": false,
+      "too_close_to_bottom": false,
+      "above_safe_top": false,
+      "exact_report_entry_fully_visible": true,
+      "exact_report_entry_in_safe_click_region": true,
+      "reason": "fully_visible_safe"
+    },
+    "before_click_digest": "0889e4e421c999474ed9b0b6efdbcaf60145e95e50d8218ccf8e8179fbbab480",
+    "after_click_digest": "8ccd8951f99a1e681fceb437643202a4911a79d9e213f5c8f846c3c1b4e1fff0",
+    "page_changed_after_report_click": true,
+    "xml_changed_after_click": true,
+    "visible_text_changed_after_click": true,
+    "screenshot_changed_after_click": true,
+    "before_click_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260508_145514.png",
+    "after_click_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_to_s12_20260508_145519.png",
+    "before_click_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260508_145514.xml",
+    "after_click_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_to_s12_20260508_145519.xml",
+    "actual_package": "com.ganji.android.haoche_c",
+    "focused_window": "com.ganji.android.haoche_c/com.guazi.h5.Html5NewContainerActivity",
+    "recognized_page": "S14",
+    "top_candidate_page": "S12_candidate_with_loading_overlay_and_S14_priority_misrecognition",
+    "visible_text_digest_sample": "瓜子官方检测报告 | 车图 | 福特 福克斯 2017款 两厢 1.6L 自动舒适型智行版 | 2017-11 | ｜ | 12.01万公里 | qnbdp1066x74b5e6f507e34dc3843166ff0757a1101731933575 | 经典操控王 | 底盘扎实，配备8英寸大屏与倒车影像。车龄8年5个月，行驶12.01万公里，年均仅1.4万公里使用强度低，有2次出险记录，涉及前部覆盖件及功能件更换修复，但均未伤及车身骨架，主体结构完好。 | 核心结构件完好率远超大部分车 | ，机械状态良好。 | 价格仅为新车2折，省下约12万元 | ，比平台均价还低近万元，是追求驾驶乐趣与高性价比的年轻人练手代步的绝佳选择。 | [AI生成] | 车身外观达标 | 车身外观 | 达标 | 0项改装 | 内饰/配置一般 | 0项改装 | 车身骨架优秀 | 0项改装 | 机舱工况极品 | 0项改装 | 保险理赔记录 | 瓜子付费为您查询的第三方数据·更客观 |  | 理赔次数2次 | 核心部件1处 | 最大金额5000元 | 车源编号:166581064 | VIN码:LVS****5625 | 检测日期:2026-05-05 | 重大问题排查 | 车身外观 | 内饰及配置 | 车身骨架 | 机舱工况 | 重大问题排查 | 重大问题排查 | 排除重大事故车 | 排除火烧车",
+    "why_s12_not_recognized": "??? XML ??????????????? _recognize_mainline_page ? S12 ?????? S14 ????????????????? loading overlay???? recognized_page=S14 ???",
+    "missing_s12_required_signals": [],
+    "matched_s10_signals": [],
+    "misrecognized_by_s10": false,
+    "s12_recognizer_priority_lower_than_s14": true,
+    "s12_candidate": true,
+    "s12_candidate_signals": [],
+    "s12_candidate_confidence": "high",
+    "s14_like_signals_causing_current_recognizer_hit": [],
+    "screenshot_loading_overlay_present": true
+  },
+  "classification": "REPORT_CLICK_INTERMEDIATE_OR_LOADING",
+  "secondary_classification": "REPORT_CLICK_NAVIGATED_TO_S12_CANDIDATE_BUT_RECOGNIZED_AS_S14",
+  "patch_allowed_this_turn": false,
+  "patch_block_reason": "?????????? D=REPORT_CLICK_NAVIGATED_TO_S12_BUT_RECOGNIZED_AS_S10 ??????? S12 recognizer/??????????? S12 ??????? S14?????? loading overlay?",
+  "recommended_next_patch": "PATCH_ONLY_S11_TO_S12_WAIT_STABLE_AND_S12_PRIORITY_OVER_S14_IN_S11_TO_S12_CONTEXT",
+  "recommended_patch_scope": [
+    "S11_TO_S12 ???????????????/loading???????? sleep???? XML?",
+    "?? S11_TO_S12 transition context ??? S12 ????????? S14 ????????",
+    "S12 ????????????/?????"
+  ],
+  "code_modified": false,
+  "config_modified": false,
+  "contract_doc_modified": false,
+  "pricing_modified": false
+}

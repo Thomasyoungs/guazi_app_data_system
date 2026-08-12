@@ -1,0 +1,106 @@
+{
+  "status": "AUTO_PRICING_SUCCESS_PATH_FELL_TO_MANUAL_REVIEW",
+  "raw_final_status": "FULL_CHAIN_MANUAL_REVIEW_DONE",
+  "s16_status": "S16_READY",
+  "target_fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "first_stage_restored_reliable_s10": true,
+  "second_stage_started": true,
+  "second_stage_reached_s16": true,
+  "rule_source_guard": {
+    "active_scoring_rule_version": "V1.8",
+    "active_scoring_rule_doc": "瓜子自动定价打分规则V1.8_参考车选择V3_边界确认法版.docx",
+    "active_reference_selection_rule": "V3_BOUNDARY_CONFIRMATION",
+    "active_pricing_rule_version": "SERVICE_FEE_TIER_V3_BOUNDARY_CONFIRMATION",
+    "active_pricing_rule_doc": "定价逻辑备份_服务费阶梯修正版_参考车选择V3边界确认法版.docx",
+    "active_competition_coefficient_version": "V1.2.3",
+    "active_competition_coefficient_doc": "目标车竞争力系数算法设计_V1.2.3_参考车选择V3适配版.docx",
+    "active_config_files": [
+      "config/fields.yaml"
+    ],
+    "active_pricing_py_version": "655ee15bb85897fa",
+    "rule_source_guard_passed": true,
+    "rule_source_mismatches": []
+  },
+  "rule_source_guard_passed": true,
+  "target_score": {
+    "score": 90.5,
+    "components": {
+      "body_score": 70.0,
+      "mileage_score": 6.5,
+      "transfer_score": 7.0,
+      "accident_score": 4.0,
+      "max_amount_score": 3.0
+    },
+    "review_reasons": [
+      "目标车缺少出险次数，已采用默认分。",
+      "目标车缺少最大金额，已采用默认分。"
+    ],
+    "hard_reject": false
+  },
+  "reference_selection": {
+    "reference_selection_rule": "V3_BOUNDARY_CONFIRMATION",
+    "reference_selection_rule_version": "V3_BOUNDARY_CONFIRMATION",
+    "boundary_confirmed": true,
+    "boundary_reference_index": 1,
+    "boundary_reference_score": 94.5,
+    "pre_boundary_reference_index": null,
+    "final_reference_index": null,
+    "final_reference_score": null,
+    "final_reference_price": null,
+    "final_reference_selection_reason": "first_valid_reference_score_above_target",
+    "manual_review_reason": "FIRST_REFERENCE_SCORE_ABOVE_TARGET"
+  },
+  "reference_history_summary": [
+    {
+      "reference_index": 1,
+      "price_yuan": 111700,
+      "list_price_10k": 11.17,
+      "reference_score": 94.5,
+      "reference_score_components": {
+        "body_score": 70.0,
+        "mileage_score": 6.5,
+        "transfer_score": 7.0,
+        "accident_score": 6.0,
+        "max_amount_score": 5.0
+      },
+      "reference_score_trustworthy": true,
+      "eligible_boundary_reference": true,
+      "boundary_reference": true,
+      "s14_collect_done": true,
+      "manual_review_required": false,
+      "manual_review_reasons": []
+    }
+  ],
+  "page_chain_regression": {
+    "s10_handoff_passed": true,
+    "s11_reached": true,
+    "s12_reached": true,
+    "s13_reached": true,
+    "s14_reached": true,
+    "s15_reached": true,
+    "s16_reached": true
+  },
+  "pricing": {
+    "pricing_status": "manual_review",
+    "pricing_reason": "无有效参考车",
+    "final_price_generated": false,
+    "pricing_payload_generated": true,
+    "auto_pricing_allowed": false,
+    "manual_review_required": true,
+    "manual_review_reasons": [
+      "目标车缺少出险次数，已采用默认分。",
+      "目标车缺少最大金额，已采用默认分。",
+      "FIRST_REFERENCE_SCORE_ABOVE_TARGET"
+    ]
+  },
+  "v18_scoring_verified": {
+    "target_mileage_score": 6.5,
+    "target_accident_score": 4.0,
+    "target_max_amount_score": 3.0,
+    "reference_1_max_amount_score": 5.0,
+    "reference_1_accident_score": 6.0
+  },
+  "code_modified": false,
+  "config_modified": false,
+  "page_contract_modified": false
+}

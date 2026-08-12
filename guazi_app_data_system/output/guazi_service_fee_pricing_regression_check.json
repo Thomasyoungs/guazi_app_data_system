@@ -1,0 +1,177 @@
+{
+  "status": "GUAZI_SERVICE_FEE_PRICING_REGRESSION_PASSED",
+  "generated_at_local": "2026-05-09",
+  "read_only": true,
+  "modified_code": false,
+  "modified_config": false,
+  "modified_pricing": false,
+  "device_run": false,
+  "result_json_overwritten": false,
+  "baseline_reports_overwritten": false,
+  "code_residual_check": {
+    "activity_pricing_old_rate_remaining": false,
+    "searched_patterns": [
+      "0.95",
+      "95%",
+      "guazi_return_rate",
+      "guazi_price * 0.95",
+      "reference_price * 0.95",
+      "瓜子定价 × 95%",
+      "瓜子回款价"
+    ],
+    "non_pricing_0_95_occurrences": [
+      {
+        "path": "src/guazi_app_data_system/issue_classifier.py",
+        "lines": [
+          708,
+          916,
+          955,
+          1001,
+          1300
+        ],
+        "reason": "confidence score, not pricing payout logic"
+      }
+    ],
+    "conclusion": "活动定价代码中未发现 0.95 回款价逻辑；issue_classifier.py 的 0.95 是置信度，不算残留。"
+  },
+  "service_fee_function": {
+    "path": "src/guazi_app_data_system/pricing.py",
+    "function": "calc_guazi_service_fee",
+    "tiers_checked": [
+      {
+        "condition": "price < 50000",
+        "service_fee_yuan": 2500
+      },
+      {
+        "condition": "price >= 50000 and price < 100000",
+        "service_fee_yuan": 3500
+      },
+      {
+        "condition": "price >= 100000 and price < 150000",
+        "service_fee_yuan": 4500
+      },
+      {
+        "condition": "price >= 150000 and price < 200000",
+        "service_fee_yuan": 6000
+      },
+      {
+        "condition": "price >= 200000",
+        "service_fee_yuan": 8000
+      }
+    ],
+    "boundary_semantics": ">=",
+    "matching_order": "high_to_low",
+    "config_path": "config/fields.yaml:106"
+  },
+  "offline_samples": [
+    {
+      "guazi_price_yuan": 26200,
+      "expected_service_fee_yuan": 2500,
+      "actual_service_fee_yuan": 2500,
+      "expected_payout_yuan": 23700,
+      "actual_payout_yuan": 23700,
+      "passed": true
+    },
+    {
+      "guazi_price_yuan": 27800,
+      "expected_service_fee_yuan": 2500,
+      "actual_service_fee_yuan": 2500,
+      "expected_payout_yuan": 25300,
+      "actual_payout_yuan": 25300,
+      "passed": true
+    },
+    {
+      "guazi_price_yuan": 49999,
+      "expected_service_fee_yuan": 2500,
+      "actual_service_fee_yuan": 2500,
+      "expected_payout_yuan": 47499,
+      "actual_payout_yuan": 47499,
+      "passed": true
+    },
+    {
+      "guazi_price_yuan": 50000,
+      "expected_service_fee_yuan": 3500,
+      "actual_service_fee_yuan": 3500,
+      "expected_payout_yuan": 46500,
+      "actual_payout_yuan": 46500,
+      "passed": true
+    },
+    {
+      "guazi_price_yuan": 99999,
+      "expected_service_fee_yuan": 3500,
+      "actual_service_fee_yuan": 3500,
+      "expected_payout_yuan": 96499,
+      "actual_payout_yuan": 96499,
+      "passed": true
+    },
+    {
+      "guazi_price_yuan": 100000,
+      "expected_service_fee_yuan": 4500,
+      "actual_service_fee_yuan": 4500,
+      "expected_payout_yuan": 95500,
+      "actual_payout_yuan": 95500,
+      "passed": true
+    },
+    {
+      "guazi_price_yuan": 149999,
+      "expected_service_fee_yuan": 4500,
+      "actual_service_fee_yuan": 4500,
+      "expected_payout_yuan": 145499,
+      "actual_payout_yuan": 145499,
+      "passed": true
+    },
+    {
+      "guazi_price_yuan": 150000,
+      "expected_service_fee_yuan": 6000,
+      "actual_service_fee_yuan": 6000,
+      "expected_payout_yuan": 144000,
+      "actual_payout_yuan": 144000,
+      "passed": true
+    },
+    {
+      "guazi_price_yuan": 199999,
+      "expected_service_fee_yuan": 6000,
+      "actual_service_fee_yuan": 6000,
+      "expected_payout_yuan": 193999,
+      "actual_payout_yuan": 193999,
+      "passed": true
+    },
+    {
+      "guazi_price_yuan": 200000,
+      "expected_service_fee_yuan": 8000,
+      "actual_service_fee_yuan": 8000,
+      "expected_payout_yuan": 192000,
+      "actual_payout_yuan": 192000,
+      "passed": true
+    }
+  ],
+  "historical_impact_read_only": [
+    {
+      "baseline": "福克斯",
+      "reference_price_yuan": 26200,
+      "old_95_percent_payout_yuan": 24890,
+      "new_service_fee_payout_yuan": 23700,
+      "payout_delta_yuan": -1190,
+      "old_suggested_purchase_price_yuan": 20890,
+      "recalculated_if_other_deductions_unchanged_yuan": 19700,
+      "files_overwritten": false
+    },
+    {
+      "baseline": "丰田致炫",
+      "reference_price_yuan": 27800,
+      "old_95_percent_payout_yuan": 26410,
+      "new_service_fee_payout_yuan": 25300,
+      "payout_delta_yuan": -1110,
+      "old_suggested_purchase_price_yuan": 22410,
+      "recalculated_if_other_deductions_unchanged_yuan": 21300,
+      "files_overwritten": false
+    }
+  ],
+  "future_output_fields": {
+    "guazi_price_yuan": "瓜子定价",
+    "guazi_service_fee_yuan": "服务费",
+    "guazi_net_payout_yuan": "瓜子定价 - 服务费",
+    "guazi_return_price_yuan": "兼容字段，等于 guazi_net_payout_yuan",
+    "suggested_purchase_price_yuan": "建议收车价字段；当前代码输出 suggested_acquisition_price_yuan，S17 payload 映射为建议收车价。"
+  }
+}

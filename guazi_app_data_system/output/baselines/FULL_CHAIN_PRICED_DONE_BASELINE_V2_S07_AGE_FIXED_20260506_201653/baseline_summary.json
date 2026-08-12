@@ -1,0 +1,59 @@
+{
+  "baseline_name": "FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED",
+  "baseline_dir": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\baselines\\FULL_CHAIN_PRICED_DONE_BASELINE_V2_S07_AGE_FIXED_20260506_201653",
+  "baseline_time": "20260506_201653",
+  "baseline_type": "functional_stability_baseline",
+  "replaces_v1": false,
+  "performance_best": false,
+  "previous_baseline_preserved": "FULL_CHAIN_PRICED_DONE_BASELINE_V1",
+  "status": {
+    "first_stage_status": "S10_READY",
+    "second_stage_status": "FULL_CHAIN_PRICED_DONE",
+    "final_status": "FULL_CHAIN_PRICED_DONE",
+    "S07_FILTER_DONE": true,
+    "COLOR_FILTER_DONE": true,
+    "AGE_FILTER_DONE": true,
+    "SORT_DONE": true,
+    "S10_READY": true,
+    "S14_COLLECT_DONE": true
+  },
+  "s07_right_age_slider_fix_validation": {
+    "age_tick_labels_detected": [
+      "0",
+      "2",
+      "4",
+      "6",
+      "8",
+      "10",
+      "??"
+    ],
+    "age_tick_unlimited_detected": true,
+    "selected_right_handle_bounds": [
+      1053,
+      1248,
+      1176,
+      1387
+    ],
+    "selected_right_handle_note": "?????????? [1053,1235,1176,1387]????????????? [1053,1248,1176,1387]",
+    "right_age_after_confirm": 2,
+    "exact_age_text": "2-2?",
+    "AGE_FILTER_DONE": true
+  },
+  "pricing_summary": {
+    "reference_price_10k": 12.87,
+    "reference_score": 91.5,
+    "target_score": 88.0,
+    "suggested_listing_price_yuan": 128700,
+    "suggested_acquisition_price_yuan": 109984
+  },
+  "manual_review_reasons": [
+    "目标车缺少出险次数，已采用默认分。",
+    "目标车缺少最大金额，已采用默认分。",
+    "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。"
+  ],
+  "performance_note": {
+    "v2_is_performance_best": false,
+    "note": "V2 ????????V2 ???????? V1?V1 ????????????"
+  },
+  "next_recommended_branch": "PATCH_ONLY_PERFORMANCE_OVER_2S_BASED_ON_V2"
+}

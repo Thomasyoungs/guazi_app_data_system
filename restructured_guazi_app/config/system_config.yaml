@@ -1,0 +1,23 @@
+# 系统配置
+system:
+  paths:
+    result_json: "output/result.json"
+    screenshots: "output/screenshots"
+    audit_log: "output/audit.log"
+    issue_log: "output/issues.log"
+    task_root: "output/tasks"
+
+# 定价规则配置
+pricing_rules:
+  same_source_policy:
+    sample_too_small_message: "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。"
+    
+  # 最小样本数量
+  minimum_sample_size: 3
+  
+  # 评分权重配置
+  score_weights:
+    year: 0.3
+    mileage: 0.3
+    features: 0.2
+    market_condition: 0.2

@@ -1,0 +1,392 @@
+{
+  "status": "SYSTEM_LOCK_CHECK_AFTER_V1_11_PASSED_READY_FOR_NEXT_PHASE",
+  "generated_at": "2026-05-09T07:40:49.947Z",
+  "read_only": true,
+  "modified_code": false,
+  "modified_contract_doc": false,
+  "modified_config": false,
+  "modified_pricing": false,
+  "device_run": false,
+  "result_json_overwritten": false,
+  "baseline_files_overwritten": false,
+  "baselines": {
+    "focus": {
+      "baseline_name": "BASELINE_FOCUS_2017_FULL_CHAIN_PRICED_DONE_202605",
+      "expected_name": "BASELINE_FOCUS_2017_FULL_CHAIN_PRICED_DONE_202605",
+      "target_fingerprint": "福特|福克斯|2017款|两厢 1.6L 自动舒适型智行版|白|2017.07",
+      "acceptance_status": "FULL_CHAIN_ACCEPTANCE_PASSED_BASELINE_READY",
+      "freeze_status": "BASELINE_FREEZE_READY",
+      "lock_status": "BASELINE_LOCK_CHECK_PASSED_READY_FOR_NEXT_TARGET",
+      "final_chain_status": "FULL_CHAIN_PRICED_DONE",
+      "old_purchase_price_yuan": 20890,
+      "new_service_fee_impact_purchase_price_yuan": 19700,
+      "old_result_overwritten": false
+    },
+    "toyota_yaris": {
+      "baseline_name": "BASELINE_TOYOTA_YARIS_2015_FULL_CHAIN_PRICED_DONE_202605",
+      "expected_name": "BASELINE_TOYOTA_YARIS_2015_FULL_CHAIN_PRICED_DONE_202605",
+      "target_fingerprint": "丰田|YARiS L 致炫|2015款|1.5E 自动魅动版|白|2015.07",
+      "acceptance_status": "TOYOTA_YARIS_FULL_CHAIN_ACCEPTANCE_PASSED",
+      "freeze_status": "TOYOTA_YARIS_BASELINE_FREEZE_READY",
+      "final_chain_status": "FULL_CHAIN_PRICED_DONE",
+      "old_purchase_price_yuan": 22410,
+      "new_service_fee_impact_purchase_price_yuan": 21300,
+      "old_result_overwritten": false
+    },
+    "santana": {
+      "baseline_name": "BASELINE_SANTANA_2021_FULL_CHAIN_PRICED_DONE_202605",
+      "expected_name": "BASELINE_SANTANA_2021_FULL_CHAIN_PRICED_DONE_202605",
+      "target_fingerprint": "大众|桑塔纳|2021款|1.5L 自动风尚版|白|2021.05",
+      "acceptance_status": "SANTANA_FULL_CHAIN_ACCEPTANCE_PASSED",
+      "freeze_status": "SANTANA_BASELINE_FREEZE_READY",
+      "final_chain_status": "FULL_CHAIN_PRICED_DONE",
+      "old_result_overwritten": false
+    }
+  },
+  "rule_consistency": {
+    "reference_loop_rule": {
+      "not_fixed_2_or_3_or_5": true,
+      "wording": "按 S10 reference_index 逐辆采集，每辆 S15 判断；字段完整、未淘汰、reference_score >= target_score 时立即达标即停，进入 S16。",
+      "evidence_files": [
+        "output/baseline_freeze_package.json",
+        "output/toyota_yaris_baseline_freeze_package.json",
+        "output/santana_baseline_freeze_package.json"
+      ]
+    },
+    "s10_reference_order_rule": {
+      "live_reliable_s10_reparse": true,
+      "order": [
+        "price_yuan ascending",
+        "same price mileage_10k_km descending",
+        "live_display_order ascending"
+      ],
+      "evidence": {
+        "rule_name": "S10_REFERENCE_ORDER_RULE",
+        "order": [
+          "price_yuan ascending",
+          "same price: mileage_10k_km descending",
+          "same price and same mileage: live_display_order ascending"
+        ],
+        "must_reparse_live_reliable_s10": true,
+        "santana_evidence": "4.03万同价组中，11.74万公里排在 9.9万公里前；后续 4.16万同价组中，5.63万公里排在 4.62万公里前。",
+        "no_old_snapshot_indexing": true
+      }
+    },
+    "s10_complete_card_gate": {
+      "required_fields": [
+        "title",
+        "price",
+        "metadata",
+        "year",
+        "mileage",
+        "city"
+      ],
+      "partial_card_no_click": true,
+      "evidence": {
+        "required_fields": [
+          "title",
+          "price",
+          "metadata",
+          "year",
+          "mileage",
+          "city"
+        ],
+        "forbidden_click_conditions": [
+          "price empty",
+          "metadata empty",
+          "bottom title fragment only",
+          "card outside safe viewport"
+        ],
+        "partial_card_policy": "partial card is recorded but not counted as valid reference_history; scroll slightly to complete, fresh, reparse; stop if still incomplete.",
+        "patch_evidence": {
+          "xml_path": "artifacts/debug/s10_s16_start_20260509_143020.xml",
+          "target_fingerprint": "大众|桑塔纳|2021款|1.5L 自动风尚版|白|2021.05",
+          "invalid_partial_reference_detected": true,
+          "invalid_partial_reference_index": 5,
+          "continuation_recovered_next_reference_index": 5,
+          "valid_reference_history_count": 4,
+          "complete_card_count": 4,
+          "partial_card_count": 1,
+          "partial_card": {
+            "live_display_order": 5,
+            "title": "大众 桑塔纳 2021款 1.5L 自动风尚版",
+            "missing_price": true,
+            "missing_metadata": true,
+            "bounds": [
+              429,
+              2492,
+              1196,
+              2513
+            ],
+            "incomplete_reason": [
+              "missing_price",
+              "missing_metadata",
+              "missing_year",
+              "missing_mileage",
+              "missing_city",
+              "bottom_partial_card_or_outside_safe_viewport"
+            ]
+          },
+          "selection_stop_code": "S10_REFERENCE_CARD_PARTIAL_VISIBLE",
+          "click_allowed": false
+        }
+      }
+    },
+    "s13_history_repair_parser": {
+      "raw_xml_nodes_bounds_used": true,
+      "visible_texts_dedup_used": false,
+      "exclude_detection_pass_summary_numbers": true,
+      "evidence": {
+        "visible_texts_dedup_used": false,
+        "raw_xml_nodes_bounds_used": true,
+        "duplicate_zero_preserved": true,
+        "detection_pass_summary_excluded": [
+          "检测通过36",
+          "检测通过10"
+        ],
+        "uncertain_count_policy": "stop; do not default to 0 and do not misread summary numbers",
+        "patch_status": "PATCH_ONLY_S13_HISTORY_REPAIR_DUPLICATE_ZERO_PARSER_DONE"
+      }
+    },
+    "s07_hidden_age_ticks": {
+      "visible_ticks": [
+        "0",
+        "2",
+        "4",
+        "6",
+        "8",
+        "10",
+        "不限"
+      ],
+      "hidden_11": "10 右侧第 1 个隐藏节点",
+      "hidden_12": "10 右侧第 2 个隐藏节点",
+      "must_verify_text": [
+        "11-11年",
+        "12-12年"
+      ],
+      "target_age_gt_12_no_auto_unlimited": true
+    },
+    "guazi_service_fee_pricing": {
+      "old_rule_deprecated": "瓜子回款价 = 瓜子定价 × 95%",
+      "new_rule": "瓜子回款价 = 瓜子定价 - 瓜子服务费",
+      "tiers": [
+        {
+          "condition": "guazi_price_yuan >= 200000",
+          "service_fee_yuan": 8000
+        },
+        {
+          "condition": "guazi_price_yuan >= 150000 and guazi_price_yuan < 200000",
+          "service_fee_yuan": 6000
+        },
+        {
+          "condition": "guazi_price_yuan >= 100000 and guazi_price_yuan < 150000",
+          "service_fee_yuan": 4500
+        },
+        {
+          "condition": "guazi_price_yuan >= 50000 and guazi_price_yuan < 100000",
+          "service_fee_yuan": 3500
+        },
+        {
+          "condition": "guazi_price_yuan < 50000",
+          "service_fee_yuan": 2500
+        }
+      ],
+      "regression_status": "GUAZI_SERVICE_FEE_PRICING_REGRESSION_PASSED",
+      "freeze_status": "GUAZI_SERVICE_FEE_PRICING_RULE_FREEZE_READY"
+    }
+  },
+  "code_capabilities": {
+    "reliable_s10_gate": true,
+    "canonical_reference_order": true,
+    "same_price_mileage_desc": true,
+    "card_complete_gate": true,
+    "partial_card_detection": true,
+    "s13_raw_nodes_history_repair": true,
+    "s11_to_s12_stable_wait": true,
+    "s12_priority_over_s14": true,
+    "calc_guazi_service_fee": true,
+    "guazi_service_fee_tiers": true,
+    "no_active_pricing_095": true,
+    "issue_classifier_095_confidence_only": true
+  },
+  "s07_hidden_tick_code_capability": {
+    "hidden_tick_11_12": true,
+    "target_age_x": true,
+    "one_year_step": true,
+    "verify_failure_codes": true,
+    "no_auto_unlimited_over_12": true
+  },
+  "documents": {
+    "main_flow_v1_11_docx": {
+      "path": "C:\\Users\\lzc93\\Desktop\\定价\\瓜子数据获取流程文档_V1.11_桑塔纳闭环冻结_S10同价完整车卡_S13历史修复解析版.docx",
+      "exists": true
+    },
+    "pricing_service_fee_docx": {
+      "path": "C:\\Users\\lzc93\\Desktop\\定价\\定价逻辑备份_服务费阶梯修正版.docx",
+      "exists": true
+    }
+  },
+  "checks": [
+    {
+      "name": "focus baseline name",
+      "passed": true,
+      "detail": "BASELINE_FOCUS_2017_FULL_CHAIN_PRICED_DONE_202605"
+    },
+    {
+      "name": "focus freeze ready",
+      "passed": true,
+      "detail": "BASELINE_FREEZE_READY"
+    },
+    {
+      "name": "focus lock passed",
+      "passed": true,
+      "detail": "BASELINE_LOCK_CHECK_PASSED_READY_FOR_NEXT_TARGET"
+    },
+    {
+      "name": "focus acceptance passed",
+      "passed": true,
+      "detail": "FULL_CHAIN_ACCEPTANCE_PASSED_BASELINE_READY"
+    },
+    {
+      "name": "toyota baseline name",
+      "passed": true,
+      "detail": "BASELINE_TOYOTA_YARIS_2015_FULL_CHAIN_PRICED_DONE_202605"
+    },
+    {
+      "name": "toyota freeze ready",
+      "passed": true,
+      "detail": "TOYOTA_YARIS_BASELINE_FREEZE_READY"
+    },
+    {
+      "name": "toyota acceptance passed",
+      "passed": true,
+      "detail": "TOYOTA_YARIS_FULL_CHAIN_ACCEPTANCE_PASSED"
+    },
+    {
+      "name": "santana baseline name",
+      "passed": true,
+      "detail": "BASELINE_SANTANA_2021_FULL_CHAIN_PRICED_DONE_202605"
+    },
+    {
+      "name": "santana freeze ready",
+      "passed": true,
+      "detail": "SANTANA_BASELINE_FREEZE_READY"
+    },
+    {
+      "name": "santana acceptance passed",
+      "passed": true,
+      "detail": "SANTANA_FULL_CHAIN_ACCEPTANCE_PASSED"
+    },
+    {
+      "name": "code capability: reliable_s10_gate",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "code capability: canonical_reference_order",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "code capability: same_price_mileage_desc",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "code capability: card_complete_gate",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "code capability: partial_card_detection",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "code capability: s13_raw_nodes_history_repair",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "code capability: s11_to_s12_stable_wait",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "code capability: s12_priority_over_s14",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "code capability: calc_guazi_service_fee",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "code capability: guazi_service_fee_tiers",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "code capability: no_active_pricing_095",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "code capability: issue_classifier_095_confidence_only",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "S07 capability: hidden_tick_11_12",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "S07 capability: target_age_x",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "S07 capability: one_year_step",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "S07 capability: verify_failure_codes",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "S07 capability: no_auto_unlimited_over_12",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "pricing regression passed",
+      "passed": true,
+      "detail": "GUAZI_SERVICE_FEE_PRICING_REGRESSION_PASSED"
+    },
+    {
+      "name": "pricing rule freeze ready",
+      "passed": true,
+      "detail": "GUAZI_SERVICE_FEE_PRICING_RULE_FREEZE_READY"
+    },
+    {
+      "name": "V1.11 main flow doc exists",
+      "passed": true,
+      "detail": "C:\\Users\\lzc93\\Desktop\\定价\\瓜子数据获取流程文档_V1.11_桑塔纳闭环冻结_S10同价完整车卡_S13历史修复解析版.docx"
+    },
+    {
+      "name": "pricing service fee doc exists",
+      "passed": true,
+      "detail": "C:\\Users\\lzc93\\Desktop\\定价\\定价逻辑备份_服务费阶梯修正版.docx"
+    },
+    {
+      "name": "previous system lock passed",
+      "passed": true,
+      "detail": "SYSTEM_BASELINE_AND_PRICING_LOCK_CHECK_PASSED_READY_FOR_NEXT_TARGET"
+    }
+  ],
+  "failures": []
+}

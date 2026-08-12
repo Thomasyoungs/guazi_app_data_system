@@ -1,0 +1,300 @@
+{
+  "status": "S03_CONTRACT_VIOLATION_BRANCHES_REMOVED_VERIFIED_CLEAN",
+  "created_at": "2026-05-11T02:36:11.803587+00:00",
+  "target_fingerprint": "??|C10|2026?|210???|?|2026.02",
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py"
+  ],
+  "not_run": {
+    "real_device": true,
+    "second_stage": true,
+    "reference_collection": true,
+    "pricing": true
+  },
+  "contract_principle": "PAGE_CONTRACT_IS_ONLY_EXECUTION_STANDARD; S03 target visible => only brand row right safe click point is executable.",
+  "removed_or_disabled_branches": [
+    "S03 target-visible auxiliary new-energy-tab click branch",
+    "S03 target-visible/right-letter click branch",
+    "S03 linear scroll branch after target not found in current screen",
+    "S03 old action extension that added tap_new_energy to page actions",
+    "S04 brand-zone continuation fields for target_series_verified / visible_series_chips / selected_series_alias",
+    "S03_TO_S04 timing action name that referenced letter/scroll path"
+  ],
+  "residual_keyword_check": [
+    {
+      "keyword": "?????",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "new_energy",
+      "present": true,
+      "hit_count": 1,
+      "sample_hits": [
+        {
+          "line": 3323,
+          "text": "\"attempted_new_energy_tab\": False,"
+        }
+      ],
+      "classification": "non-executing audit/label/filter text; S03 no longer taps tabs or letters",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "???",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "attempted_tabs",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "attempted_letters",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "letter_L",
+      "present": true,
+      "hit_count": 1,
+      "sample_hits": [
+        {
+          "line": 3324,
+          "text": "\"attempted_letter_L\": False,"
+        }
+      ],
+      "classification": "non-executing audit/label/filter text; S03 no longer taps tabs or letters",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "letter_G",
+      "present": true,
+      "hit_count": 1,
+      "sample_hits": [
+        {
+          "line": 3325,
+          "text": "\"attempted_letter_G\": False,"
+        }
+      ],
+      "classification": "non-executing audit/label/filter text; S03 no longer taps tabs or letters",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "alphabet",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "scroll_brand",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "brand zone",
+      "present": true,
+      "hit_count": 1,
+      "sample_hits": [
+        {
+          "line": 5430,
+          "text": "\"Brand-zone mixed list is not a valid S04 branch in the V1.14 contract; refusing to search C10 or click model-config filter inside brand zone.\","
+        }
+      ],
+      "classification": "stop_only_or_diagnostic; brand-zone continuation is blocked, not executable as normal flow",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "BRAND_ZONE",
+      "present": true,
+      "hit_count": 36,
+      "sample_hits": [
+        {
+          "line": 560,
+          "text": "def _looks_like_s04_brand_zone_mixed_list(snapshot: dict[str, Any]) -> bool:"
+        },
+        {
+          "line": 562,
+          "text": "has_brand_zone = _text_has_any_variant(blob, (\"\\u54c1\\u724c\\u4e13\\u533a\",))"
+        },
+        {
+          "line": 567,
+          "text": "return has_brand_zone and has_sort and has_price and has_model_config and has_vehicle_card_signal"
+        },
+        {
+          "line": 595,
+          "text": "if _looks_like_s04_brand_zone_mixed_list(snapshot):"
+        },
+        {
+          "line": 3215,
+          "text": "def _s03_brand_zone_text_nodes(snapshot: dict[str, Any], row_bounds: list[int] | tuple[int, int, int, int] | None = None) -> list[dict[str, Any]]:"
+        }
+      ],
+      "classification": "stop_only_or_diagnostic; brand-zone continuation is blocked, not executable as normal flow",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "????",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "target_series_verified",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "C10",
+      "present": true,
+      "hit_count": 1,
+      "sample_hits": [
+        {
+          "line": 5430,
+          "text": "\"Brand-zone mixed list is not a valid S04 branch in the V1.14 contract; refusing to search C10 or click model-config filter inside brand zone.\","
+        }
+      ],
+      "classification": "stop_only_or_diagnostic; brand-zone continuation is blocked, not executable as normal flow",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "??C10",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "????",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "BRAND_ZONE_MIXED_LIST",
+      "present": true,
+      "hit_count": 8,
+      "sample_hits": [
+        {
+          "line": 560,
+          "text": "def _looks_like_s04_brand_zone_mixed_list(snapshot: dict[str, Any]) -> bool:"
+        },
+        {
+          "line": 595,
+          "text": "if _looks_like_s04_brand_zone_mixed_list(snapshot):"
+        },
+        {
+          "line": 5393,
+          "text": "if _looks_like_s04_brand_zone_mixed_list(next_snapshot):"
+        },
+        {
+          "line": 5394,
+          "text": "context[\"s04_landing_type\"] = \"BRAND_ZONE_MIXED_LIST\""
+        },
+        {
+          "line": 5424,
+          "text": "if _looks_like_s04_brand_zone_mixed_list(snapshot):"
+        }
+      ],
+      "classification": "stop_only_or_diagnostic; brand-zone continuation is blocked, not executable as normal flow",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "fallback",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "??",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    },
+    {
+      "keyword": "??",
+      "present": false,
+      "hit_count": 0,
+      "sample_hits": [],
+      "classification": "absent",
+      "executable_contract_violation_branch": false
+    }
+  ],
+  "offline_replay": {
+    "target_brand_visible_replay": {
+      "xml_path": "C:/Users/lzc93/Desktop/定价/guazi_app_data_system/artifacts/debug/s03_after_letter_L_20260510_145401.xml",
+      "target_brand_visible": true,
+      "matched_alias": "零跑汽车",
+      "matched_brand_bounds": [
+        0,
+        529,
+        1155,
+        685
+      ],
+      "brand_row_bounds": [
+        0,
+        373,
+        1220,
+        841
+      ],
+      "selected_click_point": [
+        1196,
+        607
+      ],
+      "selected_click_region_type": "brand_row_right_safe_point",
+      "selected_click_overlaps_brand_zone": false,
+      "next_action": "S03_ONLY_ALLOWED_ACTION_CLICK_BRAND_ROW_RIGHT_SAFE_POINT",
+      "attempted_new_energy_tab": false,
+      "attempted_letter_L": false,
+      "attempted_letter_G": false,
+      "attempted_scroll": false,
+      "attempted_brand_name_click": false,
+      "attempted_brand_icon_click": false,
+      "attempted_brand_zone_click": false
+    },
+    "simulated_forbidden_action_when_target_visible": {
+      "target_brand_visible": true,
+      "attempted_action": "tap_new_energy_tab",
+      "allowed_action": "S03_ONLY_ALLOWED_ACTION_CLICK_BRAND_ROW_RIGHT_SAFE_POINT",
+      "stop_code": "S03_VISIBLE_TARGET_BRAND_NOT_CLICKED_BY_ONLY_ALLOWED_ACTION",
+      "would_continue": false
+    },
+    "brand_zone_page_replay": {
+      "xml_path": "C:/Users/lzc93/Desktop/定价/guazi_app_data_system/artifacts/debug/s03_to_s04_20260510_145409.xml",
+      "brand_zone_page_detected": true,
+      "continuation_allowed": false,
+      "stop_code": "S03_CLICKED_BRAND_ZONE_INSTEAD_OF_BRAND"
+    }
+  },
+  "py_compile": "passed",
+  "allow_next_step": true
+}

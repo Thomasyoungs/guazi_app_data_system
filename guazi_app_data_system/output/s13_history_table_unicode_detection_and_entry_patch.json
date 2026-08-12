@@ -1,0 +1,132 @@
+{
+  "status": "S13_HISTORY_TABLE_UNICODE_DETECTION_AND_ENTRY_PATCHED",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "forbidden_scopes_untouched": [
+    "scripts/runtime_s01_to_s10_mainline.py",
+    "S10 selected card autoscroll",
+    "S10 local title binding",
+    "S11 fresh pair / stale XML",
+    "S11 unsafe reposition",
+    "S12 main flow",
+    "S14 collection rules",
+    "pricing",
+    "config",
+    "metal_deduct",
+    "baseline",
+    "scoring/pricing rules"
+  ],
+  "changes": [
+    "Replaced mojibake history-repair arrival token with normal Unicode ???? in _history_arrival_reason.",
+    "Changed _has_s13_history_repair_table to detect arrival only from raw XML nodes + bounds local count bindings.",
+    "Persisted S13 detection fields on current_reference when the table is detected before scroll.",
+    "Suppressed scroll_history_repair_table when S13 history table count binding is already present."
+  ],
+  "real_sample_expected": {
+    "frame": "s12_to_s13_20260517_162823",
+    "driver_side_history_count": 4,
+    "selected_repair_detail_entry": "????",
+    "click_bounds": [
+      81,
+      1956,
+      611,
+      2067
+    ]
+  },
+  "offline_validation": {
+    "status": "PASSED",
+    "cases": {
+      "A_real_xml_driver_history_4": {
+        "input": "s12_to_s13_20260517_162823.xml",
+        "expected": "detect table and parse ???=4",
+        "actual_counts": {
+          "驾驶侧": 4,
+          "车尾": null,
+          "副驾驶": null,
+          "车头": null
+        },
+        "has_table": true,
+        "arrival_reason": "history_repair_table_tokens",
+        "token_source": "raw_xml_nodes_unicode_bounds",
+        "passed": true
+      },
+      "B_no_mojibake_dependency": {
+        "expected": "no mojibake token remains in S13 history detection path",
+        "actual": "_has_s13_history_repair_table uses raw_xml_nodes_unicode_bounds and _history_arrival_reason uses ????",
+        "passed": true
+      },
+      "C_attention_zero_not_history_count": {
+        "expected": "???? 0 not bound as history count",
+        "actual_driver_count": 4,
+        "attention_count_in_frame": 0,
+        "passed": true
+      },
+      "D_detection_pass_summary_not_history_count": {
+        "expected": "????36 not parsed as history repair count",
+        "actual_count": null,
+        "excluded_numbers": [
+          {
+            "text": "驾驶侧：检测通过31",
+            "numbers": [
+              "31"
+            ],
+            "bounds": [
+              610,
+              100,
+              780,
+              160
+            ],
+            "reason": "detection_pass_summary_not_history_repair_count"
+          }
+        ],
+        "passed": true
+      },
+      "E_table_seen_no_scroll_required": {
+        "expected": "history table appeared -> suppress scroll before controlled_scroll",
+        "actual_has_table_before_scroll": true,
+        "scroll_suppression_reason": "_scroll_s13_to_history_repair_table returns immediately when _has true",
+        "passed": true
+      },
+      "F_count_gt_zero_click_entry": {
+        "expected": "count>0 finds safe repair detail entry for S14",
+        "actual_ok": true,
+        "selected_text": "左侧前门",
+        "click_bounds": [
+          81,
+          1956,
+          611,
+          2067
+        ],
+        "passed": true
+      },
+      "G_all_zero_no_s14_required": {
+        "expected": "all four region counts 0 can be parsed, caller may skip S14",
+        "actual_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 0,
+          "车头": 0
+        },
+        "has_table": true,
+        "passed": true
+      },
+      "H_wrong_deep_scroll_frame_not_body_count_table": {
+        "expected": "interior/deep wrong frame does not produce body region counts",
+        "actual_counts": {
+          "驾驶侧": null,
+          "车尾": null,
+          "副驾驶": null,
+          "车头": null
+        },
+        "has_table": false,
+        "passed": true
+      },
+      "I_s11_s12_s14_static_non_regression": {
+        "expected": "patch scope limited to S13 detection/parser dispatch; S11/S12/S14 flow untouched except shared arrival reason token",
+        "passed": true
+      }
+    }
+  },
+  "py_compile": "passed"
+}

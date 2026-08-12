@@ -1,0 +1,259 @@
+﻿{
+    "report_name":  "s15_metal_deduct_keyerror_reference_diff_diagnosis",
+    "generated_at":  "2026-05-16T15:38:26",
+    "readonly":  true,
+    "code_modified":  false,
+    "real_device_run":  false,
+    "target_fingerprint":  "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+    "terminal_status":  "RUN_FAILED_WITH_ISSUE",
+    "issue_code":  "SECOND_STAGE_RUNTIME_EXCEPTION",
+    "failed_state":  "S15",
+    "exception_type":  "KeyError",
+    "exception_message":  "\u0027metal_deduct\u0027",
+    "keyerror_location":  {
+                              "concrete_function":  "src.guazi_app_data_system.pricing._body_score",
+                              "concrete_line":  "src/guazi_app_data_system/pricing.py:296",
+                              "line_expression":  "deduct_map = scoring[\"metal_deduct\"]",
+                              "call_chain":  [
+                                                 "scripts/runtime_s10_to_s16_mainline.py:9131 handle_s15 -\u003e select_reference(target_score, [reference], fields_config, current_year=2026)",
+                                                 "src/guazi_app_data_system/pricing.py:385 select_reference -\u003e score_reference(reference, fields_config, current_year=current_year)",
+                                                 "src/guazi_app_data_system/pricing.py:231 score_reference -\u003e _score_common(...)",
+                                                 "src/guazi_app_data_system/pricing.py:262 _score_common -\u003e _body_score(deduped_repairs, scoring)",
+                                                 "src/guazi_app_data_system/pricing.py:296 _body_score -\u003e scoring[\"metal_deduct\"]"
+                                             ],
+                              "stage_classification":  "S15 scoring calculation stage, before selected_score/reference_score_components are produced for reference #5; not S16 payload or final candidate output layer."
+                          },
+    "config_evidence":  {
+                            "config_path":  "config/fields.yaml",
+                            "metal_deduct_present":  false,
+                            "paint_deduct_present":  true,
+                            "replace_deduct_present":  true,
+                            "relevant_lines":  [
+                                                   "config/fields.yaml:71 paint_deduct",
+                                                   "config/fields.yaml:72 replace_deduct"
+                                               ]
+                        },
+    "reference_comparison":  [
+                                 {
+                                     "reference_index":  2,
+                                     "selected_price":  "11.39万",
+                                     "selected_metadata":  "2024年 | 6.54万公里 | 唐山 | HondaSENS",
+                                     "reference_score":  83.0,
+                                     "reference_score_trustworthy":  true,
+                                     "reference_score_components":  {
+                                                                        "body_score":  66.0,
+                                                                        "mileage_score":  0.0,
+                                                                        "transfer_score":  7.0,
+                                                                        "accident_score":  6.0,
+                                                                        "max_amount_score":  4.0
+                                                                    },
+                                     "score_component_keys":  [
+                                                                  "body_score",
+                                                                  "mileage_score",
+                                                                  "transfer_score",
+                                                                  "accident_score",
+                                                                  "max_amount_score"
+                                                              ],
+                                     "has_banjin":  true,
+                                     "has_abc_banjin":  false,
+                                     "panel_repairs":  [
+                                                           {
+                                                               "part":  "左前门",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "左后门",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "后保险杠",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "前保险杠",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           }
+                                                       ],
+                                     "s10_selected_card_autoscroll_attempted":  null,
+                                     "s10_selected_card_autoscroll_count":  null,
+                                     "s10_selected_card_before_bounds":  null,
+                                     "s10_selected_card_after_bounds":  null,
+                                     "selected_reference_card_gate_passed":  true
+                                 },
+                                 {
+                                     "reference_index":  3,
+                                     "selected_price":  "11.67万",
+                                     "selected_metadata":  "2024年 | 3.05万公里 | 唐山 | HondaSENS",
+                                     "reference_score":  76.0,
+                                     "reference_score_trustworthy":  true,
+                                     "reference_score_components":  {
+                                                                        "body_score":  64.0,
+                                                                        "mileage_score":  0.0,
+                                                                        "transfer_score":  5.5,
+                                                                        "accident_score":  3.5,
+                                                                        "max_amount_score":  3.0
+                                                                    },
+                                     "score_component_keys":  [
+                                                                  "body_score",
+                                                                  "mileage_score",
+                                                                  "transfer_score",
+                                                                  "accident_score",
+                                                                  "max_amount_score"
+                                                              ],
+                                     "has_banjin":  false,
+                                     "has_abc_banjin":  false,
+                                     "panel_repairs":  [
+                                                           {
+                                                               "part":  "左后翼子板",
+                                                               "damage_type":  "喷漆",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "后保险杠",
+                                                               "damage_type":  "喷漆",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "右后翼子板",
+                                                               "damage_type":  "喷漆",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "右后门",
+                                                               "damage_type":  "喷漆",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "ABC柱",
+                                                               "damage_type":  "喷漆",
+                                                               "part_category":  "ABC柱/A柱/B柱/C柱"
+                                                           },
+                                                           {
+                                                               "part":  "前保险杠",
+                                                               "damage_type":  "喷漆",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           }
+                                                       ],
+                                     "s10_selected_card_autoscroll_attempted":  null,
+                                     "s10_selected_card_autoscroll_count":  null,
+                                     "s10_selected_card_before_bounds":  null,
+                                     "s10_selected_card_after_bounds":  null,
+                                     "selected_reference_card_gate_passed":  true
+                                 },
+                                 {
+                                     "reference_index":  5,
+                                     "selected_price":  "12.27万",
+                                     "selected_metadata":  "2024年 | 3.51万公里 | 河源 | HondaSENS",
+                                     "reference_score":  null,
+                                     "reference_score_trustworthy":  true,
+                                     "reference_score_components":  null,
+                                     "score_component_keys":  [
+                                                                  null
+                                                              ],
+                                     "has_banjin":  true,
+                                     "has_abc_banjin":  true,
+                                     "panel_repairs":  [
+                                                           {
+                                                               "part":  "左前翼子板",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "左前门",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "ABC柱",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ABC柱/A柱/B柱/C柱"
+                                                           },
+                                                           {
+                                                               "part":  "左后门",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "左后翼子板",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "后保险杠",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "右后翼子板",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "右后门",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "右前翼子板",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           },
+                                                           {
+                                                               "part":  "前保险杠",
+                                                               "damage_type":  "钣金",
+                                                               "part_category":  "ordinary_cover_or_bumper"
+                                                           }
+                                                       ],
+                                     "s10_selected_card_autoscroll_attempted":  true,
+                                     "s10_selected_card_autoscroll_count":  1,
+                                     "s10_selected_card_before_bounds":  [
+                                                                             429,
+                                                                             2492,
+                                                                             949,
+                                                                             2513
+                                                                         ],
+                                     "s10_selected_card_after_bounds":  [
+                                                                            429,
+                                                                            1488,
+                                                                            949,
+                                                                            1612
+                                                                        ],
+                                     "selected_reference_card_gate_passed":  true
+                                 }
+                             ],
+    "direct_answers":  {
+                           "q1_function_and_line":  "src/guazi_app_data_system/pricing.py _body_score line 296, deduct_map = scoring[\"metal_deduct\"]",
+                           "q2_stage":  "评分计算阶段：handle_s15 调用 select_reference/score_reference/_score_common/_body_score 时发生；不是评分结果输出、final candidate 或 S16 前置 payload 阶段。",
+                           "q3_all_have_banjin":  "reference #2 和 #5 有钣金；reference #3 没有钣金，但有 ABC柱喷漆。",
+                           "q4_part_difference":  "reference #2 钣金均为普通覆盖件/保险杠；reference #3 为喷漆，包括 ABC柱喷漆；reference #5 包含 ABC柱钣金，这是唯一命中 _body_score 中 ABC_PARTS + 钣金 + scoring[metal_deduct] 的组合。",
+                           "q5_ref5_first_after_autoscroll":  "从本次 result 证据看，reference #5 是本轮已处理参考车中第一个记录了 s10_selected_card_autoscroll_attempted=true 且 count=1 的 S15 车辆；但 autoscroll 后 selected card 身份保持、字段完整、安全门禁通过。",
+                           "q6_autoscroll_schema_missing":  "未发现 autoscroll 导致 current_reference 缺评分输入字段；reference #5 reference_score_input 包含 transfer/accident/max_amount/repair_counts/panel_repairs。",
+                           "q7_scoring_keys_consistency":  "reference #2/#3 已成功产出 reference_score_components，keys 为 body_score/mileage_score/transfer_score/accident_score/max_amount_score；reference #5 在 components 生成前 KeyError，故无 components。",
+                           "q8_ref2_ref3_metal_deduct":  "reference #2/#3 的 score_detail/components 中没有 metal_deduct 字段；它们没有触发 metal_deduct 分支。#2 普通钣金走 paint_deduct；#3 ABC柱喷漆也走 paint_deduct。",
+                           "q9_ref5_missing_metal_deduct":  "reference #5 不是 current_reference 自身缺 metal_deduct，而是 fields_config[scoring] 缺 metal_deduct；#5 的 ABC柱钣金首次读取该配置键。",
+                           "q10_final_candidate_branch":  "不是。异常发生在 select_reference 内部为 reference #5 调 score_reference 时，selected_score 尚未产生；未进入 final candidate/S16 payload 输出分支。"
+                       },
+    "root_cause_classification":  {
+                                      "selected":  "D. 特殊结构件钣金分支字段命名不一致",
+                                      "secondary":  "B. S15 scoring config/default field initialization missing for metal_deduct branch",
+                                      "rejected":  [
+                                                       "A rejected: autoscroll 后 current_reference 评分输入字段完整，且 selected card gate 通过。",
+                                                       "C rejected: 异常不在 final candidate/S16 payload 输出层。",
+                                                       "有钣金即报错 rejected: 普通覆盖件钣金不触发 metal_deduct；只有 ABC柱钣金触发。"
+                                                   ],
+                                      "explanation":  "pricing._body_score 对 ABC_PARTS + 钣金 使用 scoring[\"metal_deduct\"]，但 config/fields.yaml 当前只定义 paint_deduct 与 replace_deduct。前序参考车没有命中 ABC柱钣金组合，因此未暴露该缺键。"
+                                  },
+    "next_patch_recommendation":  "下一轮若允许 PATCH_ONLY，应只补 schema/config读取一致性或输出明确配置缺失诊断；不要改扣分规则，不要用 metal_deduct=0 掩盖。",
+    "evidence_files":  {
+                           "result_s10_to_s16":  "output/result_s10_to_s16.json",
+                           "result":  "output/result.json",
+                           "runtime_report":  "output/honda_accord_2023_auto_pricing_success_path_after_s11_unsafe_reposition_patch.json",
+                           "pricing_code":  "src/guazi_app_data_system/pricing.py",
+                           "runtime_code":  "scripts/runtime_s10_to_s16_mainline.py",
+                           "fields_config":  "config/fields.yaml"
+                       }
+}

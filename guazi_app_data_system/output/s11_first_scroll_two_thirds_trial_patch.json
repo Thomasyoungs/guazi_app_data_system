@@ -1,0 +1,65 @@
+{
+  "status": "S11_FIRST_SCROLL_TWO_THIRDS_TRIAL_PATCHED",
+  "task": "PATCH_ONLY_S11_FIRST_SCROLL_TWO_THIRDS_TRIAL",
+  "contract_document_updated": false,
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "forbidden_scope_touched": false,
+  "summary": "Changed the experimental S11_REPORT_SEARCH first-scroll trial from full_screen_trial to two_thirds_screen_trial. The page contract is not updated. Existing current-screen exact 查看完整报告 safe-click check still runs before any first scroll.",
+  "implementation": {
+    "strategy": "two_thirds_screen_trial",
+    "s11_first_scroll_screen_ratio": 0.66,
+    "changed_branch": "_s11_report_scroll_points(search_scroll_mode='first')",
+    "first_scroll": {
+      "requested_distance": "screen_height * 0.66",
+      "gesture_start_y_ratio": 0.86,
+      "gesture_end_y_min_ratio": 0.16,
+      "duration_ms": 950,
+      "scroll_mode": "first_two_thirds_report_entry_scroll"
+    },
+    "later_scrolls": {
+      "unchanged": true,
+      "mode": "small",
+      "approx_ratio": 0.18
+    },
+    "fields": [
+      "s11_first_scroll_strategy",
+      "s11_first_scroll_screen_ratio",
+      "s11_first_scroll_requested_distance_px",
+      "s11_first_scroll_step_px",
+      "s11_first_scroll_done",
+      "s11_report_search_iterations"
+    ]
+  },
+  "preserved_rules": [
+    "Current-screen exact 查看完整报告 safe click is checked before scrolling",
+    "Fresh screenshot/XML is captured after the first scroll",
+    "Fresh evidence pair check remains active",
+    "S10 stale XML detection remains active",
+    "S11 internal screenshot/XML visible-region mismatch check remains active",
+    "Unsafe report-entry reposition remains active",
+    "No normal/fine/backtrack weak-signal mainline is restored",
+    "No OCR",
+    "No visual recognition fallback",
+    "No screenshot-coordinate click",
+    "No weak-signal click"
+  ],
+  "validation": {
+    "py_compile": {
+      "status": "passed",
+      "command": "python -m py_compile scripts/runtime_s10_to_s16_mainline.py"
+    },
+    "module_import": {
+      "status": "passed",
+      "output": "IMPORT_OK"
+    },
+    "offline_validation": {
+      "status": "passed",
+      "all_passed": true,
+      "path": "output/s11_first_scroll_two_thirds_trial_offline_validation.json",
+      "case_count": 9
+    }
+  },
+  "real_device_run_after_patch": "pending"
+}

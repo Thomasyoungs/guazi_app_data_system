@@ -1,0 +1,32 @@
+{
+  "baselines": [
+    {
+      "id": "buick_historical_s13_success",
+      "requires": ["s13_history_table_detected_or_region_tabs"]
+    },
+    {
+      "id": "fs20260703_0005_weak_s12_body_proof",
+      "requires": ["body_appearance_text_without_s13_proof_blocks_transition"]
+    },
+    {
+      "id": "fs20260704_0001_s12_claim_malformed_extent",
+      "requires": ["malformed_extent_no_raw_index_error"]
+    },
+    {
+      "id": "v149_physical_transition",
+      "requires": ["physical_ui_transition_proof"]
+    },
+    {
+      "id": "v33_boundary_previous_recollect",
+      "requires": ["low_score_skipped_incomplete", "boundary_previous_recollect", "terminal_success"]
+    },
+    {
+      "id": "cross_task_isolation",
+      "requires": ["task_id_target_fingerprint_match"]
+    },
+    {
+      "id": "global_popup_guard",
+      "requires": ["global_popup_capture_wait_loop_guard"]
+    }
+  ]
+}

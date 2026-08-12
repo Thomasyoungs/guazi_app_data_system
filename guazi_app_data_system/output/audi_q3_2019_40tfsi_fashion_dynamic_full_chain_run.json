@@ -1,0 +1,139 @@
+{
+  "task": "RUN_FULL_CHAIN_AUDI_Q3_2019_40TFSI_FASHION_DYNAMIC_AFTER_SYSTEM_LOCK",
+  "generated_at": "2026-05-13T10:29:57",
+  "target_fingerprint": "??|Q3|2019?|40 TFSI ?????|?|2020.05",
+  "status": "FULL_CHAIN_MANUAL_REVIEW_DONE",
+  "final_state": "RUN_FULL_CHAIN_AUDI_Q3_2019_40TFSI_FASHION_DYNAMIC_AFTER_SYSTEM_LOCK_DONE",
+  "target_task": {
+    "brand": "??",
+    "series": "Q3",
+    "year_model": "2019?",
+    "config_model": "40 TFSI ?????",
+    "color": "?",
+    "register_date": "2020.05",
+    "mileage_10k_km": 6.5,
+    "transfer_count": 0,
+    "guide_price_10k": 30.18,
+    "sunroof": "?",
+    "emission_standard": "?6",
+    "insurance_expiry": "2026.05",
+    "license_city": "??",
+    "condition_text": "????"
+  },
+  "first_stage": {
+    "status": "S10_READY",
+    "final_status": "S10_READY",
+    "fingerprint": "奥迪|Q3|2019款|40 TFSI 时尚动感型|蓝|2020.05",
+    "S10_READY": true,
+    "COLOR_FILTER_DONE": true,
+    "AGE_FILTER_DONE": true,
+    "S07_FILTER_DONE": true,
+    "SORT_DONE": true,
+    "complete_target_vehicle_card_count": 1,
+    "s10_ready_reason": "source_gate_core_elements_target_trisame_boundary_passed",
+    "log_path": "logs/audi_q3_2019_first_stage_20260513_102214.log"
+  },
+  "second_stage": {
+    "status": "FULL_CHAIN_MANUAL_REVIEW_DONE",
+    "final_status": "FULL_CHAIN_MANUAL_REVIEW_DONE",
+    "fingerprint": "奥迪|Q3|2019款|40 TFSI 时尚动感型|蓝|2020.05",
+    "s16_status": "S16_READY",
+    "reference_history_count": 1,
+    "log_path": "logs/audi_q3_2019_second_stage_20260513_102524.log"
+  },
+  "pricing": {
+    "target_score": 92.0,
+    "final_reference_index": 1,
+    "final_reference_title": "奥迪Q3 2019款 40 TFSI 时尚动感型",
+    "final_reference_price_yuan": 112400,
+    "final_reference_score": 92.0,
+    "competition_coefficient": 0.97,
+    "competition_coefficient_reasons": [
+      "sample_reliability_adjustment -0.020: sample_shortage_manual_review",
+      "price_band_adjustment -0.010: price_band_100000_to_150000"
+    ],
+    "target_guazi_listing_price_yuan": 109000,
+    "guazi_service_fee_yuan": 4500,
+    "guazi_net_payout_yuan": 104500,
+    "suggested_purchase_price_yuan": 93640,
+    "manual_review_required": true,
+    "manual_review_reasons": [
+      "目标车缺少出险次数，已采用默认分。",
+      "目标车缺少最大金额，已采用默认分。",
+      "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。",
+      "SAMPLE_SHORTAGE_MANUAL_REVIEW"
+    ],
+    "sample_shortage_note": "?????? 3 ?????????????",
+    "used_non_trisame_price": false,
+    "used_old_95_percent_rule": false
+  },
+  "reference_history": [
+    {
+      "reference_index": 1,
+      "title": "奥迪Q3 2019款 40 TFSI 时尚动感型",
+      "price_yuan": 112400,
+      "metadata": null,
+      "year": 2020,
+      "mileage_10k_km": 5.92,
+      "transfer_count": 0,
+      "claim_count": 3,
+      "max_claim_amount": 3000.0,
+      "reference_score": 92.0,
+      "reference_score_gte_target_score": true,
+      "title_normalized_match": true,
+      "official_report_entry_seen": true,
+      "s14_collect_done": true
+    }
+  ],
+  "quality_checks": {
+    "result_s01_to_s10_json_valid": true,
+    "result_s10_to_s16_json_valid": true,
+    "result_json_valid": true,
+    "fingerprint_all_match": false,
+    "raw_xml_large_fields_present": false,
+    "old_target_pollution_detected": false,
+    "baseline_overwritten": false
+  },
+  "result_paths": {
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "result_s10_to_s16": "output/result_s10_to_s16.json",
+    "result": "output/result.json"
+  },
+  "s17_payload": {
+    "mode": "simulated_feishu_writeback",
+    "task_status": "manual_review",
+    "suggested_acquisition_price_yuan": 93640,
+    "suggested_listing_price_yuan": 109000,
+    "price_range_yuan": [
+      93640,
+      109000
+    ],
+    "final_reference_index": 1,
+    "reference_price_10k": 11.24,
+    "reference_score": 92.0,
+    "target_score": 92.0,
+    "manual_review_required": true,
+    "manual_review_reasons": [
+      "目标车缺少出险次数，已采用默认分。",
+      "目标车缺少最大金额，已采用默认分。",
+      "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。",
+      "SAMPLE_SHORTAGE_MANUAL_REVIEW"
+    ],
+    "notes": [],
+    "competition_coefficient": 0.97,
+    "competition_coefficient_reasons": [
+      "sample_reliability_adjustment -0.020: sample_shortage_manual_review",
+      "price_band_adjustment -0.010: price_band_100000_to_150000"
+    ],
+    "base_reference_price_yuan": 112400,
+    "target_guazi_listing_price_yuan": 109000,
+    "guazi_price_yuan": 109000,
+    "guazi_service_fee_yuan": 4500,
+    "guazi_net_payout_yuan": 104500,
+    "guazi_return_price_yuan": 104500,
+    "evidence": {
+      "s10_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_s16_start_20260513_102525.png",
+      "s10_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260513_102525.xml"
+    }
+  }
+}

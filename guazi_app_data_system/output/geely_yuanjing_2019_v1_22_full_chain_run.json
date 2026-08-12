@@ -1,0 +1,318 @@
+{
+  "status": "RUN_FULL_CHAIN_GEELY_YUANJING_2019_AFTER_V1_22_BRAND_INITIAL_CONTRACT_DONE",
+  "final_status": "RUN_FAILED_WITH_ISSUE",
+  "target_fingerprint": "吉利|远景|2019款|升级版 1.5L 手动豪华型 国VI|白|2019.10",
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py"
+  ],
+  "v1_22_patch": {
+    "scope": "S03 brand initial deterministic mapping only",
+    "mappings_added_or_confirmed": [
+      {
+        "aliases": [
+          "吉利",
+          "吉利汽车",
+          "GEELY",
+          "Geely"
+        ],
+        "initial": "J"
+      },
+      {
+        "aliases": [
+          "零跑",
+          "零跑汽车",
+          "LEAPMOTOR",
+          "Leapmotor"
+        ],
+        "initial": "L"
+      },
+      {
+        "aliases": [
+          "大众"
+        ],
+        "initial": "D"
+      },
+      {
+        "aliases": [
+          "丰田"
+        ],
+        "initial": "F"
+      },
+      {
+        "aliases": [
+          "福特"
+        ],
+        "initial": "F"
+      },
+      {
+        "aliases": [
+          "MINI"
+        ],
+        "initial": "M"
+      },
+      {
+        "aliases": [
+          "长安",
+          "长安汽车",
+          "CHANGAN"
+        ],
+        "initial": "C"
+      }
+    ],
+    "offline_validation": {
+      "xml_path": "artifacts/debug/s02_to_s03_20260512_150349.xml",
+      "visible_geely": false,
+      "letters": [
+        "A",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "W",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tests": [
+        {
+          "name": "brand_initial_geely",
+          "target_brand": "吉利",
+          "aliases": [
+            "吉利",
+            "吉利汽车",
+            "GEELY",
+            "Geely"
+          ],
+          "expected": "J",
+          "actual": "J",
+          "pass": true
+        },
+        {
+          "name": "s03_geely_not_visible_j_visible",
+          "target_brand_visible": false,
+          "target_initial_letter": "J",
+          "j_visible": true,
+          "next_action": "S03_ONLY_ALLOWED_ACTION_CLICK_TARGET_INITIAL_LETTER_J",
+          "attempted_letter_J": true,
+          "attempted_letter_G": false,
+          "attempted_new_energy_tab": false,
+          "attempted_scroll": false,
+          "pass": true
+        },
+        {
+          "name": "after_j_geely_visible_simulated",
+          "target_brand_visible": true,
+          "next_action": "S03_ONLY_ALLOWED_ACTION_CLICK_BRAND_ROW_LEFT_ICON_SAFE_POINT",
+          "pass": true
+        },
+        {
+          "name": "after_j_geely_still_not_visible_simulated",
+          "target_brand_visible": false,
+          "next_action": "STOP",
+          "stop_code": "S03_TARGET_BRAND_NOT_VISIBLE_AFTER_INITIAL_LETTER",
+          "pass": true
+        },
+        {
+          "name": "unknown_brand_initial_missing",
+          "target_brand": "未知品牌XYZ",
+          "target_initial_letter": null,
+          "next_action": "STOP",
+          "stop_code": "S03_TARGET_INITIAL_LETTER_NOT_FOUND",
+          "attempted_alphabet": false,
+          "attempted_scroll": false,
+          "attempted_new_energy_tab": false,
+          "pass": true
+        }
+      ],
+      "all_pass": true
+    },
+    "py_compile_passed": true
+  },
+  "first_stage": {
+    "status": "S10_READY",
+    "s10_ready": true,
+    "fingerprint": "吉利|远景|2019款|升级版 1.5L 手动豪华型 国VI|白|2019.10",
+    "s03_contract": {
+      "s03_contract_version": "V1.16",
+      "target_brand_aliases": [
+        "吉利",
+        "吉利汽车",
+        "GEELY",
+        "Geely"
+      ],
+      "target_initial_letter": "J",
+      "target_brand_visible_before_letter": false,
+      "clicked_initial_letter": "J",
+      "target_brand_visible_after_letter": true,
+      "matched_brand_text": "吉利汽车",
+      "matched_alias": "吉利汽车",
+      "brand_row_bounds": [
+        0,
+        373,
+        1155,
+        529
+      ],
+      "selected_click_region_type": "brand_row_left_icon_safe_point",
+      "selected_click_point": [
+        117,
+        451
+      ],
+      "after_click_page_type": "S04",
+      "brand_zone_continuation_allowed": false
+    },
+    "s05": {
+      "selected_year_model": "2019款",
+      "selected_config_model": "升级版 1.5L 手动豪华型 国VI",
+      "selected_count_text": "已选2项",
+      "emission_variant_group_count": 2,
+      "emission_variant_group": [
+        "2019款 升级版 1.5L 手动豪华型 国V",
+        "2019款 升级版 1.5L 手动豪华型 国VI"
+      ],
+      "selected_emission_variants": [
+        "2019款 升级版 1.5L 手动豪华型 国V",
+        "2019款 升级版 1.5L 手动豪华型 国VI"
+      ],
+      "emission_variant_all_selected": true
+    },
+    "s07": {
+      "color_filter_done": true,
+      "age_filter_done": true,
+      "s07_filter_done": true,
+      "bottom_view_result_text": "查看4辆"
+    },
+    "s10": {
+      "sort_done": true,
+      "trisame_count": 4,
+      "raw_visible_cards_count": 24,
+      "excluded_non_trisame_cards_count": 20,
+      "complete_target_vehicle_card_count": 4,
+      "non_trisame_boundary_detected": true,
+      "s10_ready_reason": "source_gate_core_elements_target_trisame_boundary_passed"
+    }
+  },
+  "second_stage": {
+    "status": "S11_REPORT_ENTRY_FULL_VISIBILITY_NOT_ACHIEVED",
+    "fingerprint": "吉利|远景|2019款|升级版 1.5L 手动豪华型 国VI|白|2019.10",
+    "started": true,
+    "issue_code": "S11_REPORT_ENTRY_FULL_VISIBILITY_NOT_ACHIEVED",
+    "issue_summary": "第 2 辆参考车进入 S11 后，查看完整报告入口滚动搜索 8 次仍未完整可见，按安全点击契约停止。",
+    "issue_context": {
+      "s11_report_scroll_count": 8,
+      "report_entry_seen": false,
+      "report_visibility_reason": "not_seen",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_8_20260512_152440.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_8_20260512_152440.xml"
+    },
+    "reference_history": [
+      {
+        "reference_index": 1,
+        "title": "吉利汽车 远景 2019款 升级版 1.5L 手动豪华型 国VI",
+        "price_text": "2.04万",
+        "price_yuan": 20400,
+        "metadata": "2019年 | 8.15万公里 | 唐山",
+        "transfer_count": 0,
+        "accident_count": 0,
+        "max_accident_amount": 0,
+        "repair_counts": {
+          "驾驶侧": 4
+        },
+        "reference_score": 94,
+        "reference_score_gte_target_score": false,
+        "score_diff_reference_minus_target": -2,
+        "disqualified": false,
+        "stop_or_continue_reason": "reference_score_below_target_continue_next"
+      },
+      {
+        "reference_index": 2,
+        "title": "吉利汽车 远景 2019款 升级版 1.5L 手动豪华型 国VI",
+        "price_text": "2.09万",
+        "price_yuan": 20900,
+        "metadata": "2019年 | 10.18万公里 | 安顺",
+        "transfer_count": 1,
+        "accident_count": null,
+        "max_accident_amount": null,
+        "repair_counts": null,
+        "reference_score": null,
+        "reference_score_gte_target_score": null,
+        "score_diff_reference_minus_target": null,
+        "disqualified": null,
+        "stop_or_continue_reason": null
+      }
+    ],
+    "current_reference": {
+      "reference_index": 2,
+      "title": "吉利汽车 远景 2019款 升级版 1.5L 手动豪华型 国VI",
+      "price_text": "2.09万",
+      "price_yuan": 20900,
+      "metadata": "2019年 | 10.18万公里 | 安顺",
+      "transfer_count": 1,
+      "accident_count": null,
+      "max_accident_amount": null,
+      "repair_counts": null,
+      "reference_score": null,
+      "reference_score_gte_target_score": null,
+      "score_diff_reference_minus_target": null,
+      "disqualified": null,
+      "stop_or_continue_reason": null
+    },
+    "final_reference_index": null,
+    "final_reference_price_yuan": null,
+    "final_reference_score": null,
+    "target_score": null,
+    "pricing_reached": false,
+    "s16_reached": false,
+    "s17_payload": null
+  },
+  "pricing": {
+    "reached_s16": false,
+    "competition_coefficient": null,
+    "target_guazi_listing_price_yuan": null,
+    "guazi_service_fee_yuan": null,
+    "guazi_net_payout_yuan": null,
+    "suggested_purchase_price_yuan": null,
+    "used_old_95_percent_rule": false,
+    "used_non_trisame_price": false,
+    "obd_unreadable_note_only": true
+  },
+  "constraints_confirmation": {
+    "first_stage_script_modified_only_for_s03_mapping": true,
+    "second_stage_script_modified": false,
+    "pricing_modified": false,
+    "config_modified": false,
+    "docx_modified": false,
+    "baseline_overwritten": false,
+    "old_target_pollution": false,
+    "non_trisame_used": false,
+    "raw_xml_large_fields_written_in_generated_report": false
+  },
+  "result_files": {
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "result_s10_to_s16": "output/result_s10_to_s16.json",
+    "result": "output/result.json",
+    "report_md": "output/geely_yuanjing_2019_v1_22_full_chain_run_latest.md",
+    "report_json": "output/geely_yuanjing_2019_v1_22_full_chain_run.json"
+  },
+  "log_paths": {
+    "first_stage": "logs/geely_yuanjing_v1_22_first_stage_20260512_151818.log",
+    "second_stage_reference_1": "logs/geely_yuanjing_v1_22_second_stage_20260512_152033.log",
+    "second_stage_reference_2": "logs/geely_yuanjing_v1_22_second_stage_continue_20260512_152320.log"
+  },
+  "created_at": "2026-05-12T07:26:49.041Z"
+}

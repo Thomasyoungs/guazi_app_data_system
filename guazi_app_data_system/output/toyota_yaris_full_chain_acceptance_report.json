@@ -1,0 +1,512 @@
+{
+  "report_name": "toyota_yaris_full_chain_acceptance_report",
+  "created_at": "2026-05-09T03:41:47.570Z",
+  "acceptance_status": "TOYOTA_YARIS_FULL_CHAIN_ACCEPTANCE_PASSED",
+  "target_fingerprint": "丰田|YARiS L 致炫|2015款|1.5E 自动魅动版|白|2015.07",
+  "result_files": {
+    "result_s01_to_s10": {
+      "path": "output/result_s01_to_s10.json",
+      "status": "S10_READY",
+      "fingerprint": "丰田|YARiS L 致炫|2015款|1.5E 自动魅动版|白|2015.07",
+      "json_valid": true
+    },
+    "result_s10_to_s16": {
+      "path": "output/result_s10_to_s16.json",
+      "status": "FULL_CHAIN_PRICED_DONE",
+      "fingerprint": "丰田|YARiS L 致炫|2015款|1.5E 自动魅动版|白|2015.07",
+      "json_valid": true
+    },
+    "result": {
+      "path": "output/result.json",
+      "status": "FULL_CHAIN_PRICED_DONE",
+      "fingerprint": "丰田|YARiS L 致炫|2015款|1.5E 自动魅动版|白|2015.07",
+      "json_valid": true
+    }
+  },
+  "full_chain_acceptance": {
+    "first_stage_s10_ready": true,
+    "second_stage_started": true,
+    "s11_s12_s13_s14_s15_completed": true,
+    "s16_pricing_completed": true,
+    "s17_payload_output": true,
+    "final_status": "FULL_CHAIN_PRICED_DONE"
+  },
+  "s07_hidden_age_tick_acceptance": {
+    "target_age": 11,
+    "visible_ticks": [
+      "0",
+      "2",
+      "4",
+      "6",
+      "8",
+      "10",
+      "不限"
+    ],
+    "x8": 821,
+    "x10": 937,
+    "one_year_step": 58,
+    "target_age_x": 995,
+    "verify_text": "11-11年",
+    "bottom_view_result_text": "查看6辆",
+    "AGE_FILTER_DONE": true,
+    "S07_FILTER_DONE": true,
+    "note": "11 年不是可见刻度文本，而是 10 右侧第 1 个隐藏节点；12 年是 10 右侧第 2 个隐藏节点。必须通过 11-11年 / 12-12年 文本验证后，才允许 AGE_FILTER_DONE=true。"
+  },
+  "reference_loop_rule": "按价格从低到高的 reference_index 顺序逐辆采集；当前参考车字段完整、未淘汰且 reference_score >= target_score 时，立即停止继续采集并进入 S16 定价；不是固定采 2 辆或固定采 3 辆。",
+  "reference_history": [
+    {
+      "reference_index": 1,
+      "price": "2.53万",
+      "metadata": "2015年 | 11.49万公里 | 唐山",
+      "transfer_count": 0,
+      "claim_count": 2,
+      "max_claim_amount": 3000,
+      "repair_counts": {
+        "驾驶侧": 2
+      },
+      "repair_items": [
+        {
+          "part": "左前翼子板",
+          "damage_type": "喷漆"
+        }
+      ],
+      "reference_score": 91.5,
+      "target_score": 95,
+      "rejected": false,
+      "qualified": false,
+      "decision": "字段完整且未淘汰，但参考车分低于目标车分，按逐辆采集规则继续下一辆。"
+    },
+    {
+      "reference_index": 2,
+      "price": "2.78万",
+      "metadata": "2015年 | 7.72万公里 | 唐山",
+      "transfer_count": 1,
+      "claim_count": 1,
+      "max_claim_amount": 3000,
+      "repair_counts": {
+        "驾驶侧": 2
+      },
+      "repair_items": [
+        {
+          "part": "左后门",
+          "damage_type": "喷漆"
+        }
+      ],
+      "reference_score": 95,
+      "target_score": 95,
+      "rejected": false,
+      "qualified": true,
+      "decision": "字段完整、未淘汰且分数达标，立即选为最终参考车并停止继续采集。"
+    }
+  ],
+  "pricing": {
+    "target_score": 95,
+    "final_reference_index": 2,
+    "selected_reference_score": 95,
+    "selected_reference_price": "2.78万",
+    "suggested_listing_price": 27800,
+    "suggested_purchase_price": 22410,
+    "pricing_basis": {
+      "status": "priced",
+      "guazi_reference_price_yuan": 27800,
+      "guazi_price_yuan": 27800,
+      "guazi_return_price_yuan": 26410,
+      "cost_yuan": 1500,
+      "profit_yuan": 2500,
+      "suggested_acquisition_price_yuan": 22410
+    },
+    "s17_payload_summary": {
+      "mode": "simulated_feishu_writeback",
+      "task_status": "priced",
+      "suggested_acquisition_price_yuan": 22410,
+      "suggested_listing_price_yuan": 27800,
+      "price_range_yuan": [
+        22410,
+        27800
+      ],
+      "final_reference_index": 2,
+      "reference_price_10k": 2.78,
+      "reference_score": 95,
+      "target_score": 95,
+      "manual_review_reasons": [
+        "目标车缺少出险次数，已采用默认分。",
+        "目标车缺少最大金额，已采用默认分。",
+        "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。"
+      ],
+      "evidence": {
+        "s10_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_s16_start_20260509_113045.png",
+        "s10_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260509_113045.xml"
+      }
+    }
+  },
+  "manual_review_and_risk": {
+    "target_missing_claim_count_default_used": true,
+    "target_missing_max_amount_default_used": true,
+    "sample_shortage_warning_in_payload": true,
+    "left_sill_sheet_metal_not_separately_in_manual_review": true,
+    "recommended_followup_rule_topic": "TARGET_CONDITION_LEFT_SILL_SCORING_REVIEW"
+  },
+  "capabilities_verified": [
+    "APP_FORCE_RESTART",
+    "第一段 S01-S10",
+    "S07 颜色筛选",
+    "S07 车龄隐藏刻度 11 年",
+    "S09 价格从低到高排序",
+    "S10_READY 门禁",
+    "reference_index 逐辆采集",
+    "第 N 辆 S10 车卡唯一绑定",
+    "逐辆采集，达标即停，不固定采 3 辆",
+    "S11 顶部车辆图片区识别",
+    "查看完整报告完整可见 + 安全区点击",
+    "S11_TO_S12 稳定等待",
+    "S11_TO_S12 context 下 S12 优先于 S14",
+    "S13 历史修复判断",
+    "S14 具体修复项采集",
+    "S15 单车评分判断",
+    "S16 定价",
+    "S17 payload 模拟输出",
+    "reference_history 保留",
+    "旧目标污染防护",
+    "raw XML 不写入 result JSON"
+  ],
+  "slow_actions_record_only": [
+    {
+      "step_name": "S10_TO_S11_PRE_DUMP_STABILIZE",
+      "action_name": "short_poll_visual_window_before_xml_dump",
+      "duration_ms": 2335,
+      "is_aggregate": false,
+      "reason_category": "S10_TO_S11_PRE_DUMP_STABILIZE",
+      "reason_detail": "short-poll screenshot/window stability only decides when to start XML dump; it never replaces S11 XML contract recognition",
+      "solution": "compare total fresh time as pre_dump_stabilize_total_ms plus XML dump time",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260509_113050.png",
+      "xml_path": null
+    },
+    {
+      "step_name": "S10_TO_S11_XML_DUMP",
+      "action_name": "dump_xml_during_s11_wait",
+      "duration_ms": 6997,
+      "is_aggregate": false,
+      "reason_category": "S10_TO_S11_FULL_XML_CAN_BE_COMPRESSED",
+      "reason_detail": "S10 to S11 XML evidence prefers compressed uiautomator dump and falls back to full XML at most once",
+      "solution": "use compressed XML when it satisfies the S11 contract; keep one full XML fallback when compressed evidence is insufficient",
+      "screenshot_path": null,
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260509_113051_compressed.xml"
+    },
+    {
+      "step_name": "S10_TO_S11_XML_DUMP_COMPRESSED",
+      "action_name": "dump_compressed_xml_during_s11_wait",
+      "duration_ms": 6997,
+      "is_aggregate": false,
+      "reason_category": "S10_TO_S11_FULL_XML_CAN_BE_COMPRESSED",
+      "reason_detail": "compressed XML is the first S10-to-S11 page-contract evidence attempt",
+      "solution": "skip full XML when compressed XML recognizes S11; otherwise perform exactly one full fallback",
+      "screenshot_path": null,
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260509_113051_compressed.xml"
+    },
+    {
+      "step_name": "S10_TO_S11_WAIT_ROUND",
+      "action_name": "fresh_recognize_wait_round",
+      "duration_ms": 8211,
+      "is_aggregate": true,
+      "reason_category": "S10_TO_S11_WEBVIEW_TEXT_DELAY",
+      "reason_detail": "short-poll fresh round waits for S11 contract instead of using a long sleep",
+      "solution": "continue polling until S11 appears or the bounded timeout expires",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260509_113050.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260509_113051_compressed.xml"
+    },
+    {
+      "step_name": "S10_TO_S11_STABLE",
+      "action_name": "wait_s11_contract_stable",
+      "duration_ms": 9373,
+      "is_aggregate": true,
+      "reason_category": "S10_TO_S11_PAGE_LOAD_SLOW",
+      "reason_detail": "total S10-to-S11 wait is reported separately from the title tap",
+      "solution": "keep exact title click and bounded short-poll recognition",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260509_113050.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260509_113051_compressed.xml"
+    },
+    {
+      "step_name": "S10_TO_S11",
+      "action_name": "tap_title_text_node_bounds",
+      "duration_ms": 9481,
+      "is_aggregate": true,
+      "reason_category": null,
+      "reason_detail": null,
+      "solution": null,
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260509_113050.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260509_113051_compressed.xml"
+    },
+    {
+      "step_name": "S11_REPORT_SCROLL_FRESH",
+      "action_name": "fresh_after_s11_report_entry_scroll",
+      "duration_ms": 4090,
+      "is_aggregate": false,
+      "reason_category": "XML_DUMP_SLOW",
+      "reason_detail": "fresh after S11 controlled scroll/reposition before deciding whether the report entry is safely clickable",
+      "solution": "reuse this XML for the next visibility check and never click before safe visibility is true",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_1_20260509_113100.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_1_20260509_113100.xml"
+    },
+    {
+      "step_name": "S11_REPORT_SCROLL_FRESH",
+      "action_name": "fresh_after_s11_report_entry_scroll",
+      "duration_ms": 4042,
+      "is_aggregate": false,
+      "reason_category": "XML_DUMP_SLOW",
+      "reason_detail": "fresh after S11 controlled scroll/reposition before deciding whether the report entry is safely clickable",
+      "solution": "reuse this XML for the next visibility check and never click before safe visibility is true",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260509_113105.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260509_113105.xml"
+    },
+    {
+      "step_name": "S11_REPORT_SEARCH",
+      "action_name": "scroll_then_report_node_search",
+      "duration_ms": 10577,
+      "is_aggregate": false,
+      "reason_category": "WEBVIEW_TEXT_DELAY",
+      "reason_detail": "report entry search stops only after the exact node is fully visible and safely clickable",
+      "solution": "continue scrolling/repositioning when XML exposes 查看完整报告 at the unsafe bottom edge",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260509_113105.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260509_113105.xml"
+    },
+    {
+      "step_name": "S11_TO_S12_WAIT_STABLE_AFTER_REPORT_CLICK",
+      "action_name": "fresh_wait_report_page_stability",
+      "duration_ms": 6326,
+      "is_aggregate": false,
+      "reason_category": "REPORT_PAGE_STABLE_WAIT",
+      "reason_detail": "after safe 查看完整报告 click, wait for report page XML/visual stability before final S12 recognition",
+      "solution": "recognize S12 before S14 in S11_TO_S12 context and never collect fields until S12 is confirmed",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_to_s12_wait_stable_1_20260509_113110.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_to_s12_wait_stable_1_20260509_113110.xml"
+    },
+    {
+      "step_name": "S11_TO_S12_WAIT_STABLE_AFTER_REPORT_CLICK",
+      "action_name": "fresh_wait_report_page_stability",
+      "duration_ms": 5211,
+      "is_aggregate": false,
+      "reason_category": "REPORT_PAGE_STABLE_WAIT",
+      "reason_detail": "after safe 查看完整报告 click, wait for report page XML/visual stability before final S12 recognition",
+      "solution": "recognize S12 before S14 in S11_TO_S12 context and never collect fields until S12 is confirmed",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_to_s12_wait_stable_2_20260509_113116.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_to_s12_wait_stable_2_20260509_113116.xml"
+    },
+    {
+      "step_name": "S11_TO_S12",
+      "action_name": "tap_full_report",
+      "duration_ms": 11681,
+      "is_aggregate": false,
+      "reason_category": "PAGE_TRANSITION_VERIFY",
+      "reason_detail": "fresh XML is required after safe report-entry click; S11_TO_S12 waits for stable S12 report-page evidence before entering S12 handler",
+      "solution": "suppress S14 recognition in S11_TO_S12 context and only continue after S12 is confirmed",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_to_s12_wait_stable_2_20260509_113116.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_to_s12_wait_stable_2_20260509_113116.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5433,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113141.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113141.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5263,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113147.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113147.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5629,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113152.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113152.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5381,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113158.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113158.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 6315,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113203.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113203.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5192,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113209.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113209.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5293,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113215.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113215.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5246,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113220.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113220.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5680,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113225.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113225.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5411,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113231.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113231.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5364,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113236.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113236.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5532,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113242.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113242.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5738,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113247.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113247.xml"
+    },
+    {
+      "step_name": "S14_HORIZONTAL_SWIPE",
+      "action_name": "s14_image_horizontal_swipe",
+      "duration_ms": 5529,
+      "is_aggregate": false,
+      "reason_category": "S14_IMAGE_HORIZONTAL_SWIPE",
+      "reason_detail": "short-poll after image swipe treats page label, first line, normalized damage, and new S14 key as the only effective evidence; image hash is auxiliary only",
+      "solution": "confirm terminal after two consecutive semantic no-change swipes and avoid tab clicks",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113253.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113253.xml"
+    },
+    {
+      "step_name": "S14_COLLECT",
+      "action_name": "collect_image_sequence_until_terminal",
+      "duration_ms": 77080,
+      "is_aggregate": true,
+      "reason_category": "S14_END_CONFIRM_TOO_CONSERVATIVE",
+      "reason_detail": "S14 terminal is confirmed by two consecutive image swipes with no page label, first line, normalized damage, or S14 key change",
+      "solution": "keep finite terminal confirmation and stop waiting after the configured no-change evidence is met",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260509_113253.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260509_113253.xml"
+    },
+    {
+      "step_name": "S14_RETURN_TO_S10_ATTEMPT",
+      "action_name": "single_back_then_fresh_until_s10",
+      "duration_ms": 3335,
+      "is_aggregate": false,
+      "reason_category": "S14_RETURN_TO_S10",
+      "reason_detail": "after each back action the runtime fresh-checks the page and stops immediately once S10 is recognized",
+      "solution": "do not issue additional back actions after reliable S10 is reached",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_return_to_s10_attempt_1_20260509_113258.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_return_to_s10_attempt_1_20260509_113258.xml"
+    },
+    {
+      "step_name": "S14_RETURN_TO_S10_ATTEMPT",
+      "action_name": "single_back_then_fresh_until_s10",
+      "duration_ms": 3038,
+      "is_aggregate": false,
+      "reason_category": "S14_RETURN_TO_S10",
+      "reason_detail": "after each back action the runtime fresh-checks the page and stops immediately once S10 is recognized",
+      "solution": "do not issue additional back actions after reliable S10 is reached",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_return_to_s10_attempt_2_20260509_113302.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_return_to_s10_attempt_2_20260509_113302.xml"
+    },
+    {
+      "step_name": "S14_RETURN_TO_S10",
+      "action_name": "fixed_return_to_s10_stop_on_first_s10",
+      "duration_ms": 8260,
+      "is_aggregate": true,
+      "reason_category": "S14_RETURN_PATH_OK_NEEDS_NO_FIX",
+      "reason_detail": "S14 return stopped as soon as a reliable S10 list was recognized",
+      "solution": "dispatch to POST_S14_TO_S15 instead of returning again or re-entering S10 handler",
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_return_to_s10_attempt_2_20260509_113302.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_return_to_s10_attempt_2_20260509_113302.xml"
+    }
+  ],
+  "pollution_check": {
+    "old_target_pollution": [],
+    "raw_keys": {
+      "s01": [],
+      "s10_to_s16": [],
+      "result": []
+    }
+  }
+}

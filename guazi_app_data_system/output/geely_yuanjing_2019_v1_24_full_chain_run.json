@@ -1,0 +1,290 @@
+{
+  "status": "FULL_CHAIN_PRICED_DONE",
+  "final_state": "RUN_FULL_CHAIN_GEELY_YUANJING_2019_AFTER_V1_24_DETERMINISTIC_SEQUENCE_DONE",
+  "created_at": "2026-05-12T17:29:45",
+  "fingerprint": "吉利|远景|2019款|升级版 1.5L 手动豪华型 国VI|白|2019.10",
+  "first_stage_status": "S10_READY",
+  "second_stage_status": "FULL_CHAIN_PRICED_DONE",
+  "target_score": {
+    "score": 96.0,
+    "components": {
+      "body_score": 70.0,
+      "mileage_score": 12.0,
+      "transfer_score": 7.0,
+      "accident_score": 4.0,
+      "max_amount_score": 3.0
+    },
+    "review_reasons": [
+      "目标车缺少出险次数，已采用默认分。",
+      "目标车缺少最大金额，已采用默认分。"
+    ],
+    "hard_reject": false
+  },
+  "reference_history": [
+    {
+      "reference_index": 1,
+      "title": "吉利汽车 远景 2019款 升级版 1.5L 手动豪华型 国VI",
+      "price_text": "2.04万",
+      "metadata": "2019年 | 8.15万公里 | 唐山",
+      "status": "COLLECTED_NOT_QUALIFIED",
+      "exclusion_reason": null,
+      "reference_score": 94.0,
+      "score_gte_target": false,
+      "official_report_entry_seen": true,
+      "view_full_report_seen": null,
+      "scroll_count": 2,
+      "returned_reliable_s10": true
+    },
+    {
+      "reference_index": 2,
+      "title": "吉利汽车 远景 2019款 升级版 1.5L 手动豪华型 国VI",
+      "price_text": "2.09万",
+      "metadata": "2019年 | 10.18万公里 | 安顺",
+      "status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+      "exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+      "reference_score": null,
+      "score_gte_target": null,
+      "official_report_entry_seen": false,
+      "view_full_report_seen": false,
+      "scroll_count": 8,
+      "returned_reliable_s10": false
+    },
+    {
+      "reference_index": 3,
+      "title": "吉利汽车 远景 2019款 升级版 1.5L 手动豪华型 国VI",
+      "price_text": "2.20万",
+      "metadata": "2019年 | 12.63万公里 | 达州",
+      "status": "COLLECTED_NOT_QUALIFIED",
+      "exclusion_reason": null,
+      "reference_score": 80.0,
+      "score_gte_target": false,
+      "official_report_entry_seen": true,
+      "view_full_report_seen": null,
+      "scroll_count": 1,
+      "returned_reliable_s10": true
+    },
+    {
+      "reference_index": 4,
+      "title": "吉利汽车 远景 2019款 升级版 1.5L 手动豪华型 国VI",
+      "price_text": "2.33万",
+      "metadata": "2019年 | 6.33万公里 | 唐山",
+      "status": "FINAL_REFERENCE",
+      "exclusion_reason": null,
+      "reference_score": 97.0,
+      "score_gte_target": true,
+      "official_report_entry_seen": true,
+      "view_full_report_seen": null,
+      "scroll_count": 1,
+      "returned_reliable_s10": false
+    }
+  ],
+  "selected_reference": {
+    "reference_index": 4,
+    "list_price_10k": 2.33,
+    "list_year": 2019,
+    "list_mileage_10k_km": 6.33,
+    "transfer_count": 0,
+    "accident_count": 0,
+    "max_accident_amount": 0.0,
+    "repair_counts": {
+      "驾驶侧": 0,
+      "车尾": 0,
+      "副驾驶": 0,
+      "车头": 0
+    },
+    "panel_repairs": [],
+    "score": 97.0,
+    "is_final_reference": true
+  },
+  "selected_reference_score": {
+    "score": 97.0,
+    "components": {
+      "body_score": 70.0,
+      "mileage_score": 10.0,
+      "transfer_score": 7.0,
+      "accident_score": 6.0,
+      "max_amount_score": 4.0
+    },
+    "review_reasons": [],
+    "hard_reject": false
+  },
+  "pricing": {
+    "status": "priced",
+    "base_reference_price_yuan": 23300,
+    "guazi_reference_price_yuan": 23300,
+    "target_guazi_listing_price_yuan": 22800,
+    "guazi_price_yuan": 22800,
+    "guazi_service_fee_yuan": 2500,
+    "guazi_net_payout_yuan": 20300,
+    "guazi_return_price_yuan": 20300,
+    "cost_yuan": 1500,
+    "profit_yuan": 2500,
+    "other_deductions_yuan": 4000,
+    "same_other_deductions_yuan_used": false,
+    "suggested_acquisition_price_yuan": 16300,
+    "suggested_purchase_price_yuan": 16300,
+    "competition_coefficient": 0.98,
+    "raw_competition_coefficient": 0.98,
+    "clipped_competition_coefficient": 0.98,
+    "competition_coefficient_reasons": [
+      "sample_reliability_adjustment -0.010: sample_slightly_small",
+      "price_distribution_adjustment -0.010: price_distribution_discrete"
+    ],
+    "competition_adjustments": [
+      {
+        "factor": "sample_reliability_adjustment",
+        "adjustment": -0.01,
+        "reason": "sample_slightly_small",
+        "data": {
+          "trisame_count": 4
+        }
+      },
+      {
+        "factor": "price_distribution_adjustment",
+        "adjustment": -0.01,
+        "reason": "price_distribution_discrete",
+        "data": {
+          "price_list_yuan": [
+            20400,
+            20900,
+            22000,
+            23300
+          ],
+          "price_spread_rate": 0.1422
+        }
+      },
+      {
+        "factor": "target_condition_risk_adjustment",
+        "adjustment": 0.0,
+        "reason": "no_strong_condition_risk_for_coefficient",
+        "data": {
+          "risk_flags": [
+            "划痕"
+          ],
+          "paint_count": 0
+        }
+      },
+      {
+        "factor": "score_gap_adjustment",
+        "adjustment": 0.0,
+        "reason": "score_gap_0_to_1",
+        "data": {
+          "score_gap": 1.0
+        }
+      },
+      {
+        "factor": "price_band_adjustment",
+        "adjustment": 0.0,
+        "reason": "price_band_below_100000",
+        "data": {
+          "price_yuan": 23300
+        }
+      },
+      {
+        "factor": "model_liquidity_adjustment",
+        "adjustment": 0.0,
+        "reason": "no_stable_model_profile_no_adjustment",
+        "data": {
+          "profile": null
+        }
+      },
+      {
+        "factor": "fuel_cost_pressure_adjustment",
+        "adjustment": 0.0,
+        "reason": "no_stable_fuel_pressure_profile_no_adjustment",
+        "data": {
+          "profile": null
+        }
+      },
+      {
+        "factor": "city_comparability_adjustment",
+        "adjustment": 0.0,
+        "reason": "same_city_record_only_v1_2_1",
+        "data": {
+          "license_city": "唐山",
+          "reference_city": "唐山"
+        }
+      }
+    ],
+    "manual_review_required": false,
+    "manual_review_reasons": [],
+    "notes": [
+      "SAMPLE_SLIGHTLY_SMALL_NOTE",
+      "OBD_NOT_READ_NOTE",
+      "MINOR_DAMAGE_RECORDED_NO_EXTRA_COEFFICIENT_DEDUCTION"
+    ],
+    "round_strategy": "round_to_100",
+    "trisame_count": 4,
+    "trisame_price_list_yuan": [
+      20400,
+      20900,
+      22000,
+      23300
+    ],
+    "non_trisame_prices_used": false,
+    "ai_model_used": false
+  },
+  "s17_payload": {
+    "mode": "simulated_feishu_writeback",
+    "task_status": "priced",
+    "suggested_acquisition_price_yuan": 16300,
+    "suggested_listing_price_yuan": 22800,
+    "price_range_yuan": [
+      16300,
+      22800
+    ],
+    "final_reference_index": 4,
+    "reference_price_10k": 2.33,
+    "reference_score": 97.0,
+    "target_score": 96.0,
+    "manual_review_required": false,
+    "manual_review_reasons": [
+      "目标车缺少出险次数，已采用默认分。",
+      "目标车缺少最大金额，已采用默认分。",
+      "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。"
+    ],
+    "notes": [
+      "SAMPLE_SLIGHTLY_SMALL_NOTE",
+      "OBD_NOT_READ_NOTE",
+      "MINOR_DAMAGE_RECORDED_NO_EXTRA_COEFFICIENT_DEDUCTION"
+    ],
+    "competition_coefficient": 0.98,
+    "competition_coefficient_reasons": [
+      "sample_reliability_adjustment -0.010: sample_slightly_small",
+      "price_distribution_adjustment -0.010: price_distribution_discrete"
+    ],
+    "base_reference_price_yuan": 23300,
+    "target_guazi_listing_price_yuan": 22800,
+    "guazi_price_yuan": 22800,
+    "guazi_service_fee_yuan": 2500,
+    "guazi_net_payout_yuan": 20300,
+    "guazi_return_price_yuan": 20300,
+    "evidence": {
+      "s10_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_s16_start_20260512_171532.png",
+      "s10_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260512_171532.xml"
+    }
+  },
+  "contract_evidence": {
+    "s05_left_year_confirmed": true,
+    "s05_year_click_region": "left_year_list",
+    "s05_emission_variant_all_selected": true,
+    "s11_reference_2_excluded_official_report_missing": true,
+    "non_trisame_prices_used": false,
+    "ai_model_used": false,
+    "old_95_percent_rule_used": false,
+    "obd_unreadable_note_only": true
+  },
+  "quality_checks": {
+    "result_json_valid": true,
+    "raw_large_fields_present": false,
+    "bad_raw_fields": [],
+    "baseline_overwritten": false,
+    "old_target_pollution_detected": false
+  },
+  "evidence_paths": {
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "result_s10_to_s16": "output/result_s10_to_s16.json",
+    "result": "output/result.json",
+    "offline_validation": "output/v1_24_offline_validation_runtime_latest.json"
+  }
+}

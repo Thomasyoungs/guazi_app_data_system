@@ -1,0 +1,142 @@
+{
+  "status": "SYSTEM_BASELINE_AND_PRICING_LOCK_CHECK_PASSED_READY_FOR_NEXT_TARGET",
+  "generated_at_local": "2026-05-09",
+  "read_only": true,
+  "modified_code": false,
+  "modified_contract_doc": false,
+  "modified_config": false,
+  "modified_pricing": false,
+  "device_run": false,
+  "result_json_overwritten": false,
+  "logs_artifacts_deleted": false,
+  "focus_baseline": {
+    "baseline_name": "BASELINE_FOCUS_2017_FULL_CHAIN_PRICED_DONE_202605",
+    "locked": true,
+    "status": "FULL_CHAIN_PRICED_DONE",
+    "final_reference_index": 3,
+    "reference_price": "2.62万",
+    "target_score": 93,
+    "reference_score": 93.5,
+    "old_suggested_purchase_price_yuan": 20890,
+    "new_service_fee_impact_purchase_price_yuan": 19700,
+    "old_result_overwritten": false
+  },
+  "toyota_yaris_baseline": {
+    "baseline_name": "BASELINE_TOYOTA_YARIS_2015_FULL_CHAIN_PRICED_DONE_202605",
+    "locked": true,
+    "status": "FULL_CHAIN_PRICED_DONE",
+    "final_reference_index": 2,
+    "reference_price": "2.78万",
+    "target_score": 95,
+    "reference_score": 95,
+    "old_suggested_purchase_price_yuan": 22410,
+    "new_service_fee_impact_purchase_price_yuan": 21300,
+    "old_result_overwritten": false
+  },
+  "reference_collection_rule": {
+    "fixed_2": false,
+    "fixed_3": false,
+    "order": "按 S10 reference_index 价格从低到高逐辆采集",
+    "per_reference_gate": "每辆采完进入 S15 判断",
+    "stop_condition": "字段完整、未淘汰、reference_score >= target_score 时立即达标即停",
+    "next_step_after_pass": "进入 S16 定价",
+    "sample_shortage_policy": "三同车源 / 有效样本少于 3 辆只作为人工复核提示，不是硬门槛",
+    "focus_rule_locked": true,
+    "toyota_rule_locked": true,
+    "locked": true
+  },
+  "s07_hidden_age_tick_rule": {
+    "visible_ticks": [
+      "0",
+      "2",
+      "4",
+      "6",
+      "8",
+      "10",
+      "不限"
+    ],
+    "hidden_11": "10 右侧第 1 个隐藏节点",
+    "hidden_12": "10 右侧第 2 个隐藏节点",
+    "age_filter_gate": "必须验证 11-11年 / 12-12年 后才允许 AGE_FILTER_DONE=true",
+    "target_age_gt_12_policy": "不自动映射为“不限”",
+    "locked": true
+  },
+  "guazi_service_fee_pricing_rule": {
+    "old_rule_deprecated": "瓜子回款价 = 瓜子定价 × 95%",
+    "new_rule": "瓜子回款价 = 瓜子定价 - 瓜子服务费",
+    "tiers": [
+      {
+        "range": "< 50000",
+        "fee": 2500
+      },
+      {
+        "range": ">= 50000 and < 100000",
+        "fee": 3500
+      },
+      {
+        "range": ">= 100000 and < 150000",
+        "fee": 4500
+      },
+      {
+        "range": ">= 150000 and < 200000",
+        "fee": 6000
+      },
+      {
+        "range": ">= 200000",
+        "fee": 8000
+      }
+    ],
+    "pricing_py_uses_calc_guazi_service_fee": true,
+    "fields_yaml_uses_guazi_service_fee_tiers": true,
+    "activity_pricing_old_rate_remaining": false,
+    "guazi_return_price_yuan_compat_equals_net_payout": true,
+    "locked": true
+  },
+  "documents": [
+    {
+      "path": "C:\\Users\\lzc93\\Desktop\\定价\\瓜子数据获取流程文档_V1.10_瓜子服务费阶梯定价规则冻结版.docx",
+      "exists": true,
+      "size_bytes": 90299,
+      "sha256": "8d6c922a0cd721afc20c3c6974c28b730e66a58a49763b5ab5dc2f7ae0d39e12",
+      "last_write_time": "2026-05-09T04:40:27.051Z"
+    },
+    {
+      "path": "C:\\Users\\lzc93\\Desktop\\定价\\定价逻辑备份_服务费阶梯修正版.docx",
+      "exists": true,
+      "size_bytes": 10734,
+      "sha256": "2503644a4bb667ac8d2c9b11fab89d98740263733c1b618fafcb3b2964c99c1d",
+      "last_write_time": "2026-05-09T04:16:17.939Z"
+    }
+  ],
+  "code_evidence_files": [
+    {
+      "path": "src/guazi_app_data_system/pricing.py",
+      "exists": true,
+      "size_bytes": 14120,
+      "sha256": "1b62d2646ebcd21d6ccf0019e6fdb1834bea3a9bbbae1bd8cd7b38ca8d7a280e",
+      "last_write_time": "2026-05-09T04:21:14.555Z"
+    },
+    {
+      "path": "config/fields.yaml",
+      "exists": true,
+      "size_bytes": 4870,
+      "sha256": "7f3e5add526162295dfb53c94fca601b607a985322043c7b9ff8619f74111661",
+      "last_write_time": "2026-05-09T04:21:19.920Z"
+    }
+  ],
+  "checks": {
+    "focus_baseline_locked": true,
+    "focus_status_ok": true,
+    "toyota_baseline_locked": true,
+    "toyota_status_ok": true,
+    "reference_rule_locked": true,
+    "s07_hidden_tick_rule_locked": true,
+    "service_fee_rule_locked": true,
+    "pricing_doc_exists": true,
+    "process_doc_v110_exists": true,
+    "pricing_py_exists": true,
+    "fields_yaml_exists": true,
+    "no_old_095_payout_logic": true
+  },
+  "failures": []
+}

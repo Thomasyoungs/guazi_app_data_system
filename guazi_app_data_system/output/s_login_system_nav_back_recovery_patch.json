@@ -1,0 +1,37 @@
+{
+  "status": "S_LOGIN_SYSTEM_NAV_BACK_RECOVERY_PATCHED",
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py"
+  ],
+  "forbidden_files_touched": [],
+  "implementation": {
+    "s_login_order": "later_first_then_xml_bottom_back_then_confirmed_s_login_system_back",
+    "system_back_scope": "confirmed S_LOGIN only",
+    "max_system_back_attempts": 1,
+    "fresh_after_back": true,
+    "contract_mismatch_stop": "PAGE_CONTRACT_MISMATCH_AFTER_LOGIN_EXIT",
+    "forbidden_login_actions_blocked": [
+      "phone_input",
+      "verification_code_input",
+      "login",
+      "get_code",
+      "wechat",
+      "agreement"
+    ]
+  },
+  "fields_added_or_confirmed": [
+    "s_login_later_button_seen",
+    "s_login_xml_back_node_seen",
+    "s_login_system_nav_back_visible",
+    "s_login_system_back_used",
+    "s_login_system_back_attempt_count",
+    "s_login_exit_action",
+    "s_login_after_back_page",
+    "s_login_after_back_contract_match"
+  ],
+  "py_compile": "PASS",
+  "module_import": "PASS",
+  "offline_validation": "PASS",
+  "real_device_validation": "PASS_FIRST_STAGE_TO_S10_READY_NO_S_LOGIN_SEEN",
+  "real_device_report": "output/honda_accord_first_stage_after_s_login_system_back_patch.json"
+}

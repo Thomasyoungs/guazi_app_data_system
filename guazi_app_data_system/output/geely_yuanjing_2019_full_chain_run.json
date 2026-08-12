@@ -1,0 +1,84 @@
+{
+  "status": "RUN_FULL_CHAIN_GEELY_YUANJING_2019_AFTER_SYSTEM_LOCK_DONE",
+  "final_status": "RUN_FAILED_WITH_ISSUE",
+  "target_fingerprint": "吉利|远景|2019款|升级版 1.5L 手动豪华型 国VI|白|2019.10",
+  "target_task_path": "data/current_target_task.json",
+  "target_task_written": true,
+  "fingerprint_verified": true,
+  "first_stage": {
+    "status": "S03_TARGET_INITIAL_LETTER_NOT_FOUND",
+    "s10_ready": false,
+    "app_force_restart_called": true,
+    "reached_s03": true,
+    "s03_contract_version": "V1.16",
+    "target_brand_aliases": [
+      "吉利"
+    ],
+    "target_initial_letter": null,
+    "detected_letters": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "blocking_reason": "目标品牌当前屏不可见时，S03 V1.16 需要目标首字母索引；脚本未能推导“吉利”的首字母 J。",
+    "evidence_paths": {
+      "first_stage_result_path": "output/result_s01_to_s10.json",
+      "first_stage_log_path": "logs/geely_yuanjing_first_stage_20260512_150324.log",
+      "s03_screenshot_path": "artifacts/screenshots/s02_to_s03_20260512_150349.png",
+      "s03_xml_path": "artifacts/debug/s02_to_s03_20260512_150349.xml",
+      "startup_screenshot_path": "artifacts/screenshots/device_ready_after_launcher_later_20260512_150332.png",
+      "startup_xml_path": "artifacts/debug/device_ready_after_launcher_later_20260512_150332.xml"
+    }
+  },
+  "second_stage": {
+    "started": false,
+    "status": "SECOND_STAGE_BLOCKED_FIRST_STAGE_NOT_S10_READY",
+    "reason": "第一段未到 S10_READY，按第二段启动门禁禁止启动第二段。"
+  },
+  "pricing": {
+    "reached_s16": false,
+    "output_final_pricing": false
+  },
+  "constraints_confirmation": {
+    "target_task_modified": true,
+    "code_modified": false,
+    "first_stage_script_modified": false,
+    "second_stage_script_modified": false,
+    "pricing_modified": false,
+    "config_modified": false,
+    "docx_modified": false,
+    "baseline_overwritten": false,
+    "second_stage_started_without_s10_ready": false,
+    "used_non_trisame_source": false,
+    "used_old_95_percent_rule": false,
+    "raw_xml_large_fields_written": false
+  },
+  "result_files": {
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "result_s10_to_s16": "output/result_s10_to_s16.json",
+    "result": "output/result.json"
+  },
+  "suggested_next_step": "需要按页面契约补充或确认品牌首字母映射：吉利 -> J；本轮未改脚本，因此按锁定规则停止。",
+  "created_at": "2026-05-12T07:04:40.747Z"
+}

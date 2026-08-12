@@ -1,0 +1,74 @@
+{
+  "status": "S10_PARTIAL_CARD_ALLOWED_SELECTED_CARD_GATE_PATCHED",
+  "generated_at": "2026-05-16T04:40:53.906923+00:00",
+  "contract": "S10_PARTIAL_CARD_ALLOWED_PAGE_CONTRACT_UPDATED",
+  "modified_file": "scripts/runtime_s10_to_s16_mainline.py",
+  "device_run": false,
+  "offline_evidence": {
+    "xml_path": "artifacts\\debug\\s10_s16_start_20260516_121222.xml",
+    "screenshot_path": "artifacts\\screenshots\\s10_s16_start_20260516_121222.png"
+  },
+  "validations": [
+    {
+      "scenario": "A_complete_cards_plus_bottom_partial_selected_complete",
+      "input": "actual Honda S10 XML: 4 complete target cards visible plus bottom partial 5th card; selected_reference_index=1",
+      "expected": "handoff passes; no SECOND_STAGE_FAST_HANDOFF_S10_GATE_FAILED; no target_partial_card_only hard error",
+      "observed": {
+        "handoff_passed": true,
+        "strong_error_signals": [],
+        "vehicle_card_count": 4,
+        "partial_card_count": 1,
+        "bottom_partial_card_present": true,
+        "target_partial_card_visible": false,
+        "selected_reference_card_gate_passed": true
+      },
+      "passed": true
+    },
+    {
+      "scenario": "B_selected_reference_card_itself_partial",
+      "input": "actual Honda S10 XML bottom partial 5th card selected_reference_index=5",
+      "expected": "block with SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE",
+      "observed": {
+        "handoff_passed": false,
+        "strong_error_signals": [
+          "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE"
+        ],
+        "target_partial_card_visible": true,
+        "selected_reference_card_gate_passed": false,
+        "selected_reference_card_stop_code": "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE",
+        "select_stop_code": "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE"
+      },
+      "passed": true
+    },
+    {
+      "scenario": "C_selected_reference_card_fields_missing",
+      "input": "synthetic selected target card with full bounds but missing price/metadata",
+      "expected": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL or equivalent field-missing block",
+      "observed": {
+        "selected_reference_card_gate_passed": false,
+        "selected_reference_card_stop_code": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL",
+        "target_partial_card_visible": true,
+        "select_stop_code": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL"
+      },
+      "passed": true
+    },
+    {
+      "scenario": "D_bottom_partial_card_not_in_reference_history_or_next_index",
+      "input": "actual Honda S10 XML with bottom partial 5th card",
+      "expected": "partial card is excluded from canonical_reference_order/reference_history candidates and does not advance selected index",
+      "observed": {
+        "partial_card_count": 1,
+        "canonical_reference_order_count": 4,
+        "canonical_reference_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "partial_card_allowed_by_contract": true,
+        "selected_reference_card_gate_passed_for_index_1": true
+      },
+      "passed": true
+    }
+  ]
+}

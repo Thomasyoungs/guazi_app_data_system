@@ -1,0 +1,217 @@
+{
+  "status": "GEELY_YUANJING_V1_24_DETERMINISTIC_SEQUENCE_OLD_STOP_PATCHED",
+  "created_at": "2026-05-12T17:29:45",
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py",
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "target_fingerprint": "吉利|远景|2019款|升级版 1.5L 手动豪华型 国VI|白|2019.10",
+  "implemented": {
+    "global_precondition_gate": "contract_validate_preconditions is wired before contract actions execute.",
+    "s05_left_year_gate": {
+      "implemented": true,
+      "code_locations": [
+        "runtime_s01_to_s10_mainline.py:992",
+        "runtime_s01_to_s10_mainline.py:3438",
+        "runtime_s01_to_s10_mainline.py:3485",
+        "runtime_s01_to_s10_mainline.py:3518",
+        "runtime_s01_to_s10_mainline.py:7372"
+      ],
+      "stop_codes": [
+        "S05_TARGET_YEAR_LEFT_TAB_NOT_CLICKED",
+        "S05_TARGET_YEAR_SELECTION_NOT_CONFIRMED",
+        "S05_WRONG_YEAR_SELECTED",
+        "S05_RIGHT_CONFIG_SEARCH_WITHOUT_YEAR_CLICK"
+      ],
+      "live_evidence": {
+        "s05_year_click_required": true,
+        "s05_year_clicked": true,
+        "s05_year_click_text": "2019款",
+        "s05_year_click_region": "left_year_list",
+        "selected_year_after_click": "2019款",
+        "left_year_selected_text": "2019款",
+        "s05_target_year_selected_confirmed": true,
+        "target_config_seen_after_year": true,
+        "direct_right_config_search_without_year_click": false,
+        "s05_emission_variant_all_selected": true,
+        "selected_count_text": "已选2项"
+      }
+    },
+    "s10_to_s11_reliable_fast_gate": {
+      "implemented": true,
+      "code_locations": [
+        "runtime_s10_to_s16_mainline.py:1149"
+      ],
+      "timing_fields_recorded": [
+        "s10_ready_to_click_ms",
+        "s10_contract_validate_ms",
+        "reference_card_click_to_page_change_ms",
+        "s11_recognizer_ms",
+        "s11_report_entry_search_ms"
+      ]
+    },
+    "s11_missing_official_report_exclude_and_continue": {
+      "implemented": true,
+      "code_locations": [
+        "runtime_s10_to_s16_mainline.py:127",
+        "runtime_s10_to_s16_mainline.py:1184",
+        "runtime_s10_to_s16_mainline.py:3548",
+        "runtime_s10_to_s16_mainline.py:3562",
+        "runtime_s10_to_s16_mainline.py:3979",
+        "runtime_s10_to_s16_mainline.py:4064"
+      ],
+      "official_entry_terms": [
+        "查看完整报告",
+        "瓜子官方检测报告",
+        "完整检测报告"
+      ],
+      "merchant_self_check_not_official": true,
+      "old_stop_precedence_locked": "old full-visibility stop no longer preempts exclusion after search is finished",
+      "live_reference_2": {
+        "reference_index": 2,
+        "title": "吉利汽车 远景 2019款 升级版 1.5L 手动豪华型 国VI",
+        "price_text": "2.09万",
+        "metadata": "2019年 | 10.18万公里 | 安顺",
+        "status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+        "exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+        "reference_score": null,
+        "score_gte_target": null,
+        "official_report_entry_seen": false,
+        "view_full_report_seen": false,
+        "scroll_count": 8,
+        "returned_reliable_s10": false
+      }
+    },
+    "evidence_pairing_gate": {
+      "implemented": true,
+      "code_location": "runtime_s10_to_s16_mainline.py:3947",
+      "behavior": "foreign target terms are warning evidence and not decision evidence"
+    }
+  },
+  "validation": {
+    "py_compile": {
+      "runtime_s01_to_s10_mainline.py": "passed",
+      "runtime_s10_to_s16_mainline.py": "passed"
+    },
+    "offline_validation": {
+      "created_at": "2026-05-12T17:24:28",
+      "all_passed": true,
+      "results": [
+        {
+          "case": "s05_config_without_year_negative",
+          "passed": true,
+          "stop_code": "S05_RIGHT_CONFIG_SEARCH_WITHOUT_YEAR_CLICK"
+        },
+        {
+          "case": "s05_right_config_year_belongs_positive",
+          "passed": true
+        },
+        {
+          "case": "s10_nonreliable_negative",
+          "passed": true,
+          "stop_code": "S10_RELIABLE_SOURCE_GATE_NOT_PASSED"
+        },
+        {
+          "case": "s11_missing_report_exclude_positive",
+          "passed": true
+        },
+        {
+          "case": "s11_official_present_negative",
+          "passed": true,
+          "stop_code": "S11_REPORT_MISSING_EXCLUDE_PRECONDITION_NOT_PASSED"
+        },
+        {
+          "case": "evidence_pairing_foreign_terms_warning",
+          "passed": true,
+          "status": "warning_foreign_target_terms_detected",
+          "terms": [
+            "C10",
+            "悦享版",
+            "零跑"
+          ]
+        }
+      ]
+    },
+    "live_first_stage": {
+      "status": "S10_READY",
+      "fingerprint": "吉利|远景|2019款|升级版 1.5L 手动豪华型 国VI|白|2019.10",
+      "S10_READY": true,
+      "trisame_count": 4
+    },
+    "live_second_stage": {
+      "status": "FULL_CHAIN_PRICED_DONE",
+      "reference_history_summary": [
+        {
+          "reference_index": 1,
+          "title": "吉利汽车 远景 2019款 升级版 1.5L 手动豪华型 国VI",
+          "price_text": "2.04万",
+          "metadata": "2019年 | 8.15万公里 | 唐山",
+          "status": "COLLECTED_NOT_QUALIFIED",
+          "exclusion_reason": null,
+          "reference_score": 94.0,
+          "score_gte_target": false,
+          "official_report_entry_seen": true,
+          "view_full_report_seen": null,
+          "scroll_count": 2,
+          "returned_reliable_s10": true
+        },
+        {
+          "reference_index": 2,
+          "title": "吉利汽车 远景 2019款 升级版 1.5L 手动豪华型 国VI",
+          "price_text": "2.09万",
+          "metadata": "2019年 | 10.18万公里 | 安顺",
+          "status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+          "exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+          "reference_score": null,
+          "score_gte_target": null,
+          "official_report_entry_seen": false,
+          "view_full_report_seen": false,
+          "scroll_count": 8,
+          "returned_reliable_s10": false
+        },
+        {
+          "reference_index": 3,
+          "title": "吉利汽车 远景 2019款 升级版 1.5L 手动豪华型 国VI",
+          "price_text": "2.20万",
+          "metadata": "2019年 | 12.63万公里 | 达州",
+          "status": "COLLECTED_NOT_QUALIFIED",
+          "exclusion_reason": null,
+          "reference_score": 80.0,
+          "score_gte_target": false,
+          "official_report_entry_seen": true,
+          "view_full_report_seen": null,
+          "scroll_count": 1,
+          "returned_reliable_s10": true
+        },
+        {
+          "reference_index": 4,
+          "title": "吉利汽车 远景 2019款 升级版 1.5L 手动豪华型 国VI",
+          "price_text": "2.33万",
+          "metadata": "2019年 | 6.33万公里 | 唐山",
+          "status": "FINAL_REFERENCE",
+          "exclusion_reason": null,
+          "reference_score": 97.0,
+          "score_gte_target": true,
+          "official_report_entry_seen": true,
+          "view_full_report_seen": null,
+          "scroll_count": 1,
+          "returned_reliable_s10": false
+        }
+      ],
+      "final_reference_index": 4,
+      "priced": true
+    },
+    "raw_large_fields_check": {
+      "result_s01_to_s10_bad_fields": [],
+      "result_s10_to_s16_bad_fields": [],
+      "result_bad_fields": []
+    }
+  },
+  "old_stop_coverage": {
+    "s05_right_config_without_left_year": "blocked by S05_RIGHT_CONFIG_SEARCH_WITHOUT_YEAR_CLICK",
+    "s11_report_missing_old_stop": "covered by exclusion when search is finished",
+    "s10_non_reliable_click": "blocked by S10_RELIABLE_SOURCE_GATE_NOT_PASSED",
+    "foreign_artifact_pairing": "warning only"
+  },
+  "full_chain_status": "RUN_FULL_CHAIN_GEELY_YUANJING_2019_AFTER_V1_24_DETERMINISTIC_SEQUENCE_DONE"
+}

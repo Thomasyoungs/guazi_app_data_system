@@ -1,0 +1,87 @@
+{
+  "status": "RUN_FAILED_WITH_ISSUE",
+  "final_state": "RUN_FULL_CHAIN_HONDA_ACCORD_2023_260TURBO_ZHIXIANG_AFTER_SYSTEM_LOCK_DONE",
+  "created_at": "2026-05-12T17:53:02+08:00",
+  "target_fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "target_task": {
+    "actual_target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\data\\current_target_task.json",
+    "brand": "本田",
+    "series": "雅阁",
+    "series_alias": "",
+    "year_model": "2023款",
+    "config_model": "260TURBO 智享版",
+    "color": "黑",
+    "register_date": "2024.01",
+    "register_year": 2024,
+    "current_year": 2026,
+    "target_age_formula": "current_year - register_year",
+    "calculated_target_age": 2
+  },
+  "first_stage_status": "S05_TARGET_YEAR_SELECTION_NOT_CONFIRMED",
+  "second_stage_status": "SECOND_STAGE_NOT_RUN",
+  "stop_code": "S05_TARGET_YEAR_SELECTION_NOT_CONFIRMED",
+  "stop_reason": "Target model year left tab was not deterministically confirmed before selecting right-side trim.",
+  "stage_reached": "S05",
+  "S10_READY": false,
+  "s03": {
+    "contract_version": "V1.16",
+    "target_initial_letter": "B",
+    "matched_brand_text": "本田",
+    "selected_click_region_type": "brand_row_left_icon_safe_point",
+    "after_click_page_type": "S04"
+  },
+  "s05_diagnosis": {
+    "s05_year_click_required": true,
+    "s05_year_clicked": true,
+    "s05_year_click_text": "2023款",
+    "s05_year_click_bounds": [
+      0,
+      851,
+      293,
+      981
+    ],
+    "s05_year_click_region": "left_year_list",
+    "selected_year_after_click": null,
+    "left_year_selected_text": null,
+    "s05_target_year_selected_confirmed": false,
+    "right_config_list_after_year": [
+      "雅阁车型",
+      "2023款全部车型",
+      "2023款 260TURBO 卓越版",
+      "2023款 260TURBO 旗舰版",
+      "2023款 260TURBO 智享版",
+      "2023款 260TURBO 舒适版",
+      "2022款全部车型",
+      "2022款 260TURBO 幻夜·尊贵版",
+      "2022款 260TURBO 幻夜·旗舰版",
+      "2022款 260TURBO 舒享版",
+      "2022款 260TURBO 舒适版",
+      "2022款 260TURBO 豪华版",
+      "2022款 锐·混动 2.0L 幻夜·锐尊版",
+      "确定"
+    ],
+    "target_config_seen_after_year": true,
+    "direct_right_config_search_without_year_click": false,
+    "interpretation": "Left 2023? was clicked and target trim was visible after year click, but current S05 year confirmation gate did not accept this year-section list shape; contract stopped before selecting trim."
+  },
+  "pricing": null,
+  "reference_history": [],
+  "quality_checks": {
+    "result_s01_to_s10_json_valid": true,
+    "result_s10_to_s16_json_valid": true,
+    "result_json_valid": true,
+    "raw_xml_large_fields_present": false,
+    "old_target_pollution_cleared_from_second_stage_result": true,
+    "baseline_overwritten": false,
+    "code_modified": false,
+    "pricing_modified": false,
+    "config_modified": false,
+    "docx_modified": false
+  },
+  "next_step_recommendation": "READ_ONLY_DIAGNOSE_OR_PATCH_S05_YEAR_SECTION_LIST_CONFIRMATION_FOR_HONDA_ACCORD. The likely gap is S05 target-year confirmation with right-side year-section lists containing adjacent-year sections below the target-year section.",
+  "evidence_paths": {
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "result_s10_to_s16": "output/result_s10_to_s16.json",
+    "result": "output/result.json"
+  }
+}

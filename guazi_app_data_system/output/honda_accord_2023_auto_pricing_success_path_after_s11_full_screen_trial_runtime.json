@@ -1,0 +1,21 @@
+﻿{
+  "status": "S11_FIRST_SCROLL_FULL_SCREEN_TRIAL_NOT_FOUND",
+  "runtime_executed": false,
+  "code_modified": false,
+  "py_compile": "passed",
+  "module_import": "IMPORT_OK",
+  "expected": {
+    "s11_first_scroll_strategy": "full_screen_trial",
+    "s11_first_scroll_screen_ratio": 1.0
+  },
+  "actual": {
+    "S11_FIRST_SCROLL_STRATEGY": "two_thirds_screen_trial",
+    "S11_FIRST_SCROLL_SCREEN_RATIO": 0.66
+  },
+  "reason": "Current second-stage script is still configured for the 2/3-screen trial, not the requested full-screen trial. Per instruction, no patch was applied and real-device regression was not started.",
+  "checked_file": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py",
+  "output_files": [
+    "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\honda_accord_2023_auto_pricing_success_path_after_s11_full_screen_trial_runtime_latest.md",
+    "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\honda_accord_2023_auto_pricing_success_path_after_s11_full_screen_trial_runtime.json"
+  ]
+}

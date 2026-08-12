@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "project": "guazi_app_data_system",
+    "mode": "device_real_mainline_s01_to_s10",
+    "field_scope": "contract_only"
+  },
+  "status": "TARGET_TASK_FIELD_MISSING",
+  "error": "Target task is missing required fields.",
+  "target_task": {
+    "actual_target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\tmp_test\\target_mismatch\\current_target_task.json",
+    "brand": "大众",
+    "series": "帕萨特",
+    "series_alias": "",
+    "year_model": "2020款",
+    "config_model": "330TSI 尊贵版 国VI",
+    "color": "黑色",
+    "register_date": "",
+    "register_year": null,
+    "current_year": 2026,
+    "target_age_formula": "current_year - register_year",
+    "calculated_target_age": null
+  },
+  "missing_fields": [
+    "registration_date",
+    "registration_date_year"
+  ],
+  "target_fingerprint": "大众|帕萨特|2020款|330TSI 尊贵版 国VI|黑色|",
+  "target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\tmp_test\\target_mismatch\\current_target_task.json",
+  "brand": "大众",
+  "series": "帕萨特",
+  "year_model": "2020款",
+  "config_model": "330TSI 尊贵版 国VI",
+  "color": "黑色",
+  "register_date": null,
+  "current_state": "TARGET_TASK_FIELD_MISSING",
+  "final_status": "TARGET_TASK_FIELD_MISSING",
+  "created_at": "2026-07-04T05:18:27.381207+00:00",
+  "result_segment": "s01_to_s10"
+}

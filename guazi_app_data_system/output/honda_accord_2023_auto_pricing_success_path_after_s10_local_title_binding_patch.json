@@ -1,0 +1,105 @@
+{
+  "report_name": "honda_accord_2023_auto_pricing_success_path_after_s10_local_title_binding_patch",
+  "generated_at": "2026-05-16T17:16:49",
+  "target_fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+  "patch_status": "S10_SELECTED_CARD_LOCAL_TITLE_BINDING_PATCHED",
+  "offline_validation_status": "S10_SELECTED_CARD_LOCAL_TITLE_BINDING_OFFLINE_VALIDATED",
+  "runtime_final_status": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL",
+  "runtime_success": false,
+  "failure_status": "SECOND_STAGE_DID_NOT_REACH_S16",
+  "failure_detail": {
+    "issue_code": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL",
+    "current_reference_index": 7,
+    "next_reference_index": 7,
+    "binding_stop_code": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL",
+    "binding_reason": "Target reference card is only partially visible and is missing required price/metadata evidence.",
+    "binding_target_reference_index": 7,
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_missing_return_s10_1_20260516_171604.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_missing_return_s10_1_20260516_171604.xml"
+  },
+  "first_stage_status": "S10_READY",
+  "second_stage_reached_s16": false,
+  "s10_local_title_binding_runtime_evidence": {
+    "global_title_duplicate_hard_block_not_seen": true,
+    "s10_title_text_node_not_unique_not_seen": true,
+    "local_container_binding_seen": true,
+    "examples": [
+      "reference #2 through #5 used selected_reference_card_container/local_title binding in runtime outputs",
+      "reference #5 survived autoscroll and scored 74.5, confirming S10 autoscroll and local binding path did not regress"
+    ]
+  },
+  "reference_history_summary": [
+    {
+      "reference_index": 1,
+      "reference_score": null,
+      "reference_score_trustworthy": null,
+      "s14_collect_done": null,
+      "excluded_reference_reason": null,
+      "status": null,
+      "stop_code": null
+    },
+    {
+      "reference_index": 2,
+      "reference_score": 83.0,
+      "reference_score_trustworthy": true,
+      "s14_collect_done": true,
+      "excluded_reference_reason": null,
+      "status": null,
+      "stop_code": null
+    },
+    {
+      "reference_index": 3,
+      "reference_score": 76.0,
+      "reference_score_trustworthy": true,
+      "s14_collect_done": true,
+      "excluded_reference_reason": null,
+      "status": null,
+      "stop_code": null
+    },
+    {
+      "reference_index": 4,
+      "reference_score": 81.0,
+      "reference_score_trustworthy": true,
+      "s14_collect_done": true,
+      "excluded_reference_reason": null,
+      "status": null,
+      "stop_code": null
+    },
+    {
+      "reference_index": 5,
+      "reference_score": 74.5,
+      "reference_score_trustworthy": true,
+      "s14_collect_done": true,
+      "excluded_reference_reason": null,
+      "status": null,
+      "stop_code": null
+    },
+    {
+      "reference_index": 6,
+      "reference_score": null,
+      "reference_score_trustworthy": null,
+      "s14_collect_done": null,
+      "excluded_reference_reason": null,
+      "status": null,
+      "stop_code": null
+    }
+  ],
+  "auto_pricing_path": {
+    "entered_s16": false,
+    "final_price_generated": false,
+    "pricing_payload_generated": false,
+    "manual_review_required": null,
+    "auto_pricing_allowed": null
+  },
+  "regression_checks": {
+    "s10_selected_card_autoscroll_no_regression": true,
+    "s11_report_entry_reposition_no_regression_observed": true,
+    "metal_deduct_no_keyerror_observed": true,
+    "s14_no_regression_observed": true,
+    "old_title_global_uniqueness_block_removed": true
+  },
+  "next_blocker": {
+    "code": "REFERENCE_CARD_INCOMPLETE_AFTER_SCROLL",
+    "summary": "reference #7 selected card remained partially visible and missing price evidence after scroll; this is a selected-card completeness gate, not the old global title duplicate gate."
+  }
+}

@@ -1,0 +1,1094 @@
+﻿{
+    "task":  "READ_ONLY_AUDIT_S11_REPORT_SEARCH_SCROLL_STOP_XML",
+    "created_at":  "2026-05-17T12:04:05",
+    "target_fingerprint":  "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+    "reference_under_audit":  {
+                                  "price":  "12.27万",
+                                  "context":  "雅阁正向样本 S11_REPORT_SEARCH"
+                              },
+    "classification":  "XML_SCREENSHOT_NOT_SAME_MOMENT",
+    "is_page_contract_problem":  false,
+    "is_fixed_script_issue":  true,
+    "fixed_script_issue_type":  "fresh/xml_screenshot_pairing_or_capture_timing",
+    "summary":  "第 3、4 次停点截图中“查看完整报告”完整可见且未被底部栏遮挡；但对应 XML 原文没有“查看完整报告”。逐节点展开后，唯一命中的关键词节点是 S10 筛选栏“成色/车况”，没有 S11 报告入口、官方检测报告卡片、保险理赔记录等详情页节点。更关键的是，21:33:47-21:36:19 这一组 12 个 XML 文件大小均为 99990，SHA256 完全相同，XML 内容仍是 S10 雅阁列表页（品牌专区、价格从低到高、车型配置、12.27 万等），而截图是 S11 详情页不同滚动位置。因此脚本未点击的直接原因不是页面契约或安全区过滤，而是截图/XML fresh 配对不同步：代码基于 stale S10 XML 判断 exact_report_entry_seen=false。",
+    "key_findings":  [
+                         "截图 search_3/search_4 肉眼可见完整“查看完整报告”，且按钮不在底部栏遮挡区。",
+                         "对应 XML search_3/search_4 中“查看完整报告”精确节点数量为 0；唯一命中的关键词节点是 S10 筛选栏“成色/车况”，不是 S11 报告入口。",
+                         "同一组 12 个 XML 文件 SHA256 完全一致，说明不是逐次 fresh 到了不同 S11 滚动位置的 XML。",
+                         "XML 原文包含 S10 列表强信号：品牌专区、价格从低到高、车型配置、12.27 万车卡价格等。",
+                         "当前代码 _find_s11_official_report_entry_node 依赖 _find_exact_label_node(snapshot, 查看完整报告)；在 stale XML 中没有节点，所以 exact_report_entry_seen=false，后续安全区/点击分支不会触发。"
+                     ],
+    "same_xml_sha_groups":  {
+                                "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942":  [
+                                                                                                         1,
+                                                                                                         2,
+                                                                                                         3,
+                                                                                                         4,
+                                                                                                         5,
+                                                                                                         6,
+                                                                                                         7,
+                                                                                                         8,
+                                                                                                         9,
+                                                                                                         10,
+                                                                                                         11,
+                                                                                                         12
+                                                                                                     ]
+                            },
+    "scroll_stops":  [
+                         {
+                             "iteration":  1,
+                             "timestamp_token":  "213347",
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_1_20260516_213347.png",
+                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_1_20260516_213347.xml",
+                             "screenshot_observation":  "截图为 12.27 车辆详情页上方/本车卖点附近，未看到完整“查看完整报告”。",
+                             "screenshot_view_full_report_visible":  false,
+                             "scroll_mode_inferred":  "first_scroll_or_initial_search_stop",
+                             "scroll_distance_px":  null,
+                             "page_changed_from_previous_screenshot":  null,
+                             "xml_dump_success":  true,
+                             "xml_file_size":  99990,
+                             "xml_sha256":  "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942",
+                             "xml_node_count":  296,
+                             "xml_contains_s10_list_signals":  true,
+                             "xml_contains_s11_report_signals":  false,
+                             "xml_keyword_node_count":  1,
+                             "xml_keyword_nodes":  [
+                                                       {
+                                                           "node_index":  55,
+                                                           "text":  "成色/车况",
+                                                           "content_desc":  "",
+                                                           "resource_id":  "",
+                                                           "class":  "android.widget.TextView",
+                                                           "bounds":  "[643,793][880,841]",
+                                                           "clickable":  "true",
+                                                           "enabled":  "true",
+                                                           "visible_to_user":  ""
+                                                       }
+                                                   ],
+                             "xml_first_text_nodes_sample":  [
+                                                                 "品牌专区",
+                                                                 "本田",
+                                                                 "全部能源类型",
+                                                                 "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+                                                                 "雅阁",
+                                                                 "3.09",
+                                                                 "万起",
+                                                                 "全国1355辆在售/本地931辆在售",
+                                                                 "qnbdp1066x652057c93ed04f5280e986b5de372e3a1755679360",
+                                                                 "本田销量排行榜 第3名",
+                                                                 "全部",
+                                                                 "雅阁 商务家用",
+                                                                 "思域 性能钢炮",
+                                                                 "CR-V 家用首选",
+                                                                 "飞度 省油耐造",
+                                                                 "皓影 家用首选",
+                                                                 "XR-V 家用首选",
+                                                                 "艾力绅 商务接待",
+                                                                 "缤智 练手车",
+                                                                 "奥德赛 奶爸专车",
+                                                                 "查看 更多",
+                                                                 "价格从低到高",
+                                                                 "价格",
+                                                                 "成色/车况",
+                                                                 "车型配置",
+                                                                 "热门车型",
+                                                                 "年款",
+                                                                 "黑色",
+                                                                 "本地车",
+                                                                 "准新车"
+                                                             ],
+                             "xml_context_snippets":  [
+                                                          {
+                                                              "needle":  "品牌专区",
+                                                              "snippet":  "false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2510]\"\u003e\u003cnode index=\"0\" text=\"品牌专区\" resource-id=\"\" class=\"android.webkit.WebView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2513]\"\u003e\u003cnode index=\"0\" text=\"\" resource-id=\"app\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"fal"
+                                                          },
+                                                          {
+                                                              "needle":  "价格从低到高",
+                                                              "snippet":  "true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][0,0]\" /\u003e\u003c/node\u003e\u003c/node\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"价格从低到高\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[39,793][347,841]\" /\u003e\u003cnode index=\"2\" text=\"价格\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" c"
+                                                          },
+                                                          {
+                                                              "needle":  "车型配置",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[643,793][880,841]\" /\u003e\u003cnode index=\"4\" text=\"车型配置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[965,793][1183,841]\" /\u003e\u003cnode index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable"
+                                                          },
+                                                          {
+                                                              "needle":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                              "snippet":  "enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1010][568,1059]\" /\u003e\u003cnode index=\"1\" text=\" 本田 雅阁 2023款 260TURBO 智享版\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,997][949,1121]\" /\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"2024年 | 6.54万公里 | 唐山 | HondaSENS\" resource-id=\"\" class=\"android.widget.TextVi"
+                                                          },
+                                                          {
+                                                              "needle":  "12.27",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][581,2440]\"\u003e\u003cnode index=\"0\" text=\"12.27\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][542,2440]\" /\u003e\u003cnode index=\"1\" text=\"万\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\""
+                                                          }
+                                                      ],
+                             "candidate_node_assessment":  "存在候选节点，需要检查过滤条件。"
+                         },
+                         {
+                             "iteration":  2,
+                             "timestamp_token":  "213401",
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_2_20260516_213401.png",
+                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_2_20260516_213401.xml",
+                             "screenshot_observation":  "截图进入瓜子官方检测报告卡片上方，未看到完整“查看完整报告”按钮。",
+                             "screenshot_view_full_report_visible":  false,
+                             "scroll_mode_inferred":  "normal_or_fine_search_stop",
+                             "scroll_distance_px":  null,
+                             "page_changed_from_previous_screenshot":  true,
+                             "xml_dump_success":  true,
+                             "xml_file_size":  99990,
+                             "xml_sha256":  "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942",
+                             "xml_node_count":  296,
+                             "xml_contains_s10_list_signals":  true,
+                             "xml_contains_s11_report_signals":  false,
+                             "xml_keyword_node_count":  1,
+                             "xml_keyword_nodes":  [
+                                                       {
+                                                           "node_index":  55,
+                                                           "text":  "成色/车况",
+                                                           "content_desc":  "",
+                                                           "resource_id":  "",
+                                                           "class":  "android.widget.TextView",
+                                                           "bounds":  "[643,793][880,841]",
+                                                           "clickable":  "true",
+                                                           "enabled":  "true",
+                                                           "visible_to_user":  ""
+                                                       }
+                                                   ],
+                             "xml_first_text_nodes_sample":  [
+                                                                 "品牌专区",
+                                                                 "本田",
+                                                                 "全部能源类型",
+                                                                 "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+                                                                 "雅阁",
+                                                                 "3.09",
+                                                                 "万起",
+                                                                 "全国1355辆在售/本地931辆在售",
+                                                                 "qnbdp1066x652057c93ed04f5280e986b5de372e3a1755679360",
+                                                                 "本田销量排行榜 第3名",
+                                                                 "全部",
+                                                                 "雅阁 商务家用",
+                                                                 "思域 性能钢炮",
+                                                                 "CR-V 家用首选",
+                                                                 "飞度 省油耐造",
+                                                                 "皓影 家用首选",
+                                                                 "XR-V 家用首选",
+                                                                 "艾力绅 商务接待",
+                                                                 "缤智 练手车",
+                                                                 "奥德赛 奶爸专车",
+                                                                 "查看 更多",
+                                                                 "价格从低到高",
+                                                                 "价格",
+                                                                 "成色/车况",
+                                                                 "车型配置",
+                                                                 "热门车型",
+                                                                 "年款",
+                                                                 "黑色",
+                                                                 "本地车",
+                                                                 "准新车"
+                                                             ],
+                             "xml_context_snippets":  [
+                                                          {
+                                                              "needle":  "品牌专区",
+                                                              "snippet":  "false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2510]\"\u003e\u003cnode index=\"0\" text=\"品牌专区\" resource-id=\"\" class=\"android.webkit.WebView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2513]\"\u003e\u003cnode index=\"0\" text=\"\" resource-id=\"app\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"fal"
+                                                          },
+                                                          {
+                                                              "needle":  "价格从低到高",
+                                                              "snippet":  "true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][0,0]\" /\u003e\u003c/node\u003e\u003c/node\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"价格从低到高\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[39,793][347,841]\" /\u003e\u003cnode index=\"2\" text=\"价格\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" c"
+                                                          },
+                                                          {
+                                                              "needle":  "车型配置",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[643,793][880,841]\" /\u003e\u003cnode index=\"4\" text=\"车型配置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[965,793][1183,841]\" /\u003e\u003cnode index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable"
+                                                          },
+                                                          {
+                                                              "needle":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                              "snippet":  "enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1010][568,1059]\" /\u003e\u003cnode index=\"1\" text=\" 本田 雅阁 2023款 260TURBO 智享版\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,997][949,1121]\" /\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"2024年 | 6.54万公里 | 唐山 | HondaSENS\" resource-id=\"\" class=\"android.widget.TextVi"
+                                                          },
+                                                          {
+                                                              "needle":  "12.27",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][581,2440]\"\u003e\u003cnode index=\"0\" text=\"12.27\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][542,2440]\" /\u003e\u003cnode index=\"1\" text=\"万\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\""
+                                                          }
+                                                      ],
+                             "candidate_node_assessment":  "存在候选节点，需要检查过滤条件。"
+                         },
+                         {
+                             "iteration":  3,
+                             "timestamp_token":  "213415",
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260516_213415.png",
+                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260516_213415.xml",
+                             "screenshot_observation":  "截图中“查看完整报告”完整可见，位于瓜子官方检测报告卡片底部左侧；旁边为“找顾问解读报告”；未见底部栏遮挡该按钮。",
+                             "screenshot_view_full_report_visible":  true,
+                             "scroll_mode_inferred":  "fine_search_stop_candidate_visible_in_screenshot",
+                             "scroll_distance_px":  null,
+                             "page_changed_from_previous_screenshot":  true,
+                             "xml_dump_success":  true,
+                             "xml_file_size":  99990,
+                             "xml_sha256":  "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942",
+                             "xml_node_count":  296,
+                             "xml_contains_s10_list_signals":  true,
+                             "xml_contains_s11_report_signals":  false,
+                             "xml_keyword_node_count":  1,
+                             "xml_keyword_nodes":  [
+                                                       {
+                                                           "node_index":  55,
+                                                           "text":  "成色/车况",
+                                                           "content_desc":  "",
+                                                           "resource_id":  "",
+                                                           "class":  "android.widget.TextView",
+                                                           "bounds":  "[643,793][880,841]",
+                                                           "clickable":  "true",
+                                                           "enabled":  "true",
+                                                           "visible_to_user":  ""
+                                                       }
+                                                   ],
+                             "xml_first_text_nodes_sample":  [
+                                                                 "品牌专区",
+                                                                 "本田",
+                                                                 "全部能源类型",
+                                                                 "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+                                                                 "雅阁",
+                                                                 "3.09",
+                                                                 "万起",
+                                                                 "全国1355辆在售/本地931辆在售",
+                                                                 "qnbdp1066x652057c93ed04f5280e986b5de372e3a1755679360",
+                                                                 "本田销量排行榜 第3名",
+                                                                 "全部",
+                                                                 "雅阁 商务家用",
+                                                                 "思域 性能钢炮",
+                                                                 "CR-V 家用首选",
+                                                                 "飞度 省油耐造",
+                                                                 "皓影 家用首选",
+                                                                 "XR-V 家用首选",
+                                                                 "艾力绅 商务接待",
+                                                                 "缤智 练手车",
+                                                                 "奥德赛 奶爸专车",
+                                                                 "查看 更多",
+                                                                 "价格从低到高",
+                                                                 "价格",
+                                                                 "成色/车况",
+                                                                 "车型配置",
+                                                                 "热门车型",
+                                                                 "年款",
+                                                                 "黑色",
+                                                                 "本地车",
+                                                                 "准新车"
+                                                             ],
+                             "xml_context_snippets":  [
+                                                          {
+                                                              "needle":  "品牌专区",
+                                                              "snippet":  "false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2510]\"\u003e\u003cnode index=\"0\" text=\"品牌专区\" resource-id=\"\" class=\"android.webkit.WebView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2513]\"\u003e\u003cnode index=\"0\" text=\"\" resource-id=\"app\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"fal"
+                                                          },
+                                                          {
+                                                              "needle":  "价格从低到高",
+                                                              "snippet":  "true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][0,0]\" /\u003e\u003c/node\u003e\u003c/node\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"价格从低到高\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[39,793][347,841]\" /\u003e\u003cnode index=\"2\" text=\"价格\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" c"
+                                                          },
+                                                          {
+                                                              "needle":  "车型配置",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[643,793][880,841]\" /\u003e\u003cnode index=\"4\" text=\"车型配置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[965,793][1183,841]\" /\u003e\u003cnode index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable"
+                                                          },
+                                                          {
+                                                              "needle":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                              "snippet":  "enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1010][568,1059]\" /\u003e\u003cnode index=\"1\" text=\" 本田 雅阁 2023款 260TURBO 智享版\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,997][949,1121]\" /\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"2024年 | 6.54万公里 | 唐山 | HondaSENS\" resource-id=\"\" class=\"android.widget.TextVi"
+                                                          },
+                                                          {
+                                                              "needle":  "12.27",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][581,2440]\"\u003e\u003cnode index=\"0\" text=\"12.27\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][542,2440]\" /\u003e\u003cnode index=\"1\" text=\"万\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\""
+                                                          }
+                                                      ],
+                             "candidate_node_assessment":  "存在候选节点，需要检查过滤条件。"
+                         },
+                         {
+                             "iteration":  4,
+                             "timestamp_token":  "213429",
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_4_20260516_213429.png",
+                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_4_20260516_213429.xml",
+                             "screenshot_observation":  "截图中“查看完整报告”完整可见，位置更靠上，仍在安全区域；旁边为“找顾问解读报告”；未见底部栏遮挡该按钮。",
+                             "screenshot_view_full_report_visible":  true,
+                             "scroll_mode_inferred":  "fine_or_backtrack_stop_candidate_visible_in_screenshot",
+                             "scroll_distance_px":  null,
+                             "page_changed_from_previous_screenshot":  true,
+                             "xml_dump_success":  true,
+                             "xml_file_size":  99990,
+                             "xml_sha256":  "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942",
+                             "xml_node_count":  296,
+                             "xml_contains_s10_list_signals":  true,
+                             "xml_contains_s11_report_signals":  false,
+                             "xml_keyword_node_count":  1,
+                             "xml_keyword_nodes":  [
+                                                       {
+                                                           "node_index":  55,
+                                                           "text":  "成色/车况",
+                                                           "content_desc":  "",
+                                                           "resource_id":  "",
+                                                           "class":  "android.widget.TextView",
+                                                           "bounds":  "[643,793][880,841]",
+                                                           "clickable":  "true",
+                                                           "enabled":  "true",
+                                                           "visible_to_user":  ""
+                                                       }
+                                                   ],
+                             "xml_first_text_nodes_sample":  [
+                                                                 "品牌专区",
+                                                                 "本田",
+                                                                 "全部能源类型",
+                                                                 "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+                                                                 "雅阁",
+                                                                 "3.09",
+                                                                 "万起",
+                                                                 "全国1355辆在售/本地931辆在售",
+                                                                 "qnbdp1066x652057c93ed04f5280e986b5de372e3a1755679360",
+                                                                 "本田销量排行榜 第3名",
+                                                                 "全部",
+                                                                 "雅阁 商务家用",
+                                                                 "思域 性能钢炮",
+                                                                 "CR-V 家用首选",
+                                                                 "飞度 省油耐造",
+                                                                 "皓影 家用首选",
+                                                                 "XR-V 家用首选",
+                                                                 "艾力绅 商务接待",
+                                                                 "缤智 练手车",
+                                                                 "奥德赛 奶爸专车",
+                                                                 "查看 更多",
+                                                                 "价格从低到高",
+                                                                 "价格",
+                                                                 "成色/车况",
+                                                                 "车型配置",
+                                                                 "热门车型",
+                                                                 "年款",
+                                                                 "黑色",
+                                                                 "本地车",
+                                                                 "准新车"
+                                                             ],
+                             "xml_context_snippets":  [
+                                                          {
+                                                              "needle":  "品牌专区",
+                                                              "snippet":  "false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2510]\"\u003e\u003cnode index=\"0\" text=\"品牌专区\" resource-id=\"\" class=\"android.webkit.WebView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2513]\"\u003e\u003cnode index=\"0\" text=\"\" resource-id=\"app\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"fal"
+                                                          },
+                                                          {
+                                                              "needle":  "价格从低到高",
+                                                              "snippet":  "true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][0,0]\" /\u003e\u003c/node\u003e\u003c/node\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"价格从低到高\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[39,793][347,841]\" /\u003e\u003cnode index=\"2\" text=\"价格\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" c"
+                                                          },
+                                                          {
+                                                              "needle":  "车型配置",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[643,793][880,841]\" /\u003e\u003cnode index=\"4\" text=\"车型配置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[965,793][1183,841]\" /\u003e\u003cnode index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable"
+                                                          },
+                                                          {
+                                                              "needle":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                              "snippet":  "enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1010][568,1059]\" /\u003e\u003cnode index=\"1\" text=\" 本田 雅阁 2023款 260TURBO 智享版\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,997][949,1121]\" /\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"2024年 | 6.54万公里 | 唐山 | HondaSENS\" resource-id=\"\" class=\"android.widget.TextVi"
+                                                          },
+                                                          {
+                                                              "needle":  "12.27",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][581,2440]\"\u003e\u003cnode index=\"0\" text=\"12.27\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][542,2440]\" /\u003e\u003cnode index=\"1\" text=\"万\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\""
+                                                          }
+                                                      ],
+                             "candidate_node_assessment":  "存在候选节点，需要检查过滤条件。"
+                         },
+                         {
+                             "iteration":  5,
+                             "timestamp_token":  "213443",
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_5_20260516_213443.png",
+                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_5_20260516_213443.xml",
+                             "screenshot_observation":  "截图已经滑过报告入口，显示保险理赔记录、AI 帮我解读车况、服务中心等区域；未看到“查看完整报告”。",
+                             "screenshot_view_full_report_visible":  false,
+                             "scroll_mode_inferred":  "overshot_past_entry_stop",
+                             "scroll_distance_px":  null,
+                             "page_changed_from_previous_screenshot":  true,
+                             "xml_dump_success":  true,
+                             "xml_file_size":  99990,
+                             "xml_sha256":  "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942",
+                             "xml_node_count":  296,
+                             "xml_contains_s10_list_signals":  true,
+                             "xml_contains_s11_report_signals":  false,
+                             "xml_keyword_node_count":  1,
+                             "xml_keyword_nodes":  [
+                                                       {
+                                                           "node_index":  55,
+                                                           "text":  "成色/车况",
+                                                           "content_desc":  "",
+                                                           "resource_id":  "",
+                                                           "class":  "android.widget.TextView",
+                                                           "bounds":  "[643,793][880,841]",
+                                                           "clickable":  "true",
+                                                           "enabled":  "true",
+                                                           "visible_to_user":  ""
+                                                       }
+                                                   ],
+                             "xml_first_text_nodes_sample":  [
+                                                                 "品牌专区",
+                                                                 "本田",
+                                                                 "全部能源类型",
+                                                                 "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+                                                                 "雅阁",
+                                                                 "3.09",
+                                                                 "万起",
+                                                                 "全国1355辆在售/本地931辆在售",
+                                                                 "qnbdp1066x652057c93ed04f5280e986b5de372e3a1755679360",
+                                                                 "本田销量排行榜 第3名",
+                                                                 "全部",
+                                                                 "雅阁 商务家用",
+                                                                 "思域 性能钢炮",
+                                                                 "CR-V 家用首选",
+                                                                 "飞度 省油耐造",
+                                                                 "皓影 家用首选",
+                                                                 "XR-V 家用首选",
+                                                                 "艾力绅 商务接待",
+                                                                 "缤智 练手车",
+                                                                 "奥德赛 奶爸专车",
+                                                                 "查看 更多",
+                                                                 "价格从低到高",
+                                                                 "价格",
+                                                                 "成色/车况",
+                                                                 "车型配置",
+                                                                 "热门车型",
+                                                                 "年款",
+                                                                 "黑色",
+                                                                 "本地车",
+                                                                 "准新车"
+                                                             ],
+                             "xml_context_snippets":  [
+                                                          {
+                                                              "needle":  "品牌专区",
+                                                              "snippet":  "false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2510]\"\u003e\u003cnode index=\"0\" text=\"品牌专区\" resource-id=\"\" class=\"android.webkit.WebView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2513]\"\u003e\u003cnode index=\"0\" text=\"\" resource-id=\"app\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"fal"
+                                                          },
+                                                          {
+                                                              "needle":  "价格从低到高",
+                                                              "snippet":  "true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][0,0]\" /\u003e\u003c/node\u003e\u003c/node\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"价格从低到高\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[39,793][347,841]\" /\u003e\u003cnode index=\"2\" text=\"价格\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" c"
+                                                          },
+                                                          {
+                                                              "needle":  "车型配置",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[643,793][880,841]\" /\u003e\u003cnode index=\"4\" text=\"车型配置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[965,793][1183,841]\" /\u003e\u003cnode index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable"
+                                                          },
+                                                          {
+                                                              "needle":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                              "snippet":  "enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1010][568,1059]\" /\u003e\u003cnode index=\"1\" text=\" 本田 雅阁 2023款 260TURBO 智享版\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,997][949,1121]\" /\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"2024年 | 6.54万公里 | 唐山 | HondaSENS\" resource-id=\"\" class=\"android.widget.TextVi"
+                                                          },
+                                                          {
+                                                              "needle":  "12.27",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][581,2440]\"\u003e\u003cnode index=\"0\" text=\"12.27\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][542,2440]\" /\u003e\u003cnode index=\"1\" text=\"万\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\""
+                                                          }
+                                                      ],
+                             "candidate_node_assessment":  "存在候选节点，需要检查过滤条件。"
+                         },
+                         {
+                             "iteration":  6,
+                             "timestamp_token":  "213457",
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_6_20260516_213457.png",
+                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_6_20260516_213457.xml",
+                             "screenshot_observation":  "截图继续向下，显示 AI 问答、服务中心、分期价格方案；未看到“查看完整报告”。",
+                             "screenshot_view_full_report_visible":  false,
+                             "scroll_mode_inferred":  "normal_or_fine_search_stop_after_overshoot",
+                             "scroll_distance_px":  null,
+                             "page_changed_from_previous_screenshot":  true,
+                             "xml_dump_success":  true,
+                             "xml_file_size":  99990,
+                             "xml_sha256":  "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942",
+                             "xml_node_count":  296,
+                             "xml_contains_s10_list_signals":  true,
+                             "xml_contains_s11_report_signals":  false,
+                             "xml_keyword_node_count":  1,
+                             "xml_keyword_nodes":  [
+                                                       {
+                                                           "node_index":  55,
+                                                           "text":  "成色/车况",
+                                                           "content_desc":  "",
+                                                           "resource_id":  "",
+                                                           "class":  "android.widget.TextView",
+                                                           "bounds":  "[643,793][880,841]",
+                                                           "clickable":  "true",
+                                                           "enabled":  "true",
+                                                           "visible_to_user":  ""
+                                                       }
+                                                   ],
+                             "xml_first_text_nodes_sample":  [
+                                                                 "品牌专区",
+                                                                 "本田",
+                                                                 "全部能源类型",
+                                                                 "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+                                                                 "雅阁",
+                                                                 "3.09",
+                                                                 "万起",
+                                                                 "全国1355辆在售/本地931辆在售",
+                                                                 "qnbdp1066x652057c93ed04f5280e986b5de372e3a1755679360",
+                                                                 "本田销量排行榜 第3名",
+                                                                 "全部",
+                                                                 "雅阁 商务家用",
+                                                                 "思域 性能钢炮",
+                                                                 "CR-V 家用首选",
+                                                                 "飞度 省油耐造",
+                                                                 "皓影 家用首选",
+                                                                 "XR-V 家用首选",
+                                                                 "艾力绅 商务接待",
+                                                                 "缤智 练手车",
+                                                                 "奥德赛 奶爸专车",
+                                                                 "查看 更多",
+                                                                 "价格从低到高",
+                                                                 "价格",
+                                                                 "成色/车况",
+                                                                 "车型配置",
+                                                                 "热门车型",
+                                                                 "年款",
+                                                                 "黑色",
+                                                                 "本地车",
+                                                                 "准新车"
+                                                             ],
+                             "xml_context_snippets":  [
+                                                          {
+                                                              "needle":  "品牌专区",
+                                                              "snippet":  "false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2510]\"\u003e\u003cnode index=\"0\" text=\"品牌专区\" resource-id=\"\" class=\"android.webkit.WebView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2513]\"\u003e\u003cnode index=\"0\" text=\"\" resource-id=\"app\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"fal"
+                                                          },
+                                                          {
+                                                              "needle":  "价格从低到高",
+                                                              "snippet":  "true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][0,0]\" /\u003e\u003c/node\u003e\u003c/node\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"价格从低到高\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[39,793][347,841]\" /\u003e\u003cnode index=\"2\" text=\"价格\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" c"
+                                                          },
+                                                          {
+                                                              "needle":  "车型配置",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[643,793][880,841]\" /\u003e\u003cnode index=\"4\" text=\"车型配置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[965,793][1183,841]\" /\u003e\u003cnode index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable"
+                                                          },
+                                                          {
+                                                              "needle":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                              "snippet":  "enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1010][568,1059]\" /\u003e\u003cnode index=\"1\" text=\" 本田 雅阁 2023款 260TURBO 智享版\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,997][949,1121]\" /\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"2024年 | 6.54万公里 | 唐山 | HondaSENS\" resource-id=\"\" class=\"android.widget.TextVi"
+                                                          },
+                                                          {
+                                                              "needle":  "12.27",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][581,2440]\"\u003e\u003cnode index=\"0\" text=\"12.27\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][542,2440]\" /\u003e\u003cnode index=\"1\" text=\"万\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\""
+                                                          }
+                                                      ],
+                             "candidate_node_assessment":  "存在候选节点，需要检查过滤条件。"
+                         },
+                         {
+                             "iteration":  7,
+                             "timestamp_token":  "213510",
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_7_20260516_213510.png",
+                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_7_20260516_213510.xml",
+                             "screenshot_observation":  "截图显示分期价格方案/瓜子认证车商/服务保障卡片；未看到“查看完整报告”。",
+                             "screenshot_view_full_report_visible":  false,
+                             "scroll_mode_inferred":  "normal_or_fine_search_stop",
+                             "scroll_distance_px":  null,
+                             "page_changed_from_previous_screenshot":  true,
+                             "xml_dump_success":  true,
+                             "xml_file_size":  99990,
+                             "xml_sha256":  "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942",
+                             "xml_node_count":  296,
+                             "xml_contains_s10_list_signals":  true,
+                             "xml_contains_s11_report_signals":  false,
+                             "xml_keyword_node_count":  1,
+                             "xml_keyword_nodes":  [
+                                                       {
+                                                           "node_index":  55,
+                                                           "text":  "成色/车况",
+                                                           "content_desc":  "",
+                                                           "resource_id":  "",
+                                                           "class":  "android.widget.TextView",
+                                                           "bounds":  "[643,793][880,841]",
+                                                           "clickable":  "true",
+                                                           "enabled":  "true",
+                                                           "visible_to_user":  ""
+                                                       }
+                                                   ],
+                             "xml_first_text_nodes_sample":  [
+                                                                 "品牌专区",
+                                                                 "本田",
+                                                                 "全部能源类型",
+                                                                 "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+                                                                 "雅阁",
+                                                                 "3.09",
+                                                                 "万起",
+                                                                 "全国1355辆在售/本地931辆在售",
+                                                                 "qnbdp1066x652057c93ed04f5280e986b5de372e3a1755679360",
+                                                                 "本田销量排行榜 第3名",
+                                                                 "全部",
+                                                                 "雅阁 商务家用",
+                                                                 "思域 性能钢炮",
+                                                                 "CR-V 家用首选",
+                                                                 "飞度 省油耐造",
+                                                                 "皓影 家用首选",
+                                                                 "XR-V 家用首选",
+                                                                 "艾力绅 商务接待",
+                                                                 "缤智 练手车",
+                                                                 "奥德赛 奶爸专车",
+                                                                 "查看 更多",
+                                                                 "价格从低到高",
+                                                                 "价格",
+                                                                 "成色/车况",
+                                                                 "车型配置",
+                                                                 "热门车型",
+                                                                 "年款",
+                                                                 "黑色",
+                                                                 "本地车",
+                                                                 "准新车"
+                                                             ],
+                             "xml_context_snippets":  [
+                                                          {
+                                                              "needle":  "品牌专区",
+                                                              "snippet":  "false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2510]\"\u003e\u003cnode index=\"0\" text=\"品牌专区\" resource-id=\"\" class=\"android.webkit.WebView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2513]\"\u003e\u003cnode index=\"0\" text=\"\" resource-id=\"app\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"fal"
+                                                          },
+                                                          {
+                                                              "needle":  "价格从低到高",
+                                                              "snippet":  "true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][0,0]\" /\u003e\u003c/node\u003e\u003c/node\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"价格从低到高\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[39,793][347,841]\" /\u003e\u003cnode index=\"2\" text=\"价格\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" c"
+                                                          },
+                                                          {
+                                                              "needle":  "车型配置",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[643,793][880,841]\" /\u003e\u003cnode index=\"4\" text=\"车型配置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[965,793][1183,841]\" /\u003e\u003cnode index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable"
+                                                          },
+                                                          {
+                                                              "needle":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                              "snippet":  "enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1010][568,1059]\" /\u003e\u003cnode index=\"1\" text=\" 本田 雅阁 2023款 260TURBO 智享版\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,997][949,1121]\" /\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"2024年 | 6.54万公里 | 唐山 | HondaSENS\" resource-id=\"\" class=\"android.widget.TextVi"
+                                                          },
+                                                          {
+                                                              "needle":  "12.27",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][581,2440]\"\u003e\u003cnode index=\"0\" text=\"12.27\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][542,2440]\" /\u003e\u003cnode index=\"1\" text=\"万\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\""
+                                                          }
+                                                      ],
+                             "candidate_node_assessment":  "存在候选节点，需要检查过滤条件。"
+                         },
+                         {
+                             "iteration":  8,
+                             "timestamp_token":  "213524",
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_8_20260516_213524.png",
+                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_8_20260516_213524.xml",
+                             "screenshot_observation":  "截图显示分期价格方案/60秒测分期额度/瓜子认证车商；未看到“查看完整报告”。",
+                             "screenshot_view_full_report_visible":  false,
+                             "scroll_mode_inferred":  "normal_or_fine_search_stop",
+                             "scroll_distance_px":  null,
+                             "page_changed_from_previous_screenshot":  true,
+                             "xml_dump_success":  true,
+                             "xml_file_size":  99990,
+                             "xml_sha256":  "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942",
+                             "xml_node_count":  296,
+                             "xml_contains_s10_list_signals":  true,
+                             "xml_contains_s11_report_signals":  false,
+                             "xml_keyword_node_count":  1,
+                             "xml_keyword_nodes":  [
+                                                       {
+                                                           "node_index":  55,
+                                                           "text":  "成色/车况",
+                                                           "content_desc":  "",
+                                                           "resource_id":  "",
+                                                           "class":  "android.widget.TextView",
+                                                           "bounds":  "[643,793][880,841]",
+                                                           "clickable":  "true",
+                                                           "enabled":  "true",
+                                                           "visible_to_user":  ""
+                                                       }
+                                                   ],
+                             "xml_first_text_nodes_sample":  [
+                                                                 "品牌专区",
+                                                                 "本田",
+                                                                 "全部能源类型",
+                                                                 "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+                                                                 "雅阁",
+                                                                 "3.09",
+                                                                 "万起",
+                                                                 "全国1355辆在售/本地931辆在售",
+                                                                 "qnbdp1066x652057c93ed04f5280e986b5de372e3a1755679360",
+                                                                 "本田销量排行榜 第3名",
+                                                                 "全部",
+                                                                 "雅阁 商务家用",
+                                                                 "思域 性能钢炮",
+                                                                 "CR-V 家用首选",
+                                                                 "飞度 省油耐造",
+                                                                 "皓影 家用首选",
+                                                                 "XR-V 家用首选",
+                                                                 "艾力绅 商务接待",
+                                                                 "缤智 练手车",
+                                                                 "奥德赛 奶爸专车",
+                                                                 "查看 更多",
+                                                                 "价格从低到高",
+                                                                 "价格",
+                                                                 "成色/车况",
+                                                                 "车型配置",
+                                                                 "热门车型",
+                                                                 "年款",
+                                                                 "黑色",
+                                                                 "本地车",
+                                                                 "准新车"
+                                                             ],
+                             "xml_context_snippets":  [
+                                                          {
+                                                              "needle":  "品牌专区",
+                                                              "snippet":  "false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2510]\"\u003e\u003cnode index=\"0\" text=\"品牌专区\" resource-id=\"\" class=\"android.webkit.WebView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2513]\"\u003e\u003cnode index=\"0\" text=\"\" resource-id=\"app\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"fal"
+                                                          },
+                                                          {
+                                                              "needle":  "价格从低到高",
+                                                              "snippet":  "true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][0,0]\" /\u003e\u003c/node\u003e\u003c/node\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"价格从低到高\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[39,793][347,841]\" /\u003e\u003cnode index=\"2\" text=\"价格\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" c"
+                                                          },
+                                                          {
+                                                              "needle":  "车型配置",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[643,793][880,841]\" /\u003e\u003cnode index=\"4\" text=\"车型配置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[965,793][1183,841]\" /\u003e\u003cnode index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable"
+                                                          },
+                                                          {
+                                                              "needle":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                              "snippet":  "enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1010][568,1059]\" /\u003e\u003cnode index=\"1\" text=\" 本田 雅阁 2023款 260TURBO 智享版\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,997][949,1121]\" /\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"2024年 | 6.54万公里 | 唐山 | HondaSENS\" resource-id=\"\" class=\"android.widget.TextVi"
+                                                          },
+                                                          {
+                                                              "needle":  "12.27",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][581,2440]\"\u003e\u003cnode index=\"0\" text=\"12.27\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][542,2440]\" /\u003e\u003cnode index=\"1\" text=\"万\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\""
+                                                          }
+                                                      ],
+                             "candidate_node_assessment":  "存在候选节点，需要检查过滤条件。"
+                         },
+                         {
+                             "iteration":  9,
+                             "timestamp_token":  "213538",
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_9_20260516_213538.png",
+                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_9_20260516_213538.xml",
+                             "screenshot_observation":  "截图显示瓜子认证车商/唐山服务中心；未看到“查看完整报告”。",
+                             "screenshot_view_full_report_visible":  false,
+                             "scroll_mode_inferred":  "normal_or_fine_search_stop",
+                             "scroll_distance_px":  null,
+                             "page_changed_from_previous_screenshot":  true,
+                             "xml_dump_success":  true,
+                             "xml_file_size":  99990,
+                             "xml_sha256":  "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942",
+                             "xml_node_count":  296,
+                             "xml_contains_s10_list_signals":  true,
+                             "xml_contains_s11_report_signals":  false,
+                             "xml_keyword_node_count":  1,
+                             "xml_keyword_nodes":  [
+                                                       {
+                                                           "node_index":  55,
+                                                           "text":  "成色/车况",
+                                                           "content_desc":  "",
+                                                           "resource_id":  "",
+                                                           "class":  "android.widget.TextView",
+                                                           "bounds":  "[643,793][880,841]",
+                                                           "clickable":  "true",
+                                                           "enabled":  "true",
+                                                           "visible_to_user":  ""
+                                                       }
+                                                   ],
+                             "xml_first_text_nodes_sample":  [
+                                                                 "品牌专区",
+                                                                 "本田",
+                                                                 "全部能源类型",
+                                                                 "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+                                                                 "雅阁",
+                                                                 "3.09",
+                                                                 "万起",
+                                                                 "全国1355辆在售/本地931辆在售",
+                                                                 "qnbdp1066x652057c93ed04f5280e986b5de372e3a1755679360",
+                                                                 "本田销量排行榜 第3名",
+                                                                 "全部",
+                                                                 "雅阁 商务家用",
+                                                                 "思域 性能钢炮",
+                                                                 "CR-V 家用首选",
+                                                                 "飞度 省油耐造",
+                                                                 "皓影 家用首选",
+                                                                 "XR-V 家用首选",
+                                                                 "艾力绅 商务接待",
+                                                                 "缤智 练手车",
+                                                                 "奥德赛 奶爸专车",
+                                                                 "查看 更多",
+                                                                 "价格从低到高",
+                                                                 "价格",
+                                                                 "成色/车况",
+                                                                 "车型配置",
+                                                                 "热门车型",
+                                                                 "年款",
+                                                                 "黑色",
+                                                                 "本地车",
+                                                                 "准新车"
+                                                             ],
+                             "xml_context_snippets":  [
+                                                          {
+                                                              "needle":  "品牌专区",
+                                                              "snippet":  "false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2510]\"\u003e\u003cnode index=\"0\" text=\"品牌专区\" resource-id=\"\" class=\"android.webkit.WebView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2513]\"\u003e\u003cnode index=\"0\" text=\"\" resource-id=\"app\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"fal"
+                                                          },
+                                                          {
+                                                              "needle":  "价格从低到高",
+                                                              "snippet":  "true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][0,0]\" /\u003e\u003c/node\u003e\u003c/node\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"价格从低到高\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[39,793][347,841]\" /\u003e\u003cnode index=\"2\" text=\"价格\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" c"
+                                                          },
+                                                          {
+                                                              "needle":  "车型配置",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[643,793][880,841]\" /\u003e\u003cnode index=\"4\" text=\"车型配置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[965,793][1183,841]\" /\u003e\u003cnode index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable"
+                                                          },
+                                                          {
+                                                              "needle":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                              "snippet":  "enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1010][568,1059]\" /\u003e\u003cnode index=\"1\" text=\" 本田 雅阁 2023款 260TURBO 智享版\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,997][949,1121]\" /\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"2024年 | 6.54万公里 | 唐山 | HondaSENS\" resource-id=\"\" class=\"android.widget.TextVi"
+                                                          },
+                                                          {
+                                                              "needle":  "12.27",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][581,2440]\"\u003e\u003cnode index=\"0\" text=\"12.27\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][542,2440]\" /\u003e\u003cnode index=\"1\" text=\"万\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\""
+                                                          }
+                                                      ],
+                             "candidate_node_assessment":  "存在候选节点，需要检查过滤条件。"
+                         },
+                         {
+                             "iteration":  10,
+                             "timestamp_token":  "213552",
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_10_20260516_213552.png",
+                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_10_20260516_213552.xml",
+                             "screenshot_observation":  "截图显示唐山服务中心/官方检测/物流检测等服务信息；未看到“查看完整报告”。",
+                             "screenshot_view_full_report_visible":  false,
+                             "scroll_mode_inferred":  "normal_or_fine_search_stop",
+                             "scroll_distance_px":  null,
+                             "page_changed_from_previous_screenshot":  true,
+                             "xml_dump_success":  true,
+                             "xml_file_size":  99990,
+                             "xml_sha256":  "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942",
+                             "xml_node_count":  296,
+                             "xml_contains_s10_list_signals":  true,
+                             "xml_contains_s11_report_signals":  false,
+                             "xml_keyword_node_count":  1,
+                             "xml_keyword_nodes":  [
+                                                       {
+                                                           "node_index":  55,
+                                                           "text":  "成色/车况",
+                                                           "content_desc":  "",
+                                                           "resource_id":  "",
+                                                           "class":  "android.widget.TextView",
+                                                           "bounds":  "[643,793][880,841]",
+                                                           "clickable":  "true",
+                                                           "enabled":  "true",
+                                                           "visible_to_user":  ""
+                                                       }
+                                                   ],
+                             "xml_first_text_nodes_sample":  [
+                                                                 "品牌专区",
+                                                                 "本田",
+                                                                 "全部能源类型",
+                                                                 "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+                                                                 "雅阁",
+                                                                 "3.09",
+                                                                 "万起",
+                                                                 "全国1355辆在售/本地931辆在售",
+                                                                 "qnbdp1066x652057c93ed04f5280e986b5de372e3a1755679360",
+                                                                 "本田销量排行榜 第3名",
+                                                                 "全部",
+                                                                 "雅阁 商务家用",
+                                                                 "思域 性能钢炮",
+                                                                 "CR-V 家用首选",
+                                                                 "飞度 省油耐造",
+                                                                 "皓影 家用首选",
+                                                                 "XR-V 家用首选",
+                                                                 "艾力绅 商务接待",
+                                                                 "缤智 练手车",
+                                                                 "奥德赛 奶爸专车",
+                                                                 "查看 更多",
+                                                                 "价格从低到高",
+                                                                 "价格",
+                                                                 "成色/车况",
+                                                                 "车型配置",
+                                                                 "热门车型",
+                                                                 "年款",
+                                                                 "黑色",
+                                                                 "本地车",
+                                                                 "准新车"
+                                                             ],
+                             "xml_context_snippets":  [
+                                                          {
+                                                              "needle":  "品牌专区",
+                                                              "snippet":  "false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2510]\"\u003e\u003cnode index=\"0\" text=\"品牌专区\" resource-id=\"\" class=\"android.webkit.WebView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2513]\"\u003e\u003cnode index=\"0\" text=\"\" resource-id=\"app\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"fal"
+                                                          },
+                                                          {
+                                                              "needle":  "价格从低到高",
+                                                              "snippet":  "true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][0,0]\" /\u003e\u003c/node\u003e\u003c/node\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"价格从低到高\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[39,793][347,841]\" /\u003e\u003cnode index=\"2\" text=\"价格\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" c"
+                                                          },
+                                                          {
+                                                              "needle":  "车型配置",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[643,793][880,841]\" /\u003e\u003cnode index=\"4\" text=\"车型配置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[965,793][1183,841]\" /\u003e\u003cnode index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable"
+                                                          },
+                                                          {
+                                                              "needle":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                              "snippet":  "enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1010][568,1059]\" /\u003e\u003cnode index=\"1\" text=\" 本田 雅阁 2023款 260TURBO 智享版\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,997][949,1121]\" /\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"2024年 | 6.54万公里 | 唐山 | HondaSENS\" resource-id=\"\" class=\"android.widget.TextVi"
+                                                          },
+                                                          {
+                                                              "needle":  "12.27",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][581,2440]\"\u003e\u003cnode index=\"0\" text=\"12.27\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][542,2440]\" /\u003e\u003cnode index=\"1\" text=\"万\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\""
+                                                          }
+                                                      ],
+                             "candidate_node_assessment":  "存在候选节点，需要检查过滤条件。"
+                         },
+                         {
+                             "iteration":  11,
+                             "timestamp_token":  "213605",
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_11_20260516_213605.png",
+                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_11_20260516_213605.xml",
+                             "screenshot_observation":  "截图回到车辆基础信息/本车卖点附近；未看到完整“查看完整报告”。",
+                             "screenshot_view_full_report_visible":  false,
+                             "scroll_mode_inferred":  "backtrack_or_page_jump_stop",
+                             "scroll_distance_px":  null,
+                             "page_changed_from_previous_screenshot":  true,
+                             "xml_dump_success":  true,
+                             "xml_file_size":  99990,
+                             "xml_sha256":  "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942",
+                             "xml_node_count":  296,
+                             "xml_contains_s10_list_signals":  true,
+                             "xml_contains_s11_report_signals":  false,
+                             "xml_keyword_node_count":  1,
+                             "xml_keyword_nodes":  [
+                                                       {
+                                                           "node_index":  55,
+                                                           "text":  "成色/车况",
+                                                           "content_desc":  "",
+                                                           "resource_id":  "",
+                                                           "class":  "android.widget.TextView",
+                                                           "bounds":  "[643,793][880,841]",
+                                                           "clickable":  "true",
+                                                           "enabled":  "true",
+                                                           "visible_to_user":  ""
+                                                       }
+                                                   ],
+                             "xml_first_text_nodes_sample":  [
+                                                                 "品牌专区",
+                                                                 "本田",
+                                                                 "全部能源类型",
+                                                                 "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+                                                                 "雅阁",
+                                                                 "3.09",
+                                                                 "万起",
+                                                                 "全国1355辆在售/本地931辆在售",
+                                                                 "qnbdp1066x652057c93ed04f5280e986b5de372e3a1755679360",
+                                                                 "本田销量排行榜 第3名",
+                                                                 "全部",
+                                                                 "雅阁 商务家用",
+                                                                 "思域 性能钢炮",
+                                                                 "CR-V 家用首选",
+                                                                 "飞度 省油耐造",
+                                                                 "皓影 家用首选",
+                                                                 "XR-V 家用首选",
+                                                                 "艾力绅 商务接待",
+                                                                 "缤智 练手车",
+                                                                 "奥德赛 奶爸专车",
+                                                                 "查看 更多",
+                                                                 "价格从低到高",
+                                                                 "价格",
+                                                                 "成色/车况",
+                                                                 "车型配置",
+                                                                 "热门车型",
+                                                                 "年款",
+                                                                 "黑色",
+                                                                 "本地车",
+                                                                 "准新车"
+                                                             ],
+                             "xml_context_snippets":  [
+                                                          {
+                                                              "needle":  "品牌专区",
+                                                              "snippet":  "false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2510]\"\u003e\u003cnode index=\"0\" text=\"品牌专区\" resource-id=\"\" class=\"android.webkit.WebView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2513]\"\u003e\u003cnode index=\"0\" text=\"\" resource-id=\"app\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"fal"
+                                                          },
+                                                          {
+                                                              "needle":  "价格从低到高",
+                                                              "snippet":  "true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][0,0]\" /\u003e\u003c/node\u003e\u003c/node\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"价格从低到高\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[39,793][347,841]\" /\u003e\u003cnode index=\"2\" text=\"价格\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" c"
+                                                          },
+                                                          {
+                                                              "needle":  "车型配置",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[643,793][880,841]\" /\u003e\u003cnode index=\"4\" text=\"车型配置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[965,793][1183,841]\" /\u003e\u003cnode index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable"
+                                                          },
+                                                          {
+                                                              "needle":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                              "snippet":  "enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1010][568,1059]\" /\u003e\u003cnode index=\"1\" text=\" 本田 雅阁 2023款 260TURBO 智享版\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,997][949,1121]\" /\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"2024年 | 6.54万公里 | 唐山 | HondaSENS\" resource-id=\"\" class=\"android.widget.TextVi"
+                                                          },
+                                                          {
+                                                              "needle":  "12.27",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][581,2440]\"\u003e\u003cnode index=\"0\" text=\"12.27\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][542,2440]\" /\u003e\u003cnode index=\"1\" text=\"万\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\""
+                                                          }
+                                                      ],
+                             "candidate_node_assessment":  "存在候选节点，需要检查过滤条件。"
+                         },
+                         {
+                             "iteration":  12,
+                             "timestamp_token":  "213619",
+                             "screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_12_20260516_213619.png",
+                             "xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_12_20260516_213619.xml",
+                             "screenshot_observation":  "截图为本车卖点/瓜子官方检测报告卡片上方；未看到完整“查看完整报告”。",
+                             "screenshot_view_full_report_visible":  false,
+                             "scroll_mode_inferred":  "backtrack_or_initial_area_stop",
+                             "scroll_distance_px":  null,
+                             "page_changed_from_previous_screenshot":  true,
+                             "xml_dump_success":  true,
+                             "xml_file_size":  99990,
+                             "xml_sha256":  "9902321e50558fb23561b21d0e84823ff1452cc1c7a5a14ba71ae15b40eb9942",
+                             "xml_node_count":  296,
+                             "xml_contains_s10_list_signals":  true,
+                             "xml_contains_s11_report_signals":  false,
+                             "xml_keyword_node_count":  1,
+                             "xml_keyword_nodes":  [
+                                                       {
+                                                           "node_index":  55,
+                                                           "text":  "成色/车况",
+                                                           "content_desc":  "",
+                                                           "resource_id":  "",
+                                                           "class":  "android.widget.TextView",
+                                                           "bounds":  "[643,793][880,841]",
+                                                           "clickable":  "true",
+                                                           "enabled":  "true",
+                                                           "visible_to_user":  ""
+                                                       }
+                                                   ],
+                             "xml_first_text_nodes_sample":  [
+                                                                 "品牌专区",
+                                                                 "本田",
+                                                                 "全部能源类型",
+                                                                 "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+                                                                 "雅阁",
+                                                                 "3.09",
+                                                                 "万起",
+                                                                 "全国1355辆在售/本地931辆在售",
+                                                                 "qnbdp1066x652057c93ed04f5280e986b5de372e3a1755679360",
+                                                                 "本田销量排行榜 第3名",
+                                                                 "全部",
+                                                                 "雅阁 商务家用",
+                                                                 "思域 性能钢炮",
+                                                                 "CR-V 家用首选",
+                                                                 "飞度 省油耐造",
+                                                                 "皓影 家用首选",
+                                                                 "XR-V 家用首选",
+                                                                 "艾力绅 商务接待",
+                                                                 "缤智 练手车",
+                                                                 "奥德赛 奶爸专车",
+                                                                 "查看 更多",
+                                                                 "价格从低到高",
+                                                                 "价格",
+                                                                 "成色/车况",
+                                                                 "车型配置",
+                                                                 "热门车型",
+                                                                 "年款",
+                                                                 "黑色",
+                                                                 "本地车",
+                                                                 "准新车"
+                                                             ],
+                             "xml_context_snippets":  [
+                                                          {
+                                                              "needle":  "品牌专区",
+                                                              "snippet":  "false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2510]\"\u003e\u003cnode index=\"0\" text=\"品牌专区\" resource-id=\"\" class=\"android.webkit.WebView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"true\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1220,2513]\"\u003e\u003cnode index=\"0\" text=\"\" resource-id=\"app\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"fal"
+                                                          },
+                                                          {
+                                                              "needle":  "价格从低到高",
+                                                              "snippet":  "true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][0,0]\" /\u003e\u003c/node\u003e\u003c/node\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"价格从低到高\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[39,793][347,841]\" /\u003e\u003cnode index=\"2\" text=\"价格\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" c"
+                                                          },
+                                                          {
+                                                              "needle":  "车型配置",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[643,793][880,841]\" /\u003e\u003cnode index=\"4\" text=\"车型配置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[965,793][1183,841]\" /\u003e\u003cnode index=\"5\" text=\"\" resource-id=\"\" class=\"android.view.View\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable"
+                                                          },
+                                                          {
+                                                              "needle":  "本田 雅阁 2023款 260TURBO 智享版",
+                                                              "snippet":  "enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,1010][568,1059]\" /\u003e\u003cnode index=\"1\" text=\" 本田 雅阁 2023款 260TURBO 智享版\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,997][949,1121]\" /\u003e\u003c/node\u003e\u003cnode index=\"1\" text=\"2024年 | 6.54万公里 | 唐山 | HondaSENS\" resource-id=\"\" class=\"android.widget.TextVi"
+                                                          },
+                                                          {
+                                                              "needle":  "12.27",
+                                                              "snippet":  "e\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][581,2440]\"\u003e\u003cnode index=\"0\" text=\"12.27\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[429,2382][542,2440]\" /\u003e\u003cnode index=\"1\" text=\"万\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.ganji.android.haoche_c\" content-desc=\"\""
+                                                          }
+                                                      ],
+                             "candidate_node_assessment":  "存在候选节点，需要检查过滤条件。"
+                         }
+                     ],
+    "code_path_assessment":  {
+                                 "entry_function":  "_find_s11_official_report_entry_node(snapshot)",
+                                 "exact_lookup_function":  "_find_exact_label_node(snapshot, target)",
+                                 "false_source":  "snapshot XML/nodes 中没有“查看完整报告”候选；不是候选存在后被 bounds/safe region 过滤。",
+                                 "fields_checked_by_current_path":  [
+                                                                        "node.labels",
+                                                                        "visible_texts for exact text seen"
+                                                                    ],
+                                 "safe_region_filter_reached":  false,
+                                 "reason_safe_region_filter_not_reached":  "official_report_entry_node=None / exact_report_entry_seen=false"
+                             },
+    "root_cause_answer":  "这是固定脚本 fresh/XML 证据配对或 capture 时序问题，不是页面契约问题；也不是 XML 节点存在但被过滤。",
+    "excluded_hypotheses":  {
+                                "XML_NODE_EXISTS_BUT_FILTERED_BY_CODE":  "不成立；XML 原文没有入口或报告相关候选节点。",
+                                "XML_TEXT_SPLIT_OR_CONTENT_DESC_MISSED":  "不成立；逐节点检查 text/content-desc，没有“查看/完整报告”拆分上下文，也没有 content-desc 命中。",
+                                "SAFE_REGION_FILTER_CORRECTLY_BLOCKED":  "不成立；safe-region 分支未到达，截图上 search_3/search_4 也未见底部遮挡。",
+                                "PAGE_CONTRACT_PROBLEM":  "不成立；契约要求 XML 精确入口且安全才点击，本次问题是 XML 与截图不是同一页面。"
+                            },
+    "no_code_modified_this_audit":  true,
+    "no_real_device_run_this_audit":  true,
+    "result_json_overwritten":  false,
+    "montage_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\s11_report_search_scroll_stop_montage.png",
+    "final_status":  "S11_REPORT_SEARCH_SCROLL_STOP_XML_AUDIT_DONE"
+}

@@ -1,0 +1,150 @@
+﻿{
+    "report_name":  "leapmotor_c10_full_chain_manual_review_acceptance",
+    "created_at":  "2026-05-12T14:05:28+08:00",
+    "mode":  "read_only_acceptance",
+    "target_fingerprint":  "零跑|C10|2026款|210悦享版|白|2026.02",
+    "source_files":  [
+                         "output/leapmotor_c10_v1_21_full_chain_run_latest.md",
+                         "output/leapmotor_c10_v1_21_full_chain_run.json",
+                         "output/result_s01_to_s10.json",
+                         "output/result_s10_to_s16.json",
+                         "output/result.json"
+                     ],
+    "result_consistency":  {
+                               "result_s01_to_s10_fingerprint":  "零跑|C10|2026款|210悦享版|白|2026.02",
+                               "result_s10_to_s16_fingerprint":  "零跑|C10|2026款|210悦享版|白|2026.02",
+                               "result_fingerprint":  "零跑|C10|2026款|210悦享版|白|2026.02",
+                               "full_chain_report_fingerprint":  "零跑|C10|2026款|210悦享版|白|2026.02",
+                               "first_stage_status":  "S10_READY",
+                               "second_stage_status":  "FULL_CHAIN_MANUAL_REVIEW_DONE",
+                               "terminal_status":  "FULL_CHAIN_MANUAL_REVIEW_DONE",
+                               "final_reference_index":  1,
+                               "final_reference_score":  99,
+                               "target_score":  96,
+                               "reference_score_gte_target_score":  true,
+                               "reached_s10_ready":  true,
+                               "S07_FILTER_DONE":  true,
+                               "COLOR_FILTER_DONE":  true,
+                               "AGE_FILTER_DONE":  true,
+                               "SORT_DONE":  true,
+                               "true_trisame_count":  2,
+                               "raw_visible_cards_count":  22,
+                               "excluded_non_trisame_cards_count":  20,
+                               "non_trisame_section_detected":  true,
+                               "selected_after_score_pass":  true,
+                               "stopped_after_first_qualified_reference":  true,
+                               "non_trisame_used":  false,
+                               "more_source_or_recommended_used":  false
+                           },
+    "page_contract_acceptance":  {
+                                     "S03_V1_16_brand_contract":  "PASS",
+                                     "S04_C10_alias_series_recognition":  "PASS",
+                                     "S05_2026_210_trim_selection":  "PASS",
+                                     "S06_TARGET_FILTER_LIST_AFTER_S05_CONFIRM":  "PASS",
+                                     "S07_white_and_zero_age":  "PASS",
+                                     "S07_forbidden_checked_only":  "PASS",
+                                     "S08_S09_S10_source_gate_core_reverse_exclusion":  "PASS",
+                                     "S10_V1_21_normalized_title_match":  "PASS",
+                                     "second_stage_S10_to_S16_S17":  "PASS",
+                                     "title_match_audit":  {
+                                                               "title_match_strategy":  "normalized_alias_match",
+                                                               "expected_title_raw":  "零跑 C10 2026款 210悦享版",
+                                                               "live_title_raw":  "零跑汽车 零跑C10 2026款 210悦享版",
+                                                               "normalized_expected_title":  "零跑c102026款210悦享版",
+                                                               "normalized_live_title":  "零跑汽车零跑c102026款210悦享版",
+                                                               "brand_aliases":  [
+                                                                                     "零跑",
+                                                                                     "零跑汽车",
+                                                                                     "LEAPMOTOR"
+                                                                                 ],
+                                                               "series_aliases":  [
+                                                                                      "C10",
+                                                                                      "零跑C10",
+                                                                                      "零跑汽车C10"
+                                                                                  ],
+                                                               "brand_alias_match":  true,
+                                                               "matched_brand_alias":  "零跑",
+                                                               "series_alias_match":  true,
+                                                               "matched_series_alias":  "零跑C10",
+                                                               "year_model_match":  true,
+                                                               "config_model_match":  true,
+                                                               "title_normalized_match":  true,
+                                                               "conflict_terms":  [
+
+                                                                                  ],
+                                                               "mismatch_reason":  [
+
+                                                                                   ],
+                                                               "title_match_decision":  "allow"
+                                                           }
+                                 },
+    "reference_history":  [
+                              {
+                                  "reference_index":  1,
+                                  "title":  "零跑汽车 零跑C10 2026款 210悦享版",
+                                  "price_yuan":  106400,
+                                  "price_10k":  10.64,
+                                  "metadata":  "2026年 | 0.17万公里 | 唐山 | LeapPilot",
+                                  "year":  2026,
+                                  "mileage_10k_km":  0.17,
+                                  "transfer_count":  0,
+                                  "claim_count":  0,
+                                  "max_claim_amount":  0.0,
+                                  "repair_counts":  {
+                                                        "驾驶侧":  0,
+                                                        "车尾":  0,
+                                                        "副驾驶":  0,
+                                                        "车头":  0
+                                                    },
+                                  "panel_repairs":  [
+
+                                                    ],
+                                  "reference_score":  99.0,
+                                  "disqualified":  false,
+                                  "qualified":  true,
+                                  "selected_as_final":  true,
+                                  "selection_reason":  "reference_score \u003e= target_score, field complete, no disqualifying structural/accident risk; stop after first qualified reference"
+                              }
+                          ],
+    "pricing_acceptance":  {
+                               "competition_coefficient":  0.96,
+                               "competition_coefficient_rule":  "V1.2.1 anti-duplicate-deduction",
+                               "base_reference_price_yuan":  106400,
+                               "target_guazi_listing_price_yuan":  102100,
+                               "guazi_service_fee_yuan":  4500,
+                               "service_fee_tier":  "\u003e=100000 and \u003c150000 =\u003e 4500",
+                               "service_fee_tier_ok":  true,
+                               "guazi_net_payout_yuan":  97600,
+                               "net_payout_formula_ok":  true,
+                               "suggested_purchase_price_yuan":  87292,
+                               "old_95_percent_rule_used":  false,
+                               "non_trisame_prices_used":  false,
+                               "ai_model_used":  false
+                           },
+    "manual_review":  {
+                          "baseline_terminal_status":  "FULL_CHAIN_MANUAL_REVIEW_DONE",
+                          "not_auto_priced_no_review_done":  true,
+                          "manual_review_required":  true,
+                          "manual_review_reasons":  [
+                                                        "目标车缺少出险次数，已采用默认分。",
+                                                        "目标车缺少最大金额，已采用默认分。",
+                                                        "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。",
+                                                        "SAMPLE_SHORTAGE_MANUAL_REVIEW"
+                                                    ],
+                          "sample_shortage":  true,
+                          "missing_target_claim_fields":  true
+                      },
+    "json_and_raw_field_checks":  {
+                                      "json_validity":  {
+                                                            "result_s01_to_s10":  true,
+                                                            "result_s10_to_s16":  true,
+                                                            "result":  true
+                                                        },
+                                      "raw_large_fields_present":  false,
+                                      "raw_large_field_hits":  [
+
+                                                               ]
+                                  },
+    "acceptance_status":  "LEAPMOTOR_C10_FULL_CHAIN_MANUAL_REVIEW_ACCEPTANCE_PASSED",
+    "freeze_package_status":  "READ_ONLY_LEAPMOTOR_C10_BASELINE_FREEZE_PACKAGE_DONE"
+}

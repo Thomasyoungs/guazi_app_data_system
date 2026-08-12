@@ -1,0 +1,125 @@
+{
+  "status": "NISSAN_TERRA_REFERENCE1_SCORE_78_S15_PREMATURE_ENTRY_DIAGNOSIS_DONE",
+  "created_at": "2026-05-13T20:05:47",
+  "target_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+  "readonly": true,
+  "modified_code": false,
+  "ran_device": false,
+  "overwrote_result": false,
+  "reference_index": 1,
+  "target_score": 92.0,
+  "reference_score": 78.0,
+  "score_breakdown_exists": true,
+  "score_breakdown_missing_code": null,
+  "score_dimensions": [
+    {
+      "name": "body_score",
+      "raw_fields": {
+        "repair_counts": {
+          "驾驶侧": 10
+        },
+        "panel_repairs": [
+          {
+            "part": "左前翼子板",
+            "damage_type": "喷漆"
+          }
+        ]
+      },
+      "score": 69.0,
+      "deduction_reason": "????????????? panel_repairs ???? panel_repairs ????????????? 9 ??"
+    },
+    {
+      "name": "mileage_score",
+      "raw_fields": {
+        "list_mileage_10k_km": 12.5
+      },
+      "score": 0.0,
+      "deduction_reason": "????? 12.5 ????????? 0?"
+    },
+    {
+      "name": "transfer_score",
+      "raw_fields": {
+        "transfer_count": 1
+      },
+      "score": 7.0,
+      "deduction_reason": "?? 1 ???? 7 ??"
+    },
+    {
+      "name": "accident_score",
+      "raw_fields": {
+        "accident_count": 4
+      },
+      "score": 0.0,
+      "deduction_reason": "??/???? 4????????? 0 ??"
+    },
+    {
+      "name": "max_amount_score",
+      "raw_fields": {
+        "max_accident_amount": 19000.0
+      },
+      "score": 2.0,
+      "deduction_reason": "???? 19000????????? 2 ??"
+    }
+  ],
+  "used_default_scores": false,
+  "field_missing": false,
+  "incomplete_repair_items_warning_present": false,
+  "s15_entry": {
+    "classification": "S15_ENTRY_ALLOWED_BY_SINGLE_S14_ITEM_DONE_ONLY",
+    "s13_total_repair_count": 10,
+    "s13_region_repair_counts": {
+      "驾驶侧": 10
+    },
+    "s14_expected_repair_item_count": 10,
+    "s14_collected_repair_item_count": 1,
+    "s14_collected_items": [
+      "左前翼子板"
+    ],
+    "s14_missing_items_count": 9,
+    "s14_collect_done": true,
+    "reference_fields_complete": true,
+    "s15_entered_reason": "handle_s15 only checked s14_collect_done + s14 tab/image metrics + repair_items presence; it did not compare collected item count with S13 repair_count.",
+    "s15_entry_preconditions_observed": {
+      "context_s14_collect_done": true,
+      "s14_tabs_total": 1,
+      "s14_tabs_processed": 1,
+      "s14_images_total": 3,
+      "s14_images_processed": 3,
+      "repair_items_present": true,
+      "returned_list_source_verified": true
+    },
+    "code_evidence": "scripts/runtime_s10_to_s16_mainline.py handle_s15 checks s14_collect_done, s14_tabs/images metrics, repair_items presence, returned_list_source_verified; no expected_repair_item_count check against S13 repair_count."
+  },
+  "correct_contract_text": {
+    "contract_name": "S13_S14_ALL_REPAIR_ITEMS_REQUIRED_BEFORE_S15",
+    "rules": [
+      "S13 ??????????? > 0 ?????????????????",
+      "S14_COLLECT_DONE ?????????????",
+      "reference_collect_done ???? collected_repair_item_count >= expected_repair_item_count?",
+      "?????????????? S13_REPAIR_ITEMS_ENUMERATION_INCOMPLETE ? REFERENCE_REPAIR_DETAILS_INCOMPLETE_MANUAL_REVIEW?",
+      "?? repair_count=10 ???? 1 ?????? S15?",
+      "????? S14 ?????????????",
+      "???? required repair items ??????? S15 ???"
+    ]
+  },
+  "score_78_trustworthy": false,
+  "score_78_reason": "repair_details_incomplete_before_s15: S13 repair_count=10, but only 1 concrete repair item was collected into S14/panel_repairs before S15 scoring.",
+  "next_patch_suggestion": "PATCH_S13_S14_ALL_REPAIR_ITEMS_REQUIRED_BEFORE_S15",
+  "patch_direction": [
+    "S13 repair_count>0 ??? expected_repair_item_count?",
+    "????????? S14 ?????? collected_repair_item_count?",
+    "S14_COLLECT_DONE ?????? item?",
+    "collected_repair_item_count ??? expected_repair_item_count????? S15?",
+    "???????????????? stop_code ??????",
+    "reference_score ??? incomplete repair details ????????"
+  ],
+  "evidence_paths": {
+    "result_s10_to_s16": "output/result_s10_to_s16.json",
+    "result": "output/result.json",
+    "early_collect_done_diagnosis": "output/nissan_terra_reference1_early_collect_done_diagnosis.json",
+    "s14_first_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_to_s14_驾驶侧_20260513_195243.png",
+    "s14_first_xml": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s13_to_s14_驾驶侧_20260513_195243.xml",
+    "s14_last_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260513_195255.png",
+    "s14_last_xml": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260513_195255.xml"
+  }
+}

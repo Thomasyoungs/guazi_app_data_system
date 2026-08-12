@@ -1,0 +1,98 @@
+{
+  "target_fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+  "validation_task": "AUTO_PRICING_SUCCESS_PATH_AFTER_S11_XML_STABILIZATION_PATCH",
+  "code_modified_during_runtime_validation": false,
+  "first_stage_status": "S10_READY",
+  "second_stage_status": "REFERENCE_CARD_INDEX_NOT_FOUND",
+  "final_validation_status": "SECOND_STAGE_DID_NOT_REACH_S16",
+  "s11_xml_stabilization_runtime_verified": true,
+  "s11_xml_stabilization_evidence": [
+    {
+      "reference_index": 2,
+      "attempted": true,
+      "count": 1,
+      "final_status": "XML_NODE_APPEARED_AFTER_MICRO_SCROLL",
+      "clicked_view_full_report": true
+    },
+    {
+      "reference_index": 4,
+      "attempted": true,
+      "count": 1,
+      "final_status": "XML_NODE_APPEARED_AFTER_WAIT",
+      "clicked_view_full_report": true
+    }
+  ],
+  "regression_checks": {
+    "s10_selected_card_autoscroll_regression": false,
+    "s10_local_title_binding_regression": false,
+    "s11_unsafe_reposition_regression": false,
+    "s14_full_sequence_regression": false,
+    "metal_deduct_keyerror_regression": false,
+    "ocr_or_visual_fallback_used": false,
+    "screenshot_coordinate_click_used": false
+  },
+  "target_score": 84.0,
+  "reference_outcomes": [
+    {
+      "reference_index": 1,
+      "outcome": "excluded",
+      "report_entry_detection_strategy": "NOT_AVAILABLE_CONFIRMED"
+    },
+    {
+      "reference_index": 2,
+      "outcome": "scored_but_below_target",
+      "reference_score": 83.0,
+      "reference_score_trustworthy": true,
+      "s14_collect_done": true
+    },
+    {
+      "reference_index": 3,
+      "outcome": "scored_but_below_target",
+      "reference_score": 76.0,
+      "reference_score_trustworthy": true,
+      "s14_collect_done": true
+    },
+    {
+      "reference_index": 4,
+      "outcome": "scored_but_below_target",
+      "reference_score": 81.0,
+      "reference_score_trustworthy": true,
+      "s14_collect_done": true
+    },
+    {
+      "reference_index": 5,
+      "outcome": "scored_but_below_target",
+      "reference_score": 74.5,
+      "reference_score_trustworthy": true,
+      "s14_collect_done": true
+    },
+    {
+      "reference_index": 6,
+      "outcome": "excluded",
+      "report_entry_detection_strategy": "NOT_AVAILABLE_CONFIRMED"
+    },
+    {
+      "reference_index": 7,
+      "outcome": "scored_but_below_target",
+      "reference_score": 79.0,
+      "reference_score_trustworthy": true,
+      "s14_collect_done": true
+    }
+  ],
+  "blocking_point": {
+    "stop_code": "REFERENCE_CARD_INDEX_NOT_FOUND",
+    "target_reference_index": 8,
+    "visible_reference_indices": [1, 2, 3, 4, 5, 6],
+    "visible_card_count": 6,
+    "partial_card_candidates_count": 1,
+    "reason": "Business reference #8 was not visible or uniquely bindable in the current S10 XML window.",
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_s16_start_20260516_233715.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_s16_start_20260516_233715.xml"
+  },
+  "s16_entered": false,
+  "final_price_generated": false,
+  "pricing_payload_generated": false,
+  "terminal_interpretation": "New S10 continuation/index-window issue after V1.38 S11 XML stabilization had already been exercised successfully.",
+  "success_state": null,
+  "failure_state": "SECOND_STAGE_DID_NOT_REACH_S16"
+}

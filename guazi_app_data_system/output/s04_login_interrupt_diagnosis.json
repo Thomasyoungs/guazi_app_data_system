@@ -1,0 +1,35 @@
+{
+  "status": "S04_LOGIN_INTERRUPT_DIAGNOSIS_DONE",
+  "target": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "observed_failure": {
+    "status": "PAGE_CONTRACT_MISMATCH",
+    "error": "S04 action blocked because current fresh page contract is S_LOGIN.",
+    "actual_state": "S_LOGIN",
+    "foreground_package": "com.shuqing.tqaccountcenter",
+    "focused_window": "com.shuqing.tqaccountcenter/com.shuqing.kdgphone.account.login.LoginHomeActivity",
+    "screenshot_path": "artifacts/screenshots/s04_series_down_2_20260516_102834.png",
+    "xml_path": "artifacts/debug/s04_series_down_2_20260516_102834.xml"
+  },
+  "diagnosis": {
+    "root_cause": "FIRST_STAGE_MID_FLOW_S_LOGIN_RECOVERY_ENTRY_MISSING",
+    "details": [
+      {
+        "finding": "handle_s04 calls _ensure_current_page_contract(...,{S04}) before business action; when recognizer returns S_LOGIN, it immediately records PAGE_CONTRACT_MISMATCH."
+      },
+      {
+        "finding": "Startup recovery has _handle_startup_account_center_login_until_launcher and _dismiss_initial_s_login, but these are only called during APP_FORCE_RESTART/startup recovery."
+      },
+      {
+        "finding": "Existing _tap_s_login_bottom_back_once is unsafe for reuse because it routes through S06/tap_trim_filter evidence, so mid-flow recovery needs a dedicated S_LOGIN handler."
+      }
+    ],
+    "contract_gap": "S_LOGIN recovery exists at startup but not as a unified mid-flow interrupt recovery before S01-S10 action execution."
+  },
+  "patch_recommendation": "PATCH_ONLY scripts/runtime_s01_to_s10_mainline.py: add S_LOGIN interrupt recovery inside _ensure_current_page_contract; exact ?? if present, otherwise BACK/bottom return, fresh, then require allowed S01-S10 contract state or stop PAGE_CONTRACT_MISMATCH_AFTER_LOGIN_EXIT.",
+  "read_only_confirmation": {
+    "code_modified_before_diagnosis": false,
+    "second_stage_started": false,
+    "pricing_modified": false
+  },
+  "generated_at": "2026-05-16T10:32:41"
+}

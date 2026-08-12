@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "A",
+      "name": "S_LOGIN has later",
+      "expected": "click later only, no system BACK",
+      "result": "PASS"
+    },
+    {
+      "case": "B",
+      "name": "S_LOGIN no later, XML has < / ?",
+      "expected": "click XML back once and fresh",
+      "result": "PASS"
+    },
+    {
+      "case": "C",
+      "name": "S_LOGIN no later, XML missing back, system nav available",
+      "expected": "system BACK once and fresh",
+      "result": "PASS"
+    },
+    {
+      "case": "D",
+      "name": "S_LOGIN remains after one BACK",
+      "expected": "HUMAN_LOGIN_REQUIRED, no repeated BACK",
+      "result": "PASS"
+    },
+    {
+      "case": "E",
+      "name": "non S_LOGIN page",
+      "expected": "system BACK branch not triggered",
+      "result": "PASS"
+    },
+    {
+      "case": "F",
+      "name": "BACK exits to non-contract page",
+      "expected": "PAGE_CONTRACT_MISMATCH_AFTER_LOGIN_EXIT",
+      "result": "PASS"
+    }
+  ]
+}

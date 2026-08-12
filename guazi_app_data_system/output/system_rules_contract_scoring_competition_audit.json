@@ -1,0 +1,385 @@
+{
+  "status": "SYSTEM_RULES_CONTRACT_SCORING_COMPETITION_AUDIT_FOUND_ISSUES",
+  "generated_at": "2026-05-10T11:37:34",
+  "audit_scope": "READ_ONLY_SYSTEM_RULES_AND_PAGE_CONTRACT_AUDIT_V1",
+  "overall_conclusion": {
+    "page_contract_execution_risk": true,
+    "page_contract_document_gap": true,
+    "scoring_rule_gap": true,
+    "competition_coefficient_gap": true,
+    "code_doc_config_inconsistency": true,
+    "top_blockers": [
+      "S04_SERIES_SEARCH_V2 missing for new-energy tab / letter index / alias, causing Lumin S04 failure.",
+      "S07 hidden tick logic supports 11/12 only, not 1-year hidden tick required by Lumin.",
+      "?? normalization is not clearly mapped to ??, risking wrong target_score for Prado-like targets.",
+      "S10 first-stage single-card/split-card parser risk remains from Prado evidence."
+    ]
+  },
+  "current_result_snapshot": {
+    "result_s01_to_s10_status": "TARGET_SERIES_NOT_FOUND_IN_S04",
+    "result_s10_to_s16_status": "SECOND_STAGE_NOT_RUN_FIRST_STAGE_FAILED",
+    "current_target_fingerprint": "??|Lumin|2026?|??? 205km ??? ??|?|2025.11"
+  },
+  "positive_controls": [
+    {
+      "control": "S10 non-trisame boundary and title filter",
+      "evidence": "scripts/runtime_s10_to_s16_mainline.py:1677, 1805, 1927; output/s10_trisame_source_boundary_patch.json",
+      "status": "implemented"
+    },
+    {
+      "control": "S10 canonical order price asc + same-price mileage desc",
+      "evidence": "scripts/runtime_s10_to_s16_mainline.py:1940",
+      "status": "implemented"
+    },
+    {
+      "control": "S10 card completeness / partial card gate",
+      "evidence": "scripts/runtime_s10_to_s16_mainline.py:1743, 2025; output/s10_reference_card_completeness_gate_patch.json",
+      "status": "implemented"
+    },
+    {
+      "control": "S11 top-one-third image-only recognition and report safe click",
+      "evidence": "scripts/runtime_s10_to_s16_mainline.py:651, 4535; prior acceptance reports",
+      "status": "implemented"
+    },
+    {
+      "control": "S11_TO_S12 stable wait and S12 priority over S14",
+      "evidence": "scripts/runtime_s10_to_s16_mainline.py:3627, 941, 3670",
+      "status": "implemented"
+    },
+    {
+      "control": "S13 raw XML node history repair parsing with duplicate zero preserved",
+      "evidence": "scripts/runtime_s10_to_s16_mainline.py:4920; output/s13_history_repair_duplicate_zero_parser_patch_report.json",
+      "status": "implemented"
+    },
+    {
+      "control": "S13 repair item click guard and live-room prohibition",
+      "evidence": "scripts/runtime_s10_to_s16_mainline.py:113, 5263; output/s13_repair_item_click_guard_patch.json",
+      "status": "implemented"
+    },
+    {
+      "control": "Service fee tier pricing and no active 0.95 payout logic",
+      "evidence": "src/guazi_app_data_system/pricing.py:296, 915; rg found 0.95 only in issue_classifier confidence",
+      "status": "implemented"
+    },
+    {
+      "control": "Competition coefficient V1.2.1 core anti-duplication",
+      "evidence": "src/guazi_app_data_system/pricing.py:524, 579, 689, 729, 776, 788, 804",
+      "status": "mostly implemented"
+    }
+  ],
+  "risks": [
+    {
+      "risk_id": "P0_S04_SERIES_SEARCH_V2_MISSING_FOR_EV_ALIAS",
+      "module": "runtime_s01_to_s10_mainline",
+      "page_or_rule": "S04_SERIES_SEARCH_V2",
+      "risk_level": "HIGH",
+      "priority": "P0",
+      "current_behavior": "S04 only authorizes click_series_model_button in config/pages.yaml; runtime may use right-side letter index only when page contract allows tap_series_letter. It does not have a contract-backed new-energy tab flow, C/L letter strategy, or alias strategy for Lumin / ??Lumin / ?? Lumin. The latest Lumin run stopped with TARGET_SERIES_NOT_FOUND_IN_S04 after linear scrolling.",
+      "expected_behavior": "S04 should have a contract-backed V2 search path: try allowed tabs such as ??? when present, use A-Z index under contract, apply explicit alias set, record attempted_tabs / attempted_letters / visible_series_names_by_step, and still forbid similar series such as ??? / ?? / ??.",
+      "evidence_file": [
+        "output/result_s01_to_s10.json",
+        "artifacts/debug/s04_series_down_12_20260510_110914.xml",
+        "artifacts/screenshots/s04_series_down_12_20260510_110914.png"
+      ],
+      "code_location": [
+        "scripts/runtime_s01_to_s10_mainline.py:5048",
+        "scripts/runtime_s01_to_s10_mainline.py:5238",
+        "config/pages.yaml:S04 allowed_actions"
+      ],
+      "document_location": [
+        "??????????_V1.11_???????_S10??????_S13???????.docx: term scan did not find ??? / Lumin / ??"
+      ],
+      "impact": "New-energy or alias-named series can be unreachable; first stage blocks even when the APP has a valid target series under a different tab or index path.",
+      "suggested_fix": "Add S04_SERIES_SEARCH_V2 contract and runtime implementation for tab/index/alias search, with strict similar-series exclusion and full attempt logging.",
+      "immediate_fix_required": true
+    },
+    {
+      "risk_id": "P0_S07_AGE_HIDDEN_TICK_1_YEAR_MISSING",
+      "module": "runtime_s01_to_s10_mainline",
+      "page_or_rule": "S07_AGE_SLIDER_HIDDEN_TICKS",
+      "risk_level": "HIGH",
+      "priority": "P0",
+      "current_behavior": "_s07_hidden_age_tick_info currently declares hidden_tick_supported_range=11-12 and rejects target_age not in (11, 12). It therefore does not support the user-required 1-year hidden tick between 0 and 2.",
+      "expected_behavior": "When visible ticks include 0 and 2 but not 1, dynamically compute the 1-year hidden point from x0/x2, set both sliders to 1, and verify 1-1? before AGE_FILTER_DONE=true.",
+      "evidence_file": [
+        "scripts/runtime_s01_to_s10_mainline.py"
+      ],
+      "code_location": [
+        "scripts/runtime_s01_to_s10_mainline.py:4052",
+        "scripts/runtime_s01_to_s10_mainline.py:4055",
+        "scripts/runtime_s01_to_s10_mainline.py:4079"
+      ],
+      "document_location": [
+        "V1.11 DOCX term scan: no 1-1? hit"
+      ],
+      "impact": "Young vehicles such as 2025-registered Lumin cannot pass exact age filtering once S04 is fixed.",
+      "suggested_fix": "Extend hidden tick logic to supported ranges 1, 11, 12; record x0/x2/one_year_step/verify_text and fail closed when target_age is unsupported.",
+      "immediate_fix_required": true
+    },
+    {
+      "risk_id": "P0_TARGET_CONDITION_BUQI_NOT_NORMALIZED_TO_PAINT",
+      "module": "scoring / target condition standardization",
+      "page_or_rule": "target_score body repair normalization",
+      "risk_level": "HIGH",
+      "priority": "P0",
+      "current_behavior": "Damage normalization maps paint/metal/replace aliases but ?? is not visibly present in config/fields.yaml field_mapping or pricing.py PAINT_DAMAGE_TYPES. Competition risk counting also counts ??/paint-like terms, not clearly ??. User-provided Prado condition uses ??.",
+      "expected_behavior": "?? must normalize to ?? / ???? for target_score and competition risk notes; ??? / ??? must map to rear fenders.",
+      "evidence_file": [
+        "src/guazi_app_data_system/pricing.py",
+        "config/fields.yaml"
+      ],
+      "code_location": [
+        "src/guazi_app_data_system/pricing.py:20",
+        "src/guazi_app_data_system/pricing.py:60",
+        "config/fields.yaml:field_mapping"
+      ],
+      "document_location": [
+        "??????????V1.5_????????.docx"
+      ],
+      "impact": "???????????? target_score ??????????????????????????????",
+      "suggested_fix": "Add ?? / ???? aliases to parser, fields.yaml, damage priority, scoring normalization, and report standardized target repairs.",
+      "immediate_fix_required": true
+    },
+    {
+      "risk_id": "P1_S10_SINGLE_CARD_OR_SPLIT_CARD_READY_RISK",
+      "module": "runtime_s01_to_s10_mainline / S10 recognizer",
+      "page_or_rule": "S10_READY card audit",
+      "risk_level": "HIGH",
+      "priority": "P1",
+      "current_behavior": "Prado rerun evidence showed a live S10-like page with one valid target card but first-stage S10_READY reported vehicle_card_count=0 and trisame_count_confirmed=false. This suggests the first-stage S10 card audit can miss single-card or split-node cards.",
+      "expected_behavior": "A single fully visible true trisame card before the non-trisame boundary should be accepted as S10_READY, with trisame_count=1 and sample shortage warning, not blocked by parser structure assumptions.",
+      "evidence_file": [
+        "artifacts/debug/s09_to_s10_20260510_105333.xml",
+        "artifacts/screenshots/s09_to_s10_20260510_105333.png"
+      ],
+      "code_location": [
+        "scripts/runtime_s01_to_s10_mainline.py:3500",
+        "scripts/runtime_s01_to_s10_mainline.py:3589",
+        "scripts/runtime_s01_to_s10_mainline.py:6582"
+      ],
+      "document_location": [
+        "V1.11 DOCX includes S10 canonical/partial but single-card parser edge is not explicit"
+      ],
+      "impact": "Valid rare models with only one same-source listing can be incorrectly blocked or misclassified as no reliable S10.",
+      "suggested_fix": "Replay the Prado S10 XML and strengthen first-stage S10 card extraction for split title/price/metadata and single-card pages before boundary.",
+      "immediate_fix_required": true
+    },
+    {
+      "risk_id": "P1_S04_CONTRACT_CONFIG_DRIFT",
+      "module": "config/pages.yaml and runtime",
+      "page_or_rule": "S04 allowed actions",
+      "risk_level": "MEDIUM",
+      "priority": "P1",
+      "current_behavior": "Runtime contains logic to detect a right-side letter index and raises CONTRACT_NEEDS_UPDATE_S04_LETTER_INDEX if the contract does not authorize it. config/pages.yaml currently lists only click_series_model_button for S04.",
+      "expected_behavior": "If S04 letter index is part of the accepted page contract, config/pages.yaml and actions.yaml should explicitly define tap_series_letter with safety bounds and logging; otherwise runtime should not carry half-enabled code.",
+      "evidence_file": [
+        "config/pages.yaml",
+        "scripts/runtime_s01_to_s10_mainline.py"
+      ],
+      "code_location": [
+        "scripts/runtime_s01_to_s10_mainline.py:5048",
+        "scripts/runtime_s01_to_s10_mainline.py:5057",
+        "config/pages.yaml:S04"
+      ],
+      "document_location": [
+        "V1.11 DOCX term scan did not find ??"
+      ],
+      "impact": "The system can stop on a valid page solely because the code sees a useful control that the contract has not yet authorized.",
+      "suggested_fix": "Synchronize S04 page contract, actions.yaml, and runtime around the same tab/index strategy.",
+      "immediate_fix_required": true
+    },
+    {
+      "risk_id": "P1_MINOR_DAMAGE_SCORING_GAPS",
+      "module": "scoring / target condition risk",
+      "page_or_rule": "?? / ?? / ?? / ????",
+      "risk_level": "MEDIUM",
+      "priority": "P1",
+      "current_behavior": "Minor damage terms are captured in competition notes as MINOR_DAMAGE_RECORDED_NO_EXTRA_COEFFICIENT_DEDUCTION, but target_score body scoring only handles ?? / ?? / ?? damage records. There is no clear scoring mapping for scratches, scuffs, dents, windshield chip, or small cosmetic damage.",
+      "expected_behavior": "These terms should either have explicit scoring/risk mapping or a deterministic manual review note; they should not be silently ignored or converted to paint/metal without rule support.",
+      "evidence_file": [
+        "src/guazi_app_data_system/pricing.py",
+        "config/fields.yaml",
+        "santana_full_chain_acceptance_report.json"
+      ],
+      "code_location": [
+        "src/guazi_app_data_system/pricing.py:167",
+        "src/guazi_app_data_system/pricing.py:670"
+      ],
+      "document_location": [
+        "??????????V1.5_????????.docx"
+      ],
+      "impact": "Targets like ??? with small cosmetic damage rely on notes/review rather than deterministic score handling.",
+      "suggested_fix": "Add explicit minor-damage categories: no-score note, small deduction, or manual review trigger, with examples and unit tests.",
+      "immediate_fix_required": false
+    },
+    {
+      "risk_id": "P1_S13_S14_REPAIR_CLICK_GUARD_CODED_BUT_DOC_DRIFT",
+      "module": "runtime_s10_to_s16_mainline / page contract docs",
+      "page_or_rule": "S13_TO_S14 repair item click",
+      "risk_level": "MEDIUM",
+      "priority": "P1",
+      "current_behavior": "Runtime now has forbidden click text, safe repair item binding, clicked_text/bounds audit, and live-room detection, but term scanning V1.11 did not find ?? / ???? terms. The code appears safer than the available document scan.",
+      "expected_behavior": "The page contract should explicitly freeze forbidden live-room and bottom-bar click zones and the required audit fields.",
+      "evidence_file": [
+        "scripts/runtime_s10_to_s16_mainline.py",
+        "output/s13_repair_item_click_guard_patch_latest.md"
+      ],
+      "code_location": [
+        "scripts/runtime_s10_to_s16_mainline.py:113",
+        "scripts/runtime_s10_to_s16_mainline.py:5263",
+        "scripts/runtime_s10_to_s16_mainline.py:5457"
+      ],
+      "document_location": [
+        "V1.11 DOCX term scan did not find ?? / ????"
+      ],
+      "impact": "Future maintenance could relax the guard because it is not equally visible in the contract document.",
+      "suggested_fix": "Sync S13_TO_S14 repair item click guard and click-audit requirements into the main page contract document.",
+      "immediate_fix_required": false
+    },
+    {
+      "risk_id": "P1_COMPETITION_V1_2_1_MODEL_PROFILE_GAP",
+      "module": "pricing.py / competition coefficient",
+      "page_or_rule": "model_liquidity and fuel_cost_pressure",
+      "risk_level": "MEDIUM",
+      "priority": "P1",
+      "current_behavior": "V1.2.1 anti-duplicate mechanics are mostly coded: sample-shortage distribution no duplicate deduction, OBD note only, city record-only, pressure cap, EV fuel-cost-not-applicable note. However model profiles are hard-coded in pricing.py rather than a transparent config table, and new models like Lumin depend on fallback notes rather than an explicit EV liquidity rule.",
+      "expected_behavior": "Model liquidity / fuel-cost / EV liquidity should come from a reviewable config table or deterministic taxonomy with missing-profile notes.",
+      "evidence_file": [
+        "src/guazi_app_data_system/pricing.py",
+        "????????????_V1.2.1_????????.docx"
+      ],
+      "code_location": [
+        "src/guazi_app_data_system/pricing.py:729",
+        "src/guazi_app_data_system/pricing.py:788",
+        "src/guazi_app_data_system/pricing.py:804"
+      ],
+      "document_location": [
+        "????????????_V1.2.1_????????.docx"
+      ],
+      "impact": "The coefficient is reproducible, but model-level judgments are harder to audit and extend for EVs, parallel imports, and niche models.",
+      "suggested_fix": "Move model_liquidity_profiles / EV profile rules into config with explicit missing-profile behavior.",
+      "immediate_fix_required": false
+    },
+    {
+      "risk_id": "P2_EV_FIELDS_AND_EMISSION_CONFUSION_RISK",
+      "module": "target task schema / pricing context",
+      "page_or_rule": "?????",
+      "risk_level": "MEDIUM",
+      "priority": "P2",
+      "current_behavior": "The target task schema in config/fields.yaml requires traditional fields and does not formally list energy_type, range_km, or battery_supplier. Runtime/pricing can read these if present, but schema documentation is not aligned.",
+      "expected_behavior": "EV-specific fields should be explicit optional target fields; emission_standard should be absent/not-applicable, not overloaded with range.",
+      "evidence_file": [
+        "config/fields.yaml",
+        "output/result_s01_to_s10.json"
+      ],
+      "code_location": [
+        "config/fields.yaml:target_fields",
+        "src/guazi_app_data_system/pricing.py:475"
+      ],
+      "document_location": [
+        "????????????_V1.2.1_????????.docx"
+      ],
+      "impact": "New EV targets may be written inconsistently and fuel/emission notes may become ambiguous.",
+      "suggested_fix": "Add optional EV fields to schema and report output: energy_type, range_km, battery_supplier, EV notes.",
+      "immediate_fix_required": false
+    },
+    {
+      "risk_id": "P2_RESULT_RAW_SNAPSHOT_OUTPUT_RISK_FIRST_STAGE",
+      "module": "result serialization",
+      "page_or_rule": "raw XML / visible_blob omission",
+      "risk_level": "LOW",
+      "priority": "P2",
+      "current_behavior": "Second-stage has RESULT_OMIT_KEYS for fresh_xml/nodes/raw_xml/visible_blob. First-stage code still carries fresh_xml/visible_blob in snapshots and some failure contexts may include full snapshots unless sanitized by the final writer.",
+      "expected_behavior": "Both stages should share a strict result sanitizer that omits raw XML, nodes, visible_blob, and huge text blobs from result JSON while preserving artifact paths.",
+      "evidence_file": [
+        "scripts/runtime_s01_to_s10_mainline.py",
+        "scripts/runtime_s10_to_s16_mainline.py"
+      ],
+      "code_location": [
+        "scripts/runtime_s01_to_s10_mainline.py:331",
+        "scripts/runtime_s01_to_s10_mainline.py:353",
+        "scripts/runtime_s10_to_s16_mainline.py:2908"
+      ],
+      "document_location": [
+        "Multiple acceptance/freeze reports require raw XML not written to result JSON"
+      ],
+      "impact": "Failure results can become oversized or leak raw page dumps if first-stage sanitization is incomplete.",
+      "suggested_fix": "Backport RESULT_OMIT_KEYS-style sanitizer to first-stage result writing and add JSON size/raw-key regression check.",
+      "immediate_fix_required": false
+    },
+    {
+      "risk_id": "P2_LEFT_SILL_AND_SPECIAL_BODY_RULES_PARTIAL",
+      "module": "scoring / competition notes",
+      "page_or_rule": "left sill / water tank / special structure",
+      "risk_level": "LOW",
+      "priority": "P2",
+      "current_behavior": "Left sill terms produce a review note in competition risk code, and water tank paint/metal produces a special review reason, but these are not fully represented as deterministic scoring table rows in config/fields.yaml.",
+      "expected_behavior": "Special body locations should have explicit scoring or manual-review policy in fields.yaml and DOCX.",
+      "evidence_file": [
+        "src/guazi_app_data_system/pricing.py",
+        "config/fields.yaml"
+      ],
+      "code_location": [
+        "src/guazi_app_data_system/pricing.py:636",
+        "src/guazi_app_data_system/pricing.py:217"
+      ],
+      "document_location": [
+        "??????????V1.5_????????.docx"
+      ],
+      "impact": "Rules are visible in code but less transparent to non-code review.",
+      "suggested_fix": "Promote left sill and water-tank policies into config and rule docs.",
+      "immediate_fix_required": false
+    },
+    {
+      "risk_id": "P3_HISTORICAL_BASELINE_NEW_PRICING_IMPACT_SEPARATION_OK",
+      "module": "baseline reports / pricing freeze",
+      "page_or_rule": "historical baseline vs new pricing rules",
+      "risk_level": "LOW",
+      "priority": "P3",
+      "current_behavior": "Historical baselines are preserved, and service-fee/competition coefficient impact reports are separate. This is correct, but the audit should keep reminding that old original baseline prices are not overwritten.",
+      "expected_behavior": "Historical baselines remain immutable; new pricing rules are applied only to future runs or separate replay reports.",
+      "evidence_file": [
+        "output/guazi_service_fee_pricing_rule_freeze.json",
+        "output/competition_coefficient_v1_2_pricing_patch.json"
+      ],
+      "code_location": [
+        "src/guazi_app_data_system/pricing.py:903"
+      ],
+      "document_location": [
+        "??????_????????.docx",
+        "????????????_V1.2.1_????????.docx"
+      ],
+      "impact": "No functional blocker; governance note only.",
+      "suggested_fix": "Keep future replay reports separate from frozen baseline acceptance files.",
+      "immediate_fix_required": false
+    }
+  ],
+  "suggested_fix_order": {
+    "P0": [
+      "P0_S04_SERIES_SEARCH_V2_MISSING_FOR_EV_ALIAS",
+      "P0_S07_AGE_HIDDEN_TICK_1_YEAR_MISSING",
+      "P0_TARGET_CONDITION_BUQI_NOT_NORMALIZED_TO_PAINT"
+    ],
+    "P1": [
+      "P1_S10_SINGLE_CARD_OR_SPLIT_CARD_READY_RISK",
+      "P1_S04_CONTRACT_CONFIG_DRIFT",
+      "P1_MINOR_DAMAGE_SCORING_GAPS",
+      "P1_S13_S14_REPAIR_CLICK_GUARD_CODED_BUT_DOC_DRIFT",
+      "P1_COMPETITION_V1_2_1_MODEL_PROFILE_GAP"
+    ],
+    "P2": [
+      "P2_EV_FIELDS_AND_EMISSION_CONFUSION_RISK",
+      "P2_RESULT_RAW_SNAPSHOT_OUTPUT_RISK_FIRST_STAGE",
+      "P2_LEFT_SILL_AND_SPECIAL_BODY_RULES_PARTIAL"
+    ],
+    "P3": [
+      "P3_HISTORICAL_BASELINE_NEW_PRICING_IMPACT_SEPARATION_OK"
+    ]
+  },
+  "audit_notes": [
+    "No real-device run was performed in this audit turn.",
+    "No code/config/pricing/page-contract document was modified by this audit.",
+    "Only the two requested audit output files were generated.",
+    "Term scan of V1.11 DOCX found S04/canonical/partial but did not find ???/Lumin/??/1-1?, so the newest Lumin-specific S04 and S07 gaps are not contract-frozen in the available document text."
+  ]
+}

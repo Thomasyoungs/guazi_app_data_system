@@ -1,0 +1,87 @@
+{
+  "status": "S10_SELECTED_CARD_AUTOSCROLL_AND_S11_FIRST_SCROLL_PATCHED",
+  "created_at": "2026-05-16T14:42:30",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "untouched": [
+    "scripts/runtime_s01_to_s10_mainline.py",
+    "S14 logic",
+    "raw_first_line stale logic",
+    "pricing",
+    "config",
+    "baseline",
+    "scoring rules",
+    "page contract docs",
+    "nissan terra closure package"
+  ],
+  "s10_changes": {
+    "selected_card_autoscroll_before_handoff": true,
+    "autoscroll_only_when_reliable_s10": true,
+    "identity_preserved_by_expected_card": true,
+    "selected_card_must_be_full_visible_fields_complete_safe_clickable": true,
+    "partial_other_cards_allowed": true,
+    "failure_stop_codes": [
+      "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE",
+      "REFERENCE_CARD_BINDING_NOT_UNIQUE",
+      "SECOND_STAGE_BLOCKED_NOT_RELIABLE_S10"
+    ]
+  },
+  "s11_changes": {
+    "first_report_search_scroll_ratio": 0.33,
+    "first_scroll_only_when_entry_not_safe_on_current_screen": true,
+    "then_normal_fine_backtrack_strategy_preserved": true,
+    "weak_markers_never_clicked": true,
+    "exact_view_full_report_gate_preserved": true
+  },
+  "py_compile": {
+    "command": "python -m py_compile scripts/runtime_s10_to_s16_mainline.py",
+    "passed": true
+  },
+  "offline_validation": {
+    "status": "PASSED",
+    "created_at": "2026-05-16T14:42:10",
+    "cases": [
+      {
+        "case_id": "A",
+        "name": "S11 current screen exact entry safe -> no first scroll",
+        "passed": true
+      },
+      {
+        "case_id": "B",
+        "name": "S11 no entry -> first scroll about one third then fine/backtrack can continue",
+        "passed": true,
+        "first_ratio": 0.33,
+        "fine_ratio": 0.18
+      },
+      {
+        "case_id": "C",
+        "name": "S10 selected partial -> autoscroll completion can bind same expected card",
+        "passed": true,
+        "before_stop": "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE",
+        "after_pass": true,
+        "identity": true
+      },
+      {
+        "case_id": "D",
+        "name": "S10 after completion attempt still partial -> selected not fully visible",
+        "passed": true,
+        "stop": "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE"
+      },
+      {
+        "case_id": "E",
+        "name": "S10 identity changed or non-unique -> stop, do not click",
+        "passed": true,
+        "stop": "REFERENCE_CARD_BINDING_NOT_UNIQUE"
+      },
+      {
+        "case_id": "F",
+        "name": "Other bottom partial card remains allowed and does not block selected complete card",
+        "passed": true,
+        "bottom_partial": true,
+        "selected_pass": true
+      }
+    ]
+  },
+  "real_device_run_in_patch_phase": false
+}

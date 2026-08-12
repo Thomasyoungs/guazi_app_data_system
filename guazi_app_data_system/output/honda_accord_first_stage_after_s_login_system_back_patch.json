@@ -1,0 +1,34 @@
+{
+  "status": "HONDA_ACCORD_FIRST_STAGE_TO_S10_READY_AFTER_S_LOGIN_SYSTEM_BACK",
+  "patch_status": "S_LOGIN_SYSTEM_NAV_BACK_RECOVERY_PATCHED",
+  "first_stage_status": "S10_READY",
+  "fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "target_task": {
+    "actual_target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\data\\current_target_task.json",
+    "brand": "本田",
+    "series": "雅阁",
+    "series_alias": "",
+    "year_model": "2023款",
+    "config_model": "260TURBO 智享版",
+    "color": "黑",
+    "register_date": "2024.01",
+    "register_year": 2024,
+    "current_year": 2026,
+    "target_age_formula": "current_year - register_year",
+    "calculated_target_age": 2
+  },
+  "s10_ready": true,
+  "s_login_encountered_during_validation": false,
+  "s_login_system_back_used": false,
+  "s_login_actions": [],
+  "startup_after_recovery_state": "S01",
+  "startup_after_recovery_screenshot_path": "artifacts/screenshots/s01_s10_after_startup_red_packet_close_20260519_112402.png",
+  "startup_after_recovery_xml_path": "artifacts/debug/s01_s10_after_startup_red_packet_close_20260519_112402.xml",
+  "trisame_count": 10,
+  "same_source_cards_count": 10,
+  "no_login_content_clicked": true,
+  "forbidden_actions_observed": [],
+  "notes": [
+    "??????????? S_LOGIN??????????????????????? S10_READY?"
+  ]
+}

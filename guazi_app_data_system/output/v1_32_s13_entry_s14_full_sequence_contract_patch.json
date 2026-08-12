@@ -1,0 +1,80 @@
+{
+  "status": "V1_32_S13_ENTRY_S14_FULL_SEQUENCE_CONTRACT_PATCHED",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "not_modified": [
+    "scripts/runtime_s01_to_s10_mainline.py",
+    "pricing",
+    "config",
+    "DOCX",
+    "baseline files",
+    "scoring rules",
+    "service fee ladder",
+    "competition coefficient rules"
+  ],
+  "contract_version": {
+    "overall_contract_version": "V1.32",
+    "execution_contract_version": "V1.32"
+  },
+  "implemented_contract": {
+    "s13_repair_count_role": "entry_signal_only",
+    "s13_region_check_order": [
+      "???",
+      "??",
+      "???",
+      "??"
+    ],
+    "s13_first_positive_region_behavior": "?? repair_count>0 ????????????????????????????? S14",
+    "s14_definition": "?????????????",
+    "s15_gate": "repair_count>0 ??? S14_COLLECT_DONE / s14_full_image_sequence_collected????? collected_repair_item_count >= repair_count"
+  },
+  "removed_or_disabled_old_paths": [
+    "? collected_repair_item_count < repair_count ?? S15_BLOCKED_REPAIR_DETAILS_INCOMPLETE",
+    "? 1/21 ?? repair_details_incomplete_before_s15",
+    "s13_pending_repair_regions / s13_all_region_counts_collected ?????????????",
+    "sum(repair_counts) ?? S15 ????????"
+  ],
+  "retained_rules": [
+    "S14 ????????",
+    "S14 ????",
+    "S10/S11/S12 ??????",
+    "V1.28 ?????????"
+  ],
+  "py_compile": {
+    "scripts/runtime_s10_to_s16_mainline.py": "PASS"
+  },
+  "offline_validation": [
+    {
+      "scenario": "A ??? 0",
+      "result": "PASS",
+      "evidence": "s13_enter_s14_required=false; s15_entry_allowed=true"
+    },
+    {
+      "scenario": "B ???>0",
+      "result": "PASS",
+      "evidence": "first_positive_region=??????????????S14 ????? S15"
+    },
+    {
+      "scenario": "C ???=0???>0",
+      "result": "PASS",
+      "evidence": "first_positive_region=???S14 ????? S15"
+    },
+    {
+      "scenario": "D repair_count=21 ? S14 ??????",
+      "result": "PASS",
+      "evidence": "s15_entry_allowed=true??? 1/21 ??"
+    },
+    {
+      "scenario": "E repair_count>0 ? S14 ???",
+      "result": "PASS",
+      "evidence": "s15_entry_allowed=false?S15_BLOCKED_BY_INCOMPLETE_S14"
+    },
+    {
+      "scenario": "F ? V1.29 ??????",
+      "result": "PASS",
+      "evidence": "S15_BLOCKED_REPAIR_DETAILS_INCOMPLETE / repair_details_incomplete_before_s15 ????????"
+    }
+  ],
+  "runtime_dependency_note": "????? YAML ????? Codex bundled Python ?????? PyYAML 6.0.3??????????????"
+}

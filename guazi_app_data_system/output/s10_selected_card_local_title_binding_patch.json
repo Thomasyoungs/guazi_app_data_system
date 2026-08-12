@@ -1,0 +1,144 @@
+{
+  "status": "S10_SELECTED_CARD_LOCAL_TITLE_BINDING_PATCHED",
+  "generated_at": "2026-05-16T16:59:34",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "forbidden_files_modified": [],
+  "code_modified": true,
+  "real_device_run_in_patch_phase": false,
+  "contract_version": "V1.37",
+  "page_contract": "S10_SELECTED_CARD_LOCAL_TITLE_BINDING_PAGE_CONTRACT_UPDATED",
+  "summary": "Replaced S10 reference-card title click binding from global title/index matching to selected_reference_card container-local title/price/metadata/bounds binding.",
+  "changes": [
+    "Added local selected card identity matching that ignores rebased visible reference_index after autoscroll.",
+    "Added local container binding checks for title, price, metadata, and card bounds.",
+    "Kept selected card completeness and safe visibility gates before click resolution.",
+    "Stopped using whole-page duplicate title count as a hard blocker; duplicate count is now evidence only.",
+    "Added binding evidence fields to current_reference, contract click evidence, and timing extra."
+  ],
+  "new_or_updated_stop_codes": [
+    "S10_SELECTED_CARD_LOCAL_TITLE_BINDING_NOT_UNIQUE",
+    "REFERENCE_CARD_BINDING_NOT_UNIQUE",
+    "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE"
+  ],
+  "new_fields": [
+    "s10_title_binding_scope",
+    "s10_global_title_duplicate_count",
+    "s10_local_title_node_count",
+    "s10_selected_card_local_index",
+    "s10_business_reference_index",
+    "s10_reference_index_rebased_after_autoscroll",
+    "s10_selected_card_bounds",
+    "s10_selected_card_click_target_bounds",
+    "s10_selected_card_binding_decision"
+  ],
+  "py_compile": {
+    "script": "scripts/runtime_s10_to_s16_mainline.py",
+    "passed": true
+  },
+  "offline_validation": {
+    "status": "S10_SELECTED_CARD_LOCAL_TITLE_BINDING_OFFLINE_VALIDATED",
+    "generated_at": "2026-05-16T16:58:59",
+    "py_compile_passed": true,
+    "scenarios": [
+      {
+        "scenario": "A_multiple_same_title_global_not_unique_selected_container_unique",
+        "passed": true,
+        "result": {
+          "ok": true,
+          "click_strategy": "selected_card_local_title_bounds",
+          "s10_title_binding_scope": "selected_reference_card_container",
+          "s10_global_title_duplicate_count": 7,
+          "s10_local_title_node_count": 1,
+          "s10_selected_card_binding_decision": "local_title_price_metadata_container_bound"
+        }
+      },
+      {
+        "scenario": "B_business_reference_7_visible_local_index_5_after_autoscroll",
+        "passed": true,
+        "result": {
+          "ok": true,
+          "s10_selected_card_local_index": 5,
+          "s10_business_reference_index": 7,
+          "s10_reference_index_rebased_after_autoscroll": true,
+          "matched_reference_key": "5:?? ?? 2023? 260TURBO ???:2024? | 3.32??? | ?? | HondaSENS:12.43?"
+        }
+      },
+      {
+        "scenario": "C_title_price_metadata_bind_same_selected_card_container",
+        "passed": true,
+        "result": {
+          "ok": true,
+          "s10_selected_card_bounds": [
+            429,
+            1534,
+            1082,
+            1859
+          ],
+          "s10_selected_card_click_target_bounds": [
+            429,
+            1534,
+            949,
+            1657
+          ],
+          "s10_selected_card_price_bounds": [
+            429,
+            1797,
+            546,
+            1855
+          ],
+          "s10_selected_card_metadata_bounds": [
+            429,
+            1664,
+            1082,
+            1716
+          ]
+        }
+      },
+      {
+        "scenario": "D_selected_reference_card_container_title_not_unique",
+        "passed": true,
+        "result": {
+          "ok": false,
+          "stop_code": "S10_SELECTED_CARD_LOCAL_TITLE_BINDING_NOT_UNIQUE",
+          "reason": "selected_reference_card container could not be uniquely bound by local title, price, metadata, and bounds.",
+          "s10_global_title_duplicate_count": 2,
+          "s10_local_title_node_count": 2
+        }
+      },
+      {
+        "scenario": "E_title_price_metadata_not_bindable_same_card",
+        "passed": true,
+        "result": {
+          "ok": false,
+          "stop_code": "REFERENCE_CARD_BINDING_NOT_UNIQUE",
+          "reason": "selected_reference_card title, price, metadata, and container bounds are not all bindable."
+        }
+      },
+      {
+        "scenario": "F_selected_reference_card_partial_or_unsafe",
+        "passed": true,
+        "result": {
+          "ok": false,
+          "stop_code": "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE",
+          "reason": "selected_reference_card is incomplete, partially visible, or outside the safe viewport."
+        }
+      },
+      {
+        "scenario": "G_bottom_other_partial_card_not_recorded_not_blocking",
+        "passed": true,
+        "result": {
+          "ok": true,
+          "partial_count": 1,
+          "partial_reference_indexes": [
+            null
+          ],
+          "selected_local_index": 5
+        }
+      }
+    ]
+  },
+  "runtime_validation": "pending_next_step",
+  "result": "S10_SELECTED_CARD_LOCAL_TITLE_BINDING_PATCHED"
+}

@@ -1,0 +1,91 @@
+{
+  "report_name": "s11_half_screen_scroll_view_full_report_patch",
+  "generated_at": "2026-05-13T17:32:04",
+  "target_fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "scope": "S11 report entry search / half-screen scroll only",
+  "rule_version": "exact_view_full_report_half_screen_scroll",
+  "rules": {
+    "entry_text": "??????",
+    "merchant_missing_marker": "??????",
+    "scroll_step_ratio": 0.5,
+    "ocr_disabled": true,
+    "visual_binding_disabled": true,
+    "screenshot_text_recognition_disabled": true,
+    "local_structure_binding_disabled": true,
+    "forbidden_clicks": [
+      "??????",
+      "????",
+      "???????",
+      "???",
+      "????",
+      "????",
+      "??",
+      "??",
+      "??",
+      "??",
+      "???"
+    ]
+  },
+  "implementation_summary": [
+    "S11 action table no longer allows S11_ONLY_ALLOWED_ACTION_CLICK_VIEW_FULL_REPORT_BY_LOCAL_STRUCTURE.",
+    "Local-structure helper now returns a non-executable disabled audit object.",
+    "S11 exact ?????? match breaks the scroll loop immediately and uses tap_full_report action_id.",
+    "S11 scroll points use fixed half-screen distance ratio 0.5.",
+    "Missing-report exclusion precondition requires exact ?????? marker and no exact ??????."
+  ],
+  "offline_validation": {
+    "A_first_screen_has_view_full_report": {
+      "passed": true,
+      "decision": "click_view_full_report",
+      "scroll_attempts": 0,
+      "stop_scroll_reason": "VIEW_FULL_REPORT_FOUND",
+      "clicked_forbidden": false
+    },
+    "B_after_one_half_scroll_has_view_full_report": {
+      "passed": true,
+      "decision": "click_view_full_report",
+      "scroll_attempts": 1,
+      "stop_scroll_reason": "VIEW_FULL_REPORT_FOUND",
+      "clicked_forbidden": false
+    },
+    "C_after_two_half_scrolls_has_view_full_report": {
+      "passed": true,
+      "decision": "click_view_full_report",
+      "scroll_attempts": 2,
+      "stop_scroll_reason": "VIEW_FULL_REPORT_FOUND",
+      "clicked_forbidden": false
+    },
+    "D_merchant_self_check_marker_excludes": {
+      "passed": true,
+      "decision": "exclude_reference",
+      "scroll_attempts": 1,
+      "excluded_reference_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+      "clicked_forbidden": false
+    },
+    "E_no_decisive_marker_exhausted": {
+      "passed": true,
+      "decision": "stop",
+      "scroll_attempts": 2,
+      "stop_code": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+      "clicked_forbidden": false
+    },
+    "F_advisor_only_not_report": {
+      "passed": true,
+      "decision": "stop",
+      "scroll_attempts": 1,
+      "stop_code": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+      "clicked_forbidden": false
+    }
+  },
+  "py_compile": "passed",
+  "real_device_continue": {
+    "attempted": false,
+    "blocked_by": "CURRENT_TARGET_TASK_JSON_INVALID",
+    "error": "",
+    "reason": "This turn only allows modifying runtime_s10_to_s16_mainline.py; data/current_target_task.json is invalid JSON and was not repaired automatically."
+  },
+  "final_status": "S11_HALF_SCREEN_SCROLL_VIEW_FULL_REPORT_PATCHED"
+}

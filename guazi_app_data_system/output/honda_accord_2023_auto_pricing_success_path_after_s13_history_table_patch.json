@@ -1,0 +1,70 @@
+{
+  "status": "SECOND_STAGE_DID_NOT_REACH_S16",
+  "success_state_requested": "AUTO_PRICING_SUCCESS_PATH_RUNTIME_VERIFIED",
+  "code_modified": false,
+  "first_stage_ran": true,
+  "second_stage_ran": true,
+  "target_fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "first_stage": {
+    "status": "S10_READY",
+    "reliable_s10": true,
+    "price_asc": true,
+    "trisame_count": 10,
+    "result_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s01_to_s10.json"
+  },
+  "second_stage": {
+    "status": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+    "issue_code": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+    "entered_s16": false,
+    "final_price_generated": false,
+    "pricing_payload_present": false,
+    "manual_review_required": null,
+    "auto_pricing_allowed": null
+  },
+  "s13_patch_runtime_validation": {
+    "runtime_verified_for_reference_1": true,
+    "reference_index": 1,
+    "history_table_detected": true,
+    "stop_scroll_reason": "history_repair_table_detected_before_scroll",
+    "count_bindings": {
+      "驾驶侧": 4,
+      "车尾": null,
+      "副驾驶": null,
+      "车头": null
+    },
+    "repair_counts": {
+      "驾驶侧": 4
+    },
+    "s13_scroll_violation_reproduced": false,
+    "entered_s14": true,
+    "s14_collect_done": true,
+    "reference_score": 83.0,
+    "reference_score_trustworthy": true,
+    "target_score": 84.0,
+    "reference_score_gte_target_score": false
+  },
+  "regression_checks": {
+    "s11_transfer_count_no_field_missing_for_ref1": true,
+    "s12_claims_collected_for_ref1": {
+      "claim_count": 0,
+      "max_amount": 0.0
+    },
+    "s14_no_regression_for_ref1": true,
+    "metal_deduct_no_regression_observed": true,
+    "s10_handoff_no_regression_observed": true
+  },
+  "blocking_reference": {
+    "reference_index": 2,
+    "price": "11.67万",
+    "metadata": "2024年 | 3.05万公里 | 唐山 | HondaSENS",
+    "stop_code": "S11_REPORT_ENTRY_SEARCH_EXHAUSTED_WITHOUT_DECISIVE_MARKER",
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_search_3_20260517_174255.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_search_3_20260517_174255.xml",
+    "reason": "reference #2 S11 report entry search exhausted without decisive marker; no S16 reached in this run."
+  },
+  "acceptance": {
+    "auto_pricing_success_path_verified": false,
+    "failure_state": "SECOND_STAGE_DID_NOT_REACH_S16",
+    "why_not_success": "reference #1 score 83.0 < target_score 84.0, then reference #2 stopped in S11 report entry search before S12/S13/S14/S15."
+  }
+}

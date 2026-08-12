@@ -1,0 +1,105 @@
+{
+  "task": "PATCH_S08_S10_SOURCE_GATE_CORE_ELEMENTS_RECOGNIZER_FOR_LEAPMOTOR_C10",
+  "final_status": "S08_S10_SOURCE_GATE_CORE_ELEMENTS_PATCHED_S10_READY",
+  "target_fingerprint": "零跑|C10|2026款|210悦享版|白|2026.02",
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py"
+  ],
+  "second_stage_run": false,
+  "pricing_output": false,
+  "raw_xml_written_to_result": false,
+  "changes": [
+    "S07 点击查看X辆后立即设置 S07_FILTER_DONE=true 与 transition_context=S07_VIEW_RESULT_TO_LIST。",
+    "S07_FILTER_DONE=true 后禁止 S06 recognizer 抢判，避免再次点击车型配置。",
+    "新增 S08_TARGET_LIST_AFTER_FILTER 来源门禁、核心元素、目标证据、反向排除识别。",
+    "扩展 S09 排序弹层识别，覆盖零跑页面的 最新上架/价格从高到低/成色最好/车况最好/续航久 等选项。",
+    "S09 点击价格从低到高后设置 SORT_DONE=true 与 transition_context=S09_PRICE_ASC_TO_LIST。",
+    "S10_READY 增加来源门禁、核心元素、目标三同证据与反向排除诊断字段。",
+    "S10 车卡 metadata 兼容 300公里/400公里 等非万公里里程显示，并换算为万公里。"
+  ],
+  "offline_replay": {
+    "s07_view_result_to_s08_positive": {
+      "xml_path": "artifacts/debug/s07_to_s08_20260512_104626.xml",
+      "recognized_page": "S08",
+      "s08_page_variant": "S08_TARGET_LIST_AFTER_FILTER",
+      "s08_source_gate_passed": true,
+      "s08_core_elements": [
+        "sort_control",
+        "filter_bar_model_config_entry",
+        "target_filter_or_card_evidence",
+        "vehicle_list_structure",
+        "price_or_vehicle_metadata_fields"
+      ],
+      "s08_reverse_exclusion_passed": true,
+      "allowed_action": "click_sort_dropdown",
+      "wrong_click_model_config_after_s07_done": false
+    },
+    "s09_sort_popup_positive": {
+      "xml_path": "artifacts/debug/s08_to_s09_20260510_141745.xml",
+      "recognized_page": "S09",
+      "allowed_action": "click_price_low_to_high"
+    },
+    "negative_without_s07_filter_done": {
+      "recognized_as_s08": false,
+      "recognized_as_s10_ready": false
+    },
+    "negative_without_sort_done": {
+      "recognized_as_s10_ready": false
+    },
+    "non_trisame_boundary": {
+      "more_source_recommended_area_excluded_by_existing_s10_boundary": true
+    }
+  },
+  "real_device_validation": {
+    "device": "6TGYYHPZCETCSK6L",
+    "log_path": "output/s08_s10_source_gate_first_stage_20260512_105611.log",
+    "status": "S10_READY",
+    "recognized_page_after_view_result": "S08",
+    "s08_source_gate_passed": true,
+    "s08_page_variant": "S08_TARGET_LIST_AFTER_FILTER",
+    "s08_core_elements": [
+      "sort_control",
+      "filter_bar_model_config_entry",
+      "target_filter_or_card_evidence",
+      "vehicle_list_structure",
+      "price_or_vehicle_metadata_fields"
+    ],
+    "s08_reverse_exclusion_passed": true,
+    "sort_option_clicked": true,
+    "s09_price_asc_clicked": true,
+    "sort_selected_confirmed": true,
+    "s10_source_gate_passed": true,
+    "s10_core_elements": [
+      "price_asc_sort_evidence",
+      "complete_target_vehicle_cards",
+      "target_trisame_evidence",
+      "trisame_boundary_before_non_trisame_section"
+    ],
+    "complete_target_vehicle_card_count": 2,
+    "non_trisame_boundary_detected": true,
+    "s10_ready_reason": "source_gate_core_elements_target_trisame_boundary_passed",
+    "same_source_cards": [
+      {
+        "title": "零跑汽车 零跑C10 2026款 210悦享版",
+        "year_mileage_text": "2026年 | 0.17万公里 | 唐山 | LeapPilot",
+        "list_price_10k": 10.64,
+        "list_year": 2026,
+        "list_mileage_10k_km": 0.17
+      },
+      {
+        "title": "零跑汽车 零跑C10 2026款 210悦享版",
+        "year_mileage_text": "2026年 | 0.77万公里 | 唐山 | LeapPilot",
+        "list_price_10k": 10.86,
+        "list_year": 2026,
+        "list_mileage_10k_km": 0.77
+      }
+    ]
+  },
+  "result_files": {
+    "result_s01_to_s10_json_valid": true,
+    "result_json_valid": true,
+    "result_status": "S10_READY",
+    "result_target_fingerprint": "零跑|C10|2026款|210悦享版|白|2026.02"
+  },
+  "allow_next_step": true
+}

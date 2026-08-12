@@ -1,0 +1,10 @@
+任务 FS20260622_9997 已取消且不再占用队列。
+原因：指定执行手机连接不稳定，执行瞬间设备不可见。
+错误：TARGET_ADB_DEVICE_TRANSIENT_DISCONNECT。
+请确认手机连接、手机授权、瓜子登录、首页状态、弹窗阻挡等。
+ADB诊断：
+target_serial=6TGYHPZCETCSK6L
+target_device_state=device
+adb_path_source=PATH
+adb_runtime_env_mode=inherited_user_environment
+adb_command_preview=

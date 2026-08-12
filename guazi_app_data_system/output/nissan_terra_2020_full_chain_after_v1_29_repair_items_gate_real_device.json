@@ -1,0 +1,88 @@
+{
+  "task": "RUN_NISSAN_TERRA_AFTER_V1_29_REPAIR_ITEMS_GATE_REAL_DEVICE_VALIDATION",
+  "target_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+  "status": "RUN_FAILED_WITH_ISSUE",
+  "final_state": "V1_29_REPAIR_ITEMS_GATE_NOT_EXERCISED_DUE_TO_STARTUP_BLOCKER",
+  "code_modified_this_round": false,
+  "device": {
+    "android_serial": "6TGYYHPZCETCSK6L",
+    "online": true
+  },
+  "preflight": {
+    "target_task_fingerprint_confirmed": true,
+    "result_json_legal": true,
+    "forbidden_large_fields_present": false,
+    "forbidden_large_fields_checked": [
+      "raw_xml",
+      "nodes",
+      "visible_blob",
+      "page_source"
+    ]
+  },
+  "startup_strategy": {
+    "strategy": "APP_FORCE_RESTART_AND_FIRST_STAGE_RERUN",
+    "reason": "Current reliable S10 page could not be proven from static evidence; first stage was rerun as required by the user constraints."
+  },
+  "first_stage": {
+    "executed": true,
+    "status": "APP_ICON_NOT_FOUND_AFTER_LATER_DIALOG_DISMISSED",
+    "s10_ready": false,
+    "log_path": "logs/nissan_terra_v1_29_first_stage_real_device_20260513_224955.log",
+    "startup_observation": {
+      "launcher_later_dialog_contract_enabled": true,
+      "later_dialog_type": "ACCOUNT_LOGOUT_DIALOG",
+      "later_click_attempts": 2,
+      "later_dialog_dismissed": true,
+      "app_icon_visible_after_later_dialog": false,
+      "foreground_package_after_later": "com.shuqing.tqaccountcenter",
+      "focused_window_after_later": "com.shuqing.tqaccountcenter/com.shuqing.kdgphone.account.login.LoginHomeActivity",
+      "stop_code": "APP_ICON_NOT_FOUND_AFTER_LATER_DIALOG_DISMISSED"
+    }
+  },
+  "second_stage": {
+    "executed": false,
+    "reason": "First stage did not reach S10_READY in this real-device validation pass.",
+    "v1_29_gate_exercised": false,
+    "reference_1_gate_validation": {
+      "executed": false,
+      "reason": "S13/S14/S15 were not reached because startup stopped before S01-S10 business flow."
+    }
+  },
+  "v1_29_repair_items_gate": {
+    "offline_status_before_run": "V1_29_S13_S14_ALL_REPAIR_ITEMS_REQUIRED_BEFORE_S15_FIXED_SCRIPT_PATCHED",
+    "real_device_status": "NOT_EXERCISED",
+    "still_entered_s15_with_untrusted_78": false,
+    "untrusted_reference_score_generated_this_run": false,
+    "blocked_by": "APP_ICON_NOT_FOUND_AFTER_LATER_DIALOG_DISMISSED"
+  },
+  "business_result": {
+    "entered_s16": false,
+    "pricing_output": false,
+    "used_non_trisame_price": false,
+    "used_old_95_percent_rule": false,
+    "old_target_pollution_detected": false
+  },
+  "result_files": {
+    "result_s01_to_s10_json": {
+      "path": "output/result_s01_to_s10.json",
+      "status": "APP_ICON_NOT_FOUND_AFTER_LATER_DIALOG_DISMISSED",
+      "fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+      "forbidden_large_fields_present": false
+    },
+    "result_s10_to_s16_json": {
+      "path": "output/result_s10_to_s16.json",
+      "status": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+      "fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+      "forbidden_large_fields_present": false,
+      "note": "This file is from a prior second-stage run; it was not refreshed because this pass did not reach S10_READY."
+    },
+    "result_json": {
+      "path": "output/result.json",
+      "status": "APP_ICON_NOT_FOUND_AFTER_LATER_DIALOG_DISMISSED",
+      "fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+      "forbidden_large_fields_present": false
+    }
+  },
+  "conclusion": "Real-device validation could not exercise the V1.29 S13/S14 before-S15 gate because APP_FORCE_RESTART stopped in the launcher/account-center entry phase before first stage reached S10_READY.",
+  "next_action_recommendation": "Resolve or bypass the launcher/account-center app-icon visibility blocker under startup-entry contract, then rerun this V1.29 real-device validation."
+}

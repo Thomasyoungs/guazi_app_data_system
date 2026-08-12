@@ -1,0 +1,141 @@
+{
+  "status": "GUAZI_SERVICE_FEE_TIER_PRICING_PATCHED",
+  "generated_at_local": "2026-05-09",
+  "old_formula_deprecated": "瓜子回款价 = 瓜子定价 × 95%",
+  "new_formula_enabled": "瓜子回款价 = 瓜子定价 - 瓜子服务费",
+  "service_fee_tiers": [
+    {
+      "condition": "瓜子定价 >= 200000",
+      "service_fee_yuan": 8000
+    },
+    {
+      "condition": "瓜子定价 >= 150000 且 < 200000",
+      "service_fee_yuan": 6000
+    },
+    {
+      "condition": "瓜子定价 >= 100000 且 < 150000",
+      "service_fee_yuan": 4500
+    },
+    {
+      "condition": "瓜子定价 >= 50000 且 < 100000",
+      "service_fee_yuan": 3500
+    },
+    {
+      "condition": "瓜子定价 < 50000",
+      "service_fee_yuan": 2500
+    }
+  ],
+  "tier_matching_order": "from_high_to_low_with_ge_boundaries",
+  "modified_files": [
+    "src/guazi_app_data_system/pricing.py",
+    "config/fields.yaml",
+    "output/guazi_service_fee_pricing_patch_report_latest.md",
+    "output/guazi_service_fee_pricing_patch_report.json"
+  ],
+  "old_formula_locations": [
+    {
+      "path": "src/guazi_app_data_system/pricing.py",
+      "old_line": 292,
+      "old_logic": "round(guazi_price_yuan * float(pricing[\"guazi_return_rate\"]))",
+      "replaced": true
+    },
+    {
+      "path": "config/fields.yaml",
+      "old_line": 106,
+      "old_logic": "\"guazi_return_rate\": 0.95",
+      "replaced_with": "guazi_service_fee_tiers"
+    },
+    {
+      "path": "output/baselines/**/pricing.py",
+      "old_logic": "archived baseline copies contain old formula by design",
+      "modified": false
+    }
+  ],
+  "new_function": {
+    "path": "src/guazi_app_data_system/pricing.py",
+    "function": "calc_guazi_service_fee",
+    "behavior": "high-to-low tier matching, >= boundary semantics"
+  },
+  "output_fields": [
+    "guazi_price_yuan",
+    "guazi_service_fee_yuan",
+    "guazi_net_payout_yuan",
+    "guazi_return_price_yuan",
+    "suggested_acquisition_price_yuan"
+  ],
+  "offline_tests": {
+    "py_compile": {
+      "command": "python -m py_compile src/guazi_app_data_system/pricing.py",
+      "passed": true
+    },
+    "fields_config_json_valid": true,
+    "sample_results": [
+      {
+        "guazi_price_yuan": 26200,
+        "service_fee_yuan": 2500,
+        "guazi_net_payout_yuan": 23700,
+        "passed": true
+      },
+      {
+        "guazi_price_yuan": 27800,
+        "service_fee_yuan": 2500,
+        "guazi_net_payout_yuan": 25300,
+        "passed": true
+      },
+      {
+        "guazi_price_yuan": 50000,
+        "service_fee_yuan": 3500,
+        "guazi_net_payout_yuan": 46500,
+        "passed": true
+      },
+      {
+        "guazi_price_yuan": 100000,
+        "service_fee_yuan": 4500,
+        "guazi_net_payout_yuan": 95500,
+        "passed": true
+      },
+      {
+        "guazi_price_yuan": 150000,
+        "service_fee_yuan": 6000,
+        "guazi_net_payout_yuan": 144000,
+        "passed": true
+      },
+      {
+        "guazi_price_yuan": 200000,
+        "service_fee_yuan": 8000,
+        "guazi_net_payout_yuan": 192000,
+        "passed": true
+      }
+    ],
+    "calculate_pricing_sample_27800": {
+      "guazi_service_fee_yuan": 2500,
+      "guazi_net_payout_yuan": 25300,
+      "suggested_acquisition_price_yuan": 21300,
+      "passed": true
+    }
+  },
+  "residual_0_95_payout_logic": false,
+  "residual_0_95_notes": "活动 src/scripts/config/tests 搜索中未发现 guazi_return_rate 或回款价 0.95 逻辑；src/guazi_app_data_system/issue_classifier.py 中的 0.95 是置信度，不属于定价。历史 baseline 归档保留旧公式，未覆盖。",
+  "historical_baseline_impact_report_only_no_overwrite": [
+    {
+      "baseline": "福克斯 baseline",
+      "reference_price_yuan": 26200,
+      "old_95_percent_payout_yuan": 24890,
+      "new_service_fee_payout_yuan": 23700,
+      "payout_delta_yuan": -1190,
+      "suggested_purchase_price_delta_if_other_deductions_unchanged": -1190
+    },
+    {
+      "baseline": "丰田致炫 baseline",
+      "reference_price_yuan": 27800,
+      "old_95_percent_payout_yuan": 26410,
+      "new_service_fee_payout_yuan": 25300,
+      "payout_delta_yuan": -1110,
+      "suggested_purchase_price_delta_if_other_deductions_unchanged": -1110
+    }
+  ],
+  "should_recompute_historical_baseline_purchase_price_later": true,
+  "no_device_run": true,
+  "result_json_overwritten": false,
+  "baseline_reports_overwritten": false
+}

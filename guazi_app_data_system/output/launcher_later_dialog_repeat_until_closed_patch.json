@@ -1,0 +1,178 @@
+{
+  "task": "FINISH_LAUNCHER_LATER_DIALOG_PATCH_VALIDATION_ONLY",
+  "final_status": "LAUNCHER_LATER_DIALOG_REPEAT_UNTIL_CLOSED_PATCH_OFFLINE_VERIFIED",
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py"
+  ],
+  "scope_check": {
+    "status": "PASS",
+    "git_diff_available": false,
+    "git_diff_note": "Workspace is not a git repository; scope was verified by targeted code section and keyword scans.",
+    "touched_symbols": [
+      "LAUNCHER_ACCOUNT_DIALOG_CORE_TEXTS",
+      "LAUNCHER_LATER_DIALOG_TYPE",
+      "LAUNCHER_LATER_ACTION_ID",
+      "LAUNCHER_LATER_MAX_ATTEMPTS",
+      "_launcher_account_learning_loop_candidate",
+      "_device_ready_context",
+      "_handle_launcher_account_dialog_until_closed",
+      "launcher app-icon lookup before Guazi entry"
+    ],
+    "s03_to_s10_business_logic_modified": false
+  },
+  "new_contract_logic": {
+    "function": "_handle_launcher_account_dialog_until_closed",
+    "max_later_click_attempts": 5,
+    "allowed_action_id": "LAUNCHER_ONLY_ALLOWED_ACTION_CLICK_LATER",
+    "allowed_clicked_text": "稍后",
+    "fresh_after_each_click": true,
+    "continue_to_app_icon_search_after_dismissed": true,
+    "stop_codes": {
+      "later_button_missing": "LAUNCHER_LATER_BUTTON_NOT_FOUND",
+      "max_attempts_not_dismissed": "LAUNCHER_LATER_DIALOG_NOT_DISMISSED_AFTER_MAX_ATTEMPTS",
+      "icon_missing_after_dismissed": "APP_ICON_NOT_FOUND_AFTER_LATER_DIALOG_DISMISSED"
+    },
+    "forbidden_buttons": [
+      "去登录",
+      "立即升级",
+      "退出账号",
+      "确认",
+      "设置",
+      "未知按钮",
+      "广告主体"
+    ]
+  },
+  "old_once_path_residual_check": [
+    {
+      "keyword": "_handle_launcher_account_dialog_once",
+      "exists": false,
+      "classification": "none"
+    },
+    {
+      "keyword": "later_click_once_only",
+      "exists": false,
+      "classification": "none"
+    },
+    {
+      "keyword": "STILL_VISIBLE_AFTER_LATER_ONCE",
+      "exists": false,
+      "classification": "none"
+    },
+    {
+      "keyword": "LAUNCHER_ACCOUNT_DIALOG_NO_LATER_BUTTON",
+      "exists": false,
+      "classification": "none"
+    },
+    {
+      "keyword": "launcher_account_dialog_click_later_once",
+      "exists": false,
+      "classification": "none"
+    },
+    {
+      "keyword": "single allowed 稍后",
+      "exists": false,
+      "classification": "none"
+    },
+    {
+      "keyword": "只点击一次稍后",
+      "exists": false,
+      "classification": "none"
+    },
+    {
+      "keyword": "clicked_later_once_then_stop",
+      "exists": false,
+      "classification": "none"
+    },
+    {
+      "keyword": "max_later_click_count=1",
+      "exists": false,
+      "classification": "none"
+    }
+  ],
+  "offline_validation": [
+    {
+      "case": "A_one_click_dismissed",
+      "expected": {
+        "later_click_attempts": 1,
+        "later_dialog_dismissed": true,
+        "continue_to_app_icon_search": true
+      },
+      "actual": {
+        "later_click_attempts": 1,
+        "later_dialog_dismissed": true,
+        "continue_to_app_icon_search": true,
+        "tap_count": 1
+      },
+      "result": "PASS"
+    },
+    {
+      "case": "B_two_clicks_dismissed",
+      "expected": {
+        "later_click_attempts": 2,
+        "later_dialog_dismissed": true,
+        "continue_to_app_icon_search": true
+      },
+      "actual": {
+        "later_click_attempts": 2,
+        "later_dialog_dismissed": true,
+        "continue_to_app_icon_search": true,
+        "tap_count": 2
+      },
+      "result": "PASS"
+    },
+    {
+      "case": "C_max_attempts_still_visible",
+      "expected_stop_code": "LAUNCHER_LATER_DIALOG_NOT_DISMISSED_AFTER_MAX_ATTEMPTS",
+      "actual": {
+        "later_click_attempts": 5,
+        "later_dialog_dismissed": false,
+        "stop_code": "LAUNCHER_LATER_DIALOG_NOT_DISMISSED_AFTER_MAX_ATTEMPTS",
+        "tap_count": 5
+      },
+      "result": "PASS"
+    },
+    {
+      "case": "D_no_later_button",
+      "expected_stop_code": "LAUNCHER_LATER_BUTTON_NOT_FOUND",
+      "actual": {
+        "stop_code": "LAUNCHER_LATER_BUTTON_NOT_FOUND",
+        "tap_count": 0
+      },
+      "result": "PASS"
+    },
+    {
+      "case": "E_no_dialog_icon_visible",
+      "expected": {
+        "later_click_attempts": 0,
+        "continue_to_app_icon_search": true
+      },
+      "actual": {
+        "later_click_attempts": 0,
+        "continue_to_app_icon_search": true,
+        "tap_count": 0
+      },
+      "result": "PASS"
+    }
+  ],
+  "py_compile": {
+    "command": "python -m py_compile scripts/runtime_s01_to_s10_mainline.py",
+    "result": "PASS"
+  },
+  "result_field_check": {
+    "writes_raw_xml": false,
+    "writes_fresh_xml": false,
+    "writes_nodes": false,
+    "writes_visible_blob": false,
+    "writes_page_source": false,
+    "writes_full_xml": false,
+    "allowed_evidence_fields": [
+      "screenshot_path",
+      "xml_path",
+      "debug_artifact_path"
+    ]
+  },
+  "real_device_validation": {
+    "run_in_this_turn": false,
+    "allowed_next_step": true
+  }
+}

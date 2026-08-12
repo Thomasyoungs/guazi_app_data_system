@@ -1,0 +1,26 @@
+[
+  {
+    "name": "XML_TEXT_BINDING",
+    "passed": true
+  },
+  {
+    "name": "LOCAL_STRUCTURE",
+    "passed": true,
+    "reason": "LEFT_BUTTON_UNDER_ENGINE_CONDITION_WITH_RIGHT_ADVISOR_BUTTON"
+  },
+  {
+    "name": "MISMATCH_S10_XML",
+    "passed": true,
+    "reason": "xml_contains_s10_list_signals"
+  },
+  {
+    "name": "FORBIDDEN_OVERLAP",
+    "passed": true,
+    "reason": "left_candidate_overlaps_forbidden_button"
+  },
+  {
+    "name": "UNSAFE_REGION",
+    "passed": true,
+    "reason": "left_candidate_outside_safe_vertical_region"
+  }
+]

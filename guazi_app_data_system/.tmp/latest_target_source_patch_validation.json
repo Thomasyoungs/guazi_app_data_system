@@ -1,0 +1,24 @@
+﻿{
+    "package_dir":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\evidence\\FEISHU_TARGET_SOURCE_FIELD_NORMALIZATION_AND_MODEL_LINE_PARSE_PATCH_20260628_155456_CHATGPT_REVIEW_PACKAGE",
+    "zip_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\evidence\\FEISHU_TARGET_SOURCE_FIELD_NORMALIZATION_AND_MODEL_LINE_PARSE_PATCH_20260628_155456_CHATGPT_REVIEW_PACKAGE.zip",
+    "desktop_zip_path":  "C:\\Users\\lzc93\\Desktop\\FEISHU_TARGET_SOURCE_FIELD_NORMALIZATION_AND_MODEL_LINE_PARSE_PATCH_20260628_155456_CHATGPT_REVIEW_PACKAGE.zip",
+    "zip_exists":  true,
+    "desktop_zip_exists":  true,
+    "zip_size_bytes":  116931,
+    "desktop_zip_size_bytes":  116931,
+    "zip_file_count":  34,
+    "full_evidence_exists":  true,
+    "root_cause_index_exists":  true,
+    "root_cause_report_exists":  true,
+    "chatgpt_summary_exists":  true,
+    "can_upload_to_chatgpt":  true,
+    "missing_required_files":  [
+
+                               ],
+    "missing_required_dirs":  [
+
+                              ],
+    "missing_required_zip_entries":  [
+
+                                     ]
+}

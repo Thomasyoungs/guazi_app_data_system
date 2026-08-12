@@ -1,0 +1,45 @@
+{
+  "status": "PASSED",
+  "created_at": "2026-05-16T14:42:10",
+  "cases": [
+    {
+      "case_id": "A",
+      "name": "S11 current screen exact entry safe -> no first scroll",
+      "passed": true
+    },
+    {
+      "case_id": "B",
+      "name": "S11 no entry -> first scroll about one third then fine/backtrack can continue",
+      "passed": true,
+      "first_ratio": 0.33,
+      "fine_ratio": 0.18
+    },
+    {
+      "case_id": "C",
+      "name": "S10 selected partial -> autoscroll completion can bind same expected card",
+      "passed": true,
+      "before_stop": "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE",
+      "after_pass": true,
+      "identity": true
+    },
+    {
+      "case_id": "D",
+      "name": "S10 after completion attempt still partial -> selected not fully visible",
+      "passed": true,
+      "stop": "SELECTED_REFERENCE_CARD_NOT_FULLY_VISIBLE"
+    },
+    {
+      "case_id": "E",
+      "name": "S10 identity changed or non-unique -> stop, do not click",
+      "passed": true,
+      "stop": "REFERENCE_CARD_BINDING_NOT_UNIQUE"
+    },
+    {
+      "case_id": "F",
+      "name": "Other bottom partial card remains allowed and does not block selected complete card",
+      "passed": true,
+      "bottom_partial": true,
+      "selected_pass": true
+    }
+  ]
+}

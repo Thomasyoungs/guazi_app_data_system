@@ -1,0 +1,29 @@
+{
+  "status": "S11_FRESH_PAIR_STALE_XML_PATCHED",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "forbidden_files_touched": [],
+  "implementation_summary": [
+    "Added S11 fresh evidence pair validation before report-entry decisions.",
+    "Added S10-stale XML detection for S11_REPORT_SEARCH and exactly one redump attempt.",
+    "Invalid, empty, stale, or mtime-invalid XML is no longer used to decide that ?????? is absent.",
+    "Disabled V1.38 XML stabilization wait/redump/micro-scroll mainline and fine/backtrack weak-marker search.",
+    "Kept exact XML text plus full-visible, safe-click, bottom-bar gate and unsafe reposition."
+  ],
+  "disabled_paths": [
+    "S11 normal/fine/backtrack weak-marker switching",
+    "V1.38 XML stabilization wait/redump/micro-scroll loop",
+    "OCR / visual binding / screenshot coordinate click paths"
+  ],
+  "retained_paths": [
+    "S11 first one-third scroll when no safe exact entry exists",
+    "Fixed small scroll after first scroll",
+    "Exact XML ?????? only",
+    "Visible-but-unsafe reposition",
+    "S10 selected card autoscroll/local title binding"
+  ],
+  "py_compile": "passed",
+  "offline_validation_path": "output/s11_fresh_pair_stale_xml_offline_validation.json",
+  "offline_validation_passed": true
+}

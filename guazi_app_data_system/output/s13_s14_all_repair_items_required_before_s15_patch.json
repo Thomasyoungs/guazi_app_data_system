@@ -1,0 +1,168 @@
+{
+  "task": "PATCH_FIXED_SCRIPT_ONLY_V1_29_S13_S14_ALL_REPAIR_ITEMS_BEFORE_S15",
+  "status": "V1_29_S13_S14_ALL_REPAIR_ITEMS_REQUIRED_BEFORE_S15_FIXED_SCRIPT_PATCHED",
+  "target_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "not_modified": [
+    "scripts/runtime_s01_to_s10_mainline.py",
+    "pricing",
+    "config",
+    "DOCX",
+    "baseline files",
+    "scoring rules",
+    "service fee ladder",
+    "competition coefficient rules"
+  ],
+  "implementation_summary": {
+    "s13_repair_counts_role": "repair_counts are used as collection-completeness gates, not direct scoring fields.",
+    "s14_collect_done_scope": "S14_COLLECT_DONE marks only the current concrete repair item as collected.",
+    "s15_gate": "S15 is blocked unless all repair items required by S13 repair_counts are collected.",
+    "untrusted_score_guard": "When repair details are incomplete before S15, reference_score_trustworthy=false and no trusted reference_score is generated.",
+    "new_state_fields": [
+      "s13_total_repair_count",
+      "s13_region_repair_counts",
+      "expected_repair_item_count",
+      "enumerated_repair_item_count",
+      "collected_repair_item_count",
+      "collected_repair_items",
+      "missing_repair_item_count",
+      "missing_repair_items",
+      "current_repair_item_id",
+      "current_repair_item_text",
+      "current_repair_item_region",
+      "current_repair_item_collect_done",
+      "all_repair_items_collect_done",
+      "s15_entry_allowed",
+      "s15_entry_block_reason",
+      "reference_score_trustworthy",
+      "reference_score_invalid_reason"
+    ],
+    "blocking_stop_code": "S15_BLOCKED_REPAIR_DETAILS_INCOMPLETE",
+    "invalid_score_reason": "repair_details_incomplete_before_s15"
+  },
+  "offline_validation": {
+    "py_compile": "PASS",
+    "scenarios": [
+      {
+        "id": "A",
+        "name": "Nissan Terra real negative: total repair count 10, collected 1",
+        "input": {
+          "s13_total_repair_count": 10,
+          "collected_repair_item_count": 1,
+          "current_repair_item_collect_done": true
+        },
+        "expected": {
+          "all_repair_items_collect_done": false,
+          "s15_entry_allowed": false,
+          "reference_score_trustworthy": false,
+          "stop_code": "S15_BLOCKED_REPAIR_DETAILS_INCOMPLETE"
+        },
+        "actual": {
+          "all_repair_items_collect_done": false,
+          "s15_entry_allowed": false,
+          "reference_score_trustworthy": false,
+          "reference_score_invalid_reason": "repair_details_incomplete_before_s15"
+        },
+        "passed": true
+      },
+      {
+        "id": "B",
+        "name": "repair_count=0",
+        "expected": {
+          "s14_required": false,
+          "s15_entry_allowed": true
+        },
+        "actual": {
+          "expected_repair_item_count": 0,
+          "all_repair_items_collect_done": true,
+          "s15_entry_allowed": true
+        },
+        "passed": true
+      },
+      {
+        "id": "C",
+        "name": "repair_count=3 and collected 3 items",
+        "expected": {
+          "all_repair_items_collect_done": true,
+          "s15_entry_allowed": true
+        },
+        "actual": {
+          "expected_repair_item_count": 3,
+          "collected_repair_item_count": 3,
+          "missing_repair_item_count": 0,
+          "s15_entry_allowed": true
+        },
+        "passed": true
+      },
+      {
+        "id": "D",
+        "name": "repair_count=3 and collected 2 items",
+        "expected": {
+          "missing_repair_item_count": 1,
+          "s15_entry_allowed": false
+        },
+        "actual": {
+          "expected_repair_item_count": 3,
+          "collected_repair_item_count": 2,
+          "missing_repair_item_count": 1,
+          "s15_entry_allowed": false
+        },
+        "passed": true
+      },
+      {
+        "id": "E",
+        "name": "repair_count>0 but concrete repair items cannot be enumerated",
+        "expected": {
+          "s15_entry_allowed": false,
+          "reference_score_trustworthy": false
+        },
+        "actual": {
+          "expected_repair_item_count": 3,
+          "enumerated_repair_item_count": 0,
+          "collected_repair_item_count": 0,
+          "missing_repair_item_count": 3,
+          "s15_entry_allowed": false,
+          "reference_score_trustworthy": false
+        },
+        "passed": true
+      },
+      {
+        "id": "F",
+        "name": "single S14 item done does not complete whole reference repair details",
+        "expected": {
+          "current_repair_item_collect_done": true,
+          "all_repair_items_collect_done": false,
+          "s15_entry_allowed": false
+        },
+        "actual": {
+          "current_repair_item_collect_done": true,
+          "expected_repair_item_count": 10,
+          "collected_repair_item_count": 1,
+          "all_repair_items_collect_done": false,
+          "s15_entry_allowed": false
+        },
+        "passed": true
+      }
+    ],
+    "all_passed": true
+  },
+  "real_device_continuation": {
+    "executed": false,
+    "reason": "This pass is fixed-script patch and offline validation only; Nissan Terra continuation can run after this gate."
+  },
+  "result_file_policy": {
+    "result_json_overwritten": false,
+    "baseline_overwritten": false,
+    "raw_xml_large_fields_written": false,
+    "forbidden_large_fields": [
+      "raw_xml",
+      "fresh_xml",
+      "nodes",
+      "visible_blob",
+      "page_source"
+    ]
+  },
+  "next_allowed_step": "Continue Nissan Terra chain only after this V1.29 gate is accepted."
+}

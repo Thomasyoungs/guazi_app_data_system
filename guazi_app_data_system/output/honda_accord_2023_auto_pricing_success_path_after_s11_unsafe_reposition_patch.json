@@ -1,0 +1,105 @@
+﻿{
+    "report_name":  "honda_accord_2023_auto_pricing_success_path_after_s11_unsafe_reposition_patch",
+    "generated_at":  "2026-05-16T15:23:21",
+    "target_fingerprint":  "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+    "requested_success_status":  "AUTO_PRICING_SUCCESS_PATH_RUNTIME_VERIFIED",
+    "final_status":  "SECOND_STAGE_DID_NOT_REACH_S16",
+    "actual_runtime_status":  "RUN_FAILED_WITH_ISSUE",
+    "issue_code":  "SECOND_STAGE_RUNTIME_EXCEPTION",
+    "failed_state":  "S15",
+    "exception_type":  "KeyError",
+    "exception_message":  "\u0027metal_deduct\u0027",
+    "first_stage":  {
+                        "status":  "S10_READY",
+                        "fingerprint":  "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+                        "s10_ready":  true
+                    },
+    "patch_validation":  {
+                             "s11_visible_but_unsafe_reposition_patch_status":  "S11_REPORT_ENTRY_VISIBLE_BUT_UNSAFE_REPOSITION_PATCHED",
+                             "py_compile_passed":  true,
+                             "offline_validation_passed":  true,
+                             "s10_selected_card_autoscroll_no_regression":  true,
+                             "s10_partial_card_gate_regression":  false,
+                             "s11_not_fully_visible_safe_recurred":  false,
+                             "entered_s12_s13_s14_s15_before_failure":  true,
+                             "entered_s16":  false
+                         },
+    "current_reference":  {
+                              "reference_index":  5,
+                              "selected_card_title":  "本田 雅阁 2023款 260TURBO 智享版",
+                              "selected_card_price":  "12.27万",
+                              "selected_card_metadata":  "2024年 | 3.51万公里 | 河源 | HondaSENS",
+                              "card_complete":  true,
+                              "card_fully_visible":  true,
+                              "selected_reference_card_gate_passed":  true,
+                              "selected_reference_card_fully_visible":  true,
+                              "selected_reference_card_fields_complete":  true,
+                              "selected_reference_card_safe_click_area":  true,
+                              "partial_card_allowed_by_contract":  true,
+                              "bottom_partial_card_present":  true,
+                              "s10_screenshot_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_reference_card_complete_scroll_1_20260516_151806.png",
+                              "s10_xml_path":  "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_reference_card_complete_scroll_1_20260516_151806.xml",
+                              "s14_collect_done":  true,
+                              "s14_completion_reason":  "NO_NEW_SEMANTIC_AFTER_TWO_SWIPES_NO_UNCOLLECTED_SIGNAL"
+                          },
+    "reference_history":  [
+                              {
+                                  "reference_index":  1,
+                                  "reference_score":  null,
+                                  "reference_score_trustworthy":  null,
+                                  "excluded_reference_reason":  null,
+                                  "outcome":  null,
+                                  "status":  null
+                              },
+                              {
+                                  "reference_index":  2,
+                                  "reference_score":  83.0,
+                                  "reference_score_trustworthy":  true,
+                                  "excluded_reference_reason":  null,
+                                  "outcome":  null,
+                                  "status":  null
+                              },
+                              {
+                                  "reference_index":  3,
+                                  "reference_score":  76.0,
+                                  "reference_score_trustworthy":  true,
+                                  "excluded_reference_reason":  null,
+                                  "outcome":  null,
+                                  "status":  null
+                              },
+                              {
+                                  "reference_index":  4,
+                                  "reference_score":  79.5,
+                                  "reference_score_trustworthy":  true,
+                                  "excluded_reference_reason":  null,
+                                  "outcome":  null,
+                                  "status":  null
+                              },
+                              {
+                                  "reference_index":  5,
+                                  "reference_score":  null,
+                                  "reference_score_trustworthy":  true,
+                                  "excluded_reference_reason":  null,
+                                  "outcome":  null,
+                                  "status":  null
+                              }
+                          ],
+    "pricing_path":  {
+                         "final_price":  null,
+                         "pricing_payload_present":  false,
+                         "manual_review_required":  null,
+                         "auto_pricing_allowed":  false,
+                         "reason":  "second_stage_stopped_before_s16_due_to_s15_runtime_exception"
+                     },
+    "failure_analysis":  {
+                             "failure_bucket":  "SECOND_STAGE_DID_NOT_REACH_S16",
+                             "root_cause_summary":  "Second stage reached S15 on reference #5, then pricing/scoring raised KeyError \u0027metal_deduct\u0027. This turn forbids changing pricing/config/scoring, so runtime validation stops here.",
+                             "not_caused_by":  "S10 selected card visibility gate or S11 visible-but-unsafe report-entry gate",
+                             "forbidden_changes_respected":  true
+                         },
+    "output_files":  {
+                         "result_s01_to_s10":  "output/result_s01_to_s10.json",
+                         "result_s10_to_s16":  "output/result_s10_to_s16.json",
+                         "result":  "output/result.json"
+                     }
+}

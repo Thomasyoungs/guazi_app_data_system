@@ -1,0 +1,487 @@
+{
+  "status": "COMPETITION_COEFFICIENT_V1_2_PRICING_PATCHED",
+  "modified_files": [
+    "src/guazi_app_data_system/pricing.py",
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "new_functions": [
+    "calc_competition_coefficient"
+  ],
+  "pricing_entry": "calculate_pricing(reference, fields_config, pricing_context=None)",
+  "s16_runtime_integration": {
+    "passes_target": true,
+    "passes_trisame_cards": true,
+    "passes_target_score": true,
+    "passes_selected_reference_score": true,
+    "passes_condition_text": true,
+    "passes_inspection_note": true,
+    "passes_license_city": true
+  },
+  "field_outputs": [
+    "base_reference_price_yuan",
+    "competition_coefficient",
+    "raw_competition_coefficient",
+    "competition_coefficient_reasons",
+    "target_guazi_listing_price_yuan",
+    "guazi_price_yuan",
+    "guazi_service_fee_yuan",
+    "guazi_net_payout_yuan",
+    "guazi_return_price_yuan",
+    "suggested_purchase_price_yuan",
+    "manual_review_required",
+    "manual_review_reasons",
+    "notes"
+  ],
+  "offline_samples": [
+    {
+      "sample_name": "focus_2017",
+      "display_name": "??? 2017",
+      "expected": {
+        "competition_coefficient": 0.98,
+        "guazi_price_yuan": 25700,
+        "guazi_service_fee_yuan": 2500,
+        "guazi_net_payout_yuan": 23200,
+        "suggested_purchase_price_yuan": 19200
+      },
+      "actual": {
+        "competition_coefficient": 0.98,
+        "guazi_price_yuan": 25700,
+        "guazi_service_fee_yuan": 2500,
+        "guazi_net_payout_yuan": 23200,
+        "suggested_purchase_price_yuan": 19200
+      },
+      "passed": true,
+      "manual_review_required": false,
+      "manual_review_reasons": [],
+      "notes": [
+        "SAMPLE_SLIGHTLY_SMALL_NOTE"
+      ],
+      "competition_coefficient_reasons": [
+        "sample_reliability_adjustment -0.010: sample_slightly_small",
+        "target_condition_risk_adjustment -0.010: localized_sheet_metal_competitiveness_risk"
+      ],
+      "competition_adjustments": [
+        {
+          "factor": "sample_reliability_adjustment",
+          "adjustment": -0.01,
+          "reason": "sample_slightly_small",
+          "data": {
+            "trisame_count": 3
+          }
+        },
+        {
+          "factor": "price_distribution_adjustment",
+          "adjustment": 0.0,
+          "reason": "price_distribution_stable",
+          "data": {
+            "price_list_yuan": [
+              25200,
+              25500,
+              26200
+            ],
+            "price_spread_rate": 0.0397
+          }
+        },
+        {
+          "factor": "target_condition_risk_adjustment",
+          "adjustment": -0.01,
+          "reason": "localized_sheet_metal_competitiveness_risk",
+          "data": {
+            "risk_flags": [
+              "LOCALIZED_SHEET_METAL"
+            ]
+          }
+        },
+        {
+          "factor": "score_gap_adjustment",
+          "adjustment": 0.0,
+          "reason": "score_gap_0_to_1",
+          "data": {
+            "score_gap": 0.5
+          }
+        },
+        {
+          "factor": "price_band_adjustment",
+          "adjustment": 0.0,
+          "reason": "price_band_below_100000",
+          "data": {
+            "price_yuan": 26200
+          }
+        },
+        {
+          "factor": "model_liquidity_adjustment",
+          "adjustment": 0.0,
+          "reason": "no_stable_model_profile_no_adjustment",
+          "data": {
+            "profile": null
+          }
+        },
+        {
+          "factor": "fuel_cost_pressure_adjustment",
+          "adjustment": 0.0,
+          "reason": "no_stable_fuel_pressure_profile_no_adjustment",
+          "data": {
+            "profile": null
+          }
+        },
+        {
+          "factor": "city_comparability_adjustment",
+          "adjustment": 0.0,
+          "reason": "same_city",
+          "data": {
+            "license_city": "唐山",
+            "reference_city": "唐山"
+          }
+        }
+      ],
+      "non_trisame_prices_used": false,
+      "ai_model_used": false
+    },
+    {
+      "sample_name": "toyota_yaris_2015",
+      "display_name": "?? YARiS L ?? 2015",
+      "expected": {
+        "competition_coefficient": 1.0,
+        "guazi_price_yuan": 27800,
+        "guazi_service_fee_yuan": 2500,
+        "guazi_net_payout_yuan": 25300,
+        "suggested_purchase_price_yuan": 21300
+      },
+      "actual": {
+        "competition_coefficient": 1.0,
+        "guazi_price_yuan": 27800,
+        "guazi_service_fee_yuan": 2500,
+        "guazi_net_payout_yuan": 25300,
+        "suggested_purchase_price_yuan": 21300
+      },
+      "passed": true,
+      "manual_review_required": false,
+      "manual_review_reasons": [],
+      "notes": [
+        "MULTIPLE_PAINT_RECORDED_NO_EXTRA_COEFFICIENT_DEDUCTION",
+        "TARGET_CONDITION_LEFT_SILL_SCORING_REVIEW"
+      ],
+      "competition_coefficient_reasons": [
+        "competition_coefficient_no_adjustment"
+      ],
+      "competition_adjustments": [
+        {
+          "factor": "sample_reliability_adjustment",
+          "adjustment": 0.0,
+          "reason": "sample_sufficient",
+          "data": {
+            "trisame_count": 6
+          }
+        },
+        {
+          "factor": "price_distribution_adjustment",
+          "adjustment": 0.0,
+          "reason": "single_or_missing_trisame_price_list_no_adjustment",
+          "data": {
+            "price_list_yuan": [],
+            "price_spread_rate": null
+          }
+        },
+        {
+          "factor": "target_condition_risk_adjustment",
+          "adjustment": 0.0,
+          "reason": "no_strong_condition_risk_for_coefficient",
+          "data": {
+            "risk_flags": [
+              "MULTIPLE_PAINT_RECORDED"
+            ],
+            "paint_count": 5
+          }
+        },
+        {
+          "factor": "score_gap_adjustment",
+          "adjustment": 0.0,
+          "reason": "score_gap_0_to_1",
+          "data": {
+            "score_gap": 0.0
+          }
+        },
+        {
+          "factor": "price_band_adjustment",
+          "adjustment": 0.0,
+          "reason": "price_band_below_100000",
+          "data": {
+            "price_yuan": 27800
+          }
+        },
+        {
+          "factor": "model_liquidity_adjustment",
+          "adjustment": 0.0,
+          "reason": "small_joint_venture_car_normal_liquidity",
+          "data": {
+            "profile": "small_car"
+          }
+        },
+        {
+          "factor": "fuel_cost_pressure_adjustment",
+          "adjustment": 0.0,
+          "reason": "small_car_low_fuel_pressure",
+          "data": {
+            "profile": "fuel_cost_pressure=low"
+          }
+        },
+        {
+          "factor": "city_comparability_adjustment",
+          "adjustment": 0.0,
+          "reason": "same_city",
+          "data": {
+            "license_city": "唐山",
+            "reference_city": "唐山"
+          }
+        }
+      ],
+      "non_trisame_prices_used": false,
+      "ai_model_used": false
+    },
+    {
+      "sample_name": "santana_2021",
+      "display_name": "??? 2021",
+      "expected": {
+        "competition_coefficient": 0.975,
+        "guazi_price_yuan": 40600,
+        "guazi_service_fee_yuan": 2500,
+        "guazi_net_payout_yuan": 38100,
+        "suggested_purchase_price_yuan": 33472
+      },
+      "actual": {
+        "competition_coefficient": 0.975,
+        "guazi_price_yuan": 40600,
+        "guazi_service_fee_yuan": 2500,
+        "guazi_net_payout_yuan": 38100,
+        "suggested_purchase_price_yuan": 33472
+      },
+      "passed": true,
+      "manual_review_required": false,
+      "manual_review_reasons": [],
+      "notes": [
+        "MINOR_DAMAGE_RECORDED_NO_EXTRA_COEFFICIENT_DEDUCTION"
+      ],
+      "competition_coefficient_reasons": [
+        "price_distribution_adjustment -0.005: price_distribution_slightly_discrete",
+        "score_gap_adjustment -0.020: score_gap_gt_3_to_5"
+      ],
+      "competition_adjustments": [
+        {
+          "factor": "sample_reliability_adjustment",
+          "adjustment": 0.0,
+          "reason": "sample_sufficient",
+          "data": {
+            "trisame_count": 5
+          }
+        },
+        {
+          "factor": "price_distribution_adjustment",
+          "adjustment": -0.005,
+          "reason": "price_distribution_slightly_discrete",
+          "data": {
+            "price_list_yuan": [
+              39000,
+              40100,
+              40300,
+              40300,
+              41600
+            ],
+            "price_spread_rate": 0.0667
+          }
+        },
+        {
+          "factor": "target_condition_risk_adjustment",
+          "adjustment": 0.0,
+          "reason": "no_strong_condition_risk_for_coefficient",
+          "data": {
+            "risk_flags": [
+              "划痕",
+              "擦伤",
+              "凹陷"
+            ],
+            "paint_count": 0
+          }
+        },
+        {
+          "factor": "score_gap_adjustment",
+          "adjustment": -0.02,
+          "reason": "score_gap_gt_3_to_5",
+          "data": {
+            "score_gap": 5.0
+          }
+        },
+        {
+          "factor": "price_band_adjustment",
+          "adjustment": 0.0,
+          "reason": "price_band_below_100000",
+          "data": {
+            "price_yuan": 41600
+          }
+        },
+        {
+          "factor": "model_liquidity_adjustment",
+          "adjustment": 0.0,
+          "reason": "compact_sedan_normal_liquidity",
+          "data": {
+            "profile": "compact_sedan"
+          }
+        },
+        {
+          "factor": "fuel_cost_pressure_adjustment",
+          "adjustment": 0.0,
+          "reason": "compact_sedan_normal_fuel_pressure",
+          "data": {
+            "profile": "fuel_cost_pressure=normal"
+          }
+        },
+        {
+          "factor": "city_comparability_adjustment",
+          "adjustment": 0.0,
+          "reason": "same_city",
+          "data": {
+            "license_city": "唐山",
+            "reference_city": "唐山"
+          }
+        }
+      ],
+      "non_trisame_prices_used": false,
+      "ai_model_used": false
+    },
+    {
+      "sample_name": "tuang_2017",
+      "display_name": "?? 2017",
+      "expected": {
+        "competition_coefficient": 0.9,
+        "guazi_price_yuan": 98000,
+        "guazi_service_fee_yuan": 3500,
+        "guazi_net_payout_yuan": 94500,
+        "suggested_purchase_price_yuan": 83648
+      },
+      "actual": {
+        "competition_coefficient": 0.9,
+        "guazi_price_yuan": 98000,
+        "guazi_service_fee_yuan": 3500,
+        "guazi_net_payout_yuan": 94500,
+        "suggested_purchase_price_yuan": 83648
+      },
+      "passed": true,
+      "manual_review_required": true,
+      "manual_review_reasons": [
+        "SAMPLE_SHORTAGE_MANUAL_REVIEW",
+        "TARGET_WATER_INGRESS_RISK_REVIEW"
+      ],
+      "notes": [
+        "OBD_NOT_READ_NOTE"
+      ],
+      "competition_coefficient_reasons": [
+        "sample_reliability_adjustment -0.020: sample_shortage_manual_review",
+        "price_distribution_adjustment -0.005: price_distribution_slightly_discrete",
+        "target_condition_risk_adjustment -0.050: water_ingress_or_mildew_rust_risk_manual_review; obd_note_only_if_present",
+        "score_gap_adjustment -0.020: score_gap_gt_3_to_5",
+        "price_band_adjustment -0.010: price_band_100000_to_150000",
+        "fuel_cost_pressure_adjustment -0.020: large_suv_330tsi_high_holding_and_fuel_cost_pressure",
+        "city_comparability_adjustment -0.010: cross_province_or_obvious_remote_city"
+      ],
+      "competition_adjustments": [
+        {
+          "factor": "sample_reliability_adjustment",
+          "adjustment": -0.02,
+          "reason": "sample_shortage_manual_review",
+          "data": {
+            "trisame_count": 2
+          }
+        },
+        {
+          "factor": "price_distribution_adjustment",
+          "adjustment": -0.005,
+          "reason": "price_distribution_slightly_discrete",
+          "data": {
+            "price_list_yuan": [
+              108900,
+              117900
+            ],
+            "price_spread_rate": 0.0826
+          }
+        },
+        {
+          "factor": "target_condition_risk_adjustment",
+          "adjustment": -0.05,
+          "reason": "water_ingress_or_mildew_rust_risk_manual_review; obd_note_only_if_present",
+          "data": {
+            "risk_flags": [
+              "进水",
+              "水痕",
+              "发霉",
+              "霉",
+              "锈蚀",
+              "地毯变色",
+              "地板发霉",
+              "管柱锈蚀"
+            ],
+            "obd_not_read_note": true
+          }
+        },
+        {
+          "factor": "score_gap_adjustment",
+          "adjustment": -0.02,
+          "reason": "score_gap_gt_3_to_5",
+          "data": {
+            "score_gap": 5.0
+          }
+        },
+        {
+          "factor": "price_band_adjustment",
+          "adjustment": -0.01,
+          "reason": "price_band_100000_to_150000",
+          "data": {
+            "price_yuan": 108900
+          }
+        },
+        {
+          "factor": "model_liquidity_adjustment",
+          "adjustment": 0.0,
+          "reason": "large_suv_pressure_counted_in_fuel_cost_without_double_deduction",
+          "data": {
+            "profile": "large_suv"
+          }
+        },
+        {
+          "factor": "fuel_cost_pressure_adjustment",
+          "adjustment": -0.02,
+          "reason": "large_suv_330tsi_high_holding_and_fuel_cost_pressure",
+          "data": {
+            "vehicle_class": "large_suv",
+            "power_keyword": "330TSI"
+          }
+        },
+        {
+          "factor": "city_comparability_adjustment",
+          "adjustment": -0.01,
+          "reason": "cross_province_or_obvious_remote_city",
+          "data": {
+            "license_city": "唐山",
+            "reference_city": "重庆"
+          }
+        }
+      ],
+      "non_trisame_prices_used": false,
+      "ai_model_used": false
+    }
+  ],
+  "obd_policy": {
+    "obd_not_read_note_only": true,
+    "obd_not_read_adjustment": 0,
+    "target_obd_not_read_review_output": false
+  },
+  "forbidden_policy_checks": {
+    "old_95_return_formula_active": false,
+    "old_95_residual_lines": [],
+    "active_old_formula_residual_lines": [],
+    "non_trisame_prices_used": false,
+    "ai_model_used": false,
+    "historical_baseline_overwritten": false,
+    "real_device_run": false
+  },
+  "py_compile": "passed",
+  "final_status": "COMPETITION_COEFFICIENT_V1_2_PRICING_PATCHED"
+}

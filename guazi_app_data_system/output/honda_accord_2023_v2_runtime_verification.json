@@ -1,0 +1,101 @@
+{
+  "status": "S11_RUNTIME_REGRESSION_DETECTED",
+  "raw_status": "S11_XML_STALE_OR_MISMATCHED_WITH_SCREENSHOT",
+  "task_id": "???????",
+  "target_vehicle": "本田 雅阁 2023款 260TURBO 智享版 黑 2024.01",
+  "trisame_count": 10,
+  "processed_reference_count": 2,
+  "reference_selection_rule": "V2??? reference_score <= target_score ????????????",
+  "target_score": 84.0,
+  "runtime_reference_history": [
+    {
+      "reference_index": 1,
+      "price_yuan": 113400,
+      "list_price_text": "11.34万",
+      "reference_score": 83.0,
+      "reference_score_trustworthy": true,
+      "eligible_candidate": true,
+      "excluded_score_above_target": false,
+      "score_gap_to_target": 1.0,
+      "reference_selection_rule_version": "V2_score_not_above_target_closest"
+    },
+    {
+      "reference_index": 2,
+      "price_yuan": 116700,
+      "list_price_text": "11.67万",
+      "reference_score": null,
+      "reference_score_trustworthy": null,
+      "eligible_candidate": null,
+      "excluded_score_above_target": null,
+      "score_gap_to_target": null,
+      "reference_selection_rule_version": null
+    }
+  ],
+  "current_block": {
+    "reference_index": 2,
+    "status": "S11_XML_STALE_OR_MISMATCHED_WITH_SCREENSHOT",
+    "issue_code": "S11_XML_STALE_OR_MISMATCHED_WITH_SCREENSHOT",
+    "fresh_pair_id": "e5e39169a35cb947",
+    "page_identity_check": "STALE_S10_XML_IN_S11_REPORT_SEARCH",
+    "s11_xml_stale": true,
+    "s11_xml_s10_strong_signals": [
+      "价格从低到高",
+      "品牌专区",
+      "车型配置"
+    ],
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_report_entry_stale_xml_redump_2_20260518_133408.png",
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_report_entry_stale_xml_redump_2_20260518_133408.xml"
+  },
+  "v2_runtime_observations": [
+    "reference #1 scored 83.0, target_score 84.0, eligible_candidate=true; V2 candidate retention works for the first processed reference.",
+    "runtime stopped at reference #2 S11 stale XML protection before reaching S16.",
+    "No V2 runtime final pricing payload was generated in this run."
+  ],
+  "offline_v2_repricing_reference": {
+    "pricing_status": "HONDA_ACCORD_V2_REPRICED_DONE",
+    "task_id": "本地测试未提供",
+    "target_vehicle": "本田 雅阁 2023款 260TURBO 智享版 黑 2024.01",
+    "trisame_count": 10,
+    "processed_reference_count": 3,
+    "reference_selection_rule": "V2：选择 reference_score <= target_score 且最接近目标分的三同车源。",
+    "final_reference_index": 1,
+    "final_reference_display": "第 1 辆",
+    "final_reference_listing_price_yuan": 113400,
+    "target_score": 84.0,
+    "final_reference_score": 83.0,
+    "target_reference_score_gap": 1.0,
+    "suggested_listing_price_yuan": 111700,
+    "platform_service_fee_yuan": 4500,
+    "estimated_net_payout_yuan": 107200,
+    "suggested_acquisition_price_yuan": 96124,
+    "estimated_total_cost_yuan": 98624,
+    "estimated_profit_yuan": 8576,
+    "auto_pricing_allowed": true,
+    "manual_review_required": false,
+    "manual_review_reason": "无",
+    "remarks": "旧规则选择第 3 辆 87 分，是因为旧规则允许 reference_score >= target_score。V2 规则不允许选择高于目标车分数的参考车，因此排除第 3 辆 87 分，改选第 1 辆 83 分，分差 1。selected_reference_score <= target_score 时，score_gap_adjustment=0，不自动加价。"
+  },
+  "template": {
+    "pricing_status": "????????? S11_XML_STALE_OR_MISMATCHED_WITH_SCREENSHOT",
+    "task_id": "???????",
+    "target_vehicle": "本田 雅阁 2023款 260TURBO 智享版 黑 2024.01",
+    "trisame_count": 10,
+    "processed_reference_count": 2,
+    "reference_selection_rule": "V2??? reference_score <= target_score ????????????",
+    "final_reference_index": null,
+    "final_reference_display": "???",
+    "final_reference_listing_price_yuan": null,
+    "target_score": 84.0,
+    "final_reference_score": null,
+    "target_reference_score_gap": null,
+    "suggested_listing_price_yuan": null,
+    "platform_service_fee_yuan": null,
+    "estimated_net_payout_yuan": null,
+    "suggested_acquisition_price_yuan": null,
+    "estimated_total_cost_yuan": null,
+    "estimated_profit_yuan": null,
+    "auto_pricing_allowed": false,
+    "manual_review_required": false,
+    "manual_review_reason": "???????????????? reference #2 S11 stale XML ??????"
+  }
+}

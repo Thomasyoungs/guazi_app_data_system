@@ -1,0 +1,55 @@
+{
+  "status": "FIRST_STAGE_DID_NOT_REACH_S10_READY",
+  "requested_runtime_status": "AUTO_PRICING_SUCCESS_PATH_RUNTIME_VERIFIED",
+  "target_fingerprint": "??|??|2023?|260TURBO ???|?|2024.01",
+  "first_stage_started": true,
+  "first_stage_status": "HUMAN_LOGIN_REQUIRED",
+  "first_stage_reached_s10_ready": false,
+  "second_stage_started": false,
+  "stop_reason": "first_stage_blocked_before_S10_READY",
+  "stop_code": "HUMAN_LOGIN_REQUIRED",
+  "error": "S_LOGIN has no 稍后 and no bottom < / ＜ exit control.",
+  "recognized_state_after_force_restart": "S_LOGIN",
+  "foreground_package": "com.shuqing.tqaccountcenter",
+  "focused_window": "com.shuqing.tqaccountcenter/com.shuqing.kdgphone.account.login.LoginHomeActivity",
+  "visible_text_digest": [
+    "欢迎登录",
+    "请输入手机号码",
+    "请输入验证码",
+    "获取验证码",
+    "账号密码登录",
+    "收不到验证码？",
+    "登录",
+    "我已阅读并同意《用户协议》和《隐私协议》"
+  ],
+  "evidence": {
+    "screenshot_path": "artifacts/screenshots/s01_s10_after_force_restart_20260519_105113.png",
+    "xml_path": "artifacts/debug/s01_s10_after_force_restart_20260519_105113.xml"
+  },
+  "rule_source_runtime_validation": {
+    "not_reached_s15_s16": true,
+    "rule_source_guard_runtime_checked": false,
+    "reason": "S15/S16 not reached because first stage did not reach S10_READY"
+  },
+  "pricing_result": {
+    "entered_s16": false,
+    "final_price_generated": false,
+    "pricing_payload_generated": false,
+    "manual_review_required": null,
+    "auto_pricing_allowed": null
+  },
+  "target_task": {
+    "actual_target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\data\\current_target_task.json",
+    "brand": "本田",
+    "series": "雅阁",
+    "series_alias": "",
+    "year_model": "2023款",
+    "config_model": "260TURBO 智享版",
+    "color": "黑",
+    "register_date": "2024.01",
+    "register_year": 2024,
+    "current_year": 2026,
+    "target_age_formula": "current_year - register_year",
+    "calculated_target_age": 2
+  }
+}

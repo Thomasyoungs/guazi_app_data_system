@@ -1,0 +1,102 @@
+{
+  "status": "S11_TRANSFER_COUNT_0_VS_1_CONFLICT_AUDIT_DONE",
+  "classification": "USER_PHOTO_NOT_SAME_AS_AUDIT_EVIDENCE",
+  "audit_evidence": {
+    "screenshot_path": "artifacts\\screenshots\\s10_to_s11_pre_dump_2_20260517_160126.png",
+    "xml_path": "artifacts\\debug\\s10_to_s11_20260517_160126_compressed.xml",
+    "screenshot_exists": true,
+    "xml_exists": true,
+    "screenshot_mtime": "2026-05-17 16:01:26",
+    "xml_mtime": "2026-05-17 16:01:32",
+    "same_fresh_pair": "yes_for_audit_evidence"
+  },
+  "user_current_photo_claim": {
+    "transfer_text": "??0?",
+    "anchor_price": "11.19?",
+    "anchor_source_id": "167201649",
+    "anchor_mileage_age": "5??? / 2?4??"
+  },
+  "audit_screenshot_observation": {
+    "title": "?? ?? 2023? 260TURBO ???",
+    "price": "11.39?",
+    "source_id": "166717183",
+    "mileage_age": "6.54??? / 2?3??",
+    "claim_transfer_line": "?????? / ??0? / ??1?",
+    "transfer_text": "??1?",
+    "transfer_text_visibility": "clear_in_screenshot",
+    "not_visible_in_audit_screenshot": [
+      "??0?",
+      "11.19?",
+      "167201649",
+      "5??? / 2?4??"
+    ]
+  },
+  "audit_xml_counts": {
+    "??0?": 0,
+    "??1?": 0,
+    "??": 0,
+    "??????": 0,
+    "???": 0,
+    "?? ?? 2023? 260TURBO ???": 0,
+    "11.19?": 0,
+    "11.39?": 0,
+    "167201649": 0,
+    "166717183": 1,
+    "5???": 0,
+    "6.54???": 0,
+    "2?4??": 0,
+    "2?3??": 0
+  },
+  "audit_xml_nodes": [
+    {
+      "text": "车源号:166717183",
+      "content_desc": "",
+      "class": "android.widget.TextView",
+      "resource_id": "",
+      "bounds": "[820,1607][1106,1656]",
+      "clickable": "false",
+      "enabled": "true",
+      "parent_bounds": "[0,0][1220,2559]",
+      "sibling_text": [
+        "图片",
+        "检测",
+        "1 / 27",
+        "11.39",
+        "万",
+        "新车含税价21.42万",
+        "07",
+        ":",
+        "58",
+        "31",
+        "分期立减1800元后，1成首付1.14万起",
+        "更多方案",
+        "本",
+        "田",
+        " ",
+        "雅",
+        "阁",
+        "2",
+        "0",
+        "3"
+      ]
+    }
+  ],
+  "anchor_comparison": {
+    "same_title": true,
+    "same_price": false,
+    "same_source_id": false,
+    "same_mileage_age": false,
+    "same_transfer_value": false,
+    "audit_evidence_vehicle": "11.39? / ???166717183 / 6.54??? / 2?3?? / ??1?",
+    "user_current_photo_vehicle": "11.19? / ???167201649 / 5??? / 2?4?? / ??0?"
+  },
+  "ruled_out": {
+    "S11_TRANSFER_COUNT_SCREENSHOT_XML_VALUE_MISMATCH": "audit screenshot and audit XML both indicate ??1? for source 166717183",
+    "S11_TRANSFER_COUNT_DIAGNOSIS_REPORT_VALUE_READ_ERROR": "previous report correctly read audit XML/screenshot value as ??1?",
+    "XML_MULTIPLE_TRANSFER_COUNT_CANDIDATES": "audit XML has one transfer candidate: ??1?; no ??0? candidate"
+  },
+  "conclusion": "???????? actual screenshot/XML ???????????????/???????????????????1??????????????? 11.19?????167201649?5???/2?4?????0??",
+  "code_modified": false,
+  "real_device_run": false,
+  "result_json_overwritten": false
+}

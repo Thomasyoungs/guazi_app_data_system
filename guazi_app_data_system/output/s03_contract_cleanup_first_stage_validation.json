@@ -1,0 +1,84 @@
+{
+  "status": "RUN_FIRST_STAGE_AFTER_S03_CONTRACT_BRANCH_CLEANUP_ONLY_DONE",
+  "validation_status": "RUN_FAILED_WITH_ISSUE",
+  "actual_first_stage_status": "TARGET_BRAND_NOT_FOUND_IN_S03",
+  "actual_stop_code": "TARGET_BRAND_NOT_FOUND_IN_S03",
+  "created_at": "2026-05-11T02:42:05.996210+00:00",
+  "android_serial": "6TGYYHPZCETCSK6L",
+  "real_device_run": true,
+  "second_stage_run": false,
+  "entered_s11": false,
+  "reference_collection": false,
+  "pricing_output": false,
+  "target_fingerprint": "零跑|C10|2026款|210悦享版|白|2026.02",
+  "target_fingerprint_expected": "??|C10|2026?|210???|?|2026.02",
+  "fingerprint_ok": false,
+  "startup": {
+    "app_force_restart_called": true,
+    "force_stop_done": true,
+    "after_force_restart_state": "S01",
+    "after_force_restart_xml_path": "artifacts/debug/s01_s10_after_force_restart_20260511_104109.xml",
+    "after_force_restart_screenshot_path": "artifacts/screenshots/s01_s10_after_force_restart_20260511_104109.png"
+  },
+  "s03_contract_validation": {
+    "s03_search_strategy_version": "S03_BRAND_SEARCH_V2_CONTRACT_ONLY",
+    "target_brand_aliases": [
+      "零跑",
+      "零跑汽车",
+      "LEAPMOTOR",
+      "Leapmotor"
+    ],
+    "visible_brand_names": [
+      "猜你喜欢",
+      "热销车系",
+      "帕​萨​特​",
+      "M​I​N​I​",
+      "奔​驰​C​L​A​",
+      "一​汽​-​大​众​C​C​",
+      "不限品牌",
+      "奥迪",
+      "埃安",
+      "阿维塔",
+      "ARCFOX极狐",
+      "阿尔法·罗密欧",
+      "埃尚",
+      "奥迪AUDI",
+      "AUXUN傲旋"
+    ],
+    "target_brand_visible": false,
+    "matched_brand_text": null,
+    "matched_brand_bounds": null,
+    "brand_row_bounds": null,
+    "selected_click_point": null,
+    "selected_click_region_type": null,
+    "s03_next_action": null,
+    "attempted_new_energy_tab": false,
+    "attempted_letter_L": false,
+    "attempted_letter_G": false,
+    "attempted_scroll": false,
+    "attempted_brand_name_click": false,
+    "attempted_brand_icon_click": false,
+    "attempted_brand_zone_click": false,
+    "forbidden_attempt_detected": false,
+    "reason_alias_not_matched": "target_brand_not_visible_on_current_s03_screen",
+    "s03_xml_path": "artifacts/debug/s02_to_s03_20260511_104122.xml",
+    "s03_screenshot_path": "artifacts/screenshots/s02_to_s03_20260511_104122.png"
+  },
+  "contract_result": {
+    "target_visible_unique_action_triggered": false,
+    "unique_action_performed": false,
+    "brand_zone_entered": false,
+    "brand_zone_continuation_used": false,
+    "no_forbidden_s03_action_executed": true,
+    "stopped_by_contract_when_target_not_visible": true
+  },
+  "result_files": {
+    "result_s01_to_s10_json": "C:/Users/lzc93/Desktop/定价/guazi_app_data_system/output/result_s01_to_s10.json",
+    "result_json": "C:/Users/lzc93/Desktop/定价/guazi_app_data_system/output/result.json"
+  },
+  "raw_xml_large_fields_check": {
+    "result_s01_to_s10_has_context_fresh_xml": true,
+    "note": "First-stage script output still contains context.fresh_xml in result_s01_to_s10.json; no second-stage/result pricing output was produced."
+  },
+  "conclusion": "S03 strict cleanup is active: no auxiliary tab/letter/scroll/brand-zone action executed. This run stopped at S03 because the target brand was not visible on the initial S03 screen and S03 search fallback is now disabled by contract."
+}

@@ -1,0 +1,480 @@
+{
+  "status": "S10_TITLE_TEXT_NODE_GLOBAL_UNIQUENESS_TOO_STRICT",
+  "readonly": true,
+  "code_modified": false,
+  "real_device_run": false,
+  "generated_at": "2026-05-16T16:40:21",
+  "target_fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+  "current_status": "S10_TITLE_TEXT_NODE_NOT_UNIQUE",
+  "issue_code": "S10_TITLE_TEXT_NODE_NOT_UNIQUE",
+  "current_reference_index": 7,
+  "selected_reference_index": 7,
+  "canonical_reference_order_exists": true,
+  "selected_reference_card": {
+    "title": "本田 雅阁 2023款 260TURBO 智享版",
+    "price_text": "12.43万",
+    "year": 2024,
+    "mileage_10k_km": 3.32,
+    "metadata": "2024年 | 3.32万公里 | 佛山 | HondaSENS",
+    "bounds": [
+      429,
+      1534,
+      949,
+      1657
+    ],
+    "card_complete": true,
+    "card_fully_visible": true,
+    "selected_by": "expected_card_after_partial_scroll",
+    "select_strategy": "reference_index_bound_card"
+  },
+  "s10_gate_evidence": {
+    "reliable": true,
+    "source_reliable": true,
+    "source_reliable_reason": "reliable_s10_sorted_vehicle_list",
+    "has_price_low_to_high": true,
+    "vehicle_card_count": 6,
+    "partial_card_count": 1,
+    "bottom_partial_card_present": true,
+    "partial_card_allowed_by_contract": true,
+    "s10_partial_card_allowed_page_contract": "S10_PARTIAL_CARD_ALLOWED_PAGE_CONTRACT_UPDATED",
+    "has_vehicle_cards": true,
+    "has_multiple_vehicle_cards": true,
+    "visible_cards": [
+      {
+        "reference_index": 1,
+        "canonical_reference_index": 1,
+        "live_display_order": 1,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "11.15万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 5.0,
+        "raw_metadata": "2024年 | 5万公里 | 唐山 | HondaSENS",
+        "card_complete": true,
+        "incomplete_reason": []
+      },
+      {
+        "reference_index": 2,
+        "canonical_reference_index": 2,
+        "live_display_order": 2,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "11.39万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 6.54,
+        "raw_metadata": "2024年 | 6.54万公里 | 唐山 | HondaSENS",
+        "card_complete": true,
+        "incomplete_reason": []
+      },
+      {
+        "reference_index": 3,
+        "canonical_reference_index": 3,
+        "live_display_order": 3,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "11.67万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 3.05,
+        "raw_metadata": "2024年 | 3.05万公里 | 唐山 | HondaSENS",
+        "card_complete": true,
+        "incomplete_reason": []
+      },
+      {
+        "reference_index": 4,
+        "canonical_reference_index": 4,
+        "live_display_order": 4,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "12.26万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 3.06,
+        "raw_metadata": "2024年 | 3.06万公里 | 唐山 | HondaSENS",
+        "card_complete": true,
+        "incomplete_reason": []
+      },
+      {
+        "reference_index": 5,
+        "canonical_reference_index": 5,
+        "live_display_order": 5,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "12.27万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 3.51,
+        "raw_metadata": "2024年 | 3.51万公里 | 河源 | HondaSENS",
+        "card_complete": true,
+        "incomplete_reason": []
+      },
+      {
+        "reference_index": 6,
+        "canonical_reference_index": 6,
+        "live_display_order": 6,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "12.30万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 4.1,
+        "raw_metadata": "2024年 | 4.1万公里 | 东莞 | HondaSENS",
+        "card_complete": true,
+        "incomplete_reason": []
+      }
+    ],
+    "partial_card_candidates": [
+      {
+        "live_display_order": 7,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "12.43万",
+        "raw_metadata": "2024年 | 3.32万公里 | 佛山 | HondaSENS",
+        "clicked_card_bounds": [
+          429,
+          2236,
+          949,
+          2359
+        ],
+        "card_bounds": [
+          429,
+          2236,
+          1082,
+          2513
+        ],
+        "missing_price": false,
+        "missing_metadata": false,
+        "incomplete_reason": [
+          "bottom_partial_card_or_outside_safe_viewport"
+        ]
+      }
+    ],
+    "s10_order_rule": "price_asc_mileage_desc_for_same_price",
+    "canonical_reference_order": [
+      {
+        "reference_index": 1,
+        "canonical_reference_index": 1,
+        "live_display_order": 1,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "11.15万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 5.0,
+        "raw_metadata": "2024年 | 5万公里 | 唐山 | HondaSENS",
+        "card_complete": true,
+        "incomplete_reason": []
+      },
+      {
+        "reference_index": 2,
+        "canonical_reference_index": 2,
+        "live_display_order": 2,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "11.39万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 6.54,
+        "raw_metadata": "2024年 | 6.54万公里 | 唐山 | HondaSENS",
+        "card_complete": true,
+        "incomplete_reason": []
+      },
+      {
+        "reference_index": 3,
+        "canonical_reference_index": 3,
+        "live_display_order": 3,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "11.67万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 3.05,
+        "raw_metadata": "2024年 | 3.05万公里 | 唐山 | HondaSENS",
+        "card_complete": true,
+        "incomplete_reason": []
+      },
+      {
+        "reference_index": 4,
+        "canonical_reference_index": 4,
+        "live_display_order": 4,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "12.26万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 3.06,
+        "raw_metadata": "2024年 | 3.06万公里 | 唐山 | HondaSENS",
+        "card_complete": true,
+        "incomplete_reason": []
+      },
+      {
+        "reference_index": 5,
+        "canonical_reference_index": 5,
+        "live_display_order": 5,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "12.27万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 3.51,
+        "raw_metadata": "2024年 | 3.51万公里 | 河源 | HondaSENS",
+        "card_complete": true,
+        "incomplete_reason": []
+      },
+      {
+        "reference_index": 6,
+        "canonical_reference_index": 6,
+        "live_display_order": 6,
+        "list_title": "本田 雅阁 2023款 260TURBO 智享版",
+        "list_price_text": "12.30万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 4.1,
+        "raw_metadata": "2024年 | 4.1万公里 | 东莞 | HondaSENS",
+        "card_complete": true,
+        "incomplete_reason": []
+      }
+    ],
+    "raw_visible_cards_count": 7,
+    "trisame_cards_count": 6,
+    "trisame_count": 6,
+    "excluded_non_trisame_cards_count": 0,
+    "excluded_non_trisame_cards": [],
+    "non_trisame_section_detected": false,
+    "non_trisame_section_title": "",
+    "boundary_text": "",
+    "boundary_node_bounds": null,
+    "cards_after_boundary_excluded_count": 0,
+    "same_price_group_detected": false,
+    "same_price_group_price": "",
+    "same_price_group_order": [],
+    "target_reference_index": 6,
+    "target_card_visible": true,
+    "target_partial_card_visible": false,
+    "target_card_matches_expected": true,
+    "selected_reference_card_fully_visible": true,
+    "selected_reference_card_fields_complete": true,
+    "selected_reference_card_clickable": true,
+    "selected_reference_card_safe_click_area": true,
+    "selected_reference_card_gate_passed": true,
+    "selected_reference_card_stop_code": null,
+    "selected_reference_card_gate_reason": "selected_reference_card_complete_safe_clickable",
+    "selected_reference_card_identity_preserved": true,
+    "s10_selected_card_autoscroll_candidate": null,
+    "detail_report_page_signals": [],
+    "bottom_detail_actions": [],
+    "has_detail_report_page_signals": false,
+    "visible_text_digest": [
+      "品牌专区",
+      "本田",
+      "全部能源类型",
+      "yAj7GShRek3H5AAAAAElFTkSuQmCC",
+      "全部",
+      "雅阁",
+      "思域",
+      "CR-V",
+      "飞度",
+      "皓影",
+      "XR-V",
+      "艾力绅",
+      "价格从低到高",
+      "价格",
+      "成色/车况",
+      "车型配置",
+      "热门车型",
+      "年款",
+      "黑色",
+      "本地车",
+      "准新车",
+      "高性价比",
+      "ignore-error,i_1",
+      "本田 雅阁 2023款 260TURBO 智享版",
+      "2024年 | 5万公里 | 唐山 | HondaSENS",
+      "第1名",
+      "整车在保",
+      "0次过户",
+      "qnbdp1066x4044847e03f444c996257e1f3f62b4351729221436",
+      "11.15",
+      "万",
+      "已减2800元",
+      "首付1.12万",
+      "2024年 | 6.54万公里 | 唐山 | HondaSENS",
+      "第2名",
+      "11.39",
+      "已减1800元",
+      "首付1.14万",
+      "2024年 | 3.05万公里 | 唐山 | HondaSENS",
+      "11.67"
+    ]
+  },
+  "title_text_node_analysis": {
+    "global_same_title_node_count_from_resolution": 7,
+    "matched_candidate_count_from_resolution": 0,
+    "global_same_title_nodes_belong_to_different_cards": true,
+    "selected_card_internal_title_node_unique": true,
+    "xml_exact_title_node_count_visible": 20,
+    "xml_selected_title_node_count_by_bounds": 1,
+    "selected_local_title_nodes": [
+      {
+        "text": "本田 雅阁 2023款 260TURBO 智享版",
+        "bounds": [
+          429,
+          1534,
+          949,
+          1657
+        ],
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "enabled": "true"
+      }
+    ],
+    "selected_card_nearby_nodes": [
+      {
+        "text": "ignore-error,i_1",
+        "bounds": [
+          429,
+          1547,
+          568,
+          1595
+        ],
+        "class": "android.widget.Image",
+        "clickable": "false",
+        "enabled": "true"
+      },
+      {
+        "text": "本田 雅阁 2023款 260TURBO 智享版",
+        "bounds": [
+          429,
+          1534,
+          949,
+          1657
+        ],
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "enabled": "true"
+      },
+      {
+        "text": "2024年 | 3.32万公里 | 佛山 | HondaSENS",
+        "bounds": [
+          429,
+          1664,
+          1082,
+          1716
+        ],
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "enabled": "true"
+      },
+      {
+        "text": "整车在保",
+        "bounds": [
+          624,
+          1725,
+          770,
+          1777
+        ],
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "enabled": "true"
+      },
+      {
+        "text": "qnbdp1066x4044847e03f444c996257e1f3f62b4351729221436",
+        "bounds": [
+          1072,
+          1686,
+          1166,
+          1781
+        ],
+        "class": "android.widget.Image",
+        "clickable": "false",
+        "enabled": "true"
+      },
+      {
+        "text": "12.43",
+        "bounds": [
+          429,
+          1797,
+          546,
+          1855
+        ],
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "enabled": "true"
+      },
+      {
+        "text": "万",
+        "bounds": [
+          542,
+          1807,
+          585,
+          1859
+        ],
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "enabled": "true"
+      },
+      {
+        "text": "首付1.24万",
+        "bounds": [
+          1014,
+          1794,
+          1196,
+          1852
+        ],
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "enabled": "true"
+      }
+    ]
+  },
+  "click_target_resolution": {
+    "ok": false,
+    "stop_code": "S10_TITLE_TEXT_NODE_NOT_UNIQUE",
+    "reason": "Exact title text node could not be uniquely bound to current_reference by index, price, year, and mileage.",
+    "candidate_count": 7,
+    "matched_by_price_year_mileage_count_ignoring_rebased_index": 1,
+    "matching_by_price_year_mileage_ignoring_rebased_index": [
+      {
+        "reference_index": 5,
+        "reference_key": "5:本田 雅阁 2023款 260TURBO 智享版:2024年 | 3.32万公里 | 佛山 | HondaSENS:12.43万",
+        "list_price_text": "12.43万",
+        "list_year": 2024,
+        "list_mileage_10k_km": 3.32,
+        "clicked_card_bounds": [
+          429,
+          1534,
+          949,
+          1657
+        ]
+      }
+    ]
+  },
+  "logic_diagnosis": {
+    "current_logic_filters_all_cards_by_same_title": true,
+    "current_logic_requires_reference_index_equality": true,
+    "reference_index_rebased_after_autoscroll": true,
+    "context_reference_index": 7,
+    "matching_candidate_visible_reference_index": 5,
+    "selected_card_live_display_order": 5,
+    "candidate_can_be_bound_by_local_container_fields": true,
+    "global_title_uniqueness_is_not_valid_for_trisame_list": true
+  },
+  "risk_check": {
+    "selected_card_container_unique_by_title_price_metadata_bounds": true,
+    "selected_card_fields_complete": true,
+    "selected_card_fully_visible": true,
+    "selected_card_safe_click_area": true,
+    "non_trisame_boundary_detected": false,
+    "bottom_partial_card_present_but_allowed": true,
+    "misclick_risk_if_only_global_title_used": "high",
+    "misclick_risk_if_local_container_title_price_metadata_bounds_unique": "controlled"
+  },
+  "code_locations": {
+    "_s10_card_matches_reference": 3034,
+    "_resolve_s10_title_text_click_target": 3050,
+    "S10_TITLE_TEXT_NODE_NOT_UNIQUE_return": 3078
+  },
+  "root_cause": "S10_TITLE_TEXT_NODE_GLOBAL_UNIQUENESS_TOO_STRICT",
+  "secondary_cause": "REFERENCE_INDEX_REBASED_AFTER_AUTOSCROLL",
+  "answers": {
+    "reference_7_canonical_reference_order_exists": true,
+    "selected_reference_card_unique_by_price_metadata_bounds": true,
+    "same_title_text_node_count": 7,
+    "same_title_nodes_belong_to_different_cards": true,
+    "selected_card_internal_title_node_unique": true,
+    "title_price_metadata_bind_to_same_card_container": true,
+    "current_logic_requires_global_title_text_candidate_resolution": true,
+    "recommended_patch_direction": [
+      "Do not require title text global uniqueness across the whole S10 page.",
+      "Keep selected_reference_card as the click authority after S10 handoff/autoscroll gates pass.",
+      "Bind title node locally within selected_reference_card bounds, then cross-check price and metadata in the same container.",
+      "Treat reference_index after autoscroll as display/local evidence unless reconciled with selected_reference_key/canonical_reference_order.",
+      "Stop if selected card container is not unique, fields are missing, bounds are unsafe, or non-trisame boundary appears."
+    ]
+  },
+  "evidence_paths": {
+    "result_s10_to_s16": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+    "result_json": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result.json",
+    "s10_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_reference_card_complete_scroll_1_20260516_161309.xml",
+    "s10_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_reference_card_complete_scroll_1_20260516_161309.png",
+    "runtime_script": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\scripts\\runtime_s10_to_s16_mainline.py"
+  }
+}

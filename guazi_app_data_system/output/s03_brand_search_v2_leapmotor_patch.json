@@ -1,0 +1,204 @@
+{
+  "status": "DIAGNOSE_AND_PATCH_S03_BRAND_SEARCH_V2_FOR_LEAPMOTOR_DONE",
+  "created_at": "2026-05-10T05:24:38.875534+00:00",
+  "target_fingerprint": "??|C10|2026?|210???|?|2026.02",
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py"
+  ],
+  "not_modified": {
+    "second_stage_script": true,
+    "pricing": true,
+    "config_files": true,
+    "page_contract_docs": true,
+    "baseline_files": true
+  },
+  "diagnosis": {
+    "alphabet_index_detected": true,
+    "detected_letters": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "L_letter_bounds": [
+      1155,
+      1417,
+      1220,
+      1453
+    ],
+    "category_tabs_detected": [
+      "?????"
+    ],
+    "new_energy_tab_detected": true,
+    "new_energy_tab_bounds": [
+      858,
+      152,
+      1155,
+      250
+    ],
+    "target_brand_aliases": [
+      "零跑",
+      "零跑汽车",
+      "LEAPMOTOR",
+      "Leapmotor"
+    ],
+    "alias_match_seen_on_failed_tail_page": false,
+    "visible_brand_names_sample": [
+      "DS",
+      "东风",
+      "东风小康",
+      "道奇",
+      "东风风度",
+      "大运",
+      "大力牛魔王",
+      "大乘汽车",
+      "东风御风",
+      "电动屋",
+      "道朗格",
+      "大发",
+      "电咖",
+      "东风·瑞泰特",
+      "东风富康"
+    ],
+    "current_s03_search_strategy_before_patch": "initial-letter-if-known then linear scroll; ?? initial/alias/new-energy path missing",
+    "attempted_letters_before_patch": [],
+    "attempted_tabs_before_patch": [],
+    "reason_not_click_L": "brand initial mapping did not include ??/???? => L",
+    "reason_not_try_new_energy_tab": "S03 allowed/actions flow did not include ??? tab step",
+    "reason_alias_not_matched": "old exact matcher only searched brand primary text; ???? alias was not constructed",
+    "should_try_new_energy_tab": true,
+    "classification": [
+      "S03_ALPHABET_INDEX_NOT_USED",
+      "S03_NEW_ENERGY_TAB_NOT_USED",
+      "S03_BRAND_ALIAS_INSUFFICIENT",
+      "S03_LINEAR_SCROLL_ONLY_STRATEGY_INSUFFICIENT"
+    ],
+    "evidence_screenshot_path": "artifacts/screenshots/s03_brand_scroll_8_20260510_130858.png",
+    "evidence_xml_path": "artifacts/debug/s03_brand_scroll_8_20260510_130858.xml"
+  },
+  "patch": {
+    "s03_search_strategy_version": "S03_BRAND_SEARCH_V2",
+    "target_brand_aliases": [
+      "??",
+      "????",
+      "LEAPMOTOR",
+      "Leapmotor"
+    ],
+    "strategy_order": [
+      "tap_new_energy_tab_if_present",
+      "tap_right_letter_L_if_present",
+      "linear_scroll_fallback"
+    ],
+    "click_policy": "all taps are XML node/bounds driven",
+    "forbidden_misselection_guard": "only exact target aliases are clickable; ??/??/????/other brands are not aliases",
+    "transition_stabilization": "after brand click, short fresh-poll waits for S04/S06 instead of using first empty WebView frame",
+    "recorded_fields": [
+      "s03_search_strategy_version",
+      "target_brand_aliases",
+      "attempted_tabs",
+      "attempted_letters",
+      "visible_brand_names_by_step",
+      "matched_alias",
+      "matched_bounds",
+      "clicked_brand",
+      "clicked_brand_bounds"
+    ]
+  },
+  "verification": {
+    "py_compile": "passed",
+    "android_serial": "6TGYYHPZCETCSK6L",
+    "first_stage_ran": true,
+    "second_stage_ran": false,
+    "s03_brand_found": true,
+    "s03_found_status": "S03_BRAND_FOUND_BY_LETTER_L",
+    "attempted_tabs": [
+      {
+        "tab": "只看新能源",
+        "bounds": [
+          858,
+          152,
+          1155,
+          250
+        ],
+        "clicked": true
+      }
+    ],
+    "attempted_letters": [
+      {
+        "letter": "L",
+        "found": true,
+        "bounds": [
+          1155,
+          1417,
+          1220,
+          1453
+        ]
+      }
+    ],
+    "matched_alias": "零跑汽车",
+    "clicked_brand": "零跑汽车",
+    "clicked_brand_bounds": [
+      0,
+      529,
+      1155,
+      685
+    ],
+    "recognized_after_brand_click": "S06",
+    "s03_to_s04_wait_rounds": [
+      {
+        "wait_ms": 800,
+        "recognized_page": null,
+        "visible_text_count": 0,
+        "screenshot_path": "artifacts/screenshots/s03_to_s04_20260510_132235.png",
+        "xml_path": "artifacts/debug/s03_to_s04_20260510_132235.xml"
+      },
+      {
+        "wait_ms": 500,
+        "recognized_page": "S06",
+        "visible_text_count": 91,
+        "screenshot_path": "artifacts/screenshots/s03_to_s04_20260510_132238.png",
+        "xml_path": "artifacts/debug/s03_to_s04_20260510_132238.xml"
+      }
+    ],
+    "first_stage_final_status": "S07_RIGHT_AGE_SLIDER_MOVE_NO_EFFECT",
+    "first_stage_final_error": "Exact target age tick not found before view-result.",
+    "flow_state": {
+      "S07_FILTER_DONE": false,
+      "COLOR_FILTER_DONE": true,
+      "AGE_FILTER_DONE": false,
+      "SORT_DONE": false,
+      "S10_READY": false
+    },
+    "stop_scope": "after S03; first stage continued to S07 and stopped on unrelated age slider target_age=0 gate",
+    "result_s01_to_s10_json_legal": true,
+    "result_json_legal": true,
+    "result_json_raw_xml_large_fields_removed": true,
+    "result_json_raw_xml_large_fields_removed_keys": [
+      "fresh_xml",
+      "nodes",
+      "raw_xml",
+      "visible_blob"
+    ]
+  },
+  "next_step_only": "PATCH_ONLY_S07_AGE_SLIDER_VISIBLE_ZERO_RIGHT_HANDLE_NO_EFFECT or equivalent S07 target_age=0 right-slider gate diagnosis; do not revisit S03 unless brand regression appears."
+}

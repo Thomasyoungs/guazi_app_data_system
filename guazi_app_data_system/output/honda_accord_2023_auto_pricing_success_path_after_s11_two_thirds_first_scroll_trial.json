@@ -1,0 +1,104 @@
+{
+  "status": "SECOND_STAGE_DID_NOT_REACH_S16",
+  "trial_patch_status": "S11_FIRST_SCROLL_TWO_THIRDS_TRIAL_PATCHED",
+  "target_fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+  "code_modified_this_round": true,
+  "contract_doc_updated": false,
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "forbidden_scopes_touched": false,
+  "first_stage": {
+    "script": "scripts/runtime_s01_to_s10_mainline.py",
+    "status": "S10_READY",
+    "fingerprint": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+    "reliable_s10": true,
+    "price_ascending": true,
+    "trisame_count": 10
+  },
+  "second_stage": {
+    "script": "scripts/runtime_s10_to_s16_mainline.py",
+    "status": "S13_REPAIR_ITEM_CLICK_TARGET_NOT_CONFIRMED",
+    "issue_code": "S13_REPAIR_ITEM_CLICK_TARGET_NOT_CONFIRMED",
+    "entered_s16": false,
+    "final_price_generated": false,
+    "pricing_payload_generated": false,
+    "manual_review_required": null,
+    "auto_pricing_allowed": null
+  },
+  "s11_two_thirds_trial_runtime": {
+    "reference_index": 1,
+    "list_price_text": "11.19万",
+    "s11_first_scroll_strategy": "two_thirds_screen_trial",
+    "requested_ratio": 0.66,
+    "requested_distance_px": 1789,
+    "actual_logged_ratio": 0.6597,
+    "scroll_action_id": "first_two_thirds_trial_scroll_to_report_entry",
+    "scroll_mode": "first_two_thirds_report_entry_scroll",
+    "first_scroll_done": true,
+    "report_entry_found_after_scroll_attempt": 1,
+    "report_search_iterations": 3,
+    "report_search_elapsed_ms": 13484,
+    "overshoot_suspected": false,
+    "stale_xml_detected": false,
+    "internal_visible_region_mismatch_detected": false,
+    "exact_view_full_report_seen": true,
+    "unsafe_reposition_triggered": true,
+    "unsafe_reposition_count": 1,
+    "clicked_view_full_report": true,
+    "s12_page_confirmed_after_click": true,
+    "ocr_used": false,
+    "screenshot_coordinate_click_used": false
+  },
+  "s11_evidence": {
+    "initial_screenshot": "artifacts/screenshots/s10_to_s11_pre_dump_2_20260518_105210.png",
+    "initial_xml": "artifacts/debug/s10_to_s11_20260518_105211_compressed.xml",
+    "after_first_scroll_screenshot": "artifacts/screenshots/s11_report_entry_search_1_20260518_105224.png",
+    "after_first_scroll_xml": "artifacts/debug/s11_report_entry_search_1_20260518_105224.xml",
+    "after_reposition_screenshot": "artifacts/screenshots/s11_report_entry_search_1_20260518_105232.png",
+    "after_reposition_xml": "artifacts/debug/s11_report_entry_search_1_20260518_105232.xml"
+  },
+  "s12_runtime": {
+    "entered_s12": true,
+    "claim_count": 0,
+    "max_claim_amount": 0.0,
+    "body_appearance_clicked": true
+  },
+  "s13_runtime_block": {
+    "s13_history_table_detected": true,
+    "s13_history_table_detection_token_source": "raw_xml_nodes_unicode_bounds",
+    "repair_counts": {
+      "驾驶侧": 0,
+      "车尾": 0,
+      "副驾驶": 0,
+      "车头": 2
+    },
+    "first_positive_region": "车头",
+    "first_positive_region_repair_count": 2,
+    "blocked_reason": "车头区域具体入口候选位于安全底线以下，点击目标未确认",
+    "candidate_texts": [
+      "前保险杠",
+      "发动机舱盖漆面"
+    ],
+    "candidate_rejection_reason": "below_safe_bottom",
+    "latest_screenshot": "artifacts/screenshots/s13_region_车头_20260518_105314.png",
+    "latest_xml": "artifacts/debug/s13_region_车头_20260518_105314.xml"
+  },
+  "regression_checks": {
+    "s10_selected_card_autoscroll_regression": false,
+    "s10_local_title_binding_regression": false,
+    "s11_fresh_pair_stale_xml_regression": false,
+    "s11_internal_visible_region_mismatch_regression": false,
+    "s11_unsafe_reposition_regression": false,
+    "s12_claim_collection_regression": false,
+    "s13_history_table_detection_regression": false,
+    "s14_reached": false,
+    "metal_deduct_reached": false
+  },
+  "conclusion": {
+    "two_thirds_scroll_observation": "2/3 首次下滑按请求执行，未观察到整屏 trial 的滑过入口问题；入口首滑后出现，并经安全重定位成功点击进入 S12。",
+    "auto_pricing_success_path_verified": false,
+    "why_not_verified": "第二段在 S13 具体车况入口点击目标未确认处安全停止，未进入 S14/S15/S16。",
+    "recommended_next_focus": "S13 车头区域具体入口可见但处于底部安全区外时的受控重定位/入口确认逻辑。"
+  }
+}

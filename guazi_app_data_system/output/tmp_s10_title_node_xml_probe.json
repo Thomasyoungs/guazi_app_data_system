@@ -1,0 +1,119 @@
+{
+  "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_reference_card_complete_scroll_1_20260516_161309.xml",
+  "selected_title": "本田 雅阁 2023款 260TURBO 智享版",
+  "selected_price": "12.43万",
+  "selected_metadata": "2024年 | 3.32万公里 | 佛山 | HondaSENS",
+  "selected_click_bounds": [
+    429,
+    1534,
+    949,
+    1657
+  ],
+  "estimated_card_region": [
+    350,
+    1504,
+    1120,
+    1917
+  ],
+  "global_exact_title_nodes": [],
+  "inside_card_texts": [
+    {
+      "text": "ignore-error,i_1",
+      "desc": "",
+      "bounds": [
+        429,
+        1547,
+        568,
+        1595
+      ],
+      "class": "android.widget.Image",
+      "clickable": "false",
+      "enabled": "true"
+    },
+    {
+      "text": " 本田 雅阁 2023款 260TURBO 智享版",
+      "desc": "",
+      "bounds": [
+        429,
+        1534,
+        949,
+        1657
+      ],
+      "class": "android.widget.TextView",
+      "clickable": "false",
+      "enabled": "true"
+    },
+    {
+      "text": "2024年 | 3.32万公里 | 佛山 | HondaSENS",
+      "desc": "",
+      "bounds": [
+        429,
+        1664,
+        1082,
+        1716
+      ],
+      "class": "android.widget.TextView",
+      "clickable": "false",
+      "enabled": "true"
+    },
+    {
+      "text": "整车在保",
+      "desc": "",
+      "bounds": [
+        624,
+        1725,
+        770,
+        1777
+      ],
+      "class": "android.widget.TextView",
+      "clickable": "false",
+      "enabled": "true"
+    },
+    {
+      "text": "12.43",
+      "desc": "",
+      "bounds": [
+        429,
+        1797,
+        546,
+        1855
+      ],
+      "class": "android.widget.TextView",
+      "clickable": "false",
+      "enabled": "true"
+    },
+    {
+      "text": "万",
+      "desc": "",
+      "bounds": [
+        542,
+        1807,
+        585,
+        1859
+      ],
+      "class": "android.widget.TextView",
+      "clickable": "false",
+      "enabled": "true"
+    }
+  ],
+  "inside_has_title": false,
+  "inside_has_price": false,
+  "inside_has_metadata": true,
+  "inside_title_nodes": [],
+  "inside_price_nodes": [],
+  "inside_metadata_nodes": [
+    {
+      "text": "2024年 | 3.32万公里 | 佛山 | HondaSENS",
+      "desc": "",
+      "bounds": [
+        429,
+        1664,
+        1082,
+        1716
+      ],
+      "class": "android.widget.TextView",
+      "clickable": "false",
+      "enabled": "true"
+    }
+  ]
+}

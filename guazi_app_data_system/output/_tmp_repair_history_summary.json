@@ -1,0 +1,488 @@
+[
+  {
+    "file": "output/nissan_terra_reference1_s13_s14_contract_execution_diagnosis.json",
+    "records": [
+      {
+        "file": "output/nissan_terra_reference1_s13_s14_contract_execution_diagnosis.json",
+        "path": "$.reference_1_summary",
+        "repair_counts": {
+          "驾驶侧": 10,
+          "车尾": 2,
+          "副驾驶": 5,
+          "车头": 4
+        },
+        "total_repair_count": 21,
+        "panel_repairs_count": null,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "expected_repair_item_count": 21,
+        "collected_repair_item_count": 1,
+        "enumerated_repair_item_count": 1,
+        "status": "S15_BLOCKED_REPAIR_DETAILS_INCOMPLETE"
+      },
+      {
+        "file": "output/nissan_terra_reference1_s13_s14_contract_execution_diagnosis.json",
+        "path": "$.s13_repair_item_enumeration",
+        "repair_counts": {
+          "驾驶侧": 10,
+          "车尾": 2,
+          "副驾驶": 5,
+          "车头": 4
+        },
+        "total_repair_count": 21,
+        "panel_repairs_count": null,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "expected_repair_item_count": 21,
+        "enumerated_repair_item_count": 1,
+        "status": ""
+      }
+    ]
+  },
+  {
+    "file": "output/nissan_terra_reference1_score_78_s15_premature_entry_diagnosis.json",
+    "records": [
+      {
+        "file": "output/nissan_terra_reference1_score_78_s15_premature_entry_diagnosis.json",
+        "path": "$.score_dimensions[0].raw_fields",
+        "repair_counts": {
+          "驾驶侧": 10
+        },
+        "total_repair_count": 10,
+        "panel_repairs_count": 1,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/nissan_terra_reference1_score_78_s15_premature_entry_diagnosis.json",
+        "path": "$.s15_entry",
+        "repair_counts": {
+          "驾驶侧": 10
+        },
+        "total_repair_count": 10,
+        "panel_repairs_count": null,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      }
+    ]
+  },
+  {
+    "file": "output/nissan_terra_reference1_early_collect_done_diagnosis.json",
+    "records": [
+      {
+        "file": "output/nissan_terra_reference1_early_collect_done_diagnosis.json",
+        "path": "$.s13_diagnosis",
+        "repair_counts": {
+          "驾驶侧": 10
+        },
+        "total_repair_count": 10,
+        "panel_repairs_count": null,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      }
+    ]
+  },
+  {
+    "file": "output/honda_accord_2023_260turbo_zhixiang_v1_25_full_chain_run.json",
+    "records": [
+      {
+        "file": "output/honda_accord_2023_260turbo_zhixiang_v1_25_full_chain_run.json",
+        "path": "$.reference_history[1]",
+        "repair_counts": {
+          "驾驶侧": 4
+        },
+        "total_repair_count": 4,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": 9,
+        "status": ""
+      },
+      {
+        "file": "output/honda_accord_2023_260turbo_zhixiang_v1_25_full_chain_run.json",
+        "path": "$.reference_history[1].reference_score_input",
+        "repair_counts": {
+          "驾驶侧": 4
+        },
+        "total_repair_count": 4,
+        "panel_repairs_count": 1,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      }
+    ]
+  },
+  {
+    "file": "output/geely_yuanjing_2019_v1_24_full_chain_run.json",
+    "records": [
+      {
+        "file": "output/geely_yuanjing_2019_v1_24_full_chain_run.json",
+        "path": "$.selected_reference",
+        "repair_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 0,
+          "车头": 0
+        },
+        "total_repair_count": 0,
+        "panel_repairs_count": 0,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      }
+    ]
+  },
+  {
+    "file": "output/leapmotor_c10_v1_21_full_chain_run.json",
+    "records": [
+      {
+        "file": "output/leapmotor_c10_v1_21_full_chain_run.json",
+        "path": "$.reference_history[0]",
+        "repair_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 0,
+          "车头": 0
+        },
+        "total_repair_count": 0,
+        "panel_repairs_count": null,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/leapmotor_c10_v1_21_full_chain_run.json",
+        "path": "$.reference_history[0].reference_score_input",
+        "repair_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 0,
+          "车头": 0
+        },
+        "total_repair_count": 0,
+        "panel_repairs_count": 0,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/leapmotor_c10_v1_21_full_chain_run.json",
+        "path": "$.selected_reference",
+        "repair_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 0,
+          "车头": 0
+        },
+        "total_repair_count": 0,
+        "panel_repairs_count": 0,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      }
+    ]
+  },
+  {
+    "file": "output/tuang_full_chain_acceptance_report.json",
+    "records": [
+      {
+        "file": "output/tuang_full_chain_acceptance_report.json",
+        "path": "$.reference_history[0]",
+        "repair_counts": {
+          "驾驶侧": 0,
+          "车尾": 1
+        },
+        "total_repair_count": 1,
+        "panel_repairs_count": null,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      }
+    ]
+  },
+  {
+    "file": "output/santana_full_chain_acceptance_report.json",
+    "records": [
+      {
+        "file": "output/santana_full_chain_acceptance_report.json",
+        "path": "$.reference_history[0]",
+        "repair_counts": {
+          "驾驶侧": 2
+        },
+        "total_repair_count": 2,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/santana_full_chain_acceptance_report.json",
+        "path": "$.reference_history[1]",
+        "repair_counts": {
+          "驾驶侧": 6
+        },
+        "total_repair_count": 6,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/santana_full_chain_acceptance_report.json",
+        "path": "$.reference_history[2]",
+        "repair_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 6
+        },
+        "total_repair_count": 6,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/santana_full_chain_acceptance_report.json",
+        "path": "$.reference_history[3]",
+        "repair_counts": {
+          "驾驶侧": 2
+        },
+        "total_repair_count": 2,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/santana_full_chain_acceptance_report.json",
+        "path": "$.reference_history[4]",
+        "repair_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 2
+        },
+        "total_repair_count": 2,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      }
+    ]
+  },
+  {
+    "file": "output/toyota_yaris_full_chain_acceptance_report.json",
+    "records": [
+      {
+        "file": "output/toyota_yaris_full_chain_acceptance_report.json",
+        "path": "$.reference_history[0]",
+        "repair_counts": {
+          "驾驶侧": 2
+        },
+        "total_repair_count": 2,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/toyota_yaris_full_chain_acceptance_report.json",
+        "path": "$.reference_history[1]",
+        "repair_counts": {
+          "驾驶侧": 2
+        },
+        "total_repair_count": 2,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      }
+    ]
+  },
+  {
+    "file": "output/full_chain_acceptance_report.json",
+    "records": [
+      {
+        "file": "output/full_chain_acceptance_report.json",
+        "path": "$.references[0]",
+        "repair_counts": null,
+        "total_repair_count": null,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/full_chain_acceptance_report.json",
+        "path": "$.references[0].collected_fields",
+        "repair_counts": {
+          "驾驶侧": 9
+        },
+        "total_repair_count": 9,
+        "panel_repairs_count": null,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/full_chain_acceptance_report.json",
+        "path": "$.references[1]",
+        "repair_counts": null,
+        "total_repair_count": null,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/full_chain_acceptance_report.json",
+        "path": "$.references[1].collected_fields",
+        "repair_counts": {
+          "驾驶侧": 12
+        },
+        "total_repair_count": 12,
+        "panel_repairs_count": null,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/full_chain_acceptance_report.json",
+        "path": "$.references[2]",
+        "repair_counts": null,
+        "total_repair_count": null,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/full_chain_acceptance_report.json",
+        "path": "$.references[2].collected_fields",
+        "repair_counts": {
+          "驾驶侧": 8
+        },
+        "total_repair_count": 8,
+        "panel_repairs_count": null,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      }
+    ]
+  },
+  {
+    "file": "output/baseline_freeze_package.json",
+    "records": [
+      {
+        "file": "output/baseline_freeze_package.json",
+        "path": "$.reference_loop_acceptance[0].collected_fields",
+        "repair_counts": {
+          "驾驶侧": 9
+        },
+        "total_repair_count": 9,
+        "panel_repairs_count": 1,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/baseline_freeze_package.json",
+        "path": "$.reference_loop_acceptance[1].collected_fields",
+        "repair_counts": {
+          "驾驶侧": 12
+        },
+        "total_repair_count": 12,
+        "panel_repairs_count": 1,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/baseline_freeze_package.json",
+        "path": "$.reference_loop_acceptance[2].collected_fields",
+        "repair_counts": {
+          "驾驶侧": 8
+        },
+        "total_repair_count": 8,
+        "panel_repairs_count": 1,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "status": ""
+      }
+    ]
+  },
+  {
+    "file": "output/santana_baseline_freeze_package.json",
+    "records": [
+      {
+        "file": "output/santana_baseline_freeze_package.json",
+        "path": "$.reference_loop_acceptance.references[0]",
+        "repair_counts": {
+          "驾驶侧": 2
+        },
+        "total_repair_count": 2,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/santana_baseline_freeze_package.json",
+        "path": "$.reference_loop_acceptance.references[1]",
+        "repair_counts": {
+          "驾驶侧": 6
+        },
+        "total_repair_count": 6,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/santana_baseline_freeze_package.json",
+        "path": "$.reference_loop_acceptance.references[2]",
+        "repair_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 6
+        },
+        "total_repair_count": 6,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/santana_baseline_freeze_package.json",
+        "path": "$.reference_loop_acceptance.references[3]",
+        "repair_counts": {
+          "驾驶侧": 2
+        },
+        "total_repair_count": 2,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      },
+      {
+        "file": "output/santana_baseline_freeze_package.json",
+        "path": "$.reference_loop_acceptance.references[4]",
+        "repair_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 2
+        },
+        "total_repair_count": 2,
+        "panel_repairs_count": null,
+        "repair_items_count": 1,
+        "s14_image_records_count": null,
+        "status": ""
+      }
+    ]
+  },
+  {
+    "file": "output/toyota_yaris_baseline_freeze_package.json",
+    "records": []
+  }
+]

@@ -1,0 +1,609 @@
+{
+  "status": "GENERIC_RULE_GAPS_PATCH_REGRESSION_LOCK_CHECK_PASSED",
+  "mode": "read_only_regression_lock_check",
+  "generated_at": "2026-05-10T12:19:12",
+  "scope": {
+    "code_modified": false,
+    "config_modified": false,
+    "pricing_modified": false,
+    "page_contract_docx_modified": false,
+    "real_device_run": false,
+    "result_json_overwritten": false,
+    "baseline_files_overwritten": false,
+    "lumin_processed": false,
+    "prado_s10_single_card_processed": false,
+    "new_rules_added": false
+  },
+  "condition_standardization_regression": {
+    "passed": true,
+    "tests": [
+      {
+        "input": "左后门补漆",
+        "expected": [
+          [
+            "左后门",
+            "喷漆"
+          ]
+        ],
+        "actual": [
+          [
+            "左后门",
+            "喷漆"
+          ]
+        ],
+        "notes": [],
+        "passed": true
+      },
+      {
+        "input": "左后叶补漆",
+        "expected": [
+          [
+            "左后翼子板",
+            "喷漆"
+          ]
+        ],
+        "actual": [
+          [
+            "左后翼子板",
+            "喷漆"
+          ]
+        ],
+        "notes": [],
+        "passed": true
+      },
+      {
+        "input": "右后叶车身拉花下面有几口拳头大小补漆",
+        "expected": [
+          [
+            "右后翼子板",
+            "喷漆"
+          ]
+        ],
+        "actual": [
+          [
+            "右后翼子板",
+            "喷漆"
+          ]
+        ],
+        "notes": [],
+        "passed": true
+      },
+      {
+        "input": "左后门，左后叶，右后叶车身拉花下面有几口拳头大小补漆",
+        "expected": [
+          [
+            "左后门",
+            "喷漆"
+          ],
+          [
+            "左后翼子板",
+            "喷漆"
+          ],
+          [
+            "右后翼子板",
+            "喷漆"
+          ]
+        ],
+        "actual": [
+          [
+            "左后门",
+            "喷漆"
+          ],
+          [
+            "左后翼子板",
+            "喷漆"
+          ],
+          [
+            "右后翼子板",
+            "喷漆"
+          ]
+        ],
+        "notes": [],
+        "passed": true
+      },
+      {
+        "input": "原版原漆",
+        "expected": [],
+        "actual": [],
+        "notes": [],
+        "passed": true
+      },
+      {
+        "input": "左后门补漆，右后门钣金",
+        "expected": [
+          [
+            "左后门",
+            "喷漆"
+          ],
+          [
+            "右后门",
+            "钣金"
+          ]
+        ],
+        "actual": [
+          [
+            "左后门",
+            "喷漆"
+          ],
+          [
+            "右后门",
+            "钣金"
+          ]
+        ],
+        "notes": [],
+        "passed": true
+      }
+    ]
+  },
+  "competition_v1_2_1_regression": {
+    "passed": true,
+    "principle_checks": {
+      "sample_shortage_deducts_minus_0_02": true,
+      "price_distribution_record_only_when_trisame_lte_2": true,
+      "water_risk_grouped_not_keyword_stacked": true,
+      "strong_risk_score_gap_cap_minus_0_01": true,
+      "liquidity_pressure_cap_not_below_minus_0_02": true,
+      "city_comparability_record_only": true,
+      "obd_note_only": true,
+      "manual_review_not_caused_by_obd": true,
+      "tuang_coefficient_0_91": true
+    },
+    "tuang_direct_result": {
+      "competition_coefficient": 0.91,
+      "guazi_price_yuan": 99000,
+      "guazi_service_fee_yuan": 3500,
+      "guazi_net_payout_yuan": 95500,
+      "suggested_purchase_price_yuan": 84648,
+      "manual_review_required": true,
+      "manual_review_reasons": [
+        "SAMPLE_SHORTAGE_MANUAL_REVIEW",
+        "TARGET_WATER_INGRESS_RISK_REVIEW"
+      ],
+      "notes": [
+        "OBD_NOT_READ_NOTE"
+      ],
+      "adjustments": [
+        {
+          "factor": "sample_reliability_adjustment",
+          "adjustment": -0.02,
+          "reason": "sample_shortage_manual_review",
+          "data": {
+            "trisame_count": 2
+          }
+        },
+        {
+          "factor": "price_distribution_adjustment",
+          "adjustment": 0.0,
+          "reason": "sample_shortage_price_distribution_record_only_no_duplicate_deduction",
+          "data": {
+            "price_list_yuan": [
+              108900,
+              117900
+            ],
+            "price_spread_rate": 0.0826
+          }
+        },
+        {
+          "factor": "target_condition_risk_adjustment",
+          "adjustment": -0.04,
+          "reason": "obvious_water_ingress_risk_grouped_no_keyword_stack; obd_note_only_if_present",
+          "data": {
+            "risk_flags": [
+              "进水",
+              "水痕",
+              "进水痕迹",
+              "发霉",
+              "霉",
+              "地板发霉",
+              "锈蚀",
+              "管柱锈蚀",
+              "地毯变色",
+              "副驾驶地毯变色",
+              "可能会出进水痕迹"
+            ],
+            "obd_not_read_note": true,
+            "water_risk_grouped": true,
+            "confirmed_water_damage": false
+          }
+        },
+        {
+          "factor": "score_gap_adjustment",
+          "adjustment": -0.01,
+          "reason": "score_gap_gt_3_to_5_capped_to_minus_0_01_by_strong_risk",
+          "data": {
+            "score_gap": 5.0
+          }
+        },
+        {
+          "factor": "price_band_adjustment",
+          "adjustment": -0.01,
+          "reason": "price_band_100000_to_150000",
+          "data": {
+            "price_yuan": 108900
+          }
+        },
+        {
+          "factor": "model_liquidity_adjustment",
+          "adjustment": 0.0,
+          "reason": "large_suv_pressure_counted_in_fuel_cost_without_double_deduction",
+          "data": {
+            "profile": "large_suv"
+          }
+        },
+        {
+          "factor": "fuel_cost_pressure_adjustment",
+          "adjustment": -0.01,
+          "reason": "large_suv_330tsi_high_holding_and_fuel_cost_pressure_LIQUIDITY_PRESSURE_CAP_APPLIED",
+          "data": {
+            "vehicle_class": "large_suv",
+            "power_keyword": "330TSI",
+            "v1_2_1_combined_pressure_cap": -0.02,
+            "cap_reason": "LIQUIDITY_PRESSURE_CAP_APPLIED"
+          }
+        },
+        {
+          "factor": "city_comparability_adjustment",
+          "adjustment": 0.0,
+          "reason": "cross_province_record_only_v1_2_1",
+          "data": {
+            "license_city": "唐山",
+            "reference_city": "重庆"
+          }
+        }
+      ]
+    }
+  },
+  "historical_replay": {
+    "passed": true,
+    "samples": [
+      {
+        "sample": "focus_2017",
+        "expected": {
+          "competition_coefficient": 0.98,
+          "guazi_price_yuan": 25700,
+          "guazi_service_fee_yuan": 2500,
+          "guazi_net_payout_yuan": 23200,
+          "suggested_purchase_price_yuan": 19200
+        },
+        "actual": {
+          "competition_coefficient": 0.98,
+          "guazi_price_yuan": 25700,
+          "guazi_service_fee_yuan": 2500,
+          "guazi_net_payout_yuan": 23200,
+          "suggested_purchase_price_yuan": 19200
+        },
+        "passed": true,
+        "manual_review_required": false,
+        "manual_review_reasons": [],
+        "notes": [
+          "SAMPLE_SLIGHTLY_SMALL_NOTE"
+        ],
+        "competition_coefficient_reasons": [
+          "sample_reliability_adjustment -0.010: sample_slightly_small",
+          "target_condition_risk_adjustment -0.010: localized_sheet_metal_competitiveness_risk"
+        ],
+        "non_trisame_prices_used": false,
+        "ai_model_used": false
+      },
+      {
+        "sample": "toyota_yaris_2015",
+        "expected": {
+          "competition_coefficient": 1.0,
+          "guazi_price_yuan": 27800,
+          "guazi_service_fee_yuan": 2500,
+          "guazi_net_payout_yuan": 25300,
+          "suggested_purchase_price_yuan": 21300
+        },
+        "actual": {
+          "competition_coefficient": 1.0,
+          "guazi_price_yuan": 27800,
+          "guazi_service_fee_yuan": 2500,
+          "guazi_net_payout_yuan": 25300,
+          "suggested_purchase_price_yuan": 21300
+        },
+        "passed": true,
+        "manual_review_required": false,
+        "manual_review_reasons": [],
+        "notes": [
+          "MULTIPLE_PAINT_RECORDED_NO_EXTRA_COEFFICIENT_DEDUCTION",
+          "TARGET_CONDITION_LEFT_SILL_SCORING_REVIEW"
+        ],
+        "competition_coefficient_reasons": [
+          "competition_coefficient_no_adjustment"
+        ],
+        "non_trisame_prices_used": false,
+        "ai_model_used": false,
+        "note": "完整价格分布未保留；只用保存的真实最终三同价格，不引入非三同价格。"
+      },
+      {
+        "sample": "santana_2021",
+        "expected": {
+          "competition_coefficient": 0.975,
+          "guazi_price_yuan": 40600,
+          "guazi_service_fee_yuan": 2500,
+          "guazi_net_payout_yuan": 38100,
+          "suggested_purchase_price_yuan": 33472
+        },
+        "actual": {
+          "competition_coefficient": 0.975,
+          "guazi_price_yuan": 40600,
+          "guazi_service_fee_yuan": 2500,
+          "guazi_net_payout_yuan": 38100,
+          "suggested_purchase_price_yuan": 33472
+        },
+        "passed": true,
+        "manual_review_required": false,
+        "manual_review_reasons": [],
+        "notes": [
+          "MINOR_DAMAGE_RECORDED_NO_EXTRA_COEFFICIENT_DEDUCTION"
+        ],
+        "competition_coefficient_reasons": [
+          "price_distribution_adjustment -0.005: price_distribution_slightly_discrete",
+          "score_gap_adjustment -0.020: score_gap_gt_3_to_5"
+        ],
+        "non_trisame_prices_used": false,
+        "ai_model_used": false
+      },
+      {
+        "sample": "tuang_2017",
+        "expected": {
+          "competition_coefficient": 0.91,
+          "guazi_price_yuan": 99000,
+          "guazi_service_fee_yuan": 3500,
+          "guazi_net_payout_yuan": 95500,
+          "suggested_purchase_price_yuan": 84648
+        },
+        "actual": {
+          "competition_coefficient": 0.91,
+          "guazi_price_yuan": 99000,
+          "guazi_service_fee_yuan": 3500,
+          "guazi_net_payout_yuan": 95500,
+          "suggested_purchase_price_yuan": 84648
+        },
+        "passed": true,
+        "manual_review_required": true,
+        "manual_review_reasons": [
+          "SAMPLE_SHORTAGE_MANUAL_REVIEW",
+          "TARGET_WATER_INGRESS_RISK_REVIEW"
+        ],
+        "notes": [
+          "OBD_NOT_READ_NOTE"
+        ],
+        "competition_coefficient_reasons": [
+          "sample_reliability_adjustment -0.020: sample_shortage_manual_review",
+          "target_condition_risk_adjustment -0.040: obvious_water_ingress_risk_grouped_no_keyword_stack; obd_note_only_if_present",
+          "score_gap_adjustment -0.010: score_gap_gt_3_to_5_capped_to_minus_0_01_by_strong_risk",
+          "price_band_adjustment -0.010: price_band_100000_to_150000",
+          "fuel_cost_pressure_adjustment -0.010: large_suv_330tsi_high_holding_and_fuel_cost_pressure_LIQUIDITY_PRESSURE_CAP_APPLIED"
+        ],
+        "non_trisame_prices_used": false,
+        "ai_model_used": false
+      }
+    ]
+  },
+  "residual_search": {
+    "passed": true,
+    "active_pricing_old_95_rate_residual": false,
+    "target_obd_not_read_review_residual": false,
+    "residuals": {
+      "0.95": [
+        {
+          "file": "src/guazi_app_data_system/issue_classifier.py",
+          "line": 708,
+          "text": "\"confidence\": 0.95,"
+        },
+        {
+          "file": "src/guazi_app_data_system/issue_classifier.py",
+          "line": 916,
+          "text": "\"confidence\": 0.95,"
+        },
+        {
+          "file": "src/guazi_app_data_system/issue_classifier.py",
+          "line": 955,
+          "text": "\"confidence\": 0.95,"
+        },
+        {
+          "file": "src/guazi_app_data_system/issue_classifier.py",
+          "line": 1001,
+          "text": "\"confidence\": 0.95,"
+        },
+        {
+          "file": "src/guazi_app_data_system/issue_classifier.py",
+          "line": 1300,
+          "text": "\"confidence\": 0.95,"
+        }
+      ],
+      "95_percent": [],
+      "guazi_return_rate": [],
+      "TARGET_OBD_NOT_READ_REVIEW": [],
+      "补漆": [
+        {
+          "file": "src/guazi_app_data_system/data_collection.py",
+          "line": 42,
+          "text": "elif \"补漆\" in chunk or \"喷漆\" in chunk or \"漆面修复\" in chunk or \"漆面\" in chunk:"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 25,
+          "text": "PAINT_DAMAGE_TYPES = {\"喷漆\", \"补漆\", \"漆面\", \"漆面修复\", \"漆面损伤\", \"鍠锋紗\", \"婕嗛潰\", \"婕嗛潰鎹熶激\"}"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 51,
+          "text": "(\"喷漆\", re.compile(r\"补漆|喷漆|漆面修复|漆面损伤|漆面\")),"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 54,
+          "text": "TARGET_CONDITION_REPAIR_SIGNALS = (\"补漆\", \"喷漆\", \"漆面修复\", \"漆面损伤\", \"漆面\", \"钣金\", \"更换\", \"换件\")"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 98,
+          "text": "if value in {\"钣金\", \"喷漆\", \"补漆\", \"漆面\", \"漆面修复\"}:"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 152,
+          "text": "补漆/漆面修复 normalize to 喷漆 only. They never imply 钣金, 更换,"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 801,
+          "text": "paint_count = _count_any(text, [\"喷漆\", \"补漆\", \"漆面修复\", \"鍠锋紗\"])"
+        },
+        {
+          "file": "config/fields.yaml",
+          "line": 60,
+          "text": "\"补漆\": \"喷漆\","
+        },
+        {
+          "file": "scripts/parse_target_vehicle_task.py",
+          "line": 46,
+          "text": "(\"喷漆\", re.compile(r\"补漆|喷漆|漆面修复|漆面损伤|漆面\")),"
+        }
+      ],
+      "漆面修复": [
+        {
+          "file": "src/guazi_app_data_system/data_collection.py",
+          "line": 42,
+          "text": "elif \"补漆\" in chunk or \"喷漆\" in chunk or \"漆面修复\" in chunk or \"漆面\" in chunk:"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 25,
+          "text": "PAINT_DAMAGE_TYPES = {\"喷漆\", \"补漆\", \"漆面\", \"漆面修复\", \"漆面损伤\", \"鍠锋紗\", \"婕嗛潰\", \"婕嗛潰鎹熶激\"}"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 51,
+          "text": "(\"喷漆\", re.compile(r\"补漆|喷漆|漆面修复|漆面损伤|漆面\")),"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 54,
+          "text": "TARGET_CONDITION_REPAIR_SIGNALS = (\"补漆\", \"喷漆\", \"漆面修复\", \"漆面损伤\", \"漆面\", \"钣金\", \"更换\", \"换件\")"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 98,
+          "text": "if value in {\"钣金\", \"喷漆\", \"补漆\", \"漆面\", \"漆面修复\"}:"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 152,
+          "text": "补漆/漆面修复 normalize to 喷漆 only. They never imply 钣金, 更换,"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 801,
+          "text": "paint_count = _count_any(text, [\"喷漆\", \"补漆\", \"漆面修复\", \"鍠锋紗\"])"
+        },
+        {
+          "file": "config/fields.yaml",
+          "line": 59,
+          "text": "\"漆面修复\": \"喷漆\","
+        },
+        {
+          "file": "scripts/parse_target_vehicle_task.py",
+          "line": 46,
+          "text": "(\"喷漆\", re.compile(r\"补漆|喷漆|漆面修复|漆面损伤|漆面\")),"
+        }
+      ],
+      "competition_coefficient": [
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 937,
+          "text": "def calc_competition_coefficient("
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 1001,
+          "text": "reasons.append(\"competition_coefficient_no_adjustment\")"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 1004,
+          "text": "\"competition_coefficient\": coefficient,"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 1005,
+          "text": "\"raw_competition_coefficient\": round(raw_coefficient, 4),"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 1006,
+          "text": "\"clipped_competition_coefficient\": coefficient,"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 1007,
+          "text": "\"competition_coefficient_reasons\": reasons,"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 1036,
+          "text": "coefficient_result = calc_competition_coefficient("
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 1043,
+          "text": "raw_listing_price_yuan = base_reference_price_yuan * float(coefficient_result[\"competition_coefficient\"])"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 1070,
+          "text": "\"competition_coefficient\": coefficient_result[\"competition_coefficient\"],"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 1071,
+          "text": "\"raw_competition_coefficient\": coefficient_result[\"raw_competition_coefficient\"],"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 1072,
+          "text": "\"clipped_competition_coefficient\": coefficient_result[\"clipped_competition_coefficient\"],"
+        },
+        {
+          "file": "src/guazi_app_data_system/pricing.py",
+          "line": 1073,
+          "text": "\"competition_coefficient_reasons\": coefficient_result[\"competition_coefficient_reasons\"],"
+        },
+        {
+          "file": "scripts/runtime_s10_to_s16_mainline.py",
+          "line": 6878,
+          "text": "\"competition_coefficient\": pricing.get(\"competition_coefficient\"),"
+        },
+        {
+          "file": "scripts/runtime_s10_to_s16_mainline.py",
+          "line": 6879,
+          "text": "\"competition_coefficient_reasons\": pricing.get(\"competition_coefficient_reasons\"),"
+        }
+      ]
+    },
+    "notes": [
+      "0.95 remains only in issue_classifier.py confidence values inside active source.",
+      "Archived baseline snapshots may contain historical old formulas and were not modified."
+    ]
+  },
+  "doc_sync_diff": {
+    "v1_11_main_docx_found": true,
+    "competition_v1_2_1_docx_found": true,
+    "pricing_service_fee_docx_found": true,
+    "docx_files_seen": [
+      "定价逻辑备份_服务费阶梯修正版.docx",
+      "瓜子数据获取流程文档_V1.11_桑塔纳闭环冻结_S10同价完整车卡_S13历史修复解析版.docx",
+      "瓜子自动定价打分规则V1.5_特殊结构风险件版.docx",
+      "目标车竞争力系数算法设计_V1.2.1_防重复减分修正版.docx"
+    ],
+    "sync_suggestions": [
+      "建议后续将补漆/漆面修复=>喷漆写入主流程或打分规则文档。",
+      "建议后续标注竞争力系数 V1.2.1 已落代码。",
+      "如继续冻结新版本，可生成 V1.12 主流程 DOCX；本轮未修改文档。",
+      "定价逻辑备份服务费阶梯规则已存在；本轮无需修改。"
+    ]
+  },
+  "final_status": "GENERIC_RULE_GAPS_PATCH_REGRESSION_LOCK_CHECK_PASSED"
+}

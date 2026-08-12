@@ -1,0 +1,738 @@
+{
+  "final_status": "DIAGNOSE_S13_TO_S14_TUANG_LIVE_ROOM_WRONG_CLICK_DONE",
+  "diagnosis_status": "EVIDENCE_INSUFFICIENT",
+  "generated_at": "2026-05-09T08:02:50.106Z",
+  "read_only": true,
+  "modified_code": false,
+  "modified_contract_doc": false,
+  "modified_config": false,
+  "modified_pricing": false,
+  "device_run": false,
+  "continued_collection": false,
+  "entered_s15_s16": false,
+  "pricing_output": false,
+  "target_fingerprint": "大众|途昂|2017款|330TSI 两驱豪华版|白|2018.07",
+  "reference_context": {
+    "selected_reference_index": 1,
+    "selected_card_title": "大众 途昂 2017款 330TSI 两驱豪华版",
+    "selected_card_price": "10.89万",
+    "selected_card_metadata": "2018年 | 5.65万公里 | 重庆",
+    "transfer_count": 1,
+    "claim_count": 0,
+    "max_claim_amount": 0,
+    "repair_counts": {
+      "驾驶侧": 0,
+      "车尾": 1
+    }
+  },
+  "question_1_before_click_page": {
+    "entered_s13": true,
+    "current_region": "车尾",
+    "history_repair_count": 1,
+    "has_repair_item_houbeixianggai_hinge": true,
+    "has_live_entry_text": true,
+    "has_exact_live_room_phrase": false,
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s13_region_车尾_20260509_155339.xml",
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_region_车尾_20260509_155339.png",
+    "key_texts": {
+      "body_appearance": [
+        {
+          "text": "车身外观优秀",
+          "desc": "",
+          "bounds": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.widget.TextView",
+          "idx": 42
+        },
+        {
+          "text": "车身外观",
+          "desc": "",
+          "bounds": [
+            380,
+            247,
+            741,
+            399
+          ],
+          "clickable": "true",
+          "enabled": "true",
+          "class": "android.view.View",
+          "idx": 66
+        },
+        {
+          "text": "车身外观",
+          "desc": "",
+          "bounds": [
+            26,
+            396,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.view.View",
+          "idx": 99
+        },
+        {
+          "text": "车身外观",
+          "desc": "",
+          "bounds": [
+            78,
+            429,
+            315,
+            513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.widget.TextView",
+          "idx": 103
+        }
+      ],
+      "rear_region": [
+        {
+          "text": "车尾下正常",
+          "desc": "",
+          "bounds": [
+            416,
+            906,
+            737,
+            945
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.widget.TextView",
+          "idx": 118
+        },
+        {
+          "text": "车尾上正常",
+          "desc": "",
+          "bounds": [
+            757,
+            906,
+            1079,
+            945
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.widget.TextView",
+          "idx": 122
+        },
+        {
+          "text": "车尾",
+          "desc": "",
+          "bounds": [
+            302,
+            1235,
+            503,
+            1335
+          ],
+          "clickable": "true",
+          "enabled": "true",
+          "class": "android.view.View",
+          "idx": 140
+        },
+        {
+          "text": "车尾深度检测：",
+          "desc": "",
+          "bounds": [
+            117,
+            1852,
+            455,
+            1930
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.widget.TextView",
+          "idx": 162
+        },
+        {
+          "text": "AI解读车尾异常有什么影响",
+          "desc": "",
+          "bounds": [
+            178,
+            2089,
+            692,
+            2151
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.widget.TextView",
+          "idx": 171
+        },
+        {
+          "text": "车尾：检测通过9",
+          "desc": "",
+          "bounds": [
+            78,
+            2232,
+            1144,
+            2375
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.widget.TextView",
+          "idx": 175
+        }
+      ],
+      "history_repair": [
+        {
+          "text": "历史修复",
+          "desc": "",
+          "bounds": [
+            487,
+            1852,
+            676,
+            1930
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.widget.TextView",
+          "idx": 163
+        },
+        {
+          "text": "历史修复",
+          "desc": "",
+          "bounds": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.widget.TextView",
+          "idx": 217
+        },
+        {
+          "text": "历史修复",
+          "desc": "",
+          "bounds": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.widget.TextView",
+          "idx": 327
+        },
+        {
+          "text": "历史修复",
+          "desc": "",
+          "bounds": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.widget.TextView",
+          "idx": 395
+        }
+      ],
+      "repair_item": [
+        {
+          "text": "后备箱盖铰链",
+          "desc": "",
+          "bounds": [
+            152,
+            1979,
+            390,
+            2041
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "class": "android.widget.TextView",
+          "idx": 168
+        }
+      ],
+      "live_or_bottom_actions": [
+        {
+          "text": "实车讲解",
+          "bounds": [
+            273,
+            2353,
+            351,
+            2427
+          ],
+          "clickable": false,
+          "clickable_parent_bounds": [
+            234,
+            2336,
+            393,
+            2486
+          ]
+        },
+        {
+          "text": "实车讲解",
+          "bounds": [
+            234,
+            2437,
+            393,
+            2479
+          ],
+          "clickable": false,
+          "clickable_parent_bounds": [
+            234,
+            2336,
+            393,
+            2486
+          ]
+        },
+        {
+          "text": "联系卖家电话沟通",
+          "bounds": [
+            422,
+            2330,
+            783,
+            2492
+          ],
+          "clickable": true
+        },
+        {
+          "text": "讲价已有1人",
+          "bounds": [
+            809,
+            2330,
+            1170,
+            2492
+          ],
+          "clickable": true
+        },
+        {
+          "text": "bottom broad clickable container",
+          "bounds": [
+            26,
+            2232,
+            1196,
+            2513
+          ],
+          "clickable": true
+        }
+      ]
+    }
+  },
+  "question_2_actual_click": {
+    "clicked_text": null,
+    "clicked_bounds": null,
+    "click_strategy": null,
+    "click_target_type": "not_recorded_in_result_or_runtime_log",
+    "clicked_node_clickable": null,
+    "clicked_parent_clickable": null,
+    "clicked_nearby_texts": [],
+    "evidence_gap": "S13_TO_S14 click action fields were not persisted; only before/after snapshots and mismatch context are available."
+  },
+  "question_3_repair_item_candidates": [
+    {
+      "candidate_text": "后备箱盖铰链",
+      "candidate_bounds": [
+        152,
+        1979,
+        390,
+        2041
+      ],
+      "candidate_clickable": false,
+      "candidate_parent_bounds": [
+        81,
+        1956,
+        611,
+        2063
+      ],
+      "candidate_safe_click_region": true,
+      "evidence": "text node inside clickable parent idx=167"
+    },
+    {
+      "candidate_text": "后保险杠",
+      "candidate_bounds": [
+        152,
+        2395,
+        312,
+        2457
+      ],
+      "candidate_clickable": false,
+      "candidate_parent_bounds": [
+        26,
+        2232,
+        1196,
+        2513
+      ],
+      "candidate_safe_click_region": false,
+      "evidence": "near bottom fixed operation area / broad container"
+    },
+    {
+      "candidate_text": "后备箱盖",
+      "candidate_bounds": [
+        679,
+        2395,
+        841,
+        2457
+      ],
+      "candidate_clickable": false,
+      "candidate_parent_bounds": [
+        26,
+        2232,
+        1196,
+        2513
+      ],
+      "candidate_safe_click_region": false,
+      "evidence": "near bottom fixed operation area / broad container"
+    }
+  ],
+  "after_click_page": {
+    "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s13_to_s14_车尾_20260509_155344.xml",
+    "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s13_to_s14_车尾_20260509_155344.png",
+    "current_page_is_live_room": true,
+    "live_room_signals": [
+      {
+        "text": "等待看车",
+        "desc": "",
+        "bounds": [
+          0,
+          0,
+          1220,
+          2513
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.webkit.WebView",
+        "idx": 13
+      },
+      {
+        "text": "瓜子认证商家",
+        "desc": "",
+        "bounds": [
+          191,
+          180,
+          466,
+          242
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 20
+      },
+      {
+        "text": "马上为您实车讲解",
+        "desc": "",
+        "bounds": [
+          52,
+          409,
+          1170,
+          511
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 27
+      },
+      {
+        "text": "您的摄像头会始终处于关闭状态，商家不会看到您",
+        "desc": "",
+        "bounds": [
+          203,
+          797,
+          1064,
+          858
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 32
+      },
+      {
+        "text": "商家讲解车况严格执行平台标准，讲解过程全部视频留证，保证您客观充分了解车况。\n平台在发车之前、交付现场多重检测，排除重大事故、火烧、泡水。",
+        "desc": "",
+        "bounds": [
+          84,
+          1746,
+          1137,
+          2036
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 37
+      },
+      {
+        "text": "您的车辆订金和尾款均支付给平台，确认成交后，平台再将车款打给商家，全程监管您的资金安全。",
+        "desc": "",
+        "bounds": [
+          84,
+          1746,
+          1137,
+          1891
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 43
+      },
+      {
+        "text": "带看车辆",
+        "desc": "",
+        "bounds": [
+          32,
+          2119,
+          1189,
+          2240
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 50
+      },
+      {
+        "text": "已提炼重点信息，有疑问可要求讲解",
+        "desc": "",
+        "bounds": [
+          273,
+          1024,
+          1004,
+          1089
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 88
+      },
+      {
+        "text": "演示清单",
+        "desc": "",
+        "bounds": [
+          26,
+          1154,
+          185,
+          1212
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 91
+      },
+      {
+        "text": "保证商家100%讲解",
+        "desc": "",
+        "bounds": [
+          806,
+          1151,
+          1150,
+          1216
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 94
+      }
+    ],
+    "repair_list_signals_inside_live_room": [
+      {
+        "text": "外观",
+        "desc": "",
+        "bounds": [
+          39,
+          1290,
+          169,
+          1349
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 98
+      },
+      {
+        "text": "车尾（1）",
+        "desc": "",
+        "bounds": [
+          240,
+          1489,
+          448,
+          1563
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 126
+      },
+      {
+        "text": "1处轻微项",
+        "desc": "",
+        "bounds": [
+          240,
+          1775,
+          1192,
+          1820
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 131
+      },
+      {
+        "text": "已修复",
+        "desc": "",
+        "bounds": [
+          240,
+          1840,
+          367,
+          1898
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 138
+      },
+      {
+        "text": "后备箱盖铰链拆卸痕迹",
+        "desc": "",
+        "bounds": [
+          240,
+          1970,
+          419,
+          2064
+        ],
+        "clickable": "true",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 139
+      },
+      {
+        "text": "已修复",
+        "desc": "",
+        "bounds": [
+          240,
+          2561,
+          367,
+          2563
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 158
+      },
+      {
+        "text": "已修复",
+        "desc": "",
+        "bounds": [
+          442,
+          2561,
+          568,
+          2563
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 170
+      },
+      {
+        "text": "已修复",
+        "desc": "",
+        "bounds": [
+          643,
+          2561,
+          770,
+          2563
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 182
+      },
+      {
+        "text": "已修复",
+        "desc": "",
+        "bounds": [
+          845,
+          2561,
+          971,
+          2563
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 194
+      },
+      {
+        "text": "已修复",
+        "desc": "",
+        "bounds": [
+          1046,
+          2561,
+          1173,
+          2563
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 206
+      },
+      {
+        "text": "已修复",
+        "desc": "",
+        "bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 218
+      },
+      {
+        "text": "外观损伤方位",
+        "desc": "",
+        "bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "class": "android.widget.TextView",
+        "idx": 411
+      }
+    ],
+    "not_existing_s14_image_horizontal_swipe_page": true,
+    "not_allowed_to_treat_as_s14": true
+  },
+  "root_cause_classification": {
+    "primary": "EVIDENCE_INSUFFICIENT",
+    "rationale": "The before/after evidence proves navigation landed in a live-room / real-car-explanation page, but the actual S13_TO_S14 clicked_text and clicked_bounds are not persisted, so A/B/C/D cannot be proven without additional click-action evidence.",
+    "supported_secondary_findings": [
+      "Current page is live room / waiting-for-car-view page after click.",
+      "Before-click page contains both a correct safe repair candidate 后备箱盖铰链 and bottom live/explanation/contact action entries.",
+      "A broad unsafe clickable container exists near the bottom area; it should not be used as repair item target.",
+      "Correct repair candidate parent for 后备箱盖铰链 appears to be [81,1956,611,2063], above bottom action area."
+    ],
+    "not_concluded_as": {
+      "S13_TO_S14_CLICKED_LIVE_BANNER": "not proven because clicked_bounds is missing",
+      "S13_LIVE_BANNER_NOT_EXCLUDED": "plausible but not proven by persisted click fields",
+      "S13_REPAIR_ITEM_CLICK_TARGET_TOO_BROAD": "plausible for broad bottom container, but not proven",
+      "S13_REPAIR_ITEM_ROW_NOT_BOUND": "not proven; correct candidate row exists in XML",
+      "S13_TO_S14_LOADING_INTERMEDIATE_AFTER_CORRECT_CLICK": "possible: correct candidate may open this live-room variant; current evidence cannot separate from wrong click"
+    }
+  },
+  "current_state_policy": {
+    "current_page_is_live_room": true,
+    "must_stop": true,
+    "recovery_required": "APP_FORCE_RESTART_TO_S10_READY",
+    "do_not_continue_collection": true,
+    "do_not_enter_S15_S16": true,
+    "do_not_output_pricing": true
+  },
+  "suggested_next_diagnostic_patch_scope_if_requested_later": [
+    "Persist S13_TO_S14 clicked_text / clicked_bounds / click_strategy before click.",
+    "Exclude bottom live/explanation/contact/action bar bounds from S13 repair item click target search.",
+    "Bind repair-item clicks to a safe item-row parent around the exact repair text, e.g. 后备箱盖铰链 parent [81,1956,611,2063].",
+    "If correct repair item opens live-room variant, define a separate contract decision before collecting fields."
+  ]
+}

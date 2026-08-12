@@ -1,0 +1,77 @@
+{
+  "final_status": "PATCH_S07_EXACT_AGE_OVERLAP_CONTRACT_AND_SCRIPT_FIX_DONE",
+  "code_modified": true,
+  "modified_files": [
+    "scripts/runtime_s01_to_s10_mainline.py",
+    "docs/page_state_machine.md"
+  ],
+  "main_docx_modified": false,
+  "second_stage_modified": false,
+  "pricing_modified": false,
+  "config_modified": false,
+  "second_stage_started": false,
+  "target_fingerprint": "零跑|C10|2026款|210悦享版|白|2026.02",
+  "py_compile": "passed",
+  "offline_validation": {
+    "xml_path": "artifacts/debug/s07_age_track_based_drag_right_1_20260510_132326.xml",
+    "screenshot_path": "artifacts/screenshots/s07_age_track_based_drag_right_1_20260510_132326.png",
+    "target_age": 0,
+    "matched_age_text": "0年以下",
+    "exact_age_overlap_allowed": true,
+    "AGE_FILTER_DONE_should_be_true": true,
+    "old_stop_code_removed_for_zero_age": "S07_RIGHT_AGE_SLIDER_MOVE_NO_EFFECT not emitted",
+    "bottom_view_result_text": "查看33辆"
+  },
+  "live_first_stage_validation": {
+    "status": "S10_READY_AFTER_SORT_NOT_CONFIRMED",
+    "flow_state": {
+      "S07_FILTER_DONE": true,
+      "COLOR_FILTER_DONE": true,
+      "AGE_FILTER_DONE": true,
+      "SORT_DONE": false,
+      "S10_READY": false
+    },
+    "AGE_FILTER_DONE": true,
+    "S07_FILTER_DONE": true,
+    "COLOR_FILTER_DONE": true,
+    "SORT_DONE": false,
+    "S10_READY": false,
+    "s07_confirm_age_record": {
+      "s07_exact_age_contract_version": "S07_AGE_EXACT_SLIDER_OVERLAP_V1",
+      "target_age": 0,
+      "exact_age_overlap_allowed": true,
+      "matched_age_text": "0年以下",
+      "verify_method": "zero_or_below_text",
+      "bottom_view_result_text": "查看33辆",
+      "exact_age_confirmed": true,
+      "age_confirm_source": "zero_or_below_text"
+    },
+    "age_filter_done_record": {
+      "s07_exact_age_contract_version": "S07_AGE_EXACT_SLIDER_OVERLAP_V1",
+      "target_age": 0,
+      "exact_age_overlap_allowed": true,
+      "matched_age_text": "0年以下",
+      "verify_method": "zero_or_below_text",
+      "bottom_view_result_text": "查看33辆",
+      "AGE_FILTER_DONE": true,
+      "age_confirm_source": "zero_or_below_text"
+    },
+    "post_s07_stop_note": "S07 passed; first stage later stopped at S10_READY_AFTER_SORT_NOT_CONFIRMED, outside this S07-only patch scope.",
+    "screenshot_path": "artifacts/screenshots/s09_to_s10_20260510_141750.png",
+    "xml_path": "artifacts/debug/s09_to_s10_20260510_141750.xml"
+  },
+  "contract_summary": {
+    "target_age_0_success_texts": [
+      "0年以下",
+      "0-0年",
+      "0年"
+    ],
+    "allow_left_right_overlap": true,
+    "do_not_require_independent_right_handle_visibility": true,
+    "target_age_1_hidden_tick": "between visible 0 and 2; verify 1-1年",
+    "target_age_11_12_hidden_ticks": "11/12 right of 10; verify 11-11年 / 12-12年",
+    "target_age_gt_12": "do not map to 不限"
+  },
+  "result_json_valid": true,
+  "raw_xml_large_fields_removed": true
+}

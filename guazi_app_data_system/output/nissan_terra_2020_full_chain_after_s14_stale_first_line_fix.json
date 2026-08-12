@@ -1,0 +1,196 @@
+{
+  "report_name": "nissan_terra_2020_full_chain_after_s14_stale_first_line_fix",
+  "created_at": "2026-05-16T11:08:53",
+  "final_status": "NISSAN_TERRA_S14_FULL_SEQUENCE_RUNTIME_VERIFIED",
+  "business_final_status": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+  "business_issue_code": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+  "target_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+  "code_modified_this_round": false,
+  "first_stage_ran_this_round": true,
+  "second_stage_ran_this_round": true,
+  "first_stage": {
+    "status": "S10_READY",
+    "final_status": "S10_READY",
+    "S10_READY": true,
+    "trisame_count": 2,
+    "same_source_cards_count": 2
+  },
+  "s14_validation": {
+    "reached_s14": true,
+    "third_image_false_completion_prevented": true,
+    "third_image": {
+      "tab_label": "左前翼子板漆面(1/1)",
+      "image_index": 3,
+      "image_total": 1,
+      "raw_text": "左前翼子板—喷漆",
+      "raw_first_line": "左前翼子板—喷漆",
+      "raw_part": "左前翼子板",
+      "normalized_part": "左前翼子板",
+      "raw_first_line_part": "左前翼子板",
+      "part": "左前翼子板",
+      "raw_damage": "喷漆",
+      "normalized_damage": "喷漆",
+      "part_category": "cover_panel",
+      "is_cover_panel": true,
+      "is_special_structure_risk": false,
+      "is_target_damage_type": true,
+      "saved_to_repair_items": true,
+      "skipped_reason": "",
+      "stale_first_line_warning": false,
+      "stale_first_line_reason": "",
+      "s14_key": "左前翼子板漆面(1/1)|左前翼子板—喷漆|左前翼子板|喷漆",
+      "s14_semantic_signature": "左前翼子板漆面(1/1)|左前翼子板—喷漆|左前翼子板|喷漆",
+      "s14_raw_key_used": false,
+      "caption_seen": true,
+      "repeated_s14_key": false,
+      "page_label_part": "左前翼子板",
+      "first_line_bound_to_page_label": true,
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_110359.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_110359.xml"
+    },
+    "fourth_image": {
+      "tab_label": "左侧前门(1/2)",
+      "image_index": 4,
+      "image_total": 2,
+      "raw_text": "左前翼子板—喷漆",
+      "raw_first_line": "左前翼子板—喷漆",
+      "raw_part": "左前门",
+      "normalized_part": "左前门",
+      "raw_first_line_part": "左前翼子板",
+      "part": "左前门",
+      "raw_damage": "喷漆",
+      "normalized_damage": "喷漆",
+      "part_category": "cover_panel",
+      "is_cover_panel": true,
+      "is_special_structure_risk": false,
+      "is_target_damage_type": true,
+      "saved_to_repair_items": true,
+      "skipped_reason": "",
+      "stale_first_line_warning": true,
+      "stale_first_line_reason": "active_tab_part_differs_from_raw_first_line",
+      "s14_key": "左侧前门(1/2)|左前翼子板—喷漆|左前门|喷漆",
+      "s14_semantic_signature": "左侧前门(1/2)|左前翼子板—喷漆|左前门|喷漆",
+      "s14_raw_key_used": false,
+      "caption_seen": true,
+      "repeated_s14_key": false,
+      "page_label_part": "左前门",
+      "first_line_bound_to_page_label": false,
+      "screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_110404.png",
+      "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_image_swipe_20260516_110404.xml"
+    },
+    "s14_collect_done": true,
+    "s14_completion_reason": "NO_NEW_SEMANTIC_AFTER_TWO_SWIPES_NO_UNCOLLECTED_SIGNAL",
+    "s14_image_records_count": 27,
+    "s14_horizontal_swipes_count": 28,
+    "stale_first_line_warning_count": 17,
+    "page_label_first_line_mismatch_count_after_patch": 0,
+    "raw_first_line_stale_handling_runtime_verified": true,
+    "collected_parts": [
+      {
+        "part": "左前翼子板",
+        "damage_type": "喷漆"
+      },
+      {
+        "part": "左前门",
+        "damage_type": "喷漆"
+      },
+      {
+        "part": "左后门",
+        "damage_type": "喷漆"
+      },
+      {
+        "part": "左后翼子板",
+        "damage_type": "喷漆"
+      },
+      {
+        "part": "后保险杠",
+        "damage_type": "喷漆"
+      },
+      {
+        "part": "右后门",
+        "damage_type": "喷漆"
+      },
+      {
+        "part": "ABC柱",
+        "damage_type": "喷漆"
+      },
+      {
+        "part": "右前翼子板",
+        "damage_type": "喷漆"
+      },
+      {
+        "part": "前保险杠",
+        "damage_type": "喷漆"
+      }
+    ]
+  },
+  "reference_history_summary": [
+    {
+      "reference_index": 1,
+      "title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+      "price_text": "8.48万",
+      "status": null,
+      "exclusion_reason": null,
+      "score": 70.0,
+      "score_trustworthy": true,
+      "score_components": {
+        "body_score": 61.0,
+        "mileage_score": 0.0,
+        "transfer_score": 7.0,
+        "accident_score": 0.0,
+        "max_amount_score": 2.0
+      },
+      "s14_collect_done": true,
+      "s14_records_count": 27,
+      "stale_first_line_warning_count": 17
+    },
+    {
+      "reference_index": 2,
+      "title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+      "price_text": "10.59万",
+      "status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+      "exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+      "score": null,
+      "score_trustworthy": null,
+      "score_components": null,
+      "s14_collect_done": null,
+      "s14_records_count": 0,
+      "stale_first_line_warning_count": 0
+    },
+    {
+      "reference_index": 2,
+      "title": "日产 途达 2020款 2.5L XL Upper 4WD 自动四驱豪华版",
+      "price_text": "10.59万",
+      "status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+      "exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+      "score": null,
+      "score_trustworthy": null,
+      "score_components": null,
+      "s14_collect_done": null,
+      "s14_records_count": 0,
+      "stale_first_line_warning_count": 0
+    }
+  ],
+  "manual_review": {
+    "required": true,
+    "reason": "????????????reference #1 ????? score=70.0 < target_score=92.0?reference #2 ??????????? OFFICIAL_REPORT_NOT_AVAILABLE ???"
+  },
+  "contract_checks": {
+    "no_old_untrusted_78_used": true,
+    "reference1_score_trustworthy_after_full_s14": true,
+    "s14_incomplete_not_entered_s15": true,
+    "returned_reliable_s10_after_s14": true,
+    "no_non_trisame_price_used": true,
+    "no_old_95_percent_rule_used": true,
+    "forbidden_large_fields_absent": true
+  },
+  "evidence_paths": {
+    "result_s01_to_s10_json": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s01_to_s10.json",
+    "result_s10_to_s16_json": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+    "result_json": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result.json",
+    "s14_third_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_110359.png",
+    "s14_fourth_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_image_swipe_20260516_110404.png",
+    "s14_returned_s10_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s14_return_to_s10_attempt_2_20260516_110642.png",
+    "s14_returned_s10_xml": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s14_return_to_s10_attempt_2_20260516_110642.xml"
+  }
+}

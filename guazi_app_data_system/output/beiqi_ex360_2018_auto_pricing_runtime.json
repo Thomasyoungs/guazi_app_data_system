@@ -1,0 +1,97 @@
+{
+  "status": "FIRST_STAGE_DID_NOT_REACH_S10_READY",
+  "raw_first_stage_status": "S03_TARGET_INITIAL_LETTER_NOT_FOUND",
+  "error": "target_brand_initial_not_derivable",
+  "target_fingerprint": "?????|?????EX|2018?|EX360 ???|?|2019.03",
+  "target_task": {
+    "actual_target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\data\\current_target_task.json",
+    "brand": "北汽新能源",
+    "series": "北汽新能源EX",
+    "series_alias": "",
+    "year_model": "2018款",
+    "config_model": "EX360 新尚版",
+    "color": "白",
+    "register_date": "2019.03",
+    "register_year": 2019,
+    "current_year": 2026,
+    "target_age_formula": "current_year - register_year",
+    "calculated_target_age": 7
+  },
+  "input_task_written": true,
+  "condition_text_preserved": true,
+  "condition_interpretation_guard": "??/??????????/??/???????????????????/?????",
+  "first_stage": {
+    "reached_s10_ready": false,
+    "stop_code": "S03_TARGET_INITIAL_LETTER_NOT_FOUND",
+    "stop_reason": "target_brand_initial_not_derivable",
+    "recognized_stop_page": "S03",
+    "s03_contract_version": "V1.16",
+    "target_brand_aliases": [
+      "北汽新能源"
+    ],
+    "target_initial_letter": null,
+    "reason_alias_not_matched": "target_brand_initial_not_derivable",
+    "detected_letters": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "initial_screenshot_path": "artifacts/screenshots/s02_to_s03_20260520_152904.png",
+    "initial_xml_path": "artifacts/debug/s02_to_s03_20260520_152904.xml"
+  },
+  "second_stage": {
+    "started": false,
+    "reason": "first stage did not reach S10_READY"
+  },
+  "rule_source_guard": {
+    "not_reached_s15_s16": true,
+    "rule_source_guard_runtime_checked": false,
+    "expected_versions": {
+      "active_scoring_rule_version": "V1.8",
+      "active_reference_selection_rule": "V3_BOUNDARY_CONFIRMATION",
+      "active_pricing_rule_version": "SERVICE_FEE_TIER_V3_BOUNDARY_CONFIRMATION",
+      "active_competition_coefficient_version": "V1.2.3"
+    }
+  },
+  "pricing_outputs": {
+    "target_score": null,
+    "reference_history": [],
+    "boundary_confirmed": null,
+    "final_reference_index": null,
+    "auto_pricing_allowed": null,
+    "manual_review_required": null,
+    "target_guazi_listing_price_yuan": null,
+    "guazi_service_fee_yuan": null,
+    "guazi_net_payout_yuan": null,
+    "suggested_purchase_price_yuan": null,
+    "competition_coefficient": null
+  },
+  "code_modified": false,
+  "config_modified": false,
+  "page_contract_modified": false,
+  "human_click_used": false,
+  "notes": [
+    "????? S03_TARGET_INITIAL_LETTER_NOT_FOUND???????????????????????????? S10??????????"
+  ]
+}

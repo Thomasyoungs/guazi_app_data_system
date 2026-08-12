@@ -1,0 +1,68 @@
+{
+  "final_status": "PATCH_ONLY_S13_HISTORY_REPAIR_DUPLICATE_ZERO_PARSER_DONE",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "unchanged_scopes": {
+    "first_stage_script": true,
+    "s10_same_price_canonical_order": true,
+    "s11_s12_logic": true,
+    "s14_collection_logic": true,
+    "pricing": true,
+    "config": true,
+    "page_contract_doc": true
+  },
+  "py_compile": "OK",
+  "offline_replay": {
+    "xml_path": "artifacts/debug/s13_region_驾驶侧_20260509_133419.xml",
+    "raw_nodes_used": true,
+    "visible_texts_dedup_used": false,
+    "duplicate_zero_preserved": true,
+    "region": "驾驶侧",
+    "history_repair_label_bounds": [
+      533,
+      1852,
+      718,
+      1930
+    ],
+    "bound_count_text": "0",
+    "bound_count_bounds": [
+      715,
+      1852,
+      754,
+      1930
+    ],
+    "excluded_numbers": [
+      36
+    ],
+    "excluded_reason": "检测通过36_not_history_repair_count",
+    "result": "OFFLINE_REPLAY_OK"
+  },
+  "runtime_verification": {
+    "target_fingerprint": "大众|桑塔纳|2021款|1.5L 自动风尚版|白|2021.05",
+    "first_stage_status": "S10_READY",
+    "second_stage_status": "CONTINUE_NEXT_REFERENCE",
+    "selected_reference_index": 3,
+    "selected_card_price": "4.03万",
+    "selected_card_metadata": "2021年 | 11.74万公里 | 唐山",
+    "selected_by": "canonical_reference_order",
+    "repair_counts": {
+      "驾驶侧": 0,
+      "车尾": 0,
+      "副驾驶": 6
+    },
+    "driver_side_zero_confirmed": true,
+    "detection_pass_36_excluded": true,
+    "s14_collect_done": true,
+    "reference_3_score": 83.5,
+    "target_score": 91.0,
+    "reference_score_gte_target_score": false,
+    "next_reference_index": 4
+  },
+  "result_json": {
+    "result_s10_to_s16_json_valid": true,
+    "result_json_valid": true,
+    "raw_xml_large_fields_present": false,
+    "old_target_pollution_detected": false
+  }
+}

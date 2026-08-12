@@ -1,0 +1,73 @@
+﻿{
+    "package_name":  "BASELINE_LEAPMOTOR_C10_2026_FULL_CHAIN_MANUAL_REVIEW_DONE_202605",
+    "created_at":  "2026-05-12T14:05:28+08:00",
+    "package_type":  "baseline_freeze_package_read_only_reference",
+    "target_fingerprint":  "零跑|C10|2026款|210悦享版|白|2026.02",
+    "frozen_terminal_status":  "FULL_CHAIN_MANUAL_REVIEW_DONE",
+    "acceptance_status":  "LEAPMOTOR_C10_FULL_CHAIN_MANUAL_REVIEW_ACCEPTANCE_PASSED",
+    "freeze_status":  "READ_ONLY_LEAPMOTOR_C10_BASELINE_FREEZE_PACKAGE_DONE",
+    "source_result_files":  [
+                                {
+                                    "path":  "output/result_s01_to_s10.json",
+                                    "sha256":  "3b2021a6ec681eace196c6c25c3accdb63074c4522980562845f3427531c7ab0"
+                                },
+                                {
+                                    "path":  "output/result_s10_to_s16.json",
+                                    "sha256":  "f5b8fff19a32dd547edcc7379c340c1fc156da31c859fb277802f13bb23b94fd"
+                                },
+                                {
+                                    "path":  "output/result.json",
+                                    "sha256":  "f5b8fff19a32dd547edcc7379c340c1fc156da31c859fb277802f13bb23b94fd"
+                                },
+                                {
+                                    "path":  "output/leapmotor_c10_v1_21_full_chain_run.json",
+                                    "sha256":  "32aac6640fcad7125bbbb2c2335a62d2453f7bd53ccd6dbf47a4220e6d04ae1f"
+                                },
+                                {
+                                    "path":  "output/leapmotor_c10_v1_21_full_chain_run_latest.md",
+                                    "sha256":  "0fc9f6c3349ef8c310a7c9de9cad3d5b84e9893dbc28688fa0c5240e7a47e856"
+                                }
+                            ],
+    "frozen_result_summary":  {
+                                  "first_stage_status":  "S10_READY",
+                                  "second_stage_status":  "FULL_CHAIN_MANUAL_REVIEW_DONE",
+                                  "target_score":  96,
+                                  "final_reference_index":  1,
+                                  "final_reference_title":  "零跑汽车 零跑C10 2026款 210悦享版",
+                                  "final_reference_price_yuan":  106400,
+                                  "final_reference_score":  99,
+                                  "true_trisame_count":  2,
+                                  "raw_visible_cards_count":  22,
+                                  "excluded_non_trisame_cards_count":  20,
+                                  "competition_coefficient":  0.96,
+                                  "suggested_listing_price_yuan":  102100,
+                                  "guazi_service_fee_yuan":  4500,
+                                  "guazi_net_payout_yuan":  97600,
+                                  "suggested_purchase_price_yuan":  87292,
+                                  "manual_review_required":  true,
+                                  "manual_review_reasons":  [
+                                                                "目标车缺少出险次数，已采用默认分。",
+                                                                "目标车缺少最大金额，已采用默认分。",
+                                                                "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。",
+                                                                "SAMPLE_SHORTAGE_MANUAL_REVIEW"
+                                                            ]
+                              },
+    "locked_capabilities":  {
+                                "S03_V1_16":  "verified in this baseline",
+                                "S04_alias_C10":  "verified in this baseline",
+                                "S05_target_year_config":  "verified in this baseline",
+                                "S06_target_filter_list_after_s05_confirm":  "verified in this baseline",
+                                "S07_white_zero_age_checked_only_forbidden_gate":  "verified in this baseline",
+                                "S08_S09_S10_source_gate_core_reverse_exclusion":  "verified in this baseline",
+                                "S10_V1_21_title_normalized_alias_match":  "verified in this baseline",
+                                "S10_to_S16_S17_second_stage":  "verified in this baseline"
+                            },
+    "freeze_policy":  {
+                          "baseline_files_overwritten":  false,
+                          "result_json_overwritten_by_freeze":  false,
+                          "package_is_reference_only":  true,
+                          "raw_xml_nodes_visible_blob_included":  false,
+                          "non_trisame_prices_used":  false,
+                          "old_95_percent_rule_used":  false
+                      }
+}

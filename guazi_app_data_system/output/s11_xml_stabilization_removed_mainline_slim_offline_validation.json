@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "checks": {
+    "py_compile_passed": true,
+    "xml_stabilization_refresh_runtime_calls": 0,
+    "xml_stabilization_enabled_default_false_present": true,
+    "xml_stabilization_attempted_default_false_present": true,
+    "xml_stabilization_failed_stop_not_called_in_mainline": false,
+    "no_xml_stabilization_found_entry_state": true,
+    "no_xml_stabilization_still_missing_state": true,
+    "first_scroll_logic_present": true,
+    "fine_backtrack_logic_present": true,
+    "unsafe_reposition_logic_present": true,
+    "ocr_disabled_fields_present": true
+  },
+  "scenarios": [
+    {
+      "scenario": "A",
+      "name": "XML exact entry safe",
+      "expected": "direct XML exact click path preserved",
+      "passed": true
+    },
+    {
+      "scenario": "B",
+      "name": "XML exact entry unsafe",
+      "expected": "unsafe reposition path preserved",
+      "passed": true
+    },
+    {
+      "scenario": "C",
+      "name": "XML missing",
+      "expected": "no wait/redump/micro-scroll stabilization call",
+      "passed": true
+    },
+    {
+      "scenario": "D",
+      "name": "No OCR/no screenshot coordinate click",
+      "expected": "OCR and visual fallback remain disabled",
+      "passed": true
+    },
+    {
+      "scenario": "E",
+      "name": "S10 selected card autoscroll not touched",
+      "expected": "autoscroll identifiers still present",
+      "passed": true
+    },
+    {
+      "scenario": "F",
+      "name": "S10 local title binding not touched",
+      "expected": "local title binding identifiers still present",
+      "passed": true
+    },
+    {
+      "scenario": "G",
+      "name": "metal_deduct not touched",
+      "expected": "pricing/config untouched by this patch; runtime script still compiles",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "status": "S13_REPAIR_ITEM_CLICKABLE_CONTAINER_BINDING_PATCHED",
+  "generated_at": "2026-05-18 12:09:22",
+  "target": "本田|雅阁|2023款|260TURBO 智享版|黑|2024.01",
+  "modified_files": [
+    "scripts/runtime_s10_to_s16_mainline.py"
+  ],
+  "forbidden_files_modified": [],
+  "py_compile": "passed",
+  "module_import": "passed",
+  "real_evidence_xml": "artifacts\\debug\\s13_repair_item_reposition_车头_1_20260518_111841.xml",
+  "real_evidence_selected_entry": "左前大灯",
+  "real_evidence_click_bounds": [
+    81,
+    1608,
+    611,
+    1716
+  ],
+  "normal_check_rejection_code": "S13_REPAIR_ITEM_CANDIDATE_IN_NORMAL_CHECK_LIST_REJECTED",
+  "validations": [
+    {
+      "case": "A_count_positive_left_headlight_not_in_s14_allowed_parts_is_valid_s13_entry",
+      "passed": true,
+      "details": {
+        "selected": "左前大灯",
+        "click_bounds": [
+          81,
+          1608,
+          611,
+          1716
+        ],
+        "source": "history_repair_clickable_container"
+      }
+    },
+    {
+      "case": "B_right_headlight_clickable_container_enumerated",
+      "passed": true,
+      "details": {
+        "candidate_texts": [
+          "左前大灯",
+          "右前大灯"
+        ]
+      }
+    },
+    {
+      "case": "C_normal_check_list_front_bumper_rejected",
+      "passed": true,
+      "details": {
+        "selected": "左前大灯",
+        "normal_only_code": "S13_REPAIR_ITEM_CANDIDATE_IN_NORMAL_CHECK_LIST_REJECTED",
+        "normal_rejected_count": 1
+      }
+    },
+    {
+      "case": "D_sibling_or_region_block_clickable_container_bound",
+      "passed": true,
+      "details": {
+        "selected_click_target_type": "history_repair_clickable_container",
+        "strategy": "history_repair_clickable_container_bounds"
+      }
+    },
+    {
+      "case": "E_unsafe_entry_still_requires_reposition_no_direct_click",
+      "passed": true,
+      "details": {
+        "code": "S13_REPAIR_ITEM_CLICK_TARGET_NOT_CONFIRMED",
+        "reason": "no_safe_repair_item_click_target",
+        "first_candidate": {
+          "candidate_text": "左前大灯",
+          "candidate_texts": [
+            "左前大灯"
+          ],
+          "candidate_bounds": [
+            81,
+            2000,
+            611,
+            2408
+          ],
+          "candidate_container_bounds": [
+            81,
+            2000,
+            611,
+            2408
+          ],
+          "candidate_node_index": 6,
+          "candidate_clickable": true,
+          "candidate_enabled": true,
+          "candidate_source": "history_repair_clickable_container",
+          "candidate_zone": "history_repair_entry",
+          "candidate_is_history_repair_entry": true,
+          "candidate_is_normal_check_item": false,
+          "candidate_rejection_reason": "",
+          "candidate_container_descendant_texts": [
+            "左前大灯"
+          ],
+          "candidate_safe_click_region": false,
+          "candidate_unsafe_reasons": [
+            "below_safe_bottom"
+          ],
+          "candidate_forbidden_overlaps": [],
+          "rejected_parent_options": [
+            {
+              "bounds": [
+                81,
+                2000,
+                611,
+                2408
+              ],
+              "unsafe_reasons": [
+                "below_safe_bottom"
+              ],
+              "forbidden_overlaps": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "F_safe_entry_clicks_s14_candidate_container",
+      "passed": true,
+      "details": {
+        "click_bounds": [
+          81,
+          1608,
+          611,
+          1716
+        ]
+      }
+    },
+    {
+      "case": "G_s14_allowed_parts_not_extended_with_headlight",
+      "passed": true,
+      "details": {
+        "s14_allowed_parts_with_headlight": []
+      }
+    },
+    {
+      "case": "H_zero_counts_do_not_require_s14_and_unrelated_imports_ok",
+      "passed": true,
+      "details": {
+        "zero_counts": {
+          "驾驶侧": 0,
+          "车尾": 0,
+          "副驾驶": 0,
+          "车头": 0
+        },
+        "import_ok": true
+      }
+    }
+  ],
+  "all_passed": true,
+  "notes": [
+    "S13 entry candidates no longer depend on S14_ALLOWED_PARTS.",
+    "Headlight entries can be clicked as S13-to-S14 gateways without changing S14 scoring/collection allowed parts.",
+    "Lower normal detection-pass list candidates are rejected before click binding."
+  ]
+}

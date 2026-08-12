@@ -1,0 +1,265 @@
+{
+  "status": "PRICING_RULE_SOURCE_LATEST_VERSION_COMPLIANCE_DIAGNOSIS_DONE",
+  "readonly": true,
+  "code_modified": false,
+  "real_device_run": false,
+  "result_json_overwritten": false,
+  "latest_rule_sources": {
+    "scoring_doc": "C:/Users/lzc93/Desktop/??/??????????V1.8_?????V3_??????.docx",
+    "pricing_doc": "C:/Users/lzc93/Desktop/??/??????_????????_?????V3??????.docx",
+    "competition_doc": "C:/Users/lzc93/Desktop/??/????????????_V1.2.3_?????V3???.docx"
+  },
+  "conclusion_classifications": [
+    "SCORING_RULE_VERSION_MISMATCH",
+    "MILEAGE_SCORE_RULE_MISMATCH",
+    "REFERENCE_SELECTION_RULE_MISMATCH",
+    "PRICING_FORMULA_VERSION_MISMATCH",
+    "COMPETITION_COEFFICIENT_VERSION_MISMATCH",
+    "RULE_SOURCE_GUARD_MISSING"
+  ],
+  "primary_conclusion": "MULTIPLE_RULE_MISMATCHES_WITH_RULE_SOURCE_GUARD_MISSING",
+  "top_level_rule_doc_uniqueness": {
+    "top_level_latest_docs_unique": true,
+    "note": "???????????????????????? V1.5 ??????? output/baselines ????????????"
+  },
+  "scoring_audit": {
+    "scoring_rule_version_present": false,
+    "active_expected_version": "V1.8",
+    "mileage_score_compliant": false,
+    "expected_mileage_table": [
+      {
+        "lte": 0.5,
+        "score": 12
+      },
+      {
+        "lte": 0.8,
+        "score": 11.5
+      },
+      {
+        "lte": 1.0,
+        "score": 11
+      },
+      {
+        "lte": 1.2,
+        "score": 10.5
+      },
+      {
+        "lte": 1.5,
+        "score": 10
+      },
+      {
+        "lte": 1.8,
+        "score": 9
+      },
+      {
+        "lte": 2.1,
+        "score": 8
+      },
+      {
+        "lte": 2.5,
+        "score": 6.5
+      },
+      {
+        "lte": 3.0,
+        "score": 5
+      },
+      {
+        "lte": 3.5,
+        "score": 3
+      },
+      {
+        "lte": 4.0,
+        "score": 1.5
+      },
+      {
+        "gt": 4.0,
+        "score": 0
+      }
+    ],
+    "actual_mileage_table": [
+      {
+        "lte": 0.5,
+        "score": 12
+      },
+      {
+        "lte": 0.7,
+        "score": 11
+      },
+      {
+        "lte": 1.0,
+        "score": 10
+      },
+      {
+        "lte": 1.2,
+        "score": 8
+      },
+      {
+        "lte": 1.5,
+        "score": 5
+      },
+      {
+        "gt": 1.5,
+        "score": 0
+      }
+    ],
+    "age_formula": {
+      "compliant": true,
+      "evidence": "pricing.py uses age=max((current_year or today.year)-registration_year_value,1); annual_mileage=mileage_10k_km/age"
+    },
+    "target_missing_accident_default": {
+      "actual": 4,
+      "expected": 4,
+      "compliant": true
+    },
+    "target_missing_amount_default": {
+      "actual": 3,
+      "expected": 3,
+      "compliant": true
+    },
+    "reference_missing_fields_policy": {
+      "compliant": false,
+      "evidence": "runtime handle_s15 coerces missing accident_count to 0 in ReferenceCar construction; V1.8 requires reference missing fields not become final reference."
+    }
+  },
+  "special_structure_audit": {
+    "ordinary_metal_uses_paint_deduct": {
+      "compliant": true,
+      "evidence": "pricing.py _body_score uses paint_deduct for normal ??/??/??"
+    },
+    "paint_repair_normalized_to_paint": {
+      "compliant": true,
+      "evidence": "normalize_damage_type maps ??/??/???? to ??"
+    },
+    "abc_replace_hard_reject": {
+      "compliant": true,
+      "evidence": "ABC parts with ?? set hard_reject=True"
+    },
+    "abc_metal_or_paint_minus_3_review": {
+      "compliant": "partial",
+      "evidence": "ABC??/?? deducts front-cover value fallback 3; review????????????"
+    },
+    "water_tank_replace_minus_6": {
+      "compliant": true,
+      "evidence": "?????? uses rear-cover fallback 6"
+    },
+    "water_tank_metal_or_paint_minus_2": {
+      "compliant": false,
+      "evidence": "pricing.py continues without deduction for ??????/?? and adds review reason ?????; V1.8 requires -2."
+    }
+  },
+  "reference_selection_audit": {
+    "expected_rule": "V3_BOUNDARY_CONFIRMATION",
+    "actual_rule": "V2_score_not_above_target_closest",
+    "compliant": false,
+    "evidence": [
+      "runtime handle_s15 records reference_selection_rule_version=V2_score_not_above_target_closest",
+      "pricing.select_reference selects score<=target closest directly",
+      "runtime excludes score>target with reference_score_above_target_under_v2_rule",
+      "no boundary_reference / boundary_confirmed / FIRST_REFERENCE_SCORE_ABOVE_TARGET / NO_BOUNDARY_REFERENCE_FOUND implementation found"
+    ]
+  },
+  "pricing_formula_audit": {
+    "old_95_percent_residual_found": false,
+    "base_reference_price_used": true,
+    "service_fee_tier_compliant": false,
+    "expected_service_fee_tiers_from_doc": [
+      {
+        "price": "<50000",
+        "fee": 1000
+      },
+      {
+        "price": ">=50000 and <100000",
+        "fee": 1500
+      },
+      {
+        "price": ">=100000 and <150000",
+        "fee": 1800
+      },
+      {
+        "price": ">=150000 and <200000",
+        "fee": 2000
+      },
+      {
+        "price": ">=200000",
+        "fee": 3000
+      }
+    ],
+    "actual_service_fee_tiers": [
+      {
+        "min_price_yuan": 200000,
+        "service_fee_yuan": 8000
+      },
+      {
+        "min_price_yuan": 150000,
+        "service_fee_yuan": 6000
+      },
+      {
+        "min_price_yuan": 100000,
+        "service_fee_yuan": 4500
+      },
+      {
+        "min_price_yuan": 50000,
+        "service_fee_yuan": 3500
+      },
+      {
+        "min_price_yuan": 0,
+        "service_fee_yuan": 2500
+      }
+    ],
+    "cost_profit_compliant": false,
+    "expected_cost_profit_from_doc": "cost: <=5? 600, 5-10? 1000, each +5? +400; profit: 6.5%, tiered minimum profit 2500/4500/6500/10000...",
+    "actual_cost_profit": "cost: <=5? 1500, <=10? 2000, +5? +500; profit_rate 0.08, min_profit_yuan 2500"
+  },
+  "competition_coefficient_audit": {
+    "expected_version": "V1.2.3",
+    "version_field_present": false,
+    "compliant": false,
+    "competition_only_in_s16": true,
+    "score_gap_v3_behavior_compliant": false,
+    "evidence": [
+      "pricing.py score_gap_adjustment still emits selected_reference_score_le_target_score_v2_no_auto_markup",
+      "if selected_reference_score > target_score, pricing.py applies negative score_gap adjustment instead of forcing S15 boundary/manual-review path",
+      "V1.2.3 doc says V3 automatic mainline should have final_reference_score <= target_score; score_gap>0 should return to S15 or manual review, not normal pricing adjustment."
+    ],
+    "obd_note_only": {
+      "appears_compliant": true
+    },
+    "city_comparability_record_only": {
+      "appears_compliant": true
+    },
+    "liquidity_pressure_cap_present": {
+      "appears_present": true
+    }
+  },
+  "rule_source_guard_audit": {
+    "active_scoring_rule_version_present": false,
+    "active_reference_selection_rule_present": false,
+    "active_pricing_rule_version_present": false,
+    "active_competition_coefficient_version_present": false,
+    "active_rule_source_docs_present": false,
+    "active_rule_source_paths_present": false,
+    "pricing_rule_source_guard_required": true,
+    "conclusion": "RULE_SOURCE_GUARD_MISSING"
+  },
+  "current_result_audit": {
+    "output_result_status": "S11_XML_STALE_OR_MISMATCHED_WITH_SCREENSHOT",
+    "runtime_reference_selection_rule_seen": "V2_score_not_above_target_closest",
+    "target_score_top_level": null,
+    "reference_history_summary": [
+      {
+        "reference_index": 1,
+        "reference_score": 83.0,
+        "reference_score_trustworthy": true,
+        "eligible_candidate": true,
+        "rule": "V2_score_not_above_target_closest"
+      },
+      {
+        "reference_index": 2,
+        "reference_score": null,
+        "reference_score_trustworthy": null
+      }
+    ]
+  },
+  "recommended_stop_condition": "Before next S15/S16 real run, block pricing until code/config rule source versions match V1.8 + V3 + V1.2.3 and guard outputs active rule source paths.",
+  "generated_at": "2026-05-18T18:40:07"
+}

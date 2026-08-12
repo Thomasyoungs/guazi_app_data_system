@@ -1,0 +1,294 @@
+{
+  "status": "NISSAN_TERRA_S13_S14_REPAIR_COUNT_VS_ITEM_ENUMERATION_DIAGNOSIS_DONE",
+  "task": "READ_ONLY_DIAGNOSE_NISSAN_TERRA_S13_S14_WHY_ONLY_ONE_REPAIR_ITEM_COLLECTED",
+  "created_at": "2026-05-15T10:00:26.840Z",
+  "target_fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "readonly": true,
+  "code_modified": false,
+  "real_device_run": false,
+  "second_stage_started": false,
+  "pricing_run": false,
+  "result_json_overwritten": false,
+  "source_files": [
+    "output/result_s10_to_s16.json",
+    "output/result.json",
+    "output/nissan_terra_2020_full_chain_after_v1_30_repair_items_gate_real_device.json",
+    "output/nissan_terra_reference1_s13_s14_contract_execution_diagnosis.json",
+    "output/nissan_terra_reference1_score_78_s15_premature_entry_diagnosis.json",
+    "logs/nissan_terra_v1_30_second_stage_20260515_171301.log",
+    "scripts/runtime_s10_to_s16_mainline.py",
+    "docs/field_contract.md",
+    "output/_tmp_repair_history_summary.json"
+  ],
+  "current_reference_summary": {
+    "reference_index": 1,
+    "reference_price_yuan": 84800,
+    "reference_price_text": "8.48?",
+    "reference_title": "?? ?? 2020? 2.5L XL Upper 4WD ???????",
+    "final_business_status": "S15_BLOCKED_REPAIR_DETAILS_INCOMPLETE",
+    "s13_region_repair_counts": {
+      "???": 5,
+      "??": 4
+    },
+    "s13_total_repair_count": 21,
+    "expected_repair_item_count_current_code": 21,
+    "enumerated_repair_item_count": 1,
+    "collected_repair_item_count": 1,
+    "collected_repair_items": [
+      "?????"
+    ],
+    "missing_repair_item_count_current_code": 20,
+    "s15_entry_allowed": false,
+    "reference_score_trustworthy": false,
+    "untrusted_78_score_generated_after_v1_29": false
+  },
+  "diagnosis_1_repair_count_semantics": {
+    "question": "repair_count=21 ???????? 21 ?????????",
+    "field_contract_evidence": {
+      "file": "docs/field_contract.md",
+      "lines": [
+        "37: repair_counts | S13 | ?????????????",
+        "38: panel_repairs | S14 | ?????? 0 ???"
+      ]
+    },
+    "page_evidence": {
+      "s13_total_repair_count": 21,
+      "s13_region_repair_counts": {
+        "???": 5,
+        "??": 4
+      },
+      "clickable_repair_item_count_visible": 1,
+      "clickable_repair_items_visible": [
+        "?????"
+      ],
+      "additional_repair_like_texts_seen_in_digest": [
+        "???????",
+        "????",
+        "??????",
+        "????",
+        "??????",
+        "???????(??)",
+        "??????????",
+        "???????",
+        "??????",
+        "???????",
+        "?????",
+        "?????"
+      ],
+      "note": "????????????/???????? S13 ???????? 1 ????????????????????? 21 ??????"
+    },
+    "repair_count_equals_clickable_item_count": "unknown_but_not_proven",
+    "page_semantics_conclusion": "repair_count ????????????????????????????? repair_item ???",
+    "classification": "B. REPAIR_COUNT_NOT_EQUAL_CLICKABLE_ITEMS"
+  },
+  "diagnosis_2_s13_unenumerated_items": {
+    "region_rows": [
+      {
+        "region": "???",
+        "repair_count": 10,
+        "visible_repair_items": [
+          "?????"
+        ],
+        "hidden_repair_items_possible": true,
+        "need_scroll_in_repair_item_list": true,
+        "need_expand_more": "unknown",
+        "repair_item_list_exhausted": false,
+        "evidence_paths": [
+          "artifacts/debug/s13_region_???_20260515_171422.xml",
+          "artifacts/screenshots/s13_region_???_20260515_171422.png"
+        ]
+      },
+      {
+        "region": "??",
+        "repair_count": 2,
+        "visible_repair_items": [],
+        "hidden_repair_items_possible": true,
+        "need_scroll_in_repair_item_list": "unknown",
+        "need_expand_more": "unknown",
+        "repair_item_list_exhausted": false,
+        "evidence_paths": [
+          "artifacts/debug/s13_region_??_20260515_171401.xml",
+          "artifacts/screenshots/s13_region_??_20260515_171401.png"
+        ]
+      },
+      {
+        "region": "???",
+        "repair_count": 5,
+        "visible_repair_items": [],
+        "hidden_repair_items_possible": true,
+        "need_scroll_in_repair_item_list": "unknown",
+        "need_expand_more": "unknown",
+        "repair_item_list_exhausted": false,
+        "evidence_paths": [
+          "artifacts/debug/s13_region_???_20260515_171406.xml",
+          "artifacts/screenshots/s13_region_???_20260515_171406.png"
+        ]
+      },
+      {
+        "region": "??",
+        "repair_count": 4,
+        "visible_repair_items": [],
+        "hidden_repair_items_possible": true,
+        "need_scroll_in_repair_item_list": "unknown",
+        "need_expand_more": "unknown",
+        "repair_item_list_exhausted": false,
+        "evidence_paths": [
+          "artifacts/debug/s13_region_??_20260515_171411.xml",
+          "artifacts/screenshots/s13_region_??_20260515_171411.png"
+        ]
+      }
+    ],
+    "findings": [
+      "????????????????????? S13 ??????????",
+      "??????????????? repair_item???????",
+      "????????????????????????/?????????",
+      "?????????????????????? S13 repair_item ?????????????????"
+    ],
+    "classification": [
+      "A. S13_REPAIR_ITEM_LIST_HAS_MORE_ITEMS_BUT_NOT_ENUMERATED",
+      "C. S13_REPAIR_ITEM_LIST_SCROLL_OR_EXPAND_NEEDED"
+    ]
+  },
+  "diagnosis_3_code_only_clicked_left_front_fender": {
+    "function_name": "handle_s13",
+    "code_locations": [
+      "scripts/runtime_s10_to_s16_mainline.py:6890 def handle_s13(...)",
+      "scripts/runtime_s10_to_s16_mainline.py:7049 if final_state == \"S14\"",
+      "scripts/runtime_s10_to_s16_mainline.py:7050 return \"S14\", next_snapshot",
+      "scripts/runtime_s10_to_s16_mainline.py:7060 pending_regions = list(...)",
+      "scripts/runtime_s10_to_s16_mainline.py:3350-3375 _repair_item_completion_state sums repair_counts as expected_count"
+    ],
+    "trigger_condition": "????????????????????????????????? repair_item ?????",
+    "break_condition": "??????? repair_item ??????? S14?handle_s13 ?? return \"S14\"?????????????",
+    "return_target_after_s14": "???????? S14 ????????????? reliable S10?????? V1.29 ? S15 ???????",
+    "expected_return_target_if_collecting_all_items": "??? S13 ??/???? repair_item ???????/??????????????????",
+    "actual_return_target": "S10/S15 gate path",
+    "old_logic_detected": true,
+    "classification": [
+      "A. CODE_ONLY_CLICKS_FIRST_REPAIR_ITEM",
+      "C. S14_DONE_RETURNS_TO_S10_INSTEAD_OF_S13_CONTINUE"
+    ]
+  },
+  "diagnosis_4_previous_samples": {
+    "comparison_table": [
+      {
+        "sample": "????",
+        "evidence": "output/honda_accord_2023_260turbo_zhixiang_v1_25_full_chain_run.json",
+        "repair_counts_total": 4,
+        "repair_items_count": 1,
+        "s14_image_records_count": 9,
+        "entered_s15_or_s16": true,
+        "full_repair_item_count_checked": false
+      },
+      {
+        "sample": "????",
+        "evidence": "output/geely_yuanjing_2019_v1_24_full_chain_run.json",
+        "repair_counts_total": 0,
+        "repair_items_count": 0,
+        "s14_image_records_count": null,
+        "entered_s15_or_s16": true,
+        "full_repair_item_count_checked": "not_applicable"
+      },
+      {
+        "sample": "?? C10",
+        "evidence": "output/leapmotor_c10_v1_21_full_chain_run.json",
+        "repair_counts_total": 0,
+        "repair_items_count": 0,
+        "s14_image_records_count": null,
+        "entered_s15_or_s16": "manual_review_done",
+        "full_repair_item_count_checked": "not_applicable"
+      },
+      {
+        "sample": "??",
+        "evidence": "output/tuang_full_chain_acceptance_report.json",
+        "repair_counts_total": 1,
+        "repair_items_count": null,
+        "s14_image_records_count": null,
+        "entered_s15_or_s16": "not_effective_final_reference_in_later_diagnosis",
+        "full_repair_item_count_checked": false
+      },
+      {
+        "sample": "???",
+        "evidence": "output/santana_full_chain_acceptance_report.json",
+        "repair_counts_total_examples": [
+          2,
+          6,
+          6,
+          2,
+          2
+        ],
+        "repair_items_count_examples": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "entered_s15_or_s16": true,
+        "full_repair_item_count_checked": false
+      },
+      {
+        "sample": "????",
+        "evidence": "output/toyota_yaris_full_chain_acceptance_report.json",
+        "repair_counts_total_examples": [
+          2,
+          2
+        ],
+        "repair_items_count_examples": [
+          1,
+          1
+        ],
+        "entered_s15_or_s16": true,
+        "full_repair_item_count_checked": false
+      },
+      {
+        "sample": "???/?? full_chain acceptance",
+        "evidence": "output/full_chain_acceptance_report.json / output/baseline_freeze_package.json",
+        "repair_counts_total_examples": [
+          9,
+          12,
+          8
+        ],
+        "repair_items_count_examples": [
+          1,
+          1,
+          1
+        ],
+        "entered_s15_or_s16": true,
+        "full_repair_item_count_checked": false
+      }
+    ],
+    "conclusion": "????????????????????????? S14 ??/????????? S15/S16???????? repair_count ? collected_repair_item_count ????????????????????????",
+    "classification": [
+      "B. PREVIOUS_SAMPLES_ONLY_VALIDATED_CURRENT_S14_ITEM_COMPLETION",
+      "C. PREVIOUS_SAMPLES_NO_REPAIR_COUNT_COMPLETENESS_CHECK"
+    ]
+  },
+  "diagnosis_5_contract_redefinition": {
+    "current_v1_29_rule_assessment": "collected_repair_item_count >= expected_repair_item_count ????????? S14 ?????????????? expected_repair_item_count ???? repair_count ????????? repair_count ?????????????????? repair_item ???",
+    "recommended_contract": [
+      "repair_count ????????????????????? repair_item ??",
+      "S13 ???????????????????????? repair_item?",
+      "expected_repair_item_count ??? enumerated_repair_item_count???????? repair_count????? repair_count_mismatch_warning?",
+      "? repair_count > enumerated_repair_item_count ???????????????????????????????????????? reference_score?",
+      "S14_COLLECT_DONE ????? repair_item ????????????? S13 ???????????????????????"
+    ],
+    "if_repair_count_21_only_one_item_enumerated": "?????????????? S13 ????/?????????? 1 ????? REFERENCE_REPAIR_DETAILS_INCOMPLETE_MANUAL_REVIEW ????????"
+  },
+  "final_root_cause": {
+    "primary": "A. PAGE_CONTRACT_TOO_STRICT_REPAIR_COUNT_AS_ITEM_COUNT",
+    "secondary": [
+      "B. CODE_ENUMERATION_INCOMPLETE",
+      "C. CODE_ONLY_COLLECTS_FIRST_REPAIR_ITEM",
+      "D. PREVIOUS_ACCEPTANCE_MISSED_REPAIR_ITEM_COMPLETENESS"
+    ],
+    "explanation": "????????????????????????????? S13 ??????????????? repair_item ??????????/????? 1 ???????????????? 21 ?????????????? repair_count ? repair_item ?????? S13 ??/??? S14 ? S13 ?????"
+  },
+  "next_steps": [
+    "?????????? repair_count ??????repair_item ????/???????expected_repair_item_count ?????????? repair_item?",
+    "???????PATCH_S13_REPAIR_ITEM_ENUMERATION_AND_LIST_SCROLL???????????/???/??? repair_item?",
+    "???????PATCH_S14_RETURN_TO_S13_CONTINUE_NEXT_REPAIR_ITEM???????? S13 ???????????? S10/S15?",
+    "?????? baseline ???? repair_count > collected_items ?????????????????????"
+  ],
+  "final_status": "NISSAN_TERRA_S13_S14_REPAIR_COUNT_VS_ITEM_ENUMERATION_DIAGNOSIS_DONE"
+}

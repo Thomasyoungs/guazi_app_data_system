@@ -1,0 +1,224 @@
+{
+  "diagnosis_name": "DIAGNOSE_S11_REPORT_ENTRY_CAUSE_ONLY",
+  "final_status": "DIAGNOSE_S11_REPORT_ENTRY_CAUSE_DONE",
+  "target_fingerprint": "福特|福克斯|2017款|两厢 1.6L 自动舒适型智行版|白|2017.07",
+  "code_modified": false,
+  "page_contract_modified": false,
+  "recognizer_modified": false,
+  "config_modified": false,
+  "pricing_modified": false,
+  "device_run_started": false,
+  "old_mini_result_used": false,
+  "result_files_current_target": true,
+  "input_files": {
+    "result_s10_to_s16": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result_s10_to_s16.json",
+    "result": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\result.json",
+    "timing_jsonl": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\output\\page_contract_timing_report.jsonl",
+    "s11_entry_xml": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260507_183931_compressed.xml",
+    "s11_entry_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s10_to_s11_pre_dump_3_20260507_183930.png",
+    "s11_scroll_xml": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_scroll_report_20260507_183940.xml",
+    "s11_scroll_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_scroll_report_20260507_183940.png",
+    "after_report_click_xml": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_to_s12_20260507_183945.xml",
+    "after_report_click_screenshot": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_to_s12_20260507_183945.png"
+  },
+  "result_summary": {
+    "status": "PAGE_CONTRACT_MISMATCH",
+    "current_state": "PAGE_CONTRACT_MISMATCH",
+    "issue_code": "PAGE_CONTRACT_MISMATCH",
+    "issue_message": "Expected S12, recognized S10",
+    "s11_recognized": true,
+    "s11_recognized_by": "S11_TOP_ONE_THIRD_IMAGE_ONLY_STANDARD",
+    "transfer_count_collected": 2,
+    "s12_reached": false,
+    "s14_collect_done": false
+  },
+  "answers": {
+    "entered_s11_report_search": true,
+    "entered_s11_report_search_evidence": [
+      "timing row S11_REPORT_ENTRY_NODE_SEARCH",
+      "timing row S11_REPORT_SCROLL",
+      "timing row S11_REPORT_SCROLL_FRESH",
+      "timing row S11_REPORT_SEARCH",
+      "timing row S11_CLICK_VIEW_FULL_REPORT"
+    ],
+    "searched_text": "查看完整报告",
+    "exact_match_required": true,
+    "wrong_or_fuzzy_search_used": false,
+    "wrong_or_fuzzy_search_terms_not_used": [
+      "检测报告",
+      "查看报价",
+      "报告",
+      "电话",
+      "收藏",
+      "咨询",
+      "讲价"
+    ],
+    "exact_report_entry_seen": true,
+    "exact_report_entry_seen_in_entry_snapshot": false,
+    "exact_report_entry_seen_after_scroll": true,
+    "matched_text": "查看完整报告",
+    "matched_bounds": [
+      80,
+      2445,
+      597,
+      2559
+    ],
+    "matched_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_scroll_report_20260507_183940.xml",
+    "matched_node_clickable": false,
+    "matched_node_enabled": true,
+    "nearest_local_clickable_parent_found": false,
+    "only_clickable_ancestor_is_fullscreen_container": true,
+    "controlled_scroll_executed": true,
+    "scroll_attempt_count": 1,
+    "scroll_gesture": "client.swipe(\"up\")",
+    "scroll_bounds_recorded": false,
+    "before_scroll_xml_digest": "3fdd9126e637b6da",
+    "after_scroll_xml_digest": "f946812d8f8038e8",
+    "before_scroll_screenshot_sha256_prefix": "109b332eea8f65f1",
+    "after_scroll_screenshot_sha256_prefix": "39ad09f7d9f31aa5",
+    "scroll_effective": true,
+    "scroll_effect_reason": "after-scroll XML digest changed, screenshot changed, visible text advanced from S11 top detail first screen to official report preview area, and exact 查看完整报告 appeared.",
+    "recognized_after_scroll": "S10",
+    "why_recognized_as_S10": "After the S11 internal scroll, the top image area used by the S10_TO_S11-only S11 recognizer is no longer visible. The scrolled detail page still contains Focus/price-like text, so generic page recognition recorded S10 even though the screenshot/XML are still inside the detail/report preview page.",
+    "s10_matched_signals": [
+      "福克斯 text appears inside the S11 detail description",
+      "2.52万 / 2.55万 price-like text appears in the same detail page"
+    ],
+    "s11_top_image_disappeared_after_scroll": true,
+    "report_search_interrupted_by_state_loss": false,
+    "click_executed": true,
+    "clicked_text": "查看完整报告",
+    "clicked_bounds": [
+      80,
+      2445,
+      597,
+      2559
+    ],
+    "clicked_point": [
+      338,
+      2502
+    ],
+    "click_strategy": "text_node_bounds",
+    "click_reason": "tap the exact 查看完整报告 XML text node bounds",
+    "clicked_exact_report_entry": true,
+    "misclicked_detection_report": false,
+    "misclicked_view_quote_by_text_match": false,
+    "misclicked_bottom_bar_by_text_match": false,
+    "likely_effective_tap_target_problem": true,
+    "likely_effective_tap_target_reason": "The exact text node bounds [80,2445,597,2559] are at the bottom fixed operation bar area. The text node and nearby local ancestors are not clickable; the tap center [338,2502] is in/near the fixed bottom action area, not a reliable report-entry actionable target.",
+    "page_changed_after_click": false,
+    "visual_changed_after_click": true,
+    "semantic_xml_changed_after_click": false,
+    "before_click_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_scroll_report_20260507_183940.xml",
+    "after_click_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_to_s12_20260507_183945.xml",
+    "before_click_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_scroll_report_20260507_183940.png",
+    "after_click_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_to_s12_20260507_183945.png",
+    "before_click_visible_text_digest": "f946812d8f8038e8",
+    "after_click_visible_text_digest": "f946812d8f8038e8",
+    "after_click_exact_report_entry_still_present": true,
+    "after_click_s12_candidate": false,
+    "s12_candidate_signals": [
+      "车身外观 appears in the S11 report preview card",
+      "免费提供保险理赔记录 appears in the S11 report preview card"
+    ],
+    "why_s12_not_recognized": "After click, XML stayed on the same S11 report preview content and still contained 查看完整报告. It did not expose the S12 full report page signals needed by the existing S12 contract, such as the full S12 report page state and claim/max-amount collection area.",
+    "expected_next_page_set_without_exact_report_entry_click": false
+  },
+  "classification": {
+    "primary": "H. S11_REPORT_ENTRY_WRONG_TARGET_CLICKED",
+    "primary_reason": "Runtime used exact text, but the exact node bounds were not a reliable actionable report-entry target. The tap did not navigate; after-click XML digest remained identical to before-click XML digest and still contained 查看完整报告.",
+    "secondary_observations": [
+      "S11_STATE_LOST_AFTER_SCROLL was observed as recognized_after_scroll=S10, but it did not stop the report search.",
+      "S12_CONTRACT_MISMATCH_AFTER_EXACT_REPORT_CLICK is not the primary classification because the after-click XML did not become a clear S12 page; it remained the same S11 report preview content."
+    ],
+    "ruled_out": {
+      "A. S11_REPORT_SEARCH_NOT_ENTERED": "S11_REPORT_SEARCH timing rows exist.",
+      "B. S11_REPORT_ENTRY_EXACT_MATCH_NOT_USED": "The code and timing show exact 查看完整报告 matching and clicked_text=查看完整报告.",
+      "C. S11_REPORT_SCROLL_NOT_EXECUTED": "S11_REPORT_SCROLL ran once.",
+      "D. S11_REPORT_SCROLL_NOT_EFFECTIVE": "Scroll changed XML/screenshot and exposed 查看完整报告.",
+      "E. S11_STATE_LOST_AFTER_SCROLL": "Recognized_after_scroll=S10 is real, but search continued and exact node was clicked.",
+      "F. S11_REPORT_ENTRY_NOT_FOUND_AFTER_VALID_SCROLL": "Exact 查看完整报告 was found after scroll.",
+      "G. S11_REPORT_ENTRY_TEXT_VARIANT_OR_SPLIT": "Text existed as a complete continuous XML node.",
+      "I. S12_CONTRACT_MISMATCH_AFTER_EXACT_REPORT_CLICK": "After click did not produce a S12 candidate page; XML stayed semantically unchanged.",
+      "J. S11_TO_S12_UNKNOWN_NEEDS_MORE_EVIDENCE": "Available timing, XML and screenshots are sufficient to identify the ineffective/wrong effective tap target."
+    }
+  },
+  "evidence": {
+    "timing_rows": {
+      "S11_REPORT_ENTRY_NODE_SEARCH": {
+        "found_in_entry_snapshot": false,
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260507_183931_compressed.xml"
+      },
+      "S11_REPORT_SCROLL": {
+        "scroll_count": 1,
+        "action_ms": 582,
+        "transition_wait_ms": 500
+      },
+      "S11_REPORT_SCROLL_FRESH": {
+        "duration_ms": 4225,
+        "recognized_page": "S10",
+        "xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_scroll_report_20260507_183940.xml"
+      },
+      "S11_REPORT_SEARCH": {
+        "duration_ms": 5307,
+        "entry_node_bounds": [
+          80,
+          2445,
+          597,
+          2559
+        ],
+        "click_strategy": "text_node_bounds",
+        "scroll_count": 1
+      },
+      "S11_CLICK_VIEW_FULL_REPORT": {
+        "duration_ms": 79,
+        "clicked_text": "查看完整报告",
+        "clicked_node_bounds": [
+          80,
+          2445,
+          597,
+          2559
+        ],
+        "click_strategy": "text_node_bounds"
+      },
+      "S11_TO_S12": {
+        "duration_ms": 1079,
+        "after_click_xml_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_to_s12_20260507_183945.xml",
+        "after_click_screenshot_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\screenshots\\s11_to_s12_20260507_183945.png"
+      }
+    },
+    "xml_comparison": {
+      "entry_xml": {
+        "path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s10_to_s11_20260507_183931_compressed.xml",
+        "node_count": 94,
+        "visible_text_digest": "3fdd9126e637b6da",
+        "exact_view_full_report": false,
+        "contains_detection_report": true,
+        "contains_view_quote": true
+      },
+      "scroll_xml": {
+        "path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_scroll_report_20260507_183940.xml",
+        "node_count": 219,
+        "visible_text_digest": "f946812d8f8038e8",
+        "exact_view_full_report": true,
+        "exact_bounds": [
+          80,
+          2445,
+          597,
+          2559
+        ]
+      },
+      "after_click_xml": {
+        "path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\artifacts\\debug\\s11_to_s12_20260507_183945.xml",
+        "node_count": 219,
+        "visible_text_digest": "f946812d8f8038e8",
+        "exact_view_full_report": true,
+        "same_visible_text_digest_as_scroll_xml": true
+      }
+    }
+  },
+  "next_patch_scope_suggestion": {
+    "summary": "Do not change S11 recognizer for this issue. The next patch, if requested, should make S11 report-entry clicking require an actionable/clickable target that is visible above the fixed bottom action bar, or scroll a little further until 查看完整报告 has a safe tappable area before clicking.",
+    "do_not_patch_in_this_diagnosis_turn": true
+  }
+}

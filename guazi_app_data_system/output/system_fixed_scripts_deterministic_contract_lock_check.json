@@ -1,0 +1,1136 @@
+﻿{
+    "report_name":  "system_fixed_scripts_deterministic_contract_lock_check",
+    "created_at":  "2026-05-12T14:20:28+08:00",
+    "mode":  "read_only_static_and_result_lock_check",
+    "final_status":  "SYSTEM_FIXED_SCRIPTS_DETERMINISTIC_CONTRACT_LOCK_CHECK_PASSED_READY_FOR_NEXT_SAMPLE",
+    "overall_conclusion":  {
+                               "legacy_executable_cleared":  true,
+                               "deterministic_page_recognition_locked":  true,
+                               "page_contract_only_execution_standard_locked":  true,
+                               "first_and_second_scripts_locked":  true,
+                               "ungated_business_actions":  0,
+                               "allow_next_sample":  true,
+                               "allow_database_sample_registration_prepare":  true
+                           },
+    "contract_entry_check":  {
+                                 "first_stage":  {
+                                                     "SCRIPT_PAGE_CONTRACT_ACTIONS":  true,
+                                                     "PAGE_CONTRACT_IS_ONLY_EXECUTION_STANDARD":  true,
+                                                     "contract_validate_action":  true,
+                                                     "contract_execute_click":  true,
+                                                     "contract_execute_swipe":  true,
+                                                     "contract_stop":  true
+                                                 },
+                                 "second_stage":  {
+                                                      "SCRIPT_PAGE_CONTRACT_ACTIONS":  true,
+                                                      "PAGE_CONTRACT_IS_ONLY_EXECUTION_STANDARD":  true,
+                                                      "contract_validate_action":  true,
+                                                      "contract_execute_click":  true,
+                                                      "contract_execute_swipe":  true,
+                                                      "contract_stop":  true
+                                                  }
+                             },
+    "script_matrix":  [
+                          {
+                              "script":  "runtime_s01_to_s10_mainline.py",
+                              "page_state":  "S03",
+                              "source_gate_present":  true,
+                              "core_elements_present":  true,
+                              "reverse_exclusion_present":  true,
+                              "action_id_required":  true,
+                              "direct_business_clicks_remaining":  0,
+                              "legacy_executable_remaining":  0,
+                              "status":  "PASS",
+                              "evidence":  "V1.16 brand visible/invisible contract and brand-zone stop; global report + code contract table"
+                          },
+                          {
+                              "script":  "runtime_s01_to_s10_mainline.py",
+                              "page_state":  "S04",
+                              "source_gate_present":  true,
+                              "core_elements_present":  true,
+                              "reverse_exclusion_present":  true,
+                              "action_id_required":  true,
+                              "direct_business_clicks_remaining":  0,
+                              "legacy_executable_remaining":  0,
+                              "status":  "PASS",
+                              "evidence":  "standard series row right model button; brand-zone stop"
+                          },
+                          {
+                              "script":  "runtime_s01_to_s10_mainline.py",
+                              "page_state":  "S05",
+                              "source_gate_present":  true,
+                              "core_elements_present":  true,
+                              "reverse_exclusion_present":  true,
+                              "action_id_required":  true,
+                              "direct_business_clicks_remaining":  0,
+                              "legacy_executable_remaining":  0,
+                              "status":  "PASS",
+                              "evidence":  "target year/config; emission variant group; retry disabled"
+                          },
+                          {
+                              "script":  "runtime_s01_to_s10_mainline.py",
+                              "page_state":  "S06",
+                              "source_gate_present":  true,
+                              "core_elements_present":  true,
+                              "reverse_exclusion_present":  true,
+                              "action_id_required":  true,
+                              "direct_business_clicks_remaining":  0,
+                              "legacy_executable_remaining":  0,
+                              "status":  "PASS",
+                              "evidence":  "S05_CONFIRM_TO_S06 + S05_DONE + target evidence + core + reverse exclusion"
+                          },
+                          {
+                              "script":  "runtime_s01_to_s10_mainline.py",
+                              "page_state":  "S07",
+                              "source_gate_present":  true,
+                              "core_elements_present":  true,
+                              "reverse_exclusion_present":  true,
+                              "action_id_required":  true,
+                              "direct_business_clicks_remaining":  0,
+                              "legacy_executable_remaining":  0,
+                              "status":  "PASS",
+                              "evidence":  "color tab before white; checked-only forbidden; exact age 0"
+                          },
+                          {
+                              "script":  "runtime_s01_to_s10_mainline.py",
+                              "page_state":  "S08/S09/S10",
+                              "source_gate_present":  true,
+                              "core_elements_present":  true,
+                              "reverse_exclusion_present":  true,
+                              "action_id_required":  true,
+                              "direct_business_clicks_remaining":  0,
+                              "legacy_executable_remaining":  0,
+                              "status":  "PASS",
+                              "evidence":  "S07_VIEW_RESULT_TO_LIST and S09_PRICE_ASC_TO_LIST gates; first stage stops at S10_READY"
+                          },
+                          {
+                              "script":  "runtime_s10_to_s16_mainline.py",
+                              "page_state":  "S10 second stage",
+                              "source_gate_present":  true,
+                              "core_elements_present":  true,
+                              "reverse_exclusion_present":  true,
+                              "action_id_required":  true,
+                              "direct_business_clicks_remaining":  0,
+                              "legacy_executable_remaining":  0,
+                              "status":  "PASS",
+                              "evidence":  "reliable live S10 + canonical order + full card + V1.21 title normalized match"
+                          },
+                          {
+                              "script":  "runtime_s10_to_s16_mainline.py",
+                              "page_state":  "S11/S12/S13/S14",
+                              "source_gate_present":  true,
+                              "core_elements_present":  true,
+                              "reverse_exclusion_present":  true,
+                              "action_id_required":  true,
+                              "direct_business_clicks_remaining":  0,
+                              "legacy_executable_remaining":  0,
+                              "status":  "PASS",
+                              "evidence":  "S10_TO_S11 context, safe report, S13 raw nodes, S14 image swipe only/live forbidden"
+                          },
+                          {
+                              "script":  "runtime_s10_to_s16_mainline.py",
+                              "page_state":  "S15/S16",
+                              "source_gate_present":  true,
+                              "core_elements_present":  true,
+                              "reverse_exclusion_present":  true,
+                              "action_id_required":  true,
+                              "direct_business_clicks_remaining":  0,
+                              "legacy_executable_remaining":  0,
+                              "status":  "PASS",
+                              "evidence":  "internal score/pricing; no APP click; service fee tier + V1.2.1"
+                          }
+                      ],
+    "direct_action_check":  {
+                                "direct_action_hits":  [
+                                                           {
+                                                               "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                               "line":  1300,
+                                                               "text":  "client.tap(click_x, click_y)",
+                                                               "classification":  "stop_defensive"
+                                                           },
+                                                           {
+                                                               "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                               "line":  1572,
+                                                               "text":  "client.tap(click_x, click_y)",
+                                                               "classification":  "stop_defensive"
+                                                           },
+                                                           {
+                                                               "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                               "line":  2115,
+                                                               "text":  "client.tap(*_center(later_node[\"bounds\"]))",
+                                                               "classification":  "stop_defensive"
+                                                           },
+                                                           {
+                                                               "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                               "line":  2657,
+                                                               "text":  "client.tap_text(S_LOGIN_LATER_TEXT)",
+                                                               "classification":  "stop_defensive"
+                                                           },
+                                                           {
+                                                               "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                               "line":  2896,
+                                                               "text":  "client.tap_text(S_LOGIN_LATER_TEXT)",
+                                                               "classification":  "stop_defensive"
+                                                           },
+                                                           {
+                                                               "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                               "line":  1221,
+                                                               "text":  "client.tap_text(\"稍后\")",
+                                                               "classification":  "stop_defensive"
+                                                           },
+                                                           {
+                                                               "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                               "line":  1088,
+                                                               "text":  "result = client.swipe(direction)",
+                                                               "classification":  "contract_valid"
+                                                           },
+                                                           {
+                                                               "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                               "line":  2530,
+                                                               "text":  "icon_result = client.tap_guazi_app_icon_exact_text(launcher_xml)",
+                                                               "classification":  "stop_defensive"
+                                                           },
+                                                           {
+                                                               "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                               "line":  2755,
+                                                               "text":  "icon_result = client.tap_guazi_app_icon_exact_text(launcher_xml)",
+                                                               "classification":  "stop_defensive"
+                                                           },
+                                                           {
+                                                               "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                               "line":  1217,
+                                                               "text":  "client.tap_guazi_app_icon_exact_text(str(home_snapshot.get(\"fresh_xml\") or \"\"))",
+                                                               "classification":  "stop_defensive"
+                                                           },
+                                                           {
+                                                               "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                               "line":  6485,
+                                                               "text":  "lambda: client.tap_s01_bottom_select_car_tab(str(snapshot.get(\"fresh_xml\") or \"\")),",
+                                                               "classification":  "contract_valid"
+                                                           }
+                                                       ],
+                                "ungated_business_actions":  [
+
+                                                             ],
+                                "direct_business_clicks_remaining":  0
+                            },
+    "keyword_residual_check":  [
+                                   {
+                                       "keyword":  "fallback",
+                                       "exists":  true,
+                                       "occurrences":  25,
+                                       "classification":  "report_only",
+                                       "action_taken":  "kept only as report/evidence text; no executable legacy continuation found",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  854,
+                                                           "text":  "\"fallback_reason\": \"\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  860,
+                                                           "text":  "fallback_reason = \"compressed_not_s11\""
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  862,
+                                                           "text":  "fallback_reason = \"compressed_xml_empty\""
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "fallback_click",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "fallback_to",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "兜底",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "补救",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "retry",
+                                       "exists":  true,
+                                       "occurrences":  8,
+                                       "classification":  "report_only",
+                                       "action_taken":  "kept only as report/evidence text; no executable legacy continuation found",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  6122,
+                                                           "text":  "\"right_slider_max_retry\": 2,"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  6380,
+                                                           "text":  "evidence[\"right_slider_retry_count\"] = right_attempts"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  7118,
+                                                           "text":  "retry_year_click_used = False"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "guess",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "old snapshot",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "看起来像",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "continue wrong page",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "direct tap",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "tap_text",
+                                       "exists":  true,
+                                       "occurrences":  3,
+                                       "classification":  "contract_valid",
+                                       "action_taken":  "kept behind page_id + action_id or non-business contract wrapper",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  2657,
+                                                           "text":  "client.tap_text(S_LOGIN_LATER_TEXT)"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  2896,
+                                                           "text":  "client.tap_text(S_LOGIN_LATER_TEXT)"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  1221,
+                                                           "text":  "client.tap_text(\"稍后\")"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "tap_bounds",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "tap_center",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "click_text",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "click_bounds",
+                                       "exists":  true,
+                                       "occurrences":  13,
+                                       "classification":  "report_only",
+                                       "action_taken":  "kept only as report/evidence text; no executable legacy continuation found",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  1987,
+                                                           "text":  "click_bounds = card.get(\"clicked_card_bounds\")"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  1988,
+                                                           "text":  "click_bottom = click_bounds[3] if _valid_bounds(click_bounds) else bounds[3]"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  2580,
+                                                           "text":  "\"selected_click_bounds\": bounds,"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "click_checkbox",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "first checkbox",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "visible option",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "select_option",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "只看新能源",
+                                       "exists":  true,
+                                       "occurrences":  1,
+                                       "classification":  "report_only",
+                                       "action_taken":  "kept only as report/evidence text; no executable legacy continuation found",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  4084,
+                                                           "text":  "skip = {\"选择品牌\", \"只看新能源\", \"热门品牌\", \"全部\", \"热门\", \"新能源\"}"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "new_energy",
+                                       "exists":  true,
+                                       "occurrences":  1,
+                                       "classification":  "report_only",
+                                       "action_taken":  "kept only as report/evidence text; no executable legacy continuation found",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  4121,
+                                                           "text":  "\"attempted_new_energy_tab\": False,"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "非目标字母",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "letter_G",
+                                       "exists":  true,
+                                       "occurrences":  2,
+                                       "classification":  "report_only",
+                                       "action_taken":  "kept only as report/evidence text; no executable legacy continuation found",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  4123,
+                                                           "text":  "\"attempted_letter_G\": False,"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  4208,
+                                                           "text":  "audit[\"attempted_letter_G\"] = target_initial == \"G\""
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "scroll_brand",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "品牌专区继续",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "BRAND_ZONE_MIXED_LIST continue",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "row_right_safe_point",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "brand_row_right_safe_point",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "brand zone C10",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "target_series_verified in brand zone",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "品牌专区 车型配置",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "series chip in brand zone",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "有选装",
+                                       "exists":  true,
+                                       "occurrences":  1,
+                                       "classification":  "stop_defensive",
+                                       "action_taken":  "kept only as guard/exclusion/stop evidence",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  5161,
+                                                           "text":  "stop_code = \"S07_CLICKED_OPTIONAL_FEATURE_INSTEAD_OF_COLOR_AGE\" if clicked_label == \"有选装\" else \"S07_CLICKED_FORBIDDEN_FILTER_OPTION\""
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "车源亮点",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "电池类型",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "辅助驾驶",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "续航里程",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "里程",
+                                       "exists":  true,
+                                       "occurrences":  1,
+                                       "classification":  "stop_defensive",
+                                       "action_taken":  "kept only as guard/exclusion/stop evidence",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  4722,
+                                                           "text":  "\"里程最低\","
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "年款车型",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "tap_target_color",
+                                       "exists":  true,
+                                       "occurrences":  5,
+                                       "classification":  "contract_valid",
+                                       "action_taken":  "kept behind page_id + action_id or non-business contract wrapper",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  119,
+                                                           "text":  "\"tap_target_color\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  7998,
+                                                           "text":  "machine.assert_action_allowed(\"S07\", \"tap_target_color\")"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  8012,
+                                                           "text":  "\"tap_target_color\","
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "_find_target_color_node",
+                                       "exists":  true,
+                                       "occurrences":  3,
+                                       "classification":  "contract_valid",
+                                       "action_taken":  "kept behind page_id + action_id or non-business contract wrapper",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  5220,
+                                                           "text":  "def _find_target_color_node(snapshot: dict[str, Any], target_color: str) -\u003e dict[str, Any] | None:"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  5289,
+                                                           "text":  "node = _find_target_color_node(snapshot, target_color)"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  5295,
+                                                           "text":  "return snapshot, _find_target_color_node(snapshot, target_color)"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "default panel",
+                                       "exists":  true,
+                                       "occurrences":  1,
+                                       "classification":  "report_only",
+                                       "action_taken":  "kept only as report/evidence text; no executable legacy continuation found",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  7994,
+                                                           "text":  "\"solution\": \"avoid clicking target color from the default panel\","
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "checkbox",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "visible_blob",
+                                       "exists":  true,
+                                       "occurrences":  34,
+                                       "classification":  "report_only",
+                                       "action_taken":  "kept only as report/evidence text; no executable legacy continuation found",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  316,
+                                                           "text":  "forbidden_large_keys = {\"fresh_xml\", \"raw_xml\", \"full_xml\", \"xml_text\", \"page_source\", \"nodes\", \"visible_blob\"}"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  420,
+                                                           "text":  "snapshot[\"visible_blob\"] = \"\".join(snapshot[\"visible_texts\"])"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  462,
+                                                           "text":  "\"visible_blob\": \"\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  365,
+                                                           "text":  "snapshot[\"visible_blob\"] = \"\".join(snapshot[\"visible_texts\"])"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  577,
+                                                           "text":  "snapshot[\"visible_blob\"] = \"\".join(snapshot[\"visible_texts\"])"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  690,
+                                                           "text":  "visible_blob = str(snapshot.get(\"visible_blob\") or \"\")"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "non_trisame",
+                                       "exists":  true,
+                                       "occurrences":  44,
+                                       "classification":  "stop_defensive",
+                                       "action_taken":  "kept only as guard/exclusion/stop evidence",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  884,
+                                                           "text":  "if not audit.get(\"non_trisame_section_detected\") or cards:"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  885,
+                                                           "text":  "core_elements.append(\"trisame_boundary_before_non_trisame_section\")"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  903,
+                                                           "text":  "\"non_trisame_boundary_detected\": bool(audit.get(\"non_trisame_section_detected\")),"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  1753,
+                                                           "text":  "S10_NON_TRISAME_BOUNDARY_MARKERS = ("
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  1767,
+                                                           "text":  "return next((marker for marker in S10_NON_TRISAME_BOUNDARY_MARKERS if marker in text), \"\")"
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  1943,
+                                                           "text":  "def _s10_non_trisame_boundary(visible_nodes: list[dict[str, Any]]) -\u003e dict[str, Any]:"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "more source",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "推荐车源",
+                                       "exists":  true,
+                                       "occurrences":  2,
+                                       "classification":  "stop_defensive",
+                                       "action_taken":  "kept only as guard/exclusion/stop evidence",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  4737,
+                                                           "text":  "\"推荐车源\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  1757,
+                                                           "text":  "\"推荐车源\","
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "全国淘车",
+                                       "exists":  true,
+                                       "occurrences":  2,
+                                       "classification":  "stop_defensive",
+                                       "action_taken":  "kept only as guard/exclusion/stop evidence",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s01_to_s10_mainline.py",
+                                                           "line":  4735,
+                                                           "text":  "\"全国淘车\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  1755,
+                                                           "text":  "\"全国淘车\","
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "partial card",
+                                       "exists":  true,
+                                       "occurrences":  1,
+                                       "classification":  "stop_defensive",
+                                       "action_taken":  "kept only as guard/exclusion/stop evidence",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  2818,
+                                                           "text":  "\"reason_detail\": \"controlled S10 list scroll after partial card detection\","
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "old snapshot",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "REFERENCE_CARD_TITLE_MISMATCH",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "REFERENCE_CARD_TITLE_NORMALIZED_MISMATCH",
+                                       "exists":  true,
+                                       "occurrences":  1,
+                                       "classification":  "stop_defensive",
+                                       "action_taken":  "kept only as guard/exclusion/stop evidence",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  2532,
+                                                           "text":  "\"stop_code\": \"REFERENCE_CARD_TITLE_NORMALIZED_MISMATCH\","
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "visible_texts dedup",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "live room",
+                                       "exists":  false,
+                                       "occurrences":  0,
+                                       "classification":  "none",
+                                       "action_taken":  "none",
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "实车讲解",
+                                       "exists":  true,
+                                       "occurrences":  3,
+                                       "classification":  "stop_defensive",
+                                       "action_taken":  "kept only as guard/exclusion/stop evidence",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  152,
+                                                           "text":  "\"实车讲解\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  153,
+                                                           "text":  "\"马上为您实车讲解\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  167,
+                                                           "text":  "\"马上为您实车讲解\","
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "联系卖家",
+                                       "exists":  true,
+                                       "occurrences":  2,
+                                       "classification":  "stop_defensive",
+                                       "action_taken":  "kept only as guard/exclusion/stop evidence",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  157,
+                                                           "text":  "\"联系卖家\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  2376,
+                                                           "text":  "if any(token in label for token in [\"万公里\", \"微信咨询\", \"联系卖家\", \"查看完整报告\", \"理赔次数\", \"车身外观\"]):"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "讲价",
+                                       "exists":  true,
+                                       "occurrences":  4,
+                                       "classification":  "stop_defensive",
+                                       "action_taken":  "kept only as guard/exclusion/stop evidence",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  158,
+                                                           "text":  "\"讲价\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  704,
+                                                           "text":  "\"讲价\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  2271,
+                                                           "text":  "for signal in [\"电话\", \"收藏\", \"咨询车况\", \"讲价\", \"查看报价\"]"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "查看报价",
+                                       "exists":  true,
+                                       "occurrences":  4,
+                                       "classification":  "stop_defensive",
+                                       "action_taken":  "kept only as guard/exclusion/stop evidence",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  159,
+                                                           "text":  "\"查看报价\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  705,
+                                                           "text":  "\"查看报价\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  2271,
+                                                           "text":  "for signal in [\"电话\", \"收藏\", \"咨询车况\", \"讲价\", \"查看报价\"]"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "keyword":  "tab click",
+                                       "exists":  true,
+                                       "occurrences":  4,
+                                       "classification":  "report_only",
+                                       "action_taken":  "kept only as report/evidence text; no executable legacy continuation found",
+                                       "samples":  [
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  5087,
+                                                           "text":  "\"solution\": \"prefer the contract-allowed direct tab click and fresh-check immediately after it\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  5104,
+                                                           "text":  "\"reason_detail\": \"fresh page recognition after exact body appearance tab click\","
+                                                       },
+                                                       {
+                                                           "script":  "scripts/runtime_s10_to_s16_mainline.py",
+                                                           "line":  6238,
+                                                           "text":  "\"solution\": \"keep image-sequence processing and avoid tab clicks or photo zoom\","
+                                                       }
+                                                   ]
+                                   }
+                               ],
+    "report_evidence":  {
+                            "global_patch_final_status":  "PAGE_CONTRACT_ONLY_EXECUTION_RULE_GLOBAL_PATCHED_VERIFIED_CLEAN",
+                            "global_patch_clean":  true,
+                            "legacy_cleanup_final_status":  "FIXED_SCRIPTS_LEGACY_CODE_CLEANUP_VERIFIED_CLEAN",
+                            "legacy_cleanup_clean":  true,
+                            "leapmotor_acceptance_status":  "LEAPMOTOR_C10_FULL_CHAIN_MANUAL_REVIEW_ACCEPTANCE_PASSED",
+                            "leapmotor_freeze_status":  "READ_ONLY_LEAPMOTOR_C10_BASELINE_FREEZE_PACKAGE_DONE"
+                        },
+    "result_quality_check":  {
+                                 "result_s01_to_s10_valid":  true,
+                                 "result_s10_to_s16_valid":  true,
+                                 "result_valid":  true,
+                                 "result_s01_to_s10_fingerprint":  "零跑|C10|2026款|210悦享版|白|2026.02",
+                                 "result_s10_to_s16_fingerprint":  "零跑|C10|2026款|210悦享版|白|2026.02",
+                                 "result_fingerprint":  "零跑|C10|2026款|210悦享版|白|2026.02",
+                                 "no_raw_large_fields":  true,
+                                 "raw_large_field_hits":  [
+
+                                                          ],
+                                 "reference_history_non_trisame_used":  false,
+                                 "result_s10_reference_history_count":  1,
+                                 "pricing_non_trisame_prices_used":  false,
+                                 "pricing_old_95_present":  false,
+                                 "latest_status":  "FULL_CHAIN_MANUAL_REVIEW_DONE"
+                             },
+    "baseline_rule_lock_check":  {
+                                     "focus_baseline_present":  true,
+                                     "toyota_yaris_baseline_present":  true,
+                                     "santana_baseline_present":  true,
+                                     "tuang_acceptance_present":  true,
+                                     "leapmotor_c10_freeze_present":  true,
+                                     "leapmotor_c10_freeze_status":  "READ_ONLY_LEAPMOTOR_C10_BASELINE_FREEZE_PACKAGE_DONE",
+                                     "service_fee_rule_locked":  true,
+                                     "competition_v1_2_1_evidence":  true
+                                 },
+    "issues":  [
+
+               ],
+    "observations":  [
+                         {
+                             "id":  "OBS_ACTION_ALIAS_NAMES",
+                             "level":  "INFO",
+                             "evidence":  "short action ids such as tap_target_brand/tap_color_filter remain as action_id names inside SCRIPT_PAGE_CONTRACT_ACTIONS",
+                             "impact":  "not a bypass; calls still pass page_id + action_id and contract target checks",
+                             "action":  "no blocker; may rename later for readability only"
+                         },
+                         {
+                             "id":  "OBS_FALLBACK_TEXT",
+                             "level":  "INFO",
+                             "evidence":  "fallback appears in evidence acquisition labels such as XML fallback or screen bounds fallback",
+                             "impact":  "not a business continuation path",
+                             "action":  "no blocker"
+                         }
+                     ],
+    "final_recommendation":  "Allowed to proceed to next sample test or prepare database sample registration."
+}

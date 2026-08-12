@@ -1,0 +1,56 @@
+# ??????? S14 ????????
+
+## ??
+
+?????`S14_COMPLETION_FIX_RUNTIME_VERIFIED_BUT_DOWNSTREAM_BLOCKED`
+
+????????????????????????? APP_FORCE_RESTART??????? S14???????????? `reference_score=78.0`?
+
+## ????
+
+- ?? fingerprint?`日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08`
+- ??????`S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED`
+- issue_code?`S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED`
+- reference_index?`1`
+- S14_COLLECT_DONE?`False`
+- S15 entered?`False`
+- reference_score_trustworthy?`False`
+- reference_score_invalid_reason?`s14_full_image_sequence_incomplete_before_s15`
+
+? 3 ?? `???????(1/1)` ?????????? `????(1/2)`??? `SINGLE_IMAGE_WITH_CAPTION` ???????????
+
+## S14 ??????
+
+| # | tab_label | raw_first_line | saved | skip_reason | screenshot |
+|---|---|---|---|---|---|
+| 1 | 左前翼子板(1/2) | 左前翼子板—喷漆 | True |  | `s13_to_s14_驾驶侧_20260516_104028.png` |
+| 2 | 左前翼子板(2/2) | 左前翼子板—喷漆 | True |  | `s14_image_swipe_20260516_104034.png` |
+| 3 | 左前翼子板漆面(1/1) | 左前翼子板—喷漆 | True |  | `s14_image_swipe_20260516_104039.png` |
+| 4 | 左侧前门(1/2) | 左前翼子板—喷漆 | False | page_label_first_line_mismatch | `s14_image_swipe_20260516_104044.png` |
+| 5 | 左侧前门(2/2) | 左前翼子板—喷漆 | False | page_label_first_line_mismatch | `s14_image_swipe_20260516_104050.png` |
+| 6 | 左侧前门漆面(1/1) | 左前翼子板—喷漆 | False | page_label_first_line_mismatch | `s14_image_swipe_20260516_104056.png` |
+| 7 | 左D柱覆盖面(1/1) | 左前翼子板—喷漆 | False | page_label_first_line_mismatch | `s14_image_swipe_20260516_104101.png` |
+| 8 | 左侧后门(1/1) | 左前翼子板—喷漆 | False | page_label_first_line_mismatch | `s14_image_swipe_20260516_104107.png` |
+| ... | ... | ... | ... | ... | ? 27 ???? JSON |
+| 25 | 左前大灯(1/1) | 左前翼子板—喷漆 | False | page_label_first_line_mismatch | `s14_image_swipe_20260516_104248.png` |
+| 26 | 右前大灯(1/1) | 左前翼子板—喷漆 | False | page_label_first_line_mismatch | `s14_image_swipe_20260516_104254.png` |
+| 27 | 中网(1/1) | 左前翼子板—喷漆 | False | page_label_first_line_mismatch | `s14_image_swipe_20260516_104300.png` |
+
+## ????
+
+S14 ?????????????? `????`?`????`?`?????`?`????`?`??` ????????????? tab ? `raw_first_line` ????? `????????`?? `tab_label` ???????????? `page_label_first_line_mismatch`??????? `S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED`????? S15?
+
+## ????
+
+- result_s10_to_s16: `C:\Users\lzc93\Desktop\定价\guazi_app_data_system\output\result_s10_to_s16.json`
+- result: `C:\Users\lzc93\Desktop\定价\guazi_app_data_system\output\result.json`
+- final screenshot: `C:\Users\lzc93\Desktop\定价\guazi_app_data_system\artifacts\screenshots\s14_image_swipe_20260516_104424.png`
+- final XML: `C:\Users\lzc93\Desktop\定价\guazi_app_data_system\artifacts\debug\s14_image_swipe_20260516_104424.xml`
+- third image screenshot: `C:\Users\lzc93\Desktop\定价\guazi_app_data_system\artifacts\screenshots\s14_image_swipe_20260516_104039.png`
+- fourth image screenshot: `C:\Users\lzc93\Desktop\定价\guazi_app_data_system\artifacts\screenshots\s14_image_swipe_20260516_104044.png`
+
+## ??
+
+`S14_PREVENT_SINGLE_IMAGE_FALSE_COMPLETION_PATCHED` ?????????????????? 3 ??? `1/1 + caption` ??? S10?????? S15 ???? 78 ??
+
+?????? S14 ????????????? tab ?????????????? tab ??????? `page_label_first_line_mismatch` ??? `S14_IMAGE_SEQUENCE_NOT_FULLY_PROCESSED`?

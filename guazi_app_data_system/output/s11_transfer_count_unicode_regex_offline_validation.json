@@ -1,0 +1,112 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "scenario": "A_compact_zero",
+      "passed": true,
+      "expected": 0,
+      "actual": {
+        "transfer_count": 0,
+        "transfer_count_text": "过户0次",
+        "transfer_count_pattern": "过户\\s*(\\d+)\\s*次",
+        "transfer_count_candidates": []
+      }
+    },
+    {
+      "scenario": "B_compact_one",
+      "passed": true,
+      "expected": 1,
+      "actual": {
+        "transfer_count": 1,
+        "transfer_count_text": "过户1次",
+        "transfer_count_pattern": "过户\\s*(\\d+)\\s*次",
+        "transfer_count_candidates": []
+      }
+    },
+    {
+      "scenario": "C_spaced_zero",
+      "passed": true,
+      "expected": 0,
+      "actual": {
+        "transfer_count": 0,
+        "transfer_count_text": "过户 0 次",
+        "transfer_count_pattern": "过户\\s*(\\d+)\\s*次",
+        "transfer_count_candidates": []
+      }
+    },
+    {
+      "scenario": "D_reverse_zero",
+      "passed": true,
+      "expected": 0,
+      "actual": {
+        "transfer_count": 0,
+        "transfer_count_text": "0次过户",
+        "transfer_count_pattern": "(\\d+)\\s*次\\s*过户",
+        "transfer_count_candidates": []
+      }
+    },
+    {
+      "scenario": "E_count_one",
+      "passed": true,
+      "expected": 1,
+      "actual": {
+        "transfer_count": 1,
+        "transfer_count_text": "过户次数1",
+        "transfer_count_pattern": "过户次数\\s*(\\d+)",
+        "transfer_count_candidates": []
+      }
+    },
+    {
+      "scenario": "F_missing_candidate",
+      "passed": true,
+      "expected": "FIELD_MISSING eligible",
+      "actual": {
+        "transfer_count": null,
+        "transfer_count_text": "",
+        "transfer_count_pattern": "",
+        "transfer_count_candidates": []
+      }
+    },
+    {
+      "scenario": "content_desc_supported",
+      "passed": true,
+      "expected": 0,
+      "actual": {
+        "transfer_count": 0,
+        "transfer_count_text": "过户0次",
+        "transfer_count_pattern": "过户\\s*(\\d+)\\s*次",
+        "transfer_count_candidates": [
+          {
+            "text": "",
+            "content_desc": "过户0次",
+            "bounds": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "class": "android.widget.TextView",
+            "resource_id": "",
+            "clickable": false,
+            "enabled": true
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "G_s11_fresh_pair_stale_xml_unaffected",
+      "passed": true,
+      "expected": "V1.39 identifiers present",
+      "actual": "present"
+    },
+    {
+      "scenario": "H_s10_s14_metal_deduct_unaffected",
+      "passed": true,
+      "expected": "key identifiers present",
+      "actual": "present"
+    }
+  ],
+  "py_compile": "passed",
+  "import_validation": "IMPORT_OK",
+  "final_status": "S11_TRANSFER_COUNT_UNICODE_REGEX_PATCHED"
+}

@@ -1,0 +1,115 @@
+{
+  "task": "READ_ONLY_DIAGNOSE_LAUNCHER_LATER_DIALOG_CLICK_ONCE_CONTRACT_GAP",
+  "final_status": "LAUNCHER_LATER_DIALOG_CLICK_ONCE_CONTRACT_DIAGNOSIS_DONE",
+  "readonly_confirmations": {
+    "code_modified": false,
+    "device_run": false,
+    "app_force_restart_executed": false,
+    "second_stage_started": false,
+    "reference_collected": false,
+    "pricing_output": false,
+    "result_json_overwritten": false
+  },
+  "popup_diagnosis": {
+    "popup_context": "ACCOUNT_LOGOUT_DIALOG",
+    "runtime_layer": "LAUNCHER_SYSTEM_DIALOG",
+    "popup_texts": [
+      "检测到您的账号已退出登录",
+      "请重新登录账号"
+    ],
+    "button_texts": [
+      "稍后",
+      "去登录"
+    ],
+    "clicked_text": "稍后",
+    "clicked_bounds": "[133,1366][569,1509]",
+    "click_count": 1,
+    "popup_still_visible_after_click": true,
+    "app_icon_visible_after_click": false,
+    "foreground_package": "com.shuqing.launcher",
+    "focused_window_before_later": "com.shuqing.launcher/com.shuqing.launcher.Launcher",
+    "focused_window_after_later": "com.shuqing.launcher/com.shuqing.launcher.Launcher",
+    "screenshot_path": "artifacts/screenshots/device_ready_after_launcher_later_20260512_191315.png",
+    "xml_path": "artifacts/debug/device_ready_after_launcher_later_20260512_191315.xml",
+    "screenshot_before_later": "artifacts/screenshots/device_ready_launcher_before_icon_20260512_191311.png",
+    "xml_before_later": "artifacts/debug/device_ready_launcher_before_icon_20260512_191311.xml"
+  },
+  "contract_diagnosis": {
+    "contract_says_click_later_until_closed": false,
+    "contract_says_single_click_only": true,
+    "contract_source": [
+      "scripts/runtime_s01_to_s10_mainline.py",
+      "docs/page_state_machine.md",
+      "docs/codex_development_rules.md"
+    ],
+    "contract_text_summary": [
+      "启动前恢复门禁要求从 Launcher/SystemUI 启动已验证 App 后再进入页面契约，但未定义 launcher 账号退出弹窗重复点击稍后直到关闭。",
+      "开发规则明确未建契约弹窗不自动点击。",
+      "当前代码候选策略明确为点击稍后一次，然后重新截图/XML/focused_window 并查找瓜子图标。"
+    ],
+    "contract_gap": "LAUNCHER_LATER_DIALOG_CONTRACT_MISSING"
+  },
+  "code_diagnosis": {
+    "script": "scripts/runtime_s01_to_s10_mainline.py",
+    "functions": [
+      "_launcher_account_dialog_detected",
+      "_find_launcher_account_later_button",
+      "_launcher_account_learning_loop_candidate",
+      "_handle_launcher_account_dialog_once"
+    ],
+    "max_click_count": 1,
+    "clicked_later_once_then_stop": true,
+    "fresh_after_click": true,
+    "popup_detected_after_fresh": true,
+    "popup_still_visible_after_click_as_stop_condition": true,
+    "controlled_loop_missing": true,
+    "dead_loop_guard_present": "single-click guard only",
+    "classification": "CONTRACT_IMPLEMENTATION_TOO_STRICT_SINGLE_CLICK",
+    "root_cause": "CONTRACT_MISSING",
+    "observed_stop_code": "LAUNCHER_ACCOUNT_DIALOG_STILL_VISIBLE_AFTER_LATER_ONCE"
+  },
+  "recommended_contract": {
+    "name": "LAUNCHER_BLOCKING_LATER_DIALOG_CONTRACT",
+    "should_click_later_until_closed": true,
+    "scope": "Only after APP_FORCE_RESTART, before Guazi app icon is found, while still in launcher/system dialog stage.",
+    "allowed_action": "click exact 稍后 button",
+    "fresh_after_each_click": true,
+    "max_attempts_recommended": [
+      3,
+      5
+    ],
+    "forbidden_clicks": [
+      "去登录",
+      "立即升级",
+      "退出账号",
+      "确认",
+      "未知按钮",
+      "广告主体",
+      "设置"
+    ],
+    "success_next_step": "After popup disappears, re-recognize launcher and continue searching exact Guazi app icon.",
+    "failure_stop_code": "LAUNCHER_LATER_DIALOG_NOT_DISMISSED_AFTER_MAX_ATTEMPTS"
+  },
+  "next_step_recommendation": {
+    "contract_update_needed": true,
+    "code_patch_needed_after_contract_update": true,
+    "suggested_patch": "PATCH_LAUNCHER_LATER_DIALOG_REPEAT_UNTIL_CLOSED_CONTRACT",
+    "patch_summary": [
+      "Convert one-click later handling into controlled repeat-until-closed loop.",
+      "Fresh after each click.",
+      "Continue only when popup disappears and Guazi icon search can resume.",
+      "Stop after max attempts.",
+      "Only click exact 稍后."
+    ]
+  },
+  "evidence_files": {
+    "result_s01_to_s10": "output/result_s01_to_s10.json",
+    "result": "output/result.json",
+    "issues_log": "logs/issues.jsonl",
+    "audit_log": "logs/audit.jsonl",
+    "before_screenshot": "artifacts/screenshots/device_ready_launcher_before_icon_20260512_191311.png",
+    "before_xml": "artifacts/debug/device_ready_launcher_before_icon_20260512_191311.xml",
+    "after_screenshot": "artifacts/screenshots/device_ready_after_launcher_later_20260512_191315.png",
+    "after_xml": "artifacts/debug/device_ready_after_launcher_later_20260512_191315.xml"
+  }
+}

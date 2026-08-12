@@ -1,0 +1,1676 @@
+{
+  "(152, 2154, 312, 2216)": [
+    {
+      "depth": 22,
+      "node": {
+        "text": "前保险杠",
+        "content_desc": "",
+        "class": "android.widget.TextView",
+        "resource_id": "",
+        "bounds": [
+          152,
+          2154,
+          312,
+          2216
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "focusable": "false",
+        "scrollable": "false",
+        "index": "2",
+        "area": 9920
+      },
+      "parents": [
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            78,
+            2024,
+            1144,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "1",
+          "area": 521274,
+          "parent_level": 1
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            1885,
+            1196,
+            2513
+          ],
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "9",
+          "area": 734760,
+          "parent_level": 2
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2884050,
+          "parent_level": 3
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2884050,
+          "parent_level": 4
+        },
+        {
+          "text": "车身外观",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "appearance",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "true",
+          "scrollable": "false",
+          "index": "2",
+          "area": 2884050,
+          "parent_level": 5
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            0,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2940210,
+          "parent_level": 6
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            0,
+            0,
+            1220,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "5",
+          "area": 3065860,
+          "parent_level": 7
+        }
+      ],
+      "siblings": [
+        {
+          "text": "日间行车灯",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2047,
+            351,
+            2109
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 12338,
+          "self": false
+        },
+        {
+          "text": "机舱盖铰链（左）",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2047,
+            997,
+            2109
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "1",
+          "area": 19716,
+          "self": false
+        },
+        {
+          "text": "前保险杠",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2154,
+            312,
+            2216
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "2",
+          "area": 9920,
+          "self": true
+        },
+        {
+          "text": "发动机舱盖漆面",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2154,
+            958,
+            2216
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "3",
+          "area": 17298,
+          "self": false
+        },
+        {
+          "text": "发动机舱盖",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2262,
+            351,
+            2323
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "4",
+          "area": 12139,
+          "self": false
+        },
+        {
+          "text": "机舱盖铰链（右）",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2262,
+            997,
+            2323
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "5",
+          "area": 19398,
+          "self": false
+        },
+        {
+          "text": "机舱盖锁",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2369,
+            312,
+            2431
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "6",
+          "area": 9920,
+          "self": false
+        },
+        {
+          "text": "前雾灯",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2369,
+            802,
+            2431
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "7",
+          "area": 7626,
+          "self": false
+        },
+        {
+          "text": "中网",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2476,
+            234,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "8",
+          "area": 3034,
+          "self": false
+        },
+        {
+          "text": "前风挡玻璃",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2476,
+            880,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "9",
+          "area": 7437,
+          "self": false
+        }
+      ]
+    }
+  ],
+  "(679, 2154, 958, 2216)": [
+    {
+      "depth": 22,
+      "node": {
+        "text": "发动机舱盖漆面",
+        "content_desc": "",
+        "class": "android.widget.TextView",
+        "resource_id": "",
+        "bounds": [
+          679,
+          2154,
+          958,
+          2216
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "focusable": "false",
+        "scrollable": "false",
+        "index": "3",
+        "area": 17298
+      },
+      "parents": [
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            78,
+            2024,
+            1144,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "1",
+          "area": 521274,
+          "parent_level": 1
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            1885,
+            1196,
+            2513
+          ],
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "9",
+          "area": 734760,
+          "parent_level": 2
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2884050,
+          "parent_level": 3
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2884050,
+          "parent_level": 4
+        },
+        {
+          "text": "车身外观",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "appearance",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "true",
+          "scrollable": "false",
+          "index": "2",
+          "area": 2884050,
+          "parent_level": 5
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            0,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2940210,
+          "parent_level": 6
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            0,
+            0,
+            1220,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "5",
+          "area": 3065860,
+          "parent_level": 7
+        }
+      ],
+      "siblings": [
+        {
+          "text": "日间行车灯",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2047,
+            351,
+            2109
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 12338,
+          "self": false
+        },
+        {
+          "text": "机舱盖铰链（左）",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2047,
+            997,
+            2109
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "1",
+          "area": 19716,
+          "self": false
+        },
+        {
+          "text": "前保险杠",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2154,
+            312,
+            2216
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "2",
+          "area": 9920,
+          "self": false
+        },
+        {
+          "text": "发动机舱盖漆面",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2154,
+            958,
+            2216
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "3",
+          "area": 17298,
+          "self": true
+        },
+        {
+          "text": "发动机舱盖",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2262,
+            351,
+            2323
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "4",
+          "area": 12139,
+          "self": false
+        },
+        {
+          "text": "机舱盖铰链（右）",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2262,
+            997,
+            2323
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "5",
+          "area": 19398,
+          "self": false
+        },
+        {
+          "text": "机舱盖锁",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2369,
+            312,
+            2431
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "6",
+          "area": 9920,
+          "self": false
+        },
+        {
+          "text": "前雾灯",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2369,
+            802,
+            2431
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "7",
+          "area": 7626,
+          "self": false
+        },
+        {
+          "text": "中网",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2476,
+            234,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "8",
+          "area": 3034,
+          "self": false
+        },
+        {
+          "text": "前风挡玻璃",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2476,
+            880,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "9",
+          "area": 7437,
+          "self": false
+        }
+      ]
+    }
+  ],
+  "(152, 2262, 351, 2323)": [
+    {
+      "depth": 22,
+      "node": {
+        "text": "发动机舱盖",
+        "content_desc": "",
+        "class": "android.widget.TextView",
+        "resource_id": "",
+        "bounds": [
+          152,
+          2262,
+          351,
+          2323
+        ],
+        "clickable": "false",
+        "enabled": "true",
+        "focusable": "false",
+        "scrollable": "false",
+        "index": "4",
+        "area": 12139
+      },
+      "parents": [
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            78,
+            2024,
+            1144,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "1",
+          "area": 521274,
+          "parent_level": 1
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            1885,
+            1196,
+            2513
+          ],
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "9",
+          "area": 734760,
+          "parent_level": 2
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2884050,
+          "parent_level": 3
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2884050,
+          "parent_level": 4
+        },
+        {
+          "text": "车身外观",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "appearance",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "true",
+          "scrollable": "false",
+          "index": "2",
+          "area": 2884050,
+          "parent_level": 5
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            0,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2940210,
+          "parent_level": 6
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            0,
+            0,
+            1220,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "5",
+          "area": 3065860,
+          "parent_level": 7
+        }
+      ],
+      "siblings": [
+        {
+          "text": "日间行车灯",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2047,
+            351,
+            2109
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 12338,
+          "self": false
+        },
+        {
+          "text": "机舱盖铰链（左）",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2047,
+            997,
+            2109
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "1",
+          "area": 19716,
+          "self": false
+        },
+        {
+          "text": "前保险杠",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2154,
+            312,
+            2216
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "2",
+          "area": 9920,
+          "self": false
+        },
+        {
+          "text": "发动机舱盖漆面",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2154,
+            958,
+            2216
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "3",
+          "area": 17298,
+          "self": false
+        },
+        {
+          "text": "发动机舱盖",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2262,
+            351,
+            2323
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "4",
+          "area": 12139,
+          "self": true
+        },
+        {
+          "text": "机舱盖铰链（右）",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2262,
+            997,
+            2323
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "5",
+          "area": 19398,
+          "self": false
+        },
+        {
+          "text": "机舱盖锁",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2369,
+            312,
+            2431
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "6",
+          "area": 9920,
+          "self": false
+        },
+        {
+          "text": "前雾灯",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2369,
+            802,
+            2431
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "7",
+          "area": 7626,
+          "self": false
+        },
+        {
+          "text": "中网",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            152,
+            2476,
+            234,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "8",
+          "area": 3034,
+          "self": false
+        },
+        {
+          "text": "前风挡玻璃",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            679,
+            2476,
+            880,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "9",
+          "area": 7437,
+          "self": false
+        }
+      ]
+    }
+  ],
+  "(81, 1608, 611, 1716)": [
+    {
+      "depth": 21,
+      "node": {
+        "text": "",
+        "content_desc": "",
+        "class": "android.view.View",
+        "resource_id": "",
+        "bounds": [
+          81,
+          1608,
+          611,
+          1716
+        ],
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "false",
+        "scrollable": "false",
+        "index": "5",
+        "area": 57240
+      },
+      "parents": [
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            1475,
+            1196,
+            1888
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "8",
+          "area": 483210,
+          "parent_level": 1
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2884050,
+          "parent_level": 2
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2884050,
+          "parent_level": 3
+        },
+        {
+          "text": "车身外观",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "appearance",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "true",
+          "scrollable": "false",
+          "index": "2",
+          "area": 2884050,
+          "parent_level": 4
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            0,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2940210,
+          "parent_level": 5
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            0,
+            0,
+            1220,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "5",
+          "area": 3065860,
+          "parent_level": 6
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "app",
+          "bounds": [
+            0,
+            0,
+            1220,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 3065860,
+          "parent_level": 7
+        }
+      ],
+      "siblings": [
+        {
+          "text": "车头深度检测：",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            117,
+            1504,
+            455,
+            1582
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 26364,
+          "self": false
+        },
+        {
+          "text": "历史修复",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            487,
+            1504,
+            676,
+            1582
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "1",
+          "area": 14742,
+          "self": false
+        },
+        {
+          "text": "2",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            669,
+            1504,
+            705,
+            1582
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "2",
+          "area": 2808,
+          "self": false
+        },
+        {
+          "text": "注意事项",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            799,
+            1504,
+            988,
+            1582
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "3",
+          "area": 14742,
+          "self": false
+        },
+        {
+          "text": "0",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            981,
+            1504,
+            1020,
+            1582
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "4",
+          "area": 3042,
+          "self": false
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            81,
+            1608,
+            611,
+            1716
+          ],
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "5",
+          "area": 57240,
+          "self": true
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            611,
+            1608,
+            1140,
+            1716
+          ],
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "6",
+          "area": 57132,
+          "self": false
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            81,
+            1712,
+            1140,
+            1833
+          ],
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "7",
+          "area": 128139,
+          "self": false
+        }
+      ]
+    }
+  ],
+  "(611, 1608, 1140, 1716)": [
+    {
+      "depth": 21,
+      "node": {
+        "text": "",
+        "content_desc": "",
+        "class": "android.view.View",
+        "resource_id": "",
+        "bounds": [
+          611,
+          1608,
+          1140,
+          1716
+        ],
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "false",
+        "scrollable": "false",
+        "index": "6",
+        "area": 57132
+      },
+      "parents": [
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            1475,
+            1196,
+            1888
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "8",
+          "area": 483210,
+          "parent_level": 1
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2884050,
+          "parent_level": 2
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2884050,
+          "parent_level": 3
+        },
+        {
+          "text": "车身外观",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "appearance",
+          "bounds": [
+            26,
+            48,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "true",
+          "scrollable": "false",
+          "index": "2",
+          "area": 2884050,
+          "parent_level": 4
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            26,
+            0,
+            1196,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 2940210,
+          "parent_level": 5
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            0,
+            0,
+            1220,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "5",
+          "area": 3065860,
+          "parent_level": 6
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "app",
+          "bounds": [
+            0,
+            0,
+            1220,
+            2513
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 3065860,
+          "parent_level": 7
+        }
+      ],
+      "siblings": [
+        {
+          "text": "车头深度检测：",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            117,
+            1504,
+            455,
+            1582
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "0",
+          "area": 26364,
+          "self": false
+        },
+        {
+          "text": "历史修复",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            487,
+            1504,
+            676,
+            1582
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "1",
+          "area": 14742,
+          "self": false
+        },
+        {
+          "text": "2",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            669,
+            1504,
+            705,
+            1582
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "2",
+          "area": 2808,
+          "self": false
+        },
+        {
+          "text": "注意事项",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            799,
+            1504,
+            988,
+            1582
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "3",
+          "area": 14742,
+          "self": false
+        },
+        {
+          "text": "0",
+          "content_desc": "",
+          "class": "android.widget.TextView",
+          "resource_id": "",
+          "bounds": [
+            981,
+            1504,
+            1020,
+            1582
+          ],
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "4",
+          "area": 3042,
+          "self": false
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            81,
+            1608,
+            611,
+            1716
+          ],
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "5",
+          "area": 57240,
+          "self": false
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            611,
+            1608,
+            1140,
+            1716
+          ],
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "6",
+          "area": 57132,
+          "self": true
+        },
+        {
+          "text": "",
+          "content_desc": "",
+          "class": "android.view.View",
+          "resource_id": "",
+          "bounds": [
+            81,
+            1712,
+            1140,
+            1833
+          ],
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "false",
+          "scrollable": "false",
+          "index": "7",
+          "area": 128139,
+          "self": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "task": "RUN_FIRST_STAGE_AFTER_FIXED_SCRIPTS_LEGACY_CLEANUP_VERIFIED_CLEAN",
+  "final_state": "RUN_FIRST_STAGE_AFTER_FIXED_SCRIPTS_LEGACY_CLEANUP_VERIFIED_CLEAN_DONE",
+  "first_stage_status": "S07_FORBIDDEN_FILTER_SELECTED_BY_COLOR_CLICK",
+  "first_stage_success_terminal": false,
+  "target_fingerprint": "零跑|C10|2026款|210悦享版|白|2026.02",
+  "target_fingerprint_expected": "零跑|C10|2026款|210悦享版|白|2026.02",
+  "target_fingerprint_match": true,
+  "code_modified": false,
+  "second_stage_run": false,
+  "entered_s11": false,
+  "pricing_output": false,
+  "device_serial": "6TGYYHPZCETCSK6L",
+  "log_path": "output/first_stage_after_full_legacy_cleanup_validation_20260512_095340.log",
+  "result_files": {
+    "result_s01_to_s10_json_valid": true,
+    "result_json_valid": true,
+    "result_s01_to_s10_path": "output/result_s01_to_s10.json",
+    "result_path": "output/result.json",
+    "forbidden_raw_result_keys": {
+      "result_s01_to_s10": [],
+      "result": []
+    }
+  },
+  "startup": {
+    "app_force_restart_called": true,
+    "after_force_restart_state": "S01",
+    "after_force_restart_xml_path": "artifacts/debug/s01_s10_after_force_restart_20260512_095351.xml",
+    "after_force_restart_screenshot_path": "artifacts/screenshots/s01_s10_after_force_restart_20260512_095351.png"
+  },
+  "s03": {
+    "contract_version": "V1.16",
+    "target_brand_aliases": [
+      "零跑",
+      "零跑汽车",
+      "LEAPMOTOR",
+      "Leapmotor"
+    ],
+    "target_initial_letter": "L",
+    "target_brand_visible_before_letter": false,
+    "clicked_initial_letter": "L",
+    "target_brand_visible_after_letter": true,
+    "matched_brand_text": "零跑汽车",
+    "brand_row_bounds": [
+      0,
+      841,
+      1155,
+      997
+    ],
+    "selected_click_point": [
+      117,
+      919
+    ],
+    "selected_click_region_type": "brand_row_left_icon_safe_point",
+    "after_click_page_type": "S04",
+    "brand_zone_continuation_allowed": false,
+    "contract_compliant": true
+  },
+  "s04": {
+    "target_series": "C10",
+    "target_series_alias": "零跑C10",
+    "evidence_xml_before_click": "artifacts/debug/s04_series_down_1_20260512_095416.xml",
+    "evidence_screenshot_before_click": "artifacts/screenshots/s04_series_down_1_20260512_095416.png",
+    "evidence_xml_after_click": "artifacts/debug/s04_to_s05_20260512_095420.xml",
+    "evidence_screenshot_after_click": "artifacts/screenshots/s04_to_s05_20260512_095420.png",
+    "target_series_seen_in_xml": true,
+    "right_models_button_seen_for_target_row": true,
+    "transition_to_s05_confirmed": true,
+    "note": "S04 detailed click fields are not persisted in result JSON, but current S04 artifact contains target row and right-side model button; subsequent S05 success confirms transition."
+  },
+  "s05": {
+    "s05_done": true,
+    "selected_year_model": "2026款",
+    "selected_config_model": "210悦享版",
+    "selected_count_text": "已选1项",
+    "selected_count_actual": 1,
+    "single_trim_selected": true,
+    "emission_variant_contract_enabled": true,
+    "emission_variant_group_count": 0,
+    "selected_emission_variants": []
+  },
+  "s06": {
+    "recognized_page_after_s05_confirm": "S06",
+    "page_variant": "S06_TARGET_FILTER_LIST_AFTER_S05_CONFIRM",
+    "source_gate_passed": true,
+    "target_filter_evidence_found": true,
+    "target_filter_evidence": [
+      {
+        "type": "target_series_or_alias_visible",
+        "value": "C10"
+      },
+      {
+        "type": "target_series_or_alias_visible",
+        "value": "零跑C10"
+      },
+      {
+        "type": "target_year_visible",
+        "value": "2026款"
+      },
+      {
+        "type": "target_config_visible",
+        "value": "210悦享版"
+      },
+      {
+        "type": "target_vehicle_card_title_visible",
+        "value": [
+          "零跑汽车 零跑C10 2026款 210悦享版"
+        ]
+      }
+    ],
+    "core_elements": [
+      "model_config_entry",
+      "target_filter_evidence",
+      "vehicle_list_structure",
+      "filter_or_sort_structure"
+    ],
+    "reverse_exclusion_passed": true,
+    "allowed_action": "click_model_config_filter",
+    "to_s07_result": "entered_s07"
+  },
+  "s07": {
+    "target_color": "白",
+    "color_filter_done": false,
+    "age_filter_done": false,
+    "s07_filter_done": false,
+    "target_age": 0,
+    "forbidden_filter_selected": true,
+    "forbidden_texts": [
+      "车源亮点"
+    ],
+    "forbidden_bounds": [
+      [
+        0,
+        871,
+        260,
+        1017
+      ]
+    ],
+    "xml_path": "artifacts/debug/s07_after_color_select_0_20260512_095452.xml",
+    "screenshot_path": "artifacts/screenshots/s07_after_color_select_0_20260512_095452.png",
+    "stop_code": "S07_FORBIDDEN_FILTER_SELECTED_BY_COLOR_CLICK",
+    "error": "The S07 color action selected a forbidden filter instead of the target color.",
+    "contract_behavior": "Stopped immediately after forbidden S07 filter selection was detected; did not continue to age, view-result, sort, or S10.",
+    "known_evidence_paths": [
+      "artifacts/debug/s06_to_s07_round_1_20260512_095440.xml",
+      "artifacts/screenshots/s06_to_s07_round_1_20260512_095440.png",
+      "artifacts/debug/s07_after_color_tab_click_20260512_095446.xml",
+      "artifacts/screenshots/s07_after_color_tab_click_20260512_095446.png",
+      "artifacts/debug/s07_after_color_select_0_20260512_095452.xml",
+      "artifacts/screenshots/s07_after_color_select_0_20260512_095452.png"
+    ]
+  },
+  "s08_s09_s10": {
+    "sort_done": false,
+    "s10_ready": false,
+    "reached_s10_ready": false,
+    "manual_pricing_branch": false,
+    "not_reached_reason": "S07_FORBIDDEN_FILTER_SELECTED_BY_COLOR_CLICK"
+  },
+  "conclusion": {
+    "summary": "First stage ran on the real device and stopped at S07 forbidden-filter gate before S10_READY.",
+    "validated_positive_segments": [
+      "APP_FORCE_RESTART",
+      "S03_V1.16",
+      "S04_TO_S05",
+      "S05_TARGET_YEAR_CONFIG",
+      "S06_TARGET_FILTER_LIST_AFTER_S05_CONFIRM"
+    ],
+    "blocking_segment": "S07_COLOR_SELECTION_FORBIDDEN_FILTER_GATE",
+    "blocking_stop_code": "S07_FORBIDDEN_FILTER_SELECTED_BY_COLOR_CLICK",
+    "next_step_recommendation": "Diagnose why S07 color selection ended with forbidden filter ???? instead of confirmed ??; do not start second stage until S07 passes."
+  }
+}

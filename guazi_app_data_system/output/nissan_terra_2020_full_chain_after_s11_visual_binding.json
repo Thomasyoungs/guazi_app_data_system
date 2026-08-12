@@ -1,0 +1,80 @@
+{
+  "status": "RUN_FAILED_WITH_ISSUE",
+  "final_state": "S11_VISUAL_REPORT_ENTRY_CLICK_DID_NOT_ENTER_S12",
+  "created_at": "2026-05-13T12:04:33.702574",
+  "target_fingerprint": "日产|途达|2020款|2.5L XL Upper 4WD 自动四驱豪华版|白|2021.08",
+  "patch_status": "S11_VIEW_FULL_REPORT_VISUAL_BINDING_XML_TEXT_MISSING_PATCHED",
+  "first_stage_status": "S10_READY",
+  "second_stage_status": "S11_VISUAL_REPORT_ENTRY_CLICK_DID_NOT_ENTER_S12",
+  "summary": {
+    "output/result_s01_to_s10.json": {
+      "status": "S10_READY",
+      "final_status": "S10_READY",
+      "issue_code": null,
+      "stop_code": null,
+      "target_score": null,
+      "final_reference_index": null,
+      "final_reference_price_yuan": null,
+      "fingerprint": null
+    },
+    "output/result_s10_to_s16.json": {
+      "status": "S11_VISUAL_REPORT_ENTRY_CLICK_DID_NOT_ENTER_S12",
+      "final_status": "S11_VISUAL_REPORT_ENTRY_CLICK_DID_NOT_ENTER_S12",
+      "issue_code": "S11_VISUAL_REPORT_ENTRY_CLICK_DID_NOT_ENTER_S12",
+      "stop_code": null,
+      "target_score": null,
+      "final_reference_index": null,
+      "final_reference_price_yuan": null,
+      "fingerprint": null,
+      "reference_history_len": 1,
+      "last_reference": {
+        "reference_index": 1,
+        "reference_status": null,
+        "reference_score": null,
+        "reference_exclusion_reason": null,
+        "view_full_report_seen_in_xml": false,
+        "view_full_report_seen_in_screenshot": true,
+        "visual_binding_enabled": true,
+        "clicked_by_visual_binding": true,
+        "s12_page_confirmed_after_click": false,
+        "view_full_report_click_result": "UNKNOWN"
+      }
+    },
+    "output/result.json": {
+      "status": "S11_VISUAL_REPORT_ENTRY_CLICK_DID_NOT_ENTER_S12",
+      "final_status": "S11_VISUAL_REPORT_ENTRY_CLICK_DID_NOT_ENTER_S12",
+      "issue_code": "S11_VISUAL_REPORT_ENTRY_CLICK_DID_NOT_ENTER_S12",
+      "stop_code": null,
+      "target_score": null,
+      "final_reference_index": null,
+      "final_reference_price_yuan": null,
+      "fingerprint": null,
+      "reference_history_len": 1,
+      "last_reference": {
+        "reference_index": 1,
+        "reference_status": null,
+        "reference_score": null,
+        "reference_exclusion_reason": null,
+        "view_full_report_seen_in_xml": false,
+        "view_full_report_seen_in_screenshot": true,
+        "visual_binding_enabled": true,
+        "clicked_by_visual_binding": true,
+        "s12_page_confirmed_after_click": false,
+        "view_full_report_click_result": "UNKNOWN"
+      }
+    }
+  },
+  "result_quality_bad_large_fields": {
+    "output/result_s01_to_s10.json": [],
+    "output/result_s10_to_s16.json": [],
+    "output/result.json": []
+  },
+  "evidence_paths": [
+    "output/s11_view_full_report_visual_binding_patch.json",
+    "artifacts/screenshots/s11_report_entry_search_1_20260513_120128.png",
+    "artifacts/debug/s11_report_entry_search_1_20260513_120128.xml",
+    "artifacts/screenshots/s11_to_s12_wait_stable_2_20260513_120142.png",
+    "artifacts/debug/s11_to_s12_wait_stable_2_20260513_120142.xml"
+  ],
+  "conclusion": "Visual binding no longer excludes XML-missing visible report entry, but the visual click did not produce a contract-confirmed S12 page; final pricing was not produced."
+}

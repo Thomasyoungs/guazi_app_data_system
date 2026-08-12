@@ -1,0 +1,57 @@
+{
+  "status": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+  "final_status": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+  "issue_code": "ALL_REFERENCES_EXHAUSTED_MANUAL_REVIEW",
+  "target_fingerprint": "??|??|2020?|2.5L XL Upper 4WD ???????|?|2021.08",
+  "reference_history": [
+    {
+      "reference_index": 1,
+      "price_10k": 8.48,
+      "status": "COLLECTED",
+      "score": 78.0,
+      "score_diff_reference_minus_target": -14.0,
+      "exclusion_reason": null,
+      "report_entry_detection_strategy": "XML_TEXT_BINDING",
+      "local_structure_binding_enabled": false,
+      "view_full_report_seen_in_xml": true
+    },
+    {
+      "reference_index": 2,
+      "price_10k": 10.59,
+      "status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+      "score": null,
+      "score_diff_reference_minus_target": null,
+      "exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+      "report_entry_detection_strategy": "NOT_AVAILABLE_CONFIRMED",
+      "local_structure_binding_enabled": false,
+      "view_full_report_seen_in_xml": null
+    },
+    {
+      "reference_index": 3,
+      "price_10k": 10.9,
+      "status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+      "score": null,
+      "score_diff_reference_minus_target": null,
+      "exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+      "report_entry_detection_strategy": "NOT_AVAILABLE_CONFIRMED",
+      "local_structure_binding_enabled": false,
+      "view_full_report_seen_in_xml": null
+    },
+    {
+      "reference_index": 3,
+      "price_10k": 10.9,
+      "status": "EXCLUDED_OFFICIAL_REPORT_NOT_AVAILABLE",
+      "score": null,
+      "score_diff_reference_minus_target": null,
+      "exclusion_reason": "OFFICIAL_REPORT_NOT_AVAILABLE",
+      "report_entry_detection_strategy": "NOT_AVAILABLE_CONFIRMED",
+      "local_structure_binding_enabled": false,
+      "view_full_report_seen_in_xml": null
+    }
+  ],
+  "entered_s16": false,
+  "pricing_output_allowed": false,
+  "result_path": "output/result.json",
+  "result_s10_to_s16_path": "output/result_s10_to_s16.json",
+  "final_state": "RUN_FULL_CHAIN_NISSAN_TERRA_AFTER_S11_LOCAL_STRUCTURE_BINDING_PATCH_DONE"
+}
