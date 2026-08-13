@@ -100,21 +100,23 @@ def run_device(runtime: dict[str, Any], task: TargetCarTask | None = None, adb_s
     audit: AuditLogger = runtime["audit"]
     issues: IssueRecorder = runtime["issues"]
 
-    # Use default task if none provided
+    # Use default task if none provided - 使用用户示例数据
     if task is None:
         task = TargetCarTask(
-            task_id="DEVICE-DEFAULT-001",
-            brand="大众",
-            series="帕萨特",
-            model_year="2020",
-            trim="330TSI DSG 尊荣版",
-            color="白色",
-            registration_date_raw="2020.4",
-            vehicle_year=2020,
-            mileage_10k_km=7.2,
+            task_id="DEVICE-EXAMPLE-001",
+            brand="东风",
+            series="纳米EX1",
+            model_year="2021",
+            trim="质行版",
+            color="白",
+            registration_date_raw="2021.12",
+            vehicle_year=2021,
+            mileage_10k_km=4.8,
             transfer_count=0,
-            condition_text="正常",
+            condition_text="右前叶更换，其余原漆",
         )
+        print(f"[DeviceOp] 使用示例任务: {task.brand} {task.series} {task.model_year}款 {task.trim}")
+        print(f"[DeviceOp] 颜色: {task.color}, 上牌: {task.registration_date_raw}, 里程: {task.mileage_10k_km}万公里")
 
     audit.log("device_mode_start", task_id=task.task_id or "default")
 
