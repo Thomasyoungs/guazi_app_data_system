@@ -1,0 +1,1 @@
+{"issue_id": "ISS-c48454996e2e", "timestamp": "2026-08-13T00:48:27.700933+00:00", "code": "SAMPLE_TOO_SMALL", "severity": "unknown", "state_id": "S10", "message": "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。", "context": {"sample_count": 2}, "resolution": "manual_review", "workflow": ["issue_recorded"]}

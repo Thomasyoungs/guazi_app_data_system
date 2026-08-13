@@ -1,89 +1,120 @@
 {
   "metadata": {
-    "project": "refactored_guazi_app",
-    "mode": "simulate"
+    "project": "guazi_app_data_system",
+    "mode": "simulate",
+    "field_scope": "contract_only"
   },
   "target_car": {
-    "task_id": "SIM-TARGET-001",
-    "brand": "大众",
-    "series": "帕萨特",
-    "year": 2020,
-    "mileage": 4.5,
-    "price": 12.5,
-    "features": []
+    "task_id": "SIM-20260421-0001",
+    "brand": "斯柯达",
+    "series": "昕锐",
+    "model_year": "2020款",
+    "trim": "2020款 昕锐 1.5L 自动舒适版",
+    "color": "金",
+    "registration_date": "2020.4",
+    "mileage_10k_km": 7.2,
+    "transfer_count": 0,
+    "condition_text": "右后门钣金喷漆 左后门钣金喷漆",
+    "accident_count": null,
+    "max_accident_amount": null,
+    "panel_repairs": [
+      {
+        "part": "右后门",
+        "damage_type": "钣金"
+      },
+      {
+        "part": "左后门",
+        "damage_type": "钣金"
+      }
+    ]
   },
   "target_score": {
-    "score": 84.999775,
-    "max_score": 100.0,
-    "min_score": 0.0,
-    "review_reasons": []
+    "score": 92.5,
+    "components": {
+      "body_score": 68.0,
+      "mileage_score": 10.5,
+      "transfer_score": 7.0,
+      "accident_score": 4.0,
+      "max_amount_score": 3.0
+    },
+    "review_reasons": [
+      "目标车缺少出险次数，已采用默认分。",
+      "目标车缺少最大金额，已采用默认分。"
+    ],
+    "hard_reject": false
   },
-  "same_source_count": 3,
+  "same_source_count": 2,
   "reference_cars": [
     {
-      "brand": "",
-      "series": "",
-      "year": null,
-      "mileage": null,
-      "price": null,
-      "features": [],
-      "task_id": "",
-      "ref_id": "REF-001",
-      "score": {
-        "score": 80.0,
-        "max_score": 100.0,
-        "min_score": 0.0,
-        "review_reasons": []
-      }
+      "reference_index": 1,
+      "list_price_10k": 4.88,
+      "list_year": 2020,
+      "list_mileage_10k_km": 8.0,
+      "transfer_count": 1,
+      "accident_count": 1,
+      "max_accident_amount": 5000,
+      "repair_counts": {
+        "驾驶室": 1,
+        "车尾": 0,
+        "副驾驶": 1,
+        "车头": 1
+      },
+      "panel_repairs": [
+        {
+          "part": "右后门",
+          "damage_type": "喷漆"
+        },
+        {
+          "part": "左后门",
+          "damage_type": "喷漆"
+        },
+        {
+          "part": "前保险杠",
+          "damage_type": "喷漆"
+        }
+      ],
+      "score": 93.0,
+      "is_final_reference": false
     },
     {
-      "brand": "",
-      "series": "",
-      "year": null,
-      "mileage": null,
-      "price": null,
-      "features": [],
-      "task_id": "",
-      "ref_id": "REF-002",
-      "score": {
-        "score": 80.0,
-        "max_score": 100.0,
-        "min_score": 0.0,
-        "review_reasons": []
-      }
-    },
-    {
-      "brand": "",
-      "series": "",
-      "year": null,
-      "mileage": null,
-      "price": null,
-      "features": [],
-      "task_id": "",
-      "ref_id": "REF-003",
-      "score": {
-        "score": 80.0,
-        "max_score": 100.0,
-        "min_score": 0.0,
-        "review_reasons": []
-      }
+      "reference_index": 2,
+      "list_price_10k": 5.2,
+      "list_year": 2020,
+      "list_mileage_10k_km": 6.2,
+      "transfer_count": 0,
+      "accident_count": 0,
+      "max_accident_amount": "无金额记录",
+      "repair_counts": {
+        "驾驶室": 1,
+        "车尾": 0,
+        "副驾驶": 1,
+        "车头": 0
+      },
+      "panel_repairs": [
+        {
+          "part": "右后门",
+          "damage_type": "喷漆"
+        },
+        {
+          "part": "左后门",
+          "damage_type": "喷漆"
+        }
+      ],
+      "score": 96.5,
+      "is_final_reference": false
     }
   ],
-  "selected_reference": {
-    "brand": "",
-    "series": "",
-    "year": null,
-    "mileage": null,
-    "price": null,
-    "features": [],
-    "task_id": "",
-    "ref_id": "REF-001",
-    "score": {
-      "score": 80.0,
-      "max_score": 100.0,
-      "min_score": 0.0,
-      "review_reasons": []
-    }
+  "selected_reference": null,
+  "selected_reference_score": null,
+  "pricing": {
+    "status": "manual_review",
+    "reason": "无有效参考车"
   },
-  "pricing": 64000.0
+  "manual_review_reasons": [
+    "目标车缺少出险次数，已采用默认分。",
+    "目标车缺少最大金额，已采用默认分。",
+    "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。",
+    "FIRST_BOUNDARY_HAS_NO_PREVIOUS_REFERENCE"
+  ],
+  "phone_test": {}
 }

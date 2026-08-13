@@ -14,6 +14,7 @@ SUPPORTED_TASK_SOURCES = {"mock", "feishu_export", "feishu_api"}
 REAL_DEVICE_OPERATION_SOURCES = {"feishu_export", "feishu_api"}
 APP_FLOW_REQUIRED_FIELDS = ("task_id", "brand", "series", "model_year", "trim", "color", "registration_date")
 PRICING_REQUIRED_FIELDS = ("registration_date", "mileage_10k_km", "transfer_count", "condition_text")
+APP_OPERATION_FIELDS = ("brand", "series", "model_year", "trim", "color", "vehicle_year")
 
 
 class TaskContractError(ValueError):
@@ -188,3 +189,42 @@ def _amount_or_none(value: Any) -> float | str | None:
         return float(text)
     except ValueError:
         return text
+
+
+def real_device_operation_allowed(task: TargetCarTask | None) -> bool:
+    if task is None:
+        return False
+    return _allows_real_device_operation(task.source, task.simulation_only, task.app_flow_blocked)
+
+
+def _allows_real_device_operation(task_source: str, is_simulation_only: bool, app_flow_blocked: bool) -> bool:
+    return task_source in REAL_DEVICE_OPERATION_SOURCES and not is_simulation_only and not app_flow_blocked
+
+
+def brand_entry_gate(task: TargetCarTask | None) -> dict[str, Any]:
+    """Validate the target-task gate before a real device can click S02 brand entry."""
+    if task is None:
+        return {"allowed": False, "reason": "TARGET_TASK_MISSING", "details": ["No TargetCarTask is loaded."]}
+    details: list[str] = []
+    if task.source not in SUPPORTED_TASK_SOURCES:
+        details.append(f"Unsupported target task source: {task.source}.")
+    if task.source == "mock":
+        details.append("Mock target tasks cannot drive real device APP actions.")
+    if task.simulation_only:
+        details.append("simulation_only target tasks cannot drive real device APP actions.")
+    if task.source not in REAL_DEVICE_OPERATION_SOURCES:
+        details.append(f"Source {task.source} is not allowed for real device operation.")
+    if task.app_flow_blocked:
+        details.extend(task.app_flow_block_reasons)
+    for field in APP_OPERATION_FIELDS:
+        if getattr(task, field if field != "vehicle_year" else "vehicle_year") in (None, ""):
+            details.append(f"APP operation blocked: missing required parameter {field}.")
+    if task.task_id in (None, ""):
+        details.append("APP operation blocked: missing required parameter task_id.")
+    return {
+        "allowed": not details,
+        "reason": "OK" if not details else "TARGET_TASK_GATE_BLOCKED",
+        "details": details,
+        "source": task.source,
+        "allow_real_device_operation": real_device_operation_allowed(task),
+    }

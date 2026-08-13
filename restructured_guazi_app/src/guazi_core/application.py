@@ -13,7 +13,7 @@ from typing import Any
 
 from .audit import AuditLogger
 from .config import ensure_runtime_dirs, load_config, project_path
-from .data_collection import DataCollector
+from .data_collector import DataCollector
 from .exceptions import GuaziFlowError, IssueRecorder
 from .output_writer import read_json, write_feedback_report, write_json
 from .page_recognition import PageRecognizer
