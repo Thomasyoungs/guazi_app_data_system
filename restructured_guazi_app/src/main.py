@@ -2,9 +2,19 @@
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 from typing import Any
+
+# Auto-load .env file if python-dotenv is available
+_ENV_PATH = Path(__file__).resolve().parents[1] / ".env"
+if _ENV_PATH.exists():
+    try:
+        from dotenv import load_dotenv
+        load_dotenv(_ENV_PATH)
+    except ImportError:
+        pass
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -23,11 +33,12 @@ def _resolve_default_dirs() -> tuple[str, str]:
 def parse_args(argv: list[str]) -> argparse.Namespace:
     default_config_dir, default_output_dir = _resolve_default_dirs()
     parser = argparse.ArgumentParser(description="瓜子二手车 APP 数据获取系统")
-    parser.add_argument("--mode", choices=["simulate", "device", "feishu"], default="simulate", help="运行模式：模拟、设备或飞书消息处理")
+    parser.add_argument("--mode", choices=["simulate", "device", "feishu", "webhook"], default="simulate", help="运行模式：模拟、设备、飞书消息处理或webhook服务")
     parser.add_argument("--config-dir", default=default_config_dir, help="配置文件目录路径")
     parser.add_argument("--output-dir", default=default_output_dir, help="输出目录路径")
     parser.add_argument("--feishu-message", type=str, help="飞书消息JSON字符串（用于feishu模式）")
     parser.add_argument("--chat-id", type=str, help="飞书聊天ID")
+    parser.add_argument("--port", type=int, default=8080, help="Webhook服务监听端口（默认8080）")
     parser.add_argument("--phone-check-only", action="store_true")
     parser.add_argument("--device-launch-only", action="store_true")
     parser.add_argument("--export-report-only", action="store_true")
@@ -49,26 +60,32 @@ def main(argv: list[str] | None = None) -> int:
             }, ensure_ascii=False, indent=2))
 
         elif args.mode == "feishu":
-            if not args.feishu_message:
+            if args.feishu_message:
+                # Single message processing mode
+                try:
+                    message_data = json.loads(args.feishu_message)
+                except json.JSONDecodeError as e:
+                    print(json.dumps({
+                        "status": "error",
+                        "message": f"无效的JSON消息: {e}"
+                    }, ensure_ascii=False, indent=2), file=sys.stderr)
+                    return 1
+                result = app.handle_feishu_message(message_data, args.chat_id)
                 print(json.dumps({
-                    "status": "error",
-                    "message": "--feishu-message 参数必需用于飞书模式"
-                }, ensure_ascii=False, indent=2), file=sys.stderr)
-                return 1
-            try:
-                message_data = json.loads(args.feishu_message)
-            except json.JSONDecodeError as e:
-                print(json.dumps({
-                    "status": "error",
-                    "message": f"无效的JSON消息: {e}"
-                }, ensure_ascii=False, indent=2), file=sys.stderr)
-                return 1
-            result = app.handle_feishu_message(message_data, args.chat_id)
-            print(json.dumps({
-                "status": "success" if result.get("ok") else "error",
-                "mode": "feishu",
-                "result": result
-            }, ensure_ascii=False, indent=2))
+                    "status": "success" if result.get("ok") else "error",
+                    "mode": "feishu",
+                    "result": result
+                }, ensure_ascii=False, indent=2))
+            else:
+                # Long-connection realtime receiver mode
+                from guazi_core.feishu_realtime import run_realtime_receiver
+                run_realtime_receiver()
+            return 0
+
+        elif args.mode == "webhook":
+            from guazi_core.feishu_webhook import run_webhook_server
+            run_webhook_server(port=args.port)
+            return 0
 
         return 0
 
