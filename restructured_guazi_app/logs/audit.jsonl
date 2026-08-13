@@ -5,3 +5,16 @@
 {"timestamp": "2026-08-13T03:16:00.524058+00:00", "event": "issue_recorded", "issue_id": "ISS-4efff8c76ea7", "issue_code": "SAMPLE_TOO_SMALL", "state_id": "S10", "resolution": "manual_review"}
 {"timestamp": "2026-08-13T03:42:50.418206+00:00", "event": "issue_recorded", "issue_id": "ISS-d7af8e3a2fac", "issue_code": "SAMPLE_TOO_SMALL", "state_id": "S10", "resolution": "manual_review"}
 {"timestamp": "2026-08-13T05:35:28.472640+00:00", "event": "issue_recorded", "issue_id": "ISS-a06d220e83f1", "issue_code": "SAMPLE_TOO_SMALL", "state_id": "S10", "resolution": "manual_review"}
+{"timestamp": "2026-08-13T08:30:04.003475+00:00", "event": "device_mode_start", "task_id": "SIM-20260421-0001"}
+{"timestamp": "2026-08-13T08:34:13.310719+00:00", "event": "device_mode_start", "task_id": "SIM-20260421-0001"}
+{"timestamp": "2026-08-13T08:44:35.604711+00:00", "event": "device_mode_start", "task_id": "SIM-20260421-0001"}
+{"timestamp": "2026-08-13T08:45:03.699658+00:00", "event": "issue_recorded", "issue_id": "ISS-3a13c4e91aba", "issue_code": "DEVICE_OPERATION_FAILED", "state_id": "S00", "resolution": "manual_review"}
+{"timestamp": "2026-08-13T08:46:40.798389+00:00", "event": "device_mode_start", "task_id": "DEVICE-DEFAULT-001"}
+{"timestamp": "2026-08-13T08:47:13.594222+00:00", "event": "issue_recorded", "issue_id": "ISS-b66cfd6a2b91", "issue_code": "DEVICE_OPERATION_FAILED", "state_id": "S00", "resolution": "manual_review"}
+{"timestamp": "2026-08-13T08:47:50.824365+00:00", "event": "device_mode_start", "task_id": "DEVICE-DEFAULT-001"}
+{"timestamp": "2026-08-13T08:48:28.783285+00:00", "event": "issue_recorded", "issue_id": "ISS-14133e83287f", "issue_code": "DEVICE_OPERATION_FAILED", "state_id": "S00", "resolution": "manual_review"}
+{"timestamp": "2026-08-13T08:50:45.872114+00:00", "event": "device_mode_start", "task_id": "test-device-001"}
+{"timestamp": "2026-08-13T08:51:05.074641+00:00", "event": "issue_recorded", "issue_id": "ISS-8711ba21313a", "issue_code": "DEVICE_OPERATION_FAILED", "state_id": "S00", "resolution": "manual_review"}
+{"timestamp": "2026-08-13T08:56:21.063762+00:00", "event": "device_mode_start", "task_id": "test-device-001"}
+{"timestamp": "2026-08-13T08:56:52.745143+00:00", "event": "issue_recorded", "issue_id": "ISS-5d66c2520423", "issue_code": "DEVICE_OPERATION_FAILED", "state_id": "S00", "resolution": "manual_review"}
+{"timestamp": "2026-08-13T09:01:17.614289+00:00", "event": "device_mode_start", "task_id": "DEVICE-DEFAULT-001"}

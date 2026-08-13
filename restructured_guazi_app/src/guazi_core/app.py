@@ -10,9 +10,10 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .application import build_runtime, export_report, run_simulation
+from .application import build_runtime, export_report, run_simulation, run_device
 from .feishu.message_handler import FeishuMessageHandler
 from .feishu.task_store import FeishuTaskStore
+from .task_normalizer import TargetCarTask
 
 
 class GuaziApp:
@@ -30,6 +31,14 @@ class GuaziApp:
         """Run the simulation mode of the application."""
         runtime = build_runtime(str(self.config_dir))
         result = run_simulation(runtime)
+        with open(self.result_path, "w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
+        return result
+
+    def run_device(self, task: TargetCarTask | None = None, adb_serial: str | None = None) -> dict[str, Any]:
+        """Run the device mode: launch APP and enter search conditions via ADB."""
+        runtime = build_runtime(str(self.config_dir))
+        result = run_device(runtime, task=task, adb_serial=adb_serial)
         with open(self.result_path, "w", encoding="utf-8") as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
         return result

@@ -14,11 +14,13 @@ from typing import Any
 from .audit import AuditLogger
 from .config import ensure_runtime_dirs, load_config, project_path
 from .data_collector import DataCollector
+from .device_operations import run_device_workflow
 from .exceptions import GuaziFlowError, IssueRecorder
 from .output_writer import read_json, write_feedback_report, write_json
 from .page_recognition import PageRecognizer
 from .page_state_machine import PageStateMachine
 from .pricing_calculator import calculate_pricing, score_target, select_reference
+from .task_normalizer import TargetCarTask
 
 
 def build_runtime(config_dir: str | None = None) -> dict[str, Any]:
@@ -79,6 +81,75 @@ def run_simulation(runtime: dict[str, Any], phone_test: dict[str, Any] | None = 
         "manual_review_reasons": _dedupe_keep_order(manual_review_reasons),
         "phone_test": phone_test or {},
     }
+    write_json(project_path(configs["system"]["paths"]["result_json"]), result)
+    return result
+
+
+def run_device(runtime: dict[str, Any], task: TargetCarTask | None = None, adb_serial: str | None = None) -> dict[str, Any]:
+    """Run the device mode: launch APP and enter search conditions via ADB.
+
+    Args:
+        runtime: The runtime dictionary from build_runtime().
+        task: Optional TargetCarTask with search conditions. If None, uses default task.
+        adb_serial: Optional ADB device serial number.
+
+    Returns:
+        dict with device operation results.
+    """
+    configs = runtime["configs"]
+    audit: AuditLogger = runtime["audit"]
+    issues: IssueRecorder = runtime["issues"]
+
+    # Use default task if none provided
+    if task is None:
+        task = TargetCarTask(
+            task_id="DEVICE-DEFAULT-001",
+            brand="大众",
+            series="帕萨特",
+            model_year="2020",
+            trim="330TSI DSG 尊荣版",
+            color="白色",
+            registration_date_raw="2020.4",
+            vehicle_year=2020,
+            mileage_10k_km=7.2,
+            transfer_count=0,
+            condition_text="正常",
+        )
+
+    audit.log("device_mode_start", task_id=task.task_id or "default")
+
+    # Run device workflow
+    device_result = run_device_workflow(task, adb_serial)
+
+    if not device_result["success"]:
+        issues.record(
+            "DEVICE_OPERATION_FAILED",
+            "S00",
+            f"Device operation failed: {device_result.get('error', 'Unknown error')}",
+            {"device_result": device_result},
+            "manual_review",
+        )
+        return {
+            "success": False,
+            "error": device_result.get("error"),
+            "device_result": device_result,
+        }
+
+    # Build result
+    result = {
+        "metadata": {
+            "project": "guazi_app_data_system",
+            "mode": "device",
+            "field_scope": "contract_only",
+        },
+        "target_car": task.to_dict(),
+        "device_operation": device_result,
+        "phone_test": {
+            "adb_serial": device_result.get("adb_serial"),
+            "search_query": device_result.get("search", {}).get("search_query"),
+        },
+    }
+
     write_json(project_path(configs["system"]["paths"]["result_json"]), result)
     return result
 

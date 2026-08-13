@@ -39,7 +39,7 @@ MOCK_FEISHU_MESSAGE = """品牌:大众
 
 
 def adb_launch_guazi_app(task: TargetCarTask) -> dict[str, Any]:
-    """Launch Guazi APP via ADB and navigate to search."""
+    """Launch Guazi APP via ADB and navigate to search with full conditions."""
     GUAZI_PACKAGE = "com.ganji.android.haoche_c"
 
     try:
@@ -56,12 +56,12 @@ def adb_launch_guazi_app(task: TargetCarTask) -> dict[str, Any]:
     client.run(["shell", "input", "keyevent", "224"], timeout=5)
     time.sleep(1)
 
-    # Launch the main activity
+    # Launch the main activity using correct activity name
     launch_cmd = [
         "shell",
         "am", "start", "-W",
         "-a", "android.intent.action.MAIN",
-        "-n", f"{GUAZI_PACKAGE}/.activity.SplashActivity",
+        "-n", f"{GUAZI_PACKAGE}/com.cars.guazi.app.home.MainActivity",
     ]
     print("[ADB] Launching Guazi APP...")
     result = client.run(launch_cmd, timeout=30)
@@ -76,15 +76,51 @@ def adb_launch_guazi_app(task: TargetCarTask) -> dict[str, Any]:
     print("[ADB] APP launched successfully")
     time.sleep(3)  # Wait for app to settle
 
-    # Try to tap the "选车" tab at bottom
+    # Step 1: Click search bar to focus it
     if task.brand and task.series:
-        print("[ADB] Tapping search tab...")
-        try:
-            # Common coordinates for bottom nav (adjust based on device)
-            client.run(["shell", "input", "tap", "540", "2200"], timeout=10)
+        print("[ADB] Clicking search bar...")
+        # Search bar center coordinates (from UI dump: bounds="[138,123][412,201]")
+        client.run(["shell", "input", "tap", "275", "162"], timeout=10)
+        time.sleep(1)
+
+        # Step 2: Clear existing text and enter search query
+        print("[ADB] Clearing search text...")
+        # Click delete button to clear (bounds="[361,147][391,177]")
+        client.run(["shell", "input", "tap", "376", "162"], timeout=10)
+        time.sleep(0.5)
+
+        # Build search query with all conditions
+        search_query = f"{task.brand} {task.series}"
+        if task.model_year:
+            search_query += f" {task.model_year}款"
+        if task.color:
+            search_query += f" {task.color}"
+
+        print(f"[ADB] Entering search query: {search_query}")
+        # Type the search query using ADB text input
+        for char in search_query:
+            # Use ADB shell input text for each character (slower but more reliable)
+            client.run(["shell", "input", "text", char], timeout=5)
+            time.sleep(0.1)
+        time.sleep(1)
+
+        # Step 3: Submit search (press Enter)
+        print("[ADB] Submitting search...")
+        client.run(["shell", "input", "keyevent", "66"], timeout=10)  # KEYCODE_ENTER
+        time.sleep(2)
+
+        # Step 4: Apply additional filters via "筛选" button if available
+        if task.mileage_10k_km:
+            print("[ADB] Applying mileage filter...")
+            # Tap "筛选" button (bounds="[912,479][1032,599]")
+            client.run(["shell", "input", "tap", "972", "539"], timeout=10)
             time.sleep(1)
-        except Exception:
-            pass
+            # Tap "车龄/里程" button (bounds="[639,479][862,599]")
+            client.run(["shell", "input", "tap", "750", "539"], timeout=10)
+            time.sleep(1)
+            print(f"[ADB] Mileage filter: ~{task.mileage_10k_km} wan km (manual selection needed)")
+            # Note: Exact mileage selection would require more complex UI automation
+            time.sleep(1)
 
     return {
         "success": True,

@@ -221,7 +221,7 @@ def _launch_guazi_app(task: TargetCarTask) -> dict[str, Any]:
         "shell",
         "am", "start", "-W",
         "-a", "android.intent.action.MAIN",
-        "-n", f"{GUAZI_PACKAGE}/.activity.SplashActivity",
+        "-n", f"{GUAZI_PACKAGE}/com.cars.guazi.app.home.MainActivity",
     ]
     result = client.run(launch_cmd, timeout=30)
 

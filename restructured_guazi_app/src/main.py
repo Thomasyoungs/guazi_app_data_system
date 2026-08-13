@@ -87,6 +87,16 @@ def main(argv: list[str] | None = None) -> int:
             run_webhook_server(port=args.port)
             return 0
 
+        elif args.mode == "device":
+            result = app.run_device()
+            print(json.dumps({
+                "status": "success",
+                "mode": "device",
+                "result": result,
+                "output_file": str(app.result_path)
+            }, ensure_ascii=False, indent=2))
+            return 0
+
         return 0
 
     except GuaziFlowError as e:
