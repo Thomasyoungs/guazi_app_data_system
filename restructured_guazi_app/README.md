@@ -92,6 +92,11 @@ python main.py --mode simulate
 
 # 处理飞书消息
 python main.py --mode feishu --feishu-message '{"text": "品牌: 大众\n车系: 帕萨特\n年份: 2020\n里程: 4.5万公里"}' --chat-id 'your_chat_id'
+
+
+# 从瓜子拿到价格后进行任务归一化，服务费金酸，竞争系数，成本计算 测试
+cd e:\project\zhikuan\guazi_app_data_system\restructured_guazi_app\scripts
+python run_mock_test.py
 ```
 
 ## 核心模块说明
