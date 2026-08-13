@@ -1,0 +1,12 @@
+admin_open_ids:
+  - "PLACEHOLDER_ADMIN_OPEN_ID"
+
+supervisor_open_ids:
+  - "PLACEHOLDER_SUPERVISOR_OPEN_ID"
+
+business_chat_ids:
+  - "PLACEHOLDER_BUSINESS_CHAT_ID"
+supervisor_chat_ids:
+  - "PLACEHOLDER_SUPERVISOR_CHAT_ID"
+admin_chat_ids:
+  - "PLACEHOLDER_ADMIN_CHAT_ID"

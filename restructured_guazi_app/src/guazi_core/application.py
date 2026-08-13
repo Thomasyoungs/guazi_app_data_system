@@ -1,4 +1,7 @@
-"""Refactored main application logic for the Guazi APP data system."""
+"""Main application logic for the Guazi APP data system.
+
+Replaces the simplified stub with the original system's runtime logic.
+"""
 
 from __future__ import annotations
 
@@ -8,111 +11,122 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from .data_collector import DataCollector
-from .pricing_calculator import PricingCalculator
-from .simulator import StateActionSimulator
-from .exceptions import GuaziFlowError
+from .audit import AuditLogger
+from .config import ensure_runtime_dirs, load_config, project_path
+from .data_collection import DataCollector
+from .exceptions import GuaziFlowError, IssueRecorder
+from .output_writer import read_json, write_feedback_report, write_json
+from .page_recognition import PageRecognizer
+from .page_state_machine import PageStateMachine
+from .pricing_calculator import calculate_pricing, score_target, select_reference
 
 
-def build_runtime() -> dict[str, Any]:
-    """Build the runtime context for the application."""
-    # 在重构版本中，我们简化配置加载
-    # 并在适当位置使用默认值
-    output_dir = Path("output")
-    output_dir.mkdir(exist_ok=True)  # 确保输出目录存在
-    
+def build_runtime(config_dir: str | None = None) -> dict[str, Any]:
+    ensure_runtime_dirs()
     configs = {
-        "fields": {
-            "same_source_policy": {
-                "sample_too_small_message": "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。"
-            }
-        },
-        "system": {
-            "paths": {
-                "result_json": str(output_dir / "result.json")
-            }
-        }
+        "system": load_config("system.yaml", config_dir),
+        "pages": load_config("pages.yaml", config_dir),
+        "fields": load_config("fields.yaml", config_dir),
+        "actions": load_config("actions.yaml", config_dir),
+        "exceptions": load_config("exceptions.yaml", config_dir),
     }
-    
-    runtime_context = {
-        "configs": configs,
-        "collector": DataCollector(configs["fields"]),
-        "calculator": PricingCalculator()
-    }
-    
-    return runtime_context
+    system = configs["system"]
+    audit = AuditLogger(project_path(system["paths"]["audit_log"]))
+    issues = IssueRecorder(
+        project_path(system["paths"]["issue_log"]),
+        configs["exceptions"],
+        audit=audit,
+    )
+    return {"configs": configs, "audit": audit, "issues": issues}
 
 
-def run_simulation(runtime: dict[str, Any]) -> dict[str, Any]:
-    """Run the simulation with simplified logic."""
-    collector = runtime["collector"]
-    calculator = runtime["calculator"]
+def run_simulation(runtime: dict[str, Any], phone_test: dict[str, Any] | None = None) -> dict[str, Any]:
     configs = runtime["configs"]
+    audit: AuditLogger = runtime["audit"]
+    issues: IssueRecorder = runtime["issues"]
+    machine = PageStateMachine(configs["pages"])
+    collector = DataCollector(configs["fields"])
 
-    # 使用模拟器运行状态-动作序列
-    simulator = StateActionSimulator(collector)
-    simulator.execute_sequence()
-
-    # 获取收集的数据
     target = collector.simulated_target()
     references = collector.simulated_reference_cars()
 
-    # 计算分数和定价
-    target_score = calculator.score_target(target)
-    selected_reference = calculator.select_reference(target_score, references)
-    pricing = calculator.calculate_pricing(selected_reference)
+    target_score = score_target(target, configs["fields"], current_year=2026)
+    selection = select_reference(target_score, references, configs["fields"], current_year=2026)
+    selected_reference = selection["selected_reference"]
+    pricing = calculate_pricing(selected_reference, configs["fields"])
+
+    manual_review_reasons = list(target_score.review_reasons)
+    manual_review_reasons.extend(selection.get("review_reasons", []))
+    if len(references) < 3:
+        sample_message = configs["fields"].get("same_source_policy", {}).get(
+            "sample_too_small_message", "三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。"
+        )
+        issues.record("SAMPLE_TOO_SMALL", "S10", sample_message, {"sample_count": len(references)}, "manual_review")
 
     result = {
         "metadata": {
-            "project": "refactored_guazi_app",
-            "mode": "simulate",
+            "project": "guazi_app_data_system",
+            "mode": "simulate" if not phone_test else "device_with_simulation_fallback",
+            "field_scope": "contract_only",
         },
-        "target_car": target.to_dict() if target else None,
-        "target_score": target_score.to_dict() if target_score else None,
+        "target_car": target.to_dict(),
+        "target_score": target_score.to_dict(),
         "same_source_count": len(references),
-        "reference_cars": [ref.to_dict() for ref in references],
+        "reference_cars": [reference.to_dict() for reference in references],
         "selected_reference": selected_reference.to_dict() if selected_reference else None,
+        "selected_reference_score": selection["selected_score"].to_dict() if selection.get("selected_score") else None,
         "pricing": pricing,
+        "manual_review_reasons": _dedupe_keep_order(manual_review_reasons),
+        "phone_test": phone_test or {},
     }
-
-    # 将结果写入输出
-    result_path = Path(configs["system"]["paths"]["result_json"])
-    with open(result_path, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
-
+    write_json(project_path(configs["system"]["paths"]["result_json"]), result)
     return result
 
 
+def export_report(runtime: dict[str, Any], result: dict[str, Any] | None = None, phone_test: dict[str, Any] | None = None, local_tests: dict[str, Any] | None = None) -> Path:
+    configs = runtime["configs"]
+    issues: IssueRecorder = runtime["issues"]
+    result_path = project_path(configs["system"]["paths"]["result_json"])
+    report_path = project_path(configs["system"]["paths"]["feedback_report"])
+    final_result = result or read_json(result_path)
+    write_feedback_report(report_path, project_path(), final_result, phone_test or final_result.get("phone_test", {}), local_tests, issues.read_all())
+    return report_path
+
+
+def _dedupe_keep_order(items: list[str]) -> list[str]:
+    seen: set[str] = set()
+    output: list[str] = []
+    for item in items:
+        if item and item not in seen:
+            seen.add(item)
+            output.append(item)
+    return output
+
+
 def parse_args(argv: list[str]) -> argparse.Namespace:
-    """Parse command line arguments."""
-    parser = argparse.ArgumentParser(description="Refactored 瓜子二手车 APP 数据获取系统")
-    parser.add_argument("--mode", choices=["simulate"], default="simulate", 
-                       help="运行模式 (仅支持simulate)")
+    parser = argparse.ArgumentParser(description="瓜子二手车 APP 数据获取系统")
+    parser.add_argument("--mode", choices=["simulate", "device"], default="simulate")
+    parser.add_argument("--phone-check-only", action="store_true")
+    parser.add_argument("--device-launch-only", action="store_true")
+    parser.add_argument("--export-report-only", action="store_true")
+    parser.add_argument("--local-test-status", default=None)
+    parser.add_argument("--local-test-summary", default=None)
     return parser.parse_args(argv)
 
 
 def main(argv: list[str] | None = None) -> int:
-    """Main entry point for the refactored application."""
     args = parse_args(argv or sys.argv[1:])
-    
-    try:
-        runtime = build_runtime()
-        
-        if args.mode == "simulate":
-            result = run_simulation(runtime)
-            print(json.dumps({
-                "result": "output/result.json",
-                "status": "success"
-            }, ensure_ascii=False, indent=2))
-            return 0
-            
-    except GuaziFlowError as e:
-        print(f"Guazi flow error occurred: {e.code} - {e}", file=sys.stderr)
-        return 1
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}", file=sys.stderr)
-        return 1
+    runtime = build_runtime()
+    if args.export_report_only:
+        report = export_report(runtime, local_tests={"status": args.local_test_status, "summary": args.local_test_summary})
+        print(json.dumps({"report": str(report)}, ensure_ascii=False))
+        return 0
 
-
-if __name__ == "__main__":
-    sys.exit(main())
+    phone_test: dict[str, Any] | None = None
+    if args.mode == "simulate":
+        result = run_simulation(runtime, phone_test=phone_test)
+        local_tests = {"status": args.local_test_status or "未记录", "summary": args.local_test_summary or "未记录"}
+        report = export_report(runtime, result, phone_test=phone_test, local_tests=local_tests)
+        print(json.dumps({"result": str(project_path("output", "result.json")), "report": str(report)}, ensure_ascii=False, indent=2))
+        return 0
+    return 0

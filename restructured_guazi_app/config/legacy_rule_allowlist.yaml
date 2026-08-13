@@ -1,0 +1,68 @@
+{
+  "version": "LEGACY_ALLOWLIST_MINIMIZATION_AND_ACTIVE_PATH_ZERO_RESIDUE_PATCH",
+  "policy": {
+    "default_for_active_code": "UNKNOWN_MUST_FAIL",
+    "requires_reason": true,
+    "requires_runtime_reachable_false": true,
+    "requires_max_occurrences": true,
+    "active_runtime_allowlist_entries": 0,
+    "active_config_allowlist_entries": 0
+  },
+  "entries": [
+    {
+      "legacy_rule_id": "old_s11_screenshot_click",
+      "file_pattern": "tests/*.py",
+      "allowed_context": "NEGATIVE_TEST_FIXTURE_ALLOWED",
+      "reason": "Tests keep S11 screenshot-derived names only as negative fixtures proving they are rejected and cannot become click targets.",
+      "max_occurrences": 80,
+      "runtime_reachable": false,
+      "expires_when": "S11 legacy visual-click negative tests are retired after two stable releases",
+      "owner": "pricing-runtime-contract",
+      "related_test": "tests/test_s11_report_entry_screenshot_text_detector_real_path.py"
+    },
+    {
+      "legacy_rule_id": "old_s07_full_track_ratio_with_unlimited",
+      "file_pattern": "tests/*.py",
+      "allowed_context": "NEGATIVE_TEST_FIXTURE_ALLOWED",
+      "reason": "Tests mention the old S07 full-track ratio algorithm only to assert it is forbidden or absent from executable plans.",
+      "max_occurrences": 60,
+      "runtime_reachable": false,
+      "expires_when": "S07 legacy age-slider negative tests are retired after two stable releases",
+      "owner": "pricing-runtime-contract",
+      "related_test": "tests/test_s07_age_contract_driven_action_plan.py"
+    },
+    {
+      "legacy_rule_id": "old_s07_target_age_plus_one",
+      "file_pattern": "tests/*.py",
+      "allowed_context": "NEGATIVE_TEST_FIXTURE_ALLOWED",
+      "reason": "Tests mention target_age_plus_one only to prove the old S07 off-by-one algorithm is forbidden.",
+      "max_occurrences": 30,
+      "runtime_reachable": false,
+      "expires_when": "S07 legacy age-slider negative tests are retired after two stable releases",
+      "owner": "pricing-runtime-contract",
+      "related_test": "tests/test_s07_age_contract_driven_action_plan.py"
+    },
+    {
+      "legacy_rule_id": "old_s07_ghost_handle_binding",
+      "file_pattern": "tests/*.py",
+      "allowed_context": "NEGATIVE_TEST_FIXTURE_ALLOWED",
+      "reason": "Tests mention ghost handle binding only to assert old ghost nodes are rejected and real handles are used.",
+      "max_occurrences": 30,
+      "runtime_reachable": false,
+      "expires_when": "S07 legacy ghost-handle negative tests are retired after two stable releases",
+      "owner": "pricing-runtime-contract",
+      "related_test": "tests/test_s07_age_slider_real_handle_binding.py"
+    },
+    {
+      "legacy_rule_id": "old_v2_reference_selection",
+      "file_pattern": "tests/*.py",
+      "allowed_context": "NEGATIVE_TEST_FIXTURE_ALLOWED",
+      "reason": "V2_FIRST_MATCH appears only in negative tests that prove non-V3 reference selection is rejected.",
+      "max_occurrences": 10,
+      "runtime_reachable": false,
+      "expires_when": "V2 reference-selection regression tests are retired after two stable releases",
+      "owner": "pricing-runtime-contract",
+      "related_test": "tests/test_runtime_contract_execution_guard.py"
+    }
+  ]
+}

@@ -1,0 +1,801 @@
+{
+  "coverage_schema_version": "PAGE_CONTRACT_RUNTIME_COVERAGE_V1",
+  "source_policy": {
+    "desktop_rule_source_dir": "C:\\Users\\lzc93\\Desktop\\定价",
+    "runtime_private_early_exit_allowed": false,
+    "not_covered_success_path_allowed": false,
+    "needs_source_rule_runtime_action_allowed": false,
+    "desktop_page_contract_version": "V1.50",
+    "desktop_scoring_rule_version": "V1.11",
+    "desktop_reference_rule_version": "V3_3_BOUNDARY_PREVIOUS_REFERENCE_RECOLLECT",
+    "desktop_pricing_rule_version": "V3.3_BOUNDARY_PREVIOUS_REFERENCE_RECOLLECT",
+    "desktop_competition_coefficient_version": "V1.2.6",
+    "source_backed_early_exit_allowed": true,
+    "boundary_previous_reference_recollect_required": true
+  },
+  "clauses": [
+    {
+      "rule_clause_id": "S03_BRAND_EXACT_SELECTION",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S03 must select the target brand exactly before continuing.",
+      "runtime_stage": "S03",
+      "expected_behavior": "Only the target brand is accepted; mismatch stops before downstream filters.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "runtime_s01_to_s10_mainline.handle_s03",
+      "evidence_fields": [
+        "rule_clause_id",
+        "contract_action_plan_id",
+        "selected_brand",
+        "contract_match"
+      ],
+      "test_files": [
+        "tests/test_runtime_rule_coverage_enforcement.py",
+        "tests/test_page_contract_real_path_binding.py"
+      ],
+      "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+      "allowed_algorithms": [
+        "tap_target_brand",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [],
+      "forbidden_actions": [
+        "default_brand_click",
+        "continue_after_brand_mismatch"
+      ],
+      "performance_budget_ms": 5000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S05_YEAR_TRIM_EXACT_SELECTION",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S05 must bind year and trim/configuration from the target template before continuing.",
+      "runtime_stage": "S05",
+      "expected_behavior": "Target year and trim must be selected or precisely failed.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "runtime_s01_to_s10_mainline.handle_s05",
+      "evidence_fields": [
+        "rule_clause_id",
+        "contract_action_plan_id",
+        "selected_year",
+        "selected_trim"
+      ],
+      "test_files": [
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+      "allowed_algorithms": [
+        "tap_exact_trim",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [
+        "bounded_trim_scroll"
+      ],
+      "forbidden_actions": [
+        "default_trim_click",
+        "continue_after_trim_mismatch"
+      ],
+      "performance_budget_ms": 15000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S07_COLOR_EXACT_SELECTED_CONFIRM",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S07 color must bind the target color node and confirm selected color with S08/S10 summaries.",
+      "runtime_stage": "S07_COLOR",
+      "expected_behavior": "Target color only; selected chip and later summaries must match.",
+      "action_plan_builder": "build_s07_color_action_plan",
+      "runtime_executor_function": "runtime_s01_to_s10_mainline._s07_build_color_click_action_trace",
+      "evidence_fields": [
+        "rule_clause_id",
+        "target_color",
+        "candidate_bounds",
+        "click_point",
+        "selected_color",
+        "s08_color_filter_evidence",
+        "s10_color_filter_evidence"
+      ],
+      "test_files": [
+        "tests/test_s07_color_click_trace_and_strict_confirm.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "FULLY_CONTRACT_DRIVEN",
+      "allowed_algorithms": [
+        "exact_target_color_binding",
+        "color_grid_text_node_bounds",
+        "target_color_node_bounds",
+        "xml_or_accessibility_target_color_bounds"
+      ],
+      "allowed_fallbacks": [
+        "color_grid_text_node_bounds"
+      ],
+      "forbidden_actions": [
+        "fixed_coordinate",
+        "ratio_coordinate",
+        "default_color_click",
+        "continue_after_non_target_selected"
+      ],
+      "performance_budget_ms": 5000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S07_AGE_SLIDER_EXACT_RANGE",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S07 age slider must select the exact target age range from V1.50-authorized visible tick/track binding; legacy serial fallback is not authorized.",
+      "runtime_stage": "S07_AGE",
+      "expected_behavior": "Direct contract fastpath first; target age uses registration-year difference; no right_first or full-track unlimited shortcut.",
+      "action_plan_builder": "build_s07_age_action_plan",
+      "runtime_executor_function": "runtime_s01_to_s10_mainline._set_exact_age_from_ticks",
+      "evidence_fields": [
+        "rule_clause_id",
+        "target_age_years",
+        "left_slider_target",
+        "right_slider_target",
+        "expected_age_filter",
+        "direct_track_fastpath_used",
+        "fallback_used",
+        "fallback_name",
+        "fallback_allowed_by_clause",
+        "age_panel_wait_ms",
+        "left_slider_bind_ms",
+        "right_slider_bind_ms",
+        "drag_ms",
+        "verify_ms",
+        "fallback_ms",
+        "xml_dump_count",
+        "screenshot_count",
+        "fallback_strategies_used",
+        "performance_budget_exceeded"
+      ],
+      "test_files": [
+        "tests/test_s07_age_slider_direct_track_fastpath.py",
+        "tests/test_s07_age_contract_only_runtime_alignment.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "FULLY_CONTRACT_DRIVEN",
+      "allowed_algorithms": [
+        "visible_tick_interpolation",
+        "exact_tick_binding",
+        "direct_track_fastpath",
+        "direct_track_fastpath_5_5",
+        "text_result_verify_first"
+      ],
+      "allowed_fallbacks": [],
+      "forbidden_actions": [
+        "legacy_age_slider_unbounded_track_ratio",
+        "legacy_age_slider_off_by_one_target",
+        "right_first_without_source_clause",
+        "long_press_drag_without_source_clause",
+        "segmented_drag_without_source_clause",
+        "track_based_drag_without_source_clause",
+        "legacy_age_slider_non_real_handle_binding",
+        "legacy_fallback_after_direct_success",
+        "unlimited_wait_panel_stable",
+        "right_first",
+        "long_press_drag",
+        "segmented_drag",
+        "track_based_drag"
+      ],
+      "performance_budget_ms": 5000,
+      "max_xml_dump_count": 2,
+      "max_screenshot_count": 2,
+      "max_fallback_count": 0,
+      "max_micro_adjust_count": 1,
+      "performance_failure_stop_code": "S07_AGE_SLIDER_FALLBACK_BUDGET_EXCEEDED",
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S08_FILTER_SUMMARY_MATCH_TARGET",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S08 summary must match target filters before viewing results.",
+      "runtime_stage": "S08_FILTER_SUMMARY",
+      "expected_behavior": "Summary chips reflect target brand/series/color/age.",
+      "action_plan_builder": "build_s10_filter_summary_action_plan",
+      "runtime_executor_function": "runtime_s01_to_s10_mainline.handle_s08",
+      "evidence_fields": [
+        "rule_clause_id",
+        "expected_filters",
+        "summary_text",
+        "matched_fields"
+      ],
+      "test_files": [
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+      "allowed_algorithms": [
+        "filter_summary_contract_match",
+        "verify_filter_summary"
+      ],
+      "allowed_fallbacks": [],
+      "forbidden_actions": [
+        "continue_after_filter_summary_mismatch"
+      ],
+      "performance_budget_ms": 3000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S10_FILTER_SUMMARY_MATCH_TARGET",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S10 summary must still match target filters before binding reference cards.",
+      "runtime_stage": "S10_FILTER_SUMMARY",
+      "expected_behavior": "S10 chips match target filters; mismatch blocks S11.",
+      "action_plan_builder": "build_s10_filter_summary_action_plan",
+      "runtime_executor_function": "runtime_s10_to_s16_mainline.handle_s10",
+      "evidence_fields": [
+        "rule_clause_id",
+        "expected_filters",
+        "summary_text",
+        "matched_fields"
+      ],
+      "test_files": [
+        "tests/test_s10_filter_contract_driven_guard.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+      "allowed_algorithms": [
+        "filter_summary_contract_match",
+        "verify_filter_summary"
+      ],
+      "allowed_fallbacks": [],
+      "forbidden_actions": [
+        "continue_after_filter_summary_mismatch"
+      ],
+      "performance_budget_ms": 3000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S10_REFERENCE_CARD_BINDING_UNIQUE",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S10 reference card must bind the intended price-ordered card uniquely.",
+      "runtime_stage": "S10_REFERENCE_CARD_BINDING",
+      "expected_behavior": "Card identity/signature is unique and stale attempts are excluded.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "runtime_s10_to_s16_mainline._bind_reference_card",
+      "evidence_fields": [
+        "rule_clause_id",
+        "reference_index",
+        "card_signature",
+        "binding_attempt_id",
+        "binding_unique"
+      ],
+      "test_files": [
+        "tests/test_s10_reference_match_stability_engine.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+      "allowed_algorithms": [
+        "unique_card_signature_binding",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [
+        "bounded_card_rescan"
+      ],
+      "forbidden_actions": [
+        "stale_attempt_error_as_current",
+        "non_unique_card_click"
+      ],
+      "performance_budget_ms": 10000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S11_REPORT_ENTRY_BIND_VIEW_FULL_REPORT",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S11 must bind and click ?????? only from current XML/accessibility exact text or safe clickable parent bounds; screenshot is debug evidence only.",
+      "runtime_stage": "S11_REPORT_ENTRY",
+      "expected_behavior": "Try XML exact; redump once on stale XML; if screenshot shows the entry but XML has no bindable target, record debug evidence and stop without clicking.",
+      "action_plan_builder": "build_s11_report_entry_action_plan",
+      "runtime_executor_function": "runtime_s10_to_s16_mainline.handle_s11",
+      "evidence_fields": [
+        "rule_clause_id",
+        "xml_exact_attempted",
+        "xml_exact_success",
+        "xml_stale",
+        "xml_redump_count",
+        "screenshot_seen_for_debug",
+        "screenshot_used_for_click",
+        "s11_visual_debug_not_used_for_click",
+        "click_source",
+        "binding_source",
+        "forbidden_action_used",
+        "runtime_bypassed_action_plan",
+        "s11_xml_dump_count",
+        "s11_screenshot_count",
+        "s11_report_entry_duration_ms",
+        "performance_budget_exceeded"
+      ],
+      "test_files": [
+        "tests/test_s11_report_entry_xml_only_runtime_alignment.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "FULLY_CONTRACT_DRIVEN",
+      "allowed_algorithms": [
+        "xml_exact_text_bounds",
+        "xml_clickable_parent_bounds",
+        "xml_safe_container_bounds",
+        "safe_reposition_after_xml_exact_seen",
+        "fresh_pair_stale_xml_redump_once",
+        "xml_after_stale_recovery"
+      ],
+      "allowed_fallbacks": [
+        "xml_redump_once_after_stale",
+        "bottom_safe_reposition_after_xml_exact_seen"
+      ],
+      "forbidden_actions": [
+        "legacy_s11_screenshot_rect_click_target",
+        "legacy_s11_layout_detector_click_target",
+        "legacy_s11_text_detector_click_target",
+        "legacy_s11_visual_detector_click_target",
+        "OCR",
+        "fixed_coordinate",
+        "ratio_coordinate",
+        "default_click",
+        "screenshot_coordinate_click",
+        "click_when_xml_missing",
+        "click_from_screenshot_visible_only",
+        "wrong_button_advisor_report",
+        "wrong_button_contact_advisor",
+        "wrong_button_contact_merchant",
+        "wrong_button_bargain",
+        "wrong_button_order_now"
+      ],
+      "performance_budget_ms": 10000,
+      "max_xml_dump_count": 2,
+      "max_screenshot_count": 1,
+      "max_detector_count": 0,
+      "performance_failure_stop_code": "S11_REPORT_ENTRY_PERFORMANCE_BUDGET_EXCEEDED",
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S13_REPAIR_COUNT_READ_ALL_AREAS",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S13 must read all area repair counts before entering item collection.",
+      "runtime_stage": "S13_REPAIR_COUNT",
+      "expected_behavior": "Total repair count and per-area counts are recorded before S14.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "runtime_s10_to_s16_mainline.handle_s13",
+      "evidence_fields": [
+        "rule_clause_id",
+        "s13_total_repair_count",
+        "area_repair_counts"
+      ],
+      "test_files": [
+        "tests/test_s13_repair_item_click_binding.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+      "allowed_algorithms": [
+        "s13_area_count_scan",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [
+        "bounded_area_rescan"
+      ],
+      "forbidden_actions": [
+        "skip_area_count_reconciliation"
+      ],
+      "performance_budget_ms": 15000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S13_HISTORY_REPAIR_ENTRY_BINDING",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S13 history repair entry must be bound from the history area, not the normal check list.",
+      "runtime_stage": "S13_REPAIR_ENTRY_BINDING",
+      "expected_behavior": "History item candidate is within history repair region and safe to click.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "runtime_s10_to_s16_mainline._select_s13_history_repair_entry",
+      "evidence_fields": [
+        "rule_clause_id",
+        "history_region_bounds",
+        "selected_history_repair_entry",
+        "normal_check_list_start"
+      ],
+      "test_files": [
+        "tests/test_s13_repair_item_click_binding.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+      "allowed_algorithms": [
+        "history_region_candidate_binding",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [
+        "clickable_parent_binding"
+      ],
+      "forbidden_actions": [
+        "normal_check_list_candidate_click",
+        "S14_part_filter_applied_to_S13_navigation"
+      ],
+      "performance_budget_ms": 15000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S14_WHOLE_VEHICLE_COLLECTION_COMPLETE",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S14 current item 1/1 is not whole vehicle completion; S13/S14 reconciliation and missing_repair_count=0 are required.",
+      "runtime_stage": "S14_COLLECTION",
+      "expected_behavior": "All S13 repair items are visited or reference is marked untrusted and excluded from V3.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "runtime_s10_to_s16_mainline.handle_s14",
+      "evidence_fields": [
+        "rule_clause_id",
+        "s13_total_repair_count",
+        "s14_collected_items_count",
+        "missing_repair_count",
+        "reference_score_usable_for_boundary"
+      ],
+      "test_files": [
+        "tests/test_s14_last_page_contract.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+      "allowed_algorithms": [
+        "s13_s14_reconciliation",
+        "collect_all_s13_repair_entries_before_s15",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [
+        "degraded_recordable_contract_level"
+      ],
+      "forbidden_actions": [
+        "current_item_1_1_as_whole_vehicle_done",
+        "use_incomplete_reference_for_v3_boundary"
+      ],
+      "performance_budget_ms": 30000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S14_RETURN_TO_S10_AFTER_REFERENCE_DONE",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "After S14 completion or unrecoverable exclusion, return to S10 safely before next reference.",
+      "runtime_stage": "S14_RETURN_TO_S10",
+      "expected_behavior": "Return path lands on the same S10 list context with next reference available.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "runtime_s10_to_s16_mainline._return_to_s10_after_s14",
+      "evidence_fields": [
+        "rule_clause_id",
+        "return_attempts",
+        "post_return_s10_signature",
+        "next_reference_index"
+      ],
+      "test_files": [
+        "tests/test_second_stage_reference_continuation_state_machine.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+      "allowed_algorithms": [
+        "safe_back_to_s10",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [
+        "bounded_back_recovery"
+      ],
+      "forbidden_actions": [
+        "return_to_wrong_list_context",
+        "continue_without_s10_signature"
+      ],
+      "performance_budget_ms": 20000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S15_SCORING_RULE_V1_9",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S15 scoring must use V1.11 and export score trace, including early-exit upper-bound compatibility fields.",
+      "runtime_stage": "S15_SCORING_RULE",
+      "expected_behavior": "Score components and deductions trace to V1.11 source.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "runtime_s10_to_s16_mainline.handle_s15",
+      "evidence_fields": [
+        "rule_clause_id",
+        "scoring_rule_version",
+        "score_input_summary",
+        "deduction_items",
+        "components"
+      ],
+      "test_files": [
+        "tests/test_pricing_service_fee_and_v3.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "FULLY_CONTRACT_DRIVEN",
+      "allowed_algorithms": [
+        "score_with_active_rule_source",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [],
+      "forbidden_actions": [
+        "old_scoring_rule",
+        "untraced_deduction"
+      ],
+      "performance_budget_ms": 5000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S15_V3_3_BOUNDARY_PREVIOUS_REFERENCE_RECOLLECT",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "Continue price-ordered reference collection until first trusted reference_score >= target_score or source-backed early-exit/exhaustion condition.",
+      "runtime_stage": "S15_REFERENCE_SELECTION_V3",
+      "expected_behavior": "Boundary selection uses only fully collected trusted references; source-backed early-exited references are excluded from final/boundary/pre-boundary candidates.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "runtime_s10_to_s16_mainline.handle_s15",
+      "evidence_fields": [
+        "rule_clause_id",
+        "target_score",
+        "reference_scores",
+        "boundary_confirmed",
+        "continue_required",
+        "next_reference_index",
+        "remaining_reference_count",
+        "early_exit_allowed",
+        "early_exit_rule_id"
+      ],
+      "test_files": [
+        "tests/test_pricing_service_fee_and_v3.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "FULLY_CONTRACT_DRIVEN",
+      "allowed_algorithms": [
+        "select_v3_boundary_reference",
+        "evaluate_reference_early_exit_max_possible_score",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [],
+      "forbidden_actions": [
+        "runtime_private_early_exit",
+        "early_exit_without_source_rule",
+        "use_untrusted_reference_for_boundary",
+        "use_early_exit_reference_as_final",
+        "use_early_exit_reference_as_boundary",
+        "use_early_exit_reference_as_pre_boundary"
+      ],
+      "performance_budget_ms": 5000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S16_SERVICE_FEE_PRICING_RULE",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S16 pricing must use service-fee tier V3.3, competition coefficient V1.2.6, and profit_rate 0.08.",
+      "runtime_stage": "S16_PRICING_RULE",
+      "expected_behavior": "Pricing fields are normalized and validated before delivery.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "runtime_s10_to_s16_mainline.handle_s16",
+      "evidence_fields": [
+        "rule_clause_id",
+        "pricing_rule_version",
+        "service_fee",
+        "profit_rate",
+        "final_purchase_price_yuan"
+      ],
+      "test_files": [
+        "tests/test_pricing_service_fee_and_v3.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "FULLY_CONTRACT_DRIVEN",
+      "allowed_algorithms": [
+        "normalize_and_validate_pricing_result_before_delivery",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [],
+      "forbidden_actions": [
+        "deliver_missing_final_price",
+        "manual_review_normalized_as_auto_success"
+      ],
+      "performance_budget_ms": 5000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "DISPATCHER_CONTINUE_NEXT_REFERENCE_STATE_MACHINE",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "Dispatcher must continue queued same-source references when second stage returns CONTINUE_NEXT_REFERENCE.",
+      "runtime_stage": "DISPATCHER_REFERENCE_CONTINUATION",
+      "expected_behavior": "current task/queue state continues next reference unless boundary is closed or references exhausted.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "feishu_pricing_dispatcher._continue_next_reference_if_required",
+      "evidence_fields": [
+        "rule_clause_id",
+        "current_reference_index",
+        "next_reference_index",
+        "remaining_reference_count",
+        "blocks_queue",
+        "dispatcher_continue_reason"
+      ],
+      "test_files": [
+        "tests/test_second_stage_reference_continuation_state_machine.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+      "allowed_algorithms": [
+        "continue_next_reference_state_machine",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [
+        "bounded_dispatcher_resume"
+      ],
+      "forbidden_actions": [
+        "cancel_continue_next_reference_as_not_started",
+        "drop_current_target_task_before_continuation"
+      ],
+      "performance_budget_ms": 10000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "FEISHU_USER_FEEDBACK_ERROR_REASON_ACCURACY",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "Feishu user feedback must present the real stage/reason without leaking internal forbidden terms.",
+      "runtime_stage": "FEISHU_USER_FEEDBACK",
+      "expected_behavior": "Started tasks are not reported as not-started; manual review/continuation states are accurately classified.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "feishu_result_formatter.format_result_reply",
+      "evidence_fields": [
+        "rule_clause_id",
+        "canonical_error_code",
+        "user_facing_reason",
+        "delivery_json"
+      ],
+      "test_files": [
+        "tests/test_feishu_result_formatter.py",
+        "tests/test_feishu_production_error_routing.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "CONTRACT_GUARDED_BUT_CODE_DRIVEN",
+      "allowed_algorithms": [
+        "format_user_feedback_from_canonical_error",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [
+        "admin_only_internal_detail"
+      ],
+      "forbidden_actions": [
+        "hide_started_task_as_not_started",
+        "leak_internal_terms_to_business_group"
+      ],
+      "performance_budget_ms": 3000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "V33_S14_LOW_SCORE_UPPER_BOUND_SKIP_AND_RECOLLECT_CONTRACT",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "Source-backed reference early exit: current reference can be excluded only when max_possible_reference_score is below target and cannot improve the best trusted pre-boundary reference.",
+      "runtime_stage": "REFERENCE_EARLY_EXIT",
+      "expected_behavior": "Early-exited reference returns to S10 and continues next reference; it must never become final_reference, boundary_reference, pre_boundary_reference, or enter S16.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "guazi_app_data_system.reference_early_exit.evaluate_reference_early_exit_max_possible_score",
+      "evidence_fields": [
+        "reference_early_exit",
+        "early_exit_rule_id",
+        "early_exit_allowed",
+        "target_score",
+        "partial_confirmed_score",
+        "remaining_max_possible_score",
+        "max_possible_reference_score",
+        "final_reference_candidate_index",
+        "final_reference_candidate_status",
+        "can_reach_target",
+        "can_improve_pre_boundary",
+        "mandatory_fields_collected",
+        "reference_score_trustworthy",
+        "excluded_from_final_reference_selection",
+        "usable_for_boundary",
+        "usable_for_pre_boundary",
+        "return_to_s10_required",
+        "continue_next_reference_required"
+      ],
+      "test_files": [
+        "tests/test_reference_early_exit_source_backed.py",
+        "tests/test_runtime_rule_coverage_enforcement.py"
+      ],
+      "coverage_status": "FULLY_CONTRACT_DRIVEN",
+      "allowed_algorithms": [
+        "evaluate_reference_early_exit_max_possible_score",
+        "verify_contract"
+      ],
+      "allowed_fallbacks": [],
+      "forbidden_actions": [
+        "early_exit_without_source_rule",
+        "early_exit_without_best_pre_boundary",
+        "early_exit_when_can_improve_pre_boundary",
+        "early_exit_when_upper_bound_can_reach_target",
+        "use_early_exit_reference_as_final",
+        "use_early_exit_reference_as_boundary",
+        "use_early_exit_reference_as_pre_boundary",
+        "enter_s16_after_early_exit"
+      ],
+      "performance_budget_ms": 1000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "S13_RETURN_TO_RELIABLE_S10_PHYSICAL_TRANSACTION_V149",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "S13 all-zero exit must execute a physical return to reliable S10 before S15 or continuation can advance.",
+      "coverage_status": "FULLY_CONTRACT_DRIVEN",
+      "forbidden_actions": [
+        "logical_continue_without_s10_return_proof",
+        "return_to_s10_if_all_zero_without_physical_transaction",
+        "continue_after_s13_without_reliable_s10"
+      ],
+      "runtime_stage": "S13_RETURN_TO_S10",
+      "expected_behavior": "S13 all-zero exit must physically execute return-to-list and verify reliable S10 before S15 or continuation can advance.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "runtime_s10_to_s16_mainline._s13_return_to_reliable_s10_transaction",
+      "evidence_fields": [
+        "return_to_reliable_s10_verified",
+        "returned_list_source_verified",
+        "s13_return_to_s10_physical_transaction",
+        "return_action_executed",
+        "landed_page",
+        "reliable_s10_evidence",
+        "physical_evidence_ok"
+      ],
+      "test_files": [
+        "tests/test_v149_reference_physical_ui_transition_proof.py",
+        "tests/test_s13_in_flight_reference_identity_hydration.py"
+      ],
+      "allowed_algorithms": [
+        "reliable_s10_return_transaction",
+        "s13_return_to_reliable_s10_transaction",
+        "verify_reliable_s10_after_back"
+      ],
+      "allowed_fallbacks": [
+        "bounded_back_retry"
+      ],
+      "performance_budget_ms": 15000,
+      "requires_runtime_trace": true
+    },
+    {
+      "rule_clause_id": "REFERENCE_HISTORY_PHYSICAL_UI_PROOF_GATE_V149",
+      "rule_source_file": "瓜子数据获取流程文档_V1.50_S12到S13四区域证明门禁全量版.docx",
+      "rule_source_version": "V1.50",
+      "rule_clause_text_summary": "reference_history, CONTINUE_NEXT_REFERENCE and all-references-exhausted require per-reference physical UI transition proof and no reused page signature.",
+      "coverage_status": "FULLY_CONTRACT_DRIVEN",
+      "forbidden_actions": [
+        "history_append_without_physical_evidence",
+        "all_exhausted_from_logical_index_only",
+        "hydrate_identity_from_first_stage_only",
+        "reuse_same_physical_page_signature_for_next_reference"
+      ],
+      "runtime_stage": "REFERENCE_HISTORY",
+      "expected_behavior": "reference_history writes, CONTINUE_NEXT_REFERENCE and all-references-exhausted require current-reference physical UI transition proof, matched destination identity, and non-reused page signature.",
+      "action_plan_builder": "build_generic_contract_action_plan",
+      "runtime_executor_function": "runtime_s10_to_s16_mainline._safe_reference_history_with_current_reference",
+      "evidence_fields": [
+        "physical_ui_transition_proof",
+        "physical_ui_transition_proof_gate",
+        "physical_evidence_ok",
+        "destination_identity_matched",
+        "actual_page_signature",
+        "page_signature_reused",
+        "reference_history_write_allowed"
+      ],
+      "test_files": [
+        "tests/test_v149_reference_physical_ui_transition_proof.py",
+        "tests/test_s13_in_flight_reference_identity_hydration.py"
+      ],
+      "allowed_algorithms": [
+        "reference_physical_ui_transition_proof_gate",
+        "destination_identity_match",
+        "page_signature_reuse_guard",
+        "all_references_exhausted_physical_gate"
+      ],
+      "allowed_fallbacks": [],
+      "performance_budget_ms": 3000,
+      "requires_runtime_trace": true
+    }
+  ]
+}
