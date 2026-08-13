@@ -12,11 +12,20 @@ from guazi_core.app import GuaziApp
 from guazi_core.exceptions import GuaziFlowError
 
 
+def _resolve_default_dirs() -> tuple[str, str]:
+    """如果 main.py 在 src/ 目录中运行，则将默认路径指向父目录。"""
+    script_dir = Path(__file__).resolve().parent
+    if script_dir.name == "src" and (script_dir.parent / "config").exists():
+        return str(script_dir.parent / "config"), str(script_dir.parent / "output")
+    return "./config", "./output"
+
+
 def parse_args(argv: list[str]) -> argparse.Namespace:
+    default_config_dir, default_output_dir = _resolve_default_dirs()
     parser = argparse.ArgumentParser(description="瓜子二手车 APP 数据获取系统")
     parser.add_argument("--mode", choices=["simulate", "device", "feishu"], default="simulate", help="运行模式：模拟、设备或飞书消息处理")
-    parser.add_argument("--config-dir", default="./config", help="配置文件目录路径")
-    parser.add_argument("--output-dir", default="./output", help="输出目录路径")
+    parser.add_argument("--config-dir", default=default_config_dir, help="配置文件目录路径")
+    parser.add_argument("--output-dir", default=default_output_dir, help="输出目录路径")
     parser.add_argument("--feishu-message", type=str, help="飞书消息JSON字符串（用于feishu模式）")
     parser.add_argument("--chat-id", type=str, help="飞书聊天ID")
     parser.add_argument("--phone-check-only", action="store_true")
