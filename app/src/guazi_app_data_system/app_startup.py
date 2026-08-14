@@ -305,6 +305,31 @@ class AdbClient:
             info[name] = result.stdout.strip() if result.success else ""
         return info
 
+    def launch_activity_component(self, component: str, wait_seconds: int = 6) -> dict[str, object]:
+        """Launch an activity component on the device and wait until the package is foreground.
+
+        component: string in form "package/name" or "package/.Activity"
+        Returns a dict with keys: ok(bool), launch_result(ADBCommandResult), snapshot(dict)
+        """
+        try:
+            launch_result = self.run(["shell", "am", "start", "-n", component], timeout=15)
+        except Exception as exc:  # pragma: no cover - defensive
+            return {"ok": False, "launch_result": None, "error": str(exc)}
+        package = component.split("/", 1)[0]
+        snapshot = {}
+        deadline = time.time() + float(wait_seconds)
+        while time.time() < deadline:
+            try:
+                snapshot = self.runtime_preflight_snapshot(None, ) if hasattr(self, "runtime_preflight_snapshot") else {}
+            except Exception:
+                snapshot = {}
+            fg = str(snapshot.get("foreground_package") or "")
+            xml_pkg = str(snapshot.get("xml_package") or "")
+            if fg == package or xml_pkg == package:
+                return {"ok": True, "launch_result": launch_result, "snapshot": snapshot}
+            time.sleep(0.8)
+        return {"ok": False, "launch_result": launch_result, "snapshot": snapshot}
+
     def installed_packages(self) -> list[str]:
         result = self.run(["shell", "pm", "list", "packages"])
         packages: list[str] = []

@@ -14,6 +14,31 @@ The surrounding package is organized around a few core responsibilities:
 
 from __future__ import annotations
 
+# Allow running this module directly as a script (python main.py) while still
+# keeping the package-relative imports used throughout the project. When the
+# module is executed as a script, __package__ is None or empty which breaks
+# relative imports like "from .action_executor import ...". Patch sys.path and
+# set __package__ so the relative imports resolve correctly.
+if __package__ in (None, ""):
+    import os
+    import sys
+
+    # package layout: .../app/src/guazi_app_data_system/main.py
+    # pkg_root should be app/src (so imports like 'guazi_app_data_system.xxx' resolve)
+    pkg_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    if pkg_root not in sys.path:
+        sys.path.insert(0, pkg_root)
+    # also add the outer 'app' directory and its 'scripts' folder so scripts
+    # (which do top-level imports like `import s10s16_clean`) can be imported
+    app_root = os.path.dirname(pkg_root)
+    scripts_dir = os.path.join(app_root, "scripts")
+    if app_root not in sys.path:
+        sys.path.insert(0, app_root)
+    if scripts_dir not in sys.path:
+        sys.path.insert(0, scripts_dir)
+    # declare package name so relative imports work
+    __package__ = "guazi_app_data_system"
+
 import argparse
 import importlib.util
 import json
@@ -390,7 +415,25 @@ def _load_real_device_mainline_runner() -> tuple[Path, Any | None]:
     if spec is None or spec.loader is None:
         return script_path, None
     module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+    try:
+        spec.loader.exec_module(module)
+    except Exception as exc:  # pragma: no cover - fail safely and let caller know executor is unavailable
+        # If the executor or its dependencies are missing or fail to import, report None so
+        # caller can write a helpful diagnostics result rather than crashing.
+        try:
+            # attempt to capture a short traceback message
+            tb = traceback.format_exc()
+        except Exception:
+            tb = str(exc)
+        # attach an attribute to the script path object for diagnostics (caller may display it)
+        script_path = script_path
+        # write a small diagnostics file next to the script to help debugging
+        diag_path = script_path.with_suffix(script_path.suffix + ".import_error.txt")
+        try:
+            diag_path.write_text(tb, encoding="utf-8")
+        except Exception:
+            pass
+        return script_path, None
     runner = getattr(module, "run_s10_to_s16_mainline", None)
     return script_path, runner if callable(runner) else None
 
@@ -440,6 +483,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--export-report-only", action="store_true")
     parser.add_argument("--local-test-status", default=None)
     parser.add_argument("--local-test-summary", default=None)
+    parser.add_argument("--auto-launch-app", action="store_true", help="Auto-launch Guazi app on the connected device before running device mode")
+    parser.add_argument("--test-task-file", default=None, help="Path to local JSON file to use as current_target_task.json for testing")
     return parser.parse_args(argv)
 
 
@@ -460,6 +505,43 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps({"phone_test": phone_test, "result": str(project_path("output", "result.json")), "report": str(report)}, ensure_ascii=False, indent=2))
             return 0
     if args.mode == "device":
+        # If a test task file is provided, copy it into the runtime data location so the runner uses it
+        if args.test_task_file:
+            try:
+                src = Path(args.test_task_file)
+                if src.exists():
+                    dst = project_path(runtime["configs"]["system"]["paths"]["data"], "current_target_task.json")
+                    dst.parent.mkdir(parents=True, exist_ok=True)
+                    import shutil
+
+                    shutil.copyfile(str(src), str(dst))
+                    runtime["issues"].audit.log("test_task_installed", src=str(src), dst=str(dst))
+                    print(json.dumps({"test_task_installed": str(dst)}, ensure_ascii=False))
+                else:
+                    print(json.dumps({"error": f"test task file not found: {src}"}, ensure_ascii=False))
+                    return 1
+            except Exception as exc:
+                print(json.dumps({"error": f"failed to install test task file: {exc}"}, ensure_ascii=False))
+                return 1
+
+        # Optionally auto-launch the Guazi app before running the device mainline
+        if args.auto_launch_app:
+            try:
+                client = AdbClient()
+                launch_comp = "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity"
+                launch_res = client.launch_activity_component(launch_comp, wait_seconds=10)
+                phone_test.setdefault("launch_result", {})
+                phone_test["launch_result"]= {
+                    "component": launch_comp,
+                    "ok": bool(launch_res.get("ok")),
+                    "launch_stdout": getattr(launch_res.get("launch_result"), "stdout", "") if launch_res.get("launch_result") else "",
+                    "snapshot_foreground": (launch_res.get("snapshot") or {}).get("foreground_package") if isinstance(launch_res.get("snapshot"), dict) else None,
+                }
+                print(json.dumps({"auto_launch_result": phone_test["launch_result"]}, ensure_ascii=False))
+            except Exception as exc:
+                print(json.dumps({"error": f"failed to auto-launch app: {exc}"}, ensure_ascii=False))
+                return 1
+
         script_path, runner = _load_real_device_mainline_runner()
         if runner is None:
             result = _write_missing_real_executor_result(runtime, phone_test, script_path)
