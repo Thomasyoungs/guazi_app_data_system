@@ -133,6 +133,12 @@ python -m guazi_app_data_system.main --mode simulate
 ```bash
 cd app\src
 python -m guazi_app_data_system.main --mode device
+python -m guazi_app_data_system.main --mode device --auto-launch-app
+python -m guazi_app_data_system.main --mode device --auto-launch-app --quick-pricing --test-task-file "..\input\current_target_task.json"
+
+先运行第一阶段：python runtime_s01_to_s10_mainline.py
+再运行第二阶段：python -m guazi_app_data_system.main --mode device
+
 ```
 
 作用：
