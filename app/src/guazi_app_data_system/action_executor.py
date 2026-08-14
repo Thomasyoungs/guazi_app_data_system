@@ -183,11 +183,6 @@ class ActionExecutor:
         raise GuaziFlowError("TARGET_TASK_GATE_BLOCKED", "TargetCarTask gate blocked brand entry click before S03.", gate)
 
     def _assert_action_contract_if_needed(self, state_id: str, action_id: str, context: dict[str, Any]) -> None:
-        # Skip strict action-contract enforcement during dry-run/simulation since
-        # simulations do not provide real UI XML and click targets. This keeps
-        # simulate runs from failing on UI-dependent contract checks.
-        if self.dry_run:
-            return
         if action_id not in SERIES_MODEL_BUTTON_ACTIONS or state_id != "S04":
             return
 

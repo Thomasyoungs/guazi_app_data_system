@@ -155,10 +155,44 @@ def validate_target_device_available(
     environ: dict[str, str] | None = None,
     project_root: str | Path | None = None,
 ) -> dict[str, Any]:
-    serial = str(
+    # Load configured serial (may be empty) and the whitelist from config
+    configured_serial = str(
         load_target_adb_serial(environ=environ, project_root=project_root) if active_serial is None else active_serial
     ).strip()
     context = get_target_device_context(environ=environ, project_root=project_root)
+    whitelist = list(context.get("device_whitelist") or [])
+
+    # If a whitelist is configured, prefer any connected device that appears in the whitelist.
+    if whitelist:
+        # Find first connected device whose serial is in the whitelist and is in 'device' state
+        for device in device_list:
+            dev_serial = str(device.get("serial") or "").strip()
+            status = str(device.get("status") or "").strip()
+            if dev_serial in whitelist and status == "device":
+                # Found a whitelisted connected device; return it as ready target
+                context["adb_serial"] = dev_serial
+                return {
+                    "ok": True,
+                    "code": "TARGET_ADB_DEVICE_READY",
+                    "status": "device",
+                    "target": context,
+                    "device": device,
+                    "connected_serials": [str(item.get("serial") or "") for item in device_list],
+                    "device_whitelist": whitelist,
+                }
+        # No whitelisted device currently connected
+        context["adb_serial"] = configured_serial
+        return {
+            "ok": False,
+            "code": TARGET_ADB_DEVICE_NOT_WHITELISTED,
+            "status": "not_whitelisted",
+            "target": context,
+            "connected_serials": [str(item.get("serial") or "") for item in device_list],
+            "device_whitelist": whitelist,
+        }
+
+    # No whitelist: fall back to configured active serial behavior
+    serial = configured_serial
     context["adb_serial"] = serial
     if not serial:
         return {
@@ -168,18 +202,7 @@ def validate_target_device_available(
             "target": context,
             "connected_serials": [str(item.get("serial") or "") for item in device_list],
         }
-    # enforce whitelist if present in config: only allow configured serials that appear in whitelist
-    whitelist = list(context.get("device_whitelist") or [])
-    if whitelist:
-        if serial not in whitelist:
-            return {
-                "ok": False,
-                "code": TARGET_ADB_DEVICE_NOT_WHITELISTED,
-                "status": "not_whitelisted",
-                "target": context,
-                "connected_serials": [str(item.get("serial") or "") for item in device_list],
-                "device_whitelist": whitelist,
-            }
+
     for device in device_list:
         if str(device.get("serial") or "").strip() != serial:
             continue
@@ -207,6 +230,7 @@ def validate_target_device_available(
             "device": device,
             "connected_serials": [str(item.get("serial") or "") for item in device_list],
         }
+
     return {
         "ok": False,
         "code": TARGET_ADB_DEVICE_NOT_CONNECTED,

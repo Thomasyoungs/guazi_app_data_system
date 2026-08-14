@@ -191,16 +191,16 @@
       "recognized_state_not_second_stage_in_flight"
     ]
   },
-  "screenshot_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\artifacts\\screenshots\\s10_s16_start_20260814_141916.png",
-  "xml_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\artifacts\\debug\\s10_s16_start_20260814_141916.xml",
+  "screenshot_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\artifacts\\screenshots\\s10_s16_start_20260814_150939.png",
+  "xml_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\artifacts\\debug\\s10_s16_start_20260814_150939.xml",
   "visible_text_digest": [],
   "phone_test": {
     "adb_available": true,
     "adb_path": "D:\\Users\\Android\\Sdk\\platform-tools\\adb.EXE",
     "device_gate": {
-      "passed": false,
-      "status": "TARGET_ADB_DEVICE_NOT_CONNECTED",
-      "device_snapshot_taken_at": "2026-08-14T06:19:16.277155+00:00",
+      "passed": true,
+      "status": "device",
+      "device_snapshot_taken_at": "2026-08-14T07:09:38.966549+00:00",
       "device_snapshot_error": "",
       "adb_available": true,
       "adb_path": "D:\\Users\\Android\\Sdk\\platform-tools\\adb.EXE",
@@ -265,102 +265,23 @@
         "collect_vehicle_data",
         "modify_pricing_formula"
       ],
-      "issue_records": [
-        {
-          "issue_id": "ISS-9e1a9e3b4b56",
-          "timestamp": "2026-08-14T06:19:16.321537+00:00",
-          "code": "TARGET_ADB_DEVICE_NOT_CONNECTED",
-          "severity": "unknown",
-          "state_id": "DEVICE",
-          "message": "Configured target ADB device is not connected; no fallback device is allowed.",
-          "context": {
-            "adb_available": true,
-            "adb_devices_l": "List of devices attached\n3417599354001L0        device product:PD2145 model:V2145A device:PD2145 transport_id:5\n\n",
-            "devices": [
-              {
-                "serial": "3417599354001L0",
-                "status": "device",
-                "raw": "3417599354001L0        device product:PD2145 model:V2145A device:PD2145 transport_id:5",
-                "product": "PD2145",
-                "model": "V2145A",
-                "device": "PD2145",
-                "transport_id": "5"
-              }
-            ],
-            "target_device_validation": {
-              "ok": false,
-              "code": "TARGET_ADB_DEVICE_NOT_CONNECTED",
-              "status": "not_connected",
-              "target": {
-                "adb_serial": "1d76fbdd0923",
-                "device_alias": "Temporary Android device 1d76fbdd0923 / model 22101317C",
-                "strict": true,
-                "allow_default_when_single_device": false,
-                "config_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\config\\adb_target_device.yaml",
-                "serial_source": "config"
-              },
-              "connected_serials": [
-                "3417599354001L0"
-              ]
-            },
-            "no_default_device_fallback": true
-          },
-          "resolution": "connect_configured_target_device",
-          "workflow": [
-            "issue_recorded",
-            "knowledge_base_queried"
-          ],
-          "knowledge_lookup": {
-            "queried": true,
-            "issue_code": "TARGET_ADB_DEVICE_NOT_CONNECTED",
-            "state_id": "DEVICE",
-            "attempts": 0,
-            "allowed_actions_scope": [
-              "adb_kill_server",
-              "adb_start_server",
-              "capture_screenshot",
-              "check_adb_available",
-              "check_adb_device",
-              "check_adb_devices",
-              "check_keyguard_state",
-              "check_window_focus",
-              "delete_local_adb_keys",
-              "dump_ui_xml",
-              "exclude_package_com_guazi_android_chesupai",
-              "kill_adb_process",
-              "lookup_knowledge_base",
-              "parse_apk_label_if_needed",
-              "parse_apk_label_metadata",
-              "read_dumpsys_package_label",
-              "read_launcher_resolve_info",
-              "recognize_current_page",
-              "record_issue",
-              "start_adb_server",
-              "wake_device"
-            ],
-            "manual_intervention_required": true,
-            "knowledge_rule_matched": false,
-            "matched_rule_id": null,
-            "suggested_action": null,
-            "auto_continue_allowed": false,
-            "stop_code": "LEARNING_LOOP_REQUIRES_HUMAN_REVIEW",
-            "status": "no_approved_solution",
-            "candidate_solution_count": 0,
-            "allowed_auto_actions": []
-          }
-        }
-      ],
+      "issue_records": [],
       "target_device": {
-        "adb_serial": "1d76fbdd0923",
+        "adb_serial": "3417599354001L0",
         "device_alias": "Temporary Android device 1d76fbdd0923 / model 22101317C",
         "strict": true,
         "allow_default_when_single_device": false,
+        "device_whitelist": [
+          "6TGYHPZCETCSK6L",
+          "1d76fbdd0923",
+          "3417599354001L0"
+        ],
         "config_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\config\\adb_target_device.yaml",
         "serial_source": "config"
       },
-      "target_serial": "1d76fbdd0923",
-      "target_device_state": "missing",
-      "target_device_present_before_first_stage": false,
+      "target_serial": "3417599354001L0",
+      "target_device_state": "device",
+      "target_device_present_before_first_stage": true,
       "strict_device_selection": true,
       "target_adb_serial": "1d76fbdd0923",
       "adb_serial_source": "config",
@@ -378,18 +299,37 @@
       "python_executable": "D:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
       "adb_env_risk_flags": [],
       "target_device_validation": {
-        "ok": false,
-        "code": "TARGET_ADB_DEVICE_NOT_CONNECTED",
-        "status": "not_connected",
+        "ok": true,
+        "code": "TARGET_ADB_DEVICE_READY",
+        "status": "device",
         "target": {
-          "adb_serial": "1d76fbdd0923",
+          "adb_serial": "3417599354001L0",
           "device_alias": "Temporary Android device 1d76fbdd0923 / model 22101317C",
           "strict": true,
           "allow_default_when_single_device": false,
+          "device_whitelist": [
+            "6TGYHPZCETCSK6L",
+            "1d76fbdd0923",
+            "3417599354001L0"
+          ],
           "config_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\config\\adb_target_device.yaml",
           "serial_source": "config"
         },
+        "device": {
+          "serial": "3417599354001L0",
+          "status": "device",
+          "raw": "3417599354001L0        device product:PD2145 model:V2145A device:PD2145 transport_id:5",
+          "product": "PD2145",
+          "model": "V2145A",
+          "device": "PD2145",
+          "transport_id": "5"
+        },
         "connected_serials": [
+          "3417599354001L0"
+        ],
+        "device_whitelist": [
+          "6TGYHPZCETCSK6L",
+          "1d76fbdd0923",
           "3417599354001L0"
         ]
       }
@@ -405,18 +345,36 @@
         "transport_id": "5"
       }
     ],
-    "device_info": {},
+    "device_info": {
+      "manufacturer": "",
+      "model": "",
+      "android_version": "",
+      "sdk": ""
+    },
     "package_discovery": {},
     "wake_result": {},
     "swipe_unlock_result": {},
-    "runtime_preflight": {},
+    "runtime_preflight": {
+      "wakefulness": "",
+      "interactive": null,
+      "display_state": "",
+      "keyguard_showing": null,
+      "keyguard_locked": null,
+      "keyguard_secure": false,
+      "foreground_package": "",
+      "resumed_activity": "",
+      "focused_window": "",
+      "xml_package": "",
+      "fresh_screenshot": null,
+      "screenshot_is_black": false
+    },
     "runtime_preflight_after_wake": {},
     "runtime_preflight_after_swipe": {},
     "runtime_preflight_issues": [],
     "launch_result": {},
     "screenshot_path": null,
     "recognized_start_state": null,
-    "failure_summary": "- Phone test failed: configured target ADB device is not connected."
+    "failure_summary": "- APP launch probe stopped: third-party blocking page has no dismissible \u7ecb\u5d85\u6097 control."
   },
   "task_id": "LOCAL-TEST-0001",
   "produced_by_task_id": "LOCAL-TEST-0001",
@@ -430,7 +388,7 @@
   "register_date": "21.8",
   "current_state": "SECOND_STAGE_BLOCKED_NOT_AT_S10_READY",
   "final_status": "SECOND_STAGE_BLOCKED_NOT_AT_S10_READY",
-  "created_at": "2026-08-14T06:19:16.484044+00:00",
+  "created_at": "2026-08-14T07:09:39.370129+00:00",
   "result_segment": "s10_to_s16",
   "first_stage_result_digest": "db77565477509de46e3a2af25c7e22efe80e1db5d09b90da5690b4a6dbde5330",
   "s10_canonical_order_digest": "e27699bf2cac7059db35043debdcc80f698562a09dd77e8217224374e001e94d",

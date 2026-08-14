@@ -1,6 +1,6 @@
 # 执行反馈报告
 
-- 生成时间：2026-08-14T06:55:13.168485+00:00
+- 生成时间：2026-08-14T07:09:39.379538+00:00
 - 工程目录：E:\project\zhikuan\guazi_app_data_system\app
 - 定价状态：unknown
 
@@ -18,6 +18,8 @@ app/
       s10_s16_start_20260814_140344.xml
       s10_s16_start_20260814_140544.xml
       s10_s16_start_20260814_141916.xml
+      s10_s16_start_20260814_150627.xml
+      s10_s16_start_20260814_150939.xml
       window_dump.xml
       window_dump_after_launch.xml
     screenshots/
@@ -25,6 +27,8 @@ app/
       s10_s16_start_20260814_140344.png
       s10_s16_start_20260814_140544.png
       s10_s16_start_20260814_141916.png
+      s10_s16_start_20260814_150627.png
+      s10_s16_start_20260814_150939.png
       screen.png
       screen_after_launch.png
       startup.png
@@ -828,6 +832,8 @@ app/
         transient_popup_handler.cpython-313.pyc
         trim_normalizer.cpython-313.pyc
         year_age_filter.cpython-313.pyc
+    __pycache__/
+      sitecustomize.cpython-313.pyc
   tests/
     __init__.py
     git_diff_for_legacy_warning_patch.diff
@@ -962,8 +968,8 @@ app/
 - adb 可用：True
 - adb 路径：D:\Users\Android\Sdk\platform-tools\adb.EXE
 - 设备列表：[{'serial': '3417599354001L0', 'status': 'device', 'raw': '3417599354001L0        device product:PD2145 model:V2145A device:PD2145 transport_id:5', 'product': 'PD2145', 'model': 'V2145A', 'device': 'PD2145', 'transport_id': '5'}]
-- 设备信息：{'manufacturer': 'vivo', 'model': 'V2145A', 'android_version': '14', 'sdk': '34'}
-- 截图路径：E:\project\zhikuan\guazi_app_data_system\app\artifacts\screenshots\startup.png
+- 设备信息：{'manufacturer': '', 'model': '', 'android_version': '', 'sdk': ''}
+- 截图路径：None
 - 页面识别：None
 
 ## 问题记录

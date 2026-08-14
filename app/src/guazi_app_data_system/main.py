@@ -45,6 +45,7 @@ import json
 import re
 import sys
 import time
+import traceback
 from pathlib import Path
 from typing import Any
 from xml.etree import ElementTree
@@ -54,11 +55,12 @@ from .adb_device_gate import run_adb_device_gate
 from .app_startup import AdbClient, SELECT_CAR_LABEL
 from .audit import AuditLogger
 from .config_loader import ensure_runtime_dirs, load_config, project_path, project_root
-from .data_collection import DataCollector
+from .data_collection import DataCollector, parse_condition_text
 from .exception_handler import IssueRecorder
 from .field_validation import FieldContract
 from .issue_classifier import IssueClassifier
 from .learning_loop import LearningLoop
+from .models import TargetCar, ReferenceCar
 from .output_writer import read_json, write_feedback_report, write_json
 from .page_recognition import PageRecognizer
 from .page_state_machine import PageStateMachine
@@ -485,6 +487,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--local-test-summary", default=None)
     parser.add_argument("--auto-launch-app", action="store_true", help="Auto-launch Guazi app on the connected device before running device mode")
     parser.add_argument("--test-task-file", default=None, help="Path to local JSON file to use as current_target_task.json for testing")
+    parser.add_argument("--quick-pricing", action="store_true", help="Run a quick device pricing flow: open app, search/filter using the provided test-task JSON and run scoring/pricing (skips full S10-S16 mainline). Requires --test-task-file.")
     return parser.parse_args(argv)
 
 
@@ -542,6 +545,169 @@ def main(argv: list[str] | None = None) -> int:
                 print(json.dumps({"error": f"failed to auto-launch app: {exc}"}, ensure_ascii=False))
                 return 1
 
+        # Support a quick-pricing device mode that uses the provided test-task JSON
+        # to open the app, perform the search/sort steps, collect visible listing data,
+        # and run the scoring/ pricing logic without executing the full S10-S16 mainline.
+        if args.quick_pricing:
+            if not args.test_task_file:
+                print(json.dumps({"error": "--quick-pricing requires --test-task-file to be provided"}, ensure_ascii=False))
+                return 1
+            try:
+                # determine where the runtime task file was copied (support multiple possible locations)
+                candidates = []
+                try:
+                    candidates.append(project_path(runtime["configs"]["system"]["paths"]["data"], "current_target_task.json"))
+                except Exception:
+                    pass
+                candidates.append(project_path("data", "current_target_task.json"))
+                # also respect explicit runtime setting if present
+                try:
+                    cur = runtime["configs"]["system"]["runtime"].get("current_task_path")
+                    if cur:
+                        candidates.append(project_path(cur))
+                except Exception:
+                    pass
+
+                task_path = None
+                for p in candidates:
+                    if isinstance(p, Path) and p.exists():
+                        task_path = p
+                        break
+                if task_path is None:
+                    print(json.dumps({"error": "current_target_task.json not found in expected locations"}, ensure_ascii=False))
+                    return 1
+
+                task_data = json.loads(task_path.read_text(encoding="utf-8"))
+                # Build TargetCar from task_data (best-effort)
+                target = TargetCar(
+                    task_id=str(task_data.get("task_id") or ""),
+                    brand=task_data.get("brand") or "",
+                    series=task_data.get("series") or "",
+                    model_year=str(task_data.get("year_model") or task_data.get("model_year") or ""),
+                    trim=task_data.get("config_model") or task_data.get("trim") or "",
+                    color=task_data.get("color") or "",
+                    registration_date=str(task_data.get("register_date") or task_data.get("registration_date") or ""),
+                    mileage_10k_km=float(task_data.get("mileage_10k_km") or task_data.get("display_mileage_wan_km") or 0.0),
+                    transfer_count=int(task_data.get("transfer_count") or 0),
+                    condition_text=str(task_data.get("condition_text") or ""),
+                    accident_count=task_data.get("accident_count"),
+                    max_accident_amount=task_data.get("max_accident_amount"),
+                )
+                target.panel_repairs = parse_condition_text(target.condition_text)
+
+                # prepare device client and executor
+                client = AdbClient()
+                machine = PageStateMachine(runtime["configs"]["pages"])
+                executor = ActionExecutor(machine, runtime["configs"]["actions"], runtime["audit"], runtime["issues"], device=client, dry_run=False)
+
+                # minimal action sequence to reach listing and sort by price low->high
+                sequence = [
+                    ("S00", "tap_left_bottom_skip"),
+                    ("S01", "click_bottom_select_car_tab"),
+                    ("S02", "tap_brand_filter"),
+                    ("S03", "tap_brand_letter"),
+                    ("S03", "tap_target_brand"),
+                    ("S04", "click_series_model_button"),
+                    ("S05", "tap_target_year"),
+                    ("S05", "tap_exact_trim"),
+                    ("S05", "tap_green_confirm"),
+                    ("S06", "tap_trim_filter"),
+                    ("S07", "tap_color_filter"),
+                    ("S07", "tap_target_color"),
+                    ("S07", "tap_age_filter"),
+                    ("S07", "set_exact_age"),
+                    ("S07", "tap_view_cars"),
+                    ("S08", "collect_list_whitelist_fields"),
+                    ("S08", "tap_sort_if_present"),
+                    ("S09", "tap_price_low_to_high"),
+                ]
+                context = {
+                    "target_brand": target.brand,
+                    "target_series": target.series,
+                    "target_model_year": target.model_year,
+                    "target_trim": target.trim,
+                    "target_color": target.color,
+                }
+                for state_id, action_id in sequence:
+                    try:
+                        executor.execute(state_id, action_id, context)
+                        time.sleep(0.2)
+                    except Exception as exc:
+                        # record and continue where possible
+                        runtime["issues"].record("ACTION_EXECUTION_FAILED", state_id, str(exc), {"action_id": action_id}, "manual_review")
+
+                # dump UI and extract visible text to find prices/mileage/year
+                ui = client.dump_ui_text()
+                text_blob = str((ui.get("text") or ""))
+                # extract lists of candidate reference values
+                price_matches = re.findall(r"(\d+(?:\.\d+)?)\s*万", text_blob)
+                mileage_matches = re.findall(r"(\d+(?:\.\d+)?)\s*万公里", text_blob)
+                year_matches = re.findall(r"(20\d{2})", text_blob)
+
+                references: list[ReferenceCar] = []
+                max_candidates = max(len(price_matches), 0)
+                for i in range(min(max_candidates, 10)):
+                    try:
+                        price = float(price_matches[i]) if i < len(price_matches) else 0.0
+                    except Exception:
+                        price = 0.0
+                    try:
+                        mileage = float(mileage_matches[i]) if i < len(mileage_matches) else 0.0
+                    except Exception:
+                        mileage = 0.0
+                    try:
+                        year = int(year_matches[i]) if i < len(year_matches) else (int(target.model_year[:4]) if target.model_year and target.model_year[:4].isdigit() else 0)
+                    except Exception:
+                        year = 0
+                    ref = ReferenceCar(
+                        reference_index=i + 1,
+                        list_price_10k=price,
+                        list_year=year,
+                        list_mileage_10k_km=mileage,
+                        transfer_count=0,
+                        accident_count=0,
+                        max_accident_amount=None,
+                        repair_counts={},
+                        panel_repairs=[],
+                    )
+                    references.append(ref)
+
+                if not references:
+                    res = {"metadata": {"project": "guazi_app_data_system", "mode": "device_quick_pricing"}, "status": "NO_REFERENCES_FOUND", "text_blob_length": len(text_blob)}
+                    write_json(project_path(runtime["configs"]["system"]["paths"]["result_json"]), res)
+                    report = export_report(runtime, res, phone_test=phone_test)
+                    print(json.dumps({"status": "NO_REFERENCES_FOUND", "report": str(report)}, ensure_ascii=False))
+                    return 1
+
+                # score and select
+                current_year = time.localtime().tm_year
+                target_score = score_target(target, runtime["configs"]["fields"], current_year=current_year)
+                selection = select_reference(target_score, references, runtime["configs"]["fields"], current_year=current_year)
+                selected_reference = selection.get("selected_reference")
+                pricing = calculate_pricing(selected_reference, runtime["configs"]["fields"]) if selected_reference else {}
+
+                result = {
+                    "metadata": {"project": "guazi_app_data_system", "mode": "device_quick_pricing", "field_scope": "contract_only"},
+                    "target_car": target.to_dict(),
+                    "target_score": target_score.to_dict(),
+                    "reference_cars": [r.to_dict() for r in references],
+                    "selected_reference": selected_reference.to_dict() if selected_reference else None,
+                    "pricing": pricing,
+                    "phone_test": phone_test or {},
+                }
+                write_json(project_path(runtime["configs"]["system"]["paths"]["result_json"]), result)
+                report = export_report(runtime, result, phone_test=phone_test)
+                print(json.dumps({"result": str(project_path("output", "result.json")), "report": str(report)}, ensure_ascii=False, indent=2))
+                return 0
+            except Exception as exc:
+                tb = traceback.format_exc()
+                err_result = {"status": "QUICK_PRICING_EXCEPTION", "error": str(exc), "traceback": tb}
+                write_json(project_path(runtime["configs"]["system"]["paths"]["result_json"]), err_result)
+                report = export_report(runtime, err_result, phone_test=phone_test)
+                print(json.dumps({"status": "QUICK_PRICING_EXCEPTION", "error": str(exc), "traceback": tb, "report": str(report)}, ensure_ascii=False, indent=2))
+                return 1
+
+        # fallback to full mainline executor
         script_path, runner = _load_real_device_mainline_runner()
         if runner is None:
             result = _write_missing_real_executor_result(runtime, phone_test, script_path)
@@ -559,7 +725,18 @@ def main(argv: list[str] | None = None) -> int:
                 )
             )
             return 0
-        result = runner(runtime, phone_test=phone_test)
+        try:
+            result = runner(runtime, phone_test=phone_test)
+        except Exception as exc:
+            tb = traceback.format_exc()
+            err_result = {"status": "EXECUTION_EXCEPTION", "error": str(exc), "traceback": tb}
+            out_path = project_path("output", "result.json")
+            Path(out_path).parent.mkdir(parents=True, exist_ok=True)
+            with open(out_path, "w", encoding="utf-8") as f:
+                json.dump(err_result, f, ensure_ascii=False, indent=2)
+            report = export_report(runtime, err_result, phone_test=phone_test)
+            print(json.dumps({"status": "EXECUTION_EXCEPTION", "error": str(exc), "traceback": tb, "result": str(out_path), "report": str(report)}, ensure_ascii=False, indent=2))
+            return 1
         local_tests = {"status": args.local_test_status or "未记录", "summary": args.local_test_summary or "未记录"}
         report = export_report(runtime, result, phone_test=phone_test, local_tests=local_tests)
         print(json.dumps({"result": str(project_path("output", "result.json")), "report": str(report)}, ensure_ascii=False, indent=2))

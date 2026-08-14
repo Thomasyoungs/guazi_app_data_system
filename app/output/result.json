@@ -1,19 +1,206 @@
 {
   "metadata": {
     "project": "guazi_app_data_system",
-    "mode": "device",
+    "mode": "device_real_mainline",
     "field_scope": "contract_only"
   },
-  "status": "PAGE_CONTRACT_EXECUTOR_MISSING_FOR_FULL_MAINLINE",
-  "message": "Device mode cannot fall back to dry_run simulation when the S10-S16 real-device executor is missing.",
-  "expected_script": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\scripts\\runtime_s10_to_s16_mainline.py",
+  "status": "SECOND_STAGE_BLOCKED_NOT_AT_S10_READY",
+  "issue_code": "MAIN_SCRIPT_BLOCKED_NOT_AT_S10_READY",
+  "recognized_state": null,
+  "expected_stage": "second_stage",
+  "first_stage_evidence": {
+    "path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\output\\result_s01_to_s10.json",
+    "ready": true,
+    "source": "segment1_result",
+    "status": "S10_READY",
+    "final_status": "S10_READY",
+    "target_fingerprint": "\u851a\u6765|ES6|2024\u6b3e|75kWh|\u7070|2025.02",
+    "flow_state": {
+      "S07_FILTER_DONE": true,
+      "COLOR_FILTER_DONE": true,
+      "AGE_FILTER_DONE": true,
+      "SORT_DONE": true,
+      "S10_READY": true,
+      "s05_year_click_required": true,
+      "s05_year_clicked": true,
+      "s05_year_click_text": "2024\u6b3e",
+      "s05_year_click_bounds": [
+        0,
+        721,
+        248,
+        831
+      ],
+      "s05_year_click_region": "left_year_list",
+      "selected_year_after_click": "2024\u6b3e",
+      "left_year_selected_text": "2024\u6b3e",
+      "s05_target_year_selected_confirmed": true,
+      "s05_year_confirmed_by": "left_year_click_record",
+      "s05_year_click_record_valid": true,
+      "right_config_list_after_year": [
+        "\u851a\u6765ES6\u8f66\u578b",
+        "2024\u6b3e\u5168\u90e8\u8f66\u578b",
+        "2024\u6b3e 100kWh",
+        "2024\u6b3e 150kWh",
+        "2024\u6b3e 75kWh",
+        "2023\u6b3e\u5168\u90e8\u8f66\u578b",
+        "2023\u6b3e 100kWh",
+        "2023\u6b3e 150kWh",
+        "2023\u6b3e 75kWh",
+        "2022\u6b3e\u5168\u90e8\u8f66\u578b",
+        "2022\u6b3e 100kWh \u6027\u80fd\u7248",
+        "2022\u6b3e 100kWh \u7b7e\u540d\u7248",
+        "2022\u6b3e 100kWh \u8fd0\u52a8\u7248",
+        "2022\u6b3e 75kWh \u6027\u80fd\u7248",
+        "2022\u6b3e 75kWh \u7b7e\u540d\u7248",
+        "2022\u6b3e 75kWh \u8fd0\u52a8\u7248",
+        "\u786e\u5b9a"
+      ],
+      "target_config_seen_after_year": true,
+      "direct_right_config_search_without_year_click": false,
+      "transition_context": "S09_PRICE_ASC_TO_LIST",
+      "S05_DONE": true,
+      "target_series": "ES6",
+      "target_series_alias": "",
+      "target_year_model": "2024\u6b3e",
+      "target_config_model": "75kWh",
+      "s05_selected_year_model": "2024\u6b3e",
+      "s05_selected_config_model": "75kWh",
+      "selected_config_texts": [
+        "2024\u6b3e 75kWh"
+      ],
+      "selected_count_text": "\u5df2\u90091\u9879",
+      "selected_count_actual": 1,
+      "target_color": "\u7070"
+    },
+    "same_source_cards": [
+      {
+        "title": "\u851a\u6765ES6 2024\u6b3e 75kWh",
+        "year_mileage_text": "2025\u5e74 | 3.05\u4e07\u516c\u91cc | \u7535\u6c60\u79df\u8d41 | \u4e0a\u6d77 | NIOPilot",
+        "list_price_10k": 15.05,
+        "list_year": 2025,
+        "list_mileage_10k_km": 3.05
+      },
+      {
+        "title": "\u851a\u6765ES6 2024\u6b3e 75kWh",
+        "year_mileage_text": "2025\u5e74 | 3.73\u4e07\u516c\u91cc | \u7535\u6c60\u79df\u8d41 | \u6210\u90fd | NIOPilot",
+        "list_price_10k": 15.37,
+        "list_year": 2025,
+        "list_mileage_10k_km": 3.73
+      },
+      {
+        "title": "\u851a\u6765ES6 2024\u6b3e 75kWh",
+        "year_mileage_text": "2025\u5e74 | 0.88\u4e07\u516c\u91cc | \u7535\u6c60\u79df\u8d41 | \u4e0a\u6d77 | NIOPilot",
+        "list_price_10k": 16.12,
+        "list_year": 2025,
+        "list_mileage_10k_km": 0.88
+      },
+      {
+        "title": "\u851a\u6765ES6 2024\u6b3e 75kWh",
+        "year_mileage_text": "2025\u5e74 | 2.52\u4e07\u516c\u91cc | \u7535\u6c60\u79df\u8d41 | \u897f\u5b89 | NIOPilot",
+        "list_price_10k": 16.3,
+        "list_year": 2025,
+        "list_mileage_10k_km": 2.52
+      },
+      {
+        "title": "\u851a\u6765ES6 2024\u6b3e 75kWh",
+        "year_mileage_text": "2025\u5e74 | 3.28\u4e07\u516c\u91cc | \u7535\u6c60\u79df\u8d41 | \u4e1c\u839e | NIOPilot",
+        "list_price_10k": 16.48,
+        "list_year": 2025,
+        "list_mileage_10k_km": 3.28
+      },
+      {
+        "title": "\u851a\u6765ES6 2024\u6b3e 75kWh",
+        "year_mileage_text": "2025\u5e74 | 2.58\u4e07\u516c\u91cc | \u7535\u6c60\u79df\u8d41 | \u6e56\u5dde | NIOPilot",
+        "list_price_10k": 16.81,
+        "list_year": 2025,
+        "list_mileage_10k_km": 2.58
+      }
+    ],
+    "raw_visible_cards_count": 6,
+    "trisame_cards_count": 6,
+    "trisame_count": 6,
+    "canonical_reference_order": [
+      {
+        "title": "\u851a\u6765ES6 2024\u6b3e 75kWh",
+        "year_mileage_text": "2025\u5e74 | 3.05\u4e07\u516c\u91cc | \u7535\u6c60\u79df\u8d41 | \u4e0a\u6d77 | NIOPilot",
+        "list_price_10k": 15.05,
+        "list_year": 2025,
+        "list_mileage_10k_km": 3.05
+      },
+      {
+        "title": "\u851a\u6765ES6 2024\u6b3e 75kWh",
+        "year_mileage_text": "2025\u5e74 | 3.73\u4e07\u516c\u91cc | \u7535\u6c60\u79df\u8d41 | \u6210\u90fd | NIOPilot",
+        "list_price_10k": 15.37,
+        "list_year": 2025,
+        "list_mileage_10k_km": 3.73
+      },
+      {
+        "title": "\u851a\u6765ES6 2024\u6b3e 75kWh",
+        "year_mileage_text": "2025\u5e74 | 0.88\u4e07\u516c\u91cc | \u7535\u6c60\u79df\u8d41 | \u4e0a\u6d77 | NIOPilot",
+        "list_price_10k": 16.12,
+        "list_year": 2025,
+        "list_mileage_10k_km": 0.88
+      },
+      {
+        "title": "\u851a\u6765ES6 2024\u6b3e 75kWh",
+        "year_mileage_text": "2025\u5e74 | 2.52\u4e07\u516c\u91cc | \u7535\u6c60\u79df\u8d41 | \u897f\u5b89 | NIOPilot",
+        "list_price_10k": 16.3,
+        "list_year": 2025,
+        "list_mileage_10k_km": 2.52
+      },
+      {
+        "title": "\u851a\u6765ES6 2024\u6b3e 75kWh",
+        "year_mileage_text": "2025\u5e74 | 3.28\u4e07\u516c\u91cc | \u7535\u6c60\u79df\u8d41 | \u4e1c\u839e | NIOPilot",
+        "list_price_10k": 16.48,
+        "list_year": 2025,
+        "list_mileage_10k_km": 3.28
+      },
+      {
+        "title": "\u851a\u6765ES6 2024\u6b3e 75kWh",
+        "year_mileage_text": "2025\u5e74 | 2.58\u4e07\u516c\u91cc | \u7535\u6c60\u79df\u8d41 | \u6e56\u5dde | NIOPilot",
+        "list_price_10k": 16.81,
+        "list_year": 2025,
+        "list_mileage_10k_km": 2.58
+      }
+    ],
+    "first_stage_result_digest": "db77565477509de46e3a2af25c7e22efe80e1db5d09b90da5690b4a6dbde5330",
+    "s10_canonical_order_digest": "e27699bf2cac7059db35043debdcc80f698562a09dd77e8217224374e001e94d",
+    "s10_fast_handoff_ready": true,
+    "s10_fast_handoff_rule": "S10_READY_AND_FILTER_DONE_AND_SORT_DONE_AND_TRISAME_AND_CANONICAL_ORDER",
+    "trisame_count_confirmed": true,
+    "excluded_non_trisame_cards_count": 0,
+    "excluded_non_trisame_cards": [],
+    "non_trisame_section_detected": true,
+    "non_trisame_section_title": "\u627e\u4e0d\u5230\u60f3\u8981\u7684\u8f66",
+    "cards_after_boundary_excluded_count": 0
+  },
+  "second_stage_start_page_routing": {
+    "recognized_state": "UNKNOWN",
+    "expected_stage": "second_stage",
+    "second_stage_context_valid": true,
+    "current_reference_index": 1,
+    "current_reference_context_exists": true,
+    "expected_reference_card_exists": true,
+    "in_flight_page_allowed": false,
+    "selected_executor_name": "",
+    "executor_registry_hit": false,
+    "blocked_not_at_s10_reason": "recognized_state_not_second_stage_in_flight",
+    "contract_stop_code": "MAIN_SCRIPT_BLOCKED_NOT_AT_S10_READY",
+    "page_contract_executor_missing": true,
+    "context_missing_reasons": [
+      "recognized_state_not_second_stage_in_flight"
+    ]
+  },
+  "screenshot_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\artifacts\\screenshots\\s10_s16_start_20260814_150939.png",
+  "xml_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\artifacts\\debug\\s10_s16_start_20260814_150939.xml",
+  "visible_text_digest": [],
   "phone_test": {
     "adb_available": true,
     "adb_path": "D:\\Users\\Android\\Sdk\\platform-tools\\adb.EXE",
     "device_gate": {
       "passed": true,
       "status": "device",
-      "device_snapshot_taken_at": "2026-08-14T06:55:03.773042+00:00",
+      "device_snapshot_taken_at": "2026-08-14T07:09:38.966549+00:00",
       "device_snapshot_error": "",
       "adb_available": true,
       "adb_path": "D:\\Users\\Android\\Sdk\\platform-tools\\adb.EXE",
@@ -85,6 +272,8 @@
         "strict": true,
         "allow_default_when_single_device": false,
         "device_whitelist": [
+          "6TGYHPZCETCSK6L",
+          "1d76fbdd0923",
           "3417599354001L0"
         ],
         "config_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\config\\adb_target_device.yaml",
@@ -94,7 +283,7 @@
       "target_device_state": "device",
       "target_device_present_before_first_stage": true,
       "strict_device_selection": true,
-      "target_adb_serial": "3417599354001L0",
+      "target_adb_serial": "1d76fbdd0923",
       "adb_serial_source": "config",
       "adb_runtime_env_mode": "inherited_user_environment",
       "use_isolated_adb_home": false,
@@ -104,8 +293,8 @@
       "output_adb_home_exists": false,
       "output_adb_home_android_dir_exists": false,
       "android_adb_server_port": null,
-      "adb_command_preview": "adb.EXE -s 3417599354001L0 ...",
-      "cwd": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\src",
+      "adb_command_preview": "adb.EXE -s 1d76fbdd0923 ...",
+      "cwd": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\src\\guazi_app_data_system",
       "project_root": "E:\\project\\zhikuan\\guazi_app_data_system\\app",
       "python_executable": "D:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
       "adb_env_risk_flags": [],
@@ -119,6 +308,8 @@
           "strict": true,
           "allow_default_when_single_device": false,
           "device_whitelist": [
+            "6TGYHPZCETCSK6L",
+            "1d76fbdd0923",
             "3417599354001L0"
           ],
           "config_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\config\\adb_target_device.yaml",
@@ -135,6 +326,11 @@
         },
         "connected_serials": [
           "3417599354001L0"
+        ],
+        "device_whitelist": [
+          "6TGYHPZCETCSK6L",
+          "1d76fbdd0923",
+          "3417599354001L0"
         ]
       }
     },
@@ -150,35 +346,57 @@
       }
     ],
     "device_info": {
-      "manufacturer": "vivo",
-      "model": "V2145A",
-      "android_version": "14",
-      "sdk": "34"
+      "manufacturer": "",
+      "model": "",
+      "android_version": "",
+      "sdk": ""
     },
     "package_discovery": {},
     "wake_result": {},
     "swipe_unlock_result": {},
     "runtime_preflight": {
-      "wakefulness": "Awake",
+      "wakefulness": "",
       "interactive": null,
       "display_state": "",
-      "keyguard_showing": true,
-      "keyguard_locked": true,
-      "keyguard_secure": true,
-      "foreground_package": "com.bbk.launcher2",
+      "keyguard_showing": null,
+      "keyguard_locked": null,
+      "keyguard_secure": false,
+      "foreground_package": "",
       "resumed_activity": "",
-      "focused_window": "com.bbk.launcher2/com.bbk.launcher2.Launcher type=1",
-      "xml_package": "com.bbk.launcher2",
-      "fresh_xml": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,2400]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,2400]\"><node index=\"0\" text=\"\" resource-id=\"android:id/content\" class=\"android.widget.FrameLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,2400]\"><node index=\"0\" text=\"\" resource-id=\"com.bbk.launcher2:id/launcher_container_view\" class=\"android.widget.FrameLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,2400]\"><node index=\"0\" text=\"\" resource-id=\"com.bbk.launcher2:id/floating_icon_parent\" class=\"android.widget.FrameLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,2400]\" /><node index=\"1\" text=\"\" resource-id=\"com.bbk.launcher2:id/drag_layer\" class=\"android.widget.FrameLayout\" package=\"com.bbk.launcher2\" content-desc=\"null\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,2400]\"><node index=\"0\" text=\"\" resource-id=\"com.bbk.launcher2:id/workspace\" class=\"android.view.ViewGroup\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,2400]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.ViewGroup\" package=\"com.bbk.launcher2\" content-desc=\"桌面编辑状态-第1页\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,2400]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.ViewGroup\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,185][1017,2400]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bbk.launcher2\" content-desc=\"时钟天气\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,185][1017,437]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.appwidget.AppWidgetHostView\" package=\"com.bbk.launcher2\" content-desc=\"时钟天气\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,185][1017,437]\"><node index=\"0\" text=\"\" resource-id=\"com.vivo.doubletimezoneclock:id/widget_root_layout\" class=\"android.widget.FrameLayout\" package=\"com.vivo.doubletimezoneclock\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,185][1017,437]\"><node index=\"0\" text=\"\" resource-id=\"com.vivo.doubletimezoneclock:id/single_status_layout\" class=\"android.widget.LinearLayout\" package=\"com.vivo.doubletimezoneclock\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,185][1017,437]\"><node index=\"0\" text=\"\" resource-id=\"com.vivo.doubletimezoneclock:id/single_status_clock_layout\" class=\"android.widget.FrameLayout\" package=\"com.vivo.doubletimezoneclock\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[103,185][977,437]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.vivo.doubletimezoneclock\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[103,185][550,437]\"><node index=\"0\" text=\"14:55\" resource-id=\"com.vivo.doubletimezoneclock:id/single_time_layout\" class=\"android.widget.TextView\" package=\"com.vivo.doubletimezoneclock\" content-desc=\"14:55\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[103,185][550,386]\" /><node index=\"1\" text=\"8月14日 星期五\" resource-id=\"com.vivo.doubletimezoneclock:id/date_week_apm\" class=\"android.widget.TextView\" package=\"com.vivo.doubletimezoneclock\" content-desc=\"8月14日 星期五\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[103,371][414,437]\" /></node><node index=\"1\" text=\"\" resource-id=\"com.vivo.doubletimezoneclock:id/city_weather_layout\" class=\"android.widget.LinearLayout\" package=\"com.vivo.doubletimezoneclock\" content-desc=\"丰南区31℃多云\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[804,288][977,437]\"><node index=\"0\" text=\"丰南区\" resource-id=\"com.vivo.doubletimezoneclock:id/city\" class=\"android.widget.TextView\" package=\"com.vivo.doubletimezoneclock\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[835,288][977,353]\" /><node index=\"1\" text=\"\" resource-id=\"com.vivo.doubletimezoneclock:id/weather_layout\" class=\"android.widget.LinearLayout\" package=\"com.vivo.doubletimezoneclock\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[804,359][977,437]\"><node index=\"0\" text=\"31℃\" resource-id=\"com.vivo.doubletimezoneclock:id/temperature\" class=\"android.widget.TextView\" package=\"com.vivo.doubletimezoneclock\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[816,371][901,428]\" /><node index=\"1\" text=\"\" resource-id=\"com.vivo.doubletimezoneclock:id/weather\" class=\"android.widget.ImageView\" package=\"com.vivo.doubletimezoneclock\" content-desc=\"多云\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[913,362][977,437]\" /></node></node></node></node></node></node><node index=\"2\" text=\"\" resource-id=\"com.bbk.launcher2:id/app_widget_view_layout\" class=\"android.widget.FrameLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[141,201][939,373]\" /><node index=\"3\" text=\"\" resource-id=\"com.bbk.launcher2:id/app_widget_view_loading_parent\" class=\"android.widget.FrameLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[96,212][984,362]\" /></node><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bbk.launcher2\" content-desc=\"搜索\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,431][1017,683]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.appwidget.AppWidgetHostView\" package=\"com.bbk.launcher2\" content-desc=\"搜索\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,431][1017,683]\"><node index=\"0\" text=\"\" resource-id=\"com.vivo.puresearch:id/widget_root_layout\" class=\"android.widget.FrameLayout\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,431][1017,683]\"><node NAF=\"true\" index=\"0\" text=\"\" resource-id=\"com.vivo.puresearch:id/real_click_area\" class=\"android.widget.FrameLayout\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,431][1017,624]\" /><node index=\"1\" text=\"\" resource-id=\"com.vivo.puresearch:id/search_box_layout\" class=\"android.widget.FrameLayout\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[76,431][1005,589]\"><node index=\"0\" text=\"\" resource-id=\"com.vivo.puresearch:id/search_box_container\" class=\"android.widget.LinearLayout\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[76,431][1005,589]\"><node index=\"0\" text=\"\" resource-id=\"com.vivo.puresearch:id/search_icon_layout\" class=\"android.widget.FrameLayout\" package=\"com.vivo.puresearch\" content-desc=\"搜索\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[80,431][176,589]\"><node index=\"0\" text=\"\" resource-id=\"com.vivo.puresearch:id/search_icon\" class=\"android.widget.ImageView\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[104,458][176,530]\" /></node><node index=\"1\" text=\"\" resource-id=\"com.vivo.puresearch:id/search_words_container\" class=\"android.widget.FrameLayout\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[176,431][803,589]\"><node index=\"0\" text=\"相声：郭麒麟宣布与郭德纲断绝父子关系，并改名麒麟社，场面精彩！\" resource-id=\"com.vivo.puresearch:id/search_words\" class=\"android.widget.TextView\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[176,435][803,552]\" /></node><node index=\"2\" text=\"\" resource-id=\"com.vivo.puresearch:id/right_icon_container\" class=\"android.widget.FrameLayout\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[803,431][1001,589]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[803,431][1001,589]\"><node index=\"0\" text=\"\" resource-id=\"com.vivo.puresearch:id/search_voice_padding_layout\" class=\"android.widget.FrameLayout\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[803,431][894,589]\"><node index=\"0\" text=\"\" resource-id=\"com.vivo.puresearch:id/search_voice_layout\" class=\"android.widget.FrameLayout\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[803,431][894,589]\"><node index=\"0\" text=\"\" resource-id=\"com.vivo.puresearch:id/search_voice\" class=\"android.widget.ImageView\" package=\"com.vivo.puresearch\" content-desc=\"手电\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[815,461][878,524]\" /></node></node><node index=\"1\" text=\"\" resource-id=\"com.vivo.puresearch:id/search_scan_layout\" class=\"android.widget.FrameLayout\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[894,431][1001,589]\"><node index=\"0\" text=\"\" resource-id=\"com.vivo.puresearch:id/search_scan\" class=\"android.widget.ImageView\" package=\"com.vivo.puresearch\" content-desc=\"AI搜\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[908,461][971,524]\" /></node></node></node></node><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[76,433][1005,558]\"><node index=\"0\" text=\"\" resource-id=\"com.vivo.puresearch:id/search_box_layout_bg\" class=\"android.widget.LinearLayout\" package=\"com.vivo.puresearch\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[76,433][1005,558]\" /></node></node></node></node><node index=\"2\" text=\"\" resource-id=\"com.bbk.launcher2:id/app_widget_view_layout\" class=\"android.widget.FrameLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[141,447][939,619]\" /><node index=\"3\" text=\"\" resource-id=\"com.bbk.launcher2:id/app_widget_view_loading_parent\" class=\"android.widget.FrameLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[96,458][984,608]\" /></node><node index=\"2\" text=\"得物\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"得物\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,677][279,929]\" /><node index=\"3\" text=\"汽水音乐\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"汽水音乐\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,923][279,1175]\" /><node index=\"4\" text=\"Keep\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"Keep\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[309,677][525,929]\" /><node index=\"5\" text=\"高德地图\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"高德地图\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,1169][279,1421]\" /><node index=\"6\" text=\"红果免费短剧\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"红果免费短剧\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[309,923][525,1175]\" /><node index=\"7\" text=\"美团\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"美团\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[555,677][771,929]\" /><node index=\"8\" text=\"中国建设银行\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"中国建设银行\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[801,677][1017,929]\" /><node index=\"9\" text=\"相册\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"相册\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[309,1169][525,1421]\" /><node index=\"10\" text=\"相机\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"相机\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[555,923][771,1175]\" /><node index=\"11\" text=\"设置\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"设置\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[801,923][1017,1175]\" /><node index=\"12\" text=\"今日头条\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"今日头条\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[63,1415][279,1667]\" /><node index=\"13\" text=\"小天才\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"小天才\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[309,1415][525,1667]\" /><node index=\"14\" text=\"抖音\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"抖音，1条通知\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[555,1169][771,1421]\" /><node index=\"15\" text=\"华为运动健康\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"华为运动健康\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[555,1415][771,1667]\" /><node index=\"16\" text=\"豆包\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"豆包\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[801,1169][1017,1421]\" /></node></node><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.view.ViewGroup\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[1078,0][1080,2400]\" /></node><node index=\"1\" text=\"\" resource-id=\"com.bbk.launcher2:id/workspace_indicator\" class=\"android.widget.FrameLayout\" package=\"com.bbk.launcher2\" content-desc=\"指示器第1页，共4页\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,1895][1080,2060]\"><node index=\"0\" text=\"\" resource-id=\"com.bbk.launcher2:id/slider_anim_indicator\" class=\"android.widget.RelativeLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[420,1970][660,2060]\"><node index=\"0\" text=\"\" resource-id=\"com.bbk.launcher2:id/slider_count_indicator\" class=\"android.widget.RelativeLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[420,1970][660,2060]\"><node index=\"0\" text=\"\" resource-id=\"com.bbk.launcher2:id/hiboard_indicator\" class=\"android.widget.ImageView\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[420,1994][468,2036]\" /><node index=\"1\" text=\"\" resource-id=\"com.bbk.launcher2:id/analog_indicator_container\" class=\"android.widget.LinearLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[468,1970][660,2060]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[468,1994][516,2036]\" /><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[516,1994][564,2036]\" /><node index=\"2\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[564,1994][612,2036]\" /><node index=\"3\" text=\"\" resource-id=\"\" class=\"android.widget.ImageView\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[612,1994][660,2036]\" /></node></node></node></node><node index=\"2\" text=\"\" resource-id=\"com.bbk.launcher2:id/hotseat\" class=\"android.widget.FrameLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,2106][1080,2400]\"><node index=\"0\" text=\"\" resource-id=\"com.bbk.launcher2:id/hotset_explore_bg\" class=\"android.widget.RelativeLayout\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[42,2112][1038,2358]\" /><node index=\"1\" text=\"\" resource-id=\"com.bbk.launcher2:id/layout\" class=\"android.view.ViewGroup\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[45,2115][1080,2355]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.view.ViewGroup\" package=\"com.bbk.launcher2\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[45,2115][1080,2355]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"电话\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[81,2145][261,2325]\" /><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"信息，15条通知\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[327,2145][507,2325]\" /><node index=\"2\" text=\"\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"支付宝，9条通知\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[573,2145][753,2325]\" /><node index=\"3\" text=\"\" resource-id=\"\" class=\"android.widget.TextView\" package=\"com.bbk.launcher2\" content-desc=\"微信，4条通知\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[819,2145][999,2325]\" /></node></node></node></node></node></node></node></node></hierarchy>",
-      "fresh_screenshot": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\artifacts\\screenshots\\runtime_preflight_before_launch.png",
+      "focused_window": "",
+      "xml_package": "",
+      "fresh_screenshot": null,
       "screenshot_is_black": false
     },
     "runtime_preflight_after_wake": {},
     "runtime_preflight_after_swipe": {},
     "runtime_preflight_issues": [],
     "launch_result": {},
-    "screenshot_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\artifacts\\screenshots\\startup.png",
+    "screenshot_path": null,
     "recognized_start_state": null,
-    "failure_summary": ""
+    "failure_summary": "- APP launch probe stopped: third-party blocking page has no dismissible \u7ecb\u5d85\u6097 control."
+  },
+  "task_id": "LOCAL-TEST-0001",
+  "produced_by_task_id": "LOCAL-TEST-0001",
+  "target_fingerprint": "\u522b\u514b|\u541b\u8d8a|2021\u6b3e|652T \u8c6a\u534e\u578b|\u9ed1|21.8",
+  "target_task_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\data\\current_target_task.json",
+  "brand": "\u522b\u514b",
+  "series": "\u541b\u8d8a",
+  "year_model": "2021\u6b3e",
+  "config_model": "652T \u8c6a\u534e\u578b",
+  "color": "\u9ed1",
+  "register_date": "21.8",
+  "current_state": "SECOND_STAGE_BLOCKED_NOT_AT_S10_READY",
+  "final_status": "SECOND_STAGE_BLOCKED_NOT_AT_S10_READY",
+  "created_at": "2026-08-14T07:09:39.370129+00:00",
+  "result_segment": "s10_to_s16",
+  "first_stage_result_digest": "db77565477509de46e3a2af25c7e22efe80e1db5d09b90da5690b4a6dbde5330",
+  "s10_canonical_order_digest": "e27699bf2cac7059db35043debdcc80f698562a09dd77e8217224374e001e94d",
+  "reference_history_current_task_valid": true,
+  "reference_history_validation": {
+    "reference_history_current_task_valid": true,
+    "stale_reference_indices": [],
+    "stale_reference_history": [],
+    "reference_history_validation_rule": "EMPTY_HISTORY_ALLOWED"
   }
 }
