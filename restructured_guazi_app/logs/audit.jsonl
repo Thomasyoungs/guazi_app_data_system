@@ -43,3 +43,15 @@
 {"timestamp": "2026-08-13T23:46:00.729176+00:00", "event": "issue_recorded", "issue_id": "ISS-a2ddd78d01d2", "issue_code": "DEVICE_OPERATION_FAILED", "state_id": "S00", "resolution": "manual_review"}
 {"timestamp": "2026-08-13T23:49:02.724179+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
 {"timestamp": "2026-08-13T23:52:25.959041+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
+{"timestamp": "2026-08-14T00:10:01.879781+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
+{"timestamp": "2026-08-14T00:11:14.403684+00:00", "event": "issue_recorded", "issue_id": "ISS-69779143ffb3", "issue_code": "DEVICE_OPERATION_FAILED", "state_id": "S00", "resolution": "manual_review"}
+{"timestamp": "2026-08-14T00:13:13.603258+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
+{"timestamp": "2026-08-14T00:18:02.291860+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
+{"timestamp": "2026-08-14T00:20:26.055163+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
+{"timestamp": "2026-08-14T00:21:49.824135+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
+{"timestamp": "2026-08-14T00:23:16.796061+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
+{"timestamp": "2026-08-14T00:26:16.800945+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
+{"timestamp": "2026-08-14T00:28:26.291822+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
+{"timestamp": "2026-08-14T00:33:03.862984+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
+{"timestamp": "2026-08-14T00:36:08.172318+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
+{"timestamp": "2026-08-14T00:36:48.711438+00:00", "event": "issue_recorded", "issue_id": "ISS-a814dcb7dba9", "issue_code": "DEVICE_OPERATION_FAILED", "state_id": "S00", "resolution": "manual_review"}

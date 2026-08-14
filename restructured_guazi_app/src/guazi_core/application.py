@@ -137,7 +137,61 @@ def run_device(runtime: dict[str, Any], task: TargetCarTask | None = None, adb_s
             "device_result": device_result,
         }
 
-    # Build result
+    # Build result with pricing
+    configs = runtime["configs"]
+    
+    # Extract reference prices from device result
+    extracted_references = device_result.get("extracted_references", [])
+    reference_cars = []
+    for i, ref_data in enumerate(extracted_references):
+        from .models import ReferenceCar
+        reference_cars.append(
+            ReferenceCar(
+                reference_index=i,
+                list_price_10k=ref_data["list_price_10k"],
+                list_year=ref_data.get("list_year") or task.vehicle_year or 2021,
+                list_mileage_10k_km=ref_data.get("list_mileage_10k_km") or task.mileage_10k_km or 0.0,
+                transfer_count=ref_data.get("transfer_count", 0),
+                accident_count=ref_data.get("accident_count", 0),
+                max_accident_amount=ref_data.get("max_accident_amount"),
+                repair_counts=ref_data.get("repair_counts", {}),
+                panel_repairs=ref_data.get("panel_repairs", []),
+            )
+        )
+    
+    # Run pricing if we have reference cars
+    pricing_result = None
+    target_score_result = None
+    selected_reference_result = None
+    if reference_cars:
+        try:
+            from .task_normalizer import TargetCar
+            target = TargetCar(
+                brand=task.brand,
+                series=task.series,
+                model_year=task.model_year,
+                trim=task.trim,
+                color=task.color,
+                registration_date_raw=task.registration_date_raw,
+                vehicle_year=task.vehicle_year,
+                mileage_10k_km=task.mileage_10k_km,
+                transfer_count=task.transfer_count or 0,
+                condition_text=task.condition_text,
+            )
+            target_score_result = score_target(target, configs["fields"], current_year=2026)
+            selection = select_reference(target_score_result, reference_cars, configs["fields"], current_year=2026)
+            selected_reference_result = selection["selected_reference"]
+            pricing_result = calculate_pricing(selected_reference_result, configs["fields"])
+            print(f"[Pricing] Reference selected: {selected_reference_result.list_price_10k if selected_reference_result else 'None'}万")
+            if pricing_result:
+                print(f"[Pricing] Suggested acquisition price: {pricing_result.get('suggested_acquisition_price_yuan', 'N/A')}元")
+        except Exception as e:
+            print(f"[Pricing] Error during pricing calculation: {e}")
+            import traceback
+            traceback.print_exc()
+    else:
+        print("[Pricing] No reference cars extracted, skipping pricing calculation")
+
     result = {
         "metadata": {
             "project": "guazi_app_data_system",
@@ -146,6 +200,11 @@ def run_device(runtime: dict[str, Any], task: TargetCarTask | None = None, adb_s
         },
         "target_car": task.to_dict(),
         "device_operation": device_result,
+        "reference_cars_count": len(reference_cars),
+        "reference_cars": [r.to_dict() for r in reference_cars],
+        "target_score": target_score_result.to_dict() if target_score_result else None,
+        "selected_reference": selected_reference_result.to_dict() if selected_reference_result else None,
+        "pricing": pricing_result,
         "phone_test": {
             "adb_serial": device_result.get("adb_serial"),
             "search_query": device_result.get("search", {}).get("search_query"),

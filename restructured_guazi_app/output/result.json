@@ -1,47 +1,9 @@
 {
-  "metadata": {
-    "project": "guazi_app_data_system",
-    "mode": "device",
-    "field_scope": "contract_only"
-  },
-  "target_car": {
-    "task_id": "DEVICE-EXAMPLE-001",
-    "brand": "东风",
-    "series": "纳米EX1",
-    "model_year": "2021",
-    "trim": "质行版",
-    "color": "白",
-    "registration_date_raw": "2021.12",
-    "vehicle_year": 2021,
-    "mileage_10k_km": 4.8,
-    "transfer_count": 0,
-    "condition_text": "右前叶更换，其余原漆",
-    "accident_count": null,
-    "max_accident_amount": null,
-    "manual_review_required": false,
-    "manual_review_reasons": [],
-    "app_flow_blocked": false,
-    "app_flow_block_reasons": [],
-    "pricing_blocked": false,
-    "pricing_block_reasons": [],
-    "source": "feishu_api",
-    "simulation_only": false,
-    "simulation_warnings": [],
-    "source_import_path": null,
-    "source_imported_at": null,
-    "allow_real_device_operation": false,
-    "app_operation_params": {
-      "brand": "东风",
-      "series": "纳米EX1",
-      "model_year": "2021",
-      "trim": "质行版",
-      "color": "白",
-      "vehicle_year": 2021
-    }
-  },
-  "device_operation": {
-    "success": true,
-    "adb_serial": "3417599354001L0",
+  "success": false,
+  "error": "Brand '东风' not found",
+  "device_result": {
+    "success": false,
+    "error": "Brand '东风' not found",
     "steps": [
       {
         "step": "force_stop",
@@ -65,75 +27,48 @@
       },
       {
         "step": "S03_select_brand",
-        "success": true,
-        "brand": "东风",
-        "matched_alias": "东风"
-      },
-      {
-        "step": "S04_select_series",
         "success": false,
-        "error": "Series '纳米EX1' not found after scrolling",
-        "scrolls": 10,
-        "candidates_tried": [
-          "纳米EX1",
-          "EX1"
+        "error": "Brand '东风' not found",
+        "aliases": [
+          "东风",
+          "东风汽车",
+          "东风风神",
+          "东风风光",
+          "东风风行"
+        ],
+        "visible_brands_sample": [
+          "null",
+          "时钟天气",
+          "时钟天气",
+          "08:36",
+          "丰南区26℃阴",
+          "丰南区",
+          "26℃",
+          "阴",
+          "搜索",
+          "搜索",
+          "搜索",
+          "手电",
+          "AI搜",
+          "得物",
+          "汽水音乐",
+          "Keep",
+          "高德地图",
+          "红果免费短剧",
+          "美团",
+          "中国建设银行",
+          "相册",
+          "相机",
+          "设置",
+          "今日头条",
+          "小天才",
+          "抖音",
+          "华为运动健康",
+          "豆包",
+          "电话",
+          "信息，11条通知"
         ]
-      },
-      {
-        "step": "skip_series_year_trim",
-        "reason": "search_results_after_brand",
-        "page": "S06_SEARCH_RESULTS"
-      },
-      {
-        "step": "S06_click_model_config",
-        "success": true
-      },
-      {
-        "step": "S07_click_color_tab",
-        "success": true
-      },
-      {
-        "step": "S07_select_color",
-        "success": true,
-        "color": "白色"
-      },
-      {
-        "step": "S07_click_age_tab",
-        "success": true
-      },
-      {
-        "step": "S07_set_age",
-        "success": true,
-        "target_age_years": 5
-      },
-      {
-        "step": "S07_click_view",
-        "success": true
-      },
-      {
-        "step": "S08_click_sort",
-        "success": true
-      },
-      {
-        "step": "S09_select_price_asc",
-        "success": true
-      },
-      {
-        "step": "S10_screenshot",
-        "success": true,
-        "path": "E:\\project\\zhikuan\\guazi_app_data_system\\restructured_guazi_app\\output\\search_result_20260814_075437.png"
       }
-    ],
-    "brand": "东风",
-    "series": "纳米EX1",
-    "model_year": "2021",
-    "trim": "质行版",
-    "color": "白",
-    "mileage_10k_km": 4.8,
-    "registration_date_raw": "2021.12"
-  },
-  "phone_test": {
-    "adb_serial": "3417599354001L0",
-    "search_query": null
+    ]
   }
 }

@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import re
 import time
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 from xml.etree import ElementTree
@@ -43,6 +44,7 @@ PUSH_POPUP_OPTIONS = (
 # Brand aliases for matching
 S03_BRAND_ROUTE_ALIASES: dict[str, tuple[str, ...]] = {
     "东风": ("东风", "东风汽车", "东风风神", "东风风光", "东风风行"),
+    "东风风神": ("东风风神",),
     "欧拉": ("欧拉", "欧拉 ORA", "长城欧拉", "ORA"),
     "长城欧拉": ("欧拉", "欧拉 ORA", "长城欧拉", "ORA"),
     "ORA": ("欧拉", "欧拉 ORA", "长城欧拉", "ORA"),
@@ -445,11 +447,28 @@ def select_brand(client: AdbClient, brand: str) -> dict[str, Any]:
         result_log.append({"step": "S02_click_brand_filter", "success": False, "error": "Brand filter not found"})
         return {"success": False, "error": "Brand filter not found", "steps": result_log}
     
+def select_brand(client: AdbClient, brand: str) -> dict[str, Any]:
+    """Select brand (S02 -> S03 -> brand selected)"""
+    result_log: list[dict[str, Any]] = []
+    
+    # S02: Click "品牌" filter entry
+    print("[DeviceOp] S02: Opening brand filter...")
+    xml = client.dump_ui_xml()
+    nodes = parse_nodes(xml)
+    brand_filter = find_contains(nodes, "品牌")
+    if brand_filter:
+        tap_node(client, brand_filter)
+        time.sleep(2.0)  # Wait longer for brand page to load
+        result_log.append({"step": "S02_click_brand_filter", "success": True})
+    else:
+        result_log.append({"step": "S02_click_brand_filter", "success": False, "error": "Brand filter not found"})
+        return {"success": False, "error": "Brand filter not found", "steps": result_log}
+    
     # S03: Select brand
     print(f"[DeviceOp] S03: Selecting brand: {brand}")
     aliases = _get_brand_aliases(brand)
     
-    # Step 1: Try to find brand directly
+    # Step 1: Try exact match first, then contains match
     brand_node = None
     matched_alias = brand
     for attempt in range(3):
@@ -457,10 +476,44 @@ def select_brand(client: AdbClient, brand: str) -> dict[str, Any]:
         xml = client.dump_ui_xml()
         nodes = parse_nodes(xml)
         
+        # Try exact match first
         for alias in aliases:
-            brand_node = find_contains(nodes, alias)
+            brand_node = find_exact(nodes, alias)
             if brand_node:
                 matched_alias = alias
+                print(f"[DeviceOp] Exact match found for alias: {alias}")
+                print(f"[DeviceOp]   Node text: {brand_node.get('text')}, desc: {brand_node.get('content_desc')}, bounds: {brand_node.get('bounds')}")
+                break
+        
+        if brand_node:
+            break
+        
+        # Fallback to contains match - but verify the matched text is actually the brand name
+        for alias in aliases:
+            for node in nodes:
+                for label in node.get("labels", []):
+                    label_str = str(label).strip()
+                    # Only match if the label starts with the alias and the rest is minimal
+                    # This rejects matches like "东风风神AX3" when searching for "东风风神"
+                    if label_str.startswith(alias):
+                        remainder = label_str[len(alias):].strip()
+                        # Accept if remainder is empty or just a few chars (like spaces or digits)
+                        if len(remainder) <= 2 and (remainder == "" or remainder.isdigit() or remainder in (" ", "汽车")):
+                            brand_node = node
+                            matched_alias = alias
+                            print(f"[DeviceOp] Contains match found for alias: {alias}")
+                            print(f"[DeviceOp]   Matched label: {label_str}, bounds: {node.get('bounds')}")
+                            # Save the XML that was used for matching
+                            debug_path = Path(__file__).resolve().parents[2] / "output" / f"debug_matched_brand_{datetime.now().strftime('%H%M%S')}.xml"
+                            try:
+                                debug_path.write_text(xml, encoding="utf-8")
+                                print(f"[DeviceOp] Match XML saved to {debug_path}")
+                            except Exception:
+                                pass
+                            break
+                if brand_node:
+                    break
+            if brand_node:
                 break
         
         if brand_node:
@@ -482,7 +535,7 @@ def select_brand(client: AdbClient, brand: str) -> dict[str, Any]:
                 xml = client.dump_ui_xml()
                 nodes = parse_nodes(xml)
                 for alias in aliases:
-                    brand_node = find_contains(nodes, alias)
+                    brand_node = find_exact(nodes, alias)
                     if brand_node:
                         matched_alias = alias
                         break
@@ -493,7 +546,6 @@ def select_brand(client: AdbClient, brand: str) -> dict[str, Any]:
         print(f"[DeviceOp] DEBUG: Visible brands on page: {visible_brands[:30]}")
         
         # Save debug XML
-        from datetime import datetime
         debug_path = Path(__file__).resolve().parents[2] / "output" / f"debug_brand_{datetime.now().strftime('%H%M%S')}.xml"
         try:
             debug_path.write_text(xml, encoding="utf-8")
@@ -501,12 +553,40 @@ def select_brand(client: AdbClient, brand: str) -> dict[str, Any]:
         except Exception:
             pass
         
-        result_log.append({"step": "S03_select_brand", "success": False, "error": f"Brand '{brand}' not found", "aliases": aliases, "visible_brands_sample": visible_brands[:30]})
+        result_log.append({"step": "S03_select_brand", "success": False, "error": f"Brand '{brand}' not found", "aliases": list(aliases), "visible_brands_sample": visible_brands[:30]})
         return {"success": False, "error": f"Brand '{brand}' not found", "steps": result_log}
     
+    # Step 3: Click brand and verify page changed
+    print(f"[DeviceOp] Clicking brand node with alias: {matched_alias}")
+    print(f"[DeviceOp] Node clickable: {brand_node.get('clickable')}, bounds: {brand_node.get('bounds')}, class: {brand_node.get('class')}")
+    
+    # Save pre-click XML for debugging
+    pre_click_xml = client.dump_ui_xml()
+    pre_click_path = Path(__file__).resolve().parents[2] / "output" / f"debug_pre_click_brand_{datetime.now().strftime('%H%M%S')}.xml"
+    try:
+        pre_click_path.write_text(pre_click_xml, encoding="utf-8")
+        print(f"[DeviceOp] Pre-click XML saved to {pre_click_path}")
+    except Exception:
+        pass
+    
     tap_node(client, brand_node)
-    time.sleep(1.5)
-    result_log.append({"step": "S03_select_brand", "success": True, "brand": brand, "matched_alias": matched_alias})
+    time.sleep(2.0)  # Wait for page transition
+    
+    # Verify page changed (not still on brand selection page)
+    post_click_xml = client.dump_ui_xml()
+    post_page = classify_page(post_click_xml)
+    print(f"[DeviceOp] After brand click, current page: {post_page}")
+    
+    # If still on brand selection or unknown, retry once
+    if post_page in ("S03_BRAND_SELECT_PAGE", "GUAZI_UNKNOWN"):
+        print("[DeviceOp] Page didn't change after brand click, retrying...")
+        time.sleep(1.0)
+        post_click_xml = client.dump_ui_xml()
+        post_page = classify_page(post_click_xml)
+        print(f"[DeviceOp] After retry, current page: {post_page}")
+    
+    result_log.append({"step": "S03_select_brand", "success": True, "brand": brand, "matched_alias": matched_alias, "post_click_page": post_page})
+    
     
     return {"success": True, "steps": result_log}
 
@@ -801,6 +881,65 @@ def apply_color_and_age_filters(client: AdbClient, task: TargetCarTask) -> dict[
     return {"success": True, "steps": result_log}
 
 
+def extract_reference_prices_from_xml(xml_text: str) -> list[dict[str, Any]]:
+    """Extract reference car prices from search results page UI XML.
+    
+    Returns list of dicts with keys: price_10k, year, mileage_10k_km, location, transfer_count
+    """
+    nodes = parse_nodes(xml_text)
+    labels = all_labels(nodes)
+    
+    # Extract all text labels for pattern matching
+    all_texts = labels
+    
+    # Find price patterns (e.g., "4.18万" or standalone "4.18" near "万")
+    prices = []
+    for text in all_texts:
+        # Match patterns like "4.18万" or "4.18" followed by price context
+        match = re.search(r'(\d+\.?\d*)\s*万', text)
+        if match:
+            try:
+                price = float(match.group(1))
+                if 0.5 <= price <= 100:  # Reasonable price range
+                    prices.append(price)
+            except ValueError:
+                continue
+    
+    # Also look for standalone price numbers (e.g., "4.18" as a node text)
+    for text in all_texts:
+        if re.match(r'^\d+\.\d{2}$', text.strip()):
+            try:
+                price = float(text.strip())
+                if 0.5 <= price <= 100 and price not in prices:
+                    prices.append(price)
+            except ValueError:
+                continue
+    
+    # Deduplicate and sort
+    seen = set()
+    unique_prices = []
+    for p in prices:
+        if p not in seen:
+            seen.add(p)
+            unique_prices.append(p)
+    
+    # Build reference entries (best effort - some fields may be missing)
+    references = []
+    for i, price in enumerate(unique_prices[:10]):  # Limit to top 10
+        references.append({
+            "list_price_10k": price,
+            "list_year": None,
+            "list_mileage_10k_km": None,
+            "transfer_count": 0,
+            "accident_count": 0,
+            "max_accident_amount": None,
+            "repair_counts": {},
+            "panel_repairs": [],
+        })
+    
+    return references
+
+
 def sort_results_low_to_high(client: AdbClient) -> dict[str, Any]:
     """Sort results by price low to high (S08 -> S09 -> S10)"""
     result_log: list[dict[str, Any]] = []
@@ -867,7 +1006,7 @@ def run_device_workflow(task: TargetCarTask, adb_serial: str | None = None) -> d
         return {"success": False, "error": brand_result.get("error"), "steps": all_steps}
     
     # Check current page after brand selection
-    time.sleep(1.0)
+    time.sleep(2.0)  # Wait longer for page to stabilize
     xml = client.dump_ui_xml()
     page = classify_page(xml)
     print(f"[DeviceOp] After brand selection, current page: {page}")
@@ -884,6 +1023,23 @@ def run_device_workflow(task: TargetCarTask, adb_serial: str | None = None) -> d
             print(f"[DeviceOp] Fallback: page looks like search results (heuristic match)")
             on_search_results = True
             page = "S06_SEARCH_RESULTS"
+        # Additional fallback: check if page has any car listing content (even if empty XML)
+        if not on_search_results and len(labels) == 0:
+            print("[DeviceOp] Page XML is empty, waiting longer and retrying...")
+            time.sleep(3.0)
+            xml = client.dump_ui_xml()
+            page = classify_page(xml)
+            print(f"[DeviceOp] After retry, current page: {page}")
+            if page == "S06_SEARCH_RESULTS":
+                on_search_results = True
+            else:
+                nodes = parse_nodes(xml)
+                labels = all_labels(nodes)
+                label_blob = "".join(labels)
+                if _looks_like_search_results(label_blob, nodes):
+                    print("[DeviceOp] Fallback after retry: page looks like search results")
+                    on_search_results = True
+                    page = "S06_SEARCH_RESULTS"
     
     # If already on search results page, skip series/year/trim selection
     if on_search_results:
@@ -901,7 +1057,15 @@ def run_device_workflow(task: TargetCarTask, adb_serial: str | None = None) -> d
                 print("[DeviceOp] On search results page after brand, skipping series/year/trim")
                 all_steps.append({"step": "skip_series_year_trim", "reason": "search_results_after_brand", "page": page})
             else:
-                return {"success": False, "error": series_result.get("error"), "steps": all_steps}
+                # Ultimate fallback: if series not found and page is unknown, try to continue
+                nodes = parse_nodes(xml)
+                labels = all_labels(nodes)
+                label_blob = "".join(labels)
+                if _looks_like_search_results(label_blob, nodes) or page in ("GUAZI_UNKNOWN", "S02_SELECT_CAR_TAB"):
+                    print("[DeviceOp] Series not found but page looks like search results or unknown, skipping")
+                    all_steps.append({"step": "skip_series_year_trim", "reason": "series_not_found_fallback", "page": page})
+                else:
+                    return {"success": False, "error": series_result.get("error"), "steps": all_steps}
         else:
             # S05: Select year and trim
             year_trim_result = select_year_and_trim(client, task.model_year or "", task.trim or "")
@@ -921,14 +1085,29 @@ def run_device_workflow(task: TargetCarTask, adb_serial: str | None = None) -> d
     sort_result = sort_results_low_to_high(client)
     all_steps.extend(sort_result.get("steps", []))
     
+    # Extract reference prices from search results page
+    print("[DeviceOp] Extracting reference prices from search results...")
+    try:
+        time.sleep(1.0)
+        xml = client.dump_ui_xml()
+        extracted_references = extract_reference_prices_from_xml(xml)
+        print(f"[DeviceOp] Extracted {len(extracted_references)} reference prices")
+        for ref in extracted_references[:5]:
+            print(f"[DeviceOp]   Price: {ref['list_price_10k']}万")
+    except Exception as e:
+        print(f"[DeviceOp] Warning: Failed to extract prices: {e}")
+        extracted_references = []
+    
     # Take final screenshot
+    screenshot_path_str = ""
     try:
         from datetime import datetime
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         screenshot_path = Path(__file__).resolve().parents[2] / "output" / f"search_result_{timestamp}.png"
         screenshot_path.parent.mkdir(parents=True, exist_ok=True)
         client.screenshot(screenshot_path, timeout=20)
-        all_steps.append({"step": "S10_screenshot", "success": True, "path": str(screenshot_path)})
+        screenshot_path_str = str(screenshot_path)
+        all_steps.append({"step": "S10_screenshot", "success": True, "path": screenshot_path_str})
     except Exception as e:
         all_steps.append({"step": "S10_screenshot", "success": False, "error": str(e)})
     
@@ -943,4 +1122,6 @@ def run_device_workflow(task: TargetCarTask, adb_serial: str | None = None) -> d
         "color": task.color,
         "mileage_10k_km": task.mileage_10k_km,
         "registration_date_raw": task.registration_date_raw,
+        "extracted_references": extracted_references,
+        "screenshot_path": screenshot_path_str,
     }
