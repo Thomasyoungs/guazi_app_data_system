@@ -213,3 +213,5 @@
 {"timestamp": "2026-08-14T08:39:59.758622+00:00", "event": "issue_recorded", "issue_id": "ISS-271c9b964e65", "issue_code": "S14_PAGE_LABEL_NOT_PARSED", "state_id": "S14", "resolution": "manual_review", "classification": null, "learning_loop": null}
 {"timestamp": "2026-08-14T09:14:25.320731+00:00", "event": "phone_probe_started", "adb_path": "D:\\Users\\Android\\Sdk\\platform-tools\\adb.EXE", "adb_available": true}
 {"timestamp": "2026-08-14T09:14:39.772383+00:00", "event": "issue_recorded", "issue_id": "ISS-5c3b17f504bd", "issue_code": "MAIN_SCRIPT_BLOCKED_NOT_AT_S10_READY", "state_id": "UNKNOWN", "resolution": "manual_review", "classification": null, "learning_loop": null}
+{"timestamp": "2026-08-14T09:19:36.141027+00:00", "event": "phone_probe_started", "adb_path": "D:\\Users\\Android\\Sdk\\platform-tools\\adb.EXE", "adb_available": true}
+{"timestamp": "2026-08-14T09:19:53.063564+00:00", "event": "issue_recorded", "issue_id": "ISS-1348b69b73fc", "issue_code": "SECOND_STAGE_FAST_HANDOFF_S10_GATE_FAILED", "state_id": "S10", "resolution": "manual_review", "classification": null, "learning_loop": null}

@@ -1,6 +1,6 @@
 # 执行反馈报告
 
-- 生成时间：2026-08-14T09:14:39.788396+00:00
+- 生成时间：2026-08-14T09:19:53.080715+00:00
 - 工程目录：E:\project\zhikuan\guazi_app_data_system\app
 - 定价状态：unknown
 
@@ -61,6 +61,7 @@ app/
       s10_s16_start_20260814_163802.xml
       s10_s16_start_20260814_163954.xml
       s10_s16_start_20260814_171435.xml
+      s10_s16_start_20260814_171949.xml
       s10_to_s11_20260814_163010_compressed.xml
       s11_report_entry_search_1_20260814_163020.xml
       s11_to_s12_wait_stable_1_20260814_163024.xml
@@ -119,6 +120,7 @@ app/
       s10_s16_start_20260814_163802.png
       s10_s16_start_20260814_163954.png
       s10_s16_start_20260814_171435.png
+      s10_s16_start_20260814_171949.png
       s10_to_s11_pre_dump_1_20260814_163009.png
       s10_to_s11_pre_dump_2_20260814_163010.png
       s11_report_entry_search_1_20260814_163020.png
@@ -1093,6 +1095,7 @@ app/
 - S13_HISTORY_REPAIR_COUNT_NOT_CONFIRMED：Clicked body appearance tab, but S13/history repair evidence did not appear after fresh; post-click scroll is not allowed.（处理：manual_review）
 - SECOND_STAGE_IN_FLIGHT_CONTINUATION_REJECTED_CONTEXT_NOT_RESTORABLE：Second stage is already inside a reference page, but prior continuation state was rejected; refusing to reset to reference_index=1 in-flight.（处理：manual_review）
 - S14_PAGE_LABEL_NOT_PARSED：S14 tab labels were not parsed.（处理：manual_review）
+- SECOND_STAGE_FAST_HANDOFF_S10_GATE_FAILED：Second stage S10 fast handoff gate failed.（处理：manual_review）
 
 ## 人工确认事项
 
