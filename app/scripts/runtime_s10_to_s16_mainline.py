@@ -12081,7 +12081,7 @@ def _extract_history_repair_count_from_nodes(
         text = item["text"]
         if text.endswith("深度检测：") and item is not header:
             break
-        if text == "历史修复" and _same_visual_row(header_bounds, item["bounds"]):
+        if "历史修复" in text and _same_visual_row(header_bounds, item["bounds"]):
             history_candidates.append(item)
     if not history_candidates:
         debug["not_confirmed_reason"] = "history_repair_label_not_found_near_region_header"

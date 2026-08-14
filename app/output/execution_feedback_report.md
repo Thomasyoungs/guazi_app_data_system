@@ -1,6 +1,6 @@
 # 执行反馈报告
 
-- 生成时间：2026-08-14T08:30:40.760121+00:00
+- 生成时间：2026-08-14T09:14:39.788396+00:00
 - 工程目录：E:\project\zhikuan\guazi_app_data_system\app
 - 定价状态：unknown
 
@@ -58,6 +58,9 @@ app/
       s10_s16_start_20260814_153432.xml
       s10_s16_start_20260814_153517.xml
       s10_s16_start_20260814_163004.xml
+      s10_s16_start_20260814_163802.xml
+      s10_s16_start_20260814_163954.xml
+      s10_s16_start_20260814_171435.xml
       s10_to_s11_20260814_163010_compressed.xml
       s11_report_entry_search_1_20260814_163020.xml
       s11_to_s12_wait_stable_1_20260814_163024.xml
@@ -113,6 +116,9 @@ app/
       s10_s16_start_20260814_153432.png
       s10_s16_start_20260814_153517.png
       s10_s16_start_20260814_163004.png
+      s10_s16_start_20260814_163802.png
+      s10_s16_start_20260814_163954.png
+      s10_s16_start_20260814_171435.png
       s10_to_s11_pre_dump_1_20260814_163009.png
       s10_to_s11_pre_dump_2_20260814_163010.png
       s11_report_entry_search_1_20260814_163020.png
@@ -217,6 +223,12 @@ app/
     continue_reference3_second_20260508_165412.log
     continue_reference3_second_20260508_170045.log
     continue_reference3_second_final_20260508_170559.log
+    current_s14.png
+    current_s14_2.png
+    current_s14_xml.xml
+    current_screenshot.png
+    current_screenshot2.png
+    current_screenshot3.png
     execution_feedback_report.md
     first_stage_after_full_legacy_cleanup_validation.json
     first_stage_after_full_legacy_cleanup_validation_20260512_094931.log
@@ -577,6 +589,7 @@ app/
     s14_raw_first_line_stale_handling_patch_latest.md
     s14_tab_label_regex_module_init_patch.json
     s14_tab_label_regex_module_init_patch_latest.md
+    s14_xml.xml
     s15_metal_deduct_keyerror_reference_diff_diagnosis.json
     s15_metal_deduct_keyerror_reference_diff_diagnosis_latest.md
     s15_metal_deduct_special_structure_offline_validation.json
@@ -1078,6 +1091,8 @@ app/
 - SECURE_KEYGUARD_HUMAN_REQUIRED：Secure keyguard is showing before APP_FORCE_RESTART; human unlock is required.（处理：manual_review）
 - APP_ICON_NOT_FOUND_AFTER_DEVICE_READY：Launcher is visible after device ready gate, but exact Guazi app icon text was not found.（处理：manual_review）
 - S13_HISTORY_REPAIR_COUNT_NOT_CONFIRMED：Clicked body appearance tab, but S13/history repair evidence did not appear after fresh; post-click scroll is not allowed.（处理：manual_review）
+- SECOND_STAGE_IN_FLIGHT_CONTINUATION_REJECTED_CONTEXT_NOT_RESTORABLE：Second stage is already inside a reference page, but prior continuation state was rejected; refusing to reset to reference_index=1 in-flight.（处理：manual_review）
+- S14_PAGE_LABEL_NOT_PARSED：S14 tab labels were not parsed.（处理：manual_review）
 
 ## 人工确认事项
 
