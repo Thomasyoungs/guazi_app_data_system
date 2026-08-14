@@ -1,8 +1,0 @@
-# Dependencies for the refactored Guazi APP data system
-PyYAML>=6.0,<7
-
-# Optional dependency for Feishu integration
-# lark-oapi>=1.0.0  # Uncomment to enable Feishu API integration
-
-# Optional dependency for image processing (screenshot analysis)
-# Pillow>=9.0.0  # Uncomment if screenshot analysis is needed
