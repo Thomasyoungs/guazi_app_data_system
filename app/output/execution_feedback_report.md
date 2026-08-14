@@ -1,6 +1,6 @@
 # 执行反馈报告
 
-- 生成时间：2026-08-14T07:09:39.379538+00:00
+- 生成时间：2026-08-14T08:30:40.760121+00:00
 - 工程目录：E:\project\zhikuan\guazi_app_data_system\app
 - 定价状态：unknown
 
@@ -15,20 +15,111 @@ app/
   requirements.txt
   artifacts/
     debug/
+      device_ready_launcher_before_icon_20260814_154705.xml
+      device_ready_launcher_before_icon_20260814_155604.xml
+      device_ready_launcher_before_icon_20260814_162356.xml
+      device_ready_launcher_before_icon_20260814_162709.xml
+      device_ready_launcher_before_icon_20260814_162758.xml
+      device_ready_launcher_ready_20260814_154659.xml
+      device_ready_launcher_ready_20260814_155558.xml
+      device_ready_launcher_ready_20260814_162351.xml
+      device_ready_launcher_ready_20260814_162704.xml
+      device_ready_launcher_ready_20260814_162753.xml
+      device_ready_secure_keyguard_20260814_154311.xml
+      device_ready_secure_keyguard_20260814_154404.xml
+      device_ready_secure_keyguard_20260814_154542.xml
+      s01_s10_after_adb_launch_20260814_162806.xml
+      s01_s10_after_force_restart_20260814_162814.xml
+      s01_to_s02_20260814_162821.xml
+      s02_to_s03_20260814_162826.xml
+      s03_after_contract_initial_B_20260814_162830.xml
+      s03_to_s04_20260814_162834.xml
+      s04_to_s05_20260814_162838.xml
+      s05_after_trim_variant_1_20260814_162846.xml
+      s05_after_year_20260814_162842.xml
+      s05_to_s06_20260814_162850.xml
+      s05_to_s06_20260814_162855.xml
+      s06_to_s07_round_1_20260814_162859.xml
+      s07_after_age_tab_0_20260814_162913.xml
+      s07_after_color_select_attempt_1_0_20260814_162908.xml
+      s07_after_color_tab_click_20260814_162903.xml
+      s07_age_direct_track_fastpath_5_5_left_2_20260814_162923.xml
+      s07_age_direct_track_fastpath_5_5_right_1_20260814_162918.xml
+      s07_to_s08_20260814_162928.xml
+      s08_to_s09_20260814_162933.xml
+      s09_to_s10_20260814_162938.xml
       s10_s16_start_20260814_140344.xml
       s10_s16_start_20260814_140544.xml
       s10_s16_start_20260814_141916.xml
       s10_s16_start_20260814_150627.xml
       s10_s16_start_20260814_150939.xml
+      s10_s16_start_20260814_152421.xml
+      s10_s16_start_20260814_153021.xml
+      s10_s16_start_20260814_153432.xml
+      s10_s16_start_20260814_153517.xml
+      s10_s16_start_20260814_163004.xml
+      s10_to_s11_20260814_163010_compressed.xml
+      s11_report_entry_search_1_20260814_163020.xml
+      s11_to_s12_wait_stable_1_20260814_163024.xml
+      s11_to_s12_wait_stable_2_20260814_163029.xml
+      s12_to_s13_20260814_163033.xml
+      s12_to_s13_20260814_163037.xml
       window_dump.xml
       window_dump_after_launch.xml
     screenshots/
+      device_ready_launcher_before_icon_20260814_154226.png
+      device_ready_launcher_before_icon_20260814_154705.png
+      device_ready_launcher_before_icon_20260814_155604.png
+      device_ready_launcher_before_icon_20260814_162356.png
+      device_ready_launcher_before_icon_20260814_162709.png
+      device_ready_launcher_before_icon_20260814_162758.png
+      device_ready_launcher_ready_20260814_154226.png
+      device_ready_launcher_ready_20260814_154659.png
+      device_ready_launcher_ready_20260814_155558.png
+      device_ready_launcher_ready_20260814_162351.png
+      device_ready_launcher_ready_20260814_162704.png
+      device_ready_launcher_ready_20260814_162753.png
+      device_ready_secure_keyguard_20260814_154311.png
+      device_ready_secure_keyguard_20260814_154404.png
+      device_ready_secure_keyguard_20260814_154542.png
       runtime_preflight_before_launch.png
+      s01_s10_after_adb_launch_20260814_162806.png
+      s01_s10_after_force_restart_20260814_162814.png
+      s01_to_s02_20260814_162821.png
+      s02_to_s03_20260814_162826.png
+      s03_after_contract_initial_B_20260814_162830.png
+      s03_to_s04_20260814_162834.png
+      s04_to_s05_20260814_162838.png
+      s05_after_trim_variant_1_20260814_162846.png
+      s05_after_year_20260814_162842.png
+      s05_to_s06_20260814_162850.png
+      s05_to_s06_20260814_162855.png
+      s06_to_s07_round_1_20260814_162859.png
+      s07_after_age_tab_0_20260814_162913.png
+      s07_after_color_select_attempt_1_0_20260814_162908.png
+      s07_after_color_tab_click_20260814_162903.png
+      s07_age_direct_track_fastpath_5_5_left_2_20260814_162923.png
+      s07_age_direct_track_fastpath_5_5_right_1_20260814_162918.png
+      s07_to_s08_20260814_162928.png
+      s08_to_s09_20260814_162933.png
+      s09_to_s10_20260814_162938.png
       s10_s16_start_20260814_140344.png
       s10_s16_start_20260814_140544.png
       s10_s16_start_20260814_141916.png
       s10_s16_start_20260814_150627.png
       s10_s16_start_20260814_150939.png
+      s10_s16_start_20260814_152421.png
+      s10_s16_start_20260814_153021.png
+      s10_s16_start_20260814_153432.png
+      s10_s16_start_20260814_153517.png
+      s10_s16_start_20260814_163004.png
+      s10_to_s11_pre_dump_1_20260814_163009.png
+      s10_to_s11_pre_dump_2_20260814_163010.png
+      s11_report_entry_search_1_20260814_163020.png
+      s11_to_s12_wait_stable_1_20260814_163024.png
+      s11_to_s12_wait_stable_2_20260814_163029.png
+      s12_to_s13_20260814_163033.png
+      s12_to_s13_20260814_163037.png
       screen.png
       screen_after_launch.png
       startup.png
@@ -742,7 +833,6 @@ app/
     runtime_s08_select_color.py
     runtime_s08_set_age_slider.py
     runtime_s10_to_s16_mainline.py
-    runtime_s10_to_s16_mainline.py.import_error.txt
     s10_reference_match_stability_engine_v1.py
     s10s16_clean.py
     service_reload_evidence_validator.py
@@ -938,6 +1028,9 @@ app/
     unittest_output.txt
     guazi_app_data_system/
       __init__.py
+    __pycache__/
+      __init__.cpython-313.pyc
+      test_action_execution.cpython-313-pytest-9.1.1.pyc
   tools/
     platform-tools-latest-windows.zip
     android-platform-tools/
@@ -967,9 +1060,9 @@ app/
 
 - adb 可用：True
 - adb 路径：D:\Users\Android\Sdk\platform-tools\adb.EXE
-- 设备列表：[{'serial': '3417599354001L0', 'status': 'device', 'raw': '3417599354001L0        device product:PD2145 model:V2145A device:PD2145 transport_id:5', 'product': 'PD2145', 'model': 'V2145A', 'device': 'PD2145', 'transport_id': '5'}]
-- 设备信息：{'manufacturer': '', 'model': '', 'android_version': '', 'sdk': ''}
-- 截图路径：None
+- 设备列表：[{'serial': '3417599354001L0', 'status': 'device', 'raw': '3417599354001L0        device product:PD2145 model:V2145A device:PD2145 transport_id:7', 'product': 'PD2145', 'model': 'V2145A', 'device': 'PD2145', 'transport_id': '7'}]
+- 设备信息：{'manufacturer': 'vivo', 'model': 'V2145A', 'android_version': '14', 'sdk': '34'}
+- 截图路径：E:\project\zhikuan\guazi_app_data_system\app\artifacts\screenshots\startup.png
 - 页面识别：None
 
 ## 问题记录
@@ -980,6 +1073,11 @@ app/
 - PAGE_CONTRACT_MISMATCH：The observed transition does not satisfy the current page or action contract.（处理：manual_intervention）
 - SAMPLE_TOO_SMALL：三同车源少于 3 台，样本不足，结论参考性下降，需要人工审核。（处理：manual_review）
 - TARGET_ADB_DEVICE_NOT_WHITELISTED：Configured target ADB device is not connected; no fallback device is allowed.（处理：manual_intervention）
+- TARGET_ADB_DEVICE_TRANSIENT_DISCONNECT：Target ADB device was visible at first-stage gate but disappeared during screenshot/XML capture.（处理：manual_review）
+- PAGE_CONTRACT_EXECUTOR_MISSING_FOR_FULL_MAINLINE：Second stage requires first-stage S10_READY evidence before execution.（处理：manual_review）
+- SECURE_KEYGUARD_HUMAN_REQUIRED：Secure keyguard is showing before APP_FORCE_RESTART; human unlock is required.（处理：manual_review）
+- APP_ICON_NOT_FOUND_AFTER_DEVICE_READY：Launcher is visible after device ready gate, but exact Guazi app icon text was not found.（处理：manual_review）
+- S13_HISTORY_REPAIR_COUNT_NOT_CONFIRMED：Clicked body appearance tab, but S13/history repair evidence did not appear after fresh; post-click scroll is not allowed.（处理：manual_review）
 
 ## 人工确认事项
 

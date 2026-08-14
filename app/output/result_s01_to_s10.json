@@ -6,18 +6,18 @@
   },
   "status": "S10_READY",
   "target_task": {
-    "actual_target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\data\\current_target_task.json",
-    "brand": "蔚来",
-    "series": "ES6",
+    "actual_target_task_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\data\\current_target_task.json",
+    "brand": "别克",
+    "series": "君越",
     "series_alias": "",
-    "year_model": "2024款",
-    "config_model": "75kWh",
-    "color": "灰",
-    "register_date": "2025.02",
-    "register_year": 2025,
+    "year_model": "2021款",
+    "config_model": "652T 豪华型",
+    "color": "黑",
+    "register_date": "2021.8",
+    "register_year": 2021,
     "current_year": 2026,
     "target_age_formula": "current_year - register_year",
-    "calculated_target_age": 1
+    "calculated_target_age": 5
   },
   "flow_state": {
     "S07_FILTER_DONE": true,
@@ -27,65 +27,64 @@
     "S10_READY": true,
     "s05_year_click_required": true,
     "s05_year_clicked": true,
-    "s05_year_click_text": "2024款",
+    "s05_year_click_text": "2021款",
     "s05_year_click_bounds": [
       0,
-      721,
-      248,
-      831
+      1140,
+      270,
+      1260
     ],
     "s05_year_click_region": "left_year_list",
-    "selected_year_after_click": "2024款",
-    "left_year_selected_text": "2024款",
+    "selected_year_after_click": "2021款",
+    "left_year_selected_text": "2021款",
     "s05_target_year_selected_confirmed": true,
     "s05_year_confirmed_by": "left_year_click_record",
     "s05_year_click_record_valid": true,
     "right_config_list_after_year": [
-      "蔚来ES6车型",
-      "2024款全部车型",
-      "2024款 100kWh",
-      "2024款 150kWh",
-      "2024款 75kWh",
-      "2023款全部车型",
-      "2023款 100kWh",
-      "2023款 150kWh",
-      "2023款 75kWh",
-      "2022款全部车型",
-      "2022款 100kWh 性能版",
-      "2022款 100kWh 签名版",
-      "2022款 100kWh 运动版",
-      "2022款 75kWh 性能版",
-      "2022款 75kWh 签名版",
-      "2022款 75kWh 运动版",
+      "君越车型",
+      "2021款全部车型",
+      "2021款 552T 豪华型",
+      "2021款 652T 尊贵型",
+      "2021款 652T 豪华型",
+      "2021款 Avenir艾维亚 先享型",
+      "2021款 Avenir艾维亚 旗舰型",
+      "2020款全部车型",
+      "2020款 652T 尊贵型",
+      "2020款 652T 精英型",
+      "2020款 652T 豪华型",
+      "2020款 Avenir艾维亚 旗舰型",
+      "2019款全部车型",
+      "2019款 28T Avenir艾维亚",
+      "2019款 28T 尊贵型",
       "确定"
     ],
     "target_config_seen_after_year": true,
     "direct_right_config_search_without_year_click": false,
     "transition_context": "S09_PRICE_ASC_TO_LIST",
     "S05_DONE": true,
-    "target_series": "ES6",
+    "target_series": "君越",
     "target_series_alias": "",
-    "target_year_model": "2024款",
-    "target_config_model": "75kWh",
-    "s05_selected_year_model": "2024款",
-    "s05_selected_config_model": "75kWh",
+    "target_year_model": "2021款",
+    "target_config_model": "652T 豪华型",
+    "s05_selected_year_model": "2021款",
+    "s05_selected_config_model": "652T 豪华型",
     "selected_config_texts": [
-      "2024款 75kWh"
+      "2021款 652T 豪华型"
     ],
     "selected_count_text": "已选1项",
     "selected_count_actual": 1,
-    "target_color": "灰"
+    "target_color": "黑"
   },
   "startup": {
     "startup_mode": "force_restart",
-    "app_entry_mode": "guazi_home_foreground_accepted",
+    "app_entry_mode": "force_restart",
     "current_page_first_enabled": false,
-    "app_force_restart_called": false,
+    "app_force_restart_called": true,
     "force_stop_package": "com.ganji.android.haoche_c",
-    "force_stop_done": false,
-    "home_to_launcher_done": false,
-    "tap_guazi_app_icon_done": false,
-    "app_restart_wait_ms": 0,
+    "force_stop_done": true,
+    "home_to_launcher_done": true,
+    "tap_guazi_app_icon_done": true,
+    "app_restart_wait_ms": 263,
     "initial_capture_before_recovery": false,
     "initial_home_to_launcher_before_capture": true,
     "initial_tap_app_icon_before_capture": true,
@@ -96,81 +95,83 @@
     "recovery_call_reason": "startup",
     "app_force_restart_reason": "startup",
     "after_force_restart_state": "S01",
-    "after_force_restart_screenshot_path": "artifacts/screenshots/device_ready_after_non_secure_swipe_20260812_202853.png",
-    "after_force_restart_xml_path": "artifacts/debug/device_ready_after_non_secure_swipe_20260812_202853.xml",
+    "after_force_restart_screenshot_path": "artifacts/screenshots/s01_s10_after_force_restart_20260814_162814.png",
+    "after_force_restart_xml_path": "artifacts/debug/s01_s10_after_force_restart_20260814_162814.xml",
     "after_force_restart_visible_text_digest": [
       "精选",
       "官方自营",
       "个人直卖",
       "车视界",
-      "卖车版",
       "唐山",
-      "别克君越",
+      "大众Polo",
       "搜索",
-      "唐山瓜子二手车直卖场\n河北省唐山市路北区果园镇规划一路南侧竹安路东侧唐山康峰汽车检测有限公司办公楼北起一层一号",
-      "更多门店",
+      "大众帕萨特",
+      "奔驰C级",
+      "大众朗逸",
+      "奥迪A3",
+      "别克英朗",
       "二手车",
       "卖车",
       "9成通过\n分期购车",
       "新能源",
       "源头低价",
-      "吉利汽车",
-      "哈弗",
       "五菱汽车",
+      "哈弗",
       "长安",
-      "欧拉",
+      "Jeep",
+      "比亚迪",
       "一眼看真车",
       "已减8700元\n雪佛兰科沃兹\n1.83万",
-      "已补2500元\n五菱汽车宏光MINIEV\n1.80万",
-      "绅宝X25\n1.29万",
+      "已补1800元\n铃木启悦\n1.96万",
+      "瑞风L6 MAX\n8.12万",
       "官方讲解",
-      "买车避坑指南",
-      "精选车源\n第 1 个标签，共 7 个",
-      "官方自营\n第 2 个标签，共 7 个",
-      "新能源\n第 3 个标签，共 7 个",
-      "新人练手\n第 4 个标签，共 7 个"
+      "低预算开好车‌",
+      "唐山瓜子二手车直卖场\n门店实车\n当日提车\n高性价比\n薄利多销\n距您22公里\n|\n在售3000+辆",
+      "到店看车"
     ],
     "after_recovery_state": "S01",
-    "after_recovery_screenshot_path": "artifacts/screenshots/device_ready_after_non_secure_swipe_20260812_202853.png",
-    "after_recovery_xml_path": "artifacts/debug/device_ready_after_non_secure_swipe_20260812_202853.xml",
+    "after_recovery_screenshot_path": "artifacts/screenshots/s01_s10_after_force_restart_20260814_162814.png",
+    "after_recovery_xml_path": "artifacts/debug/s01_s10_after_force_restart_20260814_162814.xml",
     "startup_timeline": [
       {
         "step_name": "adb_target_device_gate",
-        "duration_ms": 44,
+        "duration_ms": 39,
         "reused_capture": false,
-        "at": "2026-08-12T12:28:48.969145+00:00",
+        "at": "2026-08-14T08:27:52.671450+00:00",
         "target_device_state": "device",
         "passed": true
       },
       {
         "step_name": "wake_unlock_gate",
-        "duration_ms": 9051,
+        "duration_ms": 5198,
         "reused_capture": false,
-        "at": "2026-08-12T12:28:58.020218+00:00",
-        "keyguard_showing": true,
-        "focused_window": "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity",
-        "foreground_package": "com.ganji.android.haoche_c"
+        "at": "2026-08-14T08:27:57.869993+00:00",
+        "keyguard_showing": false,
+        "focused_window": "com.bbk.launcher2/com.bbk.launcher2.Launcher type=1",
+        "foreground_package": "com.bbk.launcher2"
       },
       {
-        "step_name": "guazi_home_foreground_fastpath",
-        "duration_ms": 9051,
+        "step_name": "app_force_restart_and_contract_capture",
+        "duration_ms": 27725,
         "reused_capture": false,
-        "at": "2026-08-12T12:28:58.020218+00:00",
-        "accepted_state": "S01",
-        "force_reopen_suppressed_reason": "GUAZI_HOME_ALREADY_READY",
-        "guazi_frontend_ready_attempt": 1
+        "at": "2026-08-14T08:28:20.397439+00:00",
+        "app_force_restart_called": true,
+        "force_stop_done": true,
+        "tap_guazi_app_icon_done": true,
+        "after_force_restart_state": "S01",
+        "fresh_contract_capture_path": "artifacts/debug/s01_s10_after_force_restart_20260814_162814.xml"
       }
     ],
-    "adb_gate_duration_ms": 44,
-    "wake_unlock_duration_ms": 9051,
+    "adb_gate_duration_ms": 39,
+    "wake_unlock_duration_ms": 5198,
     "miui_recovery_duration_ms": 0,
-    "launcher_icon_lookup_duration_ms": 0,
-    "app_reopen_duration_ms": 9051,
-    "app_foreground_confirm_duration_ms": 0,
-    "s01_detect_duration_ms": 0,
-    "capture_count": 1,
-    "screenshot_count": 1,
-    "xml_dump_count": 1,
+    "launcher_icon_lookup_duration_ms": 16318,
+    "app_reopen_duration_ms": 27725,
+    "app_foreground_confirm_duration_ms": 263,
+    "s01_detect_duration_ms": 27725,
+    "capture_count": 4,
+    "screenshot_count": 4,
+    "xml_dump_count": 4,
     "reused_capture_count": 0,
     "fastpath_used": false,
     "fastpath_reason": "",
@@ -179,110 +180,207 @@
     "target_device_state": "device",
     "wake_screen_done": true,
     "screen_interactive": null,
-    "keyguard_showing": true,
-    "secure_keyguard": false,
-    "focused_window_before": "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity",
-    "foreground_package_before": "com.ganji.android.haoche_c",
+    "keyguard_showing": false,
+    "secure_keyguard": true,
+    "focused_window_before": "com.bbk.launcher2/com.bbk.launcher2.Launcher type=1",
+    "foreground_package_before": "com.bbk.launcher2",
     "notification_shade_visible": false,
-    "non_secure_swipe_done": true,
-    "non_secure_swipe": {
-      "swipe_success": true,
-      "swipe_stderr": "",
-      "start_x": 540,
-      "start_y": 1967,
-      "end_x": 540,
-      "end_y": 720,
-      "duration_ms": 700
-    },
-    "keyguard_dismissed": true,
-    "keyguard_showing_after_swipe": true,
-    "focused_window_after_swipe": "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity",
-    "foreground_package_after_swipe": "com.ganji.android.haoche_c",
-    "guazi_foreground_visible_despite_keyguard": true,
-    "stale_keyguard_ignored_for_reopen": true,
-    "old_guazi_page_detected": true,
-    "old_guazi_page_type": "S01_OR_S02",
-    "device_ready_pass_reason": "GUAZI_HOME_FOREGROUND_ALREADY_READY",
-    "guazi_home_foreground_accepted": true,
-    "guazi_frontend_ready_attempt": 1,
-    "must_reopen_guazi_app": false,
-    "force_reopen_required": false,
-    "force_reopen_suppressed_reason": "GUAZI_HOME_ALREADY_READY",
     "notification_shade_collapsed": true,
-    "focused_window_after": "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity",
-    "foreground_package_after": "com.ganji.android.haoche_c",
-    "force_reopen_executed": false
+    "focused_window_after": "com.bbk.launcher2/com.bbk.launcher2.Launcher type=1",
+    "foreground_package_after": "com.bbk.launcher2",
+    "home_to_launcher_poll_rounds": [
+      {
+        "round": 1,
+        "matched": true,
+        "focused_window": "com.bbk.launcher2/com.bbk.launcher2.Launcher type=1",
+        "foreground_package": "com.bbk.launcher2",
+        "keyguard_showing": false,
+        "dumpsys_ms": 161
+      }
+    ],
+    "launcher_snapshot_reused_for_icon_lookup": false,
+    "desktop_upgrade_modal_detected": false,
+    "desktop_upgrade_modal_action": "none",
+    "desktop_upgrade_modal_status": null,
+    "desktop_upgrade_modal_keywords_seen": [],
+    "desktop_upgrade_modal_click_attempts": 0,
+    "desktop_upgrade_modal_evidence_paths": [],
+    "desktop_upgrade_modal_click_history": [],
+    "desktop_upgrade_modal_later_button_found": null,
+    "desktop_upgrade_modal_now_seen": null,
+    "desktop_upgrade_modal_clicked_immediate_upgrade": false,
+    "launcher_later_dialog_contract_enabled": true,
+    "later_dialog_type": "ACCOUNT_LOGOUT_DIALOG",
+    "max_later_click_attempts": 5,
+    "launcher_account_dialog_detected": false,
+    "launcher_account_dialog_text_digest": null,
+    "later_button_found": null,
+    "later_button_seen": null,
+    "later_button_clicked": false,
+    "later_click_attempts": 0,
+    "later_dialog_seen_before_click": false,
+    "later_dialog_seen_after_click": null,
+    "later_dialog_dismissed": null,
+    "app_icon_visible_after_later_dialog": null,
+    "launcher_later_dialog_stop_code": null,
+    "launcher_later_dialog_evidence_paths": [],
+    "launcher_later_click_history": [],
+    "focused_window_before_later": null,
+    "focused_window_after_later": null,
+    "launcher_visible_after_later": null,
+    "guazi_icon_visible_before_later": null,
+    "guazi_icon_visible_after_later": null,
+    "screenshot_before_later": null,
+    "xml_before_later": null,
+    "screenshot_after_later": null,
+    "xml_after_later": null,
+    "startup_account_center_login_detected": false,
+    "account_center_package": null,
+    "max_account_center_back_attempts": 2,
+    "account_center_back_attempts": 0,
+    "account_center_dismissed": null,
+    "account_center_exit_action": null,
+    "app_icon_visible_after_account_center_exit": null,
+    "next_startup_step": null,
+    "startup_account_center_stop_code": null,
+    "account_center_evidence_paths": [],
+    "account_center_back_history": [],
+    "launcher_visible": true,
+    "guazi_icon_visible": true,
+    "guazi_icon_visible_final": true,
+    "final_screenshot_path": "artifacts/screenshots/device_ready_launcher_before_icon_20260814_162758.png",
+    "final_xml_path": "artifacts/debug/device_ready_launcher_before_icon_20260814_162758.xml",
+    "guazi_icon_launch_fallback": true,
+    "app_foreground_poll_rounds": [
+      {
+        "round": 1,
+        "matched": true,
+        "focused_window": "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity type=1",
+        "foreground_package": "com.ganji.android.haoche_c",
+        "keyguard_showing": false,
+        "dumpsys_ms": 182
+      }
+    ],
+    "app_foreground_poll_matched": true,
+    "guazi_frontend_retry_attempts": [
+      {
+        "attempt": 1,
+        "state": "S01",
+        "guazi_foreground": true,
+        "runtime_evidence_ready": true,
+        "guazi_home_ready": true,
+        "startup_splash_visible": false,
+        "foreground_package": "com.ganji.android.haoche_c",
+        "xml_package": "com.ganji.android.haoche_c",
+        "focused_window": "com.ganji.android.haoche_c/com.cars.guazi.app.home.MainActivity type=1",
+        "screenshot_missing": false,
+        "xml_missing": false,
+        "screenshot_error": "",
+        "xml_dump_error": "",
+        "screenshot_path": "artifacts/screenshots/s01_s10_after_force_restart_20260814_162814.png",
+        "xml_path": "artifacts/debug/s01_s10_after_force_restart_20260814_162814.xml"
+      }
+    ],
+    "guazi_frontend_ready_attempt": 1
   },
   "task_params": {
-    "target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\data\\current_target_task.json",
-    "brand": "蔚来",
-    "series": "ES6",
+    "target_task_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\data\\current_target_task.json",
+    "brand": "别克",
+    "series": "君越",
     "series_alias": "",
-    "model_year": "2024款",
-    "trim": "75kWh",
-    "color": "灰",
-    "registration_date": "2025.02",
-    "vehicle_year": 2024,
-    "register_year": 2025,
+    "model_year": "2021款",
+    "trim": "652T 豪华型",
+    "color": "黑",
+    "registration_date": "2021.8",
+    "vehicle_year": 2021,
+    "register_year": 2021,
     "current_year": 2026,
     "target_age_formula": "current_year - register_year",
-    "target_age_years": 1,
-    "brand_initial": "W"
+    "target_age_years": 5,
+    "brand_initial": "B"
   },
   "same_source_cards": [
     {
-      "title": "蔚来ES6 2024款 75kWh",
-      "year_mileage_text": "2025年 | 3.05万公里 | 电池租赁 | 上海 | NIOPilot",
-      "list_price_10k": 15.05,
-      "list_year": 2025,
-      "list_mileage_10k_km": 3.05
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 14.62万公里 | 唐山",
+      "list_price_10k": 7.18,
+      "list_year": 2021,
+      "list_mileage_10k_km": 14.62
     },
     {
-      "title": "蔚来ES6 2024款 75kWh",
-      "year_mileage_text": "2025年 | 3.73万公里 | 电池租赁 | 成都 | NIOPilot",
-      "list_price_10k": 15.37,
-      "list_year": 2025,
-      "list_mileage_10k_km": 3.73
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 11.22万公里 | 唐山",
+      "list_price_10k": 7.43,
+      "list_year": 2021,
+      "list_mileage_10k_km": 11.22
     },
     {
-      "title": "蔚来ES6 2024款 75kWh",
-      "year_mileage_text": "2025年 | 0.88万公里 | 电池租赁 | 上海 | NIOPilot",
-      "list_price_10k": 16.12,
-      "list_year": 2025,
-      "list_mileage_10k_km": 0.88
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 10.57万公里 | 泸州",
+      "list_price_10k": 7.53,
+      "list_year": 2021,
+      "list_mileage_10k_km": 10.57
     },
     {
-      "title": "蔚来ES6 2024款 75kWh",
-      "year_mileage_text": "2025年 | 2.52万公里 | 电池租赁 | 西安 | NIOPilot",
-      "list_price_10k": 16.3,
-      "list_year": 2025,
-      "list_mileage_10k_km": 2.52
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 9.57万公里 | 唐山",
+      "list_price_10k": 7.58,
+      "list_year": 2021,
+      "list_mileage_10k_km": 9.57
     },
     {
-      "title": "蔚来ES6 2024款 75kWh",
-      "year_mileage_text": "2025年 | 3.28万公里 | 电池租赁 | 东莞 | NIOPilot",
-      "list_price_10k": 16.48,
-      "list_year": 2025,
-      "list_mileage_10k_km": 3.28
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 11.56万公里 | 苏州",
+      "list_price_10k": 7.59,
+      "list_year": 2021,
+      "list_mileage_10k_km": 11.56
     },
     {
-      "title": "蔚来ES6 2024款 75kWh",
-      "year_mileage_text": "2025年 | 2.58万公里 | 电池租赁 | 湖州 | NIOPilot",
-      "list_price_10k": 16.81,
-      "list_year": 2025,
-      "list_mileage_10k_km": 2.58
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 10.12万公里 | 唐山",
+      "list_price_10k": 7.77,
+      "list_year": 2021,
+      "list_mileage_10k_km": 10.12
+    },
+    {
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 9.19万公里 | 唐山",
+      "list_price_10k": 8.0,
+      "list_year": 2021,
+      "list_mileage_10k_km": 9.19
+    },
+    {
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 5.97万公里 | 唐山",
+      "list_price_10k": 8.12,
+      "list_year": 2021,
+      "list_mileage_10k_km": 5.97
+    },
+    {
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 6.46万公里 | 唐山",
+      "list_price_10k": 8.16,
+      "list_year": 2021,
+      "list_mileage_10k_km": 6.46
+    },
+    {
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 6.81万公里 | 唐山",
+      "list_price_10k": 8.19,
+      "list_year": 2021,
+      "list_mileage_10k_km": 6.81
     }
   ],
-  "raw_visible_cards_count": 6,
-  "trisame_cards_count": 6,
-  "trisame_count": 6,
+  "raw_visible_cards_count": 10,
+  "trisame_cards_count": 10,
+  "trisame_count": 10,
   "trisame_count_confirmed": true,
   "excluded_non_trisame_cards_count": 0,
   "excluded_non_trisame_cards": [],
-  "non_trisame_section_detected": true,
-  "non_trisame_section_title": "找不到想要的车",
-  "boundary_text": "找不到想要的车？",
-  "boundary_text_index": 109,
+  "non_trisame_section_detected": false,
+  "non_trisame_section_title": "",
+  "boundary_text": "",
+  "boundary_text_index": null,
   "cards_after_boundary_excluded_count": 0,
   "s10_source_gate_passed": true,
   "s10_core_elements": [
@@ -293,71 +391,71 @@
   ],
   "s10_target_trisame_evidence": [
     {
-      "title": "蔚来ES6 2024款 75kWh",
-      "year_mileage_text": "2025年 | 3.05万公里 | 电池租赁 | 上海 | NIOPilot",
-      "list_price_10k": 15.05,
-      "list_year": 2025,
-      "list_mileage_10k_km": 3.05
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 14.62万公里 | 唐山",
+      "list_price_10k": 7.18,
+      "list_year": 2021,
+      "list_mileage_10k_km": 14.62
     },
     {
-      "title": "蔚来ES6 2024款 75kWh",
-      "year_mileage_text": "2025年 | 3.73万公里 | 电池租赁 | 成都 | NIOPilot",
-      "list_price_10k": 15.37,
-      "list_year": 2025,
-      "list_mileage_10k_km": 3.73
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 11.22万公里 | 唐山",
+      "list_price_10k": 7.43,
+      "list_year": 2021,
+      "list_mileage_10k_km": 11.22
     },
     {
-      "title": "蔚来ES6 2024款 75kWh",
-      "year_mileage_text": "2025年 | 0.88万公里 | 电池租赁 | 上海 | NIOPilot",
-      "list_price_10k": 16.12,
-      "list_year": 2025,
-      "list_mileage_10k_km": 0.88
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 10.57万公里 | 泸州",
+      "list_price_10k": 7.53,
+      "list_year": 2021,
+      "list_mileage_10k_km": 10.57
     },
     {
-      "title": "蔚来ES6 2024款 75kWh",
-      "year_mileage_text": "2025年 | 2.52万公里 | 电池租赁 | 西安 | NIOPilot",
-      "list_price_10k": 16.3,
-      "list_year": 2025,
-      "list_mileage_10k_km": 2.52
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 9.57万公里 | 唐山",
+      "list_price_10k": 7.58,
+      "list_year": 2021,
+      "list_mileage_10k_km": 9.57
     },
     {
-      "title": "蔚来ES6 2024款 75kWh",
-      "year_mileage_text": "2025年 | 3.28万公里 | 电池租赁 | 东莞 | NIOPilot",
-      "list_price_10k": 16.48,
-      "list_year": 2025,
-      "list_mileage_10k_km": 3.28
+      "title": "别克 君越 2021款 652T 豪华型",
+      "year_mileage_text": "2021年 | 11.56万公里 | 苏州",
+      "list_price_10k": 7.59,
+      "list_year": 2021,
+      "list_mileage_10k_km": 11.56
     }
   ],
   "s10_reverse_exclusion_passed": true,
   "s10_reverse_exclusion_failures": [],
-  "complete_target_vehicle_card_count": 6,
-  "non_trisame_boundary_detected": true,
+  "complete_target_vehicle_card_count": 10,
+  "non_trisame_boundary_detected": false,
   "s10_ready_reason": "source_gate_core_elements_target_trisame_boundary_passed",
   "s10_color_filter_evidence": {
     "s07_color_filter_evidence_source": "s10_ready_source_gate",
-    "target_color": "灰",
-    "target_color_normalized": "灰",
-    "selected_color": "灰色",
-    "selected_color_normalized": "灰",
+    "target_color": "黑",
+    "target_color_normalized": "黑",
+    "selected_color": "黑色",
+    "selected_color_normalized": "黑",
     "selected_color_labels": [
-      "灰色"
+      "黑色"
     ],
     "visible_color_hits": [
       {
-        "text": "灰色",
-        "normalized": "灰",
+        "text": "黑色",
+        "normalized": "黑",
         "bounds": [
-          231,
-          750,
-          415,
-          830
+          495,
+          801,
+          693,
+          888
         ],
         "is_selected_chip": true,
         "is_grid_candidate": false
       }
     ],
     "visible_color_normalized_hits": [
-      "灰"
+      "黑"
     ],
     "target_color_confirmed": true,
     "color_filter_mismatch": false,
@@ -380,11 +478,11 @@
     "requires_runtime_trace": true,
     "expected": {
       "expected_filter_summary": {
-        "brand": "蔚来",
-        "series": "ES6",
-        "color": "灰",
-        "age_filter": "1-1",
-        "model_config_core": "75kWh"
+        "brand": "别克",
+        "series": "君越",
+        "color": "黑",
+        "age_filter": "5-5",
+        "model_config_core": "652T 豪华型"
       }
     },
     "allowed_actions": [
@@ -415,28 +513,28 @@
     },
     "action_inputs": {
       "expected_filter_summary": {
-        "brand": "蔚来",
-        "series": "ES6",
-        "color": "灰",
-        "age_filter": "1-1",
-        "model_config_core": "75kWh"
+        "brand": "别克",
+        "series": "君越",
+        "color": "黑",
+        "age_filter": "5-5",
+        "model_config_core": "652T 豪华型"
       }
     },
     "action_outputs": {},
     "success_condition": "actual_filter_summary matches expected_filter_summary",
     "failure_stop_code": "S10_FILTER_SUMMARY_CONTRACT_MISMATCH",
-    "contract_action_plan_id": "978eb35e9593365d"
+    "contract_action_plan_id": "18edd38c30296e8e"
   },
   "contract_expected": {
     "expected_filter_summary": {
-      "brand": "蔚来",
-      "series": "ES6",
-      "color": "灰",
-      "age_filter": "1-1",
-      "model_config_core": "75kWh"
+      "brand": "别克",
+      "series": "君越",
+      "color": "黑",
+      "age_filter": "5-5",
+      "model_config_core": "652T 豪华型"
     }
   },
-  "contract_action_plan_id": "978eb35e9593365d",
+  "contract_action_plan_id": "18edd38c30296e8e",
   "contract_action_plan_used": true,
   "action_plan_step_id": "S10_FILTER_SUMMARY",
   "rule_clause_id": "S10_FILTER_SUMMARY_MATCH_TARGET",
@@ -461,34 +559,33 @@
   "s03_contract": {
     "s03_contract_version": "V1.16",
     "target_brand_aliases": [
-      "蔚来",
-      "NIO"
+      "别克"
     ],
-    "target_initial_letter": "W",
+    "target_initial_letter": "B",
     "target_brand_visible_before_letter": false,
-    "clicked_initial_letter": "W",
+    "clicked_initial_letter": "B",
     "target_brand_visible_after_letter": true,
-    "matched_brand_text": "蔚来",
-    "matched_alias": "蔚来",
+    "matched_brand_text": "别克",
+    "matched_alias": "别克",
     "brand_row_bounds": [
       0,
-      581,
-      1025,
-      713
+      915,
+      1020,
+      1059
     ],
     "selected_click_region_type": "brand_row_left_icon_safe_point",
     "selected_click_point": [
-      99,
-      647
+      108,
+      987
     ],
     "after_click_page_type": "S04",
     "brand_zone_continuation_allowed": false
   },
   "s03_contract_version": "V1.16",
   "s05_emission_variant_contract_enabled": true,
-  "target_year_model": "2024款",
-  "target_config_model": "75kWh",
-  "normalized_target_config": "75kwh",
+  "target_year_model": "2021款",
+  "target_config_model": "652T 豪华型",
+  "normalized_target_config": "652t豪华",
   "emission_variant_group": [],
   "emission_variant_group_count": 0,
   "selected_emission_variants": [],
@@ -499,8 +596,8 @@
   "s05_single_trim_selected": true,
   "transition_context": "S07_VIEW_RESULT_TO_LIST",
   "s05_done": true,
-  "s05_selected_year_model": "2024款",
-  "s05_selected_config_model": "75kWh",
+  "s05_selected_year_model": "2021款",
+  "s05_selected_config_model": "652T 豪华型",
   "recognized_page_after_s05_confirm": "S06",
   "s06_page_variant": "S06_TARGET_FILTER_LIST_AFTER_S05_CONFIRM",
   "s06_source_gate_passed": true,
@@ -513,12 +610,12 @@
   "s06_recognized_by": "fast_gate_source_s05_done_model_config_bounds",
   "s06_allowed_action": "click_model_config_filter",
   "s06_to_s07_result": "entered_s07",
-  "target_color": "灰",
-  "target_color_normalized": "灰",
-  "selected_color": "灰色",
-  "selected_color_normalized": "灰",
+  "target_color": "黑",
+  "target_color_normalized": "黑",
+  "selected_color": "黑色",
+  "selected_color_normalized": "黑",
   "selected_color_labels": [
-    "灰色"
+    "黑色"
   ],
   "target_color_confirmed": true,
   "color_filter_mismatch": false,
@@ -527,36 +624,36 @@
   "COLOR_FILTER_DONE": true,
   "AGE_FILTER_DONE": true,
   "S07_FILTER_DONE": true,
-  "bottom_view_result_text": "查看6辆",
-  "view_result_count": 6,
+  "bottom_view_result_text": "查看16辆",
+  "view_result_count": 16,
   "recognized_page_after_view_result": "S08",
   "s08_source_gate_passed": true,
   "s08_page_variant": "S08_TARGET_LIST_AFTER_FILTER",
   "s08_target_filter_evidence": [
     {
       "type": "target_series_or_alias_visible",
-      "value": "ES6"
+      "value": "君越"
     },
     {
       "type": "target_year_visible",
-      "value": "2024款"
+      "value": "2021款"
     },
     {
       "type": "target_config_visible",
-      "value": "75kWh"
+      "value": "652T 豪华型"
     },
     {
       "type": "target_color_filter_visible",
-      "value": "灰"
+      "value": "黑"
     },
     {
       "type": "target_vehicle_card_title_visible",
       "value": [
-        "蔚来ES6 2024款 75kWh",
-        "蔚来ES6 2024款 75kWh",
-        "蔚来ES6 2024款 75kWh",
-        "蔚来ES6 2024款 75kWh",
-        "蔚来ES6 2024款 75kWh"
+        "别克 君越 2021款 652T 豪华型",
+        "别克 君越 2021款 652T 豪华型",
+        "别克 君越 2021款 652T 豪华型",
+        "别克 君越 2021款 652T 豪华型",
+        "别克 君越 2021款 652T 豪华型"
       ]
     }
   ],
@@ -572,29 +669,29 @@
   "s08_allowed_action": "click_sort_dropdown",
   "s08_color_filter_evidence": {
     "s07_color_filter_evidence_source": "s08_target_list_after_s07_view_result",
-    "target_color": "灰",
-    "target_color_normalized": "灰",
-    "selected_color": "灰色",
-    "selected_color_normalized": "灰",
+    "target_color": "黑",
+    "target_color_normalized": "黑",
+    "selected_color": "黑色",
+    "selected_color_normalized": "黑",
     "selected_color_labels": [
-      "灰色"
+      "黑色"
     ],
     "visible_color_hits": [
       {
-        "text": "灰色",
-        "normalized": "灰",
+        "text": "黑色",
+        "normalized": "黑",
         "bounds": [
-          231,
-          750,
-          415,
-          830
+          495,
+          801,
+          693,
+          888
         ],
         "is_selected_chip": true,
         "is_grid_candidate": false
       }
     ],
     "visible_color_normalized_hits": [
-      "灰"
+      "黑"
     ],
     "target_color_confirmed": true,
     "color_filter_mismatch": false,
@@ -624,10 +721,10 @@
         "performance_budget_ms": 5000,
         "requires_runtime_trace": true,
         "expected": {
-          "expected_color": "灰",
-          "selected_after_click": "灰",
-          "s08_summary_color": "灰",
-          "s10_summary_color": "灰"
+          "expected_color": "黑",
+          "selected_after_click": "黑",
+          "s08_summary_color": "黑",
+          "s10_summary_color": "黑"
         },
         "allowed_actions": [
           "select_color_and_confirm",
@@ -666,18 +763,18 @@
           ]
         },
         "action_inputs": {
-          "target_color": "灰"
+          "target_color": "黑"
         },
         "action_outputs": {},
         "success_condition": "selected_color == expected_color and s08_s10_summary_color == expected_color",
         "failure_stop_code": "S07_COLOR_CONTRACT_MISMATCH",
-        "contract_action_plan_id": "81af4a46d2fc3f16"
+        "contract_action_plan_id": "86a580d0da61a2b0"
       },
       "contract_expected": {
-        "expected_color": "灰",
-        "selected_after_click": "灰",
-        "s08_summary_color": "灰",
-        "s10_summary_color": "灰"
+        "expected_color": "黑",
+        "selected_after_click": "黑",
+        "s08_summary_color": "黑",
+        "s10_summary_color": "黑"
       },
       "contract_action_algorithm": {
         "name": "exact_target_color_binding",
@@ -702,7 +799,7 @@
         "ratio_coordinate",
         "continue_after_non_target_selected"
       ],
-      "contract_action_plan_id": "81af4a46d2fc3f16",
+      "contract_action_plan_id": "86a580d0da61a2b0",
       "contract_action_plan_used": true,
       "action_plan_step_id": "S07_COLOR",
       "rule_clause_id": "S07_COLOR_EXACT_SELECTED_CONFIRM",
@@ -727,97 +824,80 @@
       "requires_runtime_trace": true,
       "action_plan_binding_check_passed": true,
       "attempt_index": 1,
-      "target_color": "灰",
-      "matched_candidate_color": "灰色",
-      "normalized_target_color": "灰",
-      "normalized_candidate_color": "灰",
+      "target_color": "黑",
+      "matched_candidate_color": "黑色",
+      "normalized_target_color": "黑",
+      "normalized_candidate_color": "黑",
       "candidate_matches_target": true,
       "candidate_bounds": [
-        792,
-        1122,
-        1039,
-        1237
+        288,
+        1056,
+        522,
+        1179
       ],
       "candidate_text_bounds": [
-        792,
-        1122,
-        1039,
-        1237
+        288,
+        1056,
+        522,
+        1179
       ],
-      "candidate_clickable": false,
-      "candidate_node_clickable": false,
+      "candidate_clickable": true,
+      "candidate_node_clickable": true,
       "candidate_enabled": true,
-      "candidate_strategy": "color_grid_text_node_bounds",
+      "candidate_strategy": "direct_clickable_color_text_node",
       "candidate_bounds_role": "color_grid_candidate",
       "candidate_grid_bounds_safe": true,
-      "click_source": "color_grid_text_node_bounds",
+      "click_source": "direct_clickable_color_text_node",
       "click_source_allowed_by_action_plan": true,
       "action_plan_click_source_allowed": true,
       "click_point": [
-        915,
-        1179
+        405,
+        1117
       ],
       "computed_click_point": [
-        915,
-        1179
+        405,
+        1117
       ],
       "final_tap_point": [
-        915,
-        1179
+        405,
+        1117
       ],
       "click_point_inside_candidate_bounds": true,
       "bounds_ambiguity": {
         "ambiguous": false,
         "contained_color_labels": [
-          "灰色"
+          "黑色"
         ]
       },
-      "parent_bounds": [
-        0,
-        0,
-        1080,
-        2400
-      ],
-      "parent_bounds_ambiguous": true,
-      "parent_contained_color_labels": [
-        "黑色",
-        "白色",
-        "银色",
-        "红色",
-        "蓝色",
-        "灰色",
-        "绿色",
-        "棕色",
-        "紫色",
-        "香槟色",
-        "黄色"
-      ],
+      "parent_bounds": null,
+      "parent_bounds_ambiguous": false,
+      "parent_contained_color_labels": [],
       "allowed_click": true,
       "tap_result": {
         "page_id": "S07",
         "action_id": "tap_target_color",
         "click_point": [
-          915,
-          1179
+          405,
+          1117
         ],
         "tap_result_success": true,
         "tap_result_stdout": "",
         "tap_result_stderr": "",
         "tap_result_returncode": 0
       },
-      "tap_action_ms": 134
+      "tap_action_ms": 132
     }
   ],
-  "target_fingerprint": "蔚来|ES6|2024款|75kWh|灰|2025.02",
-  "target_task_path": "C:\\Users\\lzc93\\Desktop\\定价\\guazi_app_data_system\\data\\current_target_task.json",
-  "brand": "蔚来",
-  "series": "ES6",
-  "year_model": "2024款",
-  "config_model": "75kWh",
-  "color": "灰",
-  "register_date": "2025.02",
+  "target_fingerprint": "别克|君越|2021款|652T 豪华型|黑|2021.8",
+  "target_task_path": "E:\\project\\zhikuan\\guazi_app_data_system\\app\\data\\current_target_task.json",
+  "brand": "别克",
+  "series": "君越",
+  "year_model": "2021款",
+  "config_model": "652T 豪华型",
+  "color": "黑",
+  "register_date": "2021.8",
   "current_state": "S10_READY",
   "final_status": "S10_READY",
-  "created_at": "2026-08-12T12:30:28.546486+00:00",
+  "created_at": "2026-08-14T08:29:42.442007+00:00",
   "result_segment": "s01_to_s10"
 }

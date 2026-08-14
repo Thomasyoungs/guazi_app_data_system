@@ -738,7 +738,6 @@ def _is_keyguard_showing_from_window_dump(window_dump: str) -> bool | None:
         "mShowingLockscreen=true",
         "mKeyguardShowing=true",
         "isStatusBarKeyguard=true",
-        "NotificationShade",
         "MiuiKeyguard",
     ]
     return any(pattern in window_dump for pattern in patterns)

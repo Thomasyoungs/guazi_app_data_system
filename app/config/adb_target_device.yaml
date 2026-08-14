@@ -5,8 +5,8 @@ production_device:
   active_adb_serial: "6TGYHPZCETCSK6L"
   device_alias: "Redmi Note 12 5G"
 
-active_adb_serial: "1d76fbdd0923"
-device_alias: "Temporary Android device 1d76fbdd0923 / model 22101317C"
+active_adb_serial: "3417599354001L0"
+device_alias: "Temporary Android device 3417599354001L0 / model V2145A"
 strict_device_selection: true
 allow_default_when_single_device: false
 device_whitelist: ["6TGYHPZCETCSK6L", "1d76fbdd0923", "3417599354001L0"]
@@ -17,7 +17,7 @@ explicit_adb_vendor_keys: ""
 
 temporary_device_override:
   enabled: true
-  temporary_adb_serial: "1d76fbdd0923"
+  temporary_adb_serial: "3417599354001L0"
   temporary_device_alias: "Temporary Android device 1d76fbdd0923 / model 22101317C"
   temporary_device_model: "22101317C"
   original_adb_serial: "6TGYHPZCETCSK6L"
