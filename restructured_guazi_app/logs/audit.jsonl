@@ -55,3 +55,5 @@
 {"timestamp": "2026-08-14T00:33:03.862984+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
 {"timestamp": "2026-08-14T00:36:08.172318+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
 {"timestamp": "2026-08-14T00:36:48.711438+00:00", "event": "issue_recorded", "issue_id": "ISS-a814dcb7dba9", "issue_code": "DEVICE_OPERATION_FAILED", "state_id": "S00", "resolution": "manual_review"}
+{"timestamp": "2026-08-14T00:42:07.432762+00:00", "event": "device_mode_start", "task_id": "DEVICE-EXAMPLE-001"}
+{"timestamp": "2026-08-14T00:42:54.722348+00:00", "event": "issue_recorded", "issue_id": "ISS-30b6d071a46e", "issue_code": "DEVICE_OPERATION_FAILED", "state_id": "S00", "resolution": "manual_review"}
