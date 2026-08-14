@@ -248,6 +248,21 @@ python -m guazi_app_data_system.main --mode feishu --feishu-message "{\"text\":\
 - 过滤错误设备
 - 保证跑流程之前满足设备条件
 
+配置说明（新增）:
+
+- `device_whitelist`: 可选，列出允许使用的设备 serial 列表（逗号分隔或方括号列表）。
+  - 当此项非空时，只有在白名单中的设备才能作为目标设备（即使只有一台设备连接）。
+  - 示例（adb_target_device.yaml）:
+
+    ```yaml
+    active_adb_serial: "3417599354001L0"
+    strict_device_selection: true
+    allow_default_when_single_device: false
+    device_whitelist: [3417599354001L0, 6TGYHPZCETCSK6L]
+    ```
+
+- 行为：如果 `device_whitelist` 非空，runner 会拒绝不在白名单内的配置或环境指定 serial，返回错误 `TARGET_ADB_DEVICE_NOT_WHITELISTED`。如需临时在单台测试机上运行，可在配置中把目标 serial 加入白名单或按需允许默认设备（慎用）。
+
 ### 4.11 `exception_handler.py`
 
 异常与问题记录模块。负责：
